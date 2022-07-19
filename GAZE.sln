@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32708.82
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAZE", "GAZE\GAZE.csproj", "{5913FB33-67E9-46B3-86D9-5B185C9DD309}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaze.BusinessLogic.Config", "Gaze.BusinessLogic.Config\Gaze.BusinessLogic.Config.csproj", "{0B58BD9C-FCC3-4EA4-9453-334839379D93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5913FB33-67E9-46B3-86D9-5B185C9DD309}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5913FB33-67E9-46B3-86D9-5B185C9DD309}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5913FB33-67E9-46B3-86D9-5B185C9DD309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B58BD9C-FCC3-4EA4-9453-334839379D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B58BD9C-FCC3-4EA4-9453-334839379D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B58BD9C-FCC3-4EA4-9453-334839379D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B58BD9C-FCC3-4EA4-9453-334839379D93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
