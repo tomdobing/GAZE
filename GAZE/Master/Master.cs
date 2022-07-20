@@ -80,5 +80,11 @@ namespace GAZE
             MessageBox.Show(this, message, caption, buttons,
             MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin.LoginForm LoginForm = new Admin.LoginForm();
+            LoginForm.ShowDialog();
+        }
     }
 }
