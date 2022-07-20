@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gaze.BusinessLogic.Config;
+using Gaze.BusinessLogic.Security;
 
 namespace GAZE
 {
     public partial class Master : Form
     {
         FormSettings GetFormSettings = new FormSettings();
+        LoginSecurity loginSecurity = new LoginSecurity();
 
         public Master()
         {
@@ -26,7 +28,7 @@ namespace GAZE
             toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("HH:MM:ss");
             StartTimer();
             toolStripLabel2.Text = Application.ProductVersion.ToString();
-            toolStripLabel3.Text = "Logged in as: " + Environment.UserName;
+            toolStripLabel3.Text = //loginSecurity.Username;
         }
 
         System.Windows.Forms.Timer t = null;
