@@ -7,13 +7,17 @@ using MetroFramework.Forms;
 
 namespace Gaze.BusinessLogic.Security
 {
-    internal class LoginFormSettings
+    public class LoginFormSettings
     {
 
         public void SetFormValue(MetroForm LoginScreen)
         {
             LoginScreen.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            LoginScreen.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            //LoginScreen.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            LoginScreen.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            LoginScreen.Resizable = false;
+            LoginScreen.MaximizeBox = false;
+            LoginScreen.MinimizeBox = false;
         }
 
 
