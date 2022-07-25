@@ -40,9 +40,10 @@ namespace Gaze.BusinessLogic.SQLManagement
                     return false;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+             
+                MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
 

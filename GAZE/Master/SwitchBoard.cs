@@ -85,7 +85,14 @@ namespace GAZE
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Admin.LoginForm LoginForm = new Admin.LoginForm();
-            LoginForm.ShowDialog();
+            LoginForm.Show();
+            this.Close();
+        }
+
+        private void createNewUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin.CreateUser createUser = new Admin.CreateUser();
+            createUser.ShowDialog();
         }
     }
 }
