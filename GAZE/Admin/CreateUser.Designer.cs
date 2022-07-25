@@ -184,6 +184,8 @@
             this.username_txt.WaterMark = "Username";
             this.username_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.username_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.username_txt.Click += new System.EventHandler(this.username_txt_Click);
+            this.username_txt.Enter += new System.EventHandler(this.username_txt_Enter);
             // 
             // password_txt
             // 
@@ -243,6 +245,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Name = "CreateUser";
             this.Text = "CreateUser";
+            this.Load += new System.EventHandler(this.CreateUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

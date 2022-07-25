@@ -39,10 +39,5 @@ namespace Gaze.BusinessLogic.Config
 
             defaultForm.Text = ConfigurationSettings.AppSettings["CompanyName"] + " - " + Application.ProductVersion + " - " + additionInfo;
         }
-
-
-
-
-
     }
 }

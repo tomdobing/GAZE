@@ -16,6 +16,12 @@ namespace Gaze.BusinessLogic.SQLManagement
         private string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         public static string GlobalUsername { get; set; }
 
+        /// <summary>
+        /// Method used to log a user in
+        /// </summary>
+        /// <param name="username">The username of user</param>
+        /// <param name="password">Password for users account</param>
+        /// <returns></returns>
         public bool UserLogin(MetroTextBox username, MetroTextBox password)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -47,6 +53,35 @@ namespace Gaze.BusinessLogic.SQLManagement
                 throw;
             }
 
+        }
+
+        public bool isUserAdmin(string username)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_USER_ADMIN_SP", scon);
+                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                sqlCommand.Parameters.AddWithValue("username", username);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    
+                    return true;
+
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
 

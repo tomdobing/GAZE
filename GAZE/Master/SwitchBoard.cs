@@ -23,6 +23,15 @@ namespace GAZE
             StartTimer();
             toolStripLabel2.Text = "Build:" + Application.ProductVersion.ToString();
             loginSecurity.GetLoggedinUserName(toolStripLabel3);
+            if (infoSec.isUserAdmin(InfoSec.GlobalUsername) == false)
+            {
+                adminToolStripMenuItem.Enabled = false;
+            }
+            else
+            {
+                adminToolStripMenuItem.Enabled = true;
+            }
+            
         }
 
         System.Windows.Forms.Timer t = null;
