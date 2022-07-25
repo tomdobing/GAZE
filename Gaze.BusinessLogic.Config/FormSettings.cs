@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Runtime.InteropServices;
+using Gaze.BusinessLogic.SQLManagement;
 
 namespace Gaze.BusinessLogic.Config
 {
     public class FormSettings
     {
+        InfoSec infoSec = new InfoSec();
 
         /// <summary>
         /// Sets the default form settings.

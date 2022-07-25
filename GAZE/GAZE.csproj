@@ -134,6 +134,10 @@
       <Project>{73c7db54-40d2-4e7e-b198-0b33fe341152}</Project>
       <Name>Gaze.BusinessLogic.Security</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Gaze.BusinessLogic.SQLManagement\Gaze.BusinessLogic.SQLManagement.csproj">
+      <Project>{652c3e19-e25a-4b29-85e6-185bdf63fb1a}</Project>
+      <Name>Gaze.BusinessLogic.SQLManagement</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Customer\" />

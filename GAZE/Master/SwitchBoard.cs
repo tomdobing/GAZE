@@ -2,14 +2,14 @@
 using System.Windows.Forms;
 using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.Security;
-
+using Gaze.BusinessLogic.SQLManagement;
 namespace GAZE
 {
     public partial class SwitchBoard : Form
     {
         FormSettings GetFormSettings = new FormSettings();
         LoginSecurity loginSecurity = new LoginSecurity();
-
+        InfoSec infoSec = new InfoSec();
         public SwitchBoard()
         {
             InitializeComponent();
@@ -43,6 +43,7 @@ namespace GAZE
         {
             Help.AboutUs aboutBox1 = new Help.AboutUs();
             aboutBox1.ShowDialog();
+            
         }
 
         private void exitApplicationToolStripMenuItem_Click(object sender, EventArgs e)

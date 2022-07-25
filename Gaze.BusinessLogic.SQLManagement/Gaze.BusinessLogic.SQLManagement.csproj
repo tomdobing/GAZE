@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{73C7DB54-40D2-4E7E-B198-0B33FE341152}</ProjectGuid>
+    <ProjectGuid>{652C3E19-E25A-4B29-85E6-185BDF63FB1A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gaze.BusinessLogic.Security</RootNamespace>
-    <AssemblyName>Gaze.BusinessLogic.Security</AssemblyName>
+    <RootNamespace>Gaze.BusinessLogic.SQLManagement</RootNamespace>
+    <AssemblyName>Gaze.BusinessLogic.SQLManagement</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,6 +41,7 @@
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -52,8 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginFormSettings.cs" />
-    <Compile Include="LoginSecurity.cs" />
+    <Compile Include="InfoSec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,12 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Gaze.BusinessLogic.SQLManagement\Gaze.BusinessLogic.SQLManagement.csproj">
-      <Project>{652c3e19-e25a-4b29-85e6-185bdf63fb1a}</Project>
-      <Name>Gaze.BusinessLogic.SQLManagement</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
