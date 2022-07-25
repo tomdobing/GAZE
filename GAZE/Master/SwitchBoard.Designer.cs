@@ -1,6 +1,6 @@
 ﻿namespace GAZE
 {
-    partial class Master
+    partial class SwitchBoard
     {
         /// <summary>
         /// Required designer variable.

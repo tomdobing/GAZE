@@ -53,7 +53,7 @@
             // 
             // 
             this.username_txt.CustomButton.Image = null;
-            this.username_txt.CustomButton.Location = new System.Drawing.Point(228, 1);
+            this.username_txt.CustomButton.Location = new System.Drawing.Point(287, 1);
             this.username_txt.CustomButton.Name = "";
             this.username_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.username_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -86,7 +86,7 @@
             // 
             // 
             this.password_txt.CustomButton.Image = null;
-            this.password_txt.CustomButton.Location = new System.Drawing.Point(228, 1);
+            this.password_txt.CustomButton.Location = new System.Drawing.Point(287, 1);
             this.password_txt.CustomButton.Name = "";
             this.password_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.password_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -111,6 +111,7 @@
             this.password_txt.WaterMark = "Password";
             this.password_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.password_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.password_txt.Click += new System.EventHandler(this.password_txt_Click);
             // 
             // passwordlbl
             // 
@@ -138,6 +139,7 @@
             this.metroButton1.TabIndex = 5;
             this.metroButton1.Text = "Sign In";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroLabel1
             // 

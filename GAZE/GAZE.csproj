@@ -84,11 +84,11 @@
     <Compile Include="Help\AboutUs.Designer.cs">
       <DependentUpon>AboutUs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Master\Master.cs">
+    <Compile Include="Master\SwitchBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Master\Master.Designer.cs">
-      <DependentUpon>Master.cs</DependentUpon>
+    <Compile Include="Master\SwitchBoard.Designer.cs">
+      <DependentUpon>SwitchBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,8 +98,8 @@
     <EmbeddedResource Include="Help\AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Master\Master.resx">
-      <DependentUpon>Master.cs</DependentUpon>
+    <EmbeddedResource Include="Master\SwitchBoard.resx">
+      <DependentUpon>SwitchBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

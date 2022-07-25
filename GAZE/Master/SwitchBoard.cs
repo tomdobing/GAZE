@@ -5,12 +5,12 @@ using Gaze.BusinessLogic.Security;
 
 namespace GAZE
 {
-    public partial class Master : Form
+    public partial class SwitchBoard : Form
     {
         FormSettings GetFormSettings = new FormSettings();
         LoginSecurity loginSecurity = new LoginSecurity();
 
-        public Master()
+        public SwitchBoard()
         {
             InitializeComponent();
             GetFormSettings.SetFormSettings(this);
