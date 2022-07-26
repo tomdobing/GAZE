@@ -146,11 +146,11 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(313, 22);
+            this.metroLabel1.Location = new System.Drawing.Point(295, 22);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(201, 25);
+            this.metroLabel1.Size = new System.Drawing.Size(280, 25);
             this.metroLabel1.TabIndex = 6;
-            this.metroLabel1.Text = "Welcome. Please Sign In!";
+            this.metroLabel1.Text = "Welcome to G.A.Z.E. Please Sign In!";
             // 
             // LoginForm
             // 

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Gaze.BusinessLogic.SQLManagement;
 using System.Configuration;
 using System.Runtime.InteropServices;
-using Gaze.BusinessLogic.SQLManagement;
+using System.Windows.Forms;
 
 namespace Gaze.BusinessLogic.Config
 {

@@ -25,8 +25,8 @@ namespace GAZE.Admin
 
         private void addusr_txt_Click(object sender, EventArgs e)
         {
-            userNamanegement.CreateNewUser(FName_txt, sName_txt, username_txt, password_txt, admin_chk);
-            this.Close();
+            userNamanegement.CreateNewUser(FName_txt, sName_txt, username_txt, password_txt, admin_chk, this);
+            
 
         }
 
