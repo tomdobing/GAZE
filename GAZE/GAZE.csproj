@@ -94,6 +94,12 @@
     <Compile Include="Admin\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ResetUserPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ResetUserPassword.Designer.cs">
+      <DependentUpon>ResetUserPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\UserMgr.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ResetUserPassword.resx">
+      <DependentUpon>ResetUserPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Help\AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>

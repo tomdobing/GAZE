@@ -37,7 +37,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                     sqlCommand.Parameters.AddWithValue("Surname", Surname.Text);
                     sqlCommand.Parameters.AddWithValue("username", Username.Text);
                     sqlCommand.Parameters.AddWithValue("password", Password.Text);
-                    if (IsAdmin.CheckState == System.Windows.Forms.CheckState.Checked)
+                    if (IsAdmin.CheckState == CheckState.Checked)
                     {
                         sqlCommand.Parameters.AddWithValue("ISAdmin", 1);
 
@@ -65,6 +65,32 @@ namespace Gaze.BusinessLogic.SQLManagement
                     MessageBox.Show(message, caption, buttons,
                     MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
+            }
+
+
+        }
+
+        public void ResetUserPassword(MetroTextBox Username, MetroTextBox Password)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_IF_USER_EXISTS_SP", scon);
+                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                sqlCommand.Parameters.AddWithValue("Username", Username.Text);
+                sqlCommand.Parameters.AddWithValue("Password", Password.Text);
+                sqlCommand.Parameters.AddWithValue("UpdatedBy", InfoSec.GlobalUsername);
+                sqlCommand.ExecuteReader();
+                string message = "User: " + Username.Text + "'s password has been reset Succesfully.";
+                string caption = "User Password Reset";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons,
+                MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception)
+            {
+                throw;
             }
 
 

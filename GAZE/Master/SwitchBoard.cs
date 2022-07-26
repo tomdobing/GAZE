@@ -109,5 +109,11 @@ namespace GAZE
             Customer.NewCustomer newCustomer = new Customer.NewCustomer();
             newCustomer.ShowDialog();
         }
+
+        private void resetUserPasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin.ResetUserPassword resetUserPassword = new Admin.ResetUserPassword();
+            resetUserPassword.ShowDialog();
+        }
     }
 }

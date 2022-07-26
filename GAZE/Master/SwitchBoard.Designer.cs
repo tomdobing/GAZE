@@ -49,6 +49,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newStockInputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetUserPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -151,6 +153,8 @@
             // 
             // stockManagementToolStripMenuItem
             // 
+            this.stockManagementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newStockInputToolStripMenuItem});
             this.stockManagementToolStripMenuItem.Name = "stockManagementToolStripMenuItem";
             this.stockManagementToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
             this.stockManagementToolStripMenuItem.Text = "Stock Management";
@@ -159,7 +163,8 @@
             // 
             this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createNewUserToolStripMenuItem,
-            this.editDeleteUsersToolStripMenuItem});
+            this.editDeleteUsersToolStripMenuItem,
+            this.resetUserPasswordToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.adminToolStripMenuItem.Text = "Admin";
@@ -215,6 +220,19 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // newStockInputToolStripMenuItem
+            // 
+            this.newStockInputToolStripMenuItem.Name = "newStockInputToolStripMenuItem";
+            this.newStockInputToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newStockInputToolStripMenuItem.Text = "New Stock Input";
+            // 
+            // resetUserPasswordToolStripMenuItem
+            // 
+            this.resetUserPasswordToolStripMenuItem.Name = "resetUserPasswordToolStripMenuItem";
+            this.resetUserPasswordToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.resetUserPasswordToolStripMenuItem.Text = "Reset User Password";
+            this.resetUserPasswordToolStripMenuItem.Click += new System.EventHandler(this.resetUserPasswordToolStripMenuItem_Click);
+            // 
             // SwitchBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,6 +276,8 @@
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createNewUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editDeleteUsersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newStockInputToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resetUserPasswordToolStripMenuItem;
     }
 }
 
