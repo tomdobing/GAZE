@@ -75,28 +75,40 @@ namespace Gaze.BusinessLogic.SQLManagement
         public void ResetUserPassword(MetroTextBox Username, MetroTextBox Password)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
-            try
+            if (Password.Text.Length >= 7)
             {
-                scon.Open();
-                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_USER_PASSWORD_SP", scon)
+                try
                 {
-                    CommandType = System.Data.CommandType.StoredProcedure
-                };
-                sqlCommand.Parameters.AddWithValue("Username", Username.Text);
-                sqlCommand.Parameters.AddWithValue("Password", Password.Text);
-                sqlCommand.Parameters.AddWithValue("UpdatedBy", InfoSec.GlobalUsername);
-                sqlCommand.ExecuteReader();
-                string message = "User: " + Username.Text + "'s password has been reset Succesfully.";
-                string caption = "User Password Reset";
+                    scon.Open();
+                    SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_USER_PASSWORD_SP", scon)
+                    {
+                        CommandType = System.Data.CommandType.StoredProcedure
+                    };
+                    sqlCommand.Parameters.AddWithValue("Username", Username.Text);
+                    sqlCommand.Parameters.AddWithValue("Password", Password.Text);
+                    sqlCommand.Parameters.AddWithValue("UpdatedBy", InfoSec.GlobalUsername);
+                    sqlCommand.ExecuteReader();
+                    string message = "User: " + Username.Text + "'s password has been reset Succesfully.";
+                    string caption = "User Password Reset";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, caption, buttons,
+                    MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+            else
+            {
+                string message = "The password must be greater than 7 Characters.";
+                string caption = "User Password Failure";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(message, caption, buttons,
-                MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-
+                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
-            catch (Exception)
-            {
-                throw;
-            }
+            
 
 
 
