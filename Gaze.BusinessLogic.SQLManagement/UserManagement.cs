@@ -87,11 +87,54 @@ namespace Gaze.BusinessLogic.SQLManagement
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(message, caption, buttons,
                 MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+
             }
             catch (Exception)
             {
                 throw;
             }
+
+
+
+
+        }
+
+        public bool CheckIfUserExists(MetroTextBox Username)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_IF_USER_EXISTS_SP", scon);
+                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                sqlCommand.Parameters.AddWithValue("Username", Username.Text);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+
+                if (reader.Read())
+                {
+                
+                    return true;
+
+
+                }
+                else
+                {
+                    string message = "User: " + Username.Text + " does not exist in the database. Please check the username and try again.";
+                    string caption = "Validation Failure";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, caption, buttons,
+                    MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    return false;
+                }
+
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+
 
 
         }

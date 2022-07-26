@@ -40,7 +40,16 @@ namespace GAZE.Admin
             }
             else
             {
-                UserManagement.ResetUserPassword(usrname_txt, confrim_txt);
+                if (UserManagement.CheckIfUserExists(usrname_txt) == true)
+                {
+                    UserManagement.ResetUserPassword(usrname_txt, confrim_txt);
+                    this.Close();
+                }
+                else
+                {
+                    
+                }
+                
             }
         }
     }
