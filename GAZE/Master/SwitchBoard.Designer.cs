@@ -42,13 +42,13 @@
             this.newCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editDeleteUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideTimeDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editDeleteUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -145,8 +145,9 @@
             // newCustomerToolStripMenuItem
             // 
             this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
-            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newCustomerToolStripMenuItem.Text = "New Customer";
+            this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.newCustomerToolStripMenuItem_Click);
             // 
             // stockManagementToolStripMenuItem
             // 
@@ -162,6 +163,19 @@
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.adminToolStripMenuItem.Text = "Admin";
+            // 
+            // createNewUserToolStripMenuItem
+            // 
+            this.createNewUserToolStripMenuItem.Name = "createNewUserToolStripMenuItem";
+            this.createNewUserToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.createNewUserToolStripMenuItem.Text = "Create New User";
+            this.createNewUserToolStripMenuItem.Click += new System.EventHandler(this.createNewUserToolStripMenuItem_Click);
+            // 
+            // editDeleteUsersToolStripMenuItem
+            // 
+            this.editDeleteUsersToolStripMenuItem.Name = "editDeleteUsersToolStripMenuItem";
+            this.editDeleteUsersToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.editDeleteUsersToolStripMenuItem.Text = "Edit/Delete Users";
             // 
             // windowToolStripMenuItem
             // 
@@ -200,19 +214,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // createNewUserToolStripMenuItem
-            // 
-            this.createNewUserToolStripMenuItem.Name = "createNewUserToolStripMenuItem";
-            this.createNewUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.createNewUserToolStripMenuItem.Text = "Create New User";
-            this.createNewUserToolStripMenuItem.Click += new System.EventHandler(this.createNewUserToolStripMenuItem_Click);
-            // 
-            // editDeleteUsersToolStripMenuItem
-            // 
-            this.editDeleteUsersToolStripMenuItem.Name = "editDeleteUsersToolStripMenuItem";
-            this.editDeleteUsersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.editDeleteUsersToolStripMenuItem.Text = "Edit/Delete Users";
             // 
             // SwitchBoard
             // 

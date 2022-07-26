@@ -103,5 +103,11 @@ namespace GAZE
             Admin.CreateUser createUser = new Admin.CreateUser();
             createUser.ShowDialog();
         }
+
+        private void newCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Customer.NewCustomer newCustomer = new Customer.NewCustomer();
+            newCustomer.ShowDialog();
+        }
     }
 }

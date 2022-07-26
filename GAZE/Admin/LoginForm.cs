@@ -27,6 +27,7 @@ namespace GAZE.Admin
         {
             //password_txt.UseSystemPasswordChar = true;
             password_txt.PasswordChar = '*';
+            metroLabel2.Text = Application.ProductVersion;
         }
 
         private void password_txt_Click(object sender, EventArgs e)
@@ -49,6 +50,8 @@ namespace GAZE.Admin
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(this, message, caption, buttons,
                 MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                password_txt.Clear();
+                password_txt.Focus();
             }
 
         }
