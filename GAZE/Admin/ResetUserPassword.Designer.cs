@@ -66,7 +66,7 @@
             this.usrname_txt.MaxLength = 32767;
             this.usrname_txt.Name = "usrname_txt";
             this.usrname_txt.PasswordChar = '\0';
-            this.usrname_txt.PromptText = "Username";
+            //this.usrname_txt.PromptText = "Username";
             this.usrname_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.usrname_txt.SelectedText = "";
             this.usrname_txt.SelectionLength = 0;
@@ -98,7 +98,7 @@
             this.password_txt.MaxLength = 32767;
             this.password_txt.Name = "password_txt";
             this.password_txt.PasswordChar = '\0';
-            this.password_txt.PromptText = "Password";
+            //this.password_txt.PromptText = "Password";
             this.password_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.password_txt.SelectedText = "";
             this.password_txt.SelectionLength = 0;
@@ -139,7 +139,7 @@
             this.confrim_txt.MaxLength = 32767;
             this.confrim_txt.Name = "confrim_txt";
             this.confrim_txt.PasswordChar = '\0';
-            this.confrim_txt.PromptText = "Confirm Password";
+           // this.confrim_txt.PromptText = "Confirm Password";
             this.confrim_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.confrim_txt.SelectedText = "";
             this.confrim_txt.SelectionLength = 0;

@@ -9,7 +9,7 @@ namespace Gaze.BusinessLogic.SQLManagement
     public class UserManagement
     {
 
-        private string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
+        private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         /// <summary>
         /// Method used for creating new System Users
         /// </summary>
@@ -31,8 +31,10 @@ namespace Gaze.BusinessLogic.SQLManagement
                 try
                 {
                     scon.Open();
-                    SqlCommand sqlCommand = new SqlCommand("dbo.INSERT_NEW_USER_SP", scon);
-                    sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                    SqlCommand sqlCommand = new SqlCommand("dbo.INSERT_NEW_USER_SP", scon)
+                    {
+                        CommandType = System.Data.CommandType.StoredProcedure
+                    };
                     sqlCommand.Parameters.AddWithValue("Firstname", Firstname.Text);
                     sqlCommand.Parameters.AddWithValue("Surname", Surname.Text);
                     sqlCommand.Parameters.AddWithValue("username", Username.Text);
@@ -76,8 +78,10 @@ namespace Gaze.BusinessLogic.SQLManagement
             try
             {
                 scon.Open();
-                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_IF_USER_EXISTS_SP", scon);
-                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_USER_PASSWORD_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
                 sqlCommand.Parameters.AddWithValue("Username", Username.Text);
                 sqlCommand.Parameters.AddWithValue("Password", Password.Text);
                 sqlCommand.Parameters.AddWithValue("UpdatedBy", InfoSec.GlobalUsername);
@@ -105,8 +109,10 @@ namespace Gaze.BusinessLogic.SQLManagement
             try
             {
                 scon.Open();
-                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_IF_USER_EXISTS_SP", scon);
-                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_USER_EXISTS_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
                 sqlCommand.Parameters.AddWithValue("Username", Username.Text);
                 SqlDataReader reader = sqlCommand.ExecuteReader();
 
@@ -123,7 +129,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                     string caption = "Validation Failure";
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
                     MessageBox.Show(message, caption, buttons,
-                    MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     return false;
                 }
 

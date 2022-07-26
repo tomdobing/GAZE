@@ -15,8 +15,8 @@ namespace GAZE.Admin
 {
     public partial class LoginForm : MetroFramework.Forms.MetroForm
     {
-        InfoSec infoSec = new InfoSec();
-        LoginFormSettings formSettings = new LoginFormSettings();
+        readonly InfoSec infoSec = new InfoSec();
+       readonly LoginFormSettings formSettings = new LoginFormSettings();
         public LoginForm()
         {
             InitializeComponent();
@@ -30,12 +30,12 @@ namespace GAZE.Admin
             metroLabel2.Text = Application.ProductVersion;
         }
 
-        private void password_txt_Click(object sender, EventArgs e)
+        private void Password_txt_Click(object sender, EventArgs e)
         {
           
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void MetroButton1_Click(object sender, EventArgs e)
         {
             if (infoSec.UserLogin(username_txt, password_txt) == true)
             {

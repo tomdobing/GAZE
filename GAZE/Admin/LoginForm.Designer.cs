@@ -113,7 +113,7 @@
             this.password_txt.WaterMark = "Password";
             this.password_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.password_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.password_txt.Click += new System.EventHandler(this.password_txt_Click);
+            this.password_txt.Click += new System.EventHandler(this.Password_txt_Click);
             // 
             // passwordlbl
             // 
@@ -141,7 +141,7 @@
             this.metroButton1.TabIndex = 5;
             this.metroButton1.Text = "Sign In";
             this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
             // metroLabel1
             // 
