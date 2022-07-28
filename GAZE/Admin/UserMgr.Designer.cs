@@ -61,7 +61,7 @@
             this.fstname_txt.CustomButton.UseSelectable = true;
             this.fstname_txt.CustomButton.Visible = false;
             this.fstname_txt.Lines = new string[0];
-            this.fstname_txt.Location = new System.Drawing.Point(137, 52);
+            this.fstname_txt.Location = new System.Drawing.Point(138, 52);
             this.fstname_txt.MaxLength = 32767;
             this.fstname_txt.Name = "fstname_txt";
             this.fstname_txt.PasswordChar = '\0';
@@ -220,13 +220,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 208);
+            this.ClientSize = new System.Drawing.Size(517, 211);
             this.Controls.Add(this.id_txt);
+            this.Controls.Add(this.fstname_txt);
             this.Controls.Add(this.metroCheckBox1);
             this.Controls.Add(this.psswrd_txt);
             this.Controls.Add(this.usrname_txt);
             this.Controls.Add(this.surname_txt);
-            this.Controls.Add(this.fstname_txt);
             this.Controls.Add(this.listBox1);
             this.Name = "UserMgr";
             this.Text = "UserMgr";

@@ -1,35 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MetroFramework.Forms;
-using Gaze.BusinessLogic.Security;
+﻿using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.BusinessLogic.Startup;
+using System;
+using System.Windows.Forms;
 namespace GAZE.Admin
 {
     public partial class LoginForm : MetroFramework.Forms.MetroForm
     {
         PreLoginChecks PreLoginChecks = new PreLoginChecks();
         readonly InfoSec infoSec = new InfoSec();
-       readonly LoginFormSettings formSettings = new LoginFormSettings();
+        readonly LoginFormSettings formSettings = new LoginFormSettings();
         public LoginForm()
         {
             InitializeComponent();
             formSettings.SetFormValue(this);
+            //metroProgressSpinner1.Hide();
+
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
             if (PreLoginChecks.CheckSQLServerIsOnline() == true)
             {
-                //password_txt.UseSystemPasswordChar = true;
-                password_txt.PasswordChar = '*';
+                password_txt.UseSystemPasswordChar = true;
+                //password_txt.PasswordChar = '*';
                 metroLabel2.Text = Application.ProductVersion;
 
             }
@@ -37,17 +31,19 @@ namespace GAZE.Admin
             {
                 Application.Exit();
             }
-            
+
 
         }
 
         private void Password_txt_Click(object sender, EventArgs e)
         {
-          
+
         }
+
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
+
             if (infoSec.UserLogin(username_txt, password_txt) == true)
             {
                 SwitchBoard master = new SwitchBoard();
@@ -66,5 +62,15 @@ namespace GAZE.Admin
             }
 
         }
+
+        private void LoginForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                metroButton1.PerformClick();
+            }
+        }
+
     }
 }
+
