@@ -115,5 +115,11 @@ namespace GAZE
             Admin.ResetUserPassword resetUserPassword = new Admin.ResetUserPassword();
             resetUserPassword.ShowDialog();
         }
+
+        private void editDeleteUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin.UserMgr user = new Admin.UserMgr();
+            user.ShowDialog();
+        }
     }
 }

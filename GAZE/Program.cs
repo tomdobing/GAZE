@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Gaze.BusinessLogic.Startup;
 namespace GAZE
 {
+    
     internal static class Program
     {
 
@@ -25,13 +26,14 @@ namespace GAZE
         //    //Application.Run(loginForm);
         //}
 
-
+        
         /// <summary>
         /// Startup form changed to allow login screen to close
         /// </summary>
         [STAThread]
         static void Main()
         {
+           
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var main = new Admin.LoginForm();

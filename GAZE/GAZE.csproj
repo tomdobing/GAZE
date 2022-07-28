@@ -12,6 +12,17 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <AssemblyVersionSettings>None.None.NoneWithAutoReset.Increment</AssemblyVersionSettings>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+    <AssemblyFileVersionSettings>None.None.NoneWithAutoReset.Increment</AssemblyFileVersionSettings>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,19 +35,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <ShouldCreateLogs>True</ShouldCreateLogs>
-    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
-    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
-    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
-    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
-    <AssemblyVersionSettings>None.None.NoneWithAutoReset.Increment</AssemblyVersionSettings>
-    <UpdatePackageVersion>False</UpdatePackageVersion>
-    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
-    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
-    <AssemblyFileVersionSettings>None.None.NoneWithAutoReset.Increment</AssemblyFileVersionSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,6 +56,10 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
@@ -135,6 +139,9 @@
     <EmbeddedResource Include="Admin\ResetUserPassword.resx">
       <DependentUpon>ResetUserPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserMgr.resx">
+      <DependentUpon>UserMgr.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Help\AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +184,10 @@
     <ProjectReference Include="..\Gaze.BusinessLogic.SQLManagement\Gaze.BusinessLogic.SQLManagement.csproj">
       <Project>{652c3e19-e25a-4b29-85e6-185bdf63fb1a}</Project>
       <Name>Gaze.BusinessLogic.SQLManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gaze.BusinessLogic.Startup\Gaze.BusinessLogic.Startup.csproj">
+      <Project>{554c89c5-535d-4a93-97b4-cdbd6cf37c10}</Project>
+      <Name>Gaze.BusinessLogic.Startup</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -10,11 +10,12 @@ using System.Windows.Forms;
 using MetroFramework.Forms;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
-
+using Gaze.BusinessLogic.Startup;
 namespace GAZE.Admin
 {
     public partial class LoginForm : MetroFramework.Forms.MetroForm
     {
+        PreLoginChecks PreLoginChecks = new PreLoginChecks();
         readonly InfoSec infoSec = new InfoSec();
        readonly LoginFormSettings formSettings = new LoginFormSettings();
         public LoginForm()
@@ -25,9 +26,19 @@ namespace GAZE.Admin
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            //password_txt.UseSystemPasswordChar = true;
-            password_txt.PasswordChar = '*';
-            metroLabel2.Text = Application.ProductVersion;
+            if (PreLoginChecks.CheckSQLServerIsOnline() == true)
+            {
+                //password_txt.UseSystemPasswordChar = true;
+                password_txt.PasswordChar = '*';
+                metroLabel2.Text = Application.ProductVersion;
+
+            }
+            else if (PreLoginChecks.CheckSQLServerIsOnline() == false)
+            {
+                Application.Exit();
+            }
+            
+
         }
 
         private void Password_txt_Click(object sender, EventArgs e)

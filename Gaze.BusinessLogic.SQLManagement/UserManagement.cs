@@ -3,6 +3,7 @@ using System;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Gaze.BusinessLogic.SQLManagement
 {
@@ -154,6 +155,69 @@ namespace Gaze.BusinessLogic.SQLManagement
 
 
 
+
+        }
+
+        public void SelectAllUsers(ListBox listBox)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_ALL_USERS_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    listBox.Items.Add(sqlDataReader[3].ToString());
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+        public void SelectedUser(ListBox listBox, MetroTextBox ID, MetroTextBox firstname, MetroTextBox surname, MetroTextBox username, MetroTextBox password, MetroCheckBox isadmin)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_SINGLE_USER_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@Username", listBox.SelectedItem.ToString());
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    ID.Text = sqlDataReader[0].ToString();
+                    firstname.Text = sqlDataReader[1].ToString();
+                    surname.Text = sqlDataReader[2].ToString();
+                    username.Text = sqlDataReader[3].ToString();
+                    password.Text = sqlDataReader[4].ToString();
+                    if (sqlDataReader[5].ToString().Length == 1)
+                    {
+                        isadmin.CheckState = CheckState.Checked;
+                    }
+                    else
+                    {
+                        isadmin.CheckState = CheckState.Unchecked;
+                    }
+                    
+                    
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
 
         }
     }
