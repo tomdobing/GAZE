@@ -84,7 +84,7 @@ namespace GAZE
 
         private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "An uknown error occured when checking for updates. Please try again later!";
+            string message = "An unknown error occured when checking for updateadminadmins. Please try again later!";
             string caption = "Something went wrong";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             MessageBox.Show(this, message, caption, buttons,
