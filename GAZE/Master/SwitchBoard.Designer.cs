@@ -162,7 +162,7 @@
             // newStockInputToolStripMenuItem
             // 
             this.newStockInputToolStripMenuItem.Name = "newStockInputToolStripMenuItem";
-            this.newStockInputToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newStockInputToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.newStockInputToolStripMenuItem.Text = "New Stock Input";
             // 
             // adminToolStripMenuItem
@@ -207,7 +207,7 @@
             // hideTimeDateToolStripMenuItem
             // 
             this.hideTimeDateToolStripMenuItem.Name = "hideTimeDateToolStripMenuItem";
-            this.hideTimeDateToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.hideTimeDateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hideTimeDateToolStripMenuItem.Text = "Hide Toolstrip";
             this.hideTimeDateToolStripMenuItem.Click += new System.EventHandler(this.hideTimeDateToolStripMenuItem_Click);
             // 
@@ -223,14 +223,14 @@
             // checkForUpdatesToolStripMenuItem
             // 
             this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkForUpdatesToolStripMenuItem.Text = "Check for updates";
             this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 

@@ -31,7 +31,7 @@ namespace GAZE.Admin
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if (usrname_txt.Text == "" | password_txt.Text == "" | confrim_txt.Text == "")
+            if (usrname_txt.Text == "" | password_txt.Text == "" | confirm_txt.Text == "")
             {
                 string message = "You must complete all data fields";
                 string caption = "Data Validation Failure";
@@ -43,9 +43,9 @@ namespace GAZE.Admin
             {
                 if (UserManagement.CheckIfUserExists(usrname_txt) == true)
                 {
-                    if (password_txt.Text == confrim_txt.Text)
+                    if (password_txt.Text == confirm_txt.Text)
                     {
-                        UserManagement.ResetUserPassword(usrname_txt, confrim_txt);
+                        UserManagement.ResetUserPassword(usrname_txt, confirm_txt);
                         this.Close();
                     }
                     else

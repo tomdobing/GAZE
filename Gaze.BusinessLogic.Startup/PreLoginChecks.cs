@@ -7,8 +7,15 @@ namespace Gaze.BusinessLogic.Startup
 {
     public class PreLoginChecks
     {
+        #region Declarations
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
+        #endregion
 
+        #region Methods
+        /// <summary>
+        /// Method checks if the Configured SQL Server is online
+        /// </summary>
+        /// <returns>True - Server online False - Server Offline</returns>
         public bool CheckSQLServerIsOnline()
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -40,6 +47,7 @@ namespace Gaze.BusinessLogic.Startup
             }
 
         }
+        #endregion
 
     }
 }

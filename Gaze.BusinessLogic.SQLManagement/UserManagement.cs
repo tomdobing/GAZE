@@ -9,8 +9,11 @@ namespace Gaze.BusinessLogic.SQLManagement
 {
     public class UserManagement
     {
-
+        #region Declarations
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
+        #endregion
+
+        #region Methods
         /// <summary>
         /// Method used for creating new System Users
         /// </summary>
@@ -73,6 +76,11 @@ namespace Gaze.BusinessLogic.SQLManagement
 
         }
 
+        /// <summary>
+        /// Resets a user password
+        /// </summary>
+        /// <param name="Username"></param>
+        /// <param name="Password"></param>
         public void ResetUserPassword(MetroTextBox Username, MetroTextBox Password)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -116,6 +124,11 @@ namespace Gaze.BusinessLogic.SQLManagement
 
         }
 
+        /// <summary>
+        /// used to check if the user exists before creating a new user
+        /// </summary>
+        /// <param name="Username">Username to be created</param>
+        /// <returns></returns>
         public bool CheckIfUserExists(MetroTextBox Username)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -157,7 +170,10 @@ namespace Gaze.BusinessLogic.SQLManagement
 
 
         }
-
+        /// <summary>
+        /// Selects users in the configured SQL Server Database and returns username only into ListBox
+        /// </summary>
+        /// <param name="listBox"></param>
         public void SelectAllUsers(ListBox listBox)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -263,4 +279,5 @@ namespace Gaze.BusinessLogic.SQLManagement
 
         }
     }
+    #endregion
 }

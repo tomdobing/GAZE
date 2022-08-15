@@ -6,8 +6,12 @@ namespace GAZE.Admin
 {
     public partial class UserMgr : Form
     {
+        #region Declarations
         FormSettings FormSettings = new FormSettings();
         UserManagement UserManagement = new UserManagement();
+        #endregion
+
+        #region Methods
         public UserMgr()
         {
             InitializeComponent();
@@ -58,5 +62,6 @@ namespace GAZE.Admin
         {
             UserManagement.UpdateUser(id_txt, usrname_txt, fstname_txt, surname_txt);
         }
+        #endregion
     }
 }

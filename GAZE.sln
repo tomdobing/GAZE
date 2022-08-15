@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaze.BusinessLogic.SQLManag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaze.BusinessLogic.Startup", "Gaze.BusinessLogic.Startup\Gaze.BusinessLogic.Startup.csproj", "{554C89C5-535D-4A93-97B4-CDBD6CF37C10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaze.BusinessLogic.Exceptions", "Gaze.BusinessLogic.Exceptions\Gaze.BusinessLogic.Exceptions.csproj", "{C19908C8-7CB6-4888-9FB7-354076BB9ACB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{554C89C5-535D-4A93-97B4-CDBD6CF37C10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{554C89C5-535D-4A93-97B4-CDBD6CF37C10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{554C89C5-535D-4A93-97B4-CDBD6CF37C10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C19908C8-7CB6-4888-9FB7-354076BB9ACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C19908C8-7CB6-4888-9FB7-354076BB9ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C19908C8-7CB6-4888-9FB7-354076BB9ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C19908C8-7CB6-4888-9FB7-354076BB9ACB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

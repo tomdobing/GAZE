@@ -7,10 +7,13 @@ namespace GAZE
 {
     public partial class SwitchBoard : Form
     {
+        #region Declarations
         FormSettings GetFormSettings = new FormSettings();
         LoginSecurity loginSecurity = new LoginSecurity();
         InfoSec infoSec = new InfoSec();
-        
+        #endregion
+
+        #region Methods
         public SwitchBoard()
         {
             InitializeComponent();
@@ -123,5 +126,6 @@ namespace GAZE
             Admin.UserMgr user = new Admin.UserMgr();
             user.ShowDialog();
         }
+        #endregion
     }
 }

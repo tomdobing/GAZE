@@ -5,11 +5,16 @@ using System;
 using System.Windows.Forms;
 namespace GAZE.Admin
 {
+
     public partial class LoginForm : MetroFramework.Forms.MetroForm
     {
+        #region Declarations
         PreLoginChecks PreLoginChecks = new PreLoginChecks();
         readonly InfoSec infoSec = new InfoSec();
         readonly LoginFormSettings formSettings = new LoginFormSettings();
+        #endregion
+
+        #region Methods
         public LoginForm()
         {
             InitializeComponent();
@@ -65,6 +70,7 @@ namespace GAZE.Admin
                 metroButton1.PerformClick();
             }
         }
+        #endregion
 
     }
 }

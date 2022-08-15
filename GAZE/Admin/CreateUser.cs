@@ -14,8 +14,12 @@ namespace GAZE.Admin
 {
     public partial class CreateUser : Form
     {
+        #region Declarations
         FormSettings FormSettings = new FormSettings();
         UserManagement userNamanegement = new UserManagement();
+        #endregion
+
+        #region Methods
         public CreateUser()
         {
             InitializeComponent();
@@ -44,5 +48,6 @@ namespace GAZE.Admin
         {
             username_txt.Text = FName_txt.Text + "." + sName_txt.Text;
         }
+        #endregion
     }
 }
