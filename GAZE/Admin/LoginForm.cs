@@ -35,11 +35,6 @@ namespace GAZE.Admin
 
         }
 
-        private void Password_txt_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {

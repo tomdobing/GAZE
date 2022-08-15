@@ -220,5 +220,47 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
 
         }
+
+        public void UpdateUser(MetroTextBox UserID, MetroTextBox Username, MetroTextBox FirstName, MetroTextBox Surname)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_USER_DETAILS_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("userid", UserID.Text);
+                sqlCommand.Parameters.AddWithValue("username", Username.Text);
+                sqlCommand.Parameters.AddWithValue("FirstName", FirstName.Text);
+                sqlCommand.Parameters.AddWithValue("Surname", Surname.Text);
+                sqlCommand.Parameters.AddWithValue("UpdatedBy", InfoSec.GlobalUsername);
+                sqlCommand.ExecuteReader();
+                string message = "User: " + Username.Text + " has been updated";
+                string caption = "User Updated";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons,
+                MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            catch (SqlException SQLException)
+            {
+                string message = "SQL Exception occured during the update process" + Environment.NewLine + Environment.NewLine + SQLException.Message;
+                string caption = "SQL Exception Occured";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons,
+                MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+
+                string message = "An Error Occured during the Updated Process" + Environment.NewLine + Environment.NewLine + ex.Message;
+                string caption = "Exception Occured";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons,
+                MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+
+        }
     }
 }

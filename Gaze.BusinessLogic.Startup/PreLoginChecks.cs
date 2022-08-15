@@ -22,7 +22,7 @@ namespace Gaze.BusinessLogic.Startup
             {
 
                 string message = "Unable to connect to the selected SQL Server!" +
-                " Please check the SQL Server Connection and try again";
+                " Please check the SQL Server Connection and try again" + Environment.NewLine + Environment.NewLine + ex.Message;
                 string caption = "SQL Server Offline";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(message, caption, buttons,
@@ -31,7 +31,7 @@ namespace Gaze.BusinessLogic.Startup
             }
             catch (Exception ex)
             {
-                string message = "An unknown error has occured. Please try again later";
+                string message = "An unknown error has occured. Please try again later" + Environment.NewLine + Environment.NewLine + ex.Message;
                 string caption = "Unknown Error Occured";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(message, caption, buttons,

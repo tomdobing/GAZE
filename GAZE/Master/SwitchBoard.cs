@@ -10,11 +10,13 @@ namespace GAZE
         FormSettings GetFormSettings = new FormSettings();
         LoginSecurity loginSecurity = new LoginSecurity();
         InfoSec infoSec = new InfoSec();
+        
         public SwitchBoard()
         {
             InitializeComponent();
             GetFormSettings.SetFormSettings(this);
             GetFormSettings.ChangeableFormSettings(this, this.Name);
+            
         }
 
         private void Master_Load(object sender, EventArgs e)
@@ -84,7 +86,7 @@ namespace GAZE
 
         private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "An unknown error occured when checking for updateadminadmins. Please try again later!";
+            string message = "An unknown error occured when checking for updates. Please try again later or contact your system administrator!";
             string caption = "Something went wrong";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             MessageBox.Show(this, message, caption, buttons,

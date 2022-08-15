@@ -35,6 +35,13 @@
             this.psswrd_txt = new MetroFramework.Controls.MetroTextBox();
             this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
             this.id_txt = new MetroFramework.Controls.MetroTextBox();
+            this.metroCheckBox2 = new MetroFramework.Controls.MetroCheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.update_btn = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // listBox1
@@ -42,7 +49,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 186);
+            this.listBox1.Size = new System.Drawing.Size(120, 199);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -61,7 +68,7 @@
             this.fstname_txt.CustomButton.UseSelectable = true;
             this.fstname_txt.CustomButton.Visible = false;
             this.fstname_txt.Lines = new string[0];
-            this.fstname_txt.Location = new System.Drawing.Point(138, 52);
+            this.fstname_txt.Location = new System.Drawing.Point(212, 56);
             this.fstname_txt.MaxLength = 32767;
             this.fstname_txt.Name = "fstname_txt";
             this.fstname_txt.PasswordChar = '\0';
@@ -93,7 +100,7 @@
             this.surname_txt.CustomButton.UseSelectable = true;
             this.surname_txt.CustomButton.Visible = false;
             this.surname_txt.Lines = new string[0];
-            this.surname_txt.Location = new System.Drawing.Point(137, 81);
+            this.surname_txt.Location = new System.Drawing.Point(212, 85);
             this.surname_txt.MaxLength = 32767;
             this.surname_txt.Name = "surname_txt";
             this.surname_txt.PasswordChar = '\0';
@@ -125,7 +132,7 @@
             this.usrname_txt.CustomButton.UseSelectable = true;
             this.usrname_txt.CustomButton.Visible = false;
             this.usrname_txt.Lines = new string[0];
-            this.usrname_txt.Location = new System.Drawing.Point(137, 110);
+            this.usrname_txt.Location = new System.Drawing.Point(212, 114);
             this.usrname_txt.MaxLength = 32767;
             this.usrname_txt.Name = "usrname_txt";
             this.usrname_txt.PasswordChar = '\0';
@@ -157,7 +164,7 @@
             this.psswrd_txt.CustomButton.UseSelectable = true;
             this.psswrd_txt.CustomButton.Visible = false;
             this.psswrd_txt.Lines = new string[0];
-            this.psswrd_txt.Location = new System.Drawing.Point(137, 139);
+            this.psswrd_txt.Location = new System.Drawing.Point(212, 143);
             this.psswrd_txt.MaxLength = 32767;
             this.psswrd_txt.Name = "psswrd_txt";
             this.psswrd_txt.PasswordChar = '\0';
@@ -177,7 +184,7 @@
             // metroCheckBox1
             // 
             this.metroCheckBox1.AutoSize = true;
-            this.metroCheckBox1.Location = new System.Drawing.Point(137, 169);
+            this.metroCheckBox1.Location = new System.Drawing.Point(212, 173);
             this.metroCheckBox1.Name = "metroCheckBox1";
             this.metroCheckBox1.Size = new System.Drawing.Size(76, 15);
             this.metroCheckBox1.TabIndex = 5;
@@ -199,7 +206,7 @@
             this.id_txt.CustomButton.UseSelectable = true;
             this.id_txt.CustomButton.Visible = false;
             this.id_txt.Lines = new string[0];
-            this.id_txt.Location = new System.Drawing.Point(137, 23);
+            this.id_txt.Location = new System.Drawing.Point(212, 27);
             this.id_txt.MaxLength = 32767;
             this.id_txt.Name = "id_txt";
             this.id_txt.PasswordChar = '\0';
@@ -216,11 +223,89 @@
             this.id_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.id_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // metroCheckBox2
+            // 
+            this.metroCheckBox2.AutoSize = true;
+            this.metroCheckBox2.Location = new System.Drawing.Point(212, 195);
+            this.metroCheckBox2.Name = "metroCheckBox2";
+            this.metroCheckBox2.Size = new System.Drawing.Size(83, 15);
+            this.metroCheckBox2.TabIndex = 7;
+            this.metroCheckBox2.Text = "Edit Record";
+            this.metroCheckBox2.UseSelectable = true;
+            this.metroCheckBox2.CheckedChanged += new System.EventHandler(this.metroCheckBox2_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(139, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Record ID";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(139, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "First Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(139, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Surname";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(139, 114);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Username";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(139, 143);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Password";
+            // 
+            // update_btn
+            // 
+            this.update_btn.Location = new System.Drawing.Point(361, 182);
+            this.update_btn.Name = "update_btn";
+            this.update_btn.Size = new System.Drawing.Size(110, 23);
+            this.update_btn.TabIndex = 14;
+            this.update_btn.Text = "Update Record";
+            this.update_btn.UseSelectable = true;
+            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
+            // 
             // UserMgr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 211);
+            this.ClientSize = new System.Drawing.Size(517, 222);
+            this.Controls.Add(this.update_btn);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.metroCheckBox2);
             this.Controls.Add(this.id_txt);
             this.Controls.Add(this.fstname_txt);
             this.Controls.Add(this.metroCheckBox1);
@@ -245,5 +330,12 @@
         private MetroFramework.Controls.MetroTextBox psswrd_txt;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
         private MetroFramework.Controls.MetroTextBox id_txt;
+        private MetroFramework.Controls.MetroCheckBox metroCheckBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private MetroFramework.Controls.MetroButton update_btn;
     }
 }
