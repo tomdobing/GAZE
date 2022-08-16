@@ -37,6 +37,7 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.SQLError_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,7 +114,6 @@
             this.password_txt.WaterMark = "Password";
             this.password_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.password_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            //this.password_txt.Click += new System.EventHandler(this.Password_txt_Click);
             // 
             // passwordlbl
             // 
@@ -162,12 +162,23 @@
             this.metroLabel2.TabIndex = 7;
             this.metroLabel2.Text = "PRODUCT VERSION";
             // 
+            // SQLError_lbl
+            // 
+            this.SQLError_lbl.AutoSize = true;
+            this.SQLError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SQLError_lbl.Location = new System.Drawing.Point(222, 155);
+            this.SQLError_lbl.Name = "SQLError_lbl";
+            this.SQLError_lbl.Size = new System.Drawing.Size(373, 25);
+            this.SQLError_lbl.TabIndex = 8;
+            this.SQLError_lbl.Text = "SQLSERVERERRORPLACEHOLDER";
+            // 
             // LoginForm
             // 
             this.AcceptButton = this.metroButton1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 179);
+            this.Controls.Add(this.SQLError_lbl);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroButton1);
@@ -195,5 +206,6 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
+        private System.Windows.Forms.Label SQLError_lbl;
     }
 }

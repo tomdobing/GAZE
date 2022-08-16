@@ -1,6 +1,8 @@
 ﻿using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.SQLManagement;
 using System;
+using System.Drawing;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 namespace GAZE.Admin
 {
@@ -63,5 +65,6 @@ namespace GAZE.Admin
             UserManagement.UpdateUser(id_txt, usrname_txt, fstname_txt, surname_txt);
         }
         #endregion
+
     }
 }

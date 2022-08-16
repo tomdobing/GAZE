@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using MetroFramework.Controls;
 
 namespace Gaze.BusinessLogic.Startup
 {
@@ -16,7 +17,7 @@ namespace Gaze.BusinessLogic.Startup
         /// Method checks if the Configured SQL Server is online
         /// </summary>
         /// <returns>True - Server online False - Server Offline</returns>
-        public bool CheckSQLServerIsOnline()
+        public bool CheckSQLServerIsOnline(Label ErrorMessage)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
 
@@ -34,6 +35,10 @@ namespace Gaze.BusinessLogic.Startup
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(message, caption, buttons,
                 MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                ErrorMessage.Text = "SQL Server Offline!";
+                ErrorMessage.ForeColor = System.Drawing.Color.Red;
+                
+               // ErrorMessage.Show();
                 return false;    
             }
             catch (Exception ex)
@@ -43,6 +48,9 @@ namespace Gaze.BusinessLogic.Startup
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(message, caption, buttons,
                 MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                ErrorMessage.Text = "SQL Server Offline!";
+                ErrorMessage.ForeColor = System.Drawing.Color.Red;
+                ErrorMessage.Show();
                 return false;
             }
 

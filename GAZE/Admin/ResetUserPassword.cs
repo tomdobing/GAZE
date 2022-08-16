@@ -14,8 +14,12 @@ namespace GAZE.Admin
 {
     public partial class ResetUserPassword : Form
     {
-       FormSettings FormSettings = new FormSettings();
+        #region Declarations
+        FormSettings FormSettings = new FormSettings();
         UserManagement UserManagement = new UserManagement();
+        #endregion
+
+
         public ResetUserPassword()
         {
             InitializeComponent();

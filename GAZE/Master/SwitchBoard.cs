@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing.Printing;
+using System.Drawing;
 using System.Windows.Forms;
 using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.Security;
@@ -127,5 +129,10 @@ namespace GAZE
             user.ShowDialog();
         }
         #endregion
+
+
+
+
+        
     }
 }

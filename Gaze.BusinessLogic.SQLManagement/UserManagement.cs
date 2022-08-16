@@ -9,7 +9,9 @@ namespace Gaze.BusinessLogic.SQLManagement
 {
     public class UserManagement
     {
+
         #region Declarations
+        
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         #endregion
 
@@ -173,7 +175,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         /// <summary>
         /// Selects users in the configured SQL Server Database and returns username only into ListBox
         /// </summary>
-        /// <param name="listBox"></param>
+        /// <param name="listBox">Listbox to post results to</param>
         public void SelectAllUsers(ListBox listBox)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -198,6 +200,16 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
 
         }
+        /// <summary>
+        /// Selects highlighted user from the Database
+        /// </summary>
+        /// <param name="listBox"></param>
+        /// <param name="ID"></param>
+        /// <param name="firstname"></param>
+        /// <param name="surname"></param>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <param name="isadmin"></param>
         public void SelectedUser(ListBox listBox, MetroTextBox ID, MetroTextBox firstname, MetroTextBox surname, MetroTextBox username, MetroTextBox password, MetroCheckBox isadmin)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -236,7 +248,13 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
 
         }
-
+        /// <summary>
+        /// Function to update user information, Limited to Firstname, surname and Username
+        /// </summary>
+        /// <param name="UserID"></param>
+        /// <param name="Username"></param>
+        /// <param name="FirstName"></param>
+        /// <param name="Surname"></param>
         public void UpdateUser(MetroTextBox UserID, MetroTextBox Username, MetroTextBox FirstName, MetroTextBox Surname)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
