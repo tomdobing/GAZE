@@ -31,6 +31,7 @@ namespace GAZE.Admin
             psswrd_txt.ReadOnly = true;
             metroCheckBox1.Enabled = false;
             update_btn.Enabled = false;
+            psswrd_txt.UseSystemPasswordChar = true;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

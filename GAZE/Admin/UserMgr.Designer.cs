@@ -42,8 +42,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.update_btn = new MetroFramework.Controls.MetroButton();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // listBox1
@@ -186,7 +184,7 @@
             // metroCheckBox1
             // 
             this.metroCheckBox1.AutoSize = true;
-            this.metroCheckBox1.Location = new System.Drawing.Point(212, 173);
+            this.metroCheckBox1.Location = new System.Drawing.Point(138, 173);
             this.metroCheckBox1.Name = "metroCheckBox1";
             this.metroCheckBox1.Size = new System.Drawing.Size(76, 15);
             this.metroCheckBox1.TabIndex = 5;
@@ -228,7 +226,7 @@
             // metroCheckBox2
             // 
             this.metroCheckBox2.AutoSize = true;
-            this.metroCheckBox2.Location = new System.Drawing.Point(212, 195);
+            this.metroCheckBox2.Location = new System.Drawing.Point(138, 195);
             this.metroCheckBox2.Name = "metroCheckBox2";
             this.metroCheckBox2.Size = new System.Drawing.Size(83, 15);
             this.metroCheckBox2.TabIndex = 7;
@@ -288,7 +286,7 @@
             // 
             // update_btn
             // 
-            this.update_btn.Location = new System.Drawing.Point(361, 182);
+            this.update_btn.Location = new System.Drawing.Point(239, 173);
             this.update_btn.Name = "update_btn";
             this.update_btn.Size = new System.Drawing.Size(110, 23);
             this.update_btn.TabIndex = 14;
@@ -296,22 +294,11 @@
             this.update_btn.UseSelectable = true;
             this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
             // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(426, 103);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(75, 23);
-            this.metroButton1.TabIndex = 15;
-            this.metroButton1.Text = "metroButton1";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
             // UserMgr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 222);
-            this.Controls.Add(this.metroButton1);
+            this.ClientSize = new System.Drawing.Size(458, 222);
             this.Controls.Add(this.update_btn);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -350,7 +337,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private MetroFramework.Controls.MetroButton update_btn;
-        private System.Drawing.Printing.PrintDocument printDocument1;
-        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }
