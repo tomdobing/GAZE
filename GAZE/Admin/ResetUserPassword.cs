@@ -25,6 +25,8 @@ namespace GAZE.Admin
             InitializeComponent();
             FormSettings.SetFormSettings(this);
             FormSettings.ChangeableFormSettings(this, "Change Password");
+            password_txt.UseSystemPasswordChar = true;
+            confirm_txt.UseSystemPasswordChar= true;
             
         }
 
