@@ -52,6 +52,10 @@ namespace Gaze.BusinessLogic.SQLManagement
                 MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
+            finally
+            {
+                scon.Close();
+            }
 
         }
 
@@ -81,6 +85,10 @@ namespace Gaze.BusinessLogic.SQLManagement
             {
 
                 throw;
+            }
+            finally
+            {
+                scon.Close();
             }
         }
 

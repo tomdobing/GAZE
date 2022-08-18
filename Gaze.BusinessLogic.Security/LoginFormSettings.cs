@@ -9,7 +9,10 @@ namespace Gaze.BusinessLogic.Security
 {
     public class LoginFormSettings
     {
-
+        /// <summary>
+        /// Method called to set the default form values
+        /// </summary>
+        /// <param name="LoginScreen"></param>
         public void SetFormValue(MetroForm LoginScreen)
         {
             LoginScreen.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

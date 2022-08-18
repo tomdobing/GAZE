@@ -7,7 +7,7 @@ namespace Gaze.BusinessLogic.Config
 {
     public class FormSettings
     {
-        readonly InfoSec infoSec = new InfoSec();
+        //readonly InfoSec infoSec = new InfoSec();
 
         /// <summary>
         /// Sets the default form settings.

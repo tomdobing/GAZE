@@ -9,7 +9,7 @@ namespace Gaze.BusinessLogic.SQLManagement
 {
     public class UserManagement
     {
-
+  
         #region Declarations
         
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
@@ -73,6 +73,10 @@ namespace Gaze.BusinessLogic.SQLManagement
                     MessageBox.Show(message, caption, buttons,
                     MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
+                finally
+                {
+                    scon.Close(); 
+                }
             }
 
 
@@ -109,6 +113,10 @@ namespace Gaze.BusinessLogic.SQLManagement
                 catch (Exception)
                 {
                     throw;
+                }
+                finally 
+                { 
+                    scon.Close(); 
                 }
             }
             else
@@ -168,7 +176,10 @@ namespace Gaze.BusinessLogic.SQLManagement
                 throw;
             }
 
-
+            finally
+            {
+                scon.Close();
+            }
 
 
         }
@@ -197,6 +208,10 @@ namespace Gaze.BusinessLogic.SQLManagement
             {
 
                 throw;
+            }
+            finally
+            {
+                scon.Close();
             }
 
         }
@@ -246,6 +261,10 @@ namespace Gaze.BusinessLogic.SQLManagement
 
                 throw;
             }
+            finally
+            {
+                scon.Close();
+            }
 
         }
         /// <summary>
@@ -293,6 +312,10 @@ namespace Gaze.BusinessLogic.SQLManagement
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(message, caption, buttons,
                 MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                scon.Close();
             }
 
         }

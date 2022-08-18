@@ -53,6 +53,10 @@ namespace Gaze.BusinessLogic.Startup
                 ErrorMessage.Show();
                 return false;
             }
+            finally
+            {
+                scon.Close();
+            }
 
         }
         #endregion
