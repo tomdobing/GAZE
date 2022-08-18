@@ -87,7 +87,7 @@
             this.addusr_txt.TabIndex = 4;
             this.addusr_txt.Text = "Create User";
             this.addusr_txt.UseSelectable = true;
-            this.addusr_txt.Click += new System.EventHandler(this.addusr_txt_Click);
+            this.addusr_txt.Click += new System.EventHandler(this.Addusr_txt_Click);
             // 
             // FName_txt
             // 
@@ -184,8 +184,8 @@
             this.username_txt.WaterMark = "Username";
             this.username_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.username_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.username_txt.Click += new System.EventHandler(this.username_txt_Click);
-            this.username_txt.Enter += new System.EventHandler(this.username_txt_Enter);
+            this.username_txt.Click += new System.EventHandler(this.Username_txt_Click);
+            this.username_txt.Enter += new System.EventHandler(this.Username_txt_Enter);
             // 
             // password_txt
             // 

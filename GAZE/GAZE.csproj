@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <ShouldCreateLogs>True</ShouldCreateLogs>
-    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <AdvancedSettingsExpanded>True</AdvancedSettingsExpanded>
     <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
     <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
     <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
@@ -122,11 +122,11 @@
     <Compile Include="Help\AboutUs.Designer.cs">
       <DependentUpon>AboutUs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Master\SwitchBoard.cs">
+    <Compile Include="Master\HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Master\SwitchBoard.Designer.cs">
-      <DependentUpon>SwitchBoard.cs</DependentUpon>
+    <Compile Include="Master\HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -142,11 +142,14 @@
     <EmbeddedResource Include="Admin\UserMgr.resx">
       <DependentUpon>UserMgr.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\NewCustomer.resx">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Help\AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Master\SwitchBoard.resx">
-      <DependentUpon>SwitchBoard.cs</DependentUpon>
+    <EmbeddedResource Include="Master\HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -176,6 +179,10 @@
     <ProjectReference Include="..\Gaze.BusinessLogic.Config\Gaze.BusinessLogic.Config.csproj">
       <Project>{0b58bd9c-fcc3-4ea4-9453-334839379d93}</Project>
       <Name>Gaze.BusinessLogic.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gaze.BusinessLogic.Exceptions\Gaze.BusinessLogic.Exceptions.csproj">
+      <Project>{c19908c8-7cb6-4888-9fb7-354076bb9acb}</Project>
+      <Name>Gaze.BusinessLogic.Exceptions</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gaze.BusinessLogic.Security\Gaze.BusinessLogic.Security.csproj">
       <Project>{73c7db54-40d2-4e7e-b198-0b33fe341152}</Project>

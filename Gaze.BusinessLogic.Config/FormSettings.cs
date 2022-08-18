@@ -31,8 +31,8 @@ namespace Gaze.BusinessLogic.Config
         /// <param name="additionInfo"></param>
         public void ChangeableFormSettings(Form defaultForm, [Optional] string additionInfo)
         {
-
-            defaultForm.Text = ConfigurationSettings.AppSettings["CompanyName"] + " - " + Application.ProductVersion + " - " + additionInfo;
+            
+            defaultForm.Text = ConfigurationManager.AppSettings["CompanyName"] + " - " + Application.ProductVersion + " - " + additionInfo;
         }
     }
 }

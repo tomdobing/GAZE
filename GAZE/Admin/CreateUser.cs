@@ -15,19 +15,20 @@ namespace GAZE.Admin
     public partial class CreateUser : Form
     {
         #region Declarations
-        FormSettings FormSettings = new FormSettings();
-        UserManagement userNamanegement = new UserManagement();
+        readonly FormSettings FormSettings = new FormSettings();
+        readonly UserManagement userNamanegement = new UserManagement();
         #endregion
 
         #region Methods
         public CreateUser()
         {
-            InitializeComponent();
+            
             FormSettings.SetFormSettings(this);
             FormSettings.ChangeableFormSettings(this, "Create New User");
+            InitializeComponent();
         }
 
-        private void addusr_txt_Click(object sender, EventArgs e)
+        private void Addusr_txt_Click(object sender, EventArgs e)
         {
             userNamanegement.CreateNewUser(FName_txt, sName_txt, username_txt, password_txt, admin_chk, this);
             
@@ -39,12 +40,12 @@ namespace GAZE.Admin
 
         }
 
-        private void username_txt_Click(object sender, EventArgs e)
+        private void Username_txt_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void username_txt_Enter(object sender, EventArgs e)
+        private void Username_txt_Enter(object sender, EventArgs e)
         {
             username_txt.Text = FName_txt.Text + "." + sName_txt.Text;
         }

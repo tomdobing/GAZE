@@ -10,7 +10,7 @@ namespace GAZE.Admin
     public partial class LoginForm : MetroFramework.Forms.MetroForm
     {
         #region Declarations
-        PreLoginChecks PreLoginChecks = new PreLoginChecks();
+        readonly PreLoginChecks PreLoginChecks = new PreLoginChecks();
         readonly InfoSec infoSec = new InfoSec();
         readonly LoginFormSettings formSettings = new LoginFormSettings();
         #endregion
@@ -41,7 +41,7 @@ namespace GAZE.Admin
             {
                 if (infoSec.UserLogin(username_txt, password_txt) == true)
                 {
-                    SwitchBoard master = new SwitchBoard();
+                    HomePage master = new HomePage();
                     master.Show();
                     this.Close();
                 }

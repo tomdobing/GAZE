@@ -1,6 +1,6 @@
 ﻿namespace GAZE
 {
-    partial class SwitchBoard
+    partial class HomePage
     {
         /// <summary>
         /// Required designer variable.
@@ -51,7 +51,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -128,14 +127,14 @@
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.LogoutToolStripMenuItem_Click);
             // 
             // exitApplicationToolStripMenuItem
             // 
             this.exitApplicationToolStripMenuItem.Name = "exitApplicationToolStripMenuItem";
             this.exitApplicationToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.exitApplicationToolStripMenuItem.Text = "Exit Application";
-            this.exitApplicationToolStripMenuItem.Click += new System.EventHandler(this.exitApplicationToolStripMenuItem_Click);
+            this.exitApplicationToolStripMenuItem.Click += new System.EventHandler(this.ExitApplicationToolStripMenuItem_Click);
             // 
             // customerToolStripMenuItem
             // 
@@ -150,7 +149,7 @@
             this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
             this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.newCustomerToolStripMenuItem.Text = "New Customer";
-            this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.newCustomerToolStripMenuItem_Click);
+            this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.NewCustomerToolStripMenuItem_Click);
             // 
             // stockManagementToolStripMenuItem
             // 
@@ -181,21 +180,21 @@
             this.createNewUserToolStripMenuItem.Name = "createNewUserToolStripMenuItem";
             this.createNewUserToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.createNewUserToolStripMenuItem.Text = "Create New User";
-            this.createNewUserToolStripMenuItem.Click += new System.EventHandler(this.createNewUserToolStripMenuItem_Click);
+            this.createNewUserToolStripMenuItem.Click += new System.EventHandler(this.CreateNewUserToolStripMenuItem_Click);
             // 
             // editDeleteUsersToolStripMenuItem
             // 
             this.editDeleteUsersToolStripMenuItem.Name = "editDeleteUsersToolStripMenuItem";
             this.editDeleteUsersToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.editDeleteUsersToolStripMenuItem.Text = "Edit/Delete Users";
-            this.editDeleteUsersToolStripMenuItem.Click += new System.EventHandler(this.editDeleteUsersToolStripMenuItem_Click);
+            this.editDeleteUsersToolStripMenuItem.Click += new System.EventHandler(this.EditDeleteUsersToolStripMenuItem_Click);
             // 
             // resetUserPasswordToolStripMenuItem
             // 
             this.resetUserPasswordToolStripMenuItem.Name = "resetUserPasswordToolStripMenuItem";
             this.resetUserPasswordToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.resetUserPasswordToolStripMenuItem.Text = "Reset User Password";
-            this.resetUserPasswordToolStripMenuItem.Click += new System.EventHandler(this.resetUserPasswordToolStripMenuItem_Click);
+            this.resetUserPasswordToolStripMenuItem.Click += new System.EventHandler(this.ResetUserPasswordToolStripMenuItem_Click);
             // 
             // windowToolStripMenuItem
             // 
@@ -210,7 +209,7 @@
             this.hideTimeDateToolStripMenuItem.Name = "hideTimeDateToolStripMenuItem";
             this.hideTimeDateToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.hideTimeDateToolStripMenuItem.Text = "Hide Toolstrip";
-            this.hideTimeDateToolStripMenuItem.Click += new System.EventHandler(this.hideTimeDateToolStripMenuItem_Click);
+            this.hideTimeDateToolStripMenuItem.Click += new System.EventHandler(this.HideTimeDateToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -224,18 +223,18 @@
             // checkForUpdatesToolStripMenuItem
             // 
             this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkForUpdatesToolStripMenuItem.Text = "Check for updates";
-            this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
+            this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.CheckForUpdatesToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
-            // SwitchBoard
+            // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -243,7 +242,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "SwitchBoard";
+            this.Name = "HomePage";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Master_Load);
             this.toolStrip1.ResumeLayout(false);
@@ -280,7 +279,6 @@
         private System.Windows.Forms.ToolStripMenuItem editDeleteUsersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newStockInputToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetUserPasswordToolStripMenuItem;
-        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
 
