@@ -1,5 +1,6 @@
 ﻿using Gaze.BusinessLogic.SQLManagement;
 using System.Configuration;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -34,5 +35,37 @@ namespace Gaze.BusinessLogic.Config
             
             defaultForm.Text = ConfigurationManager.AppSettings["CompanyName"] + " - " + Application.ProductVersion + " - " + additionInfo;
         }
+
+        public HttpStatusCode GetHeaders(string url)
+        {
+            HttpStatusCode result = default(HttpStatusCode);
+
+            try
+            {
+                var request = HttpWebRequest.Create(url);
+                request.Method = "HEAD";
+                using (var response = request.GetResponse() as HttpWebResponse)
+                {
+                    if (response != null)
+                    {
+                        result = response.StatusCode;
+                        response.Close();
+                    }
+                }
+                string message = "URL Valid";
+                string caption = "Valid";
+                MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return result;
+            }
+            catch (System.Exception)
+            {
+                string message = "URL InValid";
+                string caption = "Valid";
+                MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return result;
+            }
+          
+        }
+
     }
 }

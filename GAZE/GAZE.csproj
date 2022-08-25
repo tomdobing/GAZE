@@ -86,6 +86,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminConfig.Designer.cs">
+      <DependentUpon>AdminConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\CreateUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\AdminConfig.resx">
+      <DependentUpon>AdminConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </EmbeddedResource>

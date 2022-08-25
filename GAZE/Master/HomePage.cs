@@ -140,5 +140,15 @@ namespace GAZE
 
         #endregion
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GetFormSettings.GetHeaders("https://bbc.co.uk");
+        }
+
+        private void configSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin.AdminConfig adminconfig = new Admin.AdminConfig();
+            adminconfig.ShowDialog();
+        }
     }
 }
