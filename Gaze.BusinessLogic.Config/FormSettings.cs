@@ -8,6 +8,8 @@ namespace Gaze.BusinessLogic.Config
 {
     public class FormSettings
     {
+
+        ConfigAdmin ConfigAdmin = new ConfigAdmin();
         //readonly InfoSec infoSec = new InfoSec();
 
         /// <summary>
@@ -59,9 +61,11 @@ namespace Gaze.BusinessLogic.Config
             }
             catch (System.Exception)
             {
-                string message = "URL InValid";
-                string caption = "Valid";
-                MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string message = "An unknown error occured when checking for updates. Please try again later or contact your system administrator!";
+                string caption = "Something went wrong";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, buttons,
+                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return result;
             }
           

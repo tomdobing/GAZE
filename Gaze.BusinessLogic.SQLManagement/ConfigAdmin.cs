@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -49,7 +50,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
 
         }
-        public void SelectedUser(ListBox listBox, MetroTextBox ID, MetroTextBox ConfigName, MetroTextBox ConfigValue, MetroCheckBox IsChangeable, MetroTextBox AddedBy)
+        public void SelectedConfig(ListBox listBox, MetroTextBox ID, MetroTextBox ConfigName, MetroTextBox ConfigValue, MetroCheckBox IsChangeable, MetroTextBox AddedBy)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try
@@ -88,7 +89,8 @@ namespace Gaze.BusinessLogic.SQLManagement
             {
                 scon.Close();
             }
-
+           
         }
+
     }
 }

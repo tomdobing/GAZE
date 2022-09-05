@@ -93,11 +93,8 @@ namespace GAZE
 
         private void CheckForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "An unknown error occured when checking for updates. Please try again later or contact your system administrator!";
-            string caption = "Something went wrong";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            MessageBox.Show(this, message, caption, buttons,
-            MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            GetFormSettings.GetHeaders("https://InvalidURLCheckforupdates.com");
+            
         }
 
         private void LogoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -142,7 +139,7 @@ namespace GAZE
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GetFormSettings.GetHeaders("https://bbc.co.uk");
+       
         }
 
         private void configSettingsToolStripMenuItem_Click(object sender, EventArgs e)

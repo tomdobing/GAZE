@@ -31,7 +31,7 @@ namespace GAZE.Admin
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ConfigAdmin.SelectedUser(listBox1, metroTextBox1, metroTextBox2, metroTextBox3, metroCheckBox1, metroTextBox4);
+            ConfigAdmin.SelectedConfig(listBox1, metroTextBox1, metroTextBox2, metroTextBox3, metroCheckBox1, metroTextBox4);
             //metroCheckBox1.CheckState = CheckState.Unchecked;
         }
     }

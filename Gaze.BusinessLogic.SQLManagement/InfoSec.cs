@@ -12,7 +12,7 @@ namespace Gaze.BusinessLogic.SQLManagement
 
     public class InfoSec
     {
-
+        //Test Comment
         private string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         public static string GlobalUsername { get; set; }
 
