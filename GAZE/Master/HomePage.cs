@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Windows.Forms;
 using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.Security;
@@ -26,6 +27,7 @@ namespace GAZE
 
         private void Master_Load(object sender, EventArgs e)
         {
+
             toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("HH:MM:ss");
             StartTimer();
             toolStripLabel2.Text = "Build:" + Application.ProductVersion.ToString();
@@ -54,6 +56,7 @@ namespace GAZE
 
         public void Tick(object sender, EventArgs e)
         {
+            
             toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("HH:MM:ss");
         }
 

@@ -12,11 +12,13 @@ namespace Gaze.BusinessLogic.Startup
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         #endregion
 
+
+
         #region Methods
         /// <summary>
-        /// Method checks if the Configured SQL Server is online
+        /// check if the Configured SQL Server is online
         /// </summary>
-        /// <returns>True - Server online False - Server Offline</returns>
+        /// <returns>True - Server online | False - Server Offline</returns>
         public bool CheckSQLServerIsOnline(Label ErrorMessage)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);

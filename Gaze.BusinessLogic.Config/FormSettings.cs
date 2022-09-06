@@ -1,8 +1,10 @@
 ﻿using Gaze.BusinessLogic.SQLManagement;
 using System.Configuration;
+using System.Data.SqlClient;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Gaze.BusinessLogic.Config
 {
@@ -11,7 +13,7 @@ namespace Gaze.BusinessLogic.Config
 
         ConfigAdmin ConfigAdmin = new ConfigAdmin();
         //readonly InfoSec infoSec = new InfoSec();
-
+        private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         /// <summary>
         /// Sets the default form settings.
         /// </summary>
@@ -34,7 +36,7 @@ namespace Gaze.BusinessLogic.Config
         /// <param name="additionInfo"></param>
         public void ChangeableFormSettings(Form defaultForm, [Optional] string additionInfo)
         {
-            
+
             defaultForm.Text = ConfigurationManager.AppSettings["CompanyName"] + " - " + Application.ProductVersion + " - " + additionInfo;
         }
 
@@ -68,7 +70,7 @@ namespace Gaze.BusinessLogic.Config
                 MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return result;
             }
-          
+
         }
 
     }
