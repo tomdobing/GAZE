@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using MetroFramework.Controls;
+using Gaze.BusinessLogic.Exceptions;
 
 namespace Gaze.BusinessLogic.Startup
 {
@@ -10,6 +10,7 @@ namespace Gaze.BusinessLogic.Startup
     {
         #region Declarations
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
+        private readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
         #endregion
 
 
@@ -30,13 +31,13 @@ namespace Gaze.BusinessLogic.Startup
             }
             catch (SqlException ex)
             {
-
-                string message = "Unable to connect to the selected SQL Server!" +
-                " Please check the SQL Server Connection and try again" + Environment.NewLine + Environment.NewLine + ex.Message;
-                string caption = "SQL Server Offline";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                MessageBox.Show(message, caption, buttons,
-                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                exceptionThrown.ThrowNewStackException(ex, "SQL Server Offline");
+                //string message = "Unable to connect to the selected SQL Server!" +
+                //" Please check the SQL Server Connection and try again" + Environment.NewLine + Environment.NewLine + ex.Message;
+                //string caption = "SQL Server Offline";
+                //MessageBoxButtons buttons = MessageBoxButtons.OK;
+                //MessageBox.Show(message, caption, buttons,
+                //MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 ErrorMessage.Text = "SQL Server Offline!";
                 ErrorMessage.ForeColor = System.Drawing.Color.Red;
                
@@ -46,11 +47,12 @@ namespace Gaze.BusinessLogic.Startup
             }
             catch (Exception ex)
             {
-                string message = "An unknown error has occured. Please try again later" + Environment.NewLine + Environment.NewLine + ex.Message;
-                string caption = "Unknown Error Occured";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                MessageBox.Show(message, caption, buttons,
-                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                exceptionThrown.ThrowNewStackException(ex, "SQL Server Offline");
+                //string message = "An unknown error has occured. Please try again later" + Environment.NewLine + Environment.NewLine + ex.Message;
+                //string caption = "Unknown Error Occured";
+                //MessageBoxButtons buttons = MessageBoxButtons.OK;
+                //MessageBox.Show(message, caption, buttons,
+                //MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 ErrorMessage.Text = "SQL Server Offline!";
                 ErrorMessage.ForeColor = System.Drawing.Color.Red;
                 ErrorMessage.Show();

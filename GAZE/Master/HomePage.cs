@@ -13,6 +13,7 @@ namespace GAZE
         readonly FormSettings GetFormSettings = new FormSettings();
         readonly LoginSecurity loginSecurity = new LoginSecurity();
         readonly InfoSec infoSec = new InfoSec();
+        readonly ConfigAdmin configAdmin = new ConfigAdmin();
       
         #endregion
 
@@ -28,7 +29,7 @@ namespace GAZE
         private void Master_Load(object sender, EventArgs e)
         {
 
-            toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("HH:MM:ss");
+            toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(configAdmin.GetConfigValue("Date Format"));
             StartTimer();
             toolStripLabel2.Text = "Build:" + Application.ProductVersion.ToString();
             loginSecurity.GetLoggedinUserName(toolStripLabel3);
@@ -57,7 +58,7 @@ namespace GAZE
         public void Tick(object sender, EventArgs e)
         {
             
-            toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("HH:MM:ss");
+            toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(configAdmin.GetConfigValue("Date Format"));
         }
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)

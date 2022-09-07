@@ -92,5 +92,33 @@ namespace Gaze.BusinessLogic.SQLManagement
            
         }
 
+        public string GetConfigValue(string ConfigtoGet)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_SINGLE_CONFIG_VALUE_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@ConfigName", ConfigtoGet);
+                string ConfigValue = sqlCommand.ExecuteScalar().ToString();
+                return ConfigValue;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+        }
+
+
+
     }
 }

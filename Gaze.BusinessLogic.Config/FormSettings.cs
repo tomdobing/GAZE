@@ -6,11 +6,12 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
+
 namespace Gaze.BusinessLogic.Config
 {
     public class FormSettings
     {
-
+       
         ConfigAdmin ConfigAdmin = new ConfigAdmin();
         //readonly InfoSec infoSec = new InfoSec();
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
@@ -37,7 +38,8 @@ namespace Gaze.BusinessLogic.Config
         public void ChangeableFormSettings(Form defaultForm, [Optional] string additionInfo)
         {
 
-            defaultForm.Text = ConfigurationManager.AppSettings["CompanyName"] + " - " + Application.ProductVersion + " - " + additionInfo;
+            defaultForm.Text = ConfigAdmin.GetConfigValue("Company Name") + " - " + Application.ProductVersion + " - " + additionInfo;
+            //defaultForm.Text = ConfigurationManager.AppSettings["CompanyName"] + " - " + Application.ProductVersion + " - " + additionInfo;
         }
 
         public HttpStatusCode GetHeaders(string url)

@@ -74,5 +74,11 @@
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gaze.BusinessLogic.Exceptions\Gaze.BusinessLogic.Exceptions.csproj">
+      <Project>{c19908c8-7cb6-4888-9fb7-354076bb9acb}</Project>
+      <Name>Gaze.BusinessLogic.Exceptions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

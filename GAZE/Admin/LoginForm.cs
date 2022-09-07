@@ -1,6 +1,7 @@
 ﻿using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.BusinessLogic.Startup;
+using Gaze.BusinessLogic.Exceptions;
 using System;
 using System.Windows.Forms;
 
@@ -13,6 +14,7 @@ namespace GAZE.Admin
         readonly PreLoginChecks PreLoginChecks = new PreLoginChecks();
         readonly InfoSec infoSec = new InfoSec();
         readonly LoginFormSettings formSettings = new LoginFormSettings();
+        readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
         #endregion
 
         #region Methods
@@ -43,15 +45,16 @@ namespace GAZE.Admin
                 {
                     HomePage master = new HomePage();
                     master.Show();
-                    this.Close();
+                    Close();
                 }
                 else
                 {
-                    string message = "Unknown username/password. Please try again";
-                    string caption = "Invalid Login Details!";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    MessageBox.Show(this, message, caption, buttons,
-                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    exceptionThrown.ThrowNewException("Unknown username/password. Please try again", "Invalid Login Details!", "Login Failed");
+                    //string message = "Unknown username/password. Please try again";
+                    //string caption = "Invalid Login Details!";
+                    //MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    //MessageBox.Show(this, message, caption, buttons,
+                    //MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     password_txt.Clear();
                     password_txt.Focus();
                 }
