@@ -52,6 +52,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sQLServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -148,7 +149,7 @@
             // newCustomerToolStripMenuItem
             // 
             this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
-            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.newCustomerToolStripMenuItem.Text = "New Customer";
             this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.NewCustomerToolStripMenuItem_Click);
             // 
@@ -163,7 +164,7 @@
             // newStockInputToolStripMenuItem
             // 
             this.newStockInputToolStripMenuItem.Name = "newStockInputToolStripMenuItem";
-            this.newStockInputToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newStockInputToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.newStockInputToolStripMenuItem.Text = "New Stock Input";
             // 
             // adminToolStripMenuItem
@@ -216,7 +217,7 @@
             // hideTimeDateToolStripMenuItem
             // 
             this.hideTimeDateToolStripMenuItem.Name = "hideTimeDateToolStripMenuItem";
-            this.hideTimeDateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hideTimeDateToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.hideTimeDateToolStripMenuItem.Text = "Hide Toolstrip";
             this.hideTimeDateToolStripMenuItem.Click += new System.EventHandler(this.HideTimeDateToolStripMenuItem_Click);
             // 
@@ -224,6 +225,7 @@
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.checkForUpdatesToolStripMenuItem,
+            this.sQLServerToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -242,6 +244,13 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
+            // 
+            // sQLServerToolStripMenuItem
+            // 
+            this.sQLServerToolStripMenuItem.Name = "sQLServerToolStripMenuItem";
+            this.sQLServerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sQLServerToolStripMenuItem.Text = "SQL Server";
+            this.sQLServerToolStripMenuItem.Click += new System.EventHandler(this.sQLServerToolStripMenuItem_Click);
             // 
             // HomePage
             // 
@@ -289,6 +298,7 @@
         private System.Windows.Forms.ToolStripMenuItem newStockInputToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetUserPasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sQLServerToolStripMenuItem;
     }
 }
 

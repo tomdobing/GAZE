@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
-
+using Gaze.BusinessLogic.Exceptions;
 namespace GAZE
 {
     public partial class HomePage : Form
@@ -14,6 +14,7 @@ namespace GAZE
         readonly LoginSecurity loginSecurity = new LoginSecurity();
         readonly InfoSec infoSec = new InfoSec();
         readonly ConfigAdmin configAdmin = new ConfigAdmin();
+        ExceptionThrown ExceptionThrown = new ExceptionThrown();
       
         #endregion
 
@@ -150,6 +151,15 @@ namespace GAZE
         {
             Admin.AdminConfig adminconfig = new Admin.AdminConfig();
             adminconfig.ShowDialog();
+        }
+
+        private void sQLServerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = ConfigurationManager.AppSettings["SQLConnection"] + Environment.NewLine + Environment.NewLine + "Database: Gaze_DB: True";
+            string caption = "SQL Server Info";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            MessageBox.Show(message, caption, buttons,
+            MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
     }
 }
