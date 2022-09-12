@@ -30,7 +30,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 scon.Open();
                 SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_ALL_ADMIN_CONFIG_SP", scon)
                 {
-                    CommandType = System.Data.CommandType.StoredProcedure
+                    CommandType = CommandType.StoredProcedure
                 };
 
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
@@ -58,7 +58,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 scon.Open();
                 SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_SINGLE_CONFIG_SP", scon)
                 {
-                    CommandType = System.Data.CommandType.StoredProcedure
+                    CommandType = CommandType.StoredProcedure
                 };
                 sqlCommand.Parameters.AddWithValue("@ConfigName", listBox.SelectedItem.ToString());
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();

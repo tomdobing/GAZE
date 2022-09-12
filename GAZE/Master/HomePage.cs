@@ -30,7 +30,7 @@ namespace GAZE
         private void Master_Load(object sender, EventArgs e)
         {
 
-            toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(configAdmin.GetConfigValue("Date Format"));
+            toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(configAdmin.GetConfigValue("Time Format"));
             StartTimer();
             toolStripLabel2.Text = "Build:" + Application.ProductVersion.ToString();
             loginSecurity.GetLoggedinUserName(toolStripLabel3);
@@ -59,7 +59,7 @@ namespace GAZE
         public void Tick(object sender, EventArgs e)
         {
             
-            toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(configAdmin.GetConfigValue("Date Format"));
+            toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(configAdmin.GetConfigValue("Time Format"));
         }
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
