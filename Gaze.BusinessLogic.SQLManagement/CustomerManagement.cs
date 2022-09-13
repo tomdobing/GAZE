@@ -14,8 +14,17 @@ namespace Gaze.BusinessLogic.SQLManagement
 {
     public class CustomerManagement
     {
+        
+        #region Declarations
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         private readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
+        #endregion
+
+        #region Methods
+        /// <summary>
+        /// Used to populate the Title ComboBox on the New Customer form
+        /// </summary>
+        /// <param name="Combobox">The control holding the title data</param>
         public void PopulateTitle(MetroComboBox Combobox)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -42,7 +51,17 @@ namespace Gaze.BusinessLogic.SQLManagement
                 scon.Close();
             }
         }
-
+        /// <summary>
+        /// Function to create a new customer. Also contains Data Validation Methods.
+        /// </summary>
+        /// <param name="Title"></param>
+        /// <param name="Firstname"></param>
+        /// <param name="surname"></param>
+        /// <param name="DOB"></param>
+        /// <param name="Contact"></param>
+        /// <param name="Email"></param>
+        /// <param name="Address"></param>
+        /// <param name="Vuln"></param>
         public void CreateNewCustomer(MetroComboBox Title, MetroTextBox Firstname, MetroTextBox surname, MetroDateTime DOB, MetroTextBox Contact, MetroTextBox Email, MetroTextBox Address, [Optional] MetroCheckBox Vuln)
         {
             if (Title.SelectedIndex.ToString() == "" | Firstname.Text == "" | surname.Text == "" | DOB.Value.ToShortDateString() == "" | Contact.Text == "" | Email.Text == "" | Address.Text == "" )
@@ -54,5 +73,6 @@ namespace Gaze.BusinessLogic.SQLManagement
                 MessageBox.Show(DOB.Value.ToShortDateString());
             }
         }
+        #endregion
     }
 }

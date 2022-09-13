@@ -14,10 +14,11 @@ namespace Gaze.BusinessLogic.SQLManagement
     public class ConfigAdmin
     {
 
-
+        #region Declaration
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
+        #endregion
 
-
+        #region Methods
         /// <summary>
         /// Selects users in the configured SQL Server Database and returns username only into ListBox
         /// </summary>
@@ -50,6 +51,15 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
 
         }
+        /// <summary>
+        /// Used to return the highlighted config 
+        /// </summary>
+        /// <param name="listBox"></param>
+        /// <param name="ID"></param>
+        /// <param name="ConfigName"></param>
+        /// <param name="ConfigValue"></param>
+        /// <param name="IsChangeable"></param>
+        /// <param name="AddedBy"></param>
         public void SelectedConfig(ListBox listBox, MetroTextBox ID, MetroTextBox ConfigName, MetroTextBox ConfigValue, MetroCheckBox IsChangeable, MetroTextBox AddedBy)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -91,7 +101,11 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
            
         }
-
+        /// <summary>
+        /// Used to get the config value
+        /// </summary>
+        /// <param name="ConfigtoGet"></param>
+        /// <returns></returns>
         public string GetConfigValue(string ConfigtoGet)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -117,7 +131,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
 
         }
-
+        #endregion
 
 
     }

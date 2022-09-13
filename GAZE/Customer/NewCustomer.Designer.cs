@@ -35,6 +35,8 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.surname_txt = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CustAge_txt = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.DOB_DTP = new MetroFramework.Controls.MetroDateTime();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -47,11 +49,9 @@
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.Address_Txt = new MetroFramework.Controls.MetroTextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.Reset_btn = new MetroFramework.Controls.MetroButton();
             this.Close_BTN = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.CustAge_txt = new MetroFramework.Controls.MetroTextBox();
+            this.Submit_btn = new MetroFramework.Controls.MetroButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -177,6 +177,48 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal Customer Details";
+            // 
+            // CustAge_txt
+            // 
+            // 
+            // 
+            // 
+            this.CustAge_txt.CustomButton.Image = null;
+            this.CustAge_txt.CustomButton.Location = new System.Drawing.Point(174, 1);
+            this.CustAge_txt.CustomButton.Name = "";
+            this.CustAge_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.CustAge_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.CustAge_txt.CustomButton.TabIndex = 1;
+            this.CustAge_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.CustAge_txt.CustomButton.UseSelectable = true;
+            this.CustAge_txt.CustomButton.Visible = false;
+            this.CustAge_txt.Enabled = false;
+            this.CustAge_txt.Lines = new string[0];
+            this.CustAge_txt.Location = new System.Drawing.Point(120, 200);
+            this.CustAge_txt.MaxLength = 32767;
+            this.CustAge_txt.Name = "CustAge_txt";
+            this.CustAge_txt.PasswordChar = '\0';
+            this.CustAge_txt.PromptText = "Customers Age";
+            this.CustAge_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.CustAge_txt.SelectedText = "";
+            this.CustAge_txt.SelectionLength = 0;
+            this.CustAge_txt.SelectionStart = 0;
+            this.CustAge_txt.ShortcutsEnabled = true;
+            this.CustAge_txt.Size = new System.Drawing.Size(196, 23);
+            this.CustAge_txt.TabIndex = 11;
+            this.CustAge_txt.UseSelectable = true;
+            this.CustAge_txt.WaterMark = "Customers Age";
+            this.CustAge_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.CustAge_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.Location = new System.Drawing.Point(7, 200);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(94, 19);
+            this.metroLabel8.TabIndex = 10;
+            this.metroLabel8.Text = "Customer Age";
             // 
             // metroLabel4
             // 
@@ -359,25 +401,25 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.metroButton3);
+            this.groupBox4.Controls.Add(this.Reset_btn);
             this.groupBox4.Controls.Add(this.Close_BTN);
-            this.groupBox4.Controls.Add(this.metroButton1);
-            this.groupBox4.Location = new System.Drawing.Point(354, 234);
+            this.groupBox4.Controls.Add(this.Submit_btn);
+            this.groupBox4.Location = new System.Drawing.Point(354, 287);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(353, 138);
+            this.groupBox4.Size = new System.Drawing.Size(353, 85);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Controls";
             // 
-            // metroButton3
+            // Reset_btn
             // 
-            this.metroButton3.Location = new System.Drawing.Point(225, 20);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(90, 50);
-            this.metroButton3.TabIndex = 2;
-            this.metroButton3.Text = "Reset Form";
-            this.metroButton3.UseSelectable = true;
-            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
+            this.Reset_btn.Location = new System.Drawing.Point(225, 20);
+            this.Reset_btn.Name = "Reset_btn";
+            this.Reset_btn.Size = new System.Drawing.Size(90, 50);
+            this.Reset_btn.TabIndex = 2;
+            this.Reset_btn.Text = "Reset Form";
+            this.Reset_btn.UseSelectable = true;
+            this.Reset_btn.Click += new System.EventHandler(this.Reset_btn_Click);
             // 
             // Close_BTN
             // 
@@ -389,57 +431,15 @@
             this.Close_BTN.UseSelectable = true;
             this.Close_BTN.Click += new System.EventHandler(this.Close_BTN_Click);
             // 
-            // metroButton1
+            // Submit_btn
             // 
-            this.metroButton1.Location = new System.Drawing.Point(33, 20);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(90, 50);
-            this.metroButton1.TabIndex = 0;
-            this.metroButton1.Text = "Submit \r\nCustomer";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(7, 200);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(94, 19);
-            this.metroLabel8.TabIndex = 10;
-            this.metroLabel8.Text = "Customer Age";
-            // 
-            // CustAge_txt
-            // 
-            // 
-            // 
-            // 
-            this.CustAge_txt.CustomButton.Image = null;
-            this.CustAge_txt.CustomButton.Location = new System.Drawing.Point(144, 1);
-            this.CustAge_txt.CustomButton.Name = "";
-            this.CustAge_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.CustAge_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.CustAge_txt.CustomButton.TabIndex = 1;
-            this.CustAge_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.CustAge_txt.CustomButton.UseSelectable = true;
-            this.CustAge_txt.CustomButton.Visible = false;
-            this.CustAge_txt.Enabled = false;
-            this.CustAge_txt.Lines = new string[0];
-            this.CustAge_txt.Location = new System.Drawing.Point(120, 200);
-            this.CustAge_txt.MaxLength = 32767;
-            this.CustAge_txt.Name = "CustAge_txt";
-            this.CustAge_txt.PasswordChar = '\0';
-            this.CustAge_txt.PromptText = "Customers Age";
-            this.CustAge_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.CustAge_txt.SelectedText = "";
-            this.CustAge_txt.SelectionLength = 0;
-            this.CustAge_txt.SelectionStart = 0;
-            this.CustAge_txt.ShortcutsEnabled = true;
-            this.CustAge_txt.Size = new System.Drawing.Size(196, 23);
-            this.CustAge_txt.TabIndex = 11;
-            this.CustAge_txt.UseSelectable = true;
-            this.CustAge_txt.WaterMark = "Customers Age";
-            this.CustAge_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.CustAge_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.Submit_btn.Location = new System.Drawing.Point(33, 20);
+            this.Submit_btn.Name = "Submit_btn";
+            this.Submit_btn.Size = new System.Drawing.Size(90, 50);
+            this.Submit_btn.TabIndex = 0;
+            this.Submit_btn.Text = "Submit \r\nCustomer";
+            this.Submit_btn.UseSelectable = true;
+            this.Submit_btn.Click += new System.EventHandler(this.Submit_btn_click);
             // 
             // NewCustomer
             // 
@@ -485,9 +485,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroTextBox Address_Txt;
         private System.Windows.Forms.GroupBox groupBox4;
-        private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroButton Reset_btn;
         private MetroFramework.Controls.MetroButton Close_BTN;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton Submit_btn;
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroTextBox CustAge_txt;
     }

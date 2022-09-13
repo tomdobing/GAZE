@@ -41,7 +41,11 @@ namespace Gaze.BusinessLogic.Config
             defaultForm.Text = ConfigAdmin.GetConfigValue("Company Name") + " - " + Application.ProductVersion + " - " + additionInfo;
             //defaultForm.Text = ConfigurationManager.AppSettings["CompanyName"] + " - " + Application.ProductVersion + " - " + additionInfo;
         }
-
+        /// <summary>
+        /// this function is used to return whether the URL is valid and reachable. Typically used for Check For Updates
+        /// </summary>
+        /// <param name="url">The Updates Server URL</param>
+        /// <returns>Returns HTTP Status Code</returns>
         public HttpStatusCode GetHeaders(string url)
         {
             HttpStatusCode result = default(HttpStatusCode);

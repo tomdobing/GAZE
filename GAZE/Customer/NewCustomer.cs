@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.SQLManagement;
@@ -19,7 +12,7 @@ namespace GAZE.Customer
         readonly FormSettings formSettings = new FormSettings();
         readonly CustomerManagement CustomerManagement = new CustomerManagement();
         readonly ConfigAdmin ConfigAdmin = new ConfigAdmin();
-       
+
         #endregion
         public NewCustomer()
         {
@@ -27,10 +20,10 @@ namespace GAZE.Customer
             formSettings.SetFormSettings(this);
             formSettings.ChangeableFormSettings(this, "New Customer");
             CustomerManagement.PopulateTitle(CmbTitle);
-            DOB_DTP.Format = DateTimePickerFormat.Custom;     
+            DOB_DTP.Format = DateTimePickerFormat.Custom;
             DOB_DTP.CustomFormat = ConfigAdmin.GetConfigValue("DateFormat");
             ContactNmr_txt.MaxLength = 16;
-                
+
         }
 
         private void NewCustomer_Load(object sender, EventArgs e)
@@ -43,7 +36,7 @@ namespace GAZE.Customer
             this.Dispose();
         }
 
-        private void metroButton3_Click(object sender, EventArgs e)
+        private void Reset_btn_Click(object sender, EventArgs e)
         {
             FirstName_Txt.Clear();
             surname_txt.Clear();
@@ -55,28 +48,14 @@ namespace GAZE.Customer
             CustAge_txt.Clear();
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void Submit_btn_click(object sender, EventArgs e)
         {
             CustomerManagement.CreateNewCustomer(CmbTitle, FirstName_Txt, surname_txt, DOB_DTP, ContactNmr_txt, Email_TXT, Address_Txt, metroCheckBox1);
         }
 
         private void DOB_DTP_Leave(object sender, EventArgs e)
         {
-            //CustAge_txt.Text = CalculateAge(DOB_DTP.Value).ToString();
-
             CustAge_txt.Text = DateTimeExtensions.ToAgeString(DOB_DTP.Value);
-            
-        }
-
-        public static int CalculateAge(DateTime birthDay)
-        {
-            int years = DateTime.Now.Year - birthDay.Year;
-           
-
-            if ((birthDay.Month > DateTime.Now.Month) || (birthDay.Month == DateTime.Now.Month && birthDay.Day > DateTime.Now.Day))
-                years--;
-
-            return years;
         }
 
     }

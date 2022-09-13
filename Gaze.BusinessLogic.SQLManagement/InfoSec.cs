@@ -12,10 +12,13 @@ namespace Gaze.BusinessLogic.SQLManagement
 
     public class InfoSec
     {
-        //Test Comment
+        #region Declarations
         private string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         public static string GlobalUsername { get; set; }
+        #endregion
 
+
+        #region Methods
         /// <summary>
         /// Method used to log a user in
         /// </summary>
@@ -59,6 +62,11 @@ namespace Gaze.BusinessLogic.SQLManagement
 
         }
 
+        /// <summary>
+        /// Checks if the user is an Application Administrator
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
         public bool isUserAdmin(string username)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -91,6 +99,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 scon.Close();
             }
         }
+        #endregion
 
 
     }
