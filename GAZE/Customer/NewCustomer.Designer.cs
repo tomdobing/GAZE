@@ -50,6 +50,8 @@
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.Close_BTN = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.CustAge_txt = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -159,6 +161,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CustAge_txt);
+            this.groupBox1.Controls.Add(this.metroLabel8);
             this.groupBox1.Controls.Add(this.metroLabel4);
             this.groupBox1.Controls.Add(this.DOB_DTP);
             this.groupBox1.Controls.Add(this.surname_txt);
@@ -191,6 +195,7 @@
             this.DOB_DTP.Name = "DOB_DTP";
             this.DOB_DTP.Size = new System.Drawing.Size(196, 29);
             this.DOB_DTP.TabIndex = 6;
+            this.DOB_DTP.Leave += new System.EventHandler(this.DOB_DTP_Leave);
             // 
             // groupBox2
             // 
@@ -394,6 +399,48 @@
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.Location = new System.Drawing.Point(7, 200);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(94, 19);
+            this.metroLabel8.TabIndex = 10;
+            this.metroLabel8.Text = "Customer Age";
+            // 
+            // CustAge_txt
+            // 
+            // 
+            // 
+            // 
+            this.CustAge_txt.CustomButton.Image = null;
+            this.CustAge_txt.CustomButton.Location = new System.Drawing.Point(144, 1);
+            this.CustAge_txt.CustomButton.Name = "";
+            this.CustAge_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.CustAge_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.CustAge_txt.CustomButton.TabIndex = 1;
+            this.CustAge_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.CustAge_txt.CustomButton.UseSelectable = true;
+            this.CustAge_txt.CustomButton.Visible = false;
+            this.CustAge_txt.Enabled = false;
+            this.CustAge_txt.Lines = new string[0];
+            this.CustAge_txt.Location = new System.Drawing.Point(120, 200);
+            this.CustAge_txt.MaxLength = 32767;
+            this.CustAge_txt.Name = "CustAge_txt";
+            this.CustAge_txt.PasswordChar = '\0';
+            this.CustAge_txt.PromptText = "Customers Age";
+            this.CustAge_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.CustAge_txt.SelectedText = "";
+            this.CustAge_txt.SelectionLength = 0;
+            this.CustAge_txt.SelectionStart = 0;
+            this.CustAge_txt.ShortcutsEnabled = true;
+            this.CustAge_txt.Size = new System.Drawing.Size(196, 23);
+            this.CustAge_txt.TabIndex = 11;
+            this.CustAge_txt.UseSelectable = true;
+            this.CustAge_txt.WaterMark = "Customers Age";
+            this.CustAge_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.CustAge_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // NewCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,5 +488,7 @@
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton Close_BTN;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroTextBox CustAge_txt;
     }
 }
