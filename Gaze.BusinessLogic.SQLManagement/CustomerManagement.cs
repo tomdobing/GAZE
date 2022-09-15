@@ -70,7 +70,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
             else
             {
-                MessageBox.Show(DOB.Value.ToShortDateString());
+                exceptionThrown.ThrowNewException("This is a message", "this is a stack trace", "Text");
             }
         }
         #endregion
