@@ -24,7 +24,7 @@ namespace Gaze.BusinessLogic.Exceptions
                 Text = Text,
                 TopMost = true
             };
-            frmExceptionDialog.Show();
+            frmExceptionDialog.ShowDialog();
             
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Gaze.BusinessLogic.Exceptions
                 Text = Text,
                 TopMost = true
             };
-            frmExceptionDialog.Show();
+            frmExceptionDialog.ShowDialog();
 
         }
         #endregion
