@@ -26,7 +26,9 @@ namespace GAZE.Admin
         private void AdminConfig_Load(object sender, EventArgs e)
         {
             ConfigAdmin.SelectAllConfigs(listBox1);
-           
+            listBox1.SelectedIndex = 0;
+            listBox1.Focus();
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

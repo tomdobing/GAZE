@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gaze.BusinessLogic.Exceptions;
 
 namespace Gaze.BusinessLogic.SQLManagement
 {
@@ -16,6 +17,7 @@ namespace Gaze.BusinessLogic.SQLManagement
 
         #region Declaration
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
+        private ExceptionThrown exception = new ExceptionThrown();
         #endregion
 
         #region Methods
@@ -26,6 +28,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         public void SelectAllConfigs(ListBox listBox)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
+            
             try
             {
                 scon.Open();
@@ -40,9 +43,10 @@ namespace Gaze.BusinessLogic.SQLManagement
                     listBox.Items.Add(sqlDataReader[1].ToString());
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                exception.ThrowNewStackException(ex, "SQL Exception");
+                ///BUG 45 - TBI
                 throw;
             }
             finally
@@ -90,10 +94,9 @@ namespace Gaze.BusinessLogic.SQLManagement
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                exception.ThrowNewStackException(ex, "SQL Exception");
             }
             finally
             {
@@ -120,9 +123,9 @@ namespace Gaze.BusinessLogic.SQLManagement
                 string ConfigValue = sqlCommand.ExecuteScalar().ToString();
                 return ConfigValue;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                exception.ThrowNewStackException(ex, "SQL Exception");
                 throw;
             }
             finally

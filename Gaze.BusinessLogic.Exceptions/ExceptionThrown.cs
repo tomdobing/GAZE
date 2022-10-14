@@ -6,14 +6,14 @@ namespace Gaze.BusinessLogic.Exceptions
     public class ExceptionThrown
     {
         #region Declarations
-        frmExceptionDialog frmExceptionDialog = new frmExceptionDialog();
+        private readonly frmExceptionDialog FrmExceptionDialog = new frmExceptionDialog();
         #endregion
 
         #region methods
         /// <summary>
         /// Used to throw System Generated Exceptions
         /// </summary>
-        /// <param name="ex">Stack Messages</param>
+        /// <param name="ex">Uses the function only for Stack Messages</param>
         /// <param name="Text">The Custom text to be displayed</param>
         public void ThrowNewStackException(Exception ex, string Text)
         {
@@ -24,6 +24,7 @@ namespace Gaze.BusinessLogic.Exceptions
                 Text = Text,
                 TopMost = true
             };
+            frmExceptionDialog.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             frmExceptionDialog.ShowDialog();
             
         }

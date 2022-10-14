@@ -51,8 +51,10 @@
             this.hideTimeDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sQLServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.takeDatabaseOfflineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -173,7 +175,8 @@
             this.createNewUserToolStripMenuItem,
             this.editDeleteUsersToolStripMenuItem,
             this.resetUserPasswordToolStripMenuItem,
-            this.configSettingsToolStripMenuItem});
+            this.configSettingsToolStripMenuItem,
+            this.databaseToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.adminToolStripMenuItem.Text = "Admin";
@@ -238,6 +241,13 @@
             this.checkForUpdatesToolStripMenuItem.Text = "Check for updates";
             this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.CheckForUpdatesToolStripMenuItem_Click);
             // 
+            // sQLServerToolStripMenuItem
+            // 
+            this.sQLServerToolStripMenuItem.Name = "sQLServerToolStripMenuItem";
+            this.sQLServerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sQLServerToolStripMenuItem.Text = "SQL Server";
+            this.sQLServerToolStripMenuItem.Click += new System.EventHandler(this.sQLServerToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
@@ -245,12 +255,19 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
-            // sQLServerToolStripMenuItem
+            // databaseToolStripMenuItem
             // 
-            this.sQLServerToolStripMenuItem.Name = "sQLServerToolStripMenuItem";
-            this.sQLServerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.sQLServerToolStripMenuItem.Text = "SQL Server";
-            this.sQLServerToolStripMenuItem.Click += new System.EventHandler(this.sQLServerToolStripMenuItem_Click);
+            this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.takeDatabaseOfflineToolStripMenuItem});
+            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.databaseToolStripMenuItem.Text = "Database";
+            // 
+            // takeDatabaseOfflineToolStripMenuItem
+            // 
+            this.takeDatabaseOfflineToolStripMenuItem.Name = "takeDatabaseOfflineToolStripMenuItem";
+            this.takeDatabaseOfflineToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.takeDatabaseOfflineToolStripMenuItem.Text = "Take Database Offline";
             // 
             // HomePage
             // 
@@ -299,6 +316,8 @@
         private System.Windows.Forms.ToolStripMenuItem resetUserPasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sQLServerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem takeDatabaseOfflineToolStripMenuItem;
     }
 }
 

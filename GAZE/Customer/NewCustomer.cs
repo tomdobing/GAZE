@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Gaze.BusinessLogic.Config;
+using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
 
 namespace GAZE.Customer
@@ -12,6 +13,7 @@ namespace GAZE.Customer
         readonly FormSettings formSettings = new FormSettings();
         readonly CustomerManagement CustomerManagement = new CustomerManagement();
         readonly ConfigAdmin ConfigAdmin = new ConfigAdmin();
+        readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
 
         #endregion
         public NewCustomer()
@@ -33,7 +35,7 @@ namespace GAZE.Customer
 
         private void Close_BTN_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Dispose();
         }
 
         private void Reset_btn_Click(object sender, EventArgs e)
@@ -50,7 +52,15 @@ namespace GAZE.Customer
 
         private void Submit_btn_click(object sender, EventArgs e)
         {
-            CustomerManagement.CreateNewCustomer(CmbTitle, FirstName_Txt, surname_txt, DOB_DTP, ContactNmr_txt, Email_TXT, Address_Txt, metroCheckBox1);
+            if (Email_TXT.Text.Contains("@"))
+            {
+                CustomerManagement.CreateNewCustomer(CmbTitle, FirstName_Txt, surname_txt, DOB_DTP, ContactNmr_txt, Email_TXT, Address_Txt, metroCheckBox1);
+            }
+            else
+            {
+                exceptionThrown.ThrowNewException("Email Address Validation Failure", "The email address you have entered is not valid. Please ensure it meets the email address criteria", "Validation Failure");
+            }
+            
         }
 
         private void DOB_DTP_Leave(object sender, EventArgs e)
@@ -58,5 +68,9 @@ namespace GAZE.Customer
             CustAge_txt.Text = DateTimeExtensions.ToAgeString(DOB_DTP.Value);
         }
 
+        private void Email_TXT_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
