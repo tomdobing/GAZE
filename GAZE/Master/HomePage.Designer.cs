@@ -47,14 +47,16 @@
             this.editDeleteUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetUserPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.takeDatabaseOfflineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideTimeDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sQLServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.takeDatabaseOfflineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +69,9 @@
             this.toolStripSeparator1,
             this.toolStripLabel2,
             this.toolStripSeparator2,
-            this.toolStripLabel3});
+            this.toolStripLabel3,
+            this.toolStripSeparator3,
+            this.toolStripLabel4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 425);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -129,14 +133,14 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.LogoutToolStripMenuItem_Click);
             // 
             // exitApplicationToolStripMenuItem
             // 
             this.exitApplicationToolStripMenuItem.Name = "exitApplicationToolStripMenuItem";
-            this.exitApplicationToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.exitApplicationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitApplicationToolStripMenuItem.Text = "Exit Application";
             this.exitApplicationToolStripMenuItem.Click += new System.EventHandler(this.ExitApplicationToolStripMenuItem_Click);
             // 
@@ -151,7 +155,7 @@
             // newCustomerToolStripMenuItem
             // 
             this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
-            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newCustomerToolStripMenuItem.Text = "New Customer";
             this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.NewCustomerToolStripMenuItem_Click);
             // 
@@ -209,6 +213,20 @@
             this.configSettingsToolStripMenuItem.Text = "Config Settings";
             this.configSettingsToolStripMenuItem.Click += new System.EventHandler(this.configSettingsToolStripMenuItem_Click);
             // 
+            // databaseToolStripMenuItem
+            // 
+            this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.takeDatabaseOfflineToolStripMenuItem});
+            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.databaseToolStripMenuItem.Text = "Database";
+            // 
+            // takeDatabaseOfflineToolStripMenuItem
+            // 
+            this.takeDatabaseOfflineToolStripMenuItem.Name = "takeDatabaseOfflineToolStripMenuItem";
+            this.takeDatabaseOfflineToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.takeDatabaseOfflineToolStripMenuItem.Text = "Take Database Offline";
+            // 
             // windowToolStripMenuItem
             // 
             this.windowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -255,19 +273,16 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
-            // databaseToolStripMenuItem
+            // toolStripSeparator3
             // 
-            this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.takeDatabaseOfflineToolStripMenuItem});
-            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
-            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.databaseToolStripMenuItem.Text = "Database";
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // takeDatabaseOfflineToolStripMenuItem
+            // toolStripLabel4
             // 
-            this.takeDatabaseOfflineToolStripMenuItem.Name = "takeDatabaseOfflineToolStripMenuItem";
-            this.takeDatabaseOfflineToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.takeDatabaseOfflineToolStripMenuItem.Text = "Take Database Offline";
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabel4.Text = "toolStripLabel4";
             // 
             // HomePage
             // 
@@ -318,6 +333,8 @@
         private System.Windows.Forms.ToolStripMenuItem sQLServerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem takeDatabaseOfflineToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
     }
 }
 

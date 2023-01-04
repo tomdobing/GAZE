@@ -99,6 +99,22 @@ namespace Gaze.BusinessLogic.SQLManagement
                 scon.Close();
             }
         }
+
+
+        public bool CheckDBStatus()
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
         #endregion
 
 

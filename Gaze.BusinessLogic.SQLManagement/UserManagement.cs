@@ -1,4 +1,5 @@
-﻿using MetroFramework.Controls;
+﻿using Gaze.BusinessLogic.Exceptions;
+using MetroFramework.Controls;
 using System;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -13,6 +14,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         #region Declarations
         
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
+        ExceptionThrown ExceptionThrown = new ExceptionThrown();
         #endregion
 
         #region Methods
@@ -110,15 +112,15 @@ namespace Gaze.BusinessLogic.SQLManagement
                     MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw;
+                    ExceptionThrown.ThrowNewStackException(ex, "Exception Thrown");
                 }
                 finally 
                 { 
                     scon.Close(); 
                 }
-            }
+            } 
             else
             {
                 string message = "The password must be greater than 7 Characters.";
