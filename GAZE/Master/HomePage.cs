@@ -172,5 +172,10 @@ namespace GAZE
             MessageBox.Show(message, caption, buttons,
             MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
+
+        private void newStockInputToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

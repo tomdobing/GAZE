@@ -49,12 +49,12 @@ namespace GAZE.Admin
                 }
                 else
                 {
-                    exceptionThrown.ThrowNewException("Unknown username/password. Please try again", "Invalid Login Details!", "Login Failed");
-                    //string message = "Unknown username/password. Please try again";
-                    //string caption = "Invalid Login Details!";
-                    //MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    //MessageBox.Show(this, message, caption, buttons,
-                    //MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    //exceptionThrown.ThrowNewException("Unknown username/password. Please try again", "Invalid Login Details!", "Login Failed");
+                    string message = "Incorrect username/password. Please try again";
+                    string caption = "Invalid Login Details!";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(this, message, caption, buttons,
+                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     password_txt.Clear();
                     password_txt.Focus();
                 }

@@ -48,8 +48,8 @@ namespace Gaze.BusinessLogic.Startup
             catch (Exception ex)
             {
                 exceptionThrown.ThrowNewStackException(ex, "SQL Server Offline");
-                //string message = "An unknown error has occured. Please try again later" + Environment.NewLine + Environment.NewLine + ex.Message;
-                //string caption = "Unknown Error Occured";
+                //string message = "An unknown error has occurred. Please try again later" + Environment.NewLine + Environment.NewLine + ex.Message;
+                //string caption = "Unknown Error Occurred";
                 //MessageBoxButtons buttons = MessageBoxButtons.OK;
                 //MessageBox.Show(message, caption, buttons,
                 //MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
