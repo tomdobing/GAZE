@@ -56,7 +56,7 @@ namespace GAZE.Admin
                     MessageBox.Show(this, message, caption, buttons,
                     MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     password_txt.Clear();
-                    password_txt.Focus();
+                    password_txt.Focus(); 
                 }
             }
             else if (PreLoginChecks.CheckSQLServerIsOnline(SQLError_lbl) == false)
