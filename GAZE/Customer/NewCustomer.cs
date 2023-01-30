@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
+using Gaze.BusinessLogic.Security;
 
 namespace GAZE.Customer
 {
@@ -14,6 +15,7 @@ namespace GAZE.Customer
         readonly CustomerManagement CustomerManagement = new CustomerManagement();
         readonly ConfigAdmin ConfigAdmin = new ConfigAdmin();
         readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
+       // readonly Print print = new Print();
 
         #endregion
         public NewCustomer()
@@ -24,7 +26,7 @@ namespace GAZE.Customer
             CustomerManagement.PopulateTitle(CmbTitle);
             DOB_DTP.Format = DateTimePickerFormat.Custom;
             DOB_DTP.CustomFormat = ConfigAdmin.GetConfigValue("DateFormat");
-            ContactNmr_txt.MaxLength = 16;
+            ContactNmr_txt.MaxLength = 14;
 
         }
 
@@ -71,6 +73,11 @@ namespace GAZE.Customer
         private void Email_TXT_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //print.PrintForm(this);
         }
     }
 }
