@@ -55,16 +55,22 @@ namespace GAZE.Customer
 
         private void Submit_btn_click(object sender, EventArgs e)
         {
-            
+
             if (validation.IsValidEmail(Email_TXT.Text))
             {
-                CustomerManagement.CreateNewCustomer(CmbTitle, FirstName_Txt, surname_txt, DOB_DTP, ContactNmr_txt, Email_TXT, Address_Txt, metroCheckBox1);
+                if (validation.IsValidPhone(ContactNmr_txt.Text))
+                {
+                    CustomerManagement.CreateNewCustomer(CmbTitle, FirstName_Txt, surname_txt, DOB_DTP, ContactNmr_txt, Email_TXT, Address_Txt, metroCheckBox1);
+                }
+                else
+                {
+                    exceptionThrown.ThrowNewException("Contact Validation Failure", "The contact number you have entered is not valid. Please ensure it meets the contact number criteria", "Validation Failure");
+                }
             }
             else
             {
                 exceptionThrown.ThrowNewException("Email Address Validation Failure", "The email address you have entered is not valid. Please ensure it meets the email address criteria", "Validation Failure");
             }
-            
         }
 
         private void DOB_DTP_Leave(object sender, EventArgs e)

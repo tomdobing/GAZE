@@ -17,7 +17,11 @@ namespace Gaze.BusinessLogic.Config
             
         }
 
-
+        public bool IsValidPhone(string phone)
+        {
+            string pattern = @"^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$";
+            return Regex.IsMatch(phone, pattern);
+        }
 
     }
 }
