@@ -15,6 +15,7 @@ namespace GAZE.Customer
         readonly CustomerManagement CustomerManagement = new CustomerManagement();
         readonly ConfigAdmin ConfigAdmin = new ConfigAdmin();
         readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
+        readonly Validations validation = new Validations();
        // readonly Print print = new Print();
 
         #endregion
@@ -54,7 +55,8 @@ namespace GAZE.Customer
 
         private void Submit_btn_click(object sender, EventArgs e)
         {
-            if (Email_TXT.Text.Contains("@"))
+            
+            if (validation.IsValidEmail(Email_TXT.Text))
             {
                 CustomerManagement.CreateNewCustomer(CmbTitle, FirstName_Txt, surname_txt, DOB_DTP, ContactNmr_txt, Email_TXT, Address_Txt, metroCheckBox1);
             }
