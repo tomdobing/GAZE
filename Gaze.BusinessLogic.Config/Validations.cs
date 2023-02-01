@@ -21,7 +21,7 @@ namespace Gaze.BusinessLogic.Config
             
         }
         /// <summary>
-        /// Method used to validate if the phone number matches UK formats!
+        /// Method used to validate if the phone number matches UK formats
         /// </summary>
         /// <param name="phone"></param>
         /// <returns></returns>
