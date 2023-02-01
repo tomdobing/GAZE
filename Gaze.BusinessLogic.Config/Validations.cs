@@ -20,7 +20,11 @@ namespace Gaze.BusinessLogic.Config
             return Regex.IsMatch(email, pattern);
             
         }
-
+        /// <summary>
+        /// Method used to validate if the phone number matches UK formats
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <returns></returns>
         public bool IsValidPhone(string phone)
         {
             string pattern = @"^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$";
