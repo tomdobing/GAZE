@@ -30,7 +30,7 @@ namespace Gaze.BusinessLogic.Config
             string pattern = @"^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$";
             return Regex.IsMatch(phone, pattern);
         }
-
+         
         public bool IsOverRequiredAge(DateTime BirthDate)
         {
             int age = DateTime.Today.Year - BirthDate.Year;
