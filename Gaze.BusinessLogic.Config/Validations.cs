@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
 namespace Gaze.BusinessLogic.Config
@@ -30,11 +26,11 @@ namespace Gaze.BusinessLogic.Config
             string pattern = @"^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$";
             return Regex.IsMatch(phone, pattern);
         }
-         /// <summary>
-         /// Method to validate is the customer is over the age of X Years
-         /// </summary>
-         /// <param name="BirthDate">The date of birth of the customer</param>
-         /// <returns>Returns if over X Years</returns>
+        /// <summary>
+        /// Method to validate is the customer is over the age of X Years
+        /// </summary>
+        /// <param name="BirthDate">The date of birth of the customer</param>
+        /// <returns>Returns if over X Years</returns>
         public bool IsOverRequiredAge(DateTime BirthDate)
         {
             int age = DateTime.Today.Year - BirthDate.Year;
