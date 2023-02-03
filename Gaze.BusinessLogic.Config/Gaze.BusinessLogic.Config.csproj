@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigUpdates.cs" />
     <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="FormSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

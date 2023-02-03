@@ -135,25 +135,6 @@ namespace Gaze.BusinessLogic.SQLManagement
 
         }
 
-        public void TakeDatabaseOffline()
-        {
-            SqlConnection scon = new SqlConnection(SQLConnectionString);
-            try
-            {
-                scon.Open();
-                SqlCommand sqlCommand = new SqlCommand("EXEC_TAKE_DATABASE_OFFLINE", scon)
-                {
-                    CommandType = System.Data.CommandType.StoredProcedure
-                };
-                sqlCommand.ExecuteReader();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-        }
         #endregion
 
 
