@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.SQLManagement;
+using Gaze.BusinessLogic.Security;
 
 namespace GAZE.Admin
 {
@@ -16,6 +17,7 @@ namespace GAZE.Admin
     {
         ConfigAdmin ConfigAdmin = new ConfigAdmin();
         FormSettings FormSettings = new FormSettings();
+        LoginSecurity SecLogin = new LoginSecurity();
         public AdminConfig()
         {
             InitializeComponent();
@@ -28,13 +30,41 @@ namespace GAZE.Admin
             ConfigAdmin.SelectAllConfigs(listBox1);
             listBox1.SelectedIndex = 0;
             listBox1.Focus();
+            DisableInput();
 
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ConfigAdmin.SelectedConfig(listBox1, metroTextBox1, metroTextBox2, metroTextBox3, metroCheckBox1, metroTextBox4);
-            //metroCheckBox1.CheckState = CheckState.Unchecked;
+            if (ChangeBit_cmb.Checked)
+            {
+                EnableInput();
+            }
+            ConfigAdmin.SelectedConfig(listBox1, ConfigID_txt, ConfigName_txt, ConfigValue_txt, ChangeBit_cmb, AddedBy_txt);
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void DisableInput()
+        {
+            ConfigName_txt.ReadOnly = true;
+            ConfigValue_txt.ReadOnly = true;
+            AddedBy_txt.ReadOnly = true;
+            ConfigID_txt.ReadOnly = true;
+            ChangeBit_cmb.Enabled = false;
+        }
+
+        private void EnableInput()
+        {
+            ConfigValue_txt.ReadOnly = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ConfigAdmin.UpdateConfigValue(ConfigID_txt.Text, ConfigValue_txt.Text, InfoSec.GlobalUsername);
         }
     }
 }

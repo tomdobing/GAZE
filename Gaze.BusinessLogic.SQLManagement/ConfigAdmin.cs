@@ -1,14 +1,11 @@
 ﻿using MetroFramework.Controls;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gaze.BusinessLogic.Exceptions;
+
 
 namespace Gaze.BusinessLogic.SQLManagement
 {
@@ -18,6 +15,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         #region Declaration
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         private ExceptionThrown exception = new ExceptionThrown();
+
         #endregion
 
         #region Methods
@@ -28,7 +26,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         public void SelectAllConfigs(ListBox listBox)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
-            
+
             try
             {
                 scon.Open();
@@ -70,7 +68,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             try
             {
                 scon.Open();
-                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_SINGLE_CONFIG_SP", scon)
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CONFIG_SP", scon)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
@@ -102,7 +100,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             {
                 scon.Close();
             }
-           
+
         }
         /// <summary>
         /// Used to get the config value
@@ -134,9 +132,76 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
 
         }
+        /// <summary>
+        /// Method to update Configuration values throughout the application
+        /// </summary>
+        /// <param name="ConfigID">The Database ID of the config</param>
+        /// <param name="NewConfigValue">The new config value</param>
+        /// <param name="UpdateBy">The username of the person updating the app</param>
+        public void UpdateConfigValue(string ConfigID, string NewConfigValue, string UpdateBy)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_CONFIG_VALUE", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@ConfigID", ConfigID);
+                sqlCommand.Parameters.AddWithValue("@ConfigValue", NewConfigValue);
+                sqlCommand.Parameters.AddWithValue("@UpdatedBy", UpdateBy);
+                sqlCommand.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
 
-        #endregion
+                exception.ThrowNewStackException(ex, "SQL Exception");
+            }
+            finally
+            {
+                scon.Close();
+            }
+        }
+        public int GetValueForApp(string AppValue)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CONFIG_VALUE_FOR_APP_SP", scon)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@ConfigName", AppValue);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+               
+                if (sqlDataReader.Read())
+                {
+                    string ConfigValue = sqlDataReader["ConfigValue"].ToString();
+                    int ConvertedValue = Convert.ToInt32(ConfigValue);
+                    return ConvertedValue;
+                }
+                else
+                {
+                    return -1;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                //exception.ThrowNewStackException(ex, "SQL Exception");
+                return -1;
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+            #endregion
 
 
+        }
     }
 }

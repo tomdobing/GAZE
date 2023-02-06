@@ -100,7 +100,10 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
         }
 
-
+        /// <summary>
+        /// Method to check the database status 
+        /// </summary>
+        /// <returns>True if online or False if Offline</returns>
         public bool CheckDBStatus()
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);

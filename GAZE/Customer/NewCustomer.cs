@@ -37,6 +37,11 @@ namespace GAZE.Customer
 
         }
 
+        public void GetAgeValue()
+        {
+            
+        }
+
         private void Close_BTN_Click(object sender, EventArgs e)
         {
             Dispose();

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MetroFramework.Forms;
-
+using Gaze.BusinessLogic.SQLManagement;
 namespace Gaze.BusinessLogic.Security
 {
     public class LoginFormSettings

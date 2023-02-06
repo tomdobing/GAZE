@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Gaze.BusinessLogic.SQLManagement;
+using System;
 using System.Text.RegularExpressions;
 
 namespace Gaze.BusinessLogic.Config
 {
     public class Validations
     {
+        SQLManagement.ConfigAdmin ConfigAdmin = new SQLManagement.ConfigAdmin();
         /// <summary>
         /// Method used to validate if the email address entered matches the standard format for an email address
         /// </summary>
@@ -35,7 +37,7 @@ namespace Gaze.BusinessLogic.Config
         {
             int age = DateTime.Today.Year - BirthDate.Year;
             if (BirthDate > DateTime.Today.AddYears(-age)) age--;
-            return age >=18;
+            return age >= ConfigAdmin.GetValueForApp("AgeLimit");
             
         }
 
