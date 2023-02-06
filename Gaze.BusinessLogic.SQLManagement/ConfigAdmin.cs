@@ -15,7 +15,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         #region Declaration
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         private ExceptionThrown exception = new ExceptionThrown();
-
+        private MessageHandler MessageHandler = new MessageHandler();
         #endregion
 
         #region Methods
@@ -152,6 +152,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 sqlCommand.Parameters.AddWithValue("@ConfigValue", NewConfigValue);
                 sqlCommand.Parameters.AddWithValue("@UpdatedBy", UpdateBy);
                 sqlCommand.ExecuteReader();
+                MessageHandler.ShowMessage("Config Value Update", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -180,13 +181,14 @@ namespace Gaze.BusinessLogic.SQLManagement
                 {
                     string ConfigValue = sqlDataReader["ConfigValue"].ToString();
                     int ConvertedValue = Convert.ToInt32(ConfigValue);
+                    
                     return ConvertedValue;
+                   
                 }
                 else
                 {
                     return -1;
                 }
-
             }
             catch (Exception ex)
             {
