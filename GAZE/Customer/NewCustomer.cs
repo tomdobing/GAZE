@@ -76,7 +76,8 @@ namespace GAZE.Customer
             }
             if (!validation.IsOverRequiredAge(DOB_DTP.Value))
             {
-                messageHandler.ShowMessage("The customer is not of the age that is required as per the Terms & Conditions.", "Age Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //updated wording based on #60
+                messageHandler.ShowMessage("The customers' age does not meet the requirements of the Terms and Conditions of this product and/or tariff", "Age Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
                 return;
             }

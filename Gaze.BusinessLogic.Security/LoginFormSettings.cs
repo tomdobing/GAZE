@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MetroFramework.Forms;
-using Gaze.BusinessLogic.SQLManagement;
+﻿using MetroFramework.Forms;
 namespace Gaze.BusinessLogic.Security
 {
     public class LoginFormSettings

@@ -1,10 +1,10 @@
-﻿using MetroFramework.Controls;
+﻿using Gaze.BusinessLogic.Exceptions;
+using MetroFramework.Controls;
 using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using Gaze.BusinessLogic.Exceptions;
 
 
 namespace Gaze.BusinessLogic.SQLManagement
@@ -14,15 +14,15 @@ namespace Gaze.BusinessLogic.SQLManagement
 
         #region Declaration
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
-        private ExceptionThrown exception = new ExceptionThrown();
-
+        private readonly ExceptionThrown exception = new ExceptionThrown();
+        private readonly MessageHandler MessageHandler = new MessageHandler();
         #endregion
 
         #region Methods
         /// <summary>
         /// Selects users in the configured SQL Server Database and returns username only into ListBox
         /// </summary>
-        /// <param name="listBox">Listbox to post results to</param>
+        /// <param name="listBox">List box to post results to</param>
         public void SelectAllConfigs(ListBox listBox)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -152,6 +152,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 sqlCommand.Parameters.AddWithValue("@ConfigValue", NewConfigValue);
                 sqlCommand.Parameters.AddWithValue("@UpdatedBy", UpdateBy);
                 sqlCommand.ExecuteReader();
+                MessageHandler.ShowMessage("Config Value Update", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -175,18 +176,19 @@ namespace Gaze.BusinessLogic.SQLManagement
                 };
                 sqlCommand.Parameters.AddWithValue("@ConfigName", AppValue);
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-               
+
                 if (sqlDataReader.Read())
                 {
                     string ConfigValue = sqlDataReader["ConfigValue"].ToString();
                     int ConvertedValue = Convert.ToInt32(ConfigValue);
+
                     return ConvertedValue;
+
                 }
                 else
                 {
                     return -1;
                 }
-
             }
             catch (Exception ex)
             {
