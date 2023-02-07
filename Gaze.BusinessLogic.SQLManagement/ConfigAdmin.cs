@@ -14,8 +14,8 @@ namespace Gaze.BusinessLogic.SQLManagement
 
         #region Declaration
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
-        private ExceptionThrown exception = new ExceptionThrown();
-        private MessageHandler MessageHandler = new MessageHandler();
+        private readonly ExceptionThrown exception = new ExceptionThrown();
+        private readonly MessageHandler MessageHandler = new MessageHandler();
         #endregion
 
         #region Methods
