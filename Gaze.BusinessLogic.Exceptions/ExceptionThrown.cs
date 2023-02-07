@@ -26,7 +26,7 @@ namespace Gaze.BusinessLogic.Exceptions
             };
             frmExceptionDialog.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             frmExceptionDialog.ShowDialog();
-            
+
         }
         /// <summary>
         /// Used to throw custom exceptions, typically for custom error messages
@@ -34,7 +34,7 @@ namespace Gaze.BusinessLogic.Exceptions
         /// <param name="message">Message to show in the lable next to the image</param>
         /// <param name="stacktrace">Stack trace to show in the text box</param>
         /// <param name="Text">Title of the error message</param>
-        public void ThrowNewException(string message,string stacktrace, string Text)
+        public void ThrowNewException(string message, string stacktrace, string Text)
         {
             frmExceptionDialog frmExceptionDialog = new frmExceptionDialog
             {

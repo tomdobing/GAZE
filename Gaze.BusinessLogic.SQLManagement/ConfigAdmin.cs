@@ -1,10 +1,10 @@
-﻿using MetroFramework.Controls;
+﻿using Gaze.BusinessLogic.Exceptions;
+using MetroFramework.Controls;
 using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using Gaze.BusinessLogic.Exceptions;
 
 
 namespace Gaze.BusinessLogic.SQLManagement
@@ -176,14 +176,14 @@ namespace Gaze.BusinessLogic.SQLManagement
                 };
                 sqlCommand.Parameters.AddWithValue("@ConfigName", AppValue);
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-               
+
                 if (sqlDataReader.Read())
                 {
                     string ConfigValue = sqlDataReader["ConfigValue"].ToString();
                     int ConvertedValue = Convert.ToInt32(ConfigValue);
-                    
+
                     return ConvertedValue;
-                   
+
                 }
                 else
                 {

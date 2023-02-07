@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Gaze.BusinessLogic.Exceptions;
+using MetroFramework.Controls;
+using System;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MetroFramework.Controls;
-using Gaze.BusinessLogic.Exceptions;
 using System.Runtime.InteropServices;
 
 namespace Gaze.BusinessLogic.SQLManagement
 {
     public class CustomerManagement
     {
-        
+
         #region Declarations
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         private readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
@@ -64,7 +59,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         /// <param name="Vuln"></param>
         public void CreateNewCustomer(MetroComboBox Title, MetroTextBox Firstname, MetroTextBox surname, MetroDateTime DOB, MetroTextBox Contact, MetroTextBox Email, MetroTextBox Address, [Optional] MetroCheckBox Vuln)
         {
-            if (Title.SelectedIndex.ToString() == "" | Firstname.Text == "" | surname.Text == "" | DOB.Value.ToShortDateString() == "" | Contact.Text == "" | Email.Text == "" | Address.Text == "" )
+            if (Title.SelectedIndex.ToString() == "" | Firstname.Text == "" | surname.Text == "" | DOB.Value.ToShortDateString() == "" | Contact.Text == "" | Email.Text == "" | Address.Text == "")
             {
                 exceptionThrown.ThrowNewException("Data Validation Failed", "You have not completed all required fields. Please check and try again!", "Data Failure");
             }
