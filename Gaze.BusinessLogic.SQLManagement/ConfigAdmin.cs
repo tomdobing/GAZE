@@ -22,7 +22,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         /// <summary>
         /// Selects users in the configured SQL Server Database and returns username only into ListBox
         /// </summary>
-        /// <param name="listBox">Listbox to post results to</param>
+        /// <param name="listBox">List box to post results to</param>
         public void SelectAllConfigs(ListBox listBox)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
