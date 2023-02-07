@@ -5,6 +5,16 @@ VisualStudioVersion = 17.3.32708.82
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GAZE", "GAZE\GAZE.csproj", "{5913FB33-67E9-46B3-86D9-5B185C9DD309}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaze.BusinessLogic.Config", "Gaze.BusinessLogic.Config\Gaze.BusinessLogic.Config.csproj", "{0B58BD9C-FCC3-4EA4-9453-334839379D93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaze.BusinessLogic.Security", "Gaze.BusinessLogic.Security\Gaze.BusinessLogic.Security.csproj", "{73C7DB54-40D2-4E7E-B198-0B33FE341152}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaze.BusinessLogic.SQLManagement", "Gaze.BusinessLogic.SQLManagement\Gaze.BusinessLogic.SQLManagement.csproj", "{652C3E19-E25A-4B29-85E6-185BDF63FB1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaze.BusinessLogic.Startup", "Gaze.BusinessLogic.Startup\Gaze.BusinessLogic.Startup.csproj", "{554C89C5-535D-4A93-97B4-CDBD6CF37C10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaze.BusinessLogic.Exceptions", "Gaze.BusinessLogic.Exceptions\Gaze.BusinessLogic.Exceptions.csproj", "{C19908C8-7CB6-4888-9FB7-354076BB9ACB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,11 +25,42 @@ Global
 		{5913FB33-67E9-46B3-86D9-5B185C9DD309}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5913FB33-67E9-46B3-86D9-5B185C9DD309}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5913FB33-67E9-46B3-86D9-5B185C9DD309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B58BD9C-FCC3-4EA4-9453-334839379D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B58BD9C-FCC3-4EA4-9453-334839379D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B58BD9C-FCC3-4EA4-9453-334839379D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B58BD9C-FCC3-4EA4-9453-334839379D93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73C7DB54-40D2-4E7E-B198-0B33FE341152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73C7DB54-40D2-4E7E-B198-0B33FE341152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73C7DB54-40D2-4E7E-B198-0B33FE341152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73C7DB54-40D2-4E7E-B198-0B33FE341152}.Release|Any CPU.Build.0 = Release|Any CPU
+		{652C3E19-E25A-4B29-85E6-185BDF63FB1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{652C3E19-E25A-4B29-85E6-185BDF63FB1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{652C3E19-E25A-4B29-85E6-185BDF63FB1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{652C3E19-E25A-4B29-85E6-185BDF63FB1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{554C89C5-535D-4A93-97B4-CDBD6CF37C10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{554C89C5-535D-4A93-97B4-CDBD6CF37C10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{554C89C5-535D-4A93-97B4-CDBD6CF37C10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{554C89C5-535D-4A93-97B4-CDBD6CF37C10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C19908C8-7CB6-4888-9FB7-354076BB9ACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C19908C8-7CB6-4888-9FB7-354076BB9ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C19908C8-7CB6-4888-9FB7-354076BB9ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C19908C8-7CB6-4888-9FB7-354076BB9ACB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F589100D-5717-4D84-9246-C7852F894A14}
+	EndGlobalSection
+	GlobalSection(AutomaticVersions) = postSolution
+		UpdateAssemblyVersion = True
+		UpdateAssemblyFileVersion = True
+		UpdateAssemblyInfoVersion = False
+		ShouldCreateLogs = True
+		AssemblyVersionSettings = None.None.None.IncrementOnDemand
+		AssemblyFileVersionSettings = None.None.None.IncrementOnDemand
+		UpdatePackageVersion = False
+		AssemblyInfoVersionType = SettingsVersion
+		InheritWinAppVersionFrom = None
 	EndGlobalSection
 EndGlobal
