@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Gaze.BusinessLogic.SQLManagement;
 using System.Windows.Forms;
-using Gaze.BusinessLogic.SQLManagement;
 namespace Gaze.BusinessLogic.Security
 {
     public class LoginSecurity
@@ -18,7 +13,7 @@ namespace Gaze.BusinessLogic.Security
         {
             username.Text = "Logged in as: " + InfoSec.GlobalUsername.ToUpper();
         }
-      
+
 
     }
 }

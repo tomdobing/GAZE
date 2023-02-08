@@ -4,17 +4,17 @@ using System;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Gaze.BusinessLogic.SQLManagement
 {
     public class UserManagement
     {
-  
+
         #region Declarations
-        
+
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         ExceptionThrown ExceptionThrown = new ExceptionThrown();
+        MessageHandler MessageHandler = new MessageHandler();
         #endregion
 
         #region Methods
@@ -77,7 +77,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 }
                 finally
                 {
-                    scon.Close(); 
+                    scon.Close();
                 }
             }
 
@@ -116,20 +116,19 @@ namespace Gaze.BusinessLogic.SQLManagement
                 {
                     ExceptionThrown.ThrowNewStackException(ex, "Exception Thrown");
                 }
-                finally 
-                { 
-                    scon.Close(); 
+                finally
+                {
+                    scon.Close();
                 }
-            } 
+            }
             else
             {
                 string message = "The password must be greater than 7 Characters.";
                 string caption = "User Password Failure";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                MessageBox.Show(message, caption, buttons,
-                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            }
+                MessageHandler.ShowMessage(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
             
+            }
+
 
 
 
@@ -156,7 +155,7 @@ namespace Gaze.BusinessLogic.SQLManagement
 
                 if (reader.Read())
                 {
-                
+
                     return true;
 
 
@@ -254,8 +253,8 @@ namespace Gaze.BusinessLogic.SQLManagement
                     {
                         isadmin.CheckState = CheckState.Unchecked;
                     }
-                    
-                    
+
+
                 }
             }
             catch (Exception)

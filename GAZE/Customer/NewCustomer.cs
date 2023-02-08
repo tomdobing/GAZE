@@ -1,9 +1,8 @@
-﻿using System;
-using System.Windows.Forms;
-using Gaze.BusinessLogic.Config;
+﻿using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
-using Gaze.BusinessLogic.Security;
+using System;
+using System.Windows.Forms;
 
 namespace GAZE.Customer
 {
@@ -16,8 +15,8 @@ namespace GAZE.Customer
         readonly ConfigAdmin ConfigAdmin = new ConfigAdmin();
         readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
         readonly Validations validation = new Validations();
-       // readonly Print print = new Print();
-       readonly MessageHandler messageHandler = new MessageHandler();
+        // readonly Print print = new Print();
+        readonly MessageHandler messageHandler = new MessageHandler();
 
         #endregion
         public NewCustomer()
@@ -35,11 +34,6 @@ namespace GAZE.Customer
         private void NewCustomer_Load(object sender, EventArgs e)
         {
 
-        }
-
-        public void GetAgeValue()
-        {
-            
         }
 
         private void Close_BTN_Click(object sender, EventArgs e)
@@ -64,20 +58,21 @@ namespace GAZE.Customer
             if (!validation.IsValidEmail(Email_TXT.Text))
             {
                 messageHandler.ShowMessage("The email address you have entered is not valid. Please ensure it meets the email address criteria", "Email Address Validation Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
                 return;
             }
 
             if (!validation.IsValidPhone(ContactNmr_txt.Text))
             {
                 messageHandler.ShowMessage("The contact number you have entered is not valid. Please ensure it meets the contact number criteria", "Contact Validation Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
                 return;
             }
             if (!validation.IsOverRequiredAge(DOB_DTP.Value))
             {
-                messageHandler.ShowMessage("The customer is not of the age that is required as per the Terms & Conditions.", "Age Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+                //updated wording based on #60
+                messageHandler.ShowMessage("The customers' age does not meet the requirements of the Terms and Conditions of this product and/or tariff", "Age Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return;
             }
 

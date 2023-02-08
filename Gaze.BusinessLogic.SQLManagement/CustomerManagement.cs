@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Gaze.BusinessLogic.Exceptions;
 using MetroFramework.Controls;
-using Gaze.BusinessLogic.Exceptions;
+using System;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace Gaze.BusinessLogic.SQLManagement
 {
     public class CustomerManagement
     {
-        
+
         #region Declarations
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         private readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
@@ -64,13 +61,41 @@ namespace Gaze.BusinessLogic.SQLManagement
         /// <param name="Vuln"></param>
         public void CreateNewCustomer(MetroComboBox Title, MetroTextBox Firstname, MetroTextBox surname, MetroDateTime DOB, MetroTextBox Contact, MetroTextBox Email, MetroTextBox Address, [Optional] MetroCheckBox Vuln)
         {
-            if (Title.SelectedIndex.ToString() == "" | Firstname.Text == "" | surname.Text == "" | DOB.Value.ToShortDateString() == "" | Contact.Text == "" | Email.Text == "" | Address.Text == "" )
+            if (Title.SelectedIndex.ToString() == "" | Firstname.Text == "" | surname.Text == "" | DOB.Value.ToShortDateString() == "" | Contact.Text == "" | Email.Text == "" | Address.Text == "")
             {
                 exceptionThrown.ThrowNewException("Data Validation Failed", "You have not completed all required fields. Please check and try again!", "Data Failure");
             }
             else
             {
                 exceptionThrown.ThrowNewException("This is a message", "this is a stack trace", "Text");
+            }
+        }
+
+        public void GetCustomerDataByContactNumber(string ContactNumber, DataGridView DGV)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                using (SqlCommand scmd = new SqlCommand("SELECT_CUSTOMER_TITLE_BY_CONTACT_NUMBER_SP", scon))
+                {
+                    scmd.CommandType = CommandType.StoredProcedure;
+                    scmd.Parameters.AddWithValue("@ContactNumber", ContactNumber);
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(scmd))
+                    {
+                        DataTable customers = new DataTable();
+                        adapter.Fill(customers);
+                        DGV.DataSource = customers;
+                    }
+                    DGV.ReadOnly = true;
+                    DGV.AllowUserToAddRows = false;
+                    
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
         #endregion

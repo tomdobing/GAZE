@@ -177,5 +177,11 @@ namespace GAZE
         {
 
         }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Customer.CustomerSearch customerSearch = new Customer.CustomerSearch();
+            customerSearch.Show();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,6 +36,7 @@ namespace GAZE.Admin
 
         }
 
+        
         private void metroButton1_Click(object sender, EventArgs e)
         {
             if (usrname_txt.Text == "" | password_txt.Text == "" | confirm_txt.Text == "")
@@ -52,7 +54,7 @@ namespace GAZE.Admin
                     if (password_txt.Text == confirm_txt.Text)
                     {
                         UserManagement.ResetUserPassword(usrname_txt, confirm_txt);
-                        this.Close();
+                        //this.Close(); #63 Removed due to form closure upon failure
                     }
                     else
                     {
@@ -70,6 +72,7 @@ namespace GAZE.Admin
                 }
                 
             }
+            
         }
     }
 }

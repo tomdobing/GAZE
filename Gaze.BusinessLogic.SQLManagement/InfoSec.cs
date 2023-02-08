@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MetroFramework.Controls;
+using System;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework.Controls;
 namespace Gaze.BusinessLogic.SQLManagement
 {
 
@@ -42,7 +38,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 {
                     GlobalUsername = username.Text;
                     return true;
-                    
+
                 }
                 else
                 {
@@ -51,7 +47,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
             catch (Exception e)
             {
-             
+
                 MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
@@ -80,7 +76,7 @@ namespace Gaze.BusinessLogic.SQLManagement
 
                 if (reader.Read())
                 {
-                    
+
                     return true;
 
                 }

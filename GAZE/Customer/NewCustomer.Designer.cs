@@ -52,6 +52,8 @@
             this.Reset_btn = new MetroFramework.Controls.MetroButton();
             this.Close_BTN = new MetroFramework.Controls.MetroButton();
             this.Submit_btn = new MetroFramework.Controls.MetroButton();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.AltContact_txt = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -241,13 +243,15 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.metroLabel9);
+            this.groupBox2.Controls.Add(this.AltContact_txt);
             this.groupBox2.Controls.Add(this.metroLabel6);
             this.groupBox2.Controls.Add(this.Email_TXT);
             this.groupBox2.Controls.Add(this.metroLabel5);
             this.groupBox2.Controls.Add(this.ContactNmr_txt);
             this.groupBox2.Location = new System.Drawing.Point(13, 277);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(335, 95);
+            this.groupBox2.Size = new System.Drawing.Size(335, 154);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Customer Contact";
@@ -255,7 +259,7 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(7, 52);
+            this.metroLabel6.Location = new System.Drawing.Point(7, 86);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(92, 19);
             this.metroLabel6.TabIndex = 10;
@@ -276,7 +280,7 @@
             this.Email_TXT.CustomButton.UseSelectable = true;
             this.Email_TXT.CustomButton.Visible = false;
             this.Email_TXT.Lines = new string[0];
-            this.Email_TXT.Location = new System.Drawing.Point(120, 52);
+            this.Email_TXT.Location = new System.Drawing.Point(120, 86);
             this.Email_TXT.MaxLength = 32767;
             this.Email_TXT.Name = "Email_TXT";
             this.Email_TXT.PasswordChar = '\0';
@@ -342,7 +346,7 @@
             this.groupBox3.Controls.Add(this.Address_Txt);
             this.groupBox3.Location = new System.Drawing.Point(354, 34);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(353, 176);
+            this.groupBox3.Size = new System.Drawing.Size(353, 236);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Customer Address";
@@ -405,7 +409,7 @@
             this.groupBox4.Controls.Add(this.Reset_btn);
             this.groupBox4.Controls.Add(this.Close_BTN);
             this.groupBox4.Controls.Add(this.Submit_btn);
-            this.groupBox4.Location = new System.Drawing.Point(354, 287);
+            this.groupBox4.Location = new System.Drawing.Point(354, 277);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(353, 85);
             this.groupBox4.TabIndex = 9;
@@ -442,11 +446,52 @@
             this.Submit_btn.UseSelectable = true;
             this.Submit_btn.Click += new System.EventHandler(this.Submit_btn_click);
             // 
+            // metroLabel9
+            // 
+            this.metroLabel9.AutoSize = true;
+            this.metroLabel9.Location = new System.Drawing.Point(7, 57);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(74, 19);
+            this.metroLabel9.TabIndex = 12;
+            this.metroLabel9.Text = "Alt Contact";
+            // 
+            // AltContact_txt
+            // 
+            // 
+            // 
+            // 
+            this.AltContact_txt.CustomButton.Image = null;
+            this.AltContact_txt.CustomButton.Location = new System.Drawing.Point(144, 1);
+            this.AltContact_txt.CustomButton.Name = "";
+            this.AltContact_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.AltContact_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.AltContact_txt.CustomButton.TabIndex = 1;
+            this.AltContact_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.AltContact_txt.CustomButton.UseSelectable = true;
+            this.AltContact_txt.CustomButton.Visible = false;
+            this.AltContact_txt.Lines = new string[0];
+            this.AltContact_txt.Location = new System.Drawing.Point(120, 57);
+            this.AltContact_txt.MaxLength = 32767;
+            this.AltContact_txt.Name = "AltContact_txt";
+            this.AltContact_txt.PasswordChar = '\0';
+            this.AltContact_txt.PromptText = "Email Address";
+            this.AltContact_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.AltContact_txt.SelectedText = "";
+            this.AltContact_txt.SelectionLength = 0;
+            this.AltContact_txt.SelectionStart = 0;
+            this.AltContact_txt.ShortcutsEnabled = true;
+            this.AltContact_txt.Size = new System.Drawing.Size(166, 23);
+            this.AltContact_txt.TabIndex = 11;
+            this.AltContact_txt.UseSelectable = true;
+            this.AltContact_txt.WaterMark = "Email Address";
+            this.AltContact_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.AltContact_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // NewCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 403);
+            this.ClientSize = new System.Drawing.Size(1003, 631);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -491,5 +536,7 @@
         private MetroFramework.Controls.MetroButton Submit_btn;
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroTextBox CustAge_txt;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroTextBox AltContact_txt;
     }
 }

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Gaze.BusinessLogic.Exceptions;
+using System;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using Gaze.BusinessLogic.Exceptions;
 
 namespace Gaze.BusinessLogic.Startup
 {
@@ -40,10 +40,10 @@ namespace Gaze.BusinessLogic.Startup
                 //MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 ErrorMessage.Text = "SQL Server Offline!";
                 ErrorMessage.ForeColor = System.Drawing.Color.Red;
-               
-               // ErrorMessage.Show();
-                return false;    
-                
+
+                // ErrorMessage.Show();
+                return false;
+
             }
             catch (Exception ex)
             {
