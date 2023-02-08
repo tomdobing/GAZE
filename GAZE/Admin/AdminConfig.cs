@@ -36,6 +36,7 @@ namespace GAZE.Admin
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //SI32 Fields locked until checkbox is checked
             if (ChangeBit_cmb.Checked)
             {
                 EnableInput();

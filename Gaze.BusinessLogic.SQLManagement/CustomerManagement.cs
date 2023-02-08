@@ -2,8 +2,10 @@
 using MetroFramework.Controls;
 using System;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace Gaze.BusinessLogic.SQLManagement
 {
@@ -66,6 +68,34 @@ namespace Gaze.BusinessLogic.SQLManagement
             else
             {
                 exceptionThrown.ThrowNewException("This is a message", "this is a stack trace", "Text");
+            }
+        }
+
+        public void GetCustomerDataByContactNumber(string ContactNumber, DataGridView DGV)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                using (SqlCommand scmd = new SqlCommand("SELECT_CUSTOMER_TITLE_BY_CONTACT_NUMBER_SP", scon))
+                {
+                    scmd.CommandType = CommandType.StoredProcedure;
+                    scmd.Parameters.AddWithValue("@ContactNumber", ContactNumber);
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(scmd))
+                    {
+                        DataTable customers = new DataTable();
+                        adapter.Fill(customers);
+                        DGV.DataSource = customers;
+                    }
+                    DGV.ReadOnly = true;
+                    DGV.AllowUserToAddRows = false;
+                    
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
         #endregion
