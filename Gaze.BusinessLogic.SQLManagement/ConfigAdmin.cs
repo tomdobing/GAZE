@@ -45,7 +45,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             {
                 exception.ThrowNewStackException(ex, "SQL Exception");
                 ///BUG 45 - TBI
-                throw;
+                return;
             }
             finally
             {
@@ -123,8 +123,10 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
             catch (Exception ex)
             {
-                exception.ThrowNewStackException(ex, "SQL Exception");
-                throw;
+               exception.ThrowNewStackException(ex, "SQL Exception");
+              // MessageHandler.ShowMessage(ex.Message, "SQL Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //throw;
+                return "";
             }
             finally
             {

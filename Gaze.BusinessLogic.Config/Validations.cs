@@ -6,17 +6,17 @@ namespace Gaze.BusinessLogic.Config
 {
     public class Validations
     {
-        SQLManagement.ConfigAdmin ConfigAdmin = new SQLManagement.ConfigAdmin();
+        readonly SQLManagement.ConfigAdmin ConfigAdmin = new SQLManagement.ConfigAdmin();
         /// <summary>
         /// Method used to validate if the email address entered matches the standard format for an email address
         /// </summary>
         /// <param name="email">Email address to be validated</param>
         /// <returns>true if match</returns>
-        public  bool IsValidEmail(string email)
+        public bool IsValidEmail(string email)
         {
             string pattern = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*" + "@" + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))$";
             return Regex.IsMatch(email, pattern);
-            
+
         }
         /// <summary>
         /// Method used to validate if the phone number matches UK formats 
@@ -38,7 +38,7 @@ namespace Gaze.BusinessLogic.Config
             int age = DateTime.Today.Year - BirthDate.Year;
             if (BirthDate > DateTime.Today.AddYears(-age)) age--;
             return age >= ConfigAdmin.GetValueForApp("AgeLimit");
-            
+
         }
 
     }
