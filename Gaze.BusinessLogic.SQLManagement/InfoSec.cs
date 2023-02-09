@@ -11,6 +11,8 @@ namespace Gaze.BusinessLogic.SQLManagement
         #region Declarations
         private string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         public static string GlobalUsername { get; set; }
+
+        public static string GlobalCustomerID { get; set; }
         #endregion
 
 
