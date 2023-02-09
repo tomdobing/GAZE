@@ -205,7 +205,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 }
                 else
                 {
-                    string message = "Customer with the Contact Number" + CustomerNumber + " already exists and registered. \n\nPlease search for the customer via customer search";
+                    string message = "Customer with the Contact Number " + CustomerNumber + " already exists and registered. \n\nPlease search for the customer via customer search";
                     string caption = "Whoops";
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
                     MessageBox.Show(message, caption, buttons,
