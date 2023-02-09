@@ -110,6 +110,79 @@ namespace Gaze.BusinessLogic.SQLManagement
                 throw;
             }
         }
+
+        public void GetCustomerNotesForDataGrid(DataGridView DGV)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                using (SqlCommand scmd = new SqlCommand("SELECT_NOTE_BY_CUSTOMER_ID", scon))
+                {
+                    scmd.CommandType = CommandType.StoredProcedure;
+                    scmd.Parameters.AddWithValue("@CUstomerID", InfoSec.GlobalCustomerID);
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(scmd))
+                    {
+                        DataTable customers = new DataTable();
+                        adapter.Fill(customers);
+                        DGV.DataSource = customers;
+                    }
+                    DGV.ReadOnly = true;
+                    DGV.AllowUserToAddRows = false;
+                    foreach (DataGridViewColumn column in DGV.Columns)
+                    {
+                        column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    }
+                    DGV.AllowUserToOrderColumns = false;
+
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void GetCustomerNotes(string ID, DataGridView DGV, string CustomerName, string NoteDetails, string CreatedBy, string CreatedDate)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_NOTE_BY_CUSTOMER_ID", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    //string ConfigValue = sqlDataReader["ConfigValue"].ToString();
+                    //int ConvertedValue = Convert.ToInt32(ConfigValue);
+
+                    ID = sqlDataReader[0].ToString();
+                    CustomerName = sqlDataReader[1].ToString();
+                    NoteDetails = sqlDataReader[2].ToString();
+                    CreatedBy = sqlDataReader[3].ToString();
+                    CreatedDate = sqlDataReader[4].ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+
+        }
+
         #endregion
     }
 }

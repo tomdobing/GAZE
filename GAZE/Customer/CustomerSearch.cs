@@ -54,6 +54,12 @@ namespace GAZE.Customer
             metroLabel2.Text = "CustomerID: " + InfoSec.GlobalCustomerID;
 
         }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            CustomerNotes customerNotes = new CustomerNotes();
+            customerNotes.ShowDialog();
+        }
     }
 }
 
