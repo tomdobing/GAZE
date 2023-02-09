@@ -75,6 +75,10 @@ namespace GAZE.Customer
 
                 return;
             }
+            if (CustomerManagement.CheckIfCustomerExists(ContactNmr_txt.Text) == false)
+            {
+                return;
+            }
 
             CustomerManagement.CreateNewCustomer(CmbTitle, FirstName_Txt, surname_txt, DOB_DTP, ContactNmr_txt, Email_TXT, Address_Txt, metroCheckBox1);
 

@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Gaze.BusinessLogic.SQLManagement
 {
@@ -183,6 +184,42 @@ namespace Gaze.BusinessLogic.SQLManagement
 
         }
 
-        #endregion
+        public bool CheckIfCustomerExists(string CustomerNumber)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMER_EXISTS_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@ContactNumber", CustomerNumber);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    return true;
+
+
+                }
+                else
+                {
+                    string message = "Customer with the Contact Number " + CustomerNumber + " already exists and registered. \n\nPlease search for the customer via customer search";
+                    string caption = "Whoops";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, caption, buttons,
+                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+            #endregion
+        }
     }
 }
