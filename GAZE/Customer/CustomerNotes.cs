@@ -15,11 +15,11 @@ namespace GAZE.Customer
             InitializeComponent();
             FormSettings.SetFormSettings(this);
             FormSettings.ChangeableFormSettings(this, Name);
-            CustName_txt.Enabled = false;
-            NoteID_txt.Enabled = false;
-            notedetails_txt.Enabled = false;
-            CreateDate_txt.Enabled = false;
-            CreateBy_txt.Enabled = false;
+            CustName_txt.ReadOnly = true;
+            NoteID_txt.ReadOnly = true;
+            notedetails_txt.ReadOnly = true;
+            CreateDate_txt.ReadOnly = true;
+            CreateBy_txt.ReadOnly = true;
         }
 
         private void CustomerNotes_Load(object sender, EventArgs e)
