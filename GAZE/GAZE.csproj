@@ -118,6 +118,12 @@
     <Compile Include="Admin\UserMgr.Designer.cs">
       <DependentUpon>UserMgr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerNotes.Designer.cs">
+      <DependentUpon>CustomerNotes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\UserMgr.resx">
       <DependentUpon>UserMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerNotes.resx">
+      <DependentUpon>CustomerNotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerSearch.resx">
       <DependentUpon>CustomerSearch.cs</DependentUpon>

@@ -138,17 +138,18 @@
             this.metroButton3.Location = new System.Drawing.Point(4, 58);
             this.metroButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(93, 23);
+            this.metroButton3.Size = new System.Drawing.Size(107, 23);
             this.metroButton3.TabIndex = 1;
             this.metroButton3.Text = "Customer Notes";
             this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // metroButton2
             // 
             this.metroButton2.Location = new System.Drawing.Point(4, 16);
             this.metroButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(93, 23);
+            this.metroButton2.Size = new System.Drawing.Size(107, 23);
             this.metroButton2.TabIndex = 0;
             this.metroButton2.Text = "Customer Details";
             this.metroButton2.UseSelectable = true;
