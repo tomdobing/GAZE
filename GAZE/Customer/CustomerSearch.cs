@@ -1,4 +1,5 @@
 ﻿using Gaze.BusinessLogic.Config;
+using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
 using System;
 using System.Windows.Forms;
@@ -10,6 +11,7 @@ namespace GAZE.Customer
         readonly InfoSec infoSec = new InfoSec();
         readonly FormSettings FormSettings = new FormSettings();
         readonly CustomerManagement CustomerManagement = new CustomerManagement();
+        readonly MessageHandler messageHandler = new MessageHandler();
         public CustomerSearch()
         {
             InitializeComponent();
@@ -24,15 +26,16 @@ namespace GAZE.Customer
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(SearchNum_txt.Text) && SearchNum_txt.Text.Length >= 10)
+            {
+                CustomerManagement.GetCustomerDataByContactNumber(SearchNum_txt.Text, dataGridView1, groupBox2);
+            }
+            else
+            {
+                messageHandler.ShowMessage("Failed to search\n \nUnable to search as you did not enter enough information to search for", "Failed to Search", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
+            }
             
-            //    if (dataGridView1.Visible) 
-            //    {
-            //        dataGridView1.Hide();
-            //    }
-            //    else
-            //    {
-            //        dataGridView1.Visible = true;
-            CustomerManagement.GetCustomerDataByContactNumber(SearchNum_txt.Text, dataGridView1, groupBox2);
             
         }
 
