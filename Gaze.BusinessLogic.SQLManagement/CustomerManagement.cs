@@ -71,7 +71,13 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
         }
 
-        public void GetCustomerDataByContactNumber(string ContactNumber, DataGridView DGV)
+
+        /// <summary>
+        /// Gets customer data via their contact number
+        /// </summary>
+        /// <param name="ContactNumber">Contact number to search for</param>
+        /// <param name="DGV">DatagridView to return the data into</param>
+        public void GetCustomerDataByContactNumber(string ContactNumber, DataGridView DGV, [Optional] GroupBox GB)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try
@@ -89,7 +95,13 @@ namespace Gaze.BusinessLogic.SQLManagement
                     }
                     DGV.ReadOnly = true;
                     DGV.AllowUserToAddRows = false;
-                    
+                    foreach (DataGridViewColumn column in DGV.Columns)
+                    {
+                        column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    }
+                    //DGV.AllowUserToOrderColumns = false;
+                    GB.Show();
+
                 }
             }
             catch (Exception)

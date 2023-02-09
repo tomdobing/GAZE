@@ -7,6 +7,7 @@ namespace GAZE.Customer
 {
     public partial class CustomerSearch : Form
     {
+        readonly InfoSec infoSec = new InfoSec();
         readonly FormSettings FormSettings = new FormSettings();
         readonly CustomerManagement CustomerManagement = new CustomerManagement();
         public CustomerSearch()
@@ -18,11 +19,12 @@ namespace GAZE.Customer
 
         private void CustomerSearch_Load(object sender, EventArgs e)
         {
-
+            groupBox2.Hide();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+            
             //    if (dataGridView1.Visible) 
             //    {
             //        dataGridView1.Hide();
@@ -30,8 +32,8 @@ namespace GAZE.Customer
             //    else
             //    {
             //        dataGridView1.Visible = true;
-            CustomerManagement.GetCustomerDataByContactNumber(SearchNum_txt.Text, dataGridView1);
-
+            CustomerManagement.GetCustomerDataByContactNumber(SearchNum_txt.Text, dataGridView1, groupBox2);
+            
         }
 
 
@@ -48,7 +50,8 @@ namespace GAZE.Customer
             int selectedRowIndex = e.RowIndex;
             DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
             int rowID = Convert.ToInt32(selectedRow.Cells["CustomerID"].Value);
-            MessageBox.Show(rowID.ToString());
+            InfoSec.GlobalCustomerID = rowID.ToString();
+            metroLabel2.Text = "CustomerID: " + InfoSec.GlobalCustomerID;
 
         }
     }
