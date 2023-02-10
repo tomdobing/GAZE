@@ -219,7 +219,51 @@ namespace Gaze.BusinessLogic.SQLManagement
                 return false;
             }
 
-            #endregion
+            
         }
+
+        public bool CustomerSearchIfExists(string CustomerNumber)
+        {
+
+            using (SqlConnection connection = new SqlConnection(SQLConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("SELECT_CUSTOMER_EXISTS_SP", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ContactNumber", CustomerNumber);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            
+                            if (reader.HasRows)
+                            {
+                                //string message = "Customer with the Contact Number " + CustomerNumber + " is not a registered customer. \n\nPlease ask the customer if they wish to register";
+                                //string caption = "Whoops";
+                                //MessageBoxButtons buttons = MessageBoxButtons.OK;
+                                //MessageBox.Show(message, caption, buttons,
+                                //MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+
+                    return false;
+                }
+                
+            }
+
+        }
+        #endregion
     }
 }
