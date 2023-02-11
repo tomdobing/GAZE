@@ -189,6 +189,7 @@
             this.metroCheckBox1.Size = new System.Drawing.Size(76, 15);
             this.metroCheckBox1.TabIndex = 5;
             this.metroCheckBox1.Text = "IS Admin?";
+            this.metroCheckBox1.UseCustomBackColor = true;
             this.metroCheckBox1.UseSelectable = true;
             // 
             // id_txt
@@ -231,6 +232,7 @@
             this.metroCheckBox2.Size = new System.Drawing.Size(83, 15);
             this.metroCheckBox2.TabIndex = 7;
             this.metroCheckBox2.Text = "Edit Record";
+            this.metroCheckBox2.UseCustomBackColor = true;
             this.metroCheckBox2.UseSelectable = true;
             this.metroCheckBox2.CheckedChanged += new System.EventHandler(this.metroCheckBox2_CheckedChanged);
             // 
@@ -286,9 +288,12 @@
             // 
             // update_btn
             // 
+            this.update_btn.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.update_btn.Highlight = true;
             this.update_btn.Location = new System.Drawing.Point(239, 173);
             this.update_btn.Name = "update_btn";
             this.update_btn.Size = new System.Drawing.Size(110, 23);
+            this.update_btn.Style = MetroFramework.MetroColorStyle.Black;
             this.update_btn.TabIndex = 14;
             this.update_btn.Text = "Update Record";
             this.update_btn.UseSelectable = true;
@@ -298,6 +303,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(458, 222);
             this.Controls.Add(this.update_btn);
             this.Controls.Add(this.label5);

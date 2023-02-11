@@ -47,7 +47,7 @@ namespace GAZE.Admin
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
         }
         private void DisableInput()
         {
@@ -65,7 +65,17 @@ namespace GAZE.Admin
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
             ConfigAdmin.UpdateConfigValue(ConfigID_txt.Text, ConfigValue_txt.Text, InfoSec.GlobalUsername);
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

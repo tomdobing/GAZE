@@ -142,7 +142,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                         column.SortMode = DataGridViewColumnSortMode.NotSortable;
                     }
                     //DGV.AllowUserToOrderColumns = false;
-                    GB.Show();
+                    //GB.Show();
 
                 }
             }

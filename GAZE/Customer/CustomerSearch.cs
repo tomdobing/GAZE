@@ -57,6 +57,7 @@ namespace GAZE.Customer
             int rowID = Convert.ToInt32(selectedRow.Cells["CustomerID"].Value);
             InfoSec.GlobalCustomerID = rowID.ToString();
             metroLabel2.Text = "CustomerID: " + InfoSec.GlobalCustomerID;
+            groupBox2.Show();
 
         }
 
@@ -64,6 +65,11 @@ namespace GAZE.Customer
         {
             CustomerNotes customerNotes = new CustomerNotes();
             customerNotes.ShowDialog();
+        }
+
+        private void CustomerSearch_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            InfoSec.GlobalCustomerID = null;
         }
     }
 }

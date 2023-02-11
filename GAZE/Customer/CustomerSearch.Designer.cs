@@ -47,21 +47,18 @@
             this.groupBox1.Controls.Add(this.metroButton1);
             this.groupBox1.Controls.Add(this.metroLabel1);
             this.groupBox1.Controls.Add(this.SearchNum_txt);
-            this.groupBox1.Location = new System.Drawing.Point(20, 86);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(13, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(530, 218);
+            this.groupBox1.Size = new System.Drawing.Size(353, 142);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Criteria";
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(0, 181);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.metroButton1.Location = new System.Drawing.Point(0, 118);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(162, 35);
+            this.metroButton1.Size = new System.Drawing.Size(108, 23);
             this.metroButton1.Style = MetroFramework.MetroColorStyle.Silver;
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "Search";
@@ -71,12 +68,13 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(10, 34);
-            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel1.Location = new System.Drawing.Point(7, 22);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(150, 19);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Black;
             this.metroLabel1.TabIndex = 1;
             this.metroLabel1.Text = "Search Contact Number";
+            this.metroLabel1.UseCustomBackColor = true;
             // 
             // SearchNum_txt
             // 
@@ -84,18 +82,16 @@
             // 
             // 
             this.SearchNum_txt.CustomButton.Image = null;
-            this.SearchNum_txt.CustomButton.Location = new System.Drawing.Point(314, 2);
-            this.SearchNum_txt.CustomButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SearchNum_txt.CustomButton.Location = new System.Drawing.Point(93, 1);
             this.SearchNum_txt.CustomButton.Name = "";
-            this.SearchNum_txt.CustomButton.Size = new System.Drawing.Size(50, 51);
+            this.SearchNum_txt.CustomButton.Size = new System.Drawing.Size(14, 14);
             this.SearchNum_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.SearchNum_txt.CustomButton.TabIndex = 1;
             this.SearchNum_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.SearchNum_txt.CustomButton.UseSelectable = true;
             this.SearchNum_txt.CustomButton.Visible = false;
             this.SearchNum_txt.Lines = new string[0];
-            this.SearchNum_txt.Location = new System.Drawing.Point(266, 29);
-            this.SearchNum_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SearchNum_txt.Location = new System.Drawing.Point(177, 19);
             this.SearchNum_txt.MaxLength = 32767;
             this.SearchNum_txt.Name = "SearchNum_txt";
             this.SearchNum_txt.PasswordChar = '\0';
@@ -105,7 +101,7 @@
             this.SearchNum_txt.SelectionLength = 0;
             this.SearchNum_txt.SelectionStart = 0;
             this.SearchNum_txt.ShortcutsEnabled = true;
-            this.SearchNum_txt.Size = new System.Drawing.Size(243, 35);
+            this.SearchNum_txt.Size = new System.Drawing.Size(162, 23);
             this.SearchNum_txt.TabIndex = 0;
             this.SearchNum_txt.UseSelectable = true;
             this.SearchNum_txt.WaterMark = "Search for Contact Number";
@@ -118,11 +114,10 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 312);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 203);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(984, 303);
+            this.dataGridView1.Size = new System.Drawing.Size(656, 197);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -131,18 +126,21 @@
             // 
             this.groupBox2.Controls.Add(this.metroButton3);
             this.groupBox2.Controls.Add(this.metroButton2);
-            this.groupBox2.Location = new System.Drawing.Point(556, 86);
+            this.groupBox2.Location = new System.Drawing.Point(371, 56);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(448, 218);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(299, 142);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Customer Controls";
             // 
             // metroButton3
             // 
-            this.metroButton3.Location = new System.Drawing.Point(6, 89);
+            this.metroButton3.Location = new System.Drawing.Point(4, 58);
+            this.metroButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(160, 35);
+            this.metroButton3.Size = new System.Drawing.Size(107, 23);
             this.metroButton3.TabIndex = 1;
             this.metroButton3.Text = "Customer Notes";
             this.metroButton3.UseSelectable = true;
@@ -150,9 +148,10 @@
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(6, 25);
+            this.metroButton2.Location = new System.Drawing.Point(4, 16);
+            this.metroButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(160, 35);
+            this.metroButton2.Size = new System.Drawing.Size(107, 23);
             this.metroButton2.TabIndex = 0;
             this.metroButton2.Text = "Customer Details";
             this.metroButton2.UseSelectable = true;
@@ -160,24 +159,27 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(30, 9);
+            this.metroLabel2.Location = new System.Drawing.Point(20, 6);
+            this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(81, 19);
             this.metroLabel2.TabIndex = 3;
             this.metroLabel2.Text = "CustomerID:";
+            this.metroLabel2.UseCustomBackColor = true;
             // 
             // CustomerSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1030, 629);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(687, 409);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CustomerSearch";
             this.Text = "CustomerSearch";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerSearch_FormClosing);
             this.Load += new System.EventHandler(this.CustomerSearch_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

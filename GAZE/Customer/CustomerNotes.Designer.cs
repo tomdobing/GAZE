@@ -45,6 +45,7 @@
             // 
             // NoteDataGridView
             // 
+            this.NoteDataGridView.BackgroundColor = System.Drawing.SystemColors.Desktop;
             this.NoteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.NoteDataGridView.Location = new System.Drawing.Point(13, 268);
             this.NoteDataGridView.Name = "NoteDataGridView";
@@ -60,6 +61,7 @@
             this.note_lbl.Size = new System.Drawing.Size(53, 19);
             this.note_lbl.TabIndex = 1;
             this.note_lbl.Text = "NoteID:";
+            this.note_lbl.UseCustomBackColor = true;
             // 
             // CustName_lbl
             // 
@@ -69,6 +71,7 @@
             this.CustName_lbl.Size = new System.Drawing.Size(109, 19);
             this.CustName_lbl.TabIndex = 2;
             this.CustName_lbl.Text = "Customer Name:";
+            this.CustName_lbl.UseCustomBackColor = true;
             // 
             // CustName_txt
             // 
@@ -110,6 +113,7 @@
             this.Notelbl.Size = new System.Drawing.Size(83, 19);
             this.Notelbl.TabIndex = 4;
             this.Notelbl.Text = "Note Details:";
+            this.Notelbl.UseCustomBackColor = true;
             // 
             // notedetails_txt
             // 
@@ -178,9 +182,12 @@
             // 
             // metroButton1
             // 
+            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.metroButton1.Highlight = true;
             this.metroButton1.Location = new System.Drawing.Point(306, 18);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(110, 23);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Black;
             this.metroButton1.TabIndex = 7;
             this.metroButton1.Text = "Close";
             this.metroButton1.UseSelectable = true;
@@ -226,6 +233,7 @@
             this.metroLabel1.Size = new System.Drawing.Size(90, 19);
             this.metroLabel1.TabIndex = 9;
             this.metroLabel1.Text = "Created Date:";
+            this.metroLabel1.UseCustomBackColor = true;
             // 
             // metroLabel2
             // 
@@ -235,6 +243,7 @@
             this.metroLabel2.Size = new System.Drawing.Size(77, 19);
             this.metroLabel2.TabIndex = 11;
             this.metroLabel2.Text = "Created By:";
+            this.metroLabel2.UseCustomBackColor = true;
             // 
             // CreateBy_txt
             // 
@@ -272,6 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 507);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.CreateBy_txt);
