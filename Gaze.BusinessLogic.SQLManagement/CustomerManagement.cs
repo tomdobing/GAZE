@@ -6,7 +6,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Gaze.BusinessLogic.SQLManagement
 {
@@ -49,6 +48,38 @@ namespace Gaze.BusinessLogic.SQLManagement
                 scon.Close();
             }
         }
+
+        /// <summary>
+        /// Used to populate the Title ComboBox on the New Customer form
+        /// </summary>
+        /// <param name="Combobox">The control holding the title data</param>
+        public void PopulateCountried(MetroComboBox Combobox)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_COUNTRIES_SP", scon)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    Combobox.Items.Add(sqlDataReader[0].ToString());
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                scon.Close();
+            }
+        }
+
         /// <summary>
         /// Function to create a new customer. Also contains Data Validation Methods.
         /// </summary>
@@ -60,9 +91,19 @@ namespace Gaze.BusinessLogic.SQLManagement
         /// <param name="Email"></param>
         /// <param name="Address"></param>
         /// <param name="Vuln"></param>
-        public void CreateNewCustomer(MetroComboBox Title, MetroTextBox Firstname, MetroTextBox surname, MetroDateTime DOB, MetroTextBox Contact, MetroTextBox Email, MetroTextBox Address, [Optional] MetroCheckBox Vuln)
+        public void CreateNewCustomer(MetroComboBox Title, MetroTextBox Firstname, MetroTextBox surname, MetroDateTime DOB, MetroTextBox Contact, MetroTextBox Email, MetroTextBox AddressLine1, MetroTextBox AddressLine2, MetroTextBox Town, MetroTextBox PostalCode, MetroComboBox Country, [Optional] MetroCheckBox Vuln)
         {
-            if (Title.SelectedIndex.ToString() == "" | Firstname.Text == "" | surname.Text == "" | DOB.Value.ToShortDateString() == "" | Contact.Text == "" | Email.Text == "" | Address.Text == "")
+            if (string.IsNullOrEmpty(Title.SelectedIndex.ToString()) ||
+                string.IsNullOrEmpty(Firstname.Text) ||
+                string.IsNullOrEmpty(surname.Text) ||
+                string.IsNullOrEmpty(DOB.Value.ToShortDateString()) ||
+                string.IsNullOrEmpty(Contact.Text) ||
+                string.IsNullOrEmpty(Email.Text) ||
+                string.IsNullOrEmpty(AddressLine1.Text) ||
+                string.IsNullOrEmpty(AddressLine2.Text) ||
+                string.IsNullOrEmpty(Town.Text) ||
+                string.IsNullOrEmpty(PostalCode.Text) ||
+                string.IsNullOrEmpty(Country.SelectedValue.ToString())) 
             {
                 exceptionThrown.ThrowNewException("Data Validation Failed", "You have not completed all required fields. Please check and try again!", "Data Failure");
             }
@@ -219,7 +260,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 return false;
             }
 
-            
+
         }
 
         public bool CustomerSearchIfExists(string CustomerNumber)
@@ -237,7 +278,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                         command.Parameters.AddWithValue("@ContactNumber", CustomerNumber);
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            
+
                             if (reader.HasRows)
                             {
                                 //string message = "Customer with the Contact Number " + CustomerNumber + " is not a registered customer. \n\nPlease ask the customer if they wish to register";
@@ -260,7 +301,7 @@ namespace Gaze.BusinessLogic.SQLManagement
 
                     return false;
                 }
-                
+
             }
 
         }
