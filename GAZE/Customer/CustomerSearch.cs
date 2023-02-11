@@ -26,17 +26,19 @@ namespace GAZE.Customer
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(SearchNum_txt.Text) && SearchNum_txt.Text.Length >= 10)
+            if (!string.IsNullOrEmpty(SearchNum_txt.Text) && SearchNum_txt.Text.Length <= 10)
             {
-                CustomerManagement.GetCustomerDataByContactNumber(SearchNum_txt.Text, dataGridView1, groupBox2);
+                messageHandler.ShowMessage("Invalid search Criteria \n\n Please check and try again", "Search Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
+            if (CustomerManagement.CustomerSearchIfExists(SearchNum_txt.Text) == false)
             {
-                messageHandler.ShowMessage("Failed to search\n \nUnable to search as you did not enter enough information to search for", "Failed to Search", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               
+                messageHandler.ShowMessage("Customer Not Found!!\n\n\nPlease check and try again. This customer may not be registered", "Search Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            
-            
+            CustomerManagement.GetCustomerDataByContactNumber(SearchNum_txt.Text, dataGridView1, groupBox2);
+
+
         }
 
 

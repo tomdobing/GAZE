@@ -1,7 +1,9 @@
 ﻿using Gaze.BusinessLogic.SQLManagement;
 using System;
+using System.ComponentModel;
 using System.Text.RegularExpressions;
-
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace Gaze.BusinessLogic.Config
 {
     public class Validations
@@ -39,6 +41,20 @@ namespace Gaze.BusinessLogic.Config
             if (BirthDate > DateTime.Today.AddYears(-age)) age--;
             return age >= ConfigAdmin.GetValueForApp("AgeLimit");
 
+        }
+        public void control_Validating(object sender, CancelEventArgs e, Control ctr, ErrorProvider errorProvider1)
+        {
+            if (ctr.Text == "")
+            {
+                
+                errorProvider1.SetError(ctr, "This field is required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(ctr, "");
+                e.Cancel = false;
+            }
         }
 
     }

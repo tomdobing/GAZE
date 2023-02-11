@@ -3,6 +3,7 @@ using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
 using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GAZE.Customer
 {
@@ -25,6 +26,7 @@ namespace GAZE.Customer
             formSettings.SetFormSettings(this);
             formSettings.ChangeableFormSettings(this, "New Customer");
             CustomerManagement.PopulateTitle(CmbTitle);
+            CustomerManagement.PopulateCountried(Country_cmb);
             DOB_DTP.Format = DateTimePickerFormat.Custom;
             DOB_DTP.CustomFormat = ConfigAdmin.GetConfigValue("DateFormat");
             ContactNmr_txt.MaxLength = 14;
@@ -47,10 +49,15 @@ namespace GAZE.Customer
             surname_txt.Clear();
             ContactNmr_txt.Clear();
             Email_TXT.Clear();
-            Address_Txt.Clear();
+            AddrL1_txt.Clear();
+            AddrL2_txt.Clear();
+            PostCode_txt.Clear();
+            Country_cmb.SelectedIndex = 0;
+            town_txt.Clear();
             CmbTitle.SelectedIndex = 0;
             DOB_DTP.Value = DateTime.Now;
             CustAge_txt.Clear();
+            metroCheckBox1.CheckState = CheckState.Unchecked;
         }
 
         private void Submit_btn_click(object sender, EventArgs e)
@@ -80,7 +87,11 @@ namespace GAZE.Customer
                 return;
             }
 
-            CustomerManagement.CreateNewCustomer(CmbTitle, FirstName_Txt, surname_txt, DOB_DTP, ContactNmr_txt, Email_TXT, Address_Txt, metroCheckBox1);
+            //CustomerManagement.CreateNewCustomer(CmbTitle, FirstName_Txt, surname_txt,
+              //                                   DOB_DTP, ContactNmr_txt, Email_TXT, AddrL1_txt, 
+              //                                   AddrL2_txt, town_txt, PostCode_txt, Country_cmb, 
+              //                                   metroCheckBox1);
+
 
         }
 
@@ -97,6 +108,48 @@ namespace GAZE.Customer
         private void button1_Click(object sender, EventArgs e)
         {
             //print.PrintForm(this);
+        }
+
+        private void FirstName_Txt_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            validation.control_Validating(sender, e, FirstName_Txt, errorProvider1);
+        }
+
+
+
+        private void surname_txt_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            validation.control_Validating(sender, e, surname_txt, errorProvider1);
+        }
+
+        private void ContactNmr_txt_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            validation.control_Validating(sender, e, ContactNmr_txt, errorProvider1);
+        }
+
+        private void AltContact_txt_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //validation.control_Validating(sender, e, AltContact_txt, errorProvider1);
+        }
+
+        private void Email_TXT_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            validation.control_Validating(sender, e, Email_TXT, errorProvider1);
+        }
+
+        private void AddrL1_txt_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            validation.control_Validating(sender, e, AddrL1_txt, errorProvider1);
+        }
+
+        private void town_txt_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            validation.control_Validating(sender, e, town_txt, errorProvider1);
+        }
+
+        private void PostCode_txt_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            validation.control_Validating(sender, e, PostCode_txt, errorProvider1);
         }
     }
 }
