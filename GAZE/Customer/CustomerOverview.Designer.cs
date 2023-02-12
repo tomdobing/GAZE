@@ -37,7 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "CustomerOverview";
             this.Text = "CustomerOverview";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CustomerOverview_MouseDown);
+//            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CustomerOverview_MouseDown);
             this.ResumeLayout(false);
 
         }
