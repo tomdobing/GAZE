@@ -36,30 +36,13 @@ namespace GAZE.Customer
                 messageHandler.ShowMessage("Customer Not Found!!\n\n\nPlease check and try again. This customer may not be registered", "Search Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            CustomerManagement.GetCustomerDataByContactNumber(SearchNum_txt.Text, dataGridView1, groupBox2);
+            CustomerManagement.GetCustomerDataByContactNumber(SearchNum_txt.Text, metroGrid1, groupBox2);
 
 
         }
 
 
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //int selectedRowIndex = e.RowIndex;
-            //DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
-            //int rowID = Convert.ToInt32(selectedRow.Cells["CustomerID"].Value);
-            //MessageBox.Show(rowID.ToString());
-        }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int selectedRowIndex = e.RowIndex;
-            DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
-            int rowID = Convert.ToInt32(selectedRow.Cells["CustomerID"].Value);
-            InfoSec.GlobalCustomerID = rowID.ToString();
-            metroLabel2.Text = "CustomerID: " + InfoSec.GlobalCustomerID;
-            groupBox2.Show();
-
-        }
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
@@ -70,6 +53,22 @@ namespace GAZE.Customer
         private void CustomerSearch_FormClosing(object sender, FormClosingEventArgs e)
         {
             InfoSec.GlobalCustomerID = null;
+        }
+
+        private void metroGrid1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int selectedRowIndex = e.RowIndex;
+            DataGridViewRow selectedRow = metroGrid1.Rows[selectedRowIndex];
+            int rowID = Convert.ToInt32(selectedRow.Cells["CustomerID"].Value);
+            InfoSec.GlobalCustomerID = rowID.ToString();
+            metroLabel2.Text = "CustomerID: " + InfoSec.GlobalCustomerID;
+            groupBox2.Show();
+        }
+
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            CustomerOverview customerOverview = new CustomerOverview();
+            customerOverview.ShowDialog();
         }
     }
 }

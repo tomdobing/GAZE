@@ -76,6 +76,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -124,6 +125,12 @@
     <Compile Include="Customer\CustomerNotes.Designer.cs">
       <DependentUpon>CustomerNotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerOverview.Designer.cs">
+      <DependentUpon>CustomerOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerNotes.resx">
       <DependentUpon>CustomerNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerOverview.resx">
+      <DependentUpon>CustomerOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerSearch.resx">
       <DependentUpon>CustomerSearch.cs</DependentUpon>
