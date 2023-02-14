@@ -2,6 +2,7 @@
 using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
 using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace GAZE.Customer
@@ -21,7 +22,7 @@ namespace GAZE.Customer
 
         private void CustomerSearch_Load(object sender, EventArgs e)
         {
-            groupBox2.Hide();
+            
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -36,7 +37,7 @@ namespace GAZE.Customer
                 messageHandler.ShowMessage("Customer Not Found!!\n\n\nPlease check and try again. This customer may not be registered", "Search Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            CustomerManagement.GetCustomerDataByContactNumber(SearchNum_txt.Text, metroGrid1, groupBox2);
+            CustomerManagement.GetCustomerDataByContactNumber(SearchNum_txt.Text, metroGrid1);
 
 
         }
@@ -46,8 +47,7 @@ namespace GAZE.Customer
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
-            CustomerNotes customerNotes = new CustomerNotes();
-            customerNotes.ShowDialog();
+
         }
 
         private void CustomerSearch_FormClosing(object sender, FormClosingEventArgs e)
@@ -62,7 +62,9 @@ namespace GAZE.Customer
             int rowID = Convert.ToInt32(selectedRow.Cells["CustomerID"].Value);
             InfoSec.GlobalCustomerID = rowID.ToString();
             metroLabel2.Text = "CustomerID: " + InfoSec.GlobalCustomerID;
-            groupBox2.Show();
+            Thread.Sleep(3000);
+            CustomerOverview customerOverview = new CustomerOverview();
+            customerOverview.ShowDialog();
         }
 
         private void metroButton4_Click(object sender, EventArgs e)

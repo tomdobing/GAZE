@@ -56,7 +56,7 @@ Global
 		UpdateAssemblyVersion = True
 		UpdateAssemblyFileVersion = True
 		UpdateAssemblyInfoVersion = False
-		ShouldCreateLogs = True
+		AdvancedSettingsExpanded = True
 		AssemblyVersionSettings = None.None.None.IncrementOnDemand
 		AssemblyFileVersionSettings = None.None.None.IncrementOnDemand
 		UpdatePackageVersion = False

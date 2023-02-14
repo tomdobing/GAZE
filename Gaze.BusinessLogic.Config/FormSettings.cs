@@ -52,7 +52,7 @@ namespace Gaze.BusinessLogic.Config
 
             try
             {
-                var request = HttpWebRequest.Create(url);
+                var request = WebRequest.Create(url);
                 request.Method = "HEAD";
                 using (var response = request.GetResponse() as HttpWebResponse)
                 {

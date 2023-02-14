@@ -103,7 +103,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 string.IsNullOrEmpty(AddressLine2.Text) ||
                 string.IsNullOrEmpty(Town.Text) ||
                 string.IsNullOrEmpty(PostalCode.Text) ||
-                string.IsNullOrEmpty(Country.SelectedValue.ToString())) 
+                string.IsNullOrEmpty(Country.SelectedValue.ToString()))
             {
                 exceptionThrown.ThrowNewException("Data Validation Failed", "You have not completed all required fields. Please check and try again!", "Data Failure");
             }
@@ -304,6 +304,99 @@ namespace Gaze.BusinessLogic.SQLManagement
 
             }
 
+        }
+
+        public void GetCustomerOverview(MetroTextBox Title, MetroTextBox Firstname, MetroTextBox Surname, MetroTextBox DOB, MetroTextBox ContactNumber,
+                                        MetroTextBox AltContact, MetroTextBox EmailAddr, MetroCheckBox Vuln, MetroTextBox AddrLine1, MetroTextBox AddrLine2, MetroTextBox Town,
+                                        MetroTextBox PostalCode, MetroTextBox Counrty, ToolStripLabel Status)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMER_OVERVIEW_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    Title.Text = sqlDataReader[0].ToString();
+                    Firstname.Text = sqlDataReader[1].ToString();
+                    Surname.Text = sqlDataReader[2].ToString();
+                    DOB.Text = sqlDataReader[3].ToString();
+                    ContactNumber.Text = sqlDataReader[4].ToString();
+                    AltContact.Text = sqlDataReader[5].ToString();
+                    EmailAddr.Text = sqlDataReader[6].ToString();
+                    if (sqlDataReader[7].ToString() == "1")
+                    {
+                        Vuln.CheckState = CheckState.Checked;
+                    }
+                    else { Vuln.CheckState = CheckState.Unchecked; };
+                    AddrLine1.Text = sqlDataReader[8].ToString();
+                    AddrLine2.Text = sqlDataReader[9].ToString();
+                    Town.Text = sqlDataReader[10].ToString();
+                    PostalCode.Text = sqlDataReader[11].ToString();
+                    Counrty.Text = sqlDataReader[12].ToString();
+                    if (sqlDataReader[13].ToString() == "Active")
+                    {
+                        Status.Text = "Active";
+                        Status.ForeColor = System.Drawing.Color.Green;
+                    }
+                    if (sqlDataReader[13].ToString() == "On Hold")
+                    {
+                        Status.Text = "On Hold";
+                        Status.ForeColor = System.Drawing.Color.Orange;
+                    }
+                    else if (sqlDataReader[13].ToString() == "Inactive")
+                    {
+                        Status.Text = "Inactive";
+                        Status.ForeColor = System.Drawing.Color.Red;
+                    }
+                    // Status.Text = sqlDataReader[13].ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+
+        }
+        public void InsertNewCustomerNote(string NoteDescription, string NoteDetails, Form form)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.INSERT_NEW_CUSTOMER_NOTE_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@NoteDescription", NoteDescription);
+                sqlCommand.Parameters.AddWithValue("@NoteDetails", NoteDetails);
+                sqlCommand.Parameters.AddWithValue("@CreatedBy", InfoSec.GlobalUsername);
+                sqlCommand.ExecuteReader();
+                MessageBox.Show("Note Created!", "Note Admin", MessageBoxButtons.OK, MessageBoxIcon.Information );
+                form.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to insert note \n\n" + ex.Message, "Exception Thrown", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+            }
+            finally
+            {
+                scon.Close();
+            }
         }
         #endregion
     }
