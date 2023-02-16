@@ -143,14 +143,16 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click_1);
             // 
             // exitApplicationToolStripMenuItem
             // 
             this.exitApplicationToolStripMenuItem.Name = "exitApplicationToolStripMenuItem";
             this.exitApplicationToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.exitApplicationToolStripMenuItem.Text = "Exit Application";
+            this.exitApplicationToolStripMenuItem.Click += new System.EventHandler(this.exitApplicationToolStripMenuItem_Click_1);
             // 
             // customerToolStripMenuItem
             // 
@@ -164,13 +166,14 @@
             // newCustomerToolStripMenuItem
             // 
             this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
-            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.newCustomerToolStripMenuItem.Text = "New Customer";
+            this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.newCustomerToolStripMenuItem_Click_1);
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.searchToolStripMenuItem.Text = "Search";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click_1);
             // 
@@ -204,24 +207,28 @@
             this.createNewUserToolStripMenuItem.Name = "createNewUserToolStripMenuItem";
             this.createNewUserToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.createNewUserToolStripMenuItem.Text = "Create New User";
+            this.createNewUserToolStripMenuItem.Click += new System.EventHandler(this.createNewUserToolStripMenuItem_Click_1);
             // 
             // editDeleteUsersToolStripMenuItem
             // 
             this.editDeleteUsersToolStripMenuItem.Name = "editDeleteUsersToolStripMenuItem";
             this.editDeleteUsersToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.editDeleteUsersToolStripMenuItem.Text = "Edit/Delete Users";
+            this.editDeleteUsersToolStripMenuItem.Click += new System.EventHandler(this.editDeleteUsersToolStripMenuItem_Click_1);
             // 
             // resetUserPasswordToolStripMenuItem
             // 
             this.resetUserPasswordToolStripMenuItem.Name = "resetUserPasswordToolStripMenuItem";
             this.resetUserPasswordToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.resetUserPasswordToolStripMenuItem.Text = "Reset User Password";
+            this.resetUserPasswordToolStripMenuItem.Click += new System.EventHandler(this.resetUserPasswordToolStripMenuItem_Click_1);
             // 
             // configSettingsToolStripMenuItem
             // 
             this.configSettingsToolStripMenuItem.Name = "configSettingsToolStripMenuItem";
             this.configSettingsToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.configSettingsToolStripMenuItem.Text = "Config Settings";
+            this.configSettingsToolStripMenuItem.Click += new System.EventHandler(this.configSettingsToolStripMenuItem_Click_1);
             // 
             // windowToolStripMenuItem
             // 
@@ -234,8 +241,9 @@
             // hideTimeDateToolStripMenuItem
             // 
             this.hideTimeDateToolStripMenuItem.Name = "hideTimeDateToolStripMenuItem";
-            this.hideTimeDateToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.hideTimeDateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hideTimeDateToolStripMenuItem.Text = "Hide Toolstrip";
+            this.hideTimeDateToolStripMenuItem.Click += new System.EventHandler(this.hideTimeDateToolStripMenuItem_Click_1);
             // 
             // helpToolStripMenuItem
             // 
@@ -250,20 +258,23 @@
             // checkForUpdatesToolStripMenuItem
             // 
             this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkForUpdatesToolStripMenuItem.Text = "Check for updates";
+            this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click_1);
             // 
             // sQLServerToolStripMenuItem
             // 
             this.sQLServerToolStripMenuItem.Name = "sQLServerToolStripMenuItem";
-            this.sQLServerToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.sQLServerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sQLServerToolStripMenuItem.Text = "SQL Server";
+            this.sQLServerToolStripMenuItem.Click += new System.EventHandler(this.sQLServerToolStripMenuItem_Click_1);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
             // 
             // HomePage
             // 
@@ -276,6 +287,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "HomePage";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.HomePage_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

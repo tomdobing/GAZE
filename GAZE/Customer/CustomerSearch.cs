@@ -68,7 +68,7 @@ namespace GAZE.Customer
                 messageHandler.ShowMessage("Customer Not Found!!\n\n\nPlease check and try again. This customer may not be registered", "Search Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            CustomerManagement.GetCustomerDataByContactNumber(contactsearch_txt.Text, metroGrid2);
+            CustomerManagement.GetCustomerDataByContactNumber(SearchNum_txt.Text, metroGrid1);
 
         }
 
