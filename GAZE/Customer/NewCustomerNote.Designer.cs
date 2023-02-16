@@ -153,7 +153,9 @@
             this.CustID_txt.MaxLength = 32767;
             this.CustID_txt.Name = "CustID_txt";
             this.CustID_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.CustID_txt.PromptText = "Customer ID";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.CustID_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.CustID_txt.SelectedText = "";
             this.CustID_txt.SelectionLength = 0;

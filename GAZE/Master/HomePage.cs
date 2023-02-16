@@ -6,6 +6,7 @@ using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.BusinessLogic.Exceptions;
 using GAZE.Customer;
+using MetroFramework;
 
 namespace GAZE
 {
@@ -31,7 +32,7 @@ namespace GAZE
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-
+            MetroMessageBox.Show(this, "Unknown Username Or Password \n\nPlease check the details you have entered and try again", "Unauthorized access", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(configAdmin.GetConfigValue("Time Format"));
             StartTimer();
             toolStripLabel2.Text = "Build:" + Application.ProductVersion.ToString();

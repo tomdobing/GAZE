@@ -491,7 +491,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 scon.Open();
                 SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_CUSTOMER_STATUS_SP", scon)
                 {
-                    CommandType = System.Data.CommandType.StoredProcedure
+                    CommandType = CommandType.StoredProcedure
                 };
                 sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
                 sqlCommand.Parameters.AddWithValue("@StatusName", NewStatus.SelectedItem);

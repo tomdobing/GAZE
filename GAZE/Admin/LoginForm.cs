@@ -4,6 +4,7 @@ using Gaze.BusinessLogic.Startup;
 using Gaze.BusinessLogic.Exceptions;
 using System;
 using System.Windows.Forms;
+using MetroFramework;
 
 namespace GAZE.Admin
 {
@@ -37,7 +38,7 @@ namespace GAZE.Admin
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
-
+            //MetroFramework.MetroMessageBox.Show(this, "Hello this is  amessage box", "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             if (PreLoginChecks.CheckSQLServerIsOnline(SQLError_lbl) == true)
             {
@@ -49,12 +50,13 @@ namespace GAZE.Admin
                 }
                 else
                 {
+                    MetroMessageBox.Show(this, "Unknown Username Or Password \n\nPlease check the details you have entered and try again", "Unauthorized access", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     //exceptionThrown.ThrowNewException("Unknown username/password. Please try again", "Invalid Login Details!", "Login Failed");
-                    string message = "Incorrect username/password. Please try again";
-                    string caption = "Unauthorized Access";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    MessageBox.Show(this, message, caption, buttons,
-                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    //string message = "Incorrect username/password. Please try again";
+                    //string caption = "Unauthorized Access";
+                    //MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    //MessageBox.Show(this, message, caption, buttons,
+                    //MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     password_txt.Clear();
                     password_txt.Focus(); 
                 }
