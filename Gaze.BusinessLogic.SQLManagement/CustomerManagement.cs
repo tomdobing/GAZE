@@ -480,7 +480,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             {
                 scon.Close();
             }
-            #endregion
+           
         }
 
         public void SetCustomerStatus(MetroComboBox NewStatus)
@@ -511,5 +511,6 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
 
         }
+        #endregion
     }
 }
