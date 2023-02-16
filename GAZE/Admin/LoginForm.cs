@@ -51,7 +51,7 @@ namespace GAZE.Admin
                 {
                     //exceptionThrown.ThrowNewException("Unknown username/password. Please try again", "Invalid Login Details!", "Login Failed");
                     string message = "Incorrect username/password. Please try again";
-                    string caption = "Invalid Login Details!";
+                    string caption = "Unauthorized Access";
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
                     MessageBox.Show(this, message, caption, buttons,
                     MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);

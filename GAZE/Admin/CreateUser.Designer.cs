@@ -49,6 +49,7 @@
             this.metroLabel1.Size = new System.Drawing.Size(73, 19);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "First Name";
+            this.metroLabel1.UseCustomBackColor = true;
             // 
             // metroLabel2
             // 
@@ -58,6 +59,7 @@
             this.metroLabel2.Size = new System.Drawing.Size(61, 19);
             this.metroLabel2.TabIndex = 1;
             this.metroLabel2.Text = "Surname";
+            this.metroLabel2.UseCustomBackColor = true;
             // 
             // metroLabel3
             // 
@@ -67,6 +69,7 @@
             this.metroLabel3.Size = new System.Drawing.Size(68, 19);
             this.metroLabel3.TabIndex = 2;
             this.metroLabel3.Text = "Username";
+            this.metroLabel3.UseCustomBackColor = true;
             // 
             // admin_chk
             // 
@@ -77,13 +80,17 @@
             this.admin_chk.Size = new System.Drawing.Size(183, 15);
             this.admin_chk.TabIndex = 3;
             this.admin_chk.Text = "Admin User?                               ";
+            this.admin_chk.UseCustomBackColor = true;
             this.admin_chk.UseSelectable = true;
             // 
             // addusr_txt
             // 
+            this.addusr_txt.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.addusr_txt.Highlight = true;
             this.addusr_txt.Location = new System.Drawing.Point(116, 167);
             this.addusr_txt.Name = "addusr_txt";
             this.addusr_txt.Size = new System.Drawing.Size(169, 23);
+            this.addusr_txt.Style = MetroFramework.MetroColorStyle.Black;
             this.addusr_txt.TabIndex = 4;
             this.addusr_txt.Text = "Create User";
             this.addusr_txt.UseSelectable = true;
@@ -227,11 +234,13 @@
             this.metroLabel4.Size = new System.Drawing.Size(63, 19);
             this.metroLabel4.TabIndex = 8;
             this.metroLabel4.Text = "Password";
+            this.metroLabel4.UseCustomBackColor = true;
             // 
             // CreateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(358, 206);
             this.Controls.Add(this.password_txt);
             this.Controls.Add(this.metroLabel4);

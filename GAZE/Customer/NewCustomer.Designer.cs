@@ -91,6 +91,7 @@
             this.metroLabel1.Size = new System.Drawing.Size(94, 19);
             this.metroLabel1.TabIndex = 1;
             this.metroLabel1.Text = "Customer Title";
+            this.metroLabel1.UseCustomBackColor = true;
             // 
             // FirstName_Txt
             // 
@@ -98,10 +99,10 @@
             // 
             // 
             this.FirstName_Txt.CustomButton.Image = null;
-            this.FirstName_Txt.CustomButton.Location = new System.Drawing.Point(215, 1);
+            this.FirstName_Txt.CustomButton.Location = new System.Drawing.Point(322, 2);
             this.FirstName_Txt.CustomButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FirstName_Txt.CustomButton.Name = "";
-            this.FirstName_Txt.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.FirstName_Txt.CustomButton.Size = new System.Drawing.Size(50, 51);
             this.FirstName_Txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.FirstName_Txt.CustomButton.TabIndex = 1;
             this.FirstName_Txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -136,6 +137,7 @@
             this.metroLabel2.Size = new System.Drawing.Size(69, 19);
             this.metroLabel2.TabIndex = 3;
             this.metroLabel2.Text = "Firstname:";
+            this.metroLabel2.UseCustomBackColor = true;
             // 
             // metroLabel3
             // 
@@ -146,6 +148,7 @@
             this.metroLabel3.Size = new System.Drawing.Size(64, 19);
             this.metroLabel3.TabIndex = 5;
             this.metroLabel3.Text = "Surname:";
+            this.metroLabel3.UseCustomBackColor = true;
             // 
             // surname_txt
             // 
@@ -153,10 +156,10 @@
             // 
             // 
             this.surname_txt.CustomButton.Image = null;
-            this.surname_txt.CustomButton.Location = new System.Drawing.Point(215, 1);
+            this.surname_txt.CustomButton.Location = new System.Drawing.Point(322, 2);
             this.surname_txt.CustomButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.surname_txt.CustomButton.Name = "";
-            this.surname_txt.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.surname_txt.CustomButton.Size = new System.Drawing.Size(50, 51);
             this.surname_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.surname_txt.CustomButton.TabIndex = 1;
             this.surname_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -202,6 +205,7 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal Customer Details";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // CustAge_txt
             // 
@@ -209,10 +213,10 @@
             // 
             // 
             this.CustAge_txt.CustomButton.Image = null;
-            this.CustAge_txt.CustomButton.Location = new System.Drawing.Point(260, 1);
+            this.CustAge_txt.CustomButton.Location = new System.Drawing.Point(390, 2);
             this.CustAge_txt.CustomButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CustAge_txt.CustomButton.Name = "";
-            this.CustAge_txt.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.CustAge_txt.CustomButton.Size = new System.Drawing.Size(50, 51);
             this.CustAge_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.CustAge_txt.CustomButton.TabIndex = 1;
             this.CustAge_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -247,6 +251,7 @@
             this.metroLabel8.Size = new System.Drawing.Size(94, 19);
             this.metroLabel8.TabIndex = 10;
             this.metroLabel8.Text = "Customer Age";
+            this.metroLabel8.UseCustomBackColor = true;
             // 
             // metroLabel4
             // 
@@ -257,6 +262,7 @@
             this.metroLabel4.Size = new System.Drawing.Size(41, 19);
             this.metroLabel4.TabIndex = 7;
             this.metroLabel4.Text = "D.O.B";
+            this.metroLabel4.UseCustomBackColor = true;
             // 
             // DOB_DTP
             // 
@@ -295,6 +301,7 @@
             this.metroLabel9.Size = new System.Drawing.Size(74, 19);
             this.metroLabel9.TabIndex = 12;
             this.metroLabel9.Text = "Alt Contact";
+            this.metroLabel9.UseCustomBackColor = true;
             // 
             // AltContact_txt
             // 
@@ -302,10 +309,10 @@
             // 
             // 
             this.AltContact_txt.CustomButton.Image = null;
-            this.AltContact_txt.CustomButton.Location = new System.Drawing.Point(215, 1);
+            this.AltContact_txt.CustomButton.Location = new System.Drawing.Point(322, 2);
             this.AltContact_txt.CustomButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AltContact_txt.CustomButton.Name = "";
-            this.AltContact_txt.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.AltContact_txt.CustomButton.Size = new System.Drawing.Size(50, 51);
             this.AltContact_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.AltContact_txt.CustomButton.TabIndex = 1;
             this.AltContact_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -340,6 +347,7 @@
             this.metroLabel6.Size = new System.Drawing.Size(92, 19);
             this.metroLabel6.TabIndex = 10;
             this.metroLabel6.Text = "Email Address";
+            this.metroLabel6.UseCustomBackColor = true;
             // 
             // Email_TXT
             // 
@@ -347,10 +355,10 @@
             // 
             // 
             this.Email_TXT.CustomButton.Image = null;
-            this.Email_TXT.CustomButton.Location = new System.Drawing.Point(215, 1);
+            this.Email_TXT.CustomButton.Location = new System.Drawing.Point(322, 2);
             this.Email_TXT.CustomButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Email_TXT.CustomButton.Name = "";
-            this.Email_TXT.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.Email_TXT.CustomButton.Size = new System.Drawing.Size(50, 51);
             this.Email_TXT.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.Email_TXT.CustomButton.TabIndex = 1;
             this.Email_TXT.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -386,6 +394,7 @@
             this.metroLabel5.Size = new System.Drawing.Size(107, 19);
             this.metroLabel5.TabIndex = 8;
             this.metroLabel5.Text = "Contact Number";
+            this.metroLabel5.UseCustomBackColor = true;
             // 
             // ContactNmr_txt
             // 
@@ -393,10 +402,10 @@
             // 
             // 
             this.ContactNmr_txt.CustomButton.Image = null;
-            this.ContactNmr_txt.CustomButton.Location = new System.Drawing.Point(215, 1);
+            this.ContactNmr_txt.CustomButton.Location = new System.Drawing.Point(322, 2);
             this.ContactNmr_txt.CustomButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ContactNmr_txt.CustomButton.Name = "";
-            this.ContactNmr_txt.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.ContactNmr_txt.CustomButton.Size = new System.Drawing.Size(50, 51);
             this.ContactNmr_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.ContactNmr_txt.CustomButton.TabIndex = 1;
             this.ContactNmr_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -452,12 +461,13 @@
             this.Country_lbl.Size = new System.Drawing.Size(59, 19);
             this.Country_lbl.TabIndex = 19;
             this.Country_lbl.Text = "Country:";
+            this.Country_lbl.UseCustomBackColor = true;
             // 
             // Country_cmb
             // 
             this.Country_cmb.FormattingEnabled = true;
             this.Country_cmb.ItemHeight = 23;
-            this.Country_cmb.Location = new System.Drawing.Point(194, 219);
+            this.Country_cmb.Location = new System.Drawing.Point(194, 218);
             this.Country_cmb.Name = "Country_cmb";
             this.Country_cmb.Size = new System.Drawing.Size(184, 29);
             this.Country_cmb.TabIndex = 18;
@@ -466,12 +476,13 @@
             // Postcode_lbl
             // 
             this.Postcode_lbl.AutoSize = true;
-            this.Postcode_lbl.Location = new System.Drawing.Point(9, 167);
+            this.Postcode_lbl.Location = new System.Drawing.Point(9, 168);
             this.Postcode_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Postcode_lbl.Name = "Postcode_lbl";
             this.Postcode_lbl.Size = new System.Drawing.Size(82, 19);
             this.Postcode_lbl.TabIndex = 17;
             this.Postcode_lbl.Text = "Postal Code:";
+            this.Postcode_lbl.UseCustomBackColor = true;
             // 
             // PostCode_txt
             // 
@@ -479,9 +490,9 @@
             // 
             // 
             this.PostCode_txt.CustomButton.Image = null;
-            this.PostCode_txt.CustomButton.Location = new System.Drawing.Point(215, 1);
+            this.PostCode_txt.CustomButton.Location = new System.Drawing.Point(322, 2);
             this.PostCode_txt.CustomButton.Name = "";
-            this.PostCode_txt.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.PostCode_txt.CustomButton.Size = new System.Drawing.Size(50, 51);
             this.PostCode_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.PostCode_txt.CustomButton.TabIndex = 1;
             this.PostCode_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -515,6 +526,7 @@
             this.town_lbl.Size = new System.Drawing.Size(41, 19);
             this.town_lbl.TabIndex = 15;
             this.town_lbl.Text = "Town:";
+            this.town_lbl.UseCustomBackColor = true;
             // 
             // town_txt
             // 
@@ -522,9 +534,9 @@
             // 
             // 
             this.town_txt.CustomButton.Image = null;
-            this.town_txt.CustomButton.Location = new System.Drawing.Point(215, 1);
+            this.town_txt.CustomButton.Location = new System.Drawing.Point(322, 2);
             this.town_txt.CustomButton.Name = "";
-            this.town_txt.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.town_txt.CustomButton.Size = new System.Drawing.Size(50, 51);
             this.town_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.town_txt.CustomButton.TabIndex = 1;
             this.town_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -558,6 +570,7 @@
             this.addrL2_lbl.Size = new System.Drawing.Size(97, 19);
             this.addrL2_lbl.TabIndex = 13;
             this.addrL2_lbl.Text = "Address Line 2:";
+            this.addrL2_lbl.UseCustomBackColor = true;
             // 
             // AddrL2_txt
             // 
@@ -565,16 +578,16 @@
             // 
             // 
             this.AddrL2_txt.CustomButton.Image = null;
-            this.AddrL2_txt.CustomButton.Location = new System.Drawing.Point(215, 1);
+            this.AddrL2_txt.CustomButton.Location = new System.Drawing.Point(322, 2);
             this.AddrL2_txt.CustomButton.Name = "";
-            this.AddrL2_txt.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.AddrL2_txt.CustomButton.Size = new System.Drawing.Size(50, 51);
             this.AddrL2_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.AddrL2_txt.CustomButton.TabIndex = 1;
             this.AddrL2_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.AddrL2_txt.CustomButton.UseSelectable = true;
             this.AddrL2_txt.CustomButton.Visible = false;
             this.AddrL2_txt.Lines = new string[0];
-            this.AddrL2_txt.Location = new System.Drawing.Point(194, 79);
+            this.AddrL2_txt.Location = new System.Drawing.Point(194, 78);
             this.AddrL2_txt.MaxLength = 32767;
             this.AddrL2_txt.Name = "AddrL2_txt";
             this.AddrL2_txt.PasswordChar = '\0';
@@ -600,6 +613,7 @@
             this.addrL1_lbl.Size = new System.Drawing.Size(95, 19);
             this.addrL1_lbl.TabIndex = 11;
             this.addrL1_lbl.Text = "Address Line 1:";
+            this.addrL1_lbl.UseCustomBackColor = true;
             // 
             // AddrL1_txt
             // 
@@ -607,16 +621,16 @@
             // 
             // 
             this.AddrL1_txt.CustomButton.Image = null;
-            this.AddrL1_txt.CustomButton.Location = new System.Drawing.Point(215, 1);
+            this.AddrL1_txt.CustomButton.Location = new System.Drawing.Point(322, 2);
             this.AddrL1_txt.CustomButton.Name = "";
-            this.AddrL1_txt.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.AddrL1_txt.CustomButton.Size = new System.Drawing.Size(50, 51);
             this.AddrL1_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.AddrL1_txt.CustomButton.TabIndex = 1;
             this.AddrL1_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.AddrL1_txt.CustomButton.UseSelectable = true;
             this.AddrL1_txt.CustomButton.Visible = false;
             this.AddrL1_txt.Lines = new string[0];
-            this.AddrL1_txt.Location = new System.Drawing.Point(194, 30);
+            this.AddrL1_txt.Location = new System.Drawing.Point(194, 31);
             this.AddrL1_txt.MaxLength = 32767;
             this.AddrL1_txt.Name = "AddrL1_txt";
             this.AddrL1_txt.PasswordChar = '\0';
@@ -638,12 +652,13 @@
             // 
             this.metroCheckBox1.AutoSize = true;
             this.metroCheckBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.metroCheckBox1.Location = new System.Drawing.Point(8, 338);
+            this.metroCheckBox1.Location = new System.Drawing.Point(9, 278);
             this.metroCheckBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.metroCheckBox1.Name = "metroCheckBox1";
             this.metroCheckBox1.Size = new System.Drawing.Size(139, 15);
             this.metroCheckBox1.TabIndex = 9;
             this.metroCheckBox1.Text = "Vulnerable Customer?";
+            this.metroCheckBox1.UseCustomBackColor = true;
             this.metroCheckBox1.UseSelectable = true;
             // 
             // groupBox4
@@ -662,10 +677,10 @@
             // 
             // Reset_btn
             // 
-            this.Reset_btn.Location = new System.Drawing.Point(338, 31);
+            this.Reset_btn.Location = new System.Drawing.Point(303, 29);
             this.Reset_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Reset_btn.Name = "Reset_btn";
-            this.Reset_btn.Size = new System.Drawing.Size(135, 77);
+            this.Reset_btn.Size = new System.Drawing.Size(130, 62);
             this.Reset_btn.TabIndex = 2;
             this.Reset_btn.Text = "Reset Form";
             this.Reset_btn.UseSelectable = true;
@@ -673,10 +688,10 @@
             // 
             // Close_BTN
             // 
-            this.Close_BTN.Location = new System.Drawing.Point(194, 29);
+            this.Close_BTN.Location = new System.Drawing.Point(164, 31);
             this.Close_BTN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Close_BTN.Name = "Close_BTN";
-            this.Close_BTN.Size = new System.Drawing.Size(135, 77);
+            this.Close_BTN.Size = new System.Drawing.Size(130, 62);
             this.Close_BTN.TabIndex = 1;
             this.Close_BTN.Text = "Cancel / Close";
             this.Close_BTN.UseSelectable = true;
@@ -684,10 +699,10 @@
             // 
             // Submit_btn
             // 
-            this.Submit_btn.Location = new System.Drawing.Point(50, 31);
+            this.Submit_btn.Location = new System.Drawing.Point(24, 31);
             this.Submit_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Submit_btn.Name = "Submit_btn";
-            this.Submit_btn.Size = new System.Drawing.Size(135, 77);
+            this.Submit_btn.Size = new System.Drawing.Size(130, 60);
             this.Submit_btn.TabIndex = 0;
             this.Submit_btn.Text = "Submit \r\nCustomer";
             this.Submit_btn.UseSelectable = true;
@@ -701,7 +716,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1504, 971);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1083, 675);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

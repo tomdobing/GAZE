@@ -1,8 +1,7 @@
 ﻿using Gaze.BusinessLogic.Config;
+using Gaze.BusinessLogic.SQLManagement;
 using System;
 using System.Windows.Forms;
-using Gaze.BusinessLogic.SQLManagement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GAZE.Customer
 {
@@ -24,28 +23,28 @@ namespace GAZE.Customer
 
         private void CustomerNotes_Load(object sender, EventArgs e)
         {
-            customerManagement.GetCustomerNotesForDataGrid(NoteDataGridView);
+            customerManagement.GetCustomerNotesForDataGrid(NoteGridview);
             //customerManagement.GetCustomerNotes(NoteID_txt.Text, NoteDataGridView, CustName_txt.Text, notedetails_txt.Text, CreateBy_txt.Text, CreateDate_txt.Text);
 
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
-        private void NoteDataGridView_SelectionChanged(object sender, EventArgs e)
+        private void NoteGridview_SelectionChanged(object sender, EventArgs e)
         {
-            if (NoteDataGridView.SelectedCells.Count > 0)
+            if (NoteGridview.SelectedCells.Count > 0)
             {
 
-                int rownum = NoteDataGridView.SelectedCells[0].RowIndex;
-                NoteID_txt.Text = NoteDataGridView.Rows[rownum].Cells["NoteID"].Value.ToString();
-                CustName_txt.Text = NoteDataGridView.Rows[rownum].Cells["CustomerName"].Value.ToString();
-                notedetails_txt.Text = NoteDataGridView.Rows[rownum].Cells["NoteDetails"].Value.ToString();
-                CreateBy_txt.Text = NoteDataGridView.Rows[rownum].Cells["CreatedBy"].Value.ToString();
-               CreateDate_txt.Text = NoteDataGridView.Rows[rownum].Cells["CreatedDate"].Value.ToString();
-                // etc. for each text box
+                int rownum = NoteGridview.SelectedCells[0].RowIndex;
+                NoteID_txt.Text = NoteGridview.Rows[rownum].Cells["NoteID"].Value.ToString();
+                CustName_txt.Text = NoteGridview.Rows[rownum].Cells["CustomerName"].Value.ToString();
+                notedetails_txt.Text = NoteGridview.Rows[rownum].Cells["NoteDetails"].Value.ToString();
+                CreateBy_txt.Text = NoteGridview.Rows[rownum].Cells["CreatedBy"].Value.ToString();
+                CreateDate_txt.Text = NoteGridview.Rows[rownum].Cells["CreatedDate"].Value.ToString();
+                
             }
         }
     }

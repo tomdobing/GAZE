@@ -4,11 +4,14 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Gaze.BusinessLogic.SQLManagement
-{
+{/// <summary>
+/// Class used for Customer Management, Notes, Searching, New Customers etc
+/// </summary>
     public class CustomerManagement
     {
 
@@ -31,6 +34,32 @@ namespace Gaze.BusinessLogic.SQLManagement
                 SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMER_TITLE_SP", scon)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure
+                };
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    Combobox.Items.Add(sqlDataReader[0].ToString());
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                scon.Close();
+            }
+        }
+        public void PopulateStatus(MetroComboBox Combobox)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_STATUS_SP", scon)
+                {
+                    CommandType = CommandType.StoredProcedure
                 };
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 while (sqlDataReader.Read())
@@ -103,7 +132,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 string.IsNullOrEmpty(AddressLine2.Text) ||
                 string.IsNullOrEmpty(Town.Text) ||
                 string.IsNullOrEmpty(PostalCode.Text) ||
-                string.IsNullOrEmpty(Country.SelectedValue.ToString())) 
+                string.IsNullOrEmpty(Country.SelectedValue.ToString()))
             {
                 exceptionThrown.ThrowNewException("Data Validation Failed", "You have not completed all required fields. Please check and try again!", "Data Failure");
             }
@@ -142,7 +171,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                         column.SortMode = DataGridViewColumnSortMode.NotSortable;
                     }
                     //DGV.AllowUserToOrderColumns = false;
-                    GB.Show();
+                    //GB.Show();
 
                 }
             }
@@ -153,7 +182,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
         }
 
-        public void GetCustomerNotesForDataGrid(DataGridView DGV)
+        public void GetCustomerNotesForDataGrid(MetroGrid DGV)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try
@@ -302,6 +331,183 @@ namespace Gaze.BusinessLogic.SQLManagement
                     return false;
                 }
 
+            }
+
+        }
+
+        public void GetCustomerOverview(MetroTextBox Title, MetroTextBox Firstname, MetroTextBox Surname, MetroTextBox DOB, MetroTextBox ContactNumber,
+                                        MetroTextBox AltContact, MetroTextBox EmailAddr, MetroCheckBox Vuln, MetroTextBox AddrLine1, MetroTextBox AddrLine2, MetroTextBox Town,
+                                        MetroTextBox PostalCode, MetroTextBox Counrty, ToolStripLabel Status)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMER_OVERVIEW_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    Title.Text = sqlDataReader[0].ToString();
+                    Firstname.Text = sqlDataReader[1].ToString();
+                    Surname.Text = sqlDataReader[2].ToString();
+                    DOB.Text = sqlDataReader[3].ToString();
+                    ContactNumber.Text = sqlDataReader[4].ToString();
+                    AltContact.Text = sqlDataReader[5].ToString();
+                    EmailAddr.Text = sqlDataReader[6].ToString();
+                    if (sqlDataReader[7].ToString() == "1")
+                    {
+                        Vuln.CheckState = CheckState.Checked;
+                    }
+                    else { Vuln.CheckState = CheckState.Unchecked; };
+                    AddrLine1.Text = sqlDataReader[8].ToString();
+                    AddrLine2.Text = sqlDataReader[9].ToString();
+                    Town.Text = sqlDataReader[10].ToString();
+                    PostalCode.Text = sqlDataReader[11].ToString();
+                    Counrty.Text = sqlDataReader[12].ToString();
+                    switch (sqlDataReader[13].ToString())
+                    {
+                        case "Active":
+                            Status.Text = "Active";
+                            Status.ForeColor = System.Drawing.Color.Green;
+                            break;
+                        case "On Hold":
+                            Status.Text = "On Hold";
+                            Status.ForeColor = System.Drawing.Color.Orange;
+                            break;
+                        case "Cancelled":
+                            Status.Text = "Cancelled";
+                            Status.ForeColor = System.Drawing.Color.DarkRed;
+                            break;
+                        case "Rejected":
+                            Status.Text = "Rejected";
+                            Status.ForeColor = System.Drawing.Color.DarkRed;
+                            break;
+                        case "Pending":
+                            Status.Text = "Pending";
+                            Status.ForeColor = System.Drawing.Color.Orange;
+                            break;
+                        case "Deactivated":
+                            Status.Text = "Deactivated";
+                            Status.ForeColor = System.Drawing.Color.Red;
+                            break;
+                        case "Suspended":
+                            Status.Text = "Suspended";
+                            Status.ForeColor = System.Drawing.Color.Red;
+                            break;
+                        default:
+                            Status.Text = "UNKNOWN STATUS";
+                            Status.ForeColor = System.Drawing.Color.Black;
+                            break;
+                    }
+
+
+                    // Status.Text = sqlDataReader[13].ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+
+        }
+        public void InsertNewCustomerNote(string NoteDescription, string NoteDetails, [Optional] Form form)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.INSERT_NEW_CUSTOMER_NOTE_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@NoteDescription", NoteDescription);
+                sqlCommand.Parameters.AddWithValue("@NoteDetails", NoteDetails);
+                sqlCommand.Parameters.AddWithValue("@CreatedBy", InfoSec.GlobalUsername);
+                sqlCommand.ExecuteReader();
+                MessageBox.Show("Note Created!", "Note Admin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to insert note \n\n" + ex.Message, "Exception Thrown", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            finally
+            {
+                scon.Close();
+            }
+        }
+
+        public void GetCustomerStatus(MetroTextBox status)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMER_STATUS_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    //string ConfigValue = sqlDataReader["ConfigValue"].ToString();
+                    //int ConvertedValue = Convert.ToInt32(ConfigValue);
+
+                    status.Text = sqlDataReader[0].ToString();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                scon.Close();
+            }
+           
+        }
+
+        public void SetCustomerStatus(MetroComboBox NewStatus)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_CUSTOMER_STATUS_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@StatusName", NewStatus.SelectedItem);
+                sqlCommand.Parameters.AddWithValue("@UpdatedBy", InfoSec.GlobalUsername);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                MessageBox.Show("Customer Status has been set to " + NewStatus.SelectedItem, "Status Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InsertNewCustomerNote("Customer Status Changed", "Customer Status set to " + NewStatus.SelectedItem);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed update customer status \n\n" + ex.Message, "Exception Thrown", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            finally
+            {
+                scon.Close();
             }
 
         }

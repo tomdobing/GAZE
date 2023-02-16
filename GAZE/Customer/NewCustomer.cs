@@ -151,5 +151,10 @@ namespace GAZE.Customer
         {
             validation.control_Validating(sender, e, PostCode_txt, errorProvider1);
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

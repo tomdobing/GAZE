@@ -46,6 +46,7 @@
             this.usrname_lbl.Size = new System.Drawing.Size(71, 19);
             this.usrname_lbl.TabIndex = 0;
             this.usrname_lbl.Text = "Username:";
+            this.usrname_lbl.UseCustomBackColor = true;
             // 
             // usrname_txt
             // 
@@ -119,6 +120,7 @@
             this.passwrd_lbl.Size = new System.Drawing.Size(66, 19);
             this.passwrd_lbl.TabIndex = 2;
             this.passwrd_lbl.Text = "Password:";
+            this.passwrd_lbl.UseCustomBackColor = true;
             // 
             // confirm_txt
             // 
@@ -160,6 +162,7 @@
             this.confrim_lbl.Size = new System.Drawing.Size(57, 19);
             this.confrim_lbl.TabIndex = 4;
             this.confrim_lbl.Text = "Confirm";
+            this.confrim_lbl.UseCustomBackColor = true;
             // 
             // metroLabel1
             // 
@@ -169,12 +172,16 @@
             this.metroLabel1.Size = new System.Drawing.Size(131, 19);
             this.metroLabel1.TabIndex = 6;
             this.metroLabel1.Text = "Reset User Password.";
+            this.metroLabel1.UseCustomBackColor = true;
             // 
             // metroButton1
             // 
+            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.metroButton1.Highlight = true;
             this.metroButton1.Location = new System.Drawing.Point(105, 131);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(152, 23);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Black;
             this.metroButton1.TabIndex = 7;
             this.metroButton1.Text = "Reset Password";
             this.metroButton1.UseSelectable = true;
@@ -184,6 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(372, 166);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroLabel1);
