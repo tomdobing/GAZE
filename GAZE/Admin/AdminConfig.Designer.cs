@@ -26,6 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        [System.Obsolete]
         private void InitializeComponent()
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -38,8 +39,8 @@
             this.ChangeBit_cmb = new MetroFramework.Controls.MetroCheckBox();
             this.AddedBy_txt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // listBox1
@@ -59,6 +60,7 @@
             this.metroLabel1.Size = new System.Drawing.Size(60, 19);
             this.metroLabel1.TabIndex = 1;
             this.metroLabel1.Text = "ConfigID";
+            this.metroLabel1.UseCustomBackColor = true;
             // 
             // ConfigID_txt
             // 
@@ -133,6 +135,7 @@
             this.metroLabel2.Size = new System.Drawing.Size(45, 19);
             this.metroLabel2.TabIndex = 3;
             this.metroLabel2.Text = "Name";
+            this.metroLabel2.UseCustomBackColor = true;
             // 
             // ConfigValue_txt
             // 
@@ -174,6 +177,7 @@
             this.metroLabel3.Size = new System.Drawing.Size(39, 19);
             this.metroLabel3.TabIndex = 5;
             this.metroLabel3.Text = "Value";
+            this.metroLabel3.UseCustomBackColor = true;
             // 
             // ChangeBit_cmb
             // 
@@ -184,6 +188,7 @@
             this.ChangeBit_cmb.Size = new System.Drawing.Size(86, 15);
             this.ChangeBit_cmb.TabIndex = 7;
             this.ChangeBit_cmb.Text = "Changeable";
+            this.ChangeBit_cmb.UseCustomBackColor = true;
             this.ChangeBit_cmb.UseSelectable = true;
             // 
             // AddedBy_txt
@@ -226,34 +231,42 @@
             this.metroLabel4.Size = new System.Drawing.Size(67, 19);
             this.metroLabel4.TabIndex = 8;
             this.metroLabel4.Text = "Added By";
+            this.metroLabel4.UseCustomBackColor = true;
             // 
-            // button1
+            // metroButton1
             // 
-            this.button1.Location = new System.Drawing.Point(148, 247);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.metroButton1.Highlight = true;
+            this.metroButton1.Location = new System.Drawing.Point(148, 247);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(75, 23);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Black;
+            this.metroButton1.TabIndex = 12;
+            this.metroButton1.Text = "Submit";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
-            // button2
+            // metroButton2
             // 
-            this.button2.Location = new System.Drawing.Point(243, 247);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Close";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.metroButton2.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.metroButton2.Highlight = true;
+            this.metroButton2.Location = new System.Drawing.Point(240, 247);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(75, 23);
+            this.metroButton2.Style = MetroFramework.MetroColorStyle.Black;
+            this.metroButton2.TabIndex = 13;
+            this.metroButton2.Text = "Close";
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // AdminConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(514, 296);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.metroButton2);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.AddedBy_txt);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.ChangeBit_cmb);
@@ -284,7 +297,7 @@
         private MetroFramework.Controls.MetroCheckBox ChangeBit_cmb;
         private MetroFramework.Controls.MetroTextBox AddedBy_txt;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton metroButton2;
     }
 }

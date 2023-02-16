@@ -12,18 +12,18 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <ShouldCreateLogs>True</ShouldCreateLogs>
-    <AdvancedSettingsExpanded>True</AdvancedSettingsExpanded>
+    <ShouldCreateLogs>False</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
     <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
     <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
     <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
-    <AssemblyVersionSettings>None.None.IncrementOnDemand.IncrementOnDemand</AssemblyVersionSettings>
+    <AssemblyVersionSettings>None.None.None.IncrementOnDemand</AssemblyVersionSettings>
     <UpdatePackageVersion>False</UpdatePackageVersion>
     <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
     <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
     <AssemblyInfoVersionSettings>
     </AssemblyInfoVersionSettings>
-    <AssemblyFileVersionSettings>None.None.IncrementOnDemand.IncrementOnDemand</AssemblyFileVersionSettings>
+    <AssemblyFileVersionSettings>None.None.None.IncrementOnDemand</AssemblyFileVersionSettings>
     <AssemblyInfoVersionSemVerSettings>
     </AssemblyInfoVersionSemVerSettings>
   </PropertyGroup>

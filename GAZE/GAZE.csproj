@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <ShouldCreateLogs>False</ShouldCreateLogs>
-    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <AdvancedSettingsExpanded>True</AdvancedSettingsExpanded>
     <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
     <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
     <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
@@ -76,6 +76,8 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -118,17 +120,41 @@
     <Compile Include="Admin\UserMgr.Designer.cs">
       <DependentUpon>UserMgr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerNotes.Designer.cs">
+      <DependentUpon>CustomerNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerOverview.Designer.cs">
+      <DependentUpon>CustomerOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerSearch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Customer\CustomerSearch.Designer.cs">
       <DependentUpon>CustomerSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerUpdateStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerUpdateStatus.Designer.cs">
+      <DependentUpon>CustomerUpdateStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\NewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Customer\NewCustomer.Designer.cs">
       <DependentUpon>NewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\NewCustomerNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\NewCustomerNote.Designer.cs">
+      <DependentUpon>NewCustomerNote.cs</DependentUpon>
     </Compile>
     <Compile Include="Help\AboutUs.cs">
       <SubType>Form</SubType>
@@ -159,11 +185,23 @@
     <EmbeddedResource Include="Admin\UserMgr.resx">
       <DependentUpon>UserMgr.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerNotes.resx">
+      <DependentUpon>CustomerNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerOverview.resx">
+      <DependentUpon>CustomerOverview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerSearch.resx">
       <DependentUpon>CustomerSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerUpdateStatus.resx">
+      <DependentUpon>CustomerUpdateStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\NewCustomer.resx">
       <DependentUpon>NewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\NewCustomerNote.resx">
+      <DependentUpon>NewCustomerNote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Help\AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>
@@ -233,8 +271,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MetroFramework.txt" />
     <None Include="Resources\LoginSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
