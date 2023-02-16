@@ -1,12 +1,14 @@
 ﻿using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.SQLManagement;
 using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace GAZE.Customer
 {
     public partial class NewCustomerNote : Form
     {
+
         readonly FormSettings formSettings = new FormSettings();
         readonly CustomerManagement CustomerManagement = new CustomerManagement();
         readonly InfoSec InfoSec = new InfoSec();
@@ -29,11 +31,7 @@ namespace GAZE.Customer
             NoteDesc_txt.Text = string.Empty;
             NoteDetails_txt.Text = string.Empty;
         }
-        /// <summary>
-        /// test
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void close_btn_Click(object sender, EventArgs e)
         {
             Close();
@@ -41,6 +39,7 @@ namespace GAZE.Customer
 
         private void Create_btn_Click(object sender, EventArgs e)
         {
+            Thread.Sleep(1000);
             CustomerManagement.InsertNewCustomerNote(NoteDesc_txt.Text, NoteDetails_txt.Text, this);
         }
     }

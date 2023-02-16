@@ -20,10 +20,6 @@ namespace GAZE.Customer
             FormSettings.ChangeableFormSettings(this, Name);
         }
 
-        private void CustomerSearch_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
@@ -43,19 +39,40 @@ namespace GAZE.Customer
         }
 
 
-
-
-        private void metroButton3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void CustomerSearch_FormClosing(object sender, FormClosingEventArgs e)
         {
             InfoSec.GlobalCustomerID = null;
         }
 
-        private void metroGrid1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            CustomerOverview customerOverview = new CustomerOverview();
+            customerOverview.ShowDialog();
+        }
+
+        private void CustomerSearch_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(SearchNum_txt.Text) && SearchNum_txt.Text.Length <= 10)
+            {
+                messageHandler.ShowMessage("Invalid search Criteria \n\n Please check and try again", "Search Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (CustomerManagement.CustomerSearchIfExists(SearchNum_txt.Text) == false)
+            {
+                messageHandler.ShowMessage("Customer Not Found!!\n\n\nPlease check and try again. This customer may not be registered", "Search Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            CustomerManagement.GetCustomerDataByContactNumber(contactsearch_txt.Text, metroGrid2);
+
+        }
+
+        private void metroGrid2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int selectedRowIndex = e.RowIndex;
             DataGridViewRow selectedRow = metroGrid1.Rows[selectedRowIndex];
@@ -65,12 +82,7 @@ namespace GAZE.Customer
             Thread.Sleep(3000);
             CustomerOverview customerOverview = new CustomerOverview();
             customerOverview.ShowDialog();
-        }
 
-        private void metroButton4_Click(object sender, EventArgs e)
-        {
-            CustomerOverview customerOverview = new CustomerOverview();
-            customerOverview.ShowDialog();
         }
     }
 }

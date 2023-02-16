@@ -4,11 +4,14 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Gaze.BusinessLogic.SQLManagement
-{
+{/// <summary>
+/// Class used for Customer Management, Notes, Searching, New Customers etc
+/// </summary>
     public class CustomerManagement
     {
 
@@ -31,6 +34,32 @@ namespace Gaze.BusinessLogic.SQLManagement
                 SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMER_TITLE_SP", scon)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure
+                };
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    Combobox.Items.Add(sqlDataReader[0].ToString());
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                scon.Close();
+            }
+        }
+        public void PopulateStatus(MetroComboBox Combobox)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_STATUS_SP", scon)
+                {
+                    CommandType = CommandType.StoredProcedure
                 };
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 while (sqlDataReader.Read())
@@ -153,7 +182,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
         }
 
-        public void GetCustomerNotesForDataGrid(DataGridView DGV)
+        public void GetCustomerNotesForDataGrid(MetroGrid DGV)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try
@@ -339,21 +368,43 @@ namespace Gaze.BusinessLogic.SQLManagement
                     Town.Text = sqlDataReader[10].ToString();
                     PostalCode.Text = sqlDataReader[11].ToString();
                     Counrty.Text = sqlDataReader[12].ToString();
-                    if (sqlDataReader[13].ToString() == "Active")
+                    switch (sqlDataReader[13].ToString())
                     {
-                        Status.Text = "Active";
-                        Status.ForeColor = System.Drawing.Color.Green;
+                        case "Active":
+                            Status.Text = "Active";
+                            Status.ForeColor = System.Drawing.Color.Green;
+                            break;
+                        case "On Hold":
+                            Status.Text = "On Hold";
+                            Status.ForeColor = System.Drawing.Color.Orange;
+                            break;
+                        case "Cancelled":
+                            Status.Text = "Cancelled";
+                            Status.ForeColor = System.Drawing.Color.DarkRed;
+                            break;
+                        case "Rejected":
+                            Status.Text = "Rejected";
+                            Status.ForeColor = System.Drawing.Color.DarkRed;
+                            break;
+                        case "Pending":
+                            Status.Text = "Pending";
+                            Status.ForeColor = System.Drawing.Color.Orange;
+                            break;
+                        case "Deactivated":
+                            Status.Text = "Deactivated";
+                            Status.ForeColor = System.Drawing.Color.Red;
+                            break;
+                        case "Suspended":
+                            Status.Text = "Suspended";
+                            Status.ForeColor = System.Drawing.Color.Red;
+                            break;
+                        default:
+                            Status.Text = "UNKNOWN STATUS";
+                            Status.ForeColor = System.Drawing.Color.Black;
+                            break;
                     }
-                    if (sqlDataReader[13].ToString() == "On Hold")
-                    {
-                        Status.Text = "On Hold";
-                        Status.ForeColor = System.Drawing.Color.Orange;
-                    }
-                    else if (sqlDataReader[13].ToString() == "Inactive")
-                    {
-                        Status.Text = "Inactive";
-                        Status.ForeColor = System.Drawing.Color.Red;
-                    }
+
+
                     // Status.Text = sqlDataReader[13].ToString();
 
                 }
@@ -370,7 +421,7 @@ namespace Gaze.BusinessLogic.SQLManagement
 
 
         }
-        public void InsertNewCustomerNote(string NoteDescription, string NoteDetails, Form form)
+        public void InsertNewCustomerNote(string NoteDescription, string NoteDetails, [Optional] Form form)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try
@@ -385,19 +436,80 @@ namespace Gaze.BusinessLogic.SQLManagement
                 sqlCommand.Parameters.AddWithValue("@NoteDetails", NoteDetails);
                 sqlCommand.Parameters.AddWithValue("@CreatedBy", InfoSec.GlobalUsername);
                 sqlCommand.ExecuteReader();
-                MessageBox.Show("Note Created!", "Note Admin", MessageBoxButtons.OK, MessageBoxIcon.Information );
-                form.Close();
+                MessageBox.Show("Note Created!", "Note Admin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Failed to insert note \n\n" + ex.Message, "Exception Thrown", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
             }
             finally
             {
                 scon.Close();
             }
         }
-        #endregion
+
+        public void GetCustomerStatus(MetroTextBox status)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMER_STATUS_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    //string ConfigValue = sqlDataReader["ConfigValue"].ToString();
+                    //int ConvertedValue = Convert.ToInt32(ConfigValue);
+
+                    status.Text = sqlDataReader[0].ToString();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                scon.Close();
+            }
+            #endregion
+        }
+
+        public void SetCustomerStatus(MetroComboBox NewStatus)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_CUSTOMER_STATUS_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@StatusName", NewStatus.SelectedItem);
+                sqlCommand.Parameters.AddWithValue("@UpdatedBy", InfoSec.GlobalUsername);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                MessageBox.Show("Customer Status has been set to " + NewStatus.SelectedItem, "Status Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InsertNewCustomerNote("Customer Status Changed", "Customer Status set to " + NewStatus.SelectedItem);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed update customer status \n\n" + ex.Message, "Exception Thrown", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+        }
     }
 }

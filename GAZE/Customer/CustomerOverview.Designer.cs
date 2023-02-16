@@ -433,9 +433,11 @@
             // 
             // toolStripLabel2
             // 
+            this.toolStripLabel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripLabel2.ForeColor = System.Drawing.Color.Orange;
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(108, 22);
+            this.toolStripLabel2.Size = new System.Drawing.Size(117, 22);
             this.toolStripLabel2.Text = "CUSTOMER STATUS";
             // 
             // toolStripSeparator2
@@ -493,6 +495,7 @@
             this.setCustomerStatusToolStripMenuItem.Name = "setCustomerStatusToolStripMenuItem";
             this.setCustomerStatusToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.setCustomerStatusToolStripMenuItem.Text = "Set Customer Status";
+            this.setCustomerStatusToolStripMenuItem.Click += new System.EventHandler(this.setCustomerStatusToolStripMenuItem_Click);
             // 
             // addressDetailsToolStripMenuItem
             // 
@@ -527,14 +530,14 @@
             // newNoteToolStripMenuItem
             // 
             this.newNoteToolStripMenuItem.Name = "newNoteToolStripMenuItem";
-            this.newNoteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newNoteToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.newNoteToolStripMenuItem.Text = "New Note";
             this.newNoteToolStripMenuItem.Click += new System.EventHandler(this.newNoteToolStripMenuItem_Click);
             // 
             // viewNotesToolStripMenuItem
             // 
             this.viewNotesToolStripMenuItem.Name = "viewNotesToolStripMenuItem";
-            this.viewNotesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewNotesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.viewNotesToolStripMenuItem.Text = "View Notes";
             this.viewNotesToolStripMenuItem.Click += new System.EventHandler(this.viewNotesToolStripMenuItem_Click);
             // 

@@ -5,6 +5,8 @@ using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.BusinessLogic.Exceptions;
+using GAZE.Customer;
+
 namespace GAZE
 {
     public partial class HomePage : Form
@@ -15,7 +17,7 @@ namespace GAZE
         readonly InfoSec infoSec = new InfoSec();
         readonly ConfigAdmin configAdmin = new ConfigAdmin();
         ExceptionThrown ExceptionThrown = new ExceptionThrown();
-      
+
         #endregion
 
         #region Methods
@@ -24,7 +26,7 @@ namespace GAZE
             InitializeComponent();
             GetFormSettings.SetFormSettings(this);
             GetFormSettings.ChangeableFormSettings(this, this.Name);
-            
+
         }
 
         private void Master_Load(object sender, EventArgs e)
@@ -42,7 +44,7 @@ namespace GAZE
             {
                 adminToolStripMenuItem.Enabled = true;
             }
-            
+
         }
 
         Timer t = null;
@@ -58,7 +60,7 @@ namespace GAZE
 
         public void Tick(object sender, EventArgs e)
         {
-            
+
             toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(ConfigurationManager.AppSettings["DateFormat"]);
             if (infoSec.CheckDBStatus() != true)
             {
@@ -70,14 +72,14 @@ namespace GAZE
                 toolStripLabel4.ForeColor = System.Drawing.Color.Green;
                 toolStripLabel4.Text = "Database: Online";
             }
-            
+
         }
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Help.AboutUs aboutBox1 = new Help.AboutUs();
             aboutBox1.ShowDialog();
-            
+
         }
 
         private void ExitApplicationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -110,7 +112,7 @@ namespace GAZE
         private void CheckForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GetFormSettings.GetHeaders("https://InvalidURLCheckforupdates.com");
-            
+
         }
 
         private void LogoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -155,7 +157,7 @@ namespace GAZE
 
         private void button1_Click(object sender, EventArgs e)
         {
-       
+
         }
 
         private void configSettingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -180,8 +182,15 @@ namespace GAZE
 
         private void searchToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             Customer.CustomerSearch customerSearch = new Customer.CustomerSearch();
-            customerSearch.Show();
+
+            customerSearch.ShowDialog();
+        }
+
+        private void searchToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
