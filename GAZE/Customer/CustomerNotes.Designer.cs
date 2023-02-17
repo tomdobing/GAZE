@@ -42,8 +42,8 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.CreateBy_txt = new MetroFramework.Controls.MetroTextBox();
-            this.NoteGridview = new MetroFramework.Controls.MetroGrid();
-            ((System.ComponentModel.ISupportInitialize)(this.NoteGridview)).BeginInit();
+            this.NoteGrid = new MetroFramework.Controls.MetroGrid();
+            ((System.ComponentModel.ISupportInitialize)(this.NoteGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // note_lbl
@@ -270,13 +270,13 @@
             this.CreateBy_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.CreateBy_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // NoteGridview
+            // NoteGrid
             // 
-            this.NoteGridview.AllowUserToResizeRows = false;
-            this.NoteGridview.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.NoteGridview.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NoteGridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.NoteGridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.NoteGrid.AllowUserToResizeRows = false;
+            this.NoteGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.NoteGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NoteGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.NoteGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -284,8 +284,8 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.NoteGridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.NoteGridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.NoteGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.NoteGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -293,13 +293,13 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.NoteGridview.DefaultCellStyle = dataGridViewCellStyle2;
-            this.NoteGridview.EnableHeadersVisualStyles = false;
-            this.NoteGridview.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.NoteGridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.NoteGridview.Location = new System.Drawing.Point(13, 268);
-            this.NoteGridview.Name = "NoteGridview";
-            this.NoteGridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.NoteGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.NoteGrid.EnableHeadersVisualStyles = false;
+            this.NoteGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.NoteGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.NoteGrid.Location = new System.Drawing.Point(13, 281);
+            this.NoteGrid.Name = "NoteGrid";
+            this.NoteGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -307,12 +307,12 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.NoteGridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.NoteGridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.NoteGridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.NoteGridview.Size = new System.Drawing.Size(775, 227);
-            this.NoteGridview.TabIndex = 12;
-            this.NoteGridview.SelectionChanged += new System.EventHandler(this.NoteGridview_SelectionChanged);
+            this.NoteGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.NoteGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.NoteGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.NoteGrid.Size = new System.Drawing.Size(784, 214);
+            this.NoteGrid.TabIndex = 12;
+            this.NoteGrid.SelectionChanged += new System.EventHandler(this.metroGrid1_SelectionChanged);
             // 
             // CustomerNotes
             // 
@@ -320,7 +320,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 507);
-            this.Controls.Add(this.NoteGridview);
+            this.Controls.Add(this.NoteGrid);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.CreateBy_txt);
             this.Controls.Add(this.metroLabel1);
@@ -335,7 +335,7 @@
             this.Name = "CustomerNotes";
             this.Text = "CustomerNotes";
             this.Load += new System.EventHandler(this.CustomerNotes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.NoteGridview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NoteGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,6 +353,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox CreateBy_txt;
-        private MetroFramework.Controls.MetroGrid NoteGridview;
+        private MetroFramework.Controls.MetroGrid NoteGrid;
     }
 }

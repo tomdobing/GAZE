@@ -40,7 +40,7 @@ namespace GAZE.Customer
         private void Create_btn_Click(object sender, EventArgs e)
         {
             Thread.Sleep(1000);
-            CustomerManagement.InsertNewCustomerNote(NoteDesc_txt.Text, NoteDetails_txt.Text, this);
+            CustomerManagement.InsertNewCustomerNote(NoteDesc_txt.Text, NoteDetails_txt.Text,true ,this);
         }
     }
 }

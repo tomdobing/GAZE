@@ -1,12 +1,10 @@
-﻿using System;
-using System.Configuration;
-using System.Windows.Forms;
-using Gaze.BusinessLogic.Config;
+﻿using Gaze.BusinessLogic.Config;
+using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
-using Gaze.BusinessLogic.Exceptions;
-using GAZE.Customer;
-using MetroFramework;
+using System;
+using System.Configuration;
+using System.Windows.Forms;
 
 namespace GAZE
 {
@@ -18,6 +16,7 @@ namespace GAZE
         readonly InfoSec infoSec = new InfoSec();
         readonly ConfigAdmin configAdmin = new ConfigAdmin();
         ExceptionThrown ExceptionThrown = new ExceptionThrown();
+        readonly MessageHandler messageHandler = new MessageHandler();
 
         #endregion
 
@@ -32,7 +31,6 @@ namespace GAZE
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-            MetroMessageBox.Show(this, "Unknown Username Or Password \n\nPlease check the details you have entered and try again", "Unauthorized access", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(configAdmin.GetConfigValue("Time Format"));
             StartTimer();
             toolStripLabel2.Text = "Build:" + Application.ProductVersion.ToString();
@@ -83,7 +81,7 @@ namespace GAZE
             //MessageBox.Show(message,caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
             Customer.NewCustomer newCustomer = new Customer.NewCustomer();
             newCustomer.ShowDialog();
-        }  
+        }
 
 
         private void newCustomerToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -111,10 +109,13 @@ namespace GAZE
 
         private void exitApplicationToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+           
+                     
             string message = "Are you sure you wish to exit? Any open work will not be saved!";
             string caption = "Are you sure?";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
+
             result = MessageBox.Show(this, message, caption, buttons,
             MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (result == DialogResult.Yes)

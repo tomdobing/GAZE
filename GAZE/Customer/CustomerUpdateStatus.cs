@@ -1,4 +1,5 @@
 ﻿using Gaze.BusinessLogic.Config;
+using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace GAZE.Customer
         readonly FormSettings formSettings = new FormSettings();
         readonly CustomerManagement CustomerManagement = new CustomerManagement();
         readonly InfoSec InfoSec = new InfoSec();
+        readonly MessageHandler messageHandler = new MessageHandler();
         public CustomerUpdateStatus()
         {
             InitializeComponent();
@@ -34,7 +36,16 @@ namespace GAZE.Customer
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            CustomerManagement.SetCustomerStatus(newStatus_cmb);
+            if (string.IsNullOrEmpty(note_txt.Text))
+            {
+               messageHandler.ReturnInfoBox("Note cannot be empty \n\nYou must enter a note!!", 
+                   InfoBox.InformationBoxButtons.OK,
+                   InfoBox.InformationBoxIcon.Exclamation);
+                return;
+            }
+            
+            CustomerManagement.SetCustomerStatus(newStatus_cmb, note_txt.Text);
+            Close();
         }
     }
 }

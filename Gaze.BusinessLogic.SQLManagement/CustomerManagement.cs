@@ -4,7 +4,6 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -18,6 +17,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         #region Declarations
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         private readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
+        private readonly MessageHandler messageHandler = new MessageHandler();
         #endregion
 
         #region Methods
@@ -421,7 +421,7 @@ namespace Gaze.BusinessLogic.SQLManagement
 
 
         }
-        public void InsertNewCustomerNote(string NoteDescription, string NoteDetails, [Optional] Form form)
+        public void InsertNewCustomerNote(string NoteDescription, string NoteDetails,bool ShowNoteConfirmation, [Optional] Form form)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try
@@ -436,8 +436,14 @@ namespace Gaze.BusinessLogic.SQLManagement
                 sqlCommand.Parameters.AddWithValue("@NoteDetails", NoteDetails);
                 sqlCommand.Parameters.AddWithValue("@CreatedBy", InfoSec.GlobalUsername);
                 sqlCommand.ExecuteReader();
-                MessageBox.Show("Note Created!", "Note Admin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+                if (ShowNoteConfirmation == true)
+                {
+                    MessageBox.Show("Note Created!", "Note Admin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else { };
+
+
+
             }
             catch (Exception ex)
             {
@@ -480,10 +486,10 @@ namespace Gaze.BusinessLogic.SQLManagement
             {
                 scon.Close();
             }
-           
+
         }
 
-        public void SetCustomerStatus(MetroComboBox NewStatus)
+        public void SetCustomerStatus(MetroComboBox NewStatus, string NoteText)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try
@@ -497,8 +503,9 @@ namespace Gaze.BusinessLogic.SQLManagement
                 sqlCommand.Parameters.AddWithValue("@StatusName", NewStatus.SelectedItem);
                 sqlCommand.Parameters.AddWithValue("@UpdatedBy", InfoSec.GlobalUsername);
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                MessageBox.Show("Customer Status has been set to " + NewStatus.SelectedItem, "Status Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                InsertNewCustomerNote("Customer Status Changed", "Customer Status set to " + NewStatus.SelectedItem);
+                messageHandler.ReturnInfoBox("Customer Status has been set to " + NewStatus.SelectedItem, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Information);
+                //MessageBox.Show("Customer Status has been set to " + NewStatus.SelectedItem, "Status Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InsertNewCustomerNote("Customer Status Changed", "Customer Status set to " + NewStatus.SelectedItem + "\n\n " + NoteText, false);
             }
             catch (Exception ex)
             {

@@ -23,7 +23,7 @@ namespace GAZE.Customer
 
         private void CustomerNotes_Load(object sender, EventArgs e)
         {
-            customerManagement.GetCustomerNotesForDataGrid(NoteGridview);
+            customerManagement.GetCustomerNotesForDataGrid(NoteGrid);
             //customerManagement.GetCustomerNotes(NoteID_txt.Text, NoteDataGridView, CustName_txt.Text, notedetails_txt.Text, CreateBy_txt.Text, CreateDate_txt.Text);
 
         }
@@ -33,19 +33,20 @@ namespace GAZE.Customer
             Close();
         }
 
-        private void NoteGridview_SelectionChanged(object sender, EventArgs e)
+        private void metroGrid1_SelectionChanged(object sender, EventArgs e)
         {
-            if (NoteGridview.SelectedCells.Count > 0)
+            if (NoteGrid.SelectedCells.Count > 0)
             {
 
-                int rownum = NoteGridview.SelectedCells[0].RowIndex;
-                NoteID_txt.Text = NoteGridview.Rows[rownum].Cells["NoteID"].Value.ToString();
-                CustName_txt.Text = NoteGridview.Rows[rownum].Cells["CustomerName"].Value.ToString();
-                notedetails_txt.Text = NoteGridview.Rows[rownum].Cells["NoteDetails"].Value.ToString();
-                CreateBy_txt.Text = NoteGridview.Rows[rownum].Cells["CreatedBy"].Value.ToString();
-                CreateDate_txt.Text = NoteGridview.Rows[rownum].Cells["CreatedDate"].Value.ToString();
-                
+                int rownum = NoteGrid.SelectedCells[0].RowIndex;
+                NoteID_txt.Text = NoteGrid.Rows[rownum].Cells["NoteID"].Value.ToString();
+                CustName_txt.Text = NoteGrid.Rows[rownum].Cells["CustomerName"].Value.ToString();
+                notedetails_txt.Text = NoteGrid.Rows[rownum].Cells["NoteDetails"].Value.ToString();
+                CreateBy_txt.Text = NoteGrid.Rows[rownum].Cells["CreatedBy"].Value.ToString();
+                CreateDate_txt.Text = NoteGrid.Rows[rownum].Cells["CreatedDate"].Value.ToString();
+
             }
+
         }
     }
 }
