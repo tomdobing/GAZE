@@ -121,7 +121,9 @@
             this.EmailAddr_txt.MaxLength = 32767;
             this.EmailAddr_txt.Name = "EmailAddr_txt";
             this.EmailAddr_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.EmailAddr_txt.PromptText = "Email Address";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.EmailAddr_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.EmailAddr_txt.SelectedText = "";
             this.EmailAddr_txt.SelectionLength = 0;
@@ -153,7 +155,9 @@
             this.AltContact_txt.MaxLength = 32767;
             this.AltContact_txt.Name = "AltContact_txt";
             this.AltContact_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.AltContact_txt.PromptText = "Alternative Contact Number";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.AltContact_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.AltContact_txt.SelectedText = "";
             this.AltContact_txt.SelectionLength = 0;
@@ -185,7 +189,9 @@
             this.ContactNmb_txt.MaxLength = 32767;
             this.ContactNmb_txt.Name = "ContactNmb_txt";
             this.ContactNmb_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.ContactNmb_txt.PromptText = "Customer Contact Number";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.ContactNmb_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.ContactNmb_txt.SelectedText = "";
             this.ContactNmb_txt.SelectionLength = 0;
@@ -217,7 +223,9 @@
             this.dob_txt.MaxLength = 32767;
             this.dob_txt.Name = "dob_txt";
             this.dob_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.dob_txt.PromptText = "Customer Date of Birth";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.dob_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dob_txt.SelectedText = "";
             this.dob_txt.SelectionLength = 0;
@@ -249,7 +257,9 @@
             this.surname_txt.MaxLength = 32767;
             this.surname_txt.Name = "surname_txt";
             this.surname_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.surname_txt.PromptText = "Customer Surname";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.surname_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.surname_txt.SelectedText = "";
             this.surname_txt.SelectionLength = 0;
@@ -281,7 +291,9 @@
             this.firstname_txt.MaxLength = 32767;
             this.firstname_txt.Name = "firstname_txt";
             this.firstname_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.firstname_txt.PromptText = "Customer First name";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.firstname_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.firstname_txt.SelectedText = "";
             this.firstname_txt.SelectionLength = 0;
@@ -313,7 +325,9 @@
             this.title_txt.MaxLength = 32767;
             this.title_txt.Name = "title_txt";
             this.title_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.title_txt.PromptText = "Customer Title";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.title_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.title_txt.SelectedText = "";
             this.title_txt.SelectionLength = 0;
@@ -580,7 +594,9 @@
             this.country_txt.MaxLength = 32767;
             this.country_txt.Name = "country_txt";
             this.country_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.country_txt.PromptText = "Country";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.country_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.country_txt.SelectedText = "";
             this.country_txt.SelectionLength = 0;
@@ -612,7 +628,9 @@
             this.Postalcode_txt.MaxLength = 32767;
             this.Postalcode_txt.Name = "Postalcode_txt";
             this.Postalcode_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.Postalcode_txt.PromptText = "Postal Code";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.Postalcode_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Postalcode_txt.SelectedText = "";
             this.Postalcode_txt.SelectionLength = 0;
@@ -644,7 +662,9 @@
             this.Town_txt.MaxLength = 32767;
             this.Town_txt.Name = "Town_txt";
             this.Town_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.Town_txt.PromptText = "Town";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.Town_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Town_txt.SelectedText = "";
             this.Town_txt.SelectionLength = 0;
@@ -676,7 +696,9 @@
             this.AddrL2_txt.MaxLength = 32767;
             this.AddrL2_txt.Name = "AddrL2_txt";
             this.AddrL2_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.AddrL2_txt.PromptText = "Address Line 2";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.AddrL2_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.AddrL2_txt.SelectedText = "";
             this.AddrL2_txt.SelectionLength = 0;
@@ -708,7 +730,9 @@
             this.AddrL1_txt.MaxLength = 32767;
             this.AddrL1_txt.Name = "AddrL1_txt";
             this.AddrL1_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.AddrL1_txt.PromptText = "Address Line 1";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.AddrL1_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.AddrL1_txt.SelectedText = "";
             this.AddrL1_txt.SelectionLength = 0;

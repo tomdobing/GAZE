@@ -42,7 +42,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(12, 9);
+            this.metroLabel1.Location = new System.Drawing.Point(4, 9);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(95, 19);
             this.metroLabel1.TabIndex = 0;
@@ -63,7 +63,7 @@
             // 
             this.status_lbl.AutoSize = true;
             this.status_lbl.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.status_lbl.Location = new System.Drawing.Point(36, 110);
+            this.status_lbl.Location = new System.Drawing.Point(4, 110);
             this.status_lbl.Name = "status_lbl";
             this.status_lbl.Size = new System.Drawing.Size(53, 19);
             this.status_lbl.TabIndex = 2;

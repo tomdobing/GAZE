@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigAdmin.cs" />
+    <Compile Include="ControlManagement.cs" />
     <Compile Include="CustomerManagement.cs" />
     <Compile Include="InfoSec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

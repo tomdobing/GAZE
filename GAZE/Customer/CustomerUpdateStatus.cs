@@ -19,6 +19,7 @@ namespace GAZE.Customer
         readonly CustomerManagement CustomerManagement = new CustomerManagement();
         readonly InfoSec InfoSec = new InfoSec();
         readonly MessageHandler messageHandler = new MessageHandler();
+        readonly ControlManagement controlManagement = new ControlManagement();
         public CustomerUpdateStatus()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace GAZE.Customer
         private void CustomerUpdateStatus_Load(object sender, EventArgs e)
         {
             metroLabel1.Text = "Customer ID: " + InfoSec.GlobalCustomerID;
-            CustomerManagement.PopulateStatus(newStatus_cmb);
+            controlManagement.PopulateStatus(newStatus_cmb);
             CustomerManagement.GetCustomerStatus(CurrStatus_txt);
             
         }

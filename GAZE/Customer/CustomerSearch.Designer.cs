@@ -92,7 +92,9 @@
             this.SearchNum_txt.MaxLength = 32767;
             this.SearchNum_txt.Name = "SearchNum_txt";
             this.SearchNum_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.SearchNum_txt.PromptText = "Search By Contact Number";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.SearchNum_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.SearchNum_txt.SelectedText = "";
             this.SearchNum_txt.SelectionLength = 0;

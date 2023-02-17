@@ -85,7 +85,9 @@
             this.CustName_txt.MaxLength = 32767;
             this.CustName_txt.Name = "CustName_txt";
             this.CustName_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.CustName_txt.PromptText = "Customer Name";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.CustName_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.CustName_txt.SelectedText = "";
             this.CustName_txt.SelectionLength = 0;
@@ -128,7 +130,9 @@
             this.notedetails_txt.Multiline = true;
             this.notedetails_txt.Name = "notedetails_txt";
             this.notedetails_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.notedetails_txt.PromptText = "Note Details";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.notedetails_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.notedetails_txt.SelectedText = "";
             this.notedetails_txt.SelectionLength = 0;
@@ -160,7 +164,9 @@
             this.NoteID_txt.MaxLength = 32767;
             this.NoteID_txt.Name = "NoteID_txt";
             this.NoteID_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.NoteID_txt.PromptText = "Note ID";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.NoteID_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.NoteID_txt.SelectedText = "";
             this.NoteID_txt.SelectionLength = 0;
@@ -205,7 +211,9 @@
             this.CreateDate_txt.MaxLength = 32767;
             this.CreateDate_txt.Name = "CreateDate_txt";
             this.CreateDate_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.CreateDate_txt.PromptText = "Created Date";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.CreateDate_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.CreateDate_txt.SelectedText = "";
             this.CreateDate_txt.SelectionLength = 0;
@@ -257,7 +265,9 @@
             this.CreateBy_txt.MaxLength = 32767;
             this.CreateBy_txt.Name = "CreateBy_txt";
             this.CreateBy_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.CreateBy_txt.PromptText = "Created By";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.CreateBy_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.CreateBy_txt.SelectedText = "";
             this.CreateBy_txt.SelectionLength = 0;

@@ -133,11 +133,11 @@ namespace GAZE
 
         private void sQLServerToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            
             string message = ConfigurationManager.AppSettings["SQLConnection"] + Environment.NewLine + Environment.NewLine + "Database: Gaze_DB: True";
-            string caption = "SQL Server Info";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            MessageBox.Show(message, caption, buttons,
-            MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            messageHandler.ReturnInfoBox(message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Information);
+            
+            
 
         }
 
@@ -183,6 +183,19 @@ namespace GAZE
             Admin.LoginForm LoginForm = new Admin.LoginForm();
             LoginForm.Show();
             this.Close();
+        }
+
+        private void HomePage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void HomePage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F3)
+            {
+                searchToolStripMenuItem.PerformClick();
+            }
         }
     }
 }

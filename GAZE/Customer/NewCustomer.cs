@@ -18,6 +18,7 @@ namespace GAZE.Customer
         readonly Validations validation = new Validations();
         // readonly Print print = new Print();
         readonly MessageHandler messageHandler = new MessageHandler();
+        readonly ControlManagement controlManagement = new ControlManagement();
 
         #endregion
         public NewCustomer()
@@ -25,8 +26,8 @@ namespace GAZE.Customer
             InitializeComponent();
             formSettings.SetFormSettings(this);
             formSettings.ChangeableFormSettings(this, "New Customer");
-            CustomerManagement.PopulateTitle(CmbTitle);
-            CustomerManagement.PopulateCountried(Country_cmb);
+            controlManagement.PopulateTitle(CmbTitle);
+            controlManagement.PopulateCountried(Country_cmb);
             DOB_DTP.Format = DateTimePickerFormat.Custom;
             DOB_DTP.CustomFormat = ConfigAdmin.GetConfigValue("DateFormat");
             ContactNmr_txt.MaxLength = 14;
