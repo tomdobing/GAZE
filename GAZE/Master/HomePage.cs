@@ -1,11 +1,10 @@
-﻿using System;
-using System.Configuration;
-using System.Windows.Forms;
-using Gaze.BusinessLogic.Config;
+﻿using Gaze.BusinessLogic.Config;
+using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
-using Gaze.BusinessLogic.Exceptions;
-using GAZE.Customer;
+using System;
+using System.Configuration;
+using System.Windows.Forms;
 
 namespace GAZE
 {
@@ -17,6 +16,7 @@ namespace GAZE
         readonly InfoSec infoSec = new InfoSec();
         readonly ConfigAdmin configAdmin = new ConfigAdmin();
         ExceptionThrown ExceptionThrown = new ExceptionThrown();
+        readonly MessageHandler messageHandler = new MessageHandler();
 
         #endregion
 
@@ -31,7 +31,6 @@ namespace GAZE
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-
             toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(configAdmin.GetConfigValue("Time Format"));
             StartTimer();
             toolStripLabel2.Text = "Build:" + Application.ProductVersion.ToString();
@@ -82,7 +81,7 @@ namespace GAZE
             //MessageBox.Show(message,caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
             Customer.NewCustomer newCustomer = new Customer.NewCustomer();
             newCustomer.ShowDialog();
-        }  
+        }
 
 
         private void newCustomerToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -110,10 +109,13 @@ namespace GAZE
 
         private void exitApplicationToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+           
+                     
             string message = "Are you sure you wish to exit? Any open work will not be saved!";
             string caption = "Are you sure?";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
+
             result = MessageBox.Show(this, message, caption, buttons,
             MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (result == DialogResult.Yes)
@@ -131,11 +133,11 @@ namespace GAZE
 
         private void sQLServerToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            
             string message = ConfigurationManager.AppSettings["SQLConnection"] + Environment.NewLine + Environment.NewLine + "Database: Gaze_DB: True";
-            string caption = "SQL Server Info";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            MessageBox.Show(message, caption, buttons,
-            MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            messageHandler.ReturnInfoBox(message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Information);
+            
+            
 
         }
 
@@ -181,6 +183,19 @@ namespace GAZE
             Admin.LoginForm LoginForm = new Admin.LoginForm();
             LoginForm.Show();
             this.Close();
+        }
+
+        private void HomePage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void HomePage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F3)
+            {
+                searchToolStripMenuItem.PerformClick();
+            }
         }
     }
 }

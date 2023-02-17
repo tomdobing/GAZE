@@ -1,7 +1,8 @@
-﻿using Gaze.BusinessLogic.Security;
+﻿using Gaze.BusinessLogic.Exceptions;
+using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.BusinessLogic.Startup;
-using Gaze.BusinessLogic.Exceptions;
+using InfoBox;
 using System;
 using System.Windows.Forms;
 
@@ -15,6 +16,7 @@ namespace GAZE.Admin
         readonly InfoSec infoSec = new InfoSec();
         readonly LoginFormSettings formSettings = new LoginFormSettings();
         readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
+        readonly MessageHandler MessageHandler = new MessageHandler();
         #endregion
 
         #region Methods
@@ -22,7 +24,7 @@ namespace GAZE.Admin
         {
             InitializeComponent();
             formSettings.SetFormValue(this);
-            //metroProgressSpinner1.Hide();
+
 
         }
 
@@ -30,7 +32,6 @@ namespace GAZE.Admin
         {
             SQLError_lbl.Text = "";
             password_txt.UseSystemPasswordChar = true;
-            //password_txt.PasswordChar = '*';
             metroLabel2.Text = Application.ProductVersion;
         }
 
@@ -49,32 +50,27 @@ namespace GAZE.Admin
                 }
                 else
                 {
-                    //exceptionThrown.ThrowNewException("Unknown username/password. Please try again", "Invalid Login Details!", "Login Failed");
-                    string message = "Incorrect username/password. Please try again";
-                    string caption = "Unauthorized Access";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    MessageBox.Show(this, message, caption, buttons,
-                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                    password_txt.Clear();
-                    password_txt.Focus(); 
+                        InformationBox.Show("Incorrect username/Password entered \n\nPlease check and try again",
+                        InformationBoxIcon.Exclamation,
+                        InformationBoxButtons.OK,
+                        InformationBoxStyle.Modern,
+                        InformationBoxOrder.TopMost);
+
+
+                    //password_txt.Clear();
+                    //password_txt.Focus();
                 }
             }
             else if (PreLoginChecks.CheckSQLServerIsOnline(SQLError_lbl) == false)
             {
-                //Application.Exit();
+
             }
 
 
 
         }
 
-        private void LoginForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                metroButton1.PerformClick();
-            }
-        }
+
         #endregion
 
     }

@@ -168,7 +168,9 @@
             this.psswrd_txt.MaxLength = 32767;
             this.psswrd_txt.Name = "psswrd_txt";
             this.psswrd_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.psswrd_txt.PromptText = "Password";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.psswrd_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.psswrd_txt.SelectedText = "";
             this.psswrd_txt.SelectionLength = 0;
@@ -211,7 +213,9 @@
             this.id_txt.MaxLength = 32767;
             this.id_txt.Name = "id_txt";
             this.id_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.id_txt.PromptText = "ID";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.id_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.id_txt.SelectedText = "";
             this.id_txt.SelectionLength = 0;

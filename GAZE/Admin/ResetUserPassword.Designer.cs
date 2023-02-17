@@ -141,7 +141,9 @@
             this.confirm_txt.MaxLength = 32767;
             this.confirm_txt.Name = "confirm_txt";
             this.confirm_txt.PasswordChar = '\0';
+#pragma warning disable CS0618 // Type or member is obsolete
             this.confirm_txt.PromptText = "Confirm Password";
+#pragma warning restore CS0618 // Type or member is obsolete
             this.confirm_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.confirm_txt.SelectedText = "";
             this.confirm_txt.SelectionLength = 0;

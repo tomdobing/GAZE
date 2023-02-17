@@ -4,7 +4,6 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -18,96 +17,13 @@ namespace Gaze.BusinessLogic.SQLManagement
         #region Declarations
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         private readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
+        private readonly MessageHandler messageHandler = new MessageHandler();
         #endregion
 
         #region Methods
-        /// <summary>
-        /// Used to populate the Title ComboBox on the New Customer form
-        /// </summary>
-        /// <param name="Combobox">The control holding the title data</param>
-        public void PopulateTitle(MetroComboBox Combobox)
-        {
-            SqlConnection scon = new SqlConnection(SQLConnectionString);
-            try
-            {
-                scon.Open();
-                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMER_TITLE_SP", scon)
-                {
-                    CommandType = System.Data.CommandType.StoredProcedure
-                };
-                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                while (sqlDataReader.Read())
-                {
-                    Combobox.Items.Add(sqlDataReader[0].ToString());
-                }
-            }
-            catch (Exception)
-            {
 
-                throw;
-            }
-            finally
-            {
-                scon.Close();
-            }
-        }
-        public void PopulateStatus(MetroComboBox Combobox)
-        {
-            SqlConnection scon = new SqlConnection(SQLConnectionString);
-            try
-            {
-                scon.Open();
-                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_STATUS_SP", scon)
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
-                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                while (sqlDataReader.Read())
-                {
-                    Combobox.Items.Add(sqlDataReader[0].ToString());
-                }
-            }
-            catch (Exception)
-            {
 
-                throw;
-            }
-            finally
-            {
-                scon.Close();
-            }
-        }
 
-        /// <summary>
-        /// Used to populate the Title ComboBox on the New Customer form
-        /// </summary>
-        /// <param name="Combobox">The control holding the title data</param>
-        public void PopulateCountried(MetroComboBox Combobox)
-        {
-            SqlConnection scon = new SqlConnection(SQLConnectionString);
-            try
-            {
-                scon.Open();
-                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_COUNTRIES_SP", scon)
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
-                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                while (sqlDataReader.Read())
-                {
-                    Combobox.Items.Add(sqlDataReader[0].ToString());
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                scon.Close();
-            }
-        }
 
         /// <summary>
         /// Function to create a new customer. Also contains Data Validation Methods.
@@ -134,7 +50,8 @@ namespace Gaze.BusinessLogic.SQLManagement
                 string.IsNullOrEmpty(PostalCode.Text) ||
                 string.IsNullOrEmpty(Country.SelectedValue.ToString()))
             {
-                exceptionThrown.ThrowNewException("Data Validation Failed", "You have not completed all required fields. Please check and try again!", "Data Failure");
+                messageHandler.ReturnInfoBox("Data Validation Failure! \n\nYou have not completed all required fields. Please check and try again!", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Error);
+                
             }
             else
             {
@@ -275,11 +192,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 }
                 else
                 {
-                    string message = "Customer with the Contact Number " + CustomerNumber + " already exists and registered. \n\nPlease search for the customer via customer search";
-                    string caption = "Whoops";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    MessageBox.Show(message, caption, buttons,
-                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    messageHandler.ReturnInfoBox("Customer with the Contact Number " + CustomerNumber + " already exists and registered. \n\nPlease search for the customer via customer search", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Hand);
                     return false;
                 }
             }
@@ -310,11 +223,7 @@ namespace Gaze.BusinessLogic.SQLManagement
 
                             if (reader.HasRows)
                             {
-                                //string message = "Customer with the Contact Number " + CustomerNumber + " is not a registered customer. \n\nPlease ask the customer if they wish to register";
-                                //string caption = "Whoops";
-                                //MessageBoxButtons buttons = MessageBoxButtons.OK;
-                                //MessageBox.Show(message, caption, buttons,
-                                //MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
                                 return true;
                             }
                             else
@@ -421,7 +330,7 @@ namespace Gaze.BusinessLogic.SQLManagement
 
 
         }
-        public void InsertNewCustomerNote(string NoteDescription, string NoteDetails, [Optional] Form form)
+        public void InsertNewCustomerNote(string NoteDescription, string NoteDetails, bool ShowNoteConfirmation, [Optional] Form form, [Optional] string NoteCategory)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try
@@ -434,10 +343,28 @@ namespace Gaze.BusinessLogic.SQLManagement
                 sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
                 sqlCommand.Parameters.AddWithValue("@NoteDescription", NoteDescription);
                 sqlCommand.Parameters.AddWithValue("@NoteDetails", NoteDetails);
+                if (NoteCategory == null)
+                {
+                    sqlCommand.Parameters.AddWithValue("@NoteCategory", "Status Change");
+                }
+                else
+                {
+                    sqlCommand.Parameters.AddWithValue("@NoteCategory", NoteCategory);
+                }
+
+
+
                 sqlCommand.Parameters.AddWithValue("@CreatedBy", InfoSec.GlobalUsername);
                 sqlCommand.ExecuteReader();
-                MessageBox.Show("Note Created!", "Note Admin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+                if (ShowNoteConfirmation == true)
+                {
+                    messageHandler.ReturnInfoBox("Note has been created", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Information);
+
+                }
+                else { };
+
+
+
             }
             catch (Exception ex)
             {
@@ -464,8 +391,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 while (sqlDataReader.Read())
                 {
-                    //string ConfigValue = sqlDataReader["ConfigValue"].ToString();
-                    //int ConvertedValue = Convert.ToInt32(ConfigValue);
+
 
                     status.Text = sqlDataReader[0].ToString();
 
@@ -480,10 +406,14 @@ namespace Gaze.BusinessLogic.SQLManagement
             {
                 scon.Close();
             }
-           
-        }
 
-        public void SetCustomerStatus(MetroComboBox NewStatus)
+        }
+        /// <summary>
+        /// Method used to update the customer Account status
+        /// </summary>
+        /// <param name="NewStatus"></param>
+        /// <param name="NoteText"></param>
+        public void SetCustomerStatus(MetroComboBox NewStatus, string NoteText)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try
@@ -491,18 +421,19 @@ namespace Gaze.BusinessLogic.SQLManagement
                 scon.Open();
                 SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_CUSTOMER_STATUS_SP", scon)
                 {
-                    CommandType = System.Data.CommandType.StoredProcedure
+                    CommandType = CommandType.StoredProcedure
                 };
                 sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
                 sqlCommand.Parameters.AddWithValue("@StatusName", NewStatus.SelectedItem);
                 sqlCommand.Parameters.AddWithValue("@UpdatedBy", InfoSec.GlobalUsername);
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                MessageBox.Show("Customer Status has been set to " + NewStatus.SelectedItem, "Status Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                InsertNewCustomerNote("Customer Status Changed", "Customer Status set to " + NewStatus.SelectedItem);
+                messageHandler.ReturnInfoBox("Customer Status has been set to " + NewStatus.SelectedItem, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Information);
+                InsertNewCustomerNote("Customer Status Changed", "Customer Status set to " + NewStatus.SelectedItem + "\n\n " + NoteText, false);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed update customer status \n\n" + ex.Message, "Exception Thrown", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messageHandler.ReturnInfoBox("Failed update customer status \n\n" + ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Error);
+
 
             }
             finally

@@ -46,6 +46,9 @@
     <Reference Include="EventLibrary">
       <HintPath>..\..\..\..\Downloads\EventLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="InfoBox, Version=1.3.0.135, Culture=neutral, PublicKeyToken=6f5edd306b0cc770, processorArchitecture=MSIL">
+      <HintPath>..\packages\InformationBox.1.3.0.135\lib\net48\InfoBox.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -61,6 +64,9 @@
     <Compile Include="ExceptionThrown.cs" />
     <Compile Include="MessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

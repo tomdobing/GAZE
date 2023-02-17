@@ -21,22 +21,6 @@ namespace GAZE.Customer
         }
 
 
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(SearchNum_txt.Text) && SearchNum_txt.Text.Length <= 10)
-            {
-                messageHandler.ShowMessage("Invalid search Criteria \n\n Please check and try again", "Search Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (CustomerManagement.CustomerSearchIfExists(SearchNum_txt.Text) == false)
-            {
-                messageHandler.ShowMessage("Customer Not Found!!\n\n\nPlease check and try again. This customer may not be registered", "Search Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            CustomerManagement.GetCustomerDataByContactNumber(SearchNum_txt.Text, metroGrid1);
-
-
-        }
 
 
         private void CustomerSearch_FormClosing(object sender, FormClosingEventArgs e)
@@ -60,12 +44,14 @@ namespace GAZE.Customer
         {
             if (!string.IsNullOrEmpty(SearchNum_txt.Text) && SearchNum_txt.Text.Length <= 10)
             {
-                messageHandler.ShowMessage("Invalid search Criteria \n\n Please check and try again", "Search Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                InfoBox.InformationBox.Show("Invalid search Criteria \n\n Please check and try again", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Exclamation, InfoBox.InformationBoxStyle.Modern, InfoBox.InformationBoxBehavior.Modal);
+                
                 return;
             }
             if (CustomerManagement.CustomerSearchIfExists(SearchNum_txt.Text) == false)
             {
-                messageHandler.ShowMessage("Customer Not Found!!\n\n\nPlease check and try again. This customer may not be registered", "Search Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                InfoBox.InformationBox.Show("Customer Not Found!!\n\n\nPlease check and try again. This customer may not be registered", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Exclamation, InfoBox.InformationBoxStyle.Modern);
+                
                 return;
             }
             CustomerManagement.GetCustomerDataByContactNumber(SearchNum_txt.Text, metroGrid1);
@@ -83,6 +69,14 @@ namespace GAZE.Customer
             CustomerOverview customerOverview = new CustomerOverview();
             customerOverview.ShowDialog();
 
+        }
+
+        private void CustomerSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            //if (e.KeyCode == Keys.Enter)
+            //{
+            //    metroButton2.PerformClick();
+            //}
         }
     }
 }

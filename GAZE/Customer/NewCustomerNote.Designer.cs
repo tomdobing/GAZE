@@ -37,14 +37,17 @@
             this.Create_btn = new MetroFramework.Controls.MetroButton();
             this.reset_btn = new MetroFramework.Controls.MetroButton();
             this.close_btn = new MetroFramework.Controls.MetroButton();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.SuspendLayout();
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(13, 30);
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel1.Location = new System.Drawing.Point(3, 30);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(85, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(95, 19);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Customer ID:";
             this.metroLabel1.UseCustomBackColor = true;
@@ -52,9 +55,10 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(13, 75);
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel2.Location = new System.Drawing.Point(3, 117);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(110, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(126, 19);
             this.metroLabel2.TabIndex = 1;
             this.metroLabel2.Text = "Note Description:";
             this.metroLabel2.UseCustomBackColor = true;
@@ -62,9 +66,10 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(12, 117);
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel3.Location = new System.Drawing.Point(3, 173);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(95, 19);
             this.metroLabel3.TabIndex = 2;
             this.metroLabel3.Text = "Note Details:";
             this.metroLabel3.UseCustomBackColor = true;
@@ -84,7 +89,7 @@
             this.NoteDetails_txt.CustomButton.UseSelectable = true;
             this.NoteDetails_txt.CustomButton.Visible = false;
             this.NoteDetails_txt.Lines = new string[0];
-            this.NoteDetails_txt.Location = new System.Drawing.Point(135, 117);
+            this.NoteDetails_txt.Location = new System.Drawing.Point(135, 173);
             this.NoteDetails_txt.MaxLength = 32767;
             this.NoteDetails_txt.Multiline = true;
             this.NoteDetails_txt.Name = "NoteDetails_txt";
@@ -117,7 +122,7 @@
             this.NoteDesc_txt.CustomButton.UseSelectable = true;
             this.NoteDesc_txt.CustomButton.Visible = false;
             this.NoteDesc_txt.Lines = new string[0];
-            this.NoteDesc_txt.Location = new System.Drawing.Point(135, 70);
+            this.NoteDesc_txt.Location = new System.Drawing.Point(135, 117);
             this.NoteDesc_txt.MaxLength = 32767;
             this.NoteDesc_txt.Name = "NoteDesc_txt";
             this.NoteDesc_txt.PasswordChar = '\0';
@@ -169,7 +174,7 @@
             // Create_btn
             // 
             this.Create_btn.Highlight = true;
-            this.Create_btn.Location = new System.Drawing.Point(203, 275);
+            this.Create_btn.Location = new System.Drawing.Point(203, 331);
             this.Create_btn.Name = "Create_btn";
             this.Create_btn.Size = new System.Drawing.Size(104, 39);
             this.Create_btn.Style = MetroFramework.MetroColorStyle.Black;
@@ -181,7 +186,7 @@
             // reset_btn
             // 
             this.reset_btn.Highlight = true;
-            this.reset_btn.Location = new System.Drawing.Point(313, 275);
+            this.reset_btn.Location = new System.Drawing.Point(313, 331);
             this.reset_btn.Name = "reset_btn";
             this.reset_btn.Size = new System.Drawing.Size(104, 39);
             this.reset_btn.Style = MetroFramework.MetroColorStyle.Black;
@@ -193,7 +198,7 @@
             // close_btn
             // 
             this.close_btn.Highlight = true;
-            this.close_btn.Location = new System.Drawing.Point(423, 275);
+            this.close_btn.Location = new System.Drawing.Point(423, 331);
             this.close_btn.Name = "close_btn";
             this.close_btn.Size = new System.Drawing.Size(104, 39);
             this.close_btn.Style = MetroFramework.MetroColorStyle.Black;
@@ -202,12 +207,35 @@
             this.close_btn.UseSelectable = true;
             this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel4.Location = new System.Drawing.Point(3, 74);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(109, 19);
+            this.metroLabel4.TabIndex = 9;
+            this.metroLabel4.Text = "Note Category";
+            this.metroLabel4.UseCustomBackColor = true;
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Location = new System.Drawing.Point(135, 74);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(194, 29);
+            this.metroComboBox1.TabIndex = 10;
+            this.metroComboBox1.UseSelectable = true;
+            // 
             // NewCustomerNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(677, 326);
+            this.ClientSize = new System.Drawing.Size(677, 384);
+            this.Controls.Add(this.metroComboBox1);
+            this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.close_btn);
             this.Controls.Add(this.reset_btn);
             this.Controls.Add(this.Create_btn);
@@ -236,5 +264,7 @@
         private MetroFramework.Controls.MetroButton Create_btn;
         private MetroFramework.Controls.MetroButton reset_btn;
         private MetroFramework.Controls.MetroButton close_btn;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
     }
 }
