@@ -14,15 +14,15 @@
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <ShouldCreateLogs>False</ShouldCreateLogs>
-    <AdvancedSettingsExpanded>True</AdvancedSettingsExpanded>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
     <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
     <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
     <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
-    <AssemblyVersionSettings>None.None.IncrementOnDemand.IncrementOnDemand</AssemblyVersionSettings>
+    <AssemblyVersionSettings>None.None.None.IncrementOnDemand</AssemblyVersionSettings>
     <UpdatePackageVersion>False</UpdatePackageVersion>
     <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
     <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
-    <AssemblyFileVersionSettings>None.None.IncrementOnDemand.IncrementOnDemand</AssemblyFileVersionSettings>
+    <AssemblyFileVersionSettings>None.None.None.IncrementOnDemand</AssemblyFileVersionSettings>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -159,6 +159,12 @@
     <Compile Include="Customer\NewCustomerNote.Designer.cs">
       <DependentUpon>NewCustomerNote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\UpdateCustomerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\UpdateCustomerDetails.Designer.cs">
+      <DependentUpon>UpdateCustomerDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Help\AboutUs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\NewCustomerNote.resx">
       <DependentUpon>NewCustomerNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\UpdateCustomerDetails.resx">
+      <DependentUpon>UpdateCustomerDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Help\AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>

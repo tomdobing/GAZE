@@ -1,6 +1,8 @@
-﻿using Gaze.BusinessLogic.SQLManagement;
+﻿using Gaze.BusinessLogic.Exceptions;
+using Gaze.BusinessLogic.SQLManagement;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -13,8 +15,11 @@ namespace Gaze.BusinessLogic.Config
     {
        
         ConfigAdmin ConfigAdmin = new ConfigAdmin();
+        MessageHandler MessageHandler = new MessageHandler();
         //readonly InfoSec infoSec = new InfoSec();
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
+
+
         /// <summary>
         /// Sets the default form settings.
         /// </summary>
@@ -26,6 +31,7 @@ namespace Gaze.BusinessLogic.Config
             defaultForm.StartPosition = FormStartPosition.CenterScreen;
             defaultForm.MaximizeBox = false;
             defaultForm.MinimizeBox = false;
+            defaultForm.BackColor = SystemColors.ActiveCaption;
 
         }
 
@@ -69,11 +75,13 @@ namespace Gaze.BusinessLogic.Config
             }
             catch (System.Exception)
             {
-                string message = "An unknown error occured when checking for updates. Please try again later or contact your system administrator!";
-                string caption = "Something went wrong";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                MessageBox.Show(message, caption, buttons,
-                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageHandler.ReturnInfoBox("Oh Oh! It would appear we are unable to check for updates right now. \n\nPlease try again later or contact your systems administrator",
+                    InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Error);
+                //string message = "An unknown error occurred when checking for updates. Please try again later or contact your system administrator!";
+                //string caption = "Something went wrong";
+                //MessageBoxButtons buttons = MessageBoxButtons.OK;
+                //MessageBox.Show(message, caption, buttons,
+                //MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return result;
             }
 
