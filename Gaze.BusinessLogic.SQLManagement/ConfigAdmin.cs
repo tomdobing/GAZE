@@ -43,7 +43,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
             catch (Exception ex)
             {
-                exception.ThrowNewStackException(ex, "SQL Exception");
+                MessageHandler.ReturnInfoBox(ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Stop);
                 ///BUG 45 - TBI
                 return;
             }
@@ -94,7 +94,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
             catch (Exception ex)
             {
-                exception.ThrowNewStackException(ex, "SQL Exception");
+                MessageHandler.ReturnInfoBox(ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Stop);
             }
             finally
             {
@@ -123,7 +123,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
             catch (Exception ex)
             {
-               exception.ThrowNewStackException(ex, "SQL Exception");
+                MessageHandler.ReturnInfoBox(ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Stop);
               // MessageHandler.ShowMessage(ex.Message, "SQL Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //throw;
                 return "";
@@ -154,12 +154,13 @@ namespace Gaze.BusinessLogic.SQLManagement
                 sqlCommand.Parameters.AddWithValue("@ConfigValue", NewConfigValue);
                 sqlCommand.Parameters.AddWithValue("@UpdatedBy", UpdateBy);
                 sqlCommand.ExecuteReader();
-                MessageHandler.ShowMessage("Config Value Update", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageHandler.ReturnInfoBox("Config Value Updated!", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Success);
+                
             }
             catch (Exception ex)
             {
-
-                exception.ThrowNewStackException(ex, "SQL Exception");
+                MessageHandler.ReturnInfoBox(ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Error);
+                
             }
             finally
             {
@@ -194,7 +195,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageHandler.ReturnInfoBox(ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Stop);
                 //exception.ThrowNewStackException(ex, "SQL Exception");
                 return -1;
             }

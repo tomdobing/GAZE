@@ -61,5 +61,11 @@ namespace GAZE.Customer
             CustomerUpdateStatus status = new CustomerUpdateStatus();  
             status.ShowDialog();
         }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateCustomerDetails updateCustomerDetails = new UpdateCustomerDetails();
+            updateCustomerDetails.ShowDialog();
+        }
     }
 }

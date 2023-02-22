@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InfoBox, Version=1.3.0.135, Culture=neutral, PublicKeyToken=6f5edd306b0cc770, processorArchitecture=MSIL">
+      <HintPath>..\packages\InformationBox.1.3.0.135\lib\net48\InfoBox.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -78,6 +81,10 @@
     <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gaze.BusinessLogic.Exceptions\Gaze.BusinessLogic.Exceptions.csproj">
+      <Project>{c19908c8-7cb6-4888-9fb7-354076bb9acb}</Project>
+      <Name>Gaze.BusinessLogic.Exceptions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gaze.BusinessLogic.SQLManagement\Gaze.BusinessLogic.SQLManagement.csproj">
       <Project>{652c3e19-e25a-4b29-85e6-185bdf63fb1a}</Project>
       <Name>Gaze.BusinessLogic.SQLManagement</Name>

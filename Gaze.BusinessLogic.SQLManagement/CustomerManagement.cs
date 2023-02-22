@@ -18,6 +18,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         private readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
         private readonly MessageHandler messageHandler = new MessageHandler();
+
         #endregion
 
         #region Methods
@@ -51,7 +52,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 string.IsNullOrEmpty(Country.SelectedValue.ToString()))
             {
                 messageHandler.ReturnInfoBox("Data Validation Failure! \n\nYou have not completed all required fields. Please check and try again!", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Error);
-                
+
             }
             else
             {
@@ -205,6 +206,11 @@ namespace Gaze.BusinessLogic.SQLManagement
 
         }
 
+        /// <summary>
+        /// Method to check if the customer exists within the search function
+        /// </summary>
+        /// <param name="CustomerNumber"></param>
+        /// <returns>True/False</returns>
         public bool CustomerSearchIfExists(string CustomerNumber)
         {
 
@@ -244,6 +250,27 @@ namespace Gaze.BusinessLogic.SQLManagement
 
         }
 
+        /// <summary>
+        /// Method used when loading up the customer overview
+        /// </summary>
+        /// <param name="Title"></param>
+        /// <param name="Firstname"></param>
+        /// <param name="Surname"></param>
+        /// <param name="DOB"></param>
+        /// <param name="ContactNumber"></param>
+        /// <param name="AltContact"></param>
+        /// <param name="EmailAddr"></param>
+        /// <param name="Vuln"></param>
+        /// <param name="AddrLine1"></param>
+        /// <param name="AddrLine2"></param>
+        /// <param name="Town"></param>
+        /// <param name="PostalCode"></param>
+        /// <param name="Counrty"></param>
+        /// <param name="Status"></param>
+        /// <remarks>This is a readonly Method and is used to return ALL customer datat</remarks>
+        /// <exception cref="SqlException"></exception>
+        /// <exception cref="NullReferenceException"></exception>
+        /// <exception cref="UnhandledExceptionEventArgs"></exception>
         public void GetCustomerOverview(MetroTextBox Title, MetroTextBox Firstname, MetroTextBox Surname, MetroTextBox DOB, MetroTextBox ContactNumber,
                                         MetroTextBox AltContact, MetroTextBox EmailAddr, MetroCheckBox Vuln, MetroTextBox AddrLine1, MetroTextBox AddrLine2, MetroTextBox Town,
                                         MetroTextBox PostalCode, MetroTextBox Counrty, ToolStripLabel Status)
@@ -330,6 +357,16 @@ namespace Gaze.BusinessLogic.SQLManagement
 
 
         }
+
+        /// <summary>
+        /// Method used to insert a new Customer Note
+        /// </summary>
+        /// <param name="NoteDescription"></param>
+        /// <param name="NoteDetails"></param>
+        /// <param name="ShowNoteConfirmation"></param>
+        /// <param name="form">Optional</param>
+        /// <param name="NoteCategory"></param>
+        /// <exception cref="SqlException">Handled SQL Exception</exception>
         public void InsertNewCustomerNote(string NoteDescription, string NoteDetails, bool ShowNoteConfirmation, [Optional] Form form, [Optional] string NoteCategory)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -377,6 +414,10 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
         }
 
+        /// <summary>
+        /// Method used to return Current Customer Status
+        /// </summary>
+        /// <param name="status"></param>
         public void GetCustomerStatus(MetroTextBox status)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -429,6 +470,113 @@ namespace Gaze.BusinessLogic.SQLManagement
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 messageHandler.ReturnInfoBox("Customer Status has been set to " + NewStatus.SelectedItem, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Information);
                 InsertNewCustomerNote("Customer Status Changed", "Customer Status set to " + NewStatus.SelectedItem + "\n\n " + NoteText, false);
+            }
+            catch (Exception ex)
+            {
+                messageHandler.ReturnInfoBox("Failed update customer status \n\n" + ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Error);
+
+
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+        }
+
+
+        /// <summary>
+        /// Method to return Customer Data for the Update Customer form
+        /// </summary>
+        /// <param name="Title">Customers Title</param>
+        /// <param name="Firstname"></param>
+        /// <param name="Surname"></param>
+        /// <param name="DOB"></param>
+        /// <param name="ContactNumber"></param>
+        /// <param name="AlterContact"></param>
+        /// <param name="EmailAddress"></param>
+        /// <exception cref="SqlException">When SQL Exception Occurs</exception>
+
+        public void GetCustomerForUpdates(MetroComboBox Title, MetroTextBox Firstname, MetroTextBox Surname, MetroDateTime DOB, MetroTextBox ContactNumber, MetroTextBox AlterContact, MetroTextBox EmailAddress)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMER_FOR_UPDATES", scon)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    Title.SelectedItem = sqlDataReader[0].ToString();
+                    Firstname.Text = sqlDataReader[1].ToString();
+                    Surname.Text = sqlDataReader[2].ToString();
+                    DateTime DT = DateTime.Parse(sqlDataReader[3].ToString());
+                    DOB.Format = DateTimePickerFormat.Short;
+                    DOB.Value = DT;
+                    //DOB.Value = DT.ToString("dd/MM/yyy") ;
+                    //DOB.Text = sqlDataReader[3].ToString();
+                    ContactNumber.Text = sqlDataReader[4].ToString();
+                    AlterContact.Text = sqlDataReader[5].ToString();
+                    EmailAddress.Text = sqlDataReader[6].ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                messageHandler.ReturnInfoBox("Failed update customer details \n\n" + ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Error);
+
+            }
+            finally
+            {
+
+                scon.Close();
+
+            }
+
+        }
+
+        /// <summary>
+        /// Method used to Update Customer Details - Upon success will close the form
+        /// </summary>
+        /// <param name="Title"></param>
+        /// <param name="FirstName"></param>
+        /// <param name="Surname"></param>
+        /// <param name="DOB"></param>
+        /// <param name="ContactNumber"></param>
+        /// <param name="AltContactNumber"></param>
+        /// <param name="EmailAddress"></param>
+        /// <param name="form"></param>
+        /// <exception cref="SqlException">Handled SQL Exception</exception>
+        /// <exception cref="NullReferenceException">Nul Exception</exception>
+        public void UpdateCustomerDetails(MetroComboBox Title, MetroTextBox FirstName, MetroTextBox Surname, MetroDateTime DOB, MetroTextBox ContactNumber, MetroTextBox AltContactNumber, MetroTextBox EmailAddress, Form form)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_CUSTOMER_DETAILS_SP", scon)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@Title", Title.SelectedItem);
+                sqlCommand.Parameters.AddWithValue("@Firstname", FirstName.Text);
+                sqlCommand.Parameters.AddWithValue("@Surname", Surname.Text);
+                sqlCommand.Parameters.AddWithValue("@DOB", DOB.Value);
+                sqlCommand.Parameters.AddWithValue("@ContactNumber", ContactNumber.Text);
+                sqlCommand.Parameters.AddWithValue("@AltContact", AltContactNumber.Text);
+                sqlCommand.Parameters.AddWithValue("@EmailAddress", EmailAddress.Text);
+                sqlCommand.Parameters.AddWithValue("@CreatedBy", InfoSec.GlobalUsername);
+                sqlCommand.Parameters.AddWithValue("@UpdatedBy", InfoSec.GlobalUsername);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                messageHandler.ReturnInfoBox("Customer Details have been updated", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Success);
+                form.Close();
             }
             catch (Exception ex)
             {
