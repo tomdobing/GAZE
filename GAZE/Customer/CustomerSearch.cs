@@ -60,14 +60,22 @@ namespace GAZE.Customer
 
         private void metroGrid2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int selectedRowIndex = e.RowIndex;
-            DataGridViewRow selectedRow = metroGrid1.Rows[selectedRowIndex];
-            int rowID = Convert.ToInt32(selectedRow.Cells["CustomerID"].Value);
-            InfoSec.GlobalCustomerID = rowID.ToString();
-            metroLabel2.Text = "CustomerID: " + InfoSec.GlobalCustomerID;
-            Thread.Sleep(3000);
-            CustomerOverview customerOverview = new CustomerOverview();
-            customerOverview.ShowDialog();
+            try {
+                int selectedRowIndex = e.RowIndex;
+                DataGridViewRow selectedRow = metroGrid1.Rows[selectedRowIndex];
+                int rowID = Convert.ToInt32(selectedRow.Cells["CustomerID"].Value);
+                InfoSec.GlobalCustomerID = rowID.ToString();
+                metroLabel2.Text = "CustomerID: " + InfoSec.GlobalCustomerID;
+                Thread.Sleep(3000);
+                CustomerOverview customerOverview = new CustomerOverview();
+                customerOverview.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                messageHandler.ReturnInfoBox(ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Hand);
+                return;
+            }
+   
 
         }
 
