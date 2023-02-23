@@ -18,6 +18,7 @@ namespace GAZE.Customer
             InitializeComponent();
             formSettings.SetFormSettings(this);
             formSettings.ChangeableFormSettings(this, "New Customer");
+            metroToolTip1.SetToolTip(title_txt, "Customer Title");
         }
 
 
@@ -66,6 +67,10 @@ namespace GAZE.Customer
         {
             UpdateCustomerDetails updateCustomerDetails = new UpdateCustomerDetails();
             updateCustomerDetails.ShowDialog();
+        }
+
+        private void title_txt_MouseHover(object sender, EventArgs e) {
+            
         }
     }
 }
