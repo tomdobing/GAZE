@@ -105,7 +105,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                     sqlCommand.Parameters.AddWithValue("Password", Password.Text);
                     sqlCommand.Parameters.AddWithValue("UpdatedBy", InfoSec.GlobalUsername);
                     sqlCommand.ExecuteReader();
-                    string message = "User: " + Username.Text + "'s password has been reset Succesfully.";
+                    string message = "User: " + Username.Text + "'s password has been reset Successfully.";
                     string caption = "User Password Reset";
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
                     MessageBox.Show(message, caption, buttons,

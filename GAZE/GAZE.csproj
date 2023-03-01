@@ -123,6 +123,12 @@
     <Compile Include="Admin\UserMgr.Designer.cs">
       <DependentUpon>UserMgr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerHistory.Designer.cs">
+      <DependentUpon>CustomerHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerNotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\UserMgr.resx">
       <DependentUpon>UserMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerHistory.resx">
+      <DependentUpon>CustomerHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerNotes.resx">
       <DependentUpon>CustomerNotes.cs</DependentUpon>

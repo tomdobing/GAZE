@@ -590,6 +590,36 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
 
         }
+        public void GetCustomerHistory(MetroGrid DataGridView) 
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try {
+                scon.Open();
+                using (SqlCommand scmd = new SqlCommand("SELECT_CUSTOMER_HISTORY_SP", scon)) {
+                    scmd.CommandType = CommandType.StoredProcedure;
+                    scmd.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(scmd)) {
+                        DataTable customers = new DataTable();
+                        adapter.Fill(customers);
+                        DataGridView.DataSource = customers;
+                    }
+                    DataGridView.ReadOnly = true;
+                    DataGridView.AllowUserToAddRows = false;
+                    foreach (DataGridViewColumn column in DataGridView.Columns) {
+                        column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    }
+                    //DGV.AllowUserToOrderColumns = false;
+                    //GB.Show();
+
+                }
+            }
+            catch (Exception) {
+
+                throw;
+            }
+
+
+        }
         #endregion
     }
 }

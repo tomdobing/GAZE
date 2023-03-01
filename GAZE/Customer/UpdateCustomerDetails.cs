@@ -17,7 +17,8 @@ namespace GAZE.Customer {
         readonly Validations Validations = new Validations();
         readonly MessageHandler messageHandler = new MessageHandler();
 
-        public UpdateCustomerDetails() {
+        public UpdateCustomerDetails() 
+        {
             InitializeComponent();
             formSettings.SetFormSettings(this);
             formSettings.ChangeableFormSettings(this, "Update Customer Details");

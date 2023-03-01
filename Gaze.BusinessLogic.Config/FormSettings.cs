@@ -41,6 +41,7 @@ namespace Gaze.BusinessLogic.Config
         /// </summary>
         /// <param name="defaultForm"></param>
         /// <param name="additionInfo"></param>
+        /// <
         public void ChangeableFormSettings(Form defaultForm, [Optional] string additionInfo)
         {
 
