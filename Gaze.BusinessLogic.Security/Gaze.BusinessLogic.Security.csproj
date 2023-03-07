@@ -68,6 +68,7 @@
     <Compile Include="LoginFormSettings.cs" />
     <Compile Include="LoginSecurity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleManagement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

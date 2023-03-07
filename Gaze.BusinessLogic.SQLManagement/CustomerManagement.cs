@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Gaze.BusinessLogic.SQLManagement
 {/// <summary>
@@ -159,7 +160,7 @@ namespace Gaze.BusinessLogic.SQLManagement
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
@@ -345,7 +346,7 @@ namespace Gaze.BusinessLogic.SQLManagement
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
@@ -439,7 +440,7 @@ namespace Gaze.BusinessLogic.SQLManagement
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -590,22 +591,26 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
 
         }
-        public void GetCustomerHistory(MetroGrid DataGridView) 
+        public void GetCustomerHistory(MetroGrid DataGridView)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
-            try {
+            try
+            {
                 scon.Open();
-                using (SqlCommand scmd = new SqlCommand("SELECT_CUSTOMER_HISTORY_SP", scon)) {
+                using (SqlCommand scmd = new SqlCommand("SELECT_CUSTOMER_HISTORY_SP", scon))
+                {
                     scmd.CommandType = CommandType.StoredProcedure;
                     scmd.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(scmd)) {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(scmd))
+                    {
                         DataTable customers = new DataTable();
                         adapter.Fill(customers);
                         DataGridView.DataSource = customers;
                     }
                     DataGridView.ReadOnly = true;
                     DataGridView.AllowUserToAddRows = false;
-                    foreach (DataGridViewColumn column in DataGridView.Columns) {
+                    foreach (DataGridViewColumn column in DataGridView.Columns)
+                    {
                         column.SortMode = DataGridViewColumnSortMode.NotSortable;
                     }
                     //DGV.AllowUserToOrderColumns = false;
@@ -613,13 +618,129 @@ namespace Gaze.BusinessLogic.SQLManagement
 
                 }
             }
-            catch (Exception) {
+            catch (Exception)
+            {
 
                 throw;
             }
 
 
         }
-        #endregion
+
+        public void GetCustomerOverViewV1(System.Windows.Forms.TextBox CustomerFullName,MetroTextBox Title, MetroTextBox Firstname, MetroTextBox Surname, MetroTextBox DOB, MetroTextBox ContactNumber, MetroTextBox Altercontact,
+                                          MetroTextBox EmailAddress, MetroTextBox AddressLine1, MetroTextBox AddressLine2, MetroTextBox Town, MetroTextBox Postalcode, MetroTextBox Country, System.Windows.Forms.TextBox PolicyID,
+                                          Label PolicyStatus, MetroTextBox ProductName, MetroTextBox ProductDesc, MetroTextBox ProductPrice, MetroTextBox EffStart, System.Windows.Forms.TextBox CustomerID)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMER_OVERVIEW_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", 4);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    CustomerFullName.Text = sqlDataReader[0].ToString();
+                    Title.Text = sqlDataReader[1].ToString();
+                    Firstname.Text = sqlDataReader[2].ToString();
+                    Surname.Text = sqlDataReader[3].ToString();
+                    DOB.Text = sqlDataReader[4].ToString();
+                    ContactNumber.Text = sqlDataReader[5].ToString();
+                    Altercontact.Text = sqlDataReader[6].ToString();
+                    EmailAddress.Text = sqlDataReader[7].ToString();
+                    AddressLine1.Text = sqlDataReader[8].ToString();
+                    AddressLine2.Text = sqlDataReader[9].ToString();
+                    Town.Text = sqlDataReader[10].ToString();
+                    Postalcode.Text = sqlDataReader[11].ToString();
+                    Country.Text = sqlDataReader[12].ToString();
+                    PolicyID.Text = sqlDataReader[13].ToString();
+                    switch (sqlDataReader[14].ToString())
+                    {
+                        case "Active":
+                            PolicyStatus.Text = "Active";
+                            PolicyStatus.ForeColor = System.Drawing.Color.Green;
+                            break;
+                        case "Cancelled":
+                            PolicyStatus.Text = "Cancelled";
+                            PolicyStatus.ForeColor = System.Drawing.Color.Red;
+                            break;
+                        case "Pending":
+                            PolicyStatus.Text = "Pending";
+                            PolicyStatus.ForeColor = System.Drawing.Color.Orange;
+                            break;
+                        case "Removed":
+                            PolicyStatus.Text = "Removed";
+                            PolicyStatus.ForeColor = System.Drawing.Color.DarkRed;
+                            break;
+                        case "Review":
+                            PolicyStatus.Text = "Review";
+                            PolicyStatus.ForeColor = System.Drawing.Color.Orange;
+                            break;
+                        default:
+                            PolicyStatus.Text = "UNKNOWN STATUS";
+                            PolicyStatus.ForeColor = System.Drawing.Color.Black;
+                            break;
+                    }
+                    ProductName.Text = sqlDataReader[15].ToString();
+                    ProductDesc.Text = sqlDataReader[16].ToString();
+                    ProductPrice.Text = sqlDataReader[17].ToString();
+                    EffStart.Text = sqlDataReader[18].ToString();
+                    CustomerID.Text = sqlDataReader[19].ToString();
+
+                }
+                }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            finally
+            {
+                scon.Close();
+            }
+
+        }
+
+        public void GetCustomerPoliciesForOverview(MetroGrid DataGridView)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                using (SqlCommand scmd = new SqlCommand("SELECT_CUSTOMER_POLICIES_FOR_OVERVIEW", scon))
+                {
+                    scmd.CommandType = CommandType.StoredProcedure;
+                    scmd.Parameters.AddWithValue("@CustomerID", 4);
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(scmd))
+                    {
+                        DataTable customers = new DataTable();
+                        adapter.Fill(customers);
+                        DataGridView.DataSource = customers;
+                    }
+                    DataGridView.ReadOnly = true;
+                    DataGridView.AllowUserToAddRows = false;
+                    foreach (DataGridViewColumn column in DataGridView.Columns)
+                    {
+                        column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    }
+                    DataGridView.AllowUserToOrderColumns = false;
+                    DataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+            #endregion
+        }
     }
-}

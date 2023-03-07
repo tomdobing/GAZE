@@ -123,6 +123,12 @@
     <Compile Include="Admin\UserMgr.Designer.cs">
       <DependentUpon>UserMgr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Config\ControlAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\ControlAdmin.Designer.cs">
+      <DependentUpon>ControlAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,12 @@
     </Compile>
     <Compile Include="Customer\CustomerOverview.Designer.cs">
       <DependentUpon>CustomerOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerOverViewV1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerOverViewV1.Designer.cs">
+      <DependentUpon>CustomerOverViewV1.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\CustomerSearch.cs">
       <SubType>Form</SubType>
@@ -200,6 +212,9 @@
     <EmbeddedResource Include="Admin\UserMgr.resx">
       <DependentUpon>UserMgr.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Config\ControlAdmin.resx">
+      <DependentUpon>ControlAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerHistory.resx">
       <DependentUpon>CustomerHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerOverview.resx">
       <DependentUpon>CustomerOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerOverViewV1.resx">
+      <DependentUpon>CustomerOverViewV1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerSearch.resx">
       <DependentUpon>CustomerSearch.cs</DependentUpon>

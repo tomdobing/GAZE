@@ -50,12 +50,14 @@
             this.editDeleteUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetUserPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideTimeDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sQLServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.improvedCustomerOverViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -158,7 +160,8 @@
             // 
             this.customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newCustomerToolStripMenuItem,
-            this.searchToolStripMenuItem});
+            this.searchToolStripMenuItem,
+            this.improvedCustomerOverViewToolStripMenuItem});
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
             this.customerToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.customerToolStripMenuItem.Text = "Customer";
@@ -166,14 +169,14 @@
             // newCustomerToolStripMenuItem
             // 
             this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
-            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.newCustomerToolStripMenuItem.Text = "New Customer";
             this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.newCustomerToolStripMenuItem_Click_1);
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.searchToolStripMenuItem.Text = "F3 Search";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click_1);
             // 
@@ -182,14 +185,14 @@
             this.stockManagementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newStockInputToolStripMenuItem});
             this.stockManagementToolStripMenuItem.Name = "stockManagementToolStripMenuItem";
-            this.stockManagementToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
-            this.stockManagementToolStripMenuItem.Text = "Stock Management";
+            this.stockManagementToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
+            this.stockManagementToolStripMenuItem.Text = "Policy Management";
             // 
             // newStockInputToolStripMenuItem
             // 
             this.newStockInputToolStripMenuItem.Name = "newStockInputToolStripMenuItem";
-            this.newStockInputToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.newStockInputToolStripMenuItem.Text = "New Stock Input";
+            this.newStockInputToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.newStockInputToolStripMenuItem.Text = "View Policies";
             // 
             // adminToolStripMenuItem
             // 
@@ -197,7 +200,8 @@
             this.createNewUserToolStripMenuItem,
             this.editDeleteUsersToolStripMenuItem,
             this.resetUserPasswordToolStripMenuItem,
-            this.configSettingsToolStripMenuItem});
+            this.configSettingsToolStripMenuItem,
+            this.controlManagementToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.adminToolStripMenuItem.Text = "Admin";
@@ -205,30 +209,36 @@
             // createNewUserToolStripMenuItem
             // 
             this.createNewUserToolStripMenuItem.Name = "createNewUserToolStripMenuItem";
-            this.createNewUserToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.createNewUserToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.createNewUserToolStripMenuItem.Text = "Create New User";
             this.createNewUserToolStripMenuItem.Click += new System.EventHandler(this.createNewUserToolStripMenuItem_Click_1);
             // 
             // editDeleteUsersToolStripMenuItem
             // 
             this.editDeleteUsersToolStripMenuItem.Name = "editDeleteUsersToolStripMenuItem";
-            this.editDeleteUsersToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.editDeleteUsersToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.editDeleteUsersToolStripMenuItem.Text = "Edit/Delete Users";
             this.editDeleteUsersToolStripMenuItem.Click += new System.EventHandler(this.editDeleteUsersToolStripMenuItem_Click_1);
             // 
             // resetUserPasswordToolStripMenuItem
             // 
             this.resetUserPasswordToolStripMenuItem.Name = "resetUserPasswordToolStripMenuItem";
-            this.resetUserPasswordToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.resetUserPasswordToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.resetUserPasswordToolStripMenuItem.Text = "Reset User Password";
             this.resetUserPasswordToolStripMenuItem.Click += new System.EventHandler(this.resetUserPasswordToolStripMenuItem_Click_1);
             // 
             // configSettingsToolStripMenuItem
             // 
             this.configSettingsToolStripMenuItem.Name = "configSettingsToolStripMenuItem";
-            this.configSettingsToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.configSettingsToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.configSettingsToolStripMenuItem.Text = "Config Settings";
             this.configSettingsToolStripMenuItem.Click += new System.EventHandler(this.configSettingsToolStripMenuItem_Click_1);
+            // 
+            // controlManagementToolStripMenuItem
+            // 
+            this.controlManagementToolStripMenuItem.Name = "controlManagementToolStripMenuItem";
+            this.controlManagementToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.controlManagementToolStripMenuItem.Text = "Control Management";
             // 
             // windowToolStripMenuItem
             // 
@@ -275,6 +285,13 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
+            // 
+            // improvedCustomerOverViewToolStripMenuItem
+            // 
+            this.improvedCustomerOverViewToolStripMenuItem.Name = "improvedCustomerOverViewToolStripMenuItem";
+            this.improvedCustomerOverViewToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.improvedCustomerOverViewToolStripMenuItem.Text = "Improved Customer OverView";
+            this.improvedCustomerOverViewToolStripMenuItem.Click += new System.EventHandler(this.improvedCustomerOverViewToolStripMenuItem_Click);
             // 
             // HomePage
             // 
@@ -329,6 +346,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controlManagementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem improvedCustomerOverViewToolStripMenuItem;
     }
 }
 

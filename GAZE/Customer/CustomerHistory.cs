@@ -29,7 +29,7 @@ namespace GAZE.Customer {
             formSettings.SetFormSettings(this);
             formSettings.ChangeableFormSettings(this, "Customer Details History");
         }
-
+        
         private void CustomerHistory_Load(object sender, EventArgs e) 
         {
             CustomerManagement.GetCustomerHistory(metroGrid1);

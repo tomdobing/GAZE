@@ -2,6 +2,7 @@
 using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
+using GAZE.Customer;
 using System;
 using System.Configuration;
 using System.Windows.Forms;
@@ -17,7 +18,7 @@ namespace GAZE
         readonly ConfigAdmin configAdmin = new ConfigAdmin();
         ExceptionThrown ExceptionThrown = new ExceptionThrown();
         readonly MessageHandler messageHandler = new MessageHandler();
-
+        readonly RoleManagement roleManagement = new RoleManagement();
         #endregion
 
         #region Methods
@@ -35,14 +36,19 @@ namespace GAZE
             StartTimer();
             toolStripLabel2.Text = "Build:" + Application.ProductVersion.ToString();
             loginSecurity.GetLoggedinUserName(toolStripLabel3);
-            if (infoSec.isUserAdmin(InfoSec.GlobalUsername) == false)
+            if (roleManagement.DisableNonAdminControls() == false) 
             {
                 adminToolStripMenuItem.Enabled = false;
+
             }
-            else
-            {
-                adminToolStripMenuItem.Enabled = true;
-            }
+            //if (infoSec.isUserAdmin(InfoSec.GlobalUsername) == false)
+            //{
+            //    adminToolStripMenuItem.Enabled = false;
+            //}
+            //else
+            //{
+            //    adminToolStripMenuItem.Enabled = true;
+            //}
 
         }
 
@@ -196,6 +202,12 @@ namespace GAZE
             {
                 searchToolStripMenuItem.PerformClick();
             }
+        }
+
+        private void improvedCustomerOverViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomerOverViewV1 customeroverview = new CustomerOverViewV1();
+            customeroverview.Show();
         }
     }
 }

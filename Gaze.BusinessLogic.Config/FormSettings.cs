@@ -39,9 +39,9 @@ namespace Gaze.BusinessLogic.Config
         /// Changeable form settings that can be changed via the app.config.exe.
         /// Also contains some static settings 
         /// </summary>
-        /// <param name="defaultForm"></param>
-        /// <param name="additionInfo"></param>
-        /// <
+        /// <param name="defaultForm">The form to apply </param>
+        /// <param name="additionInfo">Form text to be displayed</param>
+        
         public void ChangeableFormSettings(Form defaultForm, [Optional] string additionInfo)
         {
 
