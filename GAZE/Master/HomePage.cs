@@ -98,7 +98,7 @@ namespace GAZE
 
         private void searchToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
+            messageHandler.ReturnInfoBox("This option has been removed in Version 1.0.0.0\n\nPlease use the new form", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Asterisk);
             Customer.CustomerSearch customerSearch = new Customer.CustomerSearch();
 
             customerSearch.ShowDialog();

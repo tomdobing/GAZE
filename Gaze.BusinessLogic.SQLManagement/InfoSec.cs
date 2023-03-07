@@ -13,6 +13,9 @@ namespace Gaze.BusinessLogic.SQLManagement
         public static string GlobalUsername { get; set; }
 
         public static string GlobalCustomerID { get; set; }
+        
+        public static string GlobalSelectedPolicyID{ get; set; }
+
         #endregion
 
 

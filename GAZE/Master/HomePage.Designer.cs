@@ -43,6 +43,7 @@
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.improvedCustomerOverViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newStockInputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +58,6 @@
             this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sQLServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.improvedCustomerOverViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -177,8 +177,15 @@
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
             this.searchToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
-            this.searchToolStripMenuItem.Text = "F3 Search";
+            this.searchToolStripMenuItem.Text = "X F3 Search X";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click_1);
+            // 
+            // improvedCustomerOverViewToolStripMenuItem
+            // 
+            this.improvedCustomerOverViewToolStripMenuItem.Name = "improvedCustomerOverViewToolStripMenuItem";
+            this.improvedCustomerOverViewToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.improvedCustomerOverViewToolStripMenuItem.Text = "Improved Customer OverView";
+            this.improvedCustomerOverViewToolStripMenuItem.Click += new System.EventHandler(this.improvedCustomerOverViewToolStripMenuItem_Click);
             // 
             // stockManagementToolStripMenuItem
             // 
@@ -285,13 +292,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
-            // 
-            // improvedCustomerOverViewToolStripMenuItem
-            // 
-            this.improvedCustomerOverViewToolStripMenuItem.Name = "improvedCustomerOverViewToolStripMenuItem";
-            this.improvedCustomerOverViewToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
-            this.improvedCustomerOverViewToolStripMenuItem.Text = "Improved Customer OverView";
-            this.improvedCustomerOverViewToolStripMenuItem.Click += new System.EventHandler(this.improvedCustomerOverViewToolStripMenuItem_Click);
             // 
             // HomePage
             // 

@@ -268,7 +268,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         /// <param name="PostalCode"></param>
         /// <param name="Counrty"></param>
         /// <param name="Status"></param>
-        /// <remarks>This is a readonly Method and is used to return ALL customer datat</remarks>
+        /// <remarks>This is a readonly Method and is used to return ALL customer data</remarks>
         /// <exception cref="SqlException"></exception>
         /// <exception cref="NullReferenceException"></exception>
         /// <exception cref="UnhandledExceptionEventArgs"></exception>
@@ -728,7 +728,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                         column.SortMode = DataGridViewColumnSortMode.NotSortable;
                     }
                     DataGridView.AllowUserToOrderColumns = false;
-                    DataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+                    DataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
 
                 }
