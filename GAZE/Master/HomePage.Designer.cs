@@ -175,9 +175,10 @@
             // 
             // searchToolStripMenuItem
             // 
+            this.searchToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Strikeout);
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
             this.searchToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
-            this.searchToolStripMenuItem.Text = "X F3 Search X";
+            this.searchToolStripMenuItem.Text = "F3 Search";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click_1);
             // 
             // improvedCustomerOverViewToolStripMenuItem
