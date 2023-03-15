@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gaze.BusinessLogic.Config;
+using Krypton.Toolkit;
 
 namespace GAZE.Config
 {
-    public partial class ControlAdmin : Form
+    public partial class ControlAdmin : KryptonForm
     {
 
         FormSettings FormSettings = new FormSettings();

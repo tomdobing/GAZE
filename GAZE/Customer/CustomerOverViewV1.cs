@@ -1,6 +1,7 @@
 ﻿using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.SQLManagement;
+using Krypton.Toolkit;
 using MetroFramework.Controls;
 using System;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Windows.Forms;
 
 namespace GAZE.Customer
 {
-    public partial class CustomerOverViewV1 : Form
+    public partial class CustomerOverViewV1 : KryptonForm
     {
         #region Declarations
         FormSettings FormSettings = new FormSettings();
@@ -30,15 +31,9 @@ namespace GAZE.Customer
         {
             CustomerManagement.GetCustomerPoliciesForOverview(metroGrid1);
             Thread.Sleep(1000);
-            //metroGrid1.ClearSelection();
             CustomerManagement.GetCustomerOverViewV1(CustName_txt, CustTitle_txt, FName_txt, CSurname_txt, CDOB_txt, ContactNum_txt, AltCont_txt, EmailAddress_txt,
                 addrL1_txt, AddrL2_txt, Town_txt, postalcode_txt, country_txt, PolicyID_txt, PolStatus_lbl, DeactReas_txt, PolEffStart_txt, PolEndDate_txt, ProdName_txt, ProdDesc_txt
                 , ProdPrice_txt, ProdActDate_txt, CustID_txt, ProdEndDate_txt, PolID_Txt, StatID_txt);
-
-            //foreach (MetroFramework.Controls.MetroTextBox item in metroTabPage1.Controls.OfType<MetroFramework.Controls.MetroTextBox>())
-            //{
-            //    item.ReadOnly = true;
-            //}
 
             foreach (MetroTabPage tab in metroTabControl1.TabPages)
             {
@@ -57,7 +52,6 @@ namespace GAZE.Customer
                 DataGridViewRow selectedRow = metroGrid1.SelectedRows[0];
                 string PolicyID = selectedRow.Cells["PolicyID"].Value.ToString();
                 InfoSec.GlobalSelectedPolicyID = PolicyID;
-                //Thread.Sleep(1500);
                 PolicySQLManagement.GetPolicyDataViaPolicyID(CustName_txt, CustTitle_txt, FName_txt, CSurname_txt, CDOB_txt, ContactNum_txt, AltCont_txt, EmailAddress_txt,
                 addrL1_txt, AddrL2_txt, Town_txt, postalcode_txt, country_txt, PolicyID_txt,PolStatus_lbl,DeactReas_txt, PolEffStart_txt, PolEndDate_txt ,ProdName_txt, ProdDesc_txt
                 , ProdPrice_txt, ProdActDate_txt,CustID_txt, ProdEndDate_txt, PolID_Txt, StatID_txt);
@@ -68,9 +62,6 @@ namespace GAZE.Customer
             
         }
 
-        private void metroGrid1_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
     }
 }

@@ -66,14 +66,14 @@ namespace Gaze.BusinessLogic.SQLManagement
         /// Gets customer data via their contact number
         /// </summary>
         /// <param name="ContactNumber">Contact number to search for</param>
-        /// <param name="DGV">DatagridView to return the data into</param>
+        /// <param name="DGV">Data grid view to return the data into</param>
         public void GetCustomerDataByContactNumber(string ContactNumber, DataGridView DGV, [Optional] GroupBox GB)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try
             {
                 scon.Open();
-                using (SqlCommand scmd = new SqlCommand("SELECT_CUSTOMER_TITLE_BY_CONTACT_NUMBER_SP", scon))
+                using (SqlCommand scmd = new SqlCommand("dbo.SELECT_CUSTOMER_TITLE_BY_CONTACT_NUMBER_SP", scon))
                 {
                     scmd.CommandType = CommandType.StoredProcedure;
                     scmd.Parameters.AddWithValue("@ContactNumber", ContactNumber);
@@ -89,8 +89,8 @@ namespace Gaze.BusinessLogic.SQLManagement
                     {
                         column.SortMode = DataGridViewColumnSortMode.NotSortable;
                     }
-                    //DGV.AllowUserToOrderColumns = false;
-                    //GB.Show();
+                    DGV.AllowUserToOrderColumns = false;
+                    DGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
                 }
             }
@@ -641,7 +641,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 {
                     CommandType = System.Data.CommandType.StoredProcedure
                 };
-                sqlCommand.Parameters.AddWithValue("@CustomerID", 5);
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 while (sqlDataReader.Read())
                 {
@@ -651,8 +651,10 @@ namespace Gaze.BusinessLogic.SQLManagement
                     Surname.Text = sqlDataReader[3].ToString();
                     date = sqlDataReader.GetDateTime(4);
                     DOB.Text = date.ToShortDateString();
+
                     //DateTime DOBText = sqlDataReader.GetDateTime(4);
                     //DOB.Text = DOBText.ToShortDateString();
+
                     ContactNumber.Text = sqlDataReader[5].ToString();
                     Altercontact.Text = sqlDataReader[6].ToString();
                     EmailAddress.Text = sqlDataReader[7].ToString();
@@ -689,6 +691,11 @@ namespace Gaze.BusinessLogic.SQLManagement
                             PolicyStatus.Text = "Review";
                             PolicyStatus.ForeColor = System.Drawing.Color.Orange;
                             StatusID1.Text = "Review";
+                            break;
+                        case "Expired":
+                            PolicyStatus.Text = "Expired";
+                            PolicyStatus.ForeColor = System.Drawing.Color.Red;
+                            StatusID1.Text = "Expired";
                             break;
                         default:
                             PolicyStatus.Text = "UNKNOWN STATUS";
@@ -736,10 +743,10 @@ namespace Gaze.BusinessLogic.SQLManagement
             try
             {
                 scon.Open();
-                using (SqlCommand scmd = new SqlCommand("SELECT_CUSTOMER_POLICIES_FOR_OVERVIEW", scon))
+                using (SqlCommand scmd = new SqlCommand("pol.SELECT_CUSTOMER_POLICIES_FOR_OVERVIEW", scon))
                 {
                     scmd.CommandType = CommandType.StoredProcedure;
-                    scmd.Parameters.AddWithValue("@CustomerID", 5);
+                    scmd.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
                     using (SqlDataAdapter adapter = new SqlDataAdapter(scmd))
                     {
                         DataTable customers = new DataTable();
@@ -765,7 +772,40 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
 
         }
+        public void GetCustomerPoliciesByPolicyID(string PolicyID, DataGridView DGV)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                using (SqlCommand scmd = new SqlCommand("dbo.SELECT_CUSTOMER_POLICIES_VIA_POLICYID_SP", scon))
+                {
+                    scmd.CommandType = CommandType.StoredProcedure;
+                    scmd.Parameters.AddWithValue("@PolicyID", PolicyID);
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(scmd))
+                    {
+                        DataTable customers = new DataTable();
+                        adapter.Fill(customers);
+                        DGV.DataSource = customers;
+                    }
+                    DGV.ReadOnly = true;
+                    DGV.AllowUserToAddRows = false;
+                    foreach (DataGridViewColumn column in DGV.Columns)
+                    {
+                        column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    }
+                    DGV.AllowUserToOrderColumns = false;
+                    DGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-            #endregion
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
+
+        #endregion
+    }
     }

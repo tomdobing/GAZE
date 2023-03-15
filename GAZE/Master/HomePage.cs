@@ -3,13 +3,14 @@ using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using GAZE.Customer;
+using Krypton.Toolkit;
 using System;
 using System.Configuration;
 using System.Windows.Forms;
 
 namespace GAZE
 {
-    public partial class HomePage : Form
+    public partial class HomePage : KryptonForm
     {
         #region Declarations
         readonly FormSettings GetFormSettings = new FormSettings();
@@ -82,9 +83,7 @@ namespace GAZE
 
         private void NewCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //string message = "This feature is currently in development and will be available soon";
-            //string caption = "Work in progress";
-            //MessageBox.Show(message,caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
             Customer.NewCustomer newCustomer = new Customer.NewCustomer();
             newCustomer.ShowDialog();
         }
@@ -98,8 +97,9 @@ namespace GAZE
 
         private void searchToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            messageHandler.ReturnInfoBox("This option has been removed in Version 1.0.0.0\n\nPlease use the new form", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Asterisk);
-
+            //messageHandler.ReturnInfoBox("This option has been removed in Version 1.0.0.0\n\nPlease use the new form", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Asterisk);
+            CustomerSearch customerSearch = new CustomerSearch();
+            customerSearch.ShowDialog();
         }
 
         #endregion
@@ -119,9 +119,8 @@ namespace GAZE
             string caption = "Are you sure?";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
-
-            result = MessageBox.Show(this, message, caption, buttons,
-            MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            
+            result = KryptonMessageBox.Show(message, caption, MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, KryptonMessageBoxDefaultButton.Button3);
             if (result == DialogResult.Yes)
             {
 

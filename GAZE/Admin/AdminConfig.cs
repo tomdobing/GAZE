@@ -10,10 +10,11 @@ using System.Windows.Forms;
 using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.BusinessLogic.Security;
+using Krypton.Toolkit;
 
 namespace GAZE.Admin
 {
-    public partial class AdminConfig : Form
+    public partial class AdminConfig : KryptonForm
     {
         ConfigAdmin ConfigAdmin = new ConfigAdmin();
         FormSettings FormSettings = new FormSettings();

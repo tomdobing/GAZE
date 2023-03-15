@@ -1,6 +1,7 @@
 ﻿using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
+using Krypton.Toolkit;
 using MetroFramework.Controls;
 using System;
 using System.Drawing;
@@ -8,7 +9,8 @@ using System.Linq;
 using System.Windows.Forms;
 
 namespace GAZE.Customer {
-    public partial class UpdateCustomerDetails : Form {
+    public partial class UpdateCustomerDetails : KryptonForm
+    {
         readonly FormSettings formSettings = new FormSettings();
         readonly CustomerManagement CustomerManagement = new CustomerManagement();
         readonly InfoSec InfoSec = new InfoSec();

@@ -28,40 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            this.SearchPolID_txt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.SearchNum_txt = new MetroFramework.Controls.MetroTextBox();
-            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.metroButton2);
+            this.groupBox1.Controls.Add(this.kryptonButton1);
+            this.groupBox1.Controls.Add(this.SearchPolID_txt);
             this.groupBox1.Controls.Add(this.metroLabel3);
-            this.groupBox1.Controls.Add(this.SearchNum_txt);
             this.groupBox1.Location = new System.Drawing.Point(12, 30);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(724, 142);
+            this.groupBox1.Size = new System.Drawing.Size(724, 94);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Criteria";
             // 
-            // metroButton2
+            // kryptonButton1
             // 
-            this.metroButton2.Location = new System.Drawing.Point(599, 113);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(99, 23);
-            this.metroButton2.TabIndex = 2;
-            this.metroButton2.Text = "Search";
-            this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            this.kryptonButton1.CornerRoundingRadius = -1F;
+            this.kryptonButton1.Location = new System.Drawing.Point(588, 63);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.PaletteMode = Krypton.Toolkit.PaletteMode.Office365BlackDarkMode;
+            this.kryptonButton1.Size = new System.Drawing.Size(130, 25);
+            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.kryptonButton1.TabIndex = 4;
+            this.kryptonButton1.Values.Text = "Search";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
+            // 
+            // SearchPolID_txt
+            // 
+            // 
+            // 
+            // 
+            this.SearchPolID_txt.CustomButton.Image = null;
+            this.SearchPolID_txt.CustomButton.Location = new System.Drawing.Point(482, 1);
+            this.SearchPolID_txt.CustomButton.Name = "";
+            this.SearchPolID_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.SearchPolID_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.SearchPolID_txt.CustomButton.TabIndex = 1;
+            this.SearchPolID_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.SearchPolID_txt.CustomButton.UseSelectable = true;
+            this.SearchPolID_txt.CustomButton.Visible = false;
+            this.SearchPolID_txt.Lines = new string[0];
+            this.SearchPolID_txt.Location = new System.Drawing.Point(64, 20);
+            this.SearchPolID_txt.MaxLength = 32767;
+            this.SearchPolID_txt.Name = "SearchPolID_txt";
+            this.SearchPolID_txt.PasswordChar = '\0';
+            this.SearchPolID_txt.PromptText = "Search By PolicyID";
+            this.SearchPolID_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.SearchPolID_txt.SelectedText = "";
+            this.SearchPolID_txt.SelectionLength = 0;
+            this.SearchPolID_txt.SelectionStart = 0;
+            this.SearchPolID_txt.ShortcutsEnabled = true;
+            this.SearchPolID_txt.Size = new System.Drawing.Size(504, 23);
+            this.SearchPolID_txt.TabIndex = 3;
+            this.SearchPolID_txt.UseSelectable = true;
+            this.SearchPolID_txt.WaterMark = "Search By PolicyID";
+            this.SearchPolID_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.SearchPolID_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel3
             // 
@@ -73,84 +104,6 @@
             this.metroLabel3.Text = "Search:";
             this.metroLabel3.UseCustomBackColor = true;
             // 
-            // SearchNum_txt
-            // 
-            // 
-            // 
-            // 
-            this.SearchNum_txt.CustomButton.Image = null;
-            this.SearchNum_txt.CustomButton.Location = new System.Drawing.Point(482, 1);
-            this.SearchNum_txt.CustomButton.Name = "";
-            this.SearchNum_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.SearchNum_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.SearchNum_txt.CustomButton.TabIndex = 1;
-            this.SearchNum_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.SearchNum_txt.CustomButton.UseSelectable = true;
-            this.SearchNum_txt.CustomButton.Visible = false;
-            this.SearchNum_txt.Lines = new string[0];
-            this.SearchNum_txt.Location = new System.Drawing.Point(64, 20);
-            this.SearchNum_txt.MaxLength = 32767;
-            this.SearchNum_txt.Name = "SearchNum_txt";
-            this.SearchNum_txt.PasswordChar = '\0';
-#pragma warning disable CS0618 // Type or member is obsolete
-            this.SearchNum_txt.PromptText = "Search By Contact Number";
-#pragma warning restore CS0618 // Type or member is obsolete
-            this.SearchNum_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.SearchNum_txt.SelectedText = "";
-            this.SearchNum_txt.SelectionLength = 0;
-            this.SearchNum_txt.SelectionStart = 0;
-            this.SearchNum_txt.ShortcutsEnabled = true;
-            this.SearchNum_txt.Size = new System.Drawing.Size(504, 23);
-            this.SearchNum_txt.TabIndex = 0;
-            this.SearchNum_txt.UseSelectable = true;
-            this.SearchNum_txt.WaterMark = "Search By Contact Number";
-            this.SearchNum_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.SearchNum_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroGrid1
-            // 
-            this.metroGrid1.AllowUserToResizeRows = false;
-            this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.metroGrid1.EnableHeadersVisualStyles = false;
-            this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(12, 190);
-            this.metroGrid1.Name = "metroGrid1";
-            this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(724, 174);
-            this.metroGrid1.TabIndex = 1;
-            this.metroGrid1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid2_CellDoubleClick);
-            // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
@@ -161,14 +114,26 @@
             this.metroLabel2.Text = "CustomerID:";
             this.metroLabel2.UseCustomBackColor = true;
             // 
+            // kryptonDataGridView1
+            // 
+            this.kryptonDataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.kryptonDataGridView1.Location = new System.Drawing.Point(0, 170);
+            this.kryptonDataGridView1.MultiSelect = false;
+            this.kryptonDataGridView1.Name = "kryptonDataGridView1";
+            this.kryptonDataGridView1.PaletteMode = Krypton.Toolkit.PaletteMode.Office365DarkGray;
+            this.kryptonDataGridView1.Size = new System.Drawing.Size(748, 231);
+            this.kryptonDataGridView1.TabIndex = 3;
+            this.kryptonDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kryptonDataGridView1_CellDoubleClick);
+            // 
             // CustomerSearch
             // 
+            this.AcceptButton = this.kryptonButton1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(748, 376);
+            this.ClientSize = new System.Drawing.Size(748, 401);
+            this.Controls.Add(this.kryptonDataGridView1);
             this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.metroGrid1);
             this.Controls.Add(this.groupBox1);
             this.Name = "CustomerSearch";
             this.Text = "CustomerSearch";
@@ -176,7 +141,7 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CustomerSearch_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,13 +152,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-       // private MetroFramework.Controls.MetroTextBox SearchNum_txt;
-        //private MetroFramework.Controls.MetroLabel metroLabel2;
-        //private MetroFramework.Controls.MetroGrid metroGrid1;
-        private MetroFramework.Controls.MetroGrid metroGrid1;
-        private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroTextBox SearchNum_txt;
         private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTextBox SearchPolID_txt;
+        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
     }
 }

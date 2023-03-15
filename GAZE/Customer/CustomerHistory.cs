@@ -1,6 +1,7 @@
 ﻿using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
+using Krypton.Toolkit;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GAZE.Customer {
-    public partial class CustomerHistory : Form {
+    public partial class CustomerHistory : KryptonForm
+    {
 
         private readonly FormSettings formSettings = new FormSettings();
         private readonly CustomerManagement CustomerManagement = new CustomerManagement();

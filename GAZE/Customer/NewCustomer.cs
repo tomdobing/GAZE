@@ -1,13 +1,14 @@
 ﻿using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
+using Krypton.Toolkit;
 using System;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GAZE.Customer
 {
-    public partial class NewCustomer : Form
+    public partial class NewCustomer : KryptonForm
     {
 
         #region Declarations

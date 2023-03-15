@@ -1,13 +1,12 @@
-﻿using MetroFramework.Controls;
+﻿using Gaze.BusinessLogic.Exceptions;
+using Gaze.BusinessLogic.SQLManagement;
+using MetroFramework.Controls;
 using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using Gaze.BusinessLogic.Exceptions;
-using Gaze.BusinessLogic.SQLManagement;
 
 
 namespace Gaze.BusinessLogic.PolicyManagement
@@ -29,8 +28,8 @@ namespace Gaze.BusinessLogic.PolicyManagement
 
         public void GetPolicyDataViaPolicyID(System.Windows.Forms.TextBox CustomerFullName, MetroTextBox Title, MetroTextBox Firstname, MetroTextBox Surname, MetroTextBox DOB, MetroTextBox ContactNumber, MetroTextBox Altercontact,
                                          MetroTextBox EmailAddress, MetroTextBox AddressLine1, MetroTextBox AddressLine2, MetroTextBox Town, MetroTextBox Postalcode, MetroTextBox Country, System.Windows.Forms.TextBox PolicyID,
-                                         Label PolicyStatus,MetroTextBox Deactivation, MetroTextBox PEffStart, MetroTextBox PEffEnd,MetroTextBox ProductName, MetroTextBox ProductDesc, MetroTextBox ProductPrice, 
-                                         MetroTextBox EffStart, System.Windows.Forms.TextBox CustomerID, MetroTextBox ProductEffEnd, [Optional] MetroTextBox PolicyID1,[Optional] MetroTextBox StatusID1)
+                                         Label PolicyStatus, MetroTextBox Deactivation, MetroTextBox PEffStart, MetroTextBox PEffEnd, MetroTextBox ProductName, MetroTextBox ProductDesc, MetroTextBox ProductPrice,
+                                         MetroTextBox EffStart, System.Windows.Forms.TextBox CustomerID, MetroTextBox ProductEffEnd, [Optional] MetroTextBox PolicyID1, [Optional] MetroTextBox StatusID1)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             DateTime date = new DateTime();
@@ -41,7 +40,7 @@ namespace Gaze.BusinessLogic.PolicyManagement
                 {
                     CommandType = System.Data.CommandType.StoredProcedure
                 };
-                sqlCommand.Parameters.AddWithValue("@CustomerID", 5);
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
                 sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalSelectedPolicyID);
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 while (sqlDataReader.Read())
@@ -91,6 +90,11 @@ namespace Gaze.BusinessLogic.PolicyManagement
                             PolicyStatus.ForeColor = System.Drawing.Color.Orange;
                             StatusID1.Text = "Review";
                             break;
+                        case "Expired":
+                            PolicyStatus.Text = "Expired";
+                            PolicyStatus.ForeColor = System.Drawing.Color.Red;
+                            StatusID1.Text = "Expired";
+                            break;
                         default:
                             PolicyStatus.Text = "UNKNOWN STATUS";
                             PolicyStatus.ForeColor = System.Drawing.Color.Black;
@@ -111,12 +115,12 @@ namespace Gaze.BusinessLogic.PolicyManagement
 
                     date = sqlDataReader.GetDateTime(21);
                     EffStart.Text = date.ToShortDateString();
-                    
+
                     CustomerID.Text = sqlDataReader[22].ToString();
 
                     date = sqlDataReader.GetDateTime(23);
                     ProductEffEnd.Text = date.ToShortDateString();
-                    
+
                 }
             }
             catch (Exception)
@@ -131,6 +135,50 @@ namespace Gaze.BusinessLogic.PolicyManagement
 
         }
 
+        public bool CheckIfPolicyIDExists(string PolicyID)
+        {
+            using (SqlConnection connection = new SqlConnection(SQLConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("SELECT_CUSTOMER_EXISTS_SP", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@PolicyID", PolicyID);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            if (reader.HasRows)
+                            {
+
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+
+                    return false;
+                }
+                finally 
+                { 
+                
+                    connection.Close(); 
+                
+                }
+
+            }
+
+
+        }
 
 
         #endregion
