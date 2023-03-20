@@ -45,7 +45,6 @@
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.improvedCustomerOverViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newStockInputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,7 +77,7 @@
             this.toolStripSeparator3,
             this.toolStripLabel4,
             this.toolStripSeparator4});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 542);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 394);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1089, 25);
             this.toolStrip1.TabIndex = 0;
@@ -171,8 +170,7 @@
             // 
             this.customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newCustomerToolStripMenuItem,
-            this.searchToolStripMenuItem,
-            this.improvedCustomerOverViewToolStripMenuItem});
+            this.searchToolStripMenuItem});
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
             this.customerToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.customerToolStripMenuItem.Text = "Customer";
@@ -191,13 +189,6 @@
             this.searchToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.searchToolStripMenuItem.Text = "F3 Search";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click_1);
-            // 
-            // improvedCustomerOverViewToolStripMenuItem
-            // 
-            this.improvedCustomerOverViewToolStripMenuItem.Name = "improvedCustomerOverViewToolStripMenuItem";
-            this.improvedCustomerOverViewToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
-            this.improvedCustomerOverViewToolStripMenuItem.Text = "Improved Customer OverView";
-            this.improvedCustomerOverViewToolStripMenuItem.Click += new System.EventHandler(this.improvedCustomerOverViewToolStripMenuItem_Click);
             // 
             // stockManagementToolStripMenuItem
             // 
@@ -270,7 +261,7 @@
             // hideTimeDateToolStripMenuItem
             // 
             this.hideTimeDateToolStripMenuItem.Name = "hideTimeDateToolStripMenuItem";
-            this.hideTimeDateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hideTimeDateToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.hideTimeDateToolStripMenuItem.Text = "Hide Toolstrip";
             this.hideTimeDateToolStripMenuItem.Click += new System.EventHandler(this.hideTimeDateToolStripMenuItem_Click_1);
             // 
@@ -307,14 +298,14 @@
             // 
             // kryptonManager1
             // 
-            this.kryptonManager1.GlobalPaletteMode = Krypton.Toolkit.PaletteModeManager.SparklePurpleDarkMode;
+            this.kryptonManager1.GlobalPaletteMode = Krypton.Toolkit.PaletteModeManager.SparklePurpleLightMode;
             // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1089, 567);
+            this.ClientSize = new System.Drawing.Size(1089, 419);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.FormTitleAlign = Krypton.Toolkit.PaletteRelativeAlign.Center;
@@ -364,7 +355,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem controlManagementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem improvedCustomerOverViewToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         public Krypton.Toolkit.KryptonManager kryptonManager1;
     }

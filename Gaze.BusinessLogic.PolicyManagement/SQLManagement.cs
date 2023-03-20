@@ -1,6 +1,6 @@
 ﻿using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
-using MetroFramework.Controls;
+using Krypton.Toolkit;
 using System;
 using System.Configuration;
 using System.Data;
@@ -26,10 +26,10 @@ namespace Gaze.BusinessLogic.PolicyManagement
 
         #region Methods
 
-        public void GetPolicyDataViaPolicyID(System.Windows.Forms.TextBox CustomerFullName, MetroTextBox Title, MetroTextBox Firstname, MetroTextBox Surname, MetroTextBox DOB, MetroTextBox ContactNumber, MetroTextBox Altercontact,
-                                         MetroTextBox EmailAddress, MetroTextBox AddressLine1, MetroTextBox AddressLine2, MetroTextBox Town, MetroTextBox Postalcode, MetroTextBox Country, System.Windows.Forms.TextBox PolicyID,
-                                         Label PolicyStatus, MetroTextBox Deactivation, MetroTextBox PEffStart, MetroTextBox PEffEnd, MetroTextBox ProductName, MetroTextBox ProductDesc, MetroTextBox ProductPrice,
-                                         MetroTextBox EffStart, System.Windows.Forms.TextBox CustomerID, MetroTextBox ProductEffEnd, [Optional] MetroTextBox PolicyID1, [Optional] MetroTextBox StatusID1)
+        public void GetPolicyDataViaPolicyID(System.Windows.Forms.TextBox CustomerFullName, KryptonTextBox Title, KryptonTextBox Firstname, KryptonTextBox Surname, KryptonMaskedTextBox DOB, KryptonTextBox ContactNumber, KryptonTextBox Altercontact,
+                                         KryptonTextBox EmailAddress, KryptonTextBox AddressLine1, KryptonTextBox AddressLine2, KryptonTextBox Town, KryptonTextBox Postalcode, KryptonTextBox Country, System.Windows.Forms.TextBox PolicyID,
+                                         Label PolicyStatus, KryptonTextBox Deactivation, KryptonMaskedTextBox PEffStart, KryptonMaskedTextBox PEffEnd, KryptonTextBox ProductName, KryptonTextBox ProductDesc, KryptonMaskedTextBox ProductPrice,
+                                         KryptonMaskedTextBox EffStart, System.Windows.Forms.TextBox CustomerID, KryptonMaskedTextBox ProductEffEnd, [Optional] KryptonTextBox PolicyID1, [Optional] KryptonTextBox StatusID1)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             DateTime date = new DateTime();
@@ -111,7 +111,7 @@ namespace Gaze.BusinessLogic.PolicyManagement
 
                     ProductName.Text = sqlDataReader[18].ToString();
                     ProductDesc.Text = sqlDataReader[19].ToString();
-                    ProductPrice.Text = "£" + sqlDataReader[20].ToString();
+                    ProductPrice.Text = sqlDataReader[20].ToString();
 
                     date = sqlDataReader.GetDateTime(21);
                     EffStart.Text = date.ToShortDateString();
@@ -123,9 +123,10 @@ namespace Gaze.BusinessLogic.PolicyManagement
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                KryptonMessageBox.Show(ex.Message, "Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+
             }
 
             finally
@@ -163,22 +164,119 @@ namespace Gaze.BusinessLogic.PolicyManagement
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    KryptonMessageBox.Show(ex.Message, "Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
                     return false;
                 }
-                finally 
-                { 
-                
-                    connection.Close(); 
-                
+                finally
+                {
+
+                    connection.Close();
+
                 }
 
             }
 
 
         }
+
+        public void GetCurrentPolicyPrice(KryptonTextBox PolicyPriceTextbox)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_POLICY_PRICE_FOR_OVERRIDE_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalSelectedPolicyID);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+
+                    PolicyPriceTextbox.Text = "$"+sqlDataReader[0].ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+
+
+        }
+
+        public void UpdatePolicyPrice(KryptonTextBox PolicyPriceTextbox)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_POLICY_PRICE_SP", scon)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalSelectedPolicyID);
+                sqlCommand.Parameters.AddWithValue("@NewPolicyPrice", PolicyPriceTextbox.Text);
+                sqlCommand.Parameters.AddWithValue("@CreatedBy", InfoSec.GlobalUsername);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                KryptonMessageBox.Show("Policy Price has been successfully updated", "Success", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
+            }
+            catch (Exception ex)
+            {
+
+                KryptonMessageBox.Show(ex.Message, "Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+
+            }
+            finally
+            {
+                scon.Close();
+
+            }
+        }
+        public void InsertPolicyOverrideNote(KryptonTextBox OldPrice, KryptonTextBox NewPrice)
+        {
+
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.INSERT_NEW_NOTE_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalSelectedPolicyID);
+                sqlCommand.Parameters.AddWithValue("@NoteDescription", "PolicyPriceOverride");
+                sqlCommand.Parameters.AddWithValue("@NoteDetails", "Price Override from " + OldPrice.Text + " to " + NewPrice.Text);
+                sqlCommand.Parameters.AddWithValue("@CreatedBy", InfoSec.GlobalUsername);
+                sqlCommand.ExecuteReader();
+                
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Note Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+
+        }
+
 
 
         #endregion

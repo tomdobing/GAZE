@@ -30,18 +30,18 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
-            this.SearchPolID_txt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
+            this.searchPolID_txt = new Krypton.Toolkit.KryptonTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.searchPolID_txt);
             this.groupBox1.Controls.Add(this.kryptonButton1);
-            this.groupBox1.Controls.Add(this.SearchPolID_txt);
             this.groupBox1.Controls.Add(this.metroLabel3);
             this.groupBox1.Location = new System.Drawing.Point(12, 30);
             this.groupBox1.Name = "groupBox1";
@@ -55,44 +55,12 @@
             this.kryptonButton1.CornerRoundingRadius = -1F;
             this.kryptonButton1.Location = new System.Drawing.Point(588, 63);
             this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.PaletteMode = Krypton.Toolkit.PaletteMode.Office365BlackDarkMode;
+            this.kryptonButton1.PaletteMode = Krypton.Toolkit.PaletteMode.SparklePurpleDarkMode;
             this.kryptonButton1.Size = new System.Drawing.Size(130, 25);
             this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.kryptonButton1.TabIndex = 4;
             this.kryptonButton1.Values.Text = "Search";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
-            // 
-            // SearchPolID_txt
-            // 
-            // 
-            // 
-            // 
-            this.SearchPolID_txt.CustomButton.Image = null;
-            this.SearchPolID_txt.CustomButton.Location = new System.Drawing.Point(482, 1);
-            this.SearchPolID_txt.CustomButton.Name = "";
-            this.SearchPolID_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.SearchPolID_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.SearchPolID_txt.CustomButton.TabIndex = 1;
-            this.SearchPolID_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.SearchPolID_txt.CustomButton.UseSelectable = true;
-            this.SearchPolID_txt.CustomButton.Visible = false;
-            this.SearchPolID_txt.Lines = new string[0];
-            this.SearchPolID_txt.Location = new System.Drawing.Point(64, 20);
-            this.SearchPolID_txt.MaxLength = 32767;
-            this.SearchPolID_txt.Name = "SearchPolID_txt";
-            this.SearchPolID_txt.PasswordChar = '\0';
-            this.SearchPolID_txt.PromptText = "Search By PolicyID";
-            this.SearchPolID_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.SearchPolID_txt.SelectedText = "";
-            this.SearchPolID_txt.SelectionLength = 0;
-            this.SearchPolID_txt.SelectionStart = 0;
-            this.SearchPolID_txt.ShortcutsEnabled = true;
-            this.SearchPolID_txt.Size = new System.Drawing.Size(504, 23);
-            this.SearchPolID_txt.TabIndex = 3;
-            this.SearchPolID_txt.UseSelectable = true;
-            this.SearchPolID_txt.WaterMark = "Search By PolicyID";
-            this.SearchPolID_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.SearchPolID_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel3
             // 
@@ -125,6 +93,18 @@
             this.kryptonDataGridView1.TabIndex = 3;
             this.kryptonDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kryptonDataGridView1_CellDoubleClick);
             // 
+            // searchPolID_txt
+            // 
+            this.searchPolID_txt.CueHint.Color1 = System.Drawing.Color.Black;
+            this.searchPolID_txt.CueHint.CueHintText = "Search By PolicyID";
+            this.searchPolID_txt.CueHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchPolID_txt.CueHint.Padding = new System.Windows.Forms.Padding(0);
+            this.searchPolID_txt.Location = new System.Drawing.Point(64, 19);
+            this.searchPolID_txt.Name = "searchPolID_txt";
+            this.searchPolID_txt.PaletteMode = Krypton.Toolkit.PaletteMode.SparklePurpleDarkMode;
+            this.searchPolID_txt.Size = new System.Drawing.Size(504, 23);
+            this.searchPolID_txt.TabIndex = 5;
+            // 
             // CustomerSearch
             // 
             this.AcceptButton = this.kryptonButton1;
@@ -154,8 +134,8 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroTextBox SearchPolID_txt;
         private Krypton.Toolkit.KryptonButton kryptonButton1;
         private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
+        private Krypton.Toolkit.KryptonTextBox searchPolID_txt;
     }
 }

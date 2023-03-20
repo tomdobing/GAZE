@@ -1,4 +1,5 @@
 ﻿using Gaze.BusinessLogic.Exceptions;
+using Krypton.Toolkit;
 using MetroFramework.Controls;
 using System;
 using System.Configuration;
@@ -627,10 +628,10 @@ namespace Gaze.BusinessLogic.SQLManagement
 
         }
 
-        public void GetCustomerOverViewV1(System.Windows.Forms.TextBox CustomerFullName, MetroTextBox Title, MetroTextBox Firstname, MetroTextBox Surname, MetroTextBox DOB, MetroTextBox ContactNumber, MetroTextBox Altercontact,
-                                         MetroTextBox EmailAddress, MetroTextBox AddressLine1, MetroTextBox AddressLine2, MetroTextBox Town, MetroTextBox Postalcode, MetroTextBox Country, System.Windows.Forms.TextBox PolicyID,
-                                         Label PolicyStatus, MetroTextBox Deactivation, MetroTextBox PEffStart, MetroTextBox PEffEnd, MetroTextBox ProductName, MetroTextBox ProductDesc, MetroTextBox ProductPrice,
-                                         MetroTextBox EffStart, System.Windows.Forms.TextBox CustomerID, MetroTextBox ProductEffEnd, [Optional] MetroTextBox PolicyID1, [Optional] MetroTextBox StatusID1)
+        public void GetCustomerOverViewV1(System.Windows.Forms.TextBox CustomerFullName, KryptonTextBox Title, KryptonTextBox Firstname, KryptonTextBox Surname, KryptonMaskedTextBox DOB, KryptonTextBox ContactNumber, KryptonTextBox Altercontact,
+                                         KryptonTextBox EmailAddress, KryptonTextBox AddressLine1, KryptonTextBox AddressLine2, KryptonTextBox Town, KryptonTextBox Postalcode, KryptonTextBox Country, System.Windows.Forms.TextBox PolicyID,
+                                         Label PolicyStatus, KryptonTextBox Deactivation, KryptonMaskedTextBox PEffStart, KryptonMaskedTextBox PEffEnd, KryptonTextBox ProductName, KryptonTextBox ProductDesc, KryptonMaskedTextBox ProductPrice,
+                                         KryptonMaskedTextBox EffStart, System.Windows.Forms.TextBox CustomerID, KryptonMaskedTextBox ProductEffEnd, [Optional] KryptonTextBox PolicyID1, [Optional] KryptonTextBox StatusID1)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
 
@@ -714,7 +715,7 @@ namespace Gaze.BusinessLogic.SQLManagement
 
                     ProductName.Text = sqlDataReader[18].ToString();
                     ProductDesc.Text = sqlDataReader[19].ToString();
-                    ProductPrice.Text = "£" + sqlDataReader[20].ToString();
+                    ProductPrice.Text = sqlDataReader[20].ToString();
 
                     date = sqlDataReader.GetDateTime(21);
                     EffStart.Text = date.ToShortDateString();
@@ -801,7 +802,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
             catch (Exception)
             {
-
+                ///ERROR HANDLING REQUIRED HERE
                 throw;
             }
         }

@@ -183,6 +183,12 @@
     <Compile Include="Customer\NewCustomerNote.Designer.cs">
       <DependentUpon>NewCustomerNote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\OverridePolicyPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\OverridePolicyPrice.Designer.cs">
+      <DependentUpon>OverridePolicyPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\UpdateCustomerDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\NewCustomerNote.resx">
       <DependentUpon>NewCustomerNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\OverridePolicyPrice.resx">
+      <DependentUpon>OverridePolicyPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\UpdateCustomerDetails.resx">
       <DependentUpon>UpdateCustomerDetails.cs</DependentUpon>
