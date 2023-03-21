@@ -1,12 +1,13 @@
 ﻿using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.SQLManagement;
+using Krypton.Toolkit;
 using System;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 namespace GAZE.Admin
 {
-    public partial class UserMgr : Form
+    public partial class UserMgr : KryptonForm
     {
         #region Declarations
         FormSettings FormSettings = new FormSettings();

@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.BusinessLogic.Config;
+using Krypton.Toolkit;
 
 namespace GAZE.Admin
 {
-    public partial class CreateUser : Form
+    public partial class CreateUser : KryptonForm
     {
         #region Declarations
         readonly FormSettings FormSettings = new FormSettings();

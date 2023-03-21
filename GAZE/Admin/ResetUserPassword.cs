@@ -10,10 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.SQLManagement;
+using Krypton.Toolkit;
 
 namespace GAZE.Admin
 {
-    public partial class ResetUserPassword : Form
+    public partial class ResetUserPassword : KryptonForm
     {
         #region Declarations
         FormSettings FormSettings = new FormSettings();

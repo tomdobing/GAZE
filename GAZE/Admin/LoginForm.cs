@@ -3,6 +3,7 @@ using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.BusinessLogic.Startup;
 using InfoBox;
+using Krypton.Toolkit;
 using System;
 using System.Windows.Forms;
 
@@ -31,7 +32,7 @@ namespace GAZE.Admin
         private void LoginForm_Load(object sender, EventArgs e)
         {
             SQLError_lbl.Text = "";
-            password_txt.UseSystemPasswordChar = true;
+            Pass_txt.UseSystemPasswordChar = true;
             metroLabel2.Text = Application.ProductVersion;
         }
 
@@ -40,32 +41,6 @@ namespace GAZE.Admin
         {
 
 
-            if (PreLoginChecks.CheckSQLServerIsOnline(SQLError_lbl) == true)
-            {
-                if (infoSec.UserLogin(username_txt, password_txt) == true)
-                {
-                    HomePage master = new HomePage();
-                    master.Show();
-                    Close();
-                }
-                else
-                {
-                        InformationBox.Show("Incorrect username/Password entered \n\nPlease check and try again",
-                        InformationBoxIcon.Exclamation,
-                        InformationBoxButtons.OK,
-                        InformationBoxStyle.Modern,
-                        InformationBoxOrder.TopMost);
-
-
-                    //password_txt.Clear();
-                    //password_txt.Focus();
-                }
-            }
-            else if (PreLoginChecks.CheckSQLServerIsOnline(SQLError_lbl) == false)
-            {
-
-            }
-
 
 
         }
@@ -73,6 +48,31 @@ namespace GAZE.Admin
 
         #endregion
 
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+
+            if (PreLoginChecks.CheckSQLServerIsOnline(SQLError_lbl) == true)
+            {
+                if (infoSec.UserLogin(username_txt, Pass_txt) == true)
+                {
+                    HomePage master = new HomePage();
+                    master.Show();
+                    Close();
+                }
+                else
+                {
+                    KryptonMessageBox.Show(this, "Incorrect username/Password entered\n\nPlease check and try again",
+                                            "Login Failed",MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, KryptonMessageBoxDefaultButton.Button3,0,false, false);
+                    //KryptonMessageBox.Show(message, caption, MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, KryptonMessageBoxDefaultButton.Button3);
+
+                }
+            }
+            else if (PreLoginChecks.CheckSQLServerIsOnline(SQLError_lbl) == false)
+            {
+
+            }
+
+        }
     }
 }
 

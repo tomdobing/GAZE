@@ -95,7 +95,7 @@
             this.groupBox1.Controls.Add(this.metroLabel2);
             this.groupBox1.Controls.Add(this.metroLabel1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(753, 322);
@@ -109,9 +109,9 @@
             // 
             // 
             this.EmailAddr_txt.CustomButton.Image = null;
-            this.EmailAddr_txt.CustomButton.Location = new System.Drawing.Point(303, 1);
+            this.EmailAddr_txt.CustomButton.Location = new System.Drawing.Point(455, 1);
             this.EmailAddr_txt.CustomButton.Name = "";
-            this.EmailAddr_txt.CustomButton.Size = new System.Drawing.Size(14, 14);
+            this.EmailAddr_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.EmailAddr_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.EmailAddr_txt.CustomButton.TabIndex = 1;
             this.EmailAddr_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -141,9 +141,9 @@
             // 
             // 
             this.AltContact_txt.CustomButton.Image = null;
-            this.AltContact_txt.CustomButton.Location = new System.Drawing.Point(303, 1);
+            this.AltContact_txt.CustomButton.Location = new System.Drawing.Point(455, 1);
             this.AltContact_txt.CustomButton.Name = "";
-            this.AltContact_txt.CustomButton.Size = new System.Drawing.Size(14, 14);
+            this.AltContact_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.AltContact_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.AltContact_txt.CustomButton.TabIndex = 1;
             this.AltContact_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -173,9 +173,9 @@
             // 
             // 
             this.ContactNmb_txt.CustomButton.Image = null;
-            this.ContactNmb_txt.CustomButton.Location = new System.Drawing.Point(303, 1);
+            this.ContactNmb_txt.CustomButton.Location = new System.Drawing.Point(455, 1);
             this.ContactNmb_txt.CustomButton.Name = "";
-            this.ContactNmb_txt.CustomButton.Size = new System.Drawing.Size(14, 14);
+            this.ContactNmb_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.ContactNmb_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.ContactNmb_txt.CustomButton.TabIndex = 1;
             this.ContactNmb_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -205,9 +205,9 @@
             // 
             // 
             this.dob_txt.CustomButton.Image = null;
-            this.dob_txt.CustomButton.Location = new System.Drawing.Point(111, 1);
+            this.dob_txt.CustomButton.Location = new System.Drawing.Point(167, 1);
             this.dob_txt.CustomButton.Name = "";
-            this.dob_txt.CustomButton.Size = new System.Drawing.Size(14, 14);
+            this.dob_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.dob_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.dob_txt.CustomButton.TabIndex = 1;
             this.dob_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -237,9 +237,9 @@
             // 
             // 
             this.surname_txt.CustomButton.Image = null;
-            this.surname_txt.CustomButton.Location = new System.Drawing.Point(303, 1);
+            this.surname_txt.CustomButton.Location = new System.Drawing.Point(455, 1);
             this.surname_txt.CustomButton.Name = "";
-            this.surname_txt.CustomButton.Size = new System.Drawing.Size(14, 14);
+            this.surname_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.surname_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.surname_txt.CustomButton.TabIndex = 1;
             this.surname_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -269,9 +269,9 @@
             // 
             // 
             this.firstname_txt.CustomButton.Image = null;
-            this.firstname_txt.CustomButton.Location = new System.Drawing.Point(303, 1);
+            this.firstname_txt.CustomButton.Location = new System.Drawing.Point(455, 1);
             this.firstname_txt.CustomButton.Name = "";
-            this.firstname_txt.CustomButton.Size = new System.Drawing.Size(14, 14);
+            this.firstname_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.firstname_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.firstname_txt.CustomButton.TabIndex = 1;
             this.firstname_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -301,9 +301,9 @@
             // 
             // 
             this.title_txt.CustomButton.Image = null;
-            this.title_txt.CustomButton.Location = new System.Drawing.Point(303, 1);
+            this.title_txt.CustomButton.Location = new System.Drawing.Point(455, 1);
             this.title_txt.CustomButton.Name = "";
-            this.title_txt.CustomButton.Size = new System.Drawing.Size(14, 14);
+            this.title_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.title_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.title_txt.CustomButton.TabIndex = 1;
             this.title_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -416,7 +416,7 @@
             this.toolStripSeparator1,
             this.toolStripLabel2,
             this.toolStripSeparator2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 657);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 633);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -452,7 +452,7 @@
             // metroCheckBox1
             // 
             this.metroCheckBox1.AutoSize = true;
-            this.metroCheckBox1.Location = new System.Drawing.Point(12, 629);
+            this.metroCheckBox1.Location = new System.Drawing.Point(12, 603);
             this.metroCheckBox1.Name = "metroCheckBox1";
             this.metroCheckBox1.Size = new System.Drawing.Size(134, 15);
             this.metroCheckBox1.TabIndex = 11;
@@ -496,6 +496,7 @@
             this.customerDetailsHistoryToolStripMenuItem.Name = "customerDetailsHistoryToolStripMenuItem";
             this.customerDetailsHistoryToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.customerDetailsHistoryToolStripMenuItem.Text = "Customer Details History";
+            this.customerDetailsHistoryToolStripMenuItem.Click += new System.EventHandler(this.customerDetailsHistoryToolStripMenuItem_Click);
             // 
             // setCustomerStatusToolStripMenuItem
             // 
@@ -560,10 +561,10 @@
             this.groupBox2.Controls.Add(this.metroLabel10);
             this.groupBox2.Controls.Add(this.metroLabel9);
             this.groupBox2.Controls.Add(this.metroLabel8);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 356);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(753, 267);
+            this.groupBox2.Size = new System.Drawing.Size(753, 241);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Customer Address Details";
@@ -574,9 +575,9 @@
             // 
             // 
             this.country_txt.CustomButton.Image = null;
-            this.country_txt.CustomButton.Location = new System.Drawing.Point(303, 1);
+            this.country_txt.CustomButton.Location = new System.Drawing.Point(455, 1);
             this.country_txt.CustomButton.Name = "";
-            this.country_txt.CustomButton.Size = new System.Drawing.Size(14, 14);
+            this.country_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.country_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.country_txt.CustomButton.TabIndex = 1;
             this.country_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -606,9 +607,9 @@
             // 
             // 
             this.Postalcode_txt.CustomButton.Image = null;
-            this.Postalcode_txt.CustomButton.Location = new System.Drawing.Point(303, 1);
+            this.Postalcode_txt.CustomButton.Location = new System.Drawing.Point(455, 1);
             this.Postalcode_txt.CustomButton.Name = "";
-            this.Postalcode_txt.CustomButton.Size = new System.Drawing.Size(14, 14);
+            this.Postalcode_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.Postalcode_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.Postalcode_txt.CustomButton.TabIndex = 1;
             this.Postalcode_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -638,9 +639,9 @@
             // 
             // 
             this.Town_txt.CustomButton.Image = null;
-            this.Town_txt.CustomButton.Location = new System.Drawing.Point(303, 1);
+            this.Town_txt.CustomButton.Location = new System.Drawing.Point(455, 1);
             this.Town_txt.CustomButton.Name = "";
-            this.Town_txt.CustomButton.Size = new System.Drawing.Size(14, 14);
+            this.Town_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.Town_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.Town_txt.CustomButton.TabIndex = 1;
             this.Town_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -670,9 +671,9 @@
             // 
             // 
             this.AddrL2_txt.CustomButton.Image = null;
-            this.AddrL2_txt.CustomButton.Location = new System.Drawing.Point(303, 1);
+            this.AddrL2_txt.CustomButton.Location = new System.Drawing.Point(455, 1);
             this.AddrL2_txt.CustomButton.Name = "";
-            this.AddrL2_txt.CustomButton.Size = new System.Drawing.Size(14, 14);
+            this.AddrL2_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.AddrL2_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.AddrL2_txt.CustomButton.TabIndex = 1;
             this.AddrL2_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -702,9 +703,9 @@
             // 
             // 
             this.AddrL1_txt.CustomButton.Image = null;
-            this.AddrL1_txt.CustomButton.Location = new System.Drawing.Point(303, 1);
+            this.AddrL1_txt.CustomButton.Location = new System.Drawing.Point(455, 1);
             this.AddrL1_txt.CustomButton.Name = "";
-            this.AddrL1_txt.CustomButton.Size = new System.Drawing.Size(14, 14);
+            this.AddrL1_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.AddrL1_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.AddrL1_txt.CustomButton.TabIndex = 1;
             this.AddrL1_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -794,14 +795,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1283, 682);
+            this.ClientSize = new System.Drawing.Size(1283, 658);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.metroCheckBox1);
             this.Controls.Add(this.groupBox1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CustomerOverview";
             this.Text = "CustomerOverview";
             this.Load += new System.EventHandler(this.CustomerOverview_Load);

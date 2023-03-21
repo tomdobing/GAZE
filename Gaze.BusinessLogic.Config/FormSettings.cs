@@ -1,5 +1,6 @@
 ﻿using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
+using Krypton.Toolkit;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -23,7 +24,7 @@ namespace Gaze.BusinessLogic.Config
         /// <summary>
         /// Sets the default form settings.
         /// </summary>
-        public void SetFormSettings(Form defaultForm)
+        public void SetFormSettings(KryptonForm defaultForm)
         {
             defaultForm.MaximizeBox = false;
             defaultForm.MinimizeBox = false;
@@ -32,6 +33,7 @@ namespace Gaze.BusinessLogic.Config
             defaultForm.MaximizeBox = false;
             defaultForm.MinimizeBox = false;
             defaultForm.BackColor = SystemColors.ActiveCaption;
+            
 
         }
 
@@ -39,12 +41,14 @@ namespace Gaze.BusinessLogic.Config
         /// Changeable form settings that can be changed via the app.config.exe.
         /// Also contains some static settings 
         /// </summary>
-        /// <param name="defaultForm"></param>
-        /// <param name="additionInfo"></param>
-        public void ChangeableFormSettings(Form defaultForm, [Optional] string additionInfo)
+        /// <param name="defaultForm">The form to apply </param>
+        /// <param name="additionInfo">Form text to be displayed</param>
+        
+        public void ChangeableFormSettings(KryptonForm defaultForm, [Optional] string additionInfo)
         {
 
             defaultForm.Text = ConfigAdmin.GetConfigValue("Company Name") + " - " + Application.ProductVersion + " - " + additionInfo;
+            defaultForm.FormTitleAlign = PaletteRelativeAlign.Center;
             //defaultForm.Text = ConfigurationManager.AppSettings["CompanyName"] + " - " + Application.ProductVersion + " - " + additionInfo;
         }
         /// <summary>

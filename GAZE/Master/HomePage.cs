@@ -2,13 +2,15 @@
 using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
+using GAZE.Customer;
+using Krypton.Toolkit;
 using System;
 using System.Configuration;
 using System.Windows.Forms;
 
 namespace GAZE
 {
-    public partial class HomePage : Form
+    public partial class HomePage : KryptonForm
     {
         #region Declarations
         readonly FormSettings GetFormSettings = new FormSettings();
@@ -17,7 +19,7 @@ namespace GAZE
         readonly ConfigAdmin configAdmin = new ConfigAdmin();
         ExceptionThrown ExceptionThrown = new ExceptionThrown();
         readonly MessageHandler messageHandler = new MessageHandler();
-
+        readonly RoleManagement roleManagement = new RoleManagement();
         #endregion
 
         #region Methods
@@ -35,14 +37,19 @@ namespace GAZE
             StartTimer();
             toolStripLabel2.Text = "Build:" + Application.ProductVersion.ToString();
             loginSecurity.GetLoggedinUserName(toolStripLabel3);
-            if (infoSec.isUserAdmin(InfoSec.GlobalUsername) == false)
+            if (roleManagement.DisableNonAdminControls() == false) 
             {
                 adminToolStripMenuItem.Enabled = false;
+
             }
-            else
-            {
-                adminToolStripMenuItem.Enabled = true;
-            }
+            //if (infoSec.isUserAdmin(InfoSec.GlobalUsername) == false)
+            //{
+            //    adminToolStripMenuItem.Enabled = false;
+            //}
+            //else
+            //{
+            //    adminToolStripMenuItem.Enabled = true;
+            //}
 
         }
 
@@ -76,9 +83,7 @@ namespace GAZE
 
         private void NewCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //string message = "This feature is currently in development and will be available soon";
-            //string caption = "Work in progress";
-            //MessageBox.Show(message,caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
             Customer.NewCustomer newCustomer = new Customer.NewCustomer();
             newCustomer.ShowDialog();
         }
@@ -92,9 +97,8 @@ namespace GAZE
 
         private void searchToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
-            Customer.CustomerSearch customerSearch = new Customer.CustomerSearch();
-
+            //messageHandler.ReturnInfoBox("This option has been removed in Version 1.0.0.0\n\nPlease use the new form", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Asterisk);
+            CustomerSearch customerSearch = new CustomerSearch();
             customerSearch.ShowDialog();
         }
 
@@ -115,9 +119,8 @@ namespace GAZE
             string caption = "Are you sure?";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
-
-            result = MessageBox.Show(this, message, caption, buttons,
-            MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            
+            result = KryptonMessageBox.Show(message, caption, MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, KryptonMessageBoxDefaultButton.Button3);
             if (result == DialogResult.Yes)
             {
 
@@ -197,5 +200,13 @@ namespace GAZE
                 searchToolStripMenuItem.PerformClick();
             }
         }
+
+        private void improvedCustomerOverViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomerOverViewV1 customeroverview = new CustomerOverViewV1();
+            customeroverview.Show();
+        }
+
+
     }
 }

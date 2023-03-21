@@ -1,4 +1,5 @@
-﻿using MetroFramework.Controls;
+﻿using Krypton.Toolkit;
+using MetroFramework.Controls;
 using System;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -10,9 +11,13 @@ namespace Gaze.BusinessLogic.SQLManagement
     {
         #region Declarations
         private string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
+
         public static string GlobalUsername { get; set; }
 
         public static string GlobalCustomerID { get; set; }
+        
+        public static string GlobalSelectedPolicyID{ get; set; }
+
         #endregion
 
 
@@ -23,7 +28,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         /// <param name="username">The username of user</param>
         /// <param name="password">Password for users account</param>
         /// <returns></returns>
-        public bool UserLogin(MetroTextBox username, MetroTextBox password)
+        public bool UserLogin(KryptonTextBox username, KryptonTextBox password)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
 

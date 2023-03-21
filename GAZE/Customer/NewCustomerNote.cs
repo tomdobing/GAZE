@@ -1,13 +1,14 @@
 ﻿using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
+using Krypton.Toolkit;
 using System;
 using System.Threading;
 using System.Windows.Forms;
 
 namespace GAZE.Customer
 {
-    public partial class NewCustomerNote : Form
+    public partial class NewCustomerNote : KryptonForm
     {
 
         readonly FormSettings formSettings = new FormSettings();
