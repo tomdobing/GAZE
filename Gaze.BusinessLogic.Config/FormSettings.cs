@@ -6,7 +6,9 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Net;
 using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Lifetime;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
@@ -79,13 +81,10 @@ namespace Gaze.BusinessLogic.Config
             }
             catch (System.Exception)
             {
-                MessageHandler.ReturnInfoBox("Oh Oh! It would appear we are unable to check for updates right now. \n\nPlease try again later or contact your systems administrator",
-                    InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Error);
-                //string message = "An unknown error occurred when checking for updates. Please try again later or contact your system administrator!";
-                //string caption = "Something went wrong";
-                //MessageBoxButtons buttons = MessageBoxButtons.OK;
-                //MessageBox.Show(message, caption, buttons,
-                //MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                KryptonMessageBox.Show("Oh Oh! It would appear we are unable to check for updates right now. \n\nPlease try again later or contact your systems administrator",
+                    "Whoops!",
+                    MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
                 return result;
             }
 

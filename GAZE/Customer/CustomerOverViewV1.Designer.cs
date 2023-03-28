@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
             this.EmailAddress_txt = new Krypton.Toolkit.KryptonTextBox();
             this.AltCont_txt = new Krypton.Toolkit.KryptonTextBox();
             this.ContactNum_txt = new Krypton.Toolkit.KryptonTextBox();
@@ -81,6 +82,16 @@
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
+            this.NextBillDay_txt = new Krypton.Toolkit.KryptonTextBox();
+            this.billingday_txt = new Krypton.Toolkit.KryptonTextBox();
+            this.sortcode_txt = new Krypton.Toolkit.KryptonTextBox();
+            this.accountNum_txt = new Krypton.Toolkit.KryptonTextBox();
+            this.YTotal_txt = new Krypton.Toolkit.KryptonTextBox();
+            this.Amount_txt = new Krypton.Toolkit.KryptonTextBox();
+            this.BillingFreq_txt = new Krypton.Toolkit.KryptonTextBox();
+            this.BillingType_txt = new Krypton.Toolkit.KryptonTextBox();
+            this.bilRef_txt = new Krypton.Toolkit.KryptonTextBox();
+            this.BillingID_txt = new Krypton.Toolkit.KryptonTextBox();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PolStatus_lbl = new System.Windows.Forms.Label();
@@ -94,12 +105,16 @@
             this.PolMenStr = new System.Windows.Forms.MenuStrip();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateCustomerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewCustomerNotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCustomerNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewNotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createNewNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateOverviewNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.policyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updatePolicyStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewFullPolicyDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewPolicyNotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewPolicyNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -112,11 +127,22 @@
             this.changePolicyPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePolicyRenewalDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel28 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel30 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel31 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel32 = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
+            this.metroTabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.PolMenStr.SuspendLayout();
@@ -133,7 +159,7 @@
             this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Regular;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 382);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 4;
             this.metroTabControl1.Size = new System.Drawing.Size(1213, 345);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroTabControl1.TabIndex = 0;
@@ -141,6 +167,7 @@
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.kryptonTextBox1);
             this.metroTabPage1.Controls.Add(this.EmailAddress_txt);
             this.metroTabPage1.Controls.Add(this.AltCont_txt);
             this.metroTabPage1.Controls.Add(this.ContactNum_txt);
@@ -168,6 +195,14 @@
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
             // 
+            // kryptonTextBox1
+            // 
+            this.kryptonTextBox1.Location = new System.Drawing.Point(580, 13);
+            this.kryptonTextBox1.Multiline = true;
+            this.kryptonTextBox1.Name = "kryptonTextBox1";
+            this.kryptonTextBox1.Size = new System.Drawing.Size(617, 146);
+            this.kryptonTextBox1.TabIndex = 23;
+            // 
             // EmailAddress_txt
             // 
             this.EmailAddress_txt.Location = new System.Drawing.Point(143, 268);
@@ -193,14 +228,14 @@
             // 
             this.CSurname_txt.Location = new System.Drawing.Point(143, 94);
             this.CSurname_txt.Name = "CSurname_txt";
-            this.CSurname_txt.Size = new System.Drawing.Size(1054, 23);
+            this.CSurname_txt.Size = new System.Drawing.Size(381, 23);
             this.CSurname_txt.TabIndex = 19;
             // 
             // FName_txt
             // 
             this.FName_txt.Location = new System.Drawing.Point(143, 53);
             this.FName_txt.Name = "FName_txt";
-            this.FName_txt.Size = new System.Drawing.Size(1054, 23);
+            this.FName_txt.Size = new System.Drawing.Size(381, 23);
             this.FName_txt.TabIndex = 18;
             // 
             // CustTitle_txt
@@ -539,7 +574,7 @@
             // ProdPrice_txt
             // 
             this.ProdPrice_txt.Location = new System.Drawing.Point(170, 123);
-            this.ProdPrice_txt.Mask = "$00.00";
+            this.ProdPrice_txt.Mask = "$000.00";
             this.ProdPrice_txt.Name = "ProdPrice_txt";
             this.ProdPrice_txt.PromptChar = '$';
             this.ProdPrice_txt.Size = new System.Drawing.Size(211, 23);
@@ -607,6 +642,26 @@
             // 
             // metroTabPage5
             // 
+            this.metroTabPage5.Controls.Add(this.metroLabel32);
+            this.metroTabPage5.Controls.Add(this.metroLabel31);
+            this.metroTabPage5.Controls.Add(this.metroLabel30);
+            this.metroTabPage5.Controls.Add(this.metroLabel29);
+            this.metroTabPage5.Controls.Add(this.metroLabel28);
+            this.metroTabPage5.Controls.Add(this.metroLabel27);
+            this.metroTabPage5.Controls.Add(this.metroLabel26);
+            this.metroTabPage5.Controls.Add(this.metroLabel25);
+            this.metroTabPage5.Controls.Add(this.metroLabel24);
+            this.metroTabPage5.Controls.Add(this.metroLabel23);
+            this.metroTabPage5.Controls.Add(this.NextBillDay_txt);
+            this.metroTabPage5.Controls.Add(this.billingday_txt);
+            this.metroTabPage5.Controls.Add(this.sortcode_txt);
+            this.metroTabPage5.Controls.Add(this.accountNum_txt);
+            this.metroTabPage5.Controls.Add(this.YTotal_txt);
+            this.metroTabPage5.Controls.Add(this.Amount_txt);
+            this.metroTabPage5.Controls.Add(this.BillingFreq_txt);
+            this.metroTabPage5.Controls.Add(this.BillingType_txt);
+            this.metroTabPage5.Controls.Add(this.bilRef_txt);
+            this.metroTabPage5.Controls.Add(this.BillingID_txt);
             this.metroTabPage5.HorizontalScrollbarBarColor = true;
             this.metroTabPage5.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage5.HorizontalScrollbarSize = 10;
@@ -619,6 +674,77 @@
             this.metroTabPage5.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage5.VerticalScrollbarSize = 10;
             // 
+            // NextBillDay_txt
+            // 
+            this.NextBillDay_txt.Location = new System.Drawing.Point(726, 153);
+            this.NextBillDay_txt.Name = "NextBillDay_txt";
+            this.NextBillDay_txt.Size = new System.Drawing.Size(243, 23);
+            this.NextBillDay_txt.TabIndex = 21;
+            // 
+            // billingday_txt
+            // 
+            this.billingday_txt.Location = new System.Drawing.Point(726, 107);
+            this.billingday_txt.Name = "billingday_txt";
+            this.billingday_txt.Size = new System.Drawing.Size(109, 23);
+            this.billingday_txt.TabIndex = 20;
+            // 
+            // sortcode_txt
+            // 
+            this.sortcode_txt.Location = new System.Drawing.Point(726, 63);
+            this.sortcode_txt.Name = "sortcode_txt";
+            this.sortcode_txt.Size = new System.Drawing.Size(359, 23);
+            this.sortcode_txt.TabIndex = 19;
+            // 
+            // accountNum_txt
+            // 
+            this.accountNum_txt.Location = new System.Drawing.Point(726, 21);
+            this.accountNum_txt.Name = "accountNum_txt";
+            this.accountNum_txt.Size = new System.Drawing.Size(359, 23);
+            this.accountNum_txt.TabIndex = 18;
+            // 
+            // YTotal_txt
+            // 
+            this.YTotal_txt.Location = new System.Drawing.Point(127, 241);
+            this.YTotal_txt.Name = "YTotal_txt";
+            this.YTotal_txt.Size = new System.Drawing.Size(270, 23);
+            this.YTotal_txt.TabIndex = 13;
+            // 
+            // Amount_txt
+            // 
+            this.Amount_txt.Location = new System.Drawing.Point(127, 197);
+            this.Amount_txt.Name = "Amount_txt";
+            this.Amount_txt.Size = new System.Drawing.Size(270, 23);
+            this.Amount_txt.TabIndex = 11;
+            // 
+            // BillingFreq_txt
+            // 
+            this.BillingFreq_txt.Location = new System.Drawing.Point(127, 156);
+            this.BillingFreq_txt.Name = "BillingFreq_txt";
+            this.BillingFreq_txt.Size = new System.Drawing.Size(270, 23);
+            this.BillingFreq_txt.TabIndex = 9;
+            // 
+            // BillingType_txt
+            // 
+            this.BillingType_txt.Location = new System.Drawing.Point(127, 110);
+            this.BillingType_txt.Name = "BillingType_txt";
+            this.BillingType_txt.Size = new System.Drawing.Size(116, 23);
+            this.BillingType_txt.TabIndex = 8;
+            // 
+            // bilRef_txt
+            // 
+            this.bilRef_txt.Location = new System.Drawing.Point(127, 63);
+            this.bilRef_txt.Name = "bilRef_txt";
+            this.bilRef_txt.Size = new System.Drawing.Size(343, 23);
+            this.bilRef_txt.TabIndex = 7;
+            // 
+            // BillingID_txt
+            // 
+            this.BillingID_txt.Location = new System.Drawing.Point(127, 22);
+            this.BillingID_txt.Name = "BillingID_txt";
+            this.BillingID_txt.ReadOnly = true;
+            this.BillingID_txt.Size = new System.Drawing.Size(188, 23);
+            this.BillingID_txt.TabIndex = 6;
+            // 
             // metroGrid1
             // 
             this.metroGrid1.AllowUserToResizeRows = false;
@@ -626,23 +752,23 @@
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle17;
             this.metroGrid1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -651,14 +777,14 @@
             this.metroGrid1.Margin = new System.Windows.Forms.Padding(2);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.metroGrid1.RowHeadersWidth = 62;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.RowTemplate.Height = 28;
@@ -775,8 +901,8 @@
             // 
             this.customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.updateCustomerDetailsToolStripMenuItem,
-            this.viewCustomerNotesToolStripMenuItem,
-            this.addNewCustomerNoteToolStripMenuItem});
+            this.addNewCustomerNoteToolStripMenuItem,
+            this.updateOverviewNoteToolStripMenuItem});
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
             this.customerToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.customerToolStripMenuItem.Text = "Customer";
@@ -784,32 +910,69 @@
             // updateCustomerDetailsToolStripMenuItem
             // 
             this.updateCustomerDetailsToolStripMenuItem.Name = "updateCustomerDetailsToolStripMenuItem";
-            this.updateCustomerDetailsToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.updateCustomerDetailsToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.updateCustomerDetailsToolStripMenuItem.Text = "Update Customer Details";
-            // 
-            // viewCustomerNotesToolStripMenuItem
-            // 
-            this.viewCustomerNotesToolStripMenuItem.Name = "viewCustomerNotesToolStripMenuItem";
-            this.viewCustomerNotesToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.viewCustomerNotesToolStripMenuItem.Text = "View Customer Notes";
             // 
             // addNewCustomerNoteToolStripMenuItem
             // 
+            this.addNewCustomerNoteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewNotesToolStripMenuItem,
+            this.createNewNoteToolStripMenuItem});
             this.addNewCustomerNoteToolStripMenuItem.Name = "addNewCustomerNoteToolStripMenuItem";
-            this.addNewCustomerNoteToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.addNewCustomerNoteToolStripMenuItem.Text = "Add New Customer Note";
+            this.addNewCustomerNoteToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.addNewCustomerNoteToolStripMenuItem.Text = "Customer Notes";
+            // 
+            // viewNotesToolStripMenuItem
+            // 
+            this.viewNotesToolStripMenuItem.Name = "viewNotesToolStripMenuItem";
+            this.viewNotesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.viewNotesToolStripMenuItem.Text = "View Notes";
+            // 
+            // createNewNoteToolStripMenuItem
+            // 
+            this.createNewNoteToolStripMenuItem.Name = "createNewNoteToolStripMenuItem";
+            this.createNewNoteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.createNewNoteToolStripMenuItem.Text = "Create New Note";
+            // 
+            // updateOverviewNoteToolStripMenuItem
+            // 
+            this.updateOverviewNoteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateNoteToolStripMenuItem,
+            this.deleteNoteToolStripMenuItem});
+            this.updateOverviewNoteToolStripMenuItem.Name = "updateOverviewNoteToolStripMenuItem";
+            this.updateOverviewNoteToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.updateOverviewNoteToolStripMenuItem.Text = "Overview Note";
+            // 
+            // updateNoteToolStripMenuItem
+            // 
+            this.updateNoteToolStripMenuItem.Name = "updateNoteToolStripMenuItem";
+            this.updateNoteToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.updateNoteToolStripMenuItem.Text = "Update Note";
+            // 
+            // deleteNoteToolStripMenuItem
+            // 
+            this.deleteNoteToolStripMenuItem.Name = "deleteNoteToolStripMenuItem";
+            this.deleteNoteToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.deleteNoteToolStripMenuItem.Text = "Delete Note";
+            this.deleteNoteToolStripMenuItem.Click += new System.EventHandler(this.deleteNoteToolStripMenuItem_Click);
             // 
             // policyToolStripMenuItem
             // 
             this.policyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewPolicyToolStripMenuItem,
             this.updatePolicyStatusToolStripMenuItem,
             this.viewFullPolicyDetailsToolStripMenuItem,
-            this.addNewPolicyToolStripMenuItem,
             this.viewPolicyNotesToolStripMenuItem,
             this.addNewPolicyNoteToolStripMenuItem});
             this.policyToolStripMenuItem.Name = "policyToolStripMenuItem";
             this.policyToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.policyToolStripMenuItem.Text = "Policy";
+            // 
+            // addNewPolicyToolStripMenuItem
+            // 
+            this.addNewPolicyToolStripMenuItem.Name = "addNewPolicyToolStripMenuItem";
+            this.addNewPolicyToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.addNewPolicyToolStripMenuItem.Text = "Add New Policy";
             // 
             // updatePolicyStatusToolStripMenuItem
             // 
@@ -822,12 +985,6 @@
             this.viewFullPolicyDetailsToolStripMenuItem.Name = "viewFullPolicyDetailsToolStripMenuItem";
             this.viewFullPolicyDetailsToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.viewFullPolicyDetailsToolStripMenuItem.Text = "View Full Policy Details";
-            // 
-            // addNewPolicyToolStripMenuItem
-            // 
-            this.addNewPolicyToolStripMenuItem.Name = "addNewPolicyToolStripMenuItem";
-            this.addNewPolicyToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.addNewPolicyToolStripMenuItem.Text = "Add New Policy";
             // 
             // viewPolicyNotesToolStripMenuItem
             // 
@@ -912,6 +1069,96 @@
             this.redressToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.redressToolStripMenuItem.Text = "Redress";
             // 
+            // metroLabel23
+            // 
+            this.metroLabel23.AutoSize = true;
+            this.metroLabel23.Location = new System.Drawing.Point(12, 21);
+            this.metroLabel23.Name = "metroLabel23";
+            this.metroLabel23.Size = new System.Drawing.Size(59, 19);
+            this.metroLabel23.TabIndex = 23;
+            this.metroLabel23.Text = "BillingID:";
+            // 
+            // metroLabel24
+            // 
+            this.metroLabel24.AutoSize = true;
+            this.metroLabel24.Location = new System.Drawing.Point(12, 63);
+            this.metroLabel24.Name = "metroLabel24";
+            this.metroLabel24.Size = new System.Drawing.Size(109, 19);
+            this.metroLabel24.TabIndex = 24;
+            this.metroLabel24.Text = "Billing Reference:";
+            // 
+            // metroLabel25
+            // 
+            this.metroLabel25.AutoSize = true;
+            this.metroLabel25.Location = new System.Drawing.Point(12, 110);
+            this.metroLabel25.Name = "metroLabel25";
+            this.metroLabel25.Size = new System.Drawing.Size(78, 19);
+            this.metroLabel25.TabIndex = 25;
+            this.metroLabel25.Text = "Billing Type:";
+            // 
+            // metroLabel26
+            // 
+            this.metroLabel26.AutoSize = true;
+            this.metroLabel26.Location = new System.Drawing.Point(12, 156);
+            this.metroLabel26.Name = "metroLabel26";
+            this.metroLabel26.Size = new System.Drawing.Size(111, 19);
+            this.metroLabel26.TabIndex = 26;
+            this.metroLabel26.Text = "Billing Frequency:";
+            // 
+            // metroLabel27
+            // 
+            this.metroLabel27.AutoSize = true;
+            this.metroLabel27.Location = new System.Drawing.Point(12, 197);
+            this.metroLabel27.Name = "metroLabel27";
+            this.metroLabel27.Size = new System.Drawing.Size(98, 19);
+            this.metroLabel27.TabIndex = 27;
+            this.metroLabel27.Text = "Billing Amount:";
+            // 
+            // metroLabel28
+            // 
+            this.metroLabel28.AutoSize = true;
+            this.metroLabel28.Location = new System.Drawing.Point(12, 241);
+            this.metroLabel28.Name = "metroLabel28";
+            this.metroLabel28.Size = new System.Drawing.Size(77, 19);
+            this.metroLabel28.TabIndex = 28;
+            this.metroLabel28.Text = "Yearly Total:";
+            // 
+            // metroLabel29
+            // 
+            this.metroLabel29.AutoSize = true;
+            this.metroLabel29.Location = new System.Drawing.Point(594, 21);
+            this.metroLabel29.Name = "metroLabel29";
+            this.metroLabel29.Size = new System.Drawing.Size(113, 19);
+            this.metroLabel29.TabIndex = 29;
+            this.metroLabel29.Text = "Account Number:";
+            // 
+            // metroLabel30
+            // 
+            this.metroLabel30.AutoSize = true;
+            this.metroLabel30.Location = new System.Drawing.Point(594, 63);
+            this.metroLabel30.Name = "metroLabel30";
+            this.metroLabel30.Size = new System.Drawing.Size(73, 19);
+            this.metroLabel30.TabIndex = 30;
+            this.metroLabel30.Text = "Sort Code:";
+            // 
+            // metroLabel31
+            // 
+            this.metroLabel31.AutoSize = true;
+            this.metroLabel31.Location = new System.Drawing.Point(594, 107);
+            this.metroLabel31.Name = "metroLabel31";
+            this.metroLabel31.Size = new System.Drawing.Size(102, 19);
+            this.metroLabel31.TabIndex = 31;
+            this.metroLabel31.Text = "Billing Day (INT)";
+            // 
+            // metroLabel32
+            // 
+            this.metroLabel32.AutoSize = true;
+            this.metroLabel32.Location = new System.Drawing.Point(594, 153);
+            this.metroLabel32.Name = "metroLabel32";
+            this.metroLabel32.Size = new System.Drawing.Size(109, 19);
+            this.metroLabel32.TabIndex = 32;
+            this.metroLabel32.Text = "Next Billing Date:";
+            // 
             // CustomerOverViewV1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -934,6 +1181,8 @@
             this.metroTabPage3.PerformLayout();
             this.metroTabPage4.ResumeLayout(false);
             this.metroTabPage4.PerformLayout();
+            this.metroTabPage5.ResumeLayout(false);
+            this.metroTabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1012,7 +1261,6 @@
         private Krypton.Toolkit.KryptonMaskedTextBox ProdActDate_txt;
         private Krypton.Toolkit.KryptonMaskedTextBox ProdEndDate_txt;
         private System.Windows.Forms.ToolStripMenuItem updateCustomerDetailsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewCustomerNotesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewCustomerNoteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updatePolicyStatusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewFullPolicyDetailsToolStripMenuItem;
@@ -1027,5 +1275,31 @@
         private System.Windows.Forms.ToolStripMenuItem changePolicyPriceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePolicyRenewalDateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem redressToolStripMenuItem;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private System.Windows.Forms.ToolStripMenuItem updateOverviewNoteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewNotesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createNewNoteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateNoteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteNoteToolStripMenuItem;
+        private Krypton.Toolkit.KryptonTextBox NextBillDay_txt;
+        private Krypton.Toolkit.KryptonTextBox billingday_txt;
+        private Krypton.Toolkit.KryptonTextBox sortcode_txt;
+        private Krypton.Toolkit.KryptonTextBox accountNum_txt;
+        private Krypton.Toolkit.KryptonTextBox YTotal_txt;
+        private Krypton.Toolkit.KryptonTextBox Amount_txt;
+        private Krypton.Toolkit.KryptonTextBox BillingFreq_txt;
+        private Krypton.Toolkit.KryptonTextBox BillingType_txt;
+        private Krypton.Toolkit.KryptonTextBox bilRef_txt;
+        private Krypton.Toolkit.KryptonTextBox BillingID_txt;
+        private MetroFramework.Controls.MetroLabel metroLabel23;
+        private MetroFramework.Controls.MetroLabel metroLabel32;
+        private MetroFramework.Controls.MetroLabel metroLabel31;
+        private MetroFramework.Controls.MetroLabel metroLabel30;
+        private MetroFramework.Controls.MetroLabel metroLabel29;
+        private MetroFramework.Controls.MetroLabel metroLabel28;
+        private MetroFramework.Controls.MetroLabel metroLabel27;
+        private MetroFramework.Controls.MetroLabel metroLabel26;
+        private MetroFramework.Controls.MetroLabel metroLabel25;
+        private MetroFramework.Controls.MetroLabel metroLabel24;
     }
 }

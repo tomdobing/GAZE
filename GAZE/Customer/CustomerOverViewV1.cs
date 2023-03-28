@@ -1,4 +1,5 @@
-﻿using Gaze.BusinessLogic.Config;
+﻿using Gaze.BusinessLogic.BillingManagement;
+using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.SQLManagement;
 using Krypton.Toolkit;
@@ -18,6 +19,7 @@ namespace GAZE.Customer
         CustomerManagement CustomerManagement = new CustomerManagement();
         SQLManagement PolicySQLManagement = new SQLManagement();
         HomePage HomePage = new HomePage();
+        SQLBilling SQLBilling = new SQLBilling();
         #endregion
         public CustomerOverViewV1()
         {
@@ -49,7 +51,9 @@ namespace GAZE.Customer
             CustomerManagement.GetCustomerOverViewV1(CustName_txt, CustTitle_txt, FName_txt, CSurname_txt, CDOB_txt, ContactNum_txt, AltCont_txt, EmailAddress_txt,
                 addrL1_txt, AddrL2_txt, Town_txt, postalcode_txt, country_txt, PolicyID_txt, PolStatus_lbl, DeactReas_txt, PolEffStart_txt, PolEndDate_txt, ProdName_txt, ProdDesc_txt
                 , ProdPrice_txt, ProdActDate_txt, CustID_txt, ProdEndDate_txt, PolID_Txt, StatID_txt);
-
+            CustomerManagement.GetCustomerOverviewNote(kryptonTextBox1);
+            SQLBilling.GetOverviewBillingDetails(BillingID_txt, bilRef_txt,BillingType_txt, BillingFreq_txt, Amount_txt, YTotal_txt, accountNum_txt, sortcode_txt, billingday_txt, NextBillDay_txt );
+            metroTabControl1.SelectedTab = metroTabPage1;
         }
 
         private void metroGrid1_SelectionChanged(object sender, EventArgs e)
@@ -74,6 +78,26 @@ namespace GAZE.Customer
         {
             OverridePolicyPrice overridePolicyPrice = new OverridePolicyPrice();
             overridePolicyPrice.ShowDialog();
+        }
+
+        private void deleteNoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            string message = "Are you sure you wish to delete this Customers overview note?";
+            string caption = "Are you sure?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            result = KryptonMessageBox.Show(message, caption, MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, KryptonMessageBoxDefaultButton.Button3);
+            if (result == DialogResult.Yes)
+            {
+                CustomerManagement.RemoveOverviewNote();
+                //Application.Exit();
+            }
+            if (result == DialogResult.No)
+            {
+                return;
+            };
         }
     }
 }

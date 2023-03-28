@@ -1,4 +1,5 @@
 ﻿using Gaze.BusinessLogic.Exceptions;
+using Krypton.Toolkit;
 using MetroFramework.Controls;
 using System;
 using System.Configuration;
@@ -43,7 +44,8 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
             catch (Exception ex)
             {
-                MessageHandler.ReturnInfoBox(ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Stop);
+                KryptonMessageBox.Show(ex.Message, "Whoops!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                
                 ///BUG 45 - TBI
                 return;
             }
@@ -94,7 +96,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
             catch (Exception ex)
             {
-                MessageHandler.ReturnInfoBox(ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Stop);
+                KryptonMessageBox.Show(ex.Message, "Failure!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Stop, 0, 0, false, false, false, false, null);
             }
             finally
             {
@@ -123,7 +125,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
             catch (Exception ex)
             {
-                MessageHandler.ReturnInfoBox(ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Stop);
+                KryptonMessageBox.Show(ex.Message, "Failure!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Stop, 0, 0, false, false, false, false, null);
               // MessageHandler.ShowMessage(ex.Message, "SQL Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //throw;
                 return "";
@@ -154,12 +156,12 @@ namespace Gaze.BusinessLogic.SQLManagement
                 sqlCommand.Parameters.AddWithValue("@ConfigValue", NewConfigValue);
                 sqlCommand.Parameters.AddWithValue("@UpdatedBy", UpdateBy);
                 sqlCommand.ExecuteReader();
-                MessageHandler.ReturnInfoBox("Config Value Updated!", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Success);
+                KryptonMessageBox.Show("Config Value Updated!", "Success!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
                 
             }
             catch (Exception ex)
             {
-                MessageHandler.ReturnInfoBox(ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Error);
+                KryptonMessageBox.Show(ex.Message, "Failure!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
                 
             }
             finally
@@ -195,7 +197,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
             catch (Exception ex)
             {
-                MessageHandler.ReturnInfoBox(ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Stop);
+                KryptonMessageBox.Show(ex.Message, "Failure!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Stop, 0, 0, false, false, false, false, null);
                 //exception.ThrowNewStackException(ex, "SQL Exception");
                 return -1;
             }

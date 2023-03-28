@@ -252,7 +252,7 @@ namespace Gaze.BusinessLogic.PolicyManagement
             try
             {
                 scon.Open();
-                SqlCommand sqlCommand = new SqlCommand("dbo.INSERT_NEW_NOTE_S", scon)
+                SqlCommand sqlCommand = new SqlCommand("dbo.INSERT_NEW_NOTE_SP", scon)
                 {
                     CommandType = System.Data.CommandType.StoredProcedure
                 };
@@ -276,6 +276,8 @@ namespace Gaze.BusinessLogic.PolicyManagement
 
 
         }
+
+        
 
 
 

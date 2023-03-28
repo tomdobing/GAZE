@@ -2,7 +2,6 @@
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.BusinessLogic.Startup;
-using InfoBox;
 using Krypton.Toolkit;
 using System;
 using System.Windows.Forms;

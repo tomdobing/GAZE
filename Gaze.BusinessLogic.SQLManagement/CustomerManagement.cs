@@ -5,7 +5,9 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Net.Mail;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -53,7 +55,8 @@ namespace Gaze.BusinessLogic.SQLManagement
                 string.IsNullOrEmpty(PostalCode.Text) ||
                 string.IsNullOrEmpty(Country.SelectedValue.ToString()))
             {
-                messageHandler.ReturnInfoBox("Data Validation Failure! \n\nYou have not completed all required fields. Please check and try again!", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Error);
+                KryptonMessageBox.Show("Data Validation Failure! \n\nYou have not completed all required fields. Please check and try again!", "Failure!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                
 
             }
             else
@@ -195,7 +198,8 @@ namespace Gaze.BusinessLogic.SQLManagement
                 }
                 else
                 {
-                    messageHandler.ReturnInfoBox("Customer with the Contact Number " + CustomerNumber + " already exists and registered. \n\nPlease search for the customer via customer search", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Hand);
+                    KryptonMessageBox.Show("Customer with the Contact Number " + CustomerNumber + " already exists and registered. \n\nPlease search for the customer via customer search","Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
+                    
                     return false;
                 }
             }
@@ -397,7 +401,8 @@ namespace Gaze.BusinessLogic.SQLManagement
                 sqlCommand.ExecuteReader();
                 if (ShowNoteConfirmation == true)
                 {
-                    messageHandler.ReturnInfoBox("Note has been created", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Information);
+                    KryptonMessageBox.Show("Note has been created", "Note Saved!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
+                    
 
                 }
                 else { };
@@ -470,12 +475,13 @@ namespace Gaze.BusinessLogic.SQLManagement
                 sqlCommand.Parameters.AddWithValue("@StatusName", NewStatus.SelectedItem);
                 sqlCommand.Parameters.AddWithValue("@UpdatedBy", InfoSec.GlobalUsername);
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                messageHandler.ReturnInfoBox("Customer Status has been set to " + NewStatus.SelectedItem, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Information);
+                
+                KryptonMessageBox.Show("Customer Status has been set to " + NewStatus.SelectedItem, "Failure!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
                 InsertNewCustomerNote("Customer Status Changed", "Customer Status set to " + NewStatus.SelectedItem + "\n\n " + NoteText, false);
             }
             catch (Exception ex)
             {
-                messageHandler.ReturnInfoBox("Failed update customer status \n\n" + ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Error);
+                KryptonMessageBox.Show("Failed update customer status \n\n" + ex.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
 
 
             }
@@ -531,7 +537,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             catch (Exception ex)
             {
 
-                messageHandler.ReturnInfoBox("Failed update customer details \n\n" + ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Error);
+                KryptonMessageBox.Show("Failed update customer details \n\n" + ex.Message, "Whoops!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
 
             }
             finally
@@ -577,12 +583,12 @@ namespace Gaze.BusinessLogic.SQLManagement
                 sqlCommand.Parameters.AddWithValue("@CreatedBy", InfoSec.GlobalUsername);
                 sqlCommand.Parameters.AddWithValue("@UpdatedBy", InfoSec.GlobalUsername);
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                messageHandler.ReturnInfoBox("Customer Details have been updated", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Success);
+                KryptonMessageBox.Show("Customer Details have been updated", "Note Saved!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
                 form.Close();
             }
             catch (Exception ex)
             {
-                messageHandler.ReturnInfoBox("Failed update customer status \n\n" + ex.Message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Error);
+                KryptonMessageBox.Show("Failed update Customer Details \n\n" + ex.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
 
 
             }
@@ -805,6 +811,68 @@ namespace Gaze.BusinessLogic.SQLManagement
                 ///ERROR HANDLING REQUIRED HERE
                 throw;
             }
+        }
+
+        public void GetCustomerOverviewNote(KryptonTextBox NoteOverviwe)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMER_NOTE_OVERVIEW_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+
+                    NoteOverviwe.Text = sqlDataReader[0].ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Failure to retrieve note", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+                }
+
+        public void RemoveOverviewNote()
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.REMOVE_CUSTOMER_OVERVIEW_NOTE_SP", scon)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                KryptonMessageBox.Show("Customer Overview Note removed successfully" ,"Success!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
+
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Failure!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+
+            }
+            finally
+            {
+                scon.Close();
+            }
+
         }
 
         #endregion

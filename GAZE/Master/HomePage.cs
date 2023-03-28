@@ -138,7 +138,7 @@ namespace GAZE
         {
             
             string message = ConfigurationManager.AppSettings["SQLConnection"] + Environment.NewLine + Environment.NewLine + "Database: Gaze_DB: True";
-            messageHandler.ReturnInfoBox(message, InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Information);
+            KryptonMessageBox.Show(message, "Whoops!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
             
             
 
