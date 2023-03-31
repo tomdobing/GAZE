@@ -636,7 +636,7 @@ namespace Gaze.BusinessLogic.SQLManagement
 
         public void GetCustomerOverViewV1(System.Windows.Forms.TextBox CustomerFullName, KryptonTextBox Title, KryptonTextBox Firstname, KryptonTextBox Surname, KryptonMaskedTextBox DOB, KryptonTextBox ContactNumber, KryptonTextBox Altercontact,
                                          KryptonTextBox EmailAddress, KryptonTextBox AddressLine1, KryptonTextBox AddressLine2, KryptonTextBox Town, KryptonTextBox Postalcode, KryptonTextBox Country, System.Windows.Forms.TextBox PolicyID,
-                                         Label PolicyStatus, KryptonTextBox Deactivation, KryptonMaskedTextBox PEffStart, KryptonMaskedTextBox PEffEnd, KryptonTextBox ProductName, KryptonTextBox ProductDesc, KryptonMaskedTextBox ProductPrice,
+                                         Label PolicyStatus, KryptonTextBox Deactivation, KryptonMaskedTextBox PEffStart, KryptonMaskedTextBox PEffEnd,KryptonTextBox Discount, KryptonTextBox ProductName, KryptonTextBox ProductDesc,
                                          KryptonMaskedTextBox EffStart, System.Windows.Forms.TextBox CustomerID, KryptonMaskedTextBox ProductEffEnd, [Optional] KryptonTextBox PolicyID1, [Optional] KryptonTextBox StatusID1)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -704,6 +704,11 @@ namespace Gaze.BusinessLogic.SQLManagement
                             PolicyStatus.ForeColor = System.Drawing.Color.Red;
                             StatusID1.Text = "Expired";
                             break;
+                        case "OnHoldPayee":
+                            PolicyStatus.Text = "OnHoldPayee";
+                            PolicyStatus.ForeColor = System.Drawing.Color.Orange;
+                            StatusID1.Text = "OnHoldPayee";
+                            break;
                         default:
                             PolicyStatus.Text = "UNKNOWN STATUS";
                             PolicyStatus.ForeColor = System.Drawing.Color.Black;
@@ -717,16 +722,17 @@ namespace Gaze.BusinessLogic.SQLManagement
 
                     date = sqlDataReader.GetDateTime(17);
                     PEffEnd.Text = date.ToShortDateString();
-
+                    
+                   
 
                     ProductName.Text = sqlDataReader[18].ToString();
                     ProductDesc.Text = sqlDataReader[19].ToString();
-                    ProductPrice.Text = sqlDataReader[20].ToString();
+                    
 
-                    date = sqlDataReader.GetDateTime(21);
+                    date = sqlDataReader.GetDateTime(20);
                     EffStart.Text = date.ToShortDateString();
 
-                    CustomerID.Text = sqlDataReader[22].ToString();
+                    CustomerID.Text = sqlDataReader[21].ToString();
 
 
 

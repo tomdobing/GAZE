@@ -5,6 +5,7 @@ using Gaze.BusinessLogic.SQLManagement;
 using Krypton.Toolkit;
 using MetroFramework.Controls;
 using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -47,12 +48,19 @@ namespace GAZE.Customer
         private void CustomerOverViewV1_Load(object sender, EventArgs e)
         {
             CustomerManagement.GetCustomerPoliciesForOverview(metroGrid1);
-            Thread.Sleep(1000);
+
+            Thread.Sleep(1000);         
+
             CustomerManagement.GetCustomerOverViewV1(CustName_txt, CustTitle_txt, FName_txt, CSurname_txt, CDOB_txt, ContactNum_txt, AltCont_txt, EmailAddress_txt,
-                addrL1_txt, AddrL2_txt, Town_txt, postalcode_txt, country_txt, PolicyID_txt, PolStatus_lbl, DeactReas_txt, PolEffStart_txt, PolEndDate_txt, ProdName_txt, ProdDesc_txt
-                , ProdPrice_txt, ProdActDate_txt, CustID_txt, ProdEndDate_txt, PolID_Txt, StatID_txt);
+                addrL1_txt, AddrL2_txt, Town_txt, postalcode_txt, country_txt, PolicyID_txt, PolStatus_lbl, DeactReas_txt, PolEffStart_txt, PolEndDate_txt,discount_txt, ProdName_txt, ProdDesc_txt
+                , ProdActDate_txt, CustID_txt, ProdEndDate_txt, PolID_Txt, StatID_txt);
+
             CustomerManagement.GetCustomerOverviewNote(kryptonTextBox1);
-            SQLBilling.GetOverviewBillingDetails(BillingID_txt, bilRef_txt,BillingType_txt, BillingFreq_txt, Amount_txt, YTotal_txt, accountNum_txt, sortcode_txt, billingday_txt, NextBillDay_txt );
+
+            SQLBilling.GetOverviewBillingDetails(BillingID_txt, bilRef_txt,BillingType_txt, BillingFreq_txt, Yearly_txt, 
+                                                MTotal_txt,billingstatus_txt, accountNum_txt, 
+                                                sortcode_txt, NextBillDay_txt );
+
             metroTabControl1.SelectedTab = metroTabPage1;
         }
 
@@ -92,6 +100,35 @@ namespace GAZE.Customer
             if (result == DialogResult.Yes)
             {
                 CustomerManagement.RemoveOverviewNote();
+                //Application.Exit();
+            }
+            if (result == DialogResult.No)
+            {
+                return;
+            };
+        }
+
+        private void viewBillingDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelBillingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure you wish to delete this Customers overview note?";
+            string caption = "Are you sure?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            result = KryptonMessageBox.Show(message, caption, MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, KryptonMessageBoxDefaultButton.Button3);
+            if (result == DialogResult.Yes)
+            {
+                SQLBilling.CancelCustomerBilling();
                 //Application.Exit();
             }
             if (result == DialogResult.No)

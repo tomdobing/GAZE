@@ -28,7 +28,7 @@ namespace Gaze.BusinessLogic.PolicyManagement
 
         public void GetPolicyDataViaPolicyID(System.Windows.Forms.TextBox CustomerFullName, KryptonTextBox Title, KryptonTextBox Firstname, KryptonTextBox Surname, KryptonMaskedTextBox DOB, KryptonTextBox ContactNumber, KryptonTextBox Altercontact,
                                          KryptonTextBox EmailAddress, KryptonTextBox AddressLine1, KryptonTextBox AddressLine2, KryptonTextBox Town, KryptonTextBox Postalcode, KryptonTextBox Country, System.Windows.Forms.TextBox PolicyID,
-                                         Label PolicyStatus, KryptonTextBox Deactivation, KryptonMaskedTextBox PEffStart, KryptonMaskedTextBox PEffEnd, KryptonTextBox ProductName, KryptonTextBox ProductDesc, KryptonMaskedTextBox ProductPrice,
+                                         Label PolicyStatus, KryptonTextBox Deactivation, KryptonMaskedTextBox PEffStart, KryptonMaskedTextBox PEffEnd, KryptonTextBox ProductName, KryptonTextBox ProductDesc, KryptonTextBox ProductPrice,
                                          KryptonMaskedTextBox EffStart, System.Windows.Forms.TextBox CustomerID, KryptonMaskedTextBox ProductEffEnd, [Optional] KryptonTextBox PolicyID1, [Optional] KryptonTextBox StatusID1)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -94,6 +94,11 @@ namespace Gaze.BusinessLogic.PolicyManagement
                             PolicyStatus.Text = "Expired";
                             PolicyStatus.ForeColor = System.Drawing.Color.Red;
                             StatusID1.Text = "Expired";
+                            break;
+                        case "OnHoldPayee":
+                            PolicyStatus.Text = "OnHoldPayee";
+                            PolicyStatus.ForeColor = System.Drawing.Color.Orange;
+                            StatusID1.Text = "OnHoldPayee";
                             break;
                         default:
                             PolicyStatus.Text = "UNKNOWN STATUS";
