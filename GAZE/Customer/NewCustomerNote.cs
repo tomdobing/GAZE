@@ -46,17 +46,18 @@ namespace GAZE.Customer
         {
             if (string.IsNullOrEmpty(metroComboBox1.Text))
             {
-                messageHandler.ReturnInfoBox("Note Category not selected \n\nPlease check and try again", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Stop);
+                KryptonMessageBox.Show("Note Category not selected \n\nPlease check and try again", "Whoops!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Warning, 0, 0, false, false, false, false, null);
+                
                 return;
             }
             if (string.IsNullOrEmpty(NoteDesc_txt.Text))
             {
-                messageHandler.ReturnInfoBox("You have not entered a note description! \n\nPlease check and try again", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Stop);
+                KryptonMessageBox.Show("You have not entered a note description! \n\nPlease check and try again", "Whoops!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Warning, 0, 0, false, false, false, false, null);
                 return;
             }
             if (string.IsNullOrEmpty(NoteDetails_txt.Text))
             {
-                messageHandler.ReturnInfoBox("You have note entered any note details\n\nPlease ensure you leave a detailed note \n\ncheck and try again", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Stop);
+                KryptonMessageBox.Show("You have note entered any note details\n\nPlease ensure you leave a detailed note \n\ncheck and try again", "Whoops!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Warning, 0, 0, false, false, false, false, null);
                 return;
             }
             Thread.Sleep(1000);

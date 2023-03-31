@@ -40,9 +40,9 @@ namespace GAZE.Customer
         {
             if (string.IsNullOrEmpty(note_txt.Text))
             {
-               messageHandler.ReturnInfoBox("Note cannot be empty \n\nYou must enter a note!!", 
-                   InfoBox.InformationBoxButtons.OK,
-                   InfoBox.InformationBoxIcon.Exclamation);
+                KryptonMessageBox.Show("Note cannot be empty \n\nYou must enter a note!!", "Validation Failure!",
+                    MessageBoxButtons.OK, KryptonMessageBoxIcon.Exclamation, 0, 0, false, false, false, false, null);
+
                 return;
             }
             

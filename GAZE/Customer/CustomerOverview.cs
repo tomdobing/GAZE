@@ -66,7 +66,7 @@ namespace GAZE.Customer
         {
             if (RoleManagement.DisableNonAdminControls() == false)
             {
-                MessageHandler.ReturnInfoBox("You are not Authorized to set the customer Status.\n\nPlease Contact a manager to change the status", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Warning);
+                KryptonMessageBox.Show("You are not Authorized to set the customer Status.\n\nPlease Contact a manager to change the status", "Unauthorised User - Access Denied!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Stop, 0, 0, false, false, false, false, null);
             }
             else
             {

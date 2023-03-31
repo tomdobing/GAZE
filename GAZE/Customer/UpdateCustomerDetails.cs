@@ -45,11 +45,11 @@ namespace GAZE.Customer {
 
         private void metroButton1_Click(object sender, EventArgs e) {
             if (Validations.IsValidPhone(CustNum_txt.Text) == false) {
-                messageHandler.ReturnInfoBox("The contact number you have entered is not valid!\n\nPlease check and confirm this number is correct with the customer", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Error);
+                KryptonMessageBox.Show("The contact number you have entered is not valid!\n\nPlease check and confirm this number is correct with the customer", "Whoops!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Warning, 0, 0, false, false, false, false, null);
                 return;
             }
             if (Validations.IsValidEmail(CustEmail_txt.Text) == false) {
-                messageHandler.ReturnInfoBox("The email address you have entered is not valid!\n\nPlease check and confirm this email address is correct with the customer", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Error);
+                KryptonMessageBox.Show("The email address you have entered is not valid!\n\nPlease check and confirm this email address is correct with the customer", "Whoops!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Warning, 0, 0, false, false, false, false, null);
                 return;
             }
             CustomerManagement.UpdateCustomerDetails(CustTitle_cmb, CustFN_txt, CustSN_txt, metroDateTime1, CustNum_txt, AltNumb_txt, CustEmail_txt, this);

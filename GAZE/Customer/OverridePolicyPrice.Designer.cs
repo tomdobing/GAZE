@@ -38,7 +38,7 @@
             // 
             // kryptonLabel1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(23, 62);
+            this.kryptonLabel1.Location = new System.Drawing.Point(8, 62);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(119, 20);
             this.kryptonLabel1.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // kryptonLabel2
             // 
-            this.kryptonLabel2.Location = new System.Drawing.Point(23, 116);
+            this.kryptonLabel2.Location = new System.Drawing.Point(8, 116);
             this.kryptonLabel2.Name = "kryptonLabel2";
             this.kryptonLabel2.Size = new System.Drawing.Size(103, 20);
             this.kryptonLabel2.TabIndex = 2;
@@ -63,7 +63,7 @@
             // kryptonButton1
             // 
             this.kryptonButton1.CornerRoundingRadius = -1F;
-            this.kryptonButton1.Location = new System.Drawing.Point(210, 170);
+            this.kryptonButton1.Location = new System.Drawing.Point(178, 162);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.Size = new System.Drawing.Size(123, 25);
             this.kryptonButton1.TabIndex = 5;
@@ -72,14 +72,14 @@
             // 
             // NewPolPri_txt
             // 
-            this.NewPolPri_txt.Location = new System.Drawing.Point(149, 115);
+            this.NewPolPri_txt.Location = new System.Drawing.Point(134, 115);
             this.NewPolPri_txt.Name = "NewPolPri_txt";
             this.NewPolPri_txt.Size = new System.Drawing.Size(225, 23);
             this.NewPolPri_txt.TabIndex = 6;
             // 
             // CurrPolPri_txt
             // 
-            this.CurrPolPri_txt.Location = new System.Drawing.Point(149, 62);
+            this.CurrPolPri_txt.Location = new System.Drawing.Point(134, 62);
             this.CurrPolPri_txt.Name = "CurrPolPri_txt";
             this.CurrPolPri_txt.ReadOnly = true;
             this.CurrPolPri_txt.Size = new System.Drawing.Size(225, 23);
@@ -90,7 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 244);
+            this.ClientSize = new System.Drawing.Size(473, 218);
             this.Controls.Add(this.CurrPolPri_txt);
             this.Controls.Add(this.NewPolPri_txt);
             this.Controls.Add(this.kryptonButton1);

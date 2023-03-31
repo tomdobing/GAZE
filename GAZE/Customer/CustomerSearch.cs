@@ -3,9 +3,7 @@ using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.SQLManagement;
 using Krypton.Toolkit;
-using MetroFramework.Controls;
 using System;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace GAZE.Customer
@@ -44,7 +42,7 @@ namespace GAZE.Customer
         private void CustomerSearch_Load_1(object sender, EventArgs e)
         {
             searchPolID_txt.Focus();
-          
+
             //SearchNum_txt.Enabled = false;
         }
 
@@ -52,24 +50,11 @@ namespace GAZE.Customer
         {
             if (SQLManagement.CheckIfPolicyIDExists(searchPolID_txt.Text) == false)
             {
-                InfoBox.InformationBox.Show("Policy Not Found!!\n\n\nPlease check and try again.", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Exclamation, InfoBox.InformationBoxStyle.Modern);
+                KryptonMessageBox.Show("Policy Not Found!!\n\n\nPlease check and try again.", "Not Found", MessageBoxButtons.OK, KryptonMessageBoxIcon.Exclamation, 0, 0, false, false, false, false, null);
                 return;
             }
 
             CustomerManagement.GetCustomerPoliciesByPolicyID(searchPolID_txt.Text, kryptonDataGridView1);
-            //if (!string.IsNullOrEmpty(SearchNum_txt.Text) && SearchNum_txt.Text.Length <= 10)
-            //{
-            //    InfoBox.InformationBox.Show("Invalid search Criteria \n\n Please check and try again", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Exclamation, InfoBox.InformationBoxStyle.Modern, InfoBox.InformationBoxBehavior.Modal);
-
-            //    return;
-            //}
-            //if (CustomerManagement.CustomerSearchIfExists(SearchNum_txt.Text) == false)
-            //{
-            //    InfoBox.InformationBox.Show("Customer Not Found!!\n\n\nPlease check and try again. This customer may not be registered", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Exclamation, InfoBox.InformationBoxStyle.Modern);
-
-            //    return;
-            //}
-
 
         }
 
@@ -88,10 +73,10 @@ namespace GAZE.Customer
             if (SQLManagement.CheckIfPolicyIDExists(searchPolID_txt.Text) == false)
             {
                 KryptonMessageBox.Show(this, "Policy Not Found!!\n\n\nPlease check and try again.",
-                                             "Not Found", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 
+                                             "Not Found", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error,
                                               KryptonMessageBoxDefaultButton.Button3, 0, false, false);
-                
-                
+
+
                 return;
             }
 

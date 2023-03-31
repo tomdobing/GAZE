@@ -1,5 +1,4 @@
-﻿using InfoBox;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Gaze.BusinessLogic.Exceptions
 {
@@ -18,17 +17,6 @@ namespace Gaze.BusinessLogic.Exceptions
             return MessageBox.Show(message, caption, buttons, icon);
         }
 
-        /// <summary>
-        /// Customer Message Handler for error and information boxes
-        /// </summary>
-        /// <param name="message">The main message of the box</param>
-        /// <param name="buttons">Which buttons to display i.e OK, Yes/No</param>
-        /// <param name="icon">What icon war stop excl</param>
-        public void ReturnInfoBox(string message, InformationBoxButtons buttons, InformationBoxIcon icon)
-        {
-            InformationBox.Show(message, buttons, icon, InformationBoxStyle.Modern, InformationBoxSound.Default,
-                InformationBoxOrder.TopMost, InformationBoxBehavior.Modal);
-        }
 
     }
 }
