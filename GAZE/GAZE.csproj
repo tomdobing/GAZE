@@ -132,6 +132,12 @@
     <Compile Include="Config\ControlAdmin.Designer.cs">
       <DependentUpon>ControlAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\Billing\UpdateBankingDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Billing\UpdateBankingDetails.Designer.cs">
+      <DependentUpon>UpdateBankingDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,12 +186,6 @@
     <Compile Include="Customer\NewCustomerNote.Designer.cs">
       <DependentUpon>NewCustomerNote.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\OverridePolicyPrice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\OverridePolicyPrice.Designer.cs">
-      <DependentUpon>OverridePolicyPrice.cs</DependentUpon>
-    </Compile>
     <Compile Include="Customer\UpdateCustomerDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +224,9 @@
     <EmbeddedResource Include="Config\ControlAdmin.resx">
       <DependentUpon>ControlAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Billing\UpdateBankingDetails.resx">
+      <DependentUpon>UpdateBankingDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerHistory.resx">
       <DependentUpon>CustomerHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,9 +250,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\NewCustomerNote.resx">
       <DependentUpon>NewCustomerNote.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\OverridePolicyPrice.resx">
-      <DependentUpon>OverridePolicyPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\UpdateCustomerDetails.resx">
       <DependentUpon>UpdateCustomerDetails.cs</DependentUpon>
@@ -314,9 +314,7 @@
       <Name>Gaze.BusinessLogic.Startup</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Customer\Billing\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
       <Visible>False</Visible>

@@ -186,70 +186,7 @@ namespace Gaze.BusinessLogic.PolicyManagement
 
         }
 
-        public void GetCurrentPolicyPrice(KryptonTextBox PolicyPriceTextbox)
-        {
-            SqlConnection scon = new SqlConnection(SQLConnectionString);
-
-            try
-            {
-                scon.Open();
-                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_POLICY_PRICE_FOR_OVERRIDE_SP", scon)
-                {
-                    CommandType = System.Data.CommandType.StoredProcedure
-                };
-                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
-                sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalSelectedPolicyID);
-                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                while (sqlDataReader.Read())
-                {
-
-                    PolicyPriceTextbox.Text = "$"+sqlDataReader[0].ToString();
-
-                }
-            }
-            catch (Exception ex)
-            {
-                KryptonMessageBox.Show(ex.Message, "Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
-
-            }
-            finally
-            {
-                scon.Close();
-            }
-
-
-
-        }
-
-        public void UpdatePolicyPrice(KryptonTextBox PolicyPriceTextbox)
-        {
-            SqlConnection scon = new SqlConnection(SQLConnectionString);
-            try
-            {
-                scon.Open();
-                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_POLICY_PRICE_SP", scon)
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
-                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
-                sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalSelectedPolicyID);
-                sqlCommand.Parameters.AddWithValue("@NewPolicyPrice", PolicyPriceTextbox.Text);
-                sqlCommand.Parameters.AddWithValue("@CreatedBy", InfoSec.GlobalUsername);
-                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                KryptonMessageBox.Show("Policy Price has been successfully updated", "Success", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
-            }
-            catch (Exception ex)
-            {
-
-                KryptonMessageBox.Show(ex.Message, "Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
-
-            }
-            finally
-            {
-                scon.Close();
-
-            }
-        }
+      
         public void InsertPolicyOverrideNote(KryptonTextBox OldPrice, KryptonTextBox NewPrice)
         {
 
