@@ -2,16 +2,14 @@
 using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.SQLManagement;
+using Gaze.BusinessLogic.Security;
+using GAZE.Properties;
 using Krypton.Toolkit;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace GAZE.Customer.Billing
 {
@@ -25,6 +23,8 @@ namespace GAZE.Customer.Billing
         SQLManagement PolicySQLManagement = new SQLManagement();
         HomePage HomePage = new HomePage();
         SQLBilling SQLBilling = new SQLBilling();
+        Banking Banking = new Banking();
+        
         #endregion
 
         public UpdateBankingDetails()
@@ -32,12 +32,66 @@ namespace GAZE.Customer.Billing
             InitializeComponent();
             FormSettings.SetFormSettings(this);
             FormSettings.ChangeableFormSettings(this, "Update Banking Details - CustomerID:" + InfoSec.GlobalCustomerID);
-            
+            SQLBilling.GetCurrentBillingDetails(CurrAccountNumber_txt, CurrSortCode_txt);
         }
 
         private void UpdateBankingDetails_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void NewSortcode_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NewSortcode_txt_Leave(object sender, EventArgs e)
+        {
+            string text = NewSortcode_txt.Text.Replace("-", ""); // remove existing dashes
+
+            if (text.Length > 0)
+            {
+                StringBuilder formatted = new StringBuilder();
+                for (int i = 0; i < text.Length; i++)
+                {
+                    formatted.Append(text[i]);
+                    if ((i + 1) % 2 == 0 && i < text.Length - 1)
+                    {
+                        formatted.Append("-");
+                    }
+                }
+                NewSortcode_txt.Text = formatted.ToString();
+                NewSortcode_txt.SelectionStart = formatted.Length;
+            }
+
+        }
+
+        private void NewAccountNumber_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+
+            }
+        }
+
+        private void NewSortcode_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+
+            }
+
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            Thread.Sleep(500);
+            Banking.accnum = NewAccountNumber_txt.Text;
+            Banking.sortcode = NewSortcode_txt.Text;
+            Billing.BillingAgreement billingAgreement = new BillingAgreement();
+            billingAgreement.ShowDialog();
         }
     }
 }

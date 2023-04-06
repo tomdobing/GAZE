@@ -36,6 +36,7 @@
             this.NewAccountNumber_txt = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel3 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel4 = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.SuspendLayout();
             // 
             // kryptonLabel1
@@ -74,23 +75,27 @@
             // 
             // NewSortcode_txt
             // 
-            this.NewSortcode_txt.Location = new System.Drawing.Point(362, 211);
+            this.NewSortcode_txt.Location = new System.Drawing.Point(362, 146);
+            this.NewSortcode_txt.MaxLength = 6;
             this.NewSortcode_txt.Name = "NewSortcode_txt";
-            this.NewSortcode_txt.ReadOnly = true;
             this.NewSortcode_txt.Size = new System.Drawing.Size(241, 23);
             this.NewSortcode_txt.TabIndex = 7;
+            this.NewSortcode_txt.TextChanged += new System.EventHandler(this.NewSortcode_txt_TextChanged);
+            this.NewSortcode_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NewSortcode_txt_KeyPress);
+            this.NewSortcode_txt.Leave += new System.EventHandler(this.NewSortcode_txt_Leave);
             // 
             // NewAccountNumber_txt
             // 
-            this.NewAccountNumber_txt.Location = new System.Drawing.Point(31, 211);
+            this.NewAccountNumber_txt.Location = new System.Drawing.Point(31, 146);
+            this.NewAccountNumber_txt.MaxLength = 8;
             this.NewAccountNumber_txt.Name = "NewAccountNumber_txt";
-            this.NewAccountNumber_txt.ReadOnly = true;
             this.NewAccountNumber_txt.Size = new System.Drawing.Size(241, 23);
             this.NewAccountNumber_txt.TabIndex = 6;
+            this.NewAccountNumber_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NewAccountNumber_txt_KeyPress);
             // 
             // kryptonLabel3
             // 
-            this.kryptonLabel3.Location = new System.Drawing.Point(362, 185);
+            this.kryptonLabel3.Location = new System.Drawing.Point(362, 120);
             this.kryptonLabel3.Name = "kryptonLabel3";
             this.kryptonLabel3.PaletteMode = Krypton.Toolkit.PaletteMode.Office2007SilverDarkMode;
             this.kryptonLabel3.Size = new System.Drawing.Size(108, 20);
@@ -99,18 +104,29 @@
             // 
             // kryptonLabel4
             // 
-            this.kryptonLabel4.Location = new System.Drawing.Point(28, 185);
+            this.kryptonLabel4.Location = new System.Drawing.Point(28, 120);
             this.kryptonLabel4.Name = "kryptonLabel4";
             this.kryptonLabel4.PaletteMode = Krypton.Toolkit.PaletteMode.Office2007SilverDarkMode;
             this.kryptonLabel4.Size = new System.Drawing.Size(134, 20);
             this.kryptonLabel4.TabIndex = 4;
             this.kryptonLabel4.Values.Text = "New Account Number:";
             // 
+            // kryptonButton1
+            // 
+            this.kryptonButton1.CornerRoundingRadius = -1F;
+            this.kryptonButton1.Location = new System.Drawing.Point(258, 197);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.Size = new System.Drawing.Size(120, 25);
+            this.kryptonButton1.TabIndex = 8;
+            this.kryptonButton1.Values.Text = "Continue";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
+            // 
             // UpdateBankingDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 352);
+            this.ClientSize = new System.Drawing.Size(667, 245);
+            this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.NewSortcode_txt);
             this.Controls.Add(this.NewAccountNumber_txt);
             this.Controls.Add(this.kryptonLabel3);
@@ -137,5 +153,6 @@
         private Krypton.Toolkit.KryptonTextBox NewAccountNumber_txt;
         private Krypton.Toolkit.KryptonLabel kryptonLabel3;
         private Krypton.Toolkit.KryptonLabel kryptonLabel4;
+        private Krypton.Toolkit.KryptonButton kryptonButton1;
     }
 }
