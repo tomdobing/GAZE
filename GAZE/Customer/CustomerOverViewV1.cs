@@ -26,7 +26,7 @@ namespace GAZE.Customer
         {
             InitializeComponent();
             FormSettings.SetFormSettings(this);
-            FormSettings.ChangeableFormSettings(this, "INDEV - Customer Overview - CustomerID:");
+            FormSettings.ChangeableFormSettings(this, "INDEV - Customer Overview - CustomerID:" + InfoSec.GlobalCustomerID);
             this.Palette = HomePage.kryptonManager1.GlobalPalette;
 
             foreach (MetroTabPage tab in metroTabControl1.TabPages)
@@ -84,8 +84,7 @@ namespace GAZE.Customer
 
         private void changePolicyPriceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OverridePolicyPrice overridePolicyPrice = new OverridePolicyPrice();
-            overridePolicyPrice.ShowDialog();
+
         }
 
         private void deleteNoteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,21 +119,29 @@ namespace GAZE.Customer
 
         private void cancelBillingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "Are you sure you wish to delete this Customers overview note?";
+            string message = "Are you sure you wish to cancel this customers Billing Account? \n\nThe Customer will need to provide their banking information" +
+                " again in order to reactivate and continue with their product!";
             string caption = "Are you sure?";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            
             DialogResult result;
 
             result = KryptonMessageBox.Show(message, caption, MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, KryptonMessageBoxDefaultButton.Button3);
             if (result == DialogResult.Yes)
             {
                 SQLBilling.CancelCustomerBilling();
+                this.Close();
                 //Application.Exit();
             }
             if (result == DialogResult.No)
             {
                 return;
             };
+        }
+
+        private void editBillingDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Billing.UpdateBankingDetails updateBankingDetails = new Billing.UpdateBankingDetails();
+            updateBankingDetails.ShowDialog();
         }
     }
 }

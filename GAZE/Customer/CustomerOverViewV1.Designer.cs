@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
@@ -73,6 +73,7 @@
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.ProdPrice_txt = new Krypton.Toolkit.KryptonTextBox();
             this.ProdEndDate_txt = new Krypton.Toolkit.KryptonMaskedTextBox();
             this.ProdActDate_txt = new Krypton.Toolkit.KryptonMaskedTextBox();
             this.ProdDesc_txt = new Krypton.Toolkit.KryptonTextBox();
@@ -134,10 +135,8 @@
             this.overrideBillingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewBillingHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminActionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changePolicyPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePolicyRenewalDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProdPrice_txt = new Krypton.Toolkit.KryptonTextBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -160,7 +159,7 @@
             this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Regular;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 382);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 3;
+            this.metroTabControl1.SelectedIndex = 4;
             this.metroTabControl1.Size = new System.Drawing.Size(1213, 345);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroTabControl1.TabIndex = 0;
@@ -572,6 +571,13 @@
             this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage4.VerticalScrollbarSize = 10;
             // 
+            // ProdPrice_txt
+            // 
+            this.ProdPrice_txt.Location = new System.Drawing.Point(170, 121);
+            this.ProdPrice_txt.Name = "ProdPrice_txt";
+            this.ProdPrice_txt.Size = new System.Drawing.Size(297, 23);
+            this.ProdPrice_txt.TabIndex = 41;
+            // 
             // ProdEndDate_txt
             // 
             this.ProdEndDate_txt.Location = new System.Drawing.Point(170, 216);
@@ -851,23 +857,23 @@
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
             this.metroGrid1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -876,14 +882,14 @@
             this.metroGrid1.Margin = new System.Windows.Forms.Padding(2);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid1.RowHeadersWidth = 62;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.RowTemplate.Height = 28;
@@ -1112,8 +1118,9 @@
             // editBillingDetailsToolStripMenuItem
             // 
             this.editBillingDetailsToolStripMenuItem.Name = "editBillingDetailsToolStripMenuItem";
-            this.editBillingDetailsToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.editBillingDetailsToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.editBillingDetailsToolStripMenuItem.Text = "Update Banking Details";
+            this.editBillingDetailsToolStripMenuItem.Click += new System.EventHandler(this.editBillingDetailsToolStripMenuItem_Click);
             // 
             // cancelBillingToolStripMenuItem
             // 
@@ -1125,31 +1132,23 @@
             // overrideBillingToolStripMenuItem
             // 
             this.overrideBillingToolStripMenuItem.Name = "overrideBillingToolStripMenuItem";
-            this.overrideBillingToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.overrideBillingToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.overrideBillingToolStripMenuItem.Text = "Override Billing";
             // 
             // viewBillingHistoryToolStripMenuItem
             // 
             this.viewBillingHistoryToolStripMenuItem.Name = "viewBillingHistoryToolStripMenuItem";
-            this.viewBillingHistoryToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.viewBillingHistoryToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.viewBillingHistoryToolStripMenuItem.Text = "View Billing History";
             // 
             // adminActionsToolStripMenuItem
             // 
             this.adminActionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changePolicyPriceToolStripMenuItem,
             this.changePolicyRenewalDateToolStripMenuItem,
             this.redressToolStripMenuItem});
             this.adminActionsToolStripMenuItem.Name = "adminActionsToolStripMenuItem";
             this.adminActionsToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.adminActionsToolStripMenuItem.Text = "Admin Actions";
-            // 
-            // changePolicyPriceToolStripMenuItem
-            // 
-            this.changePolicyPriceToolStripMenuItem.Name = "changePolicyPriceToolStripMenuItem";
-            this.changePolicyPriceToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.changePolicyPriceToolStripMenuItem.Text = "Override Policy Price";
-            this.changePolicyPriceToolStripMenuItem.Click += new System.EventHandler(this.changePolicyPriceToolStripMenuItem_Click);
             // 
             // changePolicyRenewalDateToolStripMenuItem
             // 
@@ -1162,13 +1161,6 @@
             this.redressToolStripMenuItem.Name = "redressToolStripMenuItem";
             this.redressToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.redressToolStripMenuItem.Text = "Redress";
-            // 
-            // ProdPrice_txt
-            // 
-            this.ProdPrice_txt.Location = new System.Drawing.Point(170, 121);
-            this.ProdPrice_txt.Name = "ProdPrice_txt";
-            this.ProdPrice_txt.Size = new System.Drawing.Size(297, 23);
-            this.ProdPrice_txt.TabIndex = 41;
             // 
             // CustomerOverViewV1
             // 
@@ -1281,7 +1273,6 @@
         private System.Windows.Forms.ToolStripMenuItem cancelBillingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem overrideBillingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewBillingHistoryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changePolicyPriceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePolicyRenewalDateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem redressToolStripMenuItem;
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;

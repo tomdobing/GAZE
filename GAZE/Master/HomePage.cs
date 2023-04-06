@@ -34,7 +34,7 @@ namespace GAZE
         private void HomePage_Load(object sender, EventArgs e)
         {
             toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(configAdmin.GetConfigValue("Time Format"));
-            StartTimer();
+            //StartTimer();
             toolStripLabel2.Text = "Build:" + Application.ProductVersion.ToString();
             loginSecurity.GetLoggedinUserName(toolStripLabel3);
             if (roleManagement.DisableNonAdminControls() == false) 
@@ -42,6 +42,8 @@ namespace GAZE
                 adminToolStripMenuItem.Enabled = false;
 
             }
+            toolStripLabel4.ForeColor = System.Drawing.Color.Green;
+            toolStripLabel4.Text = "Database: Connected";
             //if (infoSec.isUserAdmin(InfoSec.GlobalUsername) == false)
             //{
             //    adminToolStripMenuItem.Enabled = false;
@@ -78,6 +80,9 @@ namespace GAZE
                 toolStripLabel4.ForeColor = System.Drawing.Color.Green;
                 toolStripLabel4.Text = "Database: Online";
             }
+
+
+
 
         }
 

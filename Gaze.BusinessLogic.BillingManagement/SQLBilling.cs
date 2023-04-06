@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Windows.Forms;
+using Gaze.BusinessLogic.Security;
 namespace Gaze.BusinessLogic.BillingManagement
 {
     public class SQLBilling
@@ -15,6 +16,7 @@ namespace Gaze.BusinessLogic.BillingManagement
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         private readonly MessageHandler messageHandler = new MessageHandler();
         private DateTime date = new DateTime();
+        public readonly Banking Banking = new Banking();
         // public SqlConnection scon = new SqlConnection(SQLConnectionString);
         #endregion
 
@@ -93,6 +95,74 @@ namespace Gaze.BusinessLogic.BillingManagement
             {
                 scon.Close();
             }
+
+        }
+
+        public void GetCurrentBillingDetails(KryptonTextBox AccoutnNumber, KryptonTextBox SortCode)
+        {
+        SqlConnection scon = new SqlConnection( SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMER_ACCOUNTNUMBER_AND_SORTCODE_SP", scon)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    AccoutnNumber.Text = sqlDataReader.GetString(0);
+                    SortCode.Text = sqlDataReader.GetString(1);
+                 }
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Whoops!!!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+
+
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+
+        }
+
+
+        public void UpdateBankingDetails()
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_CUSTOMER_ACCOUNTNUMBER_AND_SORTCODE_SP", scon)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@AccountNumber", Banking.accnum );
+                sqlCommand.Parameters.AddWithValue("@SortCode", Banking.sortcode);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                KryptonMessageBox.Show("Customers Banking Details successfully updated!", "Updated", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Whoops!!!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+
+
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+
+
+            
+
 
         }
 

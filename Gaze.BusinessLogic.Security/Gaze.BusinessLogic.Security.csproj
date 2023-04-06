@@ -65,6 +65,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Banking.cs" />
     <Compile Include="LoginFormSettings.cs" />
     <Compile Include="LoginSecurity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

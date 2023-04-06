@@ -65,6 +65,10 @@
       <Project>{c19908c8-7cb6-4888-9fb7-354076bb9acb}</Project>
       <Name>Gaze.BusinessLogic.Exceptions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Gaze.BusinessLogic.Security\Gaze.BusinessLogic.Security.csproj">
+      <Project>{73c7db54-40d2-4e7e-b198-0b33fe341152}</Project>
+      <Name>Gaze.BusinessLogic.Security</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gaze.BusinessLogic.SQLManagement\Gaze.BusinessLogic.SQLManagement.csproj">
       <Project>{652C3E19-E25A-4B29-85E6-185BDF63FB1A}</Project>
       <Name>Gaze.BusinessLogic.SQLManagement</Name>
