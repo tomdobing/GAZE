@@ -144,12 +144,6 @@
     <Compile Include="Customer\Billing\UpdateBankingDetails.Designer.cs">
       <DependentUpon>UpdateBankingDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\CustomerHistory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\CustomerHistory.Designer.cs">
-      <DependentUpon>CustomerHistory.cs</DependentUpon>
-    </Compile>
     <Compile Include="Customer\CustomerNotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,9 +229,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Billing\UpdateBankingDetails.resx">
       <DependentUpon>UpdateBankingDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\CustomerHistory.resx">
-      <DependentUpon>CustomerHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerNotes.resx">
       <DependentUpon>CustomerNotes.cs</DependentUpon>

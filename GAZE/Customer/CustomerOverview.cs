@@ -89,8 +89,7 @@ namespace GAZE.Customer
 
         private void customerDetailsHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CustomerHistory customerHistory = new CustomerHistory();
-            customerHistory.ShowDialog();
+    
         }
     }
 }
