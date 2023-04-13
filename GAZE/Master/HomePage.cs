@@ -34,7 +34,7 @@ namespace GAZE
         private void HomePage_Load(object sender, EventArgs e)
         {
             toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(configAdmin.GetConfigValue("Time Format"));
-            //StartTimer();
+            StartTimer();
             toolStripLabel2.Text = "Build:" + Application.ProductVersion.ToString();
             loginSecurity.GetLoggedinUserName(toolStripLabel3);
             if (roleManagement.DisableNonAdminControls() == false) 
@@ -70,20 +70,7 @@ namespace GAZE
         {
 
             toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(ConfigurationManager.AppSettings["DateFormat"]);
-            if (infoSec.CheckDBStatus() != true)
-            {
-                toolStripLabel4.ForeColor = System.Drawing.Color.Red;
-                toolStripLabel4.Text = "Database: Offline";
-            }
-            else
-            {
-                toolStripLabel4.ForeColor = System.Drawing.Color.Green;
-                toolStripLabel4.Text = "Database: Online";
-            }
-
-
-
-
+           
         }
 
         private void NewCustomerToolStripMenuItem_Click(object sender, EventArgs e)

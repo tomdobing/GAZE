@@ -10,6 +10,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using System.Messaging;
 
 namespace GAZE.Customer.Billing
 {
@@ -24,6 +25,7 @@ namespace GAZE.Customer.Billing
         HomePage HomePage = new HomePage();
         SQLBilling SQLBilling = new SQLBilling();
         Banking Banking = new Banking();
+        Gaze.BusinessLogic.BillingManagement.Validations Validations = new Gaze.BusinessLogic.BillingManagement.Validations();
         
         #endregion
 
@@ -91,6 +93,16 @@ namespace GAZE.Customer.Billing
             Banking.accnum = NewAccountNumber_txt.Text;
             Banking.sortcode = NewSortcode_txt.Text;
             Billing.BillingAgreement billingAgreement = new BillingAgreement();
+            if (Validations.ValidateBankAccountNumber(NewAccountNumber_txt) == false) 
+            {
+                KryptonMessageBox.Show("Invalid Bank Account Number", "Invalid-Data!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            if (Validations.ValidateSortCodeNumber(NewSortcode_txt) == false)
+            {
+                KryptonMessageBox.Show("Invalid Sort Code Entered", "Invalid-Data!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return; 
+            }
             billingAgreement.ShowDialog();
         }
     }
