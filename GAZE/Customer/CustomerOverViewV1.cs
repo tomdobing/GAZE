@@ -148,5 +148,11 @@ namespace GAZE.Customer
         {
 
         }
+
+        private void historyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustHistory custHistory = new CustHistory();
+            custHistory.ShowDialog();
+        }
     }
 }

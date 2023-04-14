@@ -144,6 +144,12 @@
     <Compile Include="Customer\Billing\UpdateBankingDetails.Designer.cs">
       <DependentUpon>UpdateBankingDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustHistory.Designer.cs">
+      <DependentUpon>CustHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerNotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     <EmbeddedResource Include="Customer\Billing\UpdateBankingDetails.resx">
       <DependentUpon>UpdateBankingDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustHistory.resx">
+      <DependentUpon>CustHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerNotes.resx">
       <DependentUpon>CustomerNotes.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,6 +301,10 @@
     <ProjectReference Include="..\Gaze.BusinessLogic.Config\Gaze.BusinessLogic.Config.csproj">
       <Project>{0b58bd9c-fcc3-4ea4-9453-334839379d93}</Project>
       <Name>Gaze.BusinessLogic.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gaze.BusinessLogic.CustomerManagement\Gaze.BusinessLogic.CustomerManagement.csproj">
+      <Project>{268061cc-df54-405b-8107-c6fef2c854b2}</Project>
+      <Name>Gaze.BusinessLogic.CustomerManagement</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gaze.BusinessLogic.Exceptions\Gaze.BusinessLogic.Exceptions.csproj">
       <Project>{c19908c8-7cb6-4888-9fb7-354076bb9acb}</Project>
