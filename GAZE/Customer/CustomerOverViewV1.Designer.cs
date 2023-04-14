@@ -134,6 +134,7 @@
             this.cancelBillingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.overrideBillingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewBillingHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminActionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePolicyRenewalDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -996,6 +997,7 @@
             this.customerToolStripMenuItem,
             this.policyToolStripMenuItem,
             this.billingToolStripMenuItem,
+            this.historyToolStripMenuItem,
             this.adminActionsToolStripMenuItem});
             this.PolMenStr.Location = new System.Drawing.Point(0, 0);
             this.PolMenStr.Name = "PolMenStr";
@@ -1140,6 +1142,14 @@
             this.viewBillingHistoryToolStripMenuItem.Name = "viewBillingHistoryToolStripMenuItem";
             this.viewBillingHistoryToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.viewBillingHistoryToolStripMenuItem.Text = "View Billing History";
+            this.viewBillingHistoryToolStripMenuItem.Click += new System.EventHandler(this.viewBillingHistoryToolStripMenuItem_Click);
+            // 
+            // historyToolStripMenuItem
+            // 
+            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.historyToolStripMenuItem.Text = "History";
+            this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
             // 
             // adminActionsToolStripMenuItem
             // 
@@ -1304,5 +1314,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel34;
         private Krypton.Toolkit.KryptonTextBox discount_txt;
         private Krypton.Toolkit.KryptonTextBox ProdPrice_txt;
+        private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
     }
 }

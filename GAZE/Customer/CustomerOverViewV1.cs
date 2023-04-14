@@ -143,5 +143,16 @@ namespace GAZE.Customer
             Billing.UpdateBankingDetails updateBankingDetails = new Billing.UpdateBankingDetails();
             updateBankingDetails.ShowDialog();
         }
+
+        private void viewBillingHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void historyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustHistory custHistory = new CustHistory();
+            custHistory.ShowDialog();
+        }
     }
 }

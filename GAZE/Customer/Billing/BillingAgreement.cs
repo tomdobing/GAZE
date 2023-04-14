@@ -1,6 +1,7 @@
 ﻿using Gaze.BusinessLogic.BillingManagement;
 using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.PolicyManagement;
+using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using Krypton.Toolkit;
 using System;
@@ -54,6 +55,8 @@ namespace GAZE.Customer.Billing
         {
             SQLBilling.UpdateBankingDetails();
             this.Close();
+            Banking.accnum = null;
+            Banking.sortcode = null;
             
         }
     }

@@ -4,24 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AA3D02B7-93DA-40C6-971C-0B646AFED045}</ProjectGuid>
+    <ProjectGuid>{268061CC-DF54-405B-8107-C6FEF2C854B2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gaze.BusinessLogic.BillingManagement</RootNamespace>
-    <AssemblyName>Gaze.BusinessLogic.BillingManagement</AssemblyName>
+    <RootNamespace>Gaze.BusinessLogic.CustomerManagement</RootNamespace>
+    <AssemblyName>Gaze.BusinessLogic.CustomerManagement</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <ShouldCreateLogs>True</ShouldCreateLogs>
-    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
-    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
-    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
-    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
-    <AssemblyVersionSettings>None.None.None.IncrementOnDemand</AssemblyVersionSettings>
-    <UpdatePackageVersion>False</UpdatePackageVersion>
-    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
-    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
-    <AssemblyFileVersionSettings>None.None.None.IncrementOnDemand</AssemblyFileVersionSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,18 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SQLBilling.cs" />
+    <Compile Include="CustomerHistory.cs" />
+    <Compile Include="CustomerLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validations.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gaze.BusinessLogic.Exceptions\Gaze.BusinessLogic.Exceptions.csproj">
-      <Project>{c19908c8-7cb6-4888-9fb7-354076bb9acb}</Project>
+      <Project>{C19908C8-7CB6-4888-9FB7-354076BB9ACB}</Project>
       <Name>Gaze.BusinessLogic.Exceptions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gaze.BusinessLogic.Security\Gaze.BusinessLogic.Security.csproj">
-      <Project>{73c7db54-40d2-4e7e-b198-0b33fe341152}</Project>
-      <Name>Gaze.BusinessLogic.Security</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gaze.BusinessLogic.SQLManagement\Gaze.BusinessLogic.SQLManagement.csproj">
       <Project>{652C3E19-E25A-4B29-85E6-185BDF63FB1A}</Project>
