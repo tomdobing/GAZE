@@ -1,5 +1,6 @@
 ﻿using Gaze.BusinessLogic.BillingManagement;
 using Gaze.BusinessLogic.Config;
+using Gaze.BusinessLogic.CustomerManagement;
 using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.SQLManagement;
 using Krypton.Toolkit;
@@ -21,6 +22,7 @@ namespace GAZE.Customer
         SQLManagement PolicySQLManagement = new SQLManagement();
         HomePage HomePage = new HomePage();
         SQLBilling SQLBilling = new SQLBilling();
+        CustCallBack CustCallBack = new CustCallBack();
         #endregion
         public CustomerOverViewV1()
         {
@@ -153,6 +155,18 @@ namespace GAZE.Customer
         {
             CustHistory custHistory = new CustHistory();
             custHistory.ShowDialog();
+        }
+
+        private void requestNewCallbackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (CustCallBack.CheckCustomerActiveCallBacks() == true)
+            {
+                KryptonMessageBox.Show("This customer already has an active callback.\n\nOnly one active call back is allowed per customer", 
+                    "Access Restricted", MessageBoxButtons.OK, KryptonMessageBoxIcon.Warning, 0, 0, false, false, false, false, null);
+                return;
+            }
+            Callback.RequestCallback requestCallback = new Callback.RequestCallback();
+            requestCallback.ShowDialog();
         }
     }
 }

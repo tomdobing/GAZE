@@ -138,6 +138,8 @@
             this.adminActionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePolicyRenewalDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.callbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.requestNewCallbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -995,6 +997,7 @@
             this.PolMenStr.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PolMenStr.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.customerToolStripMenuItem,
+            this.callbackToolStripMenuItem,
             this.policyToolStripMenuItem,
             this.billingToolStripMenuItem,
             this.historyToolStripMenuItem,
@@ -1172,6 +1175,21 @@
             this.redressToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.redressToolStripMenuItem.Text = "Redress";
             // 
+            // callbackToolStripMenuItem
+            // 
+            this.callbackToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.requestNewCallbackToolStripMenuItem});
+            this.callbackToolStripMenuItem.Name = "callbackToolStripMenuItem";
+            this.callbackToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.callbackToolStripMenuItem.Text = "Callback";
+            // 
+            // requestNewCallbackToolStripMenuItem
+            // 
+            this.requestNewCallbackToolStripMenuItem.Name = "requestNewCallbackToolStripMenuItem";
+            this.requestNewCallbackToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.requestNewCallbackToolStripMenuItem.Text = "Request New Callback";
+            this.requestNewCallbackToolStripMenuItem.Click += new System.EventHandler(this.requestNewCallbackToolStripMenuItem_Click);
+            // 
             // CustomerOverViewV1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1315,5 +1333,7 @@
         private Krypton.Toolkit.KryptonTextBox discount_txt;
         private Krypton.Toolkit.KryptonTextBox ProdPrice_txt;
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem callbackToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem requestNewCallbackToolStripMenuItem;
     }
 }

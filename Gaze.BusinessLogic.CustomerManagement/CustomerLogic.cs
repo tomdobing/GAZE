@@ -56,12 +56,9 @@ namespace Gaze.BusinessLogic.CustomerManagement
             {
                 scon.Close();
             }
-
-
-
-
-
         }
+
+        
 
         #endregion
 
