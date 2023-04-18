@@ -123,6 +123,10 @@
             this.updateOverviewNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.callbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.requestNewCallbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateCallbackDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelCallbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.policyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updatePolicyStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -138,8 +142,6 @@
             this.adminActionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePolicyRenewalDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.callbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.requestNewCallbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -1067,6 +1069,37 @@
             this.deleteNoteToolStripMenuItem.Text = "Delete Note";
             this.deleteNoteToolStripMenuItem.Click += new System.EventHandler(this.deleteNoteToolStripMenuItem_Click);
             // 
+            // callbackToolStripMenuItem
+            // 
+            this.callbackToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.requestNewCallbackToolStripMenuItem,
+            this.updateCallbackDateToolStripMenuItem,
+            this.cancelCallbackToolStripMenuItem});
+            this.callbackToolStripMenuItem.Name = "callbackToolStripMenuItem";
+            this.callbackToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.callbackToolStripMenuItem.Text = "Callback";
+            // 
+            // requestNewCallbackToolStripMenuItem
+            // 
+            this.requestNewCallbackToolStripMenuItem.Name = "requestNewCallbackToolStripMenuItem";
+            this.requestNewCallbackToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.requestNewCallbackToolStripMenuItem.Text = "Request New Callback";
+            this.requestNewCallbackToolStripMenuItem.Click += new System.EventHandler(this.requestNewCallbackToolStripMenuItem_Click);
+            // 
+            // updateCallbackDateToolStripMenuItem
+            // 
+            this.updateCallbackDateToolStripMenuItem.Name = "updateCallbackDateToolStripMenuItem";
+            this.updateCallbackDateToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.updateCallbackDateToolStripMenuItem.Text = "Update Callback Date";
+            this.updateCallbackDateToolStripMenuItem.Click += new System.EventHandler(this.updateCallbackDateToolStripMenuItem_Click);
+            // 
+            // cancelCallbackToolStripMenuItem
+            // 
+            this.cancelCallbackToolStripMenuItem.Name = "cancelCallbackToolStripMenuItem";
+            this.cancelCallbackToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.cancelCallbackToolStripMenuItem.Text = "Cancel Callback";
+            this.cancelCallbackToolStripMenuItem.Click += new System.EventHandler(this.cancelCallbackToolStripMenuItem_Click);
+            // 
             // policyToolStripMenuItem
             // 
             this.policyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1174,21 +1207,6 @@
             this.redressToolStripMenuItem.Name = "redressToolStripMenuItem";
             this.redressToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.redressToolStripMenuItem.Text = "Redress";
-            // 
-            // callbackToolStripMenuItem
-            // 
-            this.callbackToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.requestNewCallbackToolStripMenuItem});
-            this.callbackToolStripMenuItem.Name = "callbackToolStripMenuItem";
-            this.callbackToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.callbackToolStripMenuItem.Text = "Callback";
-            // 
-            // requestNewCallbackToolStripMenuItem
-            // 
-            this.requestNewCallbackToolStripMenuItem.Name = "requestNewCallbackToolStripMenuItem";
-            this.requestNewCallbackToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.requestNewCallbackToolStripMenuItem.Text = "Request New Callback";
-            this.requestNewCallbackToolStripMenuItem.Click += new System.EventHandler(this.requestNewCallbackToolStripMenuItem_Click);
             // 
             // CustomerOverViewV1
             // 
@@ -1335,5 +1353,7 @@
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem callbackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem requestNewCallbackToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateCallbackDateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cancelCallbackToolStripMenuItem;
     }
 }

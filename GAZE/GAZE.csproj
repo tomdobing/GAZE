@@ -150,6 +150,12 @@
     <Compile Include="Customer\Callback\RequestCallback.Designer.cs">
       <DependentUpon>RequestCallback.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\Callback\UpdateCallBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Callback\UpdateCallBack.Designer.cs">
+      <DependentUpon>UpdateCallBack.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Callback\RequestCallback.resx">
       <DependentUpon>RequestCallback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Callback\UpdateCallBack.resx">
+      <DependentUpon>UpdateCallBack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustHistory.resx">
       <DependentUpon>CustHistory.cs</DependentUpon>

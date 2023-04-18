@@ -1,4 +1,5 @@
 ﻿using Gaze.BusinessLogic.Config;
+using Gaze.BusinessLogic.CustomerManagement;
 using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
@@ -20,6 +21,7 @@ namespace GAZE
         ExceptionThrown ExceptionThrown = new ExceptionThrown();
         readonly MessageHandler messageHandler = new MessageHandler();
         readonly RoleManagement roleManagement = new RoleManagement();
+        CustCallBack CustCallBack = new CustCallBack();
         #endregion
 
         #region Methods
@@ -28,7 +30,7 @@ namespace GAZE
             InitializeComponent();
             GetFormSettings.SetFormSettings(this);
             GetFormSettings.ChangeableFormSettings(this, this.Name);
-
+            CustCallBack.GetCustomerCallbacksViaAgent(kryptonDataGridView1);
         }
 
         private void HomePage_Load(object sender, EventArgs e)

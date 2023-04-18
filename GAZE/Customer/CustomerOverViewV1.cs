@@ -3,6 +3,7 @@ using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.CustomerManagement;
 using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.SQLManagement;
+using GAZE.Customer.Callback;
 using Krypton.Toolkit;
 using MetroFramework.Controls;
 using System;
@@ -24,6 +25,8 @@ namespace GAZE.Customer
         SQLBilling SQLBilling = new SQLBilling();
         CustCallBack CustCallBack = new CustCallBack();
         #endregion
+
+        #region Methods
         public CustomerOverViewV1()
         {
             InitializeComponent();
@@ -43,6 +46,16 @@ namespace GAZE.Customer
                     item.PaletteMode = PaletteMode.SparklePurpleDarkMode;
                     item.ReadOnly = true;
                 }
+            }
+            if (CustCallBack.CheckCustomerActiveCallBacks() == false)
+            {
+                updateCallbackDateToolStripMenuItem.Enabled = false;
+                cancelCallbackToolStripMenuItem.Enabled = false;
+            }
+            else
+            {
+                updateCallbackDateToolStripMenuItem.Enabled = true;
+                cancelCallbackToolStripMenuItem.Enabled = true;
             }
 
         }
@@ -167,6 +180,28 @@ namespace GAZE.Customer
             }
             Callback.RequestCallback requestCallback = new Callback.RequestCallback();
             requestCallback.ShowDialog();
+        }
+
+        private void updateCallbackDateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateCallBack updateCallBack = new UpdateCallBack();
+            updateCallBack.ShowDialog();
+        }
+        #endregion
+
+        private void cancelCallbackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure you wish to cancel this customer's callback request? You will need to request a new call back!";
+            string caption = "Are you sure?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            result = KryptonMessageBox.Show(message, caption, MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, KryptonMessageBoxDefaultButton.Button3);
+            if (result == DialogResult.Yes)
+            {
+
+                CustCallBack.CancelCustomerCallBack();
+            }
         }
     }
 }
