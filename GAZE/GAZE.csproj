@@ -144,6 +144,18 @@
     <Compile Include="Customer\Billing\UpdateBankingDetails.Designer.cs">
       <DependentUpon>UpdateBankingDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\Callback\RequestCallback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Callback\RequestCallback.Designer.cs">
+      <DependentUpon>RequestCallback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Callback\UpdateCallBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Callback\UpdateCallBack.Designer.cs">
+      <DependentUpon>UpdateCallBack.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,10 +192,10 @@
     <Compile Include="Customer\CustomerUpdateStatus.Designer.cs">
       <DependentUpon>CustomerUpdateStatus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\NewCustomer.cs">
+    <Compile Include="Customer\NewCustomer\NewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\NewCustomer.Designer.cs">
+    <Compile Include="Customer\NewCustomer\NewCustomer.Designer.cs">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\NewCustomerNote.cs">
@@ -236,6 +248,12 @@
     <EmbeddedResource Include="Customer\Billing\UpdateBankingDetails.resx">
       <DependentUpon>UpdateBankingDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Callback\RequestCallback.resx">
+      <DependentUpon>RequestCallback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Callback\UpdateCallBack.resx">
+      <DependentUpon>UpdateCallBack.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustHistory.resx">
       <DependentUpon>CustHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,7 +272,7 @@
     <EmbeddedResource Include="Customer\CustomerUpdateStatus.resx">
       <DependentUpon>CustomerUpdateStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer\NewCustomer.resx">
+    <EmbeddedResource Include="Customer\NewCustomer\NewCustomer.resx">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\NewCustomerNote.resx">

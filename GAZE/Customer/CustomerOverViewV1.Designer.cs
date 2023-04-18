@@ -123,6 +123,10 @@
             this.updateOverviewNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.callbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.requestNewCallbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateCallbackDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelCallbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.policyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updatePolicyStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -995,6 +999,7 @@
             this.PolMenStr.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PolMenStr.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.customerToolStripMenuItem,
+            this.callbackToolStripMenuItem,
             this.policyToolStripMenuItem,
             this.billingToolStripMenuItem,
             this.historyToolStripMenuItem,
@@ -1063,6 +1068,37 @@
             this.deleteNoteToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.deleteNoteToolStripMenuItem.Text = "Delete Note";
             this.deleteNoteToolStripMenuItem.Click += new System.EventHandler(this.deleteNoteToolStripMenuItem_Click);
+            // 
+            // callbackToolStripMenuItem
+            // 
+            this.callbackToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.requestNewCallbackToolStripMenuItem,
+            this.updateCallbackDateToolStripMenuItem,
+            this.cancelCallbackToolStripMenuItem});
+            this.callbackToolStripMenuItem.Name = "callbackToolStripMenuItem";
+            this.callbackToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.callbackToolStripMenuItem.Text = "Callback";
+            // 
+            // requestNewCallbackToolStripMenuItem
+            // 
+            this.requestNewCallbackToolStripMenuItem.Name = "requestNewCallbackToolStripMenuItem";
+            this.requestNewCallbackToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.requestNewCallbackToolStripMenuItem.Text = "Request New Callback";
+            this.requestNewCallbackToolStripMenuItem.Click += new System.EventHandler(this.requestNewCallbackToolStripMenuItem_Click);
+            // 
+            // updateCallbackDateToolStripMenuItem
+            // 
+            this.updateCallbackDateToolStripMenuItem.Name = "updateCallbackDateToolStripMenuItem";
+            this.updateCallbackDateToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.updateCallbackDateToolStripMenuItem.Text = "Update Callback Date";
+            this.updateCallbackDateToolStripMenuItem.Click += new System.EventHandler(this.updateCallbackDateToolStripMenuItem_Click);
+            // 
+            // cancelCallbackToolStripMenuItem
+            // 
+            this.cancelCallbackToolStripMenuItem.Name = "cancelCallbackToolStripMenuItem";
+            this.cancelCallbackToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.cancelCallbackToolStripMenuItem.Text = "Cancel Callback";
+            this.cancelCallbackToolStripMenuItem.Click += new System.EventHandler(this.cancelCallbackToolStripMenuItem_Click);
             // 
             // policyToolStripMenuItem
             // 
@@ -1315,5 +1351,9 @@
         private Krypton.Toolkit.KryptonTextBox discount_txt;
         private Krypton.Toolkit.KryptonTextBox ProdPrice_txt;
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem callbackToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem requestNewCallbackToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateCallbackDateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cancelCallbackToolStripMenuItem;
     }
 }
