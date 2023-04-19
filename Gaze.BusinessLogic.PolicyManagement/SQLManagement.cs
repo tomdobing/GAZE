@@ -220,7 +220,52 @@ namespace Gaze.BusinessLogic.PolicyManagement
         }
 
         
+        public bool CheckCustomerAlreadyActiveProduct(KryptonTextBox ProductName)
+        {
 
+            using (SqlConnection connection = new SqlConnection(SQLConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand("dbo.SELECT_CUSTOMER_ACTIVE_PRODUCT_CHECK_SP", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                        command.Parameters.AddWithValue("@ProductName", ProductName.Text);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            if (reader.HasRows)
+                            {
+
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    KryptonMessageBox.Show(ex.Message, "Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                    return false;
+                }
+                finally
+                {
+
+                    connection.Close();
+
+                }
+
+            }
+
+
+        }
 
 
         #endregion

@@ -27,6 +27,7 @@ namespace GAZE.Policy
         SQLBilling SQLBilling = new SQLBilling();
         CustCallBack CustCallBack = new CustCallBack();
         ControlManagement ControlManagement = new ControlManagement();
+        ProductDetails ProductDetails = new ProductDetails();
         #endregion
 
         public NewCustomerPolicy()
@@ -36,11 +37,43 @@ namespace GAZE.Policy
             FormSettings.ChangeableFormSettings(this, "New Policy - CustomerID:" + InfoSec.GlobalCustomerID);
             this.Palette = HomePage.kryptonManager1.GlobalPalette;
             ControlManagement.PopulateProductName(kryptonComboBox1);
+            PolStarDate_dtp.Format = DateTimePickerFormat.Custom;
+            PolStarDate_dtp.CustomFormat = "yyyy/dd/MM hh:mm tt";
+            PolStarDate_dtp.Value = DateTime.Now;
+
         }
 
         private void NewCustomerPolicy_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void kryptonLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kryptonComboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            ProductDetails.GetProductDetailsFromCombo(kryptonComboBox1,ProdID_txt ,prodname_txt, proddesc_txt, prodstatus_txt, prodprice_txt, prodstartdate_txt, prodenddate_txt);
+        }
+
+        private void kryptonGroupBox2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            if (PolicySQLManagement.CheckCustomerAlreadyActiveProduct(prodname_txt) == true)
+            {
+                MessageBox.Show("This customer already has an active product1");
+            }
+            else
+            {
+                MessageBox.Show("No Active Products");
+            }
+            
         }
     }
 }
