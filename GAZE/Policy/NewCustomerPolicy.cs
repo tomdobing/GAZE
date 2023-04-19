@@ -67,13 +67,27 @@ namespace GAZE.Policy
         {
             if (PolicySQLManagement.CheckCustomerAlreadyActiveProduct(prodname_txt) == true)
             {
-                MessageBox.Show("This customer already has an active product1");
+
+                KryptonMessageBox.Show("No Product has been selected\n\n Please pick a valid product to enroll this Customers products",
+                    "Index Out Of Range", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
             }
-            else
+            if (kryptonComboBox1.SelectedIndex == -1)
             {
-                MessageBox.Show("No Active Products");
+                KryptonMessageBox.Show("No Product has been selected\n\n Please pick a valid product to enroll this Customers products",
+                    "Index Out Of Range", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
             }
-            
+            if (PolStarDate_dtp.Value == DateTime.MinValue)
+                
+            {
+                KryptonMessageBox.Show("An invalid start date has been selceted\n\n Please pick a valid Policy Start Date",
+                "Index Out Of Range", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+
+            }
+            PolicySQLManagement.CreateNewCustomerPolicy(prodname_txt, PolStarDate_dtp, this);
+
         }
     }
 }

@@ -267,6 +267,39 @@ namespace Gaze.BusinessLogic.PolicyManagement
 
         }
 
+        public void CreateNewCustomerPolicy(KryptonTextBox ProductName, KryptonDateTimePicker StartDate, KryptonForm form)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.INSERT_NEW_CUSTOMER_POLICY_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@ProductName", ProductName.Text);
+                sqlCommand.Parameters.AddWithValue("@StartDate", StartDate.Value);
+                sqlCommand.Parameters.AddWithValue("@Agent", InfoSec.GlobalUsername);
+                sqlCommand.ExecuteReader();
+                KryptonMessageBox.Show("Policy Created Successfully", "Policy Created", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
+                form.Close();
+
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Policy Creation Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+
+
+        }
+
 
         #endregion
 

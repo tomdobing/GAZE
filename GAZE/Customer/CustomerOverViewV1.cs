@@ -58,6 +58,11 @@ namespace GAZE.Customer
                 updateCallbackDateToolStripMenuItem.Enabled = true;
                 cancelCallbackToolStripMenuItem.Enabled = true;
             }
+            if (string.IsNullOrEmpty(kryptonTextBox1.Text))
+            {
+                updateOverviewNoteToolStripMenuItem.Enabled =false;
+                deleteNoteToolStripMenuItem.Enabled = false;
+            }
 
         }
 
