@@ -284,6 +284,14 @@ namespace Gaze.BusinessLogic.PolicyManagement
                 sqlCommand.ExecuteReader();
                 KryptonMessageBox.Show("Policy Created Successfully", "Policy Created", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
                 form.Close();
+                foreach (KryptonForm item in Application.OpenForms)
+                {
+                    if (item.Name == "CustomerOverViewV1")
+                    {
+                        item.Close();
+                        break;
+                    }
+                }
 
             }
             catch (Exception ex)
