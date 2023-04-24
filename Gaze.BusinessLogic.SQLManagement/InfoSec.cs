@@ -28,7 +28,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         /// <param name="username">The username of user</param>
         /// <param name="password">Password for users account</param>
         /// <returns></returns>
-        public bool UserLogin(KryptonTextBox username, KryptonTextBox password)
+        public bool UserLogin(KryptonTextBox username, string password)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
 
@@ -38,7 +38,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_USER_FOR_LOGIN", scon);
                 sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
                 sqlCommand.Parameters.AddWithValue("username", username.Text);
-                sqlCommand.Parameters.AddWithValue("password", password.Text);
+                sqlCommand.Parameters.AddWithValue("password", password);
                 SqlDataReader reader = sqlCommand.ExecuteReader();
 
                 if (reader.Read())

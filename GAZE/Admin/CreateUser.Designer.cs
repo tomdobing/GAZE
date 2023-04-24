@@ -37,8 +37,8 @@
             this.FName_txt = new MetroFramework.Controls.MetroTextBox();
             this.sName_txt = new MetroFramework.Controls.MetroTextBox();
             this.username_txt = new MetroFramework.Controls.MetroTextBox();
-            this.password_txt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.password_txt = new Krypton.Toolkit.KryptonTextBox();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -194,38 +194,6 @@
             this.username_txt.Click += new System.EventHandler(this.Username_txt_Click);
             this.username_txt.Enter += new System.EventHandler(this.Username_txt_Enter);
             // 
-            // password_txt
-            // 
-            // 
-            // 
-            // 
-            this.password_txt.CustomButton.Image = null;
-            this.password_txt.CustomButton.Location = new System.Drawing.Point(147, 1);
-            this.password_txt.CustomButton.Name = "";
-            this.password_txt.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.password_txt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.password_txt.CustomButton.TabIndex = 1;
-            this.password_txt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.password_txt.CustomButton.UseSelectable = true;
-            this.password_txt.CustomButton.Visible = false;
-            this.password_txt.Lines = new string[0];
-            this.password_txt.Location = new System.Drawing.Point(130, 103);
-            this.password_txt.MaxLength = 32767;
-            this.password_txt.Name = "password_txt";
-            this.password_txt.PasswordChar = '\0';
-            this.password_txt.PromptText = "Password";
-            this.password_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.password_txt.SelectedText = "";
-            this.password_txt.SelectionLength = 0;
-            this.password_txt.SelectionStart = 0;
-            this.password_txt.ShortcutsEnabled = true;
-            this.password_txt.Size = new System.Drawing.Size(169, 23);
-            this.password_txt.TabIndex = 9;
-            this.password_txt.UseSelectable = true;
-            this.password_txt.WaterMark = "Password";
-            this.password_txt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.password_txt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
@@ -235,6 +203,13 @@
             this.metroLabel4.TabIndex = 8;
             this.metroLabel4.Text = "Password";
             this.metroLabel4.UseCustomBackColor = true;
+            // 
+            // password_txt
+            // 
+            this.password_txt.Location = new System.Drawing.Point(130, 105);
+            this.password_txt.Name = "password_txt";
+            this.password_txt.Size = new System.Drawing.Size(169, 23);
+            this.password_txt.TabIndex = 9;
             // 
             // CreateUser
             // 
@@ -270,7 +245,7 @@
         private MetroFramework.Controls.MetroTextBox FName_txt;
         private MetroFramework.Controls.MetroTextBox sName_txt;
         private MetroFramework.Controls.MetroTextBox username_txt;
-        private MetroFramework.Controls.MetroTextBox password_txt;
         private MetroFramework.Controls.MetroLabel metroLabel4;
+        private Krypton.Toolkit.KryptonTextBox password_txt;
     }
 }

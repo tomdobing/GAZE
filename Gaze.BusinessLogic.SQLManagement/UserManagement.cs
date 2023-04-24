@@ -1,4 +1,5 @@
 ﻿using Gaze.BusinessLogic.Exceptions;
+using Krypton.Toolkit;
 using MetroFramework.Controls;
 using System;
 using System.Configuration;
@@ -27,10 +28,10 @@ namespace Gaze.BusinessLogic.SQLManagement
         /// <param name="Password">Password to be created</param>
         /// <param name="IsAdmin">Bool check box is admin</param>
         /// <param name="form">Current form</param>
-        public void CreateNewUser(MetroTextBox Firstname, MetroTextBox Surname, MetroTextBox Username, MetroTextBox Password, MetroCheckBox IsAdmin, Form form)
+        public void CreateNewUser(MetroTextBox Firstname, MetroTextBox Surname, MetroTextBox Username, string Password, MetroCheckBox IsAdmin, Form form)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
-            if (Firstname.Text == "" | Surname.Text == "" | Username.Text == "" | Password.Text == "")
+            if (Firstname.Text == "" | Surname.Text == "" | Username.Text == "" | Password == "")
             {
                 MessageBox.Show("You must complete all fields", "Data Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -46,7 +47,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                     sqlCommand.Parameters.AddWithValue("Firstname", Firstname.Text);
                     sqlCommand.Parameters.AddWithValue("Surname", Surname.Text);
                     sqlCommand.Parameters.AddWithValue("username", Username.Text);
-                    sqlCommand.Parameters.AddWithValue("password", Password.Text);
+                    sqlCommand.Parameters.AddWithValue("password", Password);
                     if (IsAdmin.CheckState == CheckState.Checked)
                     {
                         sqlCommand.Parameters.AddWithValue("ISAdmin", 1);

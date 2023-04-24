@@ -68,8 +68,9 @@ namespace GAZE.Policy
             if (PolicySQLManagement.CheckCustomerAlreadyActiveProduct(prodname_txt) == true)
             {
 
-                KryptonMessageBox.Show("No Product has been selected\n\n Please pick a valid product to enroll this Customers products",
-                    "Index Out Of Range", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                KryptonMessageBox.Show("Customer already has an active product" +
+                    "\n\n This customer already has an active product for Product " + prodname_txt.Text + " Please valid the product selected",
+                    "Active Product Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
                 return;
             }
             if (kryptonComboBox1.SelectedIndex == -1)
@@ -81,7 +82,7 @@ namespace GAZE.Policy
             if (PolStarDate_dtp.Value == DateTime.MinValue)
                 
             {
-                KryptonMessageBox.Show("An invalid start date has been selceted\n\n Please pick a valid Policy Start Date",
+                KryptonMessageBox.Show("An invalid start date has been selected\n\n Please pick a valid Policy Start Date",
                 "Index Out Of Range", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
                 return;
 
