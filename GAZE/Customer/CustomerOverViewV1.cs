@@ -4,6 +4,7 @@ using Gaze.BusinessLogic.CustomerManagement;
 using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.SQLManagement;
 using GAZE.Customer.Callback;
+using GAZE.Policy;
 using Krypton.Toolkit;
 using MetroFramework.Controls;
 using System;
@@ -56,6 +57,11 @@ namespace GAZE.Customer
             {
                 updateCallbackDateToolStripMenuItem.Enabled = true;
                 cancelCallbackToolStripMenuItem.Enabled = true;
+            }
+            if (string.IsNullOrEmpty(kryptonTextBox1.Text))
+            {
+                updateOverviewNoteToolStripMenuItem.Enabled =false;
+                deleteNoteToolStripMenuItem.Enabled = false;
             }
 
         }
@@ -202,6 +208,22 @@ namespace GAZE.Customer
 
                 CustCallBack.CancelCustomerCallBack();
             }
+        }
+
+        private void overrideBillingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void changePolicyRenewalDateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addNewPolicyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewCustomerPolicy newCustomerPolicy = new NewCustomerPolicy();
+            newCustomerPolicy.ShowDialog();
         }
     }
 }

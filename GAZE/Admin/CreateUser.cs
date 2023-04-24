@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.BusinessLogic.Config;
 using Krypton.Toolkit;
+using Gaze.BusinessLogic.Security;
 
 namespace GAZE.Admin
 {
@@ -18,6 +19,7 @@ namespace GAZE.Admin
         #region Declarations
         readonly FormSettings FormSettings = new FormSettings();
         readonly UserManagement userNamanegement = new UserManagement();
+        readonly Encryption encryption = new Encryption();
         #endregion
 
         #region Methods
@@ -31,7 +33,10 @@ namespace GAZE.Admin
 
         private void Addusr_txt_Click(object sender, EventArgs e)
         {
-            userNamanegement.CreateNewUser(FName_txt, sName_txt, username_txt, password_txt, admin_chk, this);
+            string pass = encryption.EncryptTextBoxValue(password_txt, password_txt.Text);
+            
+            userNamanegement.CreateNewUser(FName_txt, sName_txt, username_txt, pass, admin_chk, this);
+            
             
 
         }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Gaze.BusinessLogic.Exceptions;
 using System.Configuration;
+using System.Xml.Serialization;
+using Krypton.Toolkit;
 
 namespace Gaze.BusinessLogic.SQLManagement
 {
@@ -138,6 +140,34 @@ namespace Gaze.BusinessLogic.SQLManagement
                 scon.Close();
             }
         }
+
+        public void PopulateProductName (KryptonComboBox ProductName)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_PRODUCT_NAME_FOR_NEW_POLICY_SP", scon)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    ProductName.Items.Add(sqlDataReader[0].ToString());
+                }
+                
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
+        
         #endregion
     }
 }

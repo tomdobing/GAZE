@@ -136,8 +136,6 @@
             this.billingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editBillingDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelBillingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.overrideBillingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewBillingHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminActionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePolicyRenewalDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1117,6 +1115,7 @@
             this.addNewPolicyToolStripMenuItem.Name = "addNewPolicyToolStripMenuItem";
             this.addNewPolicyToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.addNewPolicyToolStripMenuItem.Text = "Add New Policy";
+            this.addNewPolicyToolStripMenuItem.Click += new System.EventHandler(this.addNewPolicyToolStripMenuItem_Click);
             // 
             // updatePolicyStatusToolStripMenuItem
             // 
@@ -1146,9 +1145,7 @@
             // 
             this.billingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editBillingDetailsToolStripMenuItem,
-            this.cancelBillingToolStripMenuItem,
-            this.overrideBillingToolStripMenuItem,
-            this.viewBillingHistoryToolStripMenuItem});
+            this.cancelBillingToolStripMenuItem});
             this.billingToolStripMenuItem.Name = "billingToolStripMenuItem";
             this.billingToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.billingToolStripMenuItem.Text = "Billing";
@@ -1166,19 +1163,6 @@
             this.cancelBillingToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.cancelBillingToolStripMenuItem.Text = "Cancel Billing ";
             this.cancelBillingToolStripMenuItem.Click += new System.EventHandler(this.cancelBillingToolStripMenuItem_Click);
-            // 
-            // overrideBillingToolStripMenuItem
-            // 
-            this.overrideBillingToolStripMenuItem.Name = "overrideBillingToolStripMenuItem";
-            this.overrideBillingToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.overrideBillingToolStripMenuItem.Text = "Override Billing";
-            // 
-            // viewBillingHistoryToolStripMenuItem
-            // 
-            this.viewBillingHistoryToolStripMenuItem.Name = "viewBillingHistoryToolStripMenuItem";
-            this.viewBillingHistoryToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.viewBillingHistoryToolStripMenuItem.Text = "View Billing History";
-            this.viewBillingHistoryToolStripMenuItem.Click += new System.EventHandler(this.viewBillingHistoryToolStripMenuItem_Click);
             // 
             // historyToolStripMenuItem
             // 
@@ -1201,6 +1185,7 @@
             this.changePolicyRenewalDateToolStripMenuItem.Name = "changePolicyRenewalDateToolStripMenuItem";
             this.changePolicyRenewalDateToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.changePolicyRenewalDateToolStripMenuItem.Text = "Change Policy Renewal Date";
+            this.changePolicyRenewalDateToolStripMenuItem.Click += new System.EventHandler(this.changePolicyRenewalDateToolStripMenuItem_Click);
             // 
             // redressToolStripMenuItem
             // 
@@ -1317,8 +1302,6 @@
         private System.Windows.Forms.ToolStripMenuItem addNewPolicyNoteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editBillingDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancelBillingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem overrideBillingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewBillingHistoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePolicyRenewalDateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem redressToolStripMenuItem;
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
