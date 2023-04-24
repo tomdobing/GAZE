@@ -1,5 +1,4 @@
-﻿using Gaze.BusinessLogic.Exceptions;
-using Gaze.BusinessLogic.Security;
+﻿using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.BusinessLogic.Startup;
 using Krypton.Toolkit;
@@ -15,8 +14,6 @@ namespace GAZE.Admin
         readonly PreLoginChecks PreLoginChecks = new PreLoginChecks();
         readonly InfoSec infoSec = new InfoSec();
         readonly LoginFormSettings formSettings = new LoginFormSettings();
-        readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
-        readonly MessageHandler MessageHandler = new MessageHandler();
         readonly Encryption encryption = new Encryption();
         #endregion
 
@@ -50,9 +47,6 @@ namespace GAZE.Admin
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
-            //string Pass = encryption.EncryptTextBoxValue(Pass_txt.Text.ToString());
-
-           // MessageBox.Show(encryption.EncryptTextBoxValue(Pass_txt, Pass_txt.Text));
             if (PreLoginChecks.CheckSQLServerIsOnline(SQLError_lbl) == true)
             {
                 if (infoSec.UserLogin(username_txt, encryption.EncryptTextBoxValue(Pass_txt, Pass_txt.Text)) == true)
@@ -60,12 +54,12 @@ namespace GAZE.Admin
                     HomePage master = new HomePage();
                     master.Show();
                     Close();
-                } 
+                }
                 else
                 {
                     KryptonMessageBox.Show(this, "Incorrect username/Password entered\n\nPlease check and try again",
                                             "Login Failed", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, KryptonMessageBoxDefaultButton.Button3, 0, false, false);
-                    //KryptonMessageBox.Show(message, caption, MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, KryptonMessageBoxDefaultButton.Button3);
+
 
                 }
             }
@@ -73,7 +67,7 @@ namespace GAZE.Admin
             {
 
             }
-     
+
         }
     }
 }
