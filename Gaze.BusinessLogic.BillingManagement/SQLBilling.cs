@@ -21,7 +21,19 @@ namespace Gaze.BusinessLogic.BillingManagement
         #endregion
 
         #region Methods
-
+        /// <summary>
+        /// Method that will return a customers billing overview
+        /// </summary>
+        /// <param name="BillingID"></param>
+        /// <param name="BillReference"></param>
+        /// <param name="BillingType"></param>
+        /// <param name="Frequency"></param>
+        /// <param name="YearlyTotal"></param>
+        /// <param name="MonthlyTotal"></param>
+        /// <param name="BillingStatus"></param>
+        /// <param name="AccountNumber"></param>
+        /// <param name="SortCode"></param>
+        /// <param name="NextBillingDate"></param>
         public void GetOverviewBillingDetails(KryptonTextBox BillingID, KryptonTextBox BillReference, KryptonTextBox BillingType, KryptonTextBox Frequency,
                                               KryptonTextBox YearlyTotal, KryptonTextBox MonthlyTotal,KryptonTextBox BillingStatus, 
                                               KryptonTextBox AccountNumber, KryptonTextBox SortCode, KryptonTextBox NextBillingDate)
@@ -68,7 +80,9 @@ namespace Gaze.BusinessLogic.BillingManagement
             }
 
         }
-
+        /// <summary>
+        /// Method will cancel a customers billing and cancel any associated policies - See Stored Procedure for intimate detaisl
+        /// </summary>
         public void CancelCustomerBilling()
         {
 
@@ -98,6 +112,12 @@ namespace Gaze.BusinessLogic.BillingManagement
 
         }
 
+
+        /// <summary>
+        /// Method used to retrieve Customers Account Number & Sort Code
+        /// </summary>
+        /// <param name="AccoutnNumber"></param>
+        /// <param name="SortCode"></param>
         public void GetCurrentBillingDetails(KryptonTextBox AccoutnNumber, KryptonTextBox SortCode)
         {
         SqlConnection scon = new SqlConnection( SQLConnectionString);
@@ -131,7 +151,9 @@ namespace Gaze.BusinessLogic.BillingManagement
 
         }
 
-
+        /// <summary>
+        /// Method to call a SP which will update the customers Account Number & Sort-Code
+        /// </summary>
         public void UpdateBankingDetails()
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);

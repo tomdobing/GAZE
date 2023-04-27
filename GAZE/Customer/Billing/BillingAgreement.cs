@@ -57,7 +57,14 @@ namespace GAZE.Customer.Billing
             this.Close();
             Banking.accnum = null;
             Banking.sortcode = null;
+
             
+        }
+
+        private void BillingAgreement_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CustomerOverViewV1 customerOverViewV1 = new CustomerOverViewV1();
+            customerOverViewV1.ExecuteCustomerLoad();
         }
     }
 }

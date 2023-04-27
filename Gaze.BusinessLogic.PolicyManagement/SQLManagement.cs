@@ -186,7 +186,7 @@ namespace Gaze.BusinessLogic.PolicyManagement
 
         }
 
-      
+
         public void InsertPolicyOverrideNote(KryptonTextBox OldPrice, KryptonTextBox NewPrice)
         {
 
@@ -204,7 +204,7 @@ namespace Gaze.BusinessLogic.PolicyManagement
                 sqlCommand.Parameters.AddWithValue("@NoteDetails", "Price Override from " + OldPrice.Text + " to " + NewPrice.Text);
                 sqlCommand.Parameters.AddWithValue("@CreatedBy", InfoSec.GlobalUsername);
                 sqlCommand.ExecuteReader();
-                
+
             }
             catch (Exception ex)
             {
@@ -219,7 +219,7 @@ namespace Gaze.BusinessLogic.PolicyManagement
 
         }
 
-        
+
         public bool CheckCustomerAlreadyActiveProduct(KryptonTextBox ProductName)
         {
 
@@ -308,6 +308,79 @@ namespace Gaze.BusinessLogic.PolicyManagement
 
         }
 
+        /// <summary>
+        /// Returns the current policy Status
+        /// </summary>
+        /// <param name="CurrentPolicyStatus"></param>
+        public void GetCurrentPolicyStatus(KryptonTextBox CurrentPolicyStatus)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMER_POLICY_STATUS_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalSelectedPolicyID);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    CurrentPolicyStatus.Text = sqlDataReader.GetString(0);
+                }
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+
+            finally
+            {
+                scon.Close();
+            }
+
+
+        }
+
+        public void UpdateCustomerPolicyStatus(KryptonComboBox CustomerPolicyStatus, KryptonForm form)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_CUSTOMER_POLICY_STATUS_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalSelectedPolicyID);
+                sqlCommand.Parameters.AddWithValue("@PolicyStatus", CustomerPolicyStatus.SelectedItem);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                KryptonMessageBox.Show("Policy Status has been updated to " + CustomerPolicyStatus.SelectedItem, "Policy Status Updated", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
+                form.Close();
+                foreach (KryptonForm item in Application.OpenForms)
+                {
+                    if (item.Name == "CustomerOverViewV1")
+                    {
+                        item.Close();
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show("There was an error trying to update the Policy Status\n\n" + ex.Message, "Policy Status Update Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                throw;
+                
+            }
+            finally 
+            {
+                scon.Close(); 
+            }
+
+
+        }
 
         #endregion
 

@@ -1,15 +1,11 @@
-﻿using MetroFramework.Controls;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Gaze.BusinessLogic.Exceptions;
-using System.Configuration;
-using System.Xml.Serialization;
+﻿using Gaze.BusinessLogic.Exceptions;
 using Krypton.Toolkit;
+using MetroFramework.Controls;
+using System;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Gaze.BusinessLogic.SQLManagement
 {
@@ -141,13 +137,13 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
         }
 
-        public void PopulateProductName (KryptonComboBox ProductName)
+        public void PopulateProductName(KryptonComboBox ProductName)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try
             {
                 scon.Open();
-                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_PRODUCT_NAME_FOR_NEW_POLICY_SP", scon)
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CONTROL_VALUES_PRODUCT_NAME_SP", scon)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
@@ -156,7 +152,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 {
                     ProductName.Items.Add(sqlDataReader[0].ToString());
                 }
-                
+
 
             }
             catch (Exception)
@@ -167,7 +163,36 @@ namespace Gaze.BusinessLogic.SQLManagement
 
 
         }
-        
+        /// <summary>
+        /// Control Method used to populate the Policy Status ComboBox
+        /// </summary>
+        /// <param name="Combobox"></param>
+        /// <exception cref="SqlException">SQL Exception returned upon error</exception>
+        public void PopulatePolicyStatus(KryptonComboBox Combobox)
+        {
+
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CONTROL_VALUES_POLICY_STATUS_SP", scon)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    Combobox.Items.Add(sqlDataReader[0].ToString());
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Failure to Populate " + Combobox.Name, MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                throw;
+            }
+        }
         #endregion
     }
 }

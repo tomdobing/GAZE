@@ -73,6 +73,7 @@
             this.Controls.Add(this.kryptonRichTextBox1);
             this.Name = "BillingAgreement";
             this.Text = "BillingAgreement";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BillingAgreement_FormClosing);
             this.Load += new System.EventHandler(this.BillingAgreement_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
