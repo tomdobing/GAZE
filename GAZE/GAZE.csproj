@@ -168,12 +168,6 @@
     <Compile Include="Customer\CustomerNotes.Designer.cs">
       <DependentUpon>CustomerNotes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\CustomerOverview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\CustomerOverview.Designer.cs">
-      <DependentUpon>CustomerOverview.cs</DependentUpon>
-    </Compile>
     <Compile Include="Customer\CustomerOverViewV1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,11 +192,17 @@
     <Compile Include="Customer\NewCustomer\NewCustomer.Designer.cs">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\NewCustomerNote.cs">
+    <Compile Include="Customer\Notes\NewNote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\NewCustomerNote.Designer.cs">
-      <DependentUpon>NewCustomerNote.cs</DependentUpon>
+    <Compile Include="Customer\Notes\NewNote.Designer.cs">
+      <DependentUpon>NewNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Notes\Notes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Notes\Notes.Designer.cs">
+      <DependentUpon>Notes.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\Policy\PolicyStatus.cs">
       <SubType>Form</SubType>
@@ -272,9 +272,6 @@
     <EmbeddedResource Include="Customer\CustomerNotes.resx">
       <DependentUpon>CustomerNotes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer\CustomerOverview.resx">
-      <DependentUpon>CustomerOverview.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerOverViewV1.resx">
       <DependentUpon>CustomerOverViewV1.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,8 +284,11 @@
     <EmbeddedResource Include="Customer\NewCustomer\NewCustomer.resx">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer\NewCustomerNote.resx">
-      <DependentUpon>NewCustomerNote.cs</DependentUpon>
+    <EmbeddedResource Include="Customer\Notes\NewNote.resx">
+      <DependentUpon>NewNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Notes\Notes.resx">
+      <DependentUpon>Notes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Policy\PolicyStatus.resx">
       <DependentUpon>PolicyStatus.cs</DependentUpon>

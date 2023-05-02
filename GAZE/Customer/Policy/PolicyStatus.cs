@@ -78,6 +78,18 @@ namespace GAZE.Customer.Policy
 
         private void kryptonButton2_Click(object sender, EventArgs e)
         {
+            if (CurrPolStatus_txt.Text == newPolStat_cmb.SelectedText)
+            {
+                KryptonMessageBox.Show("This customers Policy Status is already " + CurrPolStatus_txt.Text + "\n\nPlease try again",
+                   "Unable to set Status", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            if (newPolStat_cmb.SelectedIndex == -1)
+            {
+                KryptonMessageBox.Show("You have not selected a status to update.\n\nPlease check and try again",
+                 "Unable to set Status", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
             PolicySQLManagement.UpdateCustomerPolicyStatus(newPolStat_cmb, this);
         }
     }

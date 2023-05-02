@@ -5,6 +5,7 @@ using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using GAZE.Customer.Callback;
+using GAZE.Customer.Notes;
 using GAZE.Customer.Policy;
 using GAZE.Policy;
 using Krypton.Toolkit;
@@ -71,7 +72,8 @@ namespace GAZE.Customer
 
         private void CustomerOverViewV1_Load(object sender, EventArgs e)
         {
-            ExecuteCustomerLoad();
+           ExecuteCustomerLoad();
+           InfoSec.InsertFootPrint();
         }
 
         public void ExecuteCustomerLoad()
@@ -105,9 +107,6 @@ namespace GAZE.Customer
                 PolicySQLManagement.GetPolicyDataViaPolicyID(CustName_txt, CustTitle_txt, FName_txt, CSurname_txt, CDOB_txt, ContactNum_txt, AltCont_txt, EmailAddress_txt,
                 addrL1_txt, AddrL2_txt, Town_txt, postalcode_txt, country_txt, PolicyID_txt, PolStatus_lbl,DeactReas_txt, PolEffStart_txt, PolEndDate_txt ,ProdName_txt, ProdDesc_txt
                 , ProdPrice_txt, ProdActDate_txt,CustID_txt, ProdEndDate_txt, PolID_Txt, StatID_txt);
-
-
-
             }
             
         }
@@ -212,6 +211,18 @@ namespace GAZE.Customer
         {
             PolicyStatus policyStatus = new PolicyStatus();
             policyStatus.ShowDialog();
+        }
+
+        private void createNewNoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewNote newNote = new NewNote();
+            newNote.ShowDialog();
+        }
+
+        private void notesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Notes.Notes notes = new Notes.Notes(); 
+            notes.ShowDialog();
         }
     }
 }

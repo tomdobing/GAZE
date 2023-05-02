@@ -109,7 +109,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
         }
 
-        public void PopulateNoteCategory(MetroComboBox NoteCatergory)
+        public void PopulateNoteCategory(KryptonComboBox NoteCatergory)
         {
 
             SqlConnection scon = new SqlConnection(SQLConnectionString);
