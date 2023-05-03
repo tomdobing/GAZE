@@ -132,7 +132,7 @@ namespace Gaze.BusinessLogic.SQLManagement
             try
             {
                 scon.Open();
-                SqlCommand sqlCommand = new SqlCommand("dbo.INSERT_AUDIT_FOOTPRINT_SP", scon);
+                SqlCommand sqlCommand = new SqlCommand("[sec].[INSERT_AUDIT_FOOTPRINT_SP]", scon);
                 sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
                 sqlCommand.Parameters.AddWithValue("@Agent", InfoSec.GlobalUsername);
                 sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);

@@ -16,8 +16,9 @@ using System.Windows.Forms;
 
 namespace GAZE.Customer.Notes
 {
-    public partial class Notes : KryptonForm
+    public partial class CustNotes : KryptonForm
     {
+
         #region Declarations
         FormSettings FormSettings = new FormSettings();
         InfoSec InfoSec = new InfoSec();
@@ -29,20 +30,24 @@ namespace GAZE.Customer.Notes
         ControlManagement ControlManagement = new ControlManagement();
         NoteManagement NoteManagement = new NoteManagement();
         #endregion
-
-        public Notes()
+        public CustNotes()
         {
             InitializeComponent();
             FormSettings.ChangeableFormSettings(this, "Insert Note - CustomerID:" + InfoSec.GlobalCustomerID);
             FormSettings.SetFormSettings(this);
             this.Palette = HomePage.kryptonManager1.GlobalPalette;
-            
             NoteManagement.PopulateNoteTable(kryptonDataGridView1);
         }
 
-        private void Notes_Load(object sender, EventArgs e)
+        private void CustNotes_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            NewNote newNote = new NewNote();
+            newNote.ShowDialog();
         }
 
         private void kryptonButton2_Click(object sender, EventArgs e)
@@ -53,12 +58,6 @@ namespace GAZE.Customer.Notes
         private void kryptonButton3_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void kryptonButton1_Click(object sender, EventArgs e)
-        {
-            NewNote newNote = new NewNote();
-            newNote.ShowDialog();
         }
     }
 }

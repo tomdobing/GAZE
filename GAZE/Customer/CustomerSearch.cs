@@ -1,4 +1,5 @@
 ﻿using Gaze.BusinessLogic.Config;
+using Gaze.BusinessLogic.CustomerManagement;
 using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.SQLManagement;
@@ -15,6 +16,7 @@ namespace GAZE.Customer
         readonly CustomerManagement CustomerManagement = new CustomerManagement();
         readonly MessageHandler messageHandler = new MessageHandler();
         SQLManagement SQLManagement = new SQLManagement();
+        readonly CustomerLogic customerLogic = new CustomerLogic();
         HomePage HomePage = new HomePage();
         public CustomerSearch()
         {
@@ -82,6 +84,7 @@ namespace GAZE.Customer
 
         private void kryptonDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             try
             {
                 int selectedRowIndex = e.RowIndex;
@@ -93,6 +96,10 @@ namespace GAZE.Customer
 
                 int rowid = Convert.ToInt32(selectedRow.Cells["PolicyID"].Value);
                 InfoSec.GlobalSelectedPolicyID = rowid.ToString();
+                if (customerLogic.CheckForRestrictions() == true)
+                {
+                    return;
+                }
                 CustomerOverViewV1 customerOverViewV1 = new CustomerOverViewV1();
                 customerOverViewV1.ShowDialog();
 

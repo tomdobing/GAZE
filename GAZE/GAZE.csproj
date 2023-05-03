@@ -132,6 +132,18 @@
     <Compile Include="Config\ControlAdmin.Designer.cs">
       <DependentUpon>ControlAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\Notes\CustNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Notes\CustNotes.Designer.cs">
+      <DependentUpon>CustNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Secure\ViewFootPrints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Secure\ViewFootPrints.Designer.cs">
+      <DependentUpon>ViewFootPrints.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\Billing\BillingAgreement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,12 +210,6 @@
     <Compile Include="Customer\Notes\NewNote.Designer.cs">
       <DependentUpon>NewNote.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\Notes\Notes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\Notes\Notes.Designer.cs">
-      <DependentUpon>Notes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Customer\Policy\PolicyStatus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +260,12 @@
     <EmbeddedResource Include="Config\ControlAdmin.resx">
       <DependentUpon>ControlAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Notes\CustNotes.resx">
+      <DependentUpon>CustNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Secure\ViewFootPrints.resx">
+      <DependentUpon>ViewFootPrints.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\Billing\BillingAgreement.resx">
       <DependentUpon>BillingAgreement.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,9 +298,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Notes\NewNote.resx">
       <DependentUpon>NewNote.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\Notes\Notes.resx">
-      <DependentUpon>Notes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Policy\PolicyStatus.resx">
       <DependentUpon>PolicyStatus.cs</DependentUpon>

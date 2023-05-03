@@ -9,6 +9,7 @@ using Gaze.BusinessLogic.SQLManagement;
 using System.Windows.Forms;
 using Krypton.Toolkit;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace Gaze.BusinessLogic.CustomerManagement
 {
@@ -56,6 +57,56 @@ namespace Gaze.BusinessLogic.CustomerManagement
             {
                 scon.Close();
             }
+        }
+
+        public bool CheckForRestrictions([Optional] KryptonForm FormToManage)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("sec.SELECT_CUSTOMER_RESTRICTIONS_ACCESS_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    MessageBox.Show(sqlDataReader[0].ToString(), "Access Restricted", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    //FormToManage.Dispose();
+                    return true;
+                }
+                
+                //if (sqlDataReader.Read)
+                //{
+                //    MessageBox.Show(sqlDataReader[0].ToString(), "Access Restricted", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                //    FormToManage.Close();
+                //    return;
+                    
+                //}
+                //else
+                //{
+                //    return;
+                //}
+                
+                
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Failure to check for restrictions", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return true;
+
+            }
+            finally
+            {
+                
+                scon.Close();
+                
+            }
+            return false;
+
         }
 
         

@@ -107,7 +107,7 @@ namespace Gaze.BusinessLogic.CustomerManagement
                     CommandType = System.Data.CommandType.StoredProcedure
                 };
                 sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
-                sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalSelectedPolicyID);
                 sqlCommand.Parameters.AddWithValue("@NoteDescription", NoteDescription.SelectedItem);
                 sqlCommand.Parameters.AddWithValue("@NoteDetails", NoteDetails.Text);
                 sqlCommand.Parameters.AddWithValue("@CreatedBy", InfoSec.GlobalUsername);

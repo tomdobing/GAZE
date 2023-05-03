@@ -1,6 +1,6 @@
-﻿namespace GAZE.Customer.Notes
+﻿namespace GAZE.Customer.AdminControls
 {
-    partial class Notes
+    partial class ViewFootPrints
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,8 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
-            this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
             this.kryptonButton3 = new Krypton.Toolkit.KryptonButton();
+            this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -45,9 +44,9 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(818, 419);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Customer / Policy Notes";
+            this.groupBox1.Text = "Policy Foot Prints";
             // 
             // kryptonDataGridView1
             // 
@@ -57,49 +56,36 @@
             this.kryptonDataGridView1.Size = new System.Drawing.Size(812, 400);
             this.kryptonDataGridView1.TabIndex = 0;
             // 
-            // kryptonButton1
-            // 
-            this.kryptonButton1.CornerRoundingRadius = -1F;
-            this.kryptonButton1.Location = new System.Drawing.Point(3, 422);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(130, 25);
-            this.kryptonButton1.TabIndex = 1;
-            this.kryptonButton1.Values.Text = "Add Note";
-            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
-            // 
-            // kryptonButton2
-            // 
-            this.kryptonButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.kryptonButton2.CornerRoundingRadius = -1F;
-            this.kryptonButton2.Location = new System.Drawing.Point(698, 422);
-            this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(120, 25);
-            this.kryptonButton2.TabIndex = 2;
-            this.kryptonButton2.Values.Text = "Cancel";
-            this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click);
-            // 
             // kryptonButton3
             // 
             this.kryptonButton3.CornerRoundingRadius = -1F;
             this.kryptonButton3.Location = new System.Drawing.Point(572, 422);
             this.kryptonButton3.Name = "kryptonButton3";
             this.kryptonButton3.Size = new System.Drawing.Size(120, 25);
-            this.kryptonButton3.TabIndex = 3;
+            this.kryptonButton3.TabIndex = 6;
             this.kryptonButton3.Values.Text = "Ok";
-            this.kryptonButton3.Click += new System.EventHandler(this.kryptonButton3_Click);
             // 
-            // Notes
+            // kryptonButton2
+            // 
+            this.kryptonButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.kryptonButton2.CornerRoundingRadius = -1F;
+            this.kryptonButton2.Location = new System.Drawing.Point(695, 422);
+            this.kryptonButton2.Name = "kryptonButton2";
+            this.kryptonButton2.Size = new System.Drawing.Size(120, 25);
+            this.kryptonButton2.TabIndex = 5;
+            this.kryptonButton2.Values.Text = "Cancel";
+            // 
+            // ViewFootPrints
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 450);
             this.Controls.Add(this.kryptonButton3);
             this.Controls.Add(this.kryptonButton2);
-            this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Notes";
-            this.Text = "Notes";
-            this.Load += new System.EventHandler(this.Notes_Load);
+            this.Name = "ViewFootPrints";
+            this.Text = "ViewFootPrints";
+            this.Load += new System.EventHandler(this.ViewFootPrints_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -110,8 +96,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
-        private Krypton.Toolkit.KryptonButton kryptonButton2;
         private Krypton.Toolkit.KryptonButton kryptonButton3;
+        private Krypton.Toolkit.KryptonButton kryptonButton2;
     }
 }

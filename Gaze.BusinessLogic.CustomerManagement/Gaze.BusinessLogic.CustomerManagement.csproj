@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SecureConfig.cs" />
     <Compile Include="CustCallBack.cs" />
     <Compile Include="CustomerHistory.cs" />
     <Compile Include="CustomerLogic.cs" />

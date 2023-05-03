@@ -29,11 +29,13 @@ namespace GAZE.Customer
         SQLBilling SQLBilling = new SQLBilling();
         CustCallBack CustCallBack = new CustCallBack();
         RoleManagement RoleManagement = new RoleManagement();
+        CustomerLogic CustomerLogic = new CustomerLogic();
         #endregion
 
         #region Methods
         public CustomerOverViewV1()
         {
+            
             InitializeComponent();
             FormSettings.SetFormSettings(this);
             FormSettings.ChangeableFormSettings(this, "INDEV - Customer Overview - CustomerID:" + InfoSec.GlobalCustomerID);
@@ -72,6 +74,7 @@ namespace GAZE.Customer
 
         private void CustomerOverViewV1_Load(object sender, EventArgs e)
         {
+            
            ExecuteCustomerLoad();
            InfoSec.InsertFootPrint();
         }
@@ -221,8 +224,8 @@ namespace GAZE.Customer
 
         private void notesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Notes.Notes notes = new Notes.Notes(); 
-            notes.ShowDialog();
+            CustNotes custNotes = new CustNotes();
+            custNotes.ShowDialog();
         }
     }
 }
