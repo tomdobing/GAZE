@@ -1,4 +1,5 @@
 ﻿using Gaze.BusinessLogic.Config;
+using Gaze.BusinessLogic.CustomerManagement;
 using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.SQLManagement;
@@ -15,13 +16,15 @@ namespace GAZE.Customer
         readonly CustomerManagement CustomerManagement = new CustomerManagement();
         readonly MessageHandler messageHandler = new MessageHandler();
         SQLManagement SQLManagement = new SQLManagement();
+        readonly CustomerLogic customerLogic = new CustomerLogic();
         HomePage HomePage = new HomePage();
         public CustomerSearch()
         {
             InitializeComponent();
             FormSettings.SetFormSettings(this);
             FormSettings.ChangeableFormSettings(this, Name);
-
+            
+            
         }
 
 
@@ -35,13 +38,11 @@ namespace GAZE.Customer
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
-            CustomerOverview customerOverview = new CustomerOverview();
-            customerOverview.ShowDialog();
         }
 
         private void CustomerSearch_Load_1(object sender, EventArgs e)
         {
-            searchPolID_txt.Focus();
+            this.ActiveControl = searchPolID_txt;
 
             //SearchNum_txt.Enabled = false;
         }
@@ -84,6 +85,7 @@ namespace GAZE.Customer
 
         private void kryptonDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             try
             {
                 int selectedRowIndex = e.RowIndex;
@@ -95,6 +97,11 @@ namespace GAZE.Customer
 
                 int rowid = Convert.ToInt32(selectedRow.Cells["PolicyID"].Value);
                 InfoSec.GlobalSelectedPolicyID = rowid.ToString();
+                if (customerLogic.CheckForAccountAccessRestrictions() == true)
+                {
+                    searchPolID_txt.Focus();
+                    return;
+                }
                 CustomerOverViewV1 customerOverViewV1 = new CustomerOverViewV1();
                 customerOverViewV1.ShowDialog();
 

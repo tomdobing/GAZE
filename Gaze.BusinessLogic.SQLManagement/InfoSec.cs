@@ -4,6 +4,8 @@ using System;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+
 namespace Gaze.BusinessLogic.SQLManagement
 {
 
@@ -122,7 +124,32 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
         }
 
+        public void InsertFootPrint()
+        {
 
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("[sec].[INSERT_AUDIT_FOOTPRINT_SP]", scon);
+                sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                sqlCommand.Parameters.AddWithValue("@Agent", InfoSec.GlobalUsername);
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+        }
 
         #endregion
 

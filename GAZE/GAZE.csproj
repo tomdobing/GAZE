@@ -132,6 +132,18 @@
     <Compile Include="Config\ControlAdmin.Designer.cs">
       <DependentUpon>ControlAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\Notes\CustNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Notes\CustNotes.Designer.cs">
+      <DependentUpon>CustNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Secure\ViewFootPrints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Secure\ViewFootPrints.Designer.cs">
+      <DependentUpon>ViewFootPrints.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\Billing\BillingAgreement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,12 +180,6 @@
     <Compile Include="Customer\CustomerNotes.Designer.cs">
       <DependentUpon>CustomerNotes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\CustomerOverview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\CustomerOverview.Designer.cs">
-      <DependentUpon>CustomerOverview.cs</DependentUpon>
-    </Compile>
     <Compile Include="Customer\CustomerOverViewV1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,11 +204,17 @@
     <Compile Include="Customer\NewCustomer\NewCustomer.Designer.cs">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer\NewCustomerNote.cs">
+    <Compile Include="Customer\Notes\NewNote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\NewCustomerNote.Designer.cs">
-      <DependentUpon>NewCustomerNote.cs</DependentUpon>
+    <Compile Include="Customer\Notes\NewNote.Designer.cs">
+      <DependentUpon>NewNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Policy\PolicyStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Policy\PolicyStatus.Designer.cs">
+      <DependentUpon>PolicyStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\UpdateCustomerDetails.cs">
       <SubType>Form</SubType>
@@ -248,6 +260,12 @@
     <EmbeddedResource Include="Config\ControlAdmin.resx">
       <DependentUpon>ControlAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Notes\CustNotes.resx">
+      <DependentUpon>CustNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Secure\ViewFootPrints.resx">
+      <DependentUpon>ViewFootPrints.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\Billing\BillingAgreement.resx">
       <DependentUpon>BillingAgreement.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,9 +284,6 @@
     <EmbeddedResource Include="Customer\CustomerNotes.resx">
       <DependentUpon>CustomerNotes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer\CustomerOverview.resx">
-      <DependentUpon>CustomerOverview.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerOverViewV1.resx">
       <DependentUpon>CustomerOverViewV1.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,8 +296,11 @@
     <EmbeddedResource Include="Customer\NewCustomer\NewCustomer.resx">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer\NewCustomerNote.resx">
-      <DependentUpon>NewCustomerNote.cs</DependentUpon>
+    <EmbeddedResource Include="Customer\Notes\NewNote.resx">
+      <DependentUpon>NewNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Policy\PolicyStatus.resx">
+      <DependentUpon>PolicyStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\UpdateCustomerDetails.resx">
       <DependentUpon>UpdateCustomerDetails.cs</DependentUpon>
