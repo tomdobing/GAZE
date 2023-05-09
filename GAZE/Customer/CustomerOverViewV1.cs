@@ -11,7 +11,6 @@ using GAZE.Policy;
 using Krypton.Toolkit;
 using MetroFramework.Controls;
 using System;
-using System.ComponentModel;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -35,7 +34,7 @@ namespace GAZE.Customer
         #region Methods
         public CustomerOverViewV1()
         {
-            
+
             InitializeComponent();
             FormSettings.SetFormSettings(this);
             FormSettings.ChangeableFormSettings(this, "INDEV - Customer Overview - CustomerID:" + InfoSec.GlobalCustomerID);
@@ -66,7 +65,7 @@ namespace GAZE.Customer
             }
             if (string.IsNullOrEmpty(kryptonTextBox1.Text))
             {
-                updateOverviewNoteToolStripMenuItem.Enabled =false;
+                updateOverviewNoteToolStripMenuItem.Enabled = false;
                 deleteNoteToolStripMenuItem.Enabled = false;
             }
 
@@ -74,9 +73,9 @@ namespace GAZE.Customer
 
         private void CustomerOverViewV1_Load(object sender, EventArgs e)
         {
-            
-           ExecuteCustomerLoad();
-           InfoSec.InsertFootPrint();
+
+            ExecuteCustomerLoad();
+            InfoSec.InsertFootPrint();
         }
 
         public void ExecuteCustomerLoad()
@@ -101,17 +100,17 @@ namespace GAZE.Customer
 
         private void metroGrid1_SelectionChanged(object sender, EventArgs e)
         {
-            
+
             if (metroGrid1.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = metroGrid1.SelectedRows[0];
                 string PolicyID = selectedRow.Cells["PolicyID"].Value.ToString();
                 InfoSec.GlobalSelectedPolicyID = PolicyID;
                 PolicySQLManagement.GetPolicyDataViaPolicyID(CustName_txt, CustTitle_txt, FName_txt, CSurname_txt, CDOB_txt, ContactNum_txt, AltCont_txt, EmailAddress_txt,
-                addrL1_txt, AddrL2_txt, Town_txt, postalcode_txt, country_txt, PolicyID_txt, PolStatus_lbl,DeactReas_txt, PolEffStart_txt, PolEndDate_txt ,ProdName_txt, ProdDesc_txt
-                , ProdPrice_txt, ProdActDate_txt,CustID_txt, ProdEndDate_txt, PolID_Txt, StatID_txt);
+                addrL1_txt, AddrL2_txt, Town_txt, postalcode_txt, country_txt, PolicyID_txt, PolStatus_lbl, DeactReas_txt, PolEffStart_txt, PolEndDate_txt, ProdName_txt, ProdDesc_txt
+                , ProdPrice_txt, ProdActDate_txt, CustID_txt, ProdEndDate_txt, PolID_Txt, StatID_txt);
             }
-            
+
         }
 
 
@@ -120,7 +119,6 @@ namespace GAZE.Customer
 
             string message = "Are you sure you wish to delete this Customers overview note?";
             string caption = "Are you sure?";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
             result = KryptonMessageBox.Show(message, caption, MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, KryptonMessageBoxDefaultButton.Button3);
@@ -142,7 +140,7 @@ namespace GAZE.Customer
             string message = "Are you sure you wish to cancel this customers Billing Account? \n\nThe Customer will need to provide their banking information" +
                 " again in order to reactivate and continue with their product!";
             string caption = "Are you sure?";
-            
+
             DialogResult result;
 
             result = KryptonMessageBox.Show(message, caption, MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, KryptonMessageBoxDefaultButton.Button3);
@@ -173,7 +171,7 @@ namespace GAZE.Customer
         {
             if (CustCallBack.CheckCustomerActiveCallBacks() == true)
             {
-                KryptonMessageBox.Show("This customer already has an active callback.\n\nOnly one active call back is allowed per customer", 
+                KryptonMessageBox.Show("This customer already has an active callback.\n\nOnly one active call back is allowed per customer",
                     "Access Restricted", MessageBoxButtons.OK, KryptonMessageBoxIcon.Warning, 0, 0, false, false, false, false, null);
                 return;
             }
@@ -192,7 +190,6 @@ namespace GAZE.Customer
         {
             string message = "Are you sure you wish to cancel this customer's callback request? You will need to request a new call back!";
             string caption = "Are you sure?";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
             result = KryptonMessageBox.Show(message, caption, MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, KryptonMessageBoxDefaultButton.Button3);
@@ -226,6 +223,23 @@ namespace GAZE.Customer
         {
             CustNotes custNotes = new CustNotes();
             custNotes.ShowDialog();
+        }
+
+        private void lockCustomerPolicyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "You are about to restrict this customers policy. Are you sure you wish to continue?" + "\n\nRestricting this customers" +
+                " Policy will prevent any access to this policy including reading of notes or billing. By Restricting a customers Policy this will also " +
+                "cancel the billing and any associated policies. \n\nPlease advise the customer that if they require the account unrestricting they will need to" +
+                "register for a new policy.";
+            string caption = "Are you sure?";
+            DialogResult result;
+
+            result = KryptonMessageBox.Show(message, caption, MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Warning, KryptonMessageBoxDefaultButton.Button3);
+            if (result == DialogResult.Yes)
+            {
+                CustomerLogic.RestrictCustomerAccount(this);
+
+            }
         }
     }
 }

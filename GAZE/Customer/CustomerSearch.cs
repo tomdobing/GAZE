@@ -23,7 +23,8 @@ namespace GAZE.Customer
             InitializeComponent();
             FormSettings.SetFormSettings(this);
             FormSettings.ChangeableFormSettings(this, Name);
-
+            
+            
         }
 
 
@@ -41,7 +42,7 @@ namespace GAZE.Customer
 
         private void CustomerSearch_Load_1(object sender, EventArgs e)
         {
-            searchPolID_txt.Focus();
+            this.ActiveControl = searchPolID_txt;
 
             //SearchNum_txt.Enabled = false;
         }
@@ -96,8 +97,9 @@ namespace GAZE.Customer
 
                 int rowid = Convert.ToInt32(selectedRow.Cells["PolicyID"].Value);
                 InfoSec.GlobalSelectedPolicyID = rowid.ToString();
-                if (customerLogic.CheckForRestrictions() == true)
+                if (customerLogic.CheckForAccountAccessRestrictions() == true)
                 {
+                    searchPolID_txt.Focus();
                     return;
                 }
                 CustomerOverViewV1 customerOverViewV1 = new CustomerOverViewV1();
