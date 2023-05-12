@@ -5,6 +5,7 @@ using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using GAZE.Customer.Callback;
+using GAZE.Customer.Documents;
 using GAZE.Customer.Notes;
 using GAZE.Customer.Policy;
 using GAZE.Policy;
@@ -27,7 +28,6 @@ namespace GAZE.Customer
         HomePage HomePage = new HomePage();
         SQLBilling SQLBilling = new SQLBilling();
         CustCallBack CustCallBack = new CustCallBack();
-        RoleManagement RoleManagement = new RoleManagement();
         CustomerLogic CustomerLogic = new CustomerLogic();
         #endregion
 
@@ -39,7 +39,7 @@ namespace GAZE.Customer
             FormSettings.SetFormSettings(this);
             FormSettings.ChangeableFormSettings(this, "INDEV - Customer Overview - CustomerID:" + InfoSec.GlobalCustomerID);
             this.Palette = HomePage.kryptonManager1.GlobalPalette;
-            //RoleManagement.RestrictedControls(this, "admin");
+            
             foreach (MetroTabPage tab in metroTabControl1.TabPages)
             {
                 foreach (KryptonTextBox control1 in tab.Controls.OfType<KryptonTextBox>())
@@ -124,7 +124,7 @@ namespace GAZE.Customer
             result = KryptonMessageBox.Show(message, caption, MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, KryptonMessageBoxDefaultButton.Button3);
             if (result == DialogResult.Yes)
             {
-                CustomerManagement.RemoveOverviewNote();
+                CustomerManagement.RemoveOverviewNote(); 
                 ExecuteCustomerLoad();
                 //Application.Exit();
             }
@@ -184,7 +184,7 @@ namespace GAZE.Customer
             UpdateCallBack updateCallBack = new UpdateCallBack();
             updateCallBack.ShowDialog();
         }
-        #endregion
+     
 
         private void cancelCallbackToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -241,5 +241,22 @@ namespace GAZE.Customer
 
             }
         }
+
+        private void documentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomerDocuments customerDocuments = new CustomerDocuments();
+            customerDocuments.ShowDialog();
+        }
+
+
+
+
+
+
+
+
+        #endregion
+
+
     }
 }

@@ -98,7 +98,7 @@
             this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.groupBox1);
             this.Name = "CustNotes";
-            this.Text = "CustNotes";
+            this.Text = "OK";
             this.Load += new System.EventHandler(this.CustNotes_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();

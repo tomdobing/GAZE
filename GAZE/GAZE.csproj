@@ -132,6 +132,12 @@
     <Compile Include="Config\ControlAdmin.Designer.cs">
       <DependentUpon>ControlAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\Documents\CustomerDocuments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Documents\CustomerDocuments.Designer.cs">
+      <DependentUpon>CustomerDocuments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\Notes\CustNotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     <EmbeddedResource Include="Config\ControlAdmin.resx">
       <DependentUpon>ControlAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Documents\CustomerDocuments.resx">
+      <DependentUpon>CustomerDocuments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\Notes\CustNotes.resx">
       <DependentUpon>CustNotes.cs</DependentUpon>
     </EmbeddedResource>
@@ -350,6 +359,10 @@
     <ProjectReference Include="..\Gaze.BusinessLogic.CustomerManagement\Gaze.BusinessLogic.CustomerManagement.csproj">
       <Project>{268061cc-df54-405b-8107-c6fef2c854b2}</Project>
       <Name>Gaze.BusinessLogic.CustomerManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GAZE.BusinessLogic.DocumentManagement\Gaze.BusinessLogic.DocumentManagement.csproj">
+      <Project>{922cb168-7789-46fd-b400-a9dadb89e4a8}</Project>
+      <Name>Gaze.BusinessLogic.DocumentManagement</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gaze.BusinessLogic.Exceptions\Gaze.BusinessLogic.Exceptions.csproj">
       <Project>{c19908c8-7cb6-4888-9fb7-354076bb9acb}</Project>
