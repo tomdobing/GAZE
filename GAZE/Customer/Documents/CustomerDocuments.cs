@@ -3,9 +3,10 @@ using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.CustomerManagement;
 using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.SQLManagement;
+using GAZE.BusinessLogic.DocumentManagement;
 using Krypton.Toolkit;
 using System;
-using GAZE.BusinessLogic.DocumentManagement;
+using System.IO;
 using System.Windows.Forms;
 
 namespace GAZE.Customer.Documents
@@ -23,6 +24,7 @@ namespace GAZE.Customer.Documents
         ControlManagement ControlManagement = new ControlManagement();
         NoteManagement NoteManagement = new NoteManagement();
         DocumentRetrieval DocumentRetrieval = new DocumentRetrieval();
+        DocumentConfiguration DocumentConfiguration = new DocumentConfiguration();
         #endregion
 
         public CustomerDocuments()
@@ -32,6 +34,9 @@ namespace GAZE.Customer.Documents
             FormSettings.SetFormSettings(this);
             this.Palette = HomePage.kryptonManager1.GlobalPalette;
             kryptonHeader1.Values.Description = "CustomerID: " + InfoSec.GlobalCustomerID;
+            DocumentRetrieval.PopulateAcceptedFileTypes();
+
+
         }
 
         private void CustomerDocuments_Load(object sender, EventArgs e)
@@ -39,7 +44,7 @@ namespace GAZE.Customer.Documents
             DocumentRetrieval.GetCustomerDocuments(kryptonDataGridView1);
         }
 
-        
+
         private void kryptonButton2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -56,7 +61,46 @@ namespace GAZE.Customer.Documents
             DataGridViewRow selectedRow = kryptonDataGridView1.Rows[selectedRowIndex];
 
             int rowID = Convert.ToInt32(selectedRow.Cells["DocumentID"].Value);
-            DocumentRetrieval.ValidateFilePath(rowID);
+            DocumentRetrieval.OpenCustomerDocument("", rowID);
+        }
+
+        private void kryptonButton3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = "C:\\";
+            openFileDialog.Filter = "All Files (*.*)|*.*";
+            if (openFileDialog.ShowDialog() != DialogResult.OK)
+            {
+               MessageBox.Show("Error");
+                return;
+            }
+           
+            string filepath = openFileDialog.FileName;
+            long filesize = new FileInfo(openFileDialog.FileName).Length;
+            string newfilepath = @"C:\Temp\GAZE\Documents\" + Path.GetFileName(filepath);
+            DocumentRetrieval.UploadCustomerDocument(GetFileType(Path.GetExtension(filepath)),
+            Path.GetFileName(filepath), newfilepath, ConvertBytesToMB(filesize).ToString("0.00") + "MB", filepath);
+            
+
+        }
+        public string GetFileType(string filePath)
+        {
+            if (string.IsNullOrEmpty(filePath))
+            {
+                return string.Empty;
+            }
+
+            string extension = Path.GetExtension(filePath);
+            return !string.IsNullOrEmpty(extension) ? extension.TrimStart('.') : string.Empty;
+        }
+        public double ConvertBytesToMB(long bytes)
+        {
+            return (double)bytes / (1024 * 1024);
+        }
+
+        private void CustomerDocuments_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DocumentRetrieval.AcceptedFileTypes = null;
         }
     }
 }

@@ -33,6 +33,7 @@
             this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
             this.kryptonButton3 = new Krypton.Toolkit.KryptonButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,9 +49,11 @@
             // 
             // kryptonDataGridView1
             // 
+            this.kryptonDataGridView1.ColumnHeadersHeight = 51;
             this.kryptonDataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonDataGridView1.Location = new System.Drawing.Point(0, 31);
             this.kryptonDataGridView1.Name = "kryptonDataGridView1";
+            this.kryptonDataGridView1.RowHeadersWidth = 62;
             this.kryptonDataGridView1.Size = new System.Drawing.Size(818, 384);
             this.kryptonDataGridView1.TabIndex = 3;
             this.kryptonDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kryptonDataGridView1_CellDoubleClick);
@@ -83,6 +86,11 @@
             this.kryptonButton3.Size = new System.Drawing.Size(130, 25);
             this.kryptonButton3.TabIndex = 6;
             this.kryptonButton3.Values.Text = "Add New Document";
+            this.kryptonButton3.Click += new System.EventHandler(this.kryptonButton3_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // CustomerDocuments
             // 
@@ -96,6 +104,7 @@
             this.Controls.Add(this.kryptonHeader1);
             this.Name = "CustomerDocuments";
             this.Text = "CustomerDocuments";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerDocuments_FormClosing);
             this.Load += new System.EventHandler(this.CustomerDocuments_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -109,5 +118,6 @@
         private Krypton.Toolkit.KryptonButton kryptonButton1;
         private Krypton.Toolkit.KryptonButton kryptonButton2;
         private Krypton.Toolkit.KryptonButton kryptonButton3;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

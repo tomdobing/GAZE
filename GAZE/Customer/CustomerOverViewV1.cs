@@ -8,6 +8,7 @@ using GAZE.Customer.Callback;
 using GAZE.Customer.Documents;
 using GAZE.Customer.Notes;
 using GAZE.Customer.Policy;
+using GAZE.Help;
 using GAZE.Policy;
 using Krypton.Toolkit;
 using MetroFramework.Controls;
@@ -255,8 +256,13 @@ namespace GAZE.Customer
 
 
 
+
         #endregion
 
-
+        private void acceptedFileTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AcceptedFileTypes acceptedFileTypes = new AcceptedFileTypes();
+            acceptedFileTypes.ShowDialog();
+        }
     }
 }
