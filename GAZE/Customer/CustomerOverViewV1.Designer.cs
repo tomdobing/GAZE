@@ -134,15 +134,15 @@
             this.updateNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uploadNewDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewDocumentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.policyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updatePolicyStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewFullPolicyDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kryptonCommand1 = new Krypton.Toolkit.KryptonCommand();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acceptedFileTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -998,14 +998,15 @@
             // 
             this.PolMenStr.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PolMenStr.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adminActionsToolStripMenuItem,
-            this.billingToolStripMenuItem,
-            this.callbackToolStripMenuItem,
             this.customerToolStripMenuItem,
-            this.documentsToolStripMenuItem,
-            this.historyToolStripMenuItem,
+            this.policyToolStripMenuItem,
             this.notesToolStripMenuItem,
-            this.policyToolStripMenuItem});
+            this.billingToolStripMenuItem,
+            this.documentsToolStripMenuItem,
+            this.callbackToolStripMenuItem,
+            this.historyToolStripMenuItem,
+            this.adminActionsToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.PolMenStr.Location = new System.Drawing.Point(0, 0);
             this.PolMenStr.Name = "PolMenStr";
             this.PolMenStr.Size = new System.Drawing.Size(1213, 24);
@@ -1048,7 +1049,7 @@
             // viewFootPrintsToolStripMenuItem
             // 
             this.viewFootPrintsToolStripMenuItem.Name = "viewFootPrintsToolStripMenuItem";
-            this.viewFootPrintsToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.viewFootPrintsToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.viewFootPrintsToolStripMenuItem.Text = "View FootPrints";
             // 
             // lockCustomerPolicyToolStripMenuItem
@@ -1152,32 +1153,10 @@
             // 
             // documentsToolStripMenuItem
             // 
-            this.documentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uploadNewDocumentToolStripMenuItem,
-            this.removeDocumentToolStripMenuItem,
-            this.viewDocumentsToolStripMenuItem});
             this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
             this.documentsToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.documentsToolStripMenuItem.Text = "Documents";
-            // 
-            // uploadNewDocumentToolStripMenuItem
-            // 
-            this.uploadNewDocumentToolStripMenuItem.Name = "uploadNewDocumentToolStripMenuItem";
-            this.uploadNewDocumentToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.uploadNewDocumentToolStripMenuItem.Text = "Upload New Document";
-            // 
-            // removeDocumentToolStripMenuItem
-            // 
-            this.removeDocumentToolStripMenuItem.Name = "removeDocumentToolStripMenuItem";
-            this.removeDocumentToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.removeDocumentToolStripMenuItem.Tag = "Restricted";
-            this.removeDocumentToolStripMenuItem.Text = "Remove Document";
-            // 
-            // viewDocumentsToolStripMenuItem
-            // 
-            this.viewDocumentsToolStripMenuItem.Name = "viewDocumentsToolStripMenuItem";
-            this.viewDocumentsToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.viewDocumentsToolStripMenuItem.Text = "View Documents";
+            this.documentsToolStripMenuItem.Click += new System.EventHandler(this.documentsToolStripMenuItem_Click);
             // 
             // historyToolStripMenuItem
             // 
@@ -1222,6 +1201,25 @@
             this.viewFullPolicyDetailsToolStripMenuItem.Name = "viewFullPolicyDetailsToolStripMenuItem";
             this.viewFullPolicyDetailsToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.viewFullPolicyDetailsToolStripMenuItem.Text = "View Full Policy Details";
+            // 
+            // kryptonCommand1
+            // 
+            this.kryptonCommand1.Text = "kryptonCommand1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.acceptedFileTypesToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // acceptedFileTypesToolStripMenuItem
+            // 
+            this.acceptedFileTypesToolStripMenuItem.Name = "acceptedFileTypesToolStripMenuItem";
+            this.acceptedFileTypesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.acceptedFileTypesToolStripMenuItem.Text = "Accepted File Types";
+            this.acceptedFileTypesToolStripMenuItem.Click += new System.EventHandler(this.acceptedFileTypesToolStripMenuItem_Click);
             // 
             // CustomerOverViewV1
             // 
@@ -1364,12 +1362,12 @@
         private System.Windows.Forms.ToolStripMenuItem updateCallbackDateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancelCallbackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem uploadNewDocumentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeDocumentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewDocumentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem notesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem securityToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewFootPrintsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lockCustomerPolicyToolStripMenuItem;
+        private Krypton.Toolkit.KryptonCommand kryptonCommand1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem acceptedFileTypesToolStripMenuItem;
     }
 }

@@ -201,6 +201,9 @@ namespace GAZE
             customeroverview.Show();
         }
 
+        private void kryptonDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }
