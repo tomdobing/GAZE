@@ -45,6 +45,10 @@
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allOpenTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewMyTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.unassignedTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newStockInputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,16 +64,15 @@
             this.sQLServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kryptonManager1 = new Krypton.Toolkit.KryptonManager(this.components);
-            this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripSeparator1,
@@ -79,59 +82,62 @@
             this.toolStripSeparator3,
             this.toolStripLabel4,
             this.toolStripSeparator4});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 394);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 615);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(954, 25);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.toolStrip1.Size = new System.Drawing.Size(1431, 30);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabel1.Size = new System.Drawing.Size(131, 25);
             this.toolStripLabel1.Text = "toolStripLabel1";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 30);
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabel2.Size = new System.Drawing.Size(131, 25);
             this.toolStripLabel2.Text = "toolStripLabel2";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 30);
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabel3.Size = new System.Drawing.Size(131, 25);
             this.toolStripLabel3.Text = "toolStripLabel3";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 30);
             // 
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabel4.Size = new System.Drawing.Size(131, 25);
             this.toolStripLabel4.Text = "toolStripLabel4";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 30);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.customerToolStripMenuItem,
@@ -141,7 +147,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(954, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1431, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -151,20 +157,20 @@
             this.logoutToolStripMenuItem,
             this.exitApplicationToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(236, 34);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click_1);
             // 
             // exitApplicationToolStripMenuItem
             // 
             this.exitApplicationToolStripMenuItem.Name = "exitApplicationToolStripMenuItem";
-            this.exitApplicationToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.exitApplicationToolStripMenuItem.Size = new System.Drawing.Size(236, 34);
             this.exitApplicationToolStripMenuItem.Text = "Exit Application";
             this.exitApplicationToolStripMenuItem.Click += new System.EventHandler(this.exitApplicationToolStripMenuItem_Click_1);
             // 
@@ -172,15 +178,16 @@
             // 
             this.customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newCustomerToolStripMenuItem,
-            this.searchToolStripMenuItem});
+            this.searchToolStripMenuItem,
+            this.customerTasksToolStripMenuItem});
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(105, 29);
             this.customerToolStripMenuItem.Text = "Customer";
             // 
             // newCustomerToolStripMenuItem
             // 
             this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
-            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.newCustomerToolStripMenuItem.Text = "New Customer";
             this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.newCustomerToolStripMenuItem_Click_1);
             // 
@@ -188,22 +195,50 @@
             // 
             this.searchToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.searchToolStripMenuItem.Text = "F3 Search";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click_1);
+            // 
+            // customerTasksToolStripMenuItem
+            // 
+            this.customerTasksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allOpenTasksToolStripMenuItem,
+            this.viewMyTasksToolStripMenuItem,
+            this.unassignedTasksToolStripMenuItem});
+            this.customerTasksToolStripMenuItem.Name = "customerTasksToolStripMenuItem";
+            this.customerTasksToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.customerTasksToolStripMenuItem.Text = "Customer Tasks";
+            // 
+            // allOpenTasksToolStripMenuItem
+            // 
+            this.allOpenTasksToolStripMenuItem.Name = "allOpenTasksToolStripMenuItem";
+            this.allOpenTasksToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.allOpenTasksToolStripMenuItem.Text = "All Open Tasks";
+            // 
+            // viewMyTasksToolStripMenuItem
+            // 
+            this.viewMyTasksToolStripMenuItem.Name = "viewMyTasksToolStripMenuItem";
+            this.viewMyTasksToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.viewMyTasksToolStripMenuItem.Text = "View My Tasks";
+            // 
+            // unassignedTasksToolStripMenuItem
+            // 
+            this.unassignedTasksToolStripMenuItem.Name = "unassignedTasksToolStripMenuItem";
+            this.unassignedTasksToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.unassignedTasksToolStripMenuItem.Text = "Unassigned Tasks";
             // 
             // stockManagementToolStripMenuItem
             // 
             this.stockManagementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newStockInputToolStripMenuItem});
             this.stockManagementToolStripMenuItem.Name = "stockManagementToolStripMenuItem";
-            this.stockManagementToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
+            this.stockManagementToolStripMenuItem.Size = new System.Drawing.Size(183, 29);
             this.stockManagementToolStripMenuItem.Text = "Policy Management";
             // 
             // newStockInputToolStripMenuItem
             // 
             this.newStockInputToolStripMenuItem.Name = "newStockInputToolStripMenuItem";
-            this.newStockInputToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.newStockInputToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
             this.newStockInputToolStripMenuItem.Text = "View Policies";
             // 
             // adminToolStripMenuItem
@@ -215,41 +250,41 @@
             this.configSettingsToolStripMenuItem,
             this.controlManagementToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(81, 29);
             this.adminToolStripMenuItem.Text = "Admin";
             // 
             // createNewUserToolStripMenuItem
             // 
             this.createNewUserToolStripMenuItem.Name = "createNewUserToolStripMenuItem";
-            this.createNewUserToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.createNewUserToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.createNewUserToolStripMenuItem.Text = "Create New User";
             this.createNewUserToolStripMenuItem.Click += new System.EventHandler(this.createNewUserToolStripMenuItem_Click_1);
             // 
             // editDeleteUsersToolStripMenuItem
             // 
             this.editDeleteUsersToolStripMenuItem.Name = "editDeleteUsersToolStripMenuItem";
-            this.editDeleteUsersToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.editDeleteUsersToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.editDeleteUsersToolStripMenuItem.Text = "Edit/Delete Users";
             this.editDeleteUsersToolStripMenuItem.Click += new System.EventHandler(this.editDeleteUsersToolStripMenuItem_Click_1);
             // 
             // resetUserPasswordToolStripMenuItem
             // 
             this.resetUserPasswordToolStripMenuItem.Name = "resetUserPasswordToolStripMenuItem";
-            this.resetUserPasswordToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.resetUserPasswordToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.resetUserPasswordToolStripMenuItem.Text = "Reset User Password";
             this.resetUserPasswordToolStripMenuItem.Click += new System.EventHandler(this.resetUserPasswordToolStripMenuItem_Click_1);
             // 
             // configSettingsToolStripMenuItem
             // 
             this.configSettingsToolStripMenuItem.Name = "configSettingsToolStripMenuItem";
-            this.configSettingsToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.configSettingsToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.configSettingsToolStripMenuItem.Text = "Config Settings";
             this.configSettingsToolStripMenuItem.Click += new System.EventHandler(this.configSettingsToolStripMenuItem_Click_1);
             // 
             // controlManagementToolStripMenuItem
             // 
             this.controlManagementToolStripMenuItem.Name = "controlManagementToolStripMenuItem";
-            this.controlManagementToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.controlManagementToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.controlManagementToolStripMenuItem.Text = "Control Management";
             // 
             // windowToolStripMenuItem
@@ -257,13 +292,13 @@
             this.windowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hideTimeDateToolStripMenuItem});
             this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
-            this.windowToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.windowToolStripMenuItem.Size = new System.Drawing.Size(94, 29);
             this.windowToolStripMenuItem.Text = "Window";
             // 
             // hideTimeDateToolStripMenuItem
             // 
             this.hideTimeDateToolStripMenuItem.Name = "hideTimeDateToolStripMenuItem";
-            this.hideTimeDateToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.hideTimeDateToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.hideTimeDateToolStripMenuItem.Text = "Hide Toolstrip";
             this.hideTimeDateToolStripMenuItem.Click += new System.EventHandler(this.hideTimeDateToolStripMenuItem_Click_1);
             // 
@@ -274,27 +309,27 @@
             this.sQLServerToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // checkForUpdatesToolStripMenuItem
             // 
             this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.checkForUpdatesToolStripMenuItem.Text = "Check for updates";
             this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click_1);
             // 
             // sQLServerToolStripMenuItem
             // 
             this.sQLServerToolStripMenuItem.Name = "sQLServerToolStripMenuItem";
-            this.sQLServerToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.sQLServerToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.sQLServerToolStripMenuItem.Text = "SQL Server";
             this.sQLServerToolStripMenuItem.Click += new System.EventHandler(this.sQLServerToolStripMenuItem_Click_1);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
             // 
@@ -302,26 +337,17 @@
             // 
             this.kryptonManager1.GlobalPaletteMode = Krypton.Toolkit.PaletteModeManager.SparklePurpleLightMode;
             // 
-            // kryptonDataGridView1
-            // 
-            this.kryptonDataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(0, 24);
-            this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(954, 259);
-            this.kryptonDataGridView1.TabIndex = 2;
-            this.kryptonDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kryptonDataGridView1_CellContentClick);
-            // 
             // HomePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(954, 419);
-            this.Controls.Add(this.kryptonDataGridView1);
+            this.ClientSize = new System.Drawing.Size(1431, 645);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.FormTitleAlign = Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "HomePage";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.HomePage_Load);
@@ -331,7 +357,6 @@
             this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,7 +395,10 @@
         private System.Windows.Forms.ToolStripMenuItem controlManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         public Krypton.Toolkit.KryptonManager kryptonManager1;
-        private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem customerTasksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allOpenTasksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewMyTasksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem unassignedTasksToolStripMenuItem;
     }
 }
 

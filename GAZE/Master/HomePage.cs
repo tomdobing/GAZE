@@ -21,7 +21,7 @@ namespace GAZE
         ExceptionThrown ExceptionThrown = new ExceptionThrown();
         readonly MessageHandler messageHandler = new MessageHandler();
         readonly RoleManagement roleManagement = new RoleManagement();
-        CustCallBack CustCallBack = new CustCallBack();
+        
         #endregion
 
         #region Methods
@@ -30,7 +30,7 @@ namespace GAZE
             InitializeComponent();
             GetFormSettings.SetFormSettings(this);
             GetFormSettings.ChangeableFormSettings(this, this.Name);
-            CustCallBack.GetCustomerCallbacksViaAgent(kryptonDataGridView1);
+            
         }
 
         private void HomePage_Load(object sender, EventArgs e)
@@ -39,21 +39,14 @@ namespace GAZE
             StartTimer();
             toolStripLabel2.Text = "Build:" + Application.ProductVersion.ToString();
             loginSecurity.GetLoggedinUserName(toolStripLabel3);
-            if (roleManagement.DisableNonAdminControls() == false) 
+            if (roleManagement.DisableNonAdminControls() == false)
             {
                 adminToolStripMenuItem.Enabled = false;
 
             }
             toolStripLabel4.ForeColor = System.Drawing.Color.Green;
             toolStripLabel4.Text = "Database: Connected";
-            //if (infoSec.isUserAdmin(InfoSec.GlobalUsername) == false)
-            //{
-            //    adminToolStripMenuItem.Enabled = false;
-            //}
-            //else
-            //{
-            //    adminToolStripMenuItem.Enabled = true;
-            //}
+
 
         }
 
@@ -72,12 +65,12 @@ namespace GAZE
         {
 
             toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(ConfigurationManager.AppSettings["DateFormat"]);
-           
+
         }
 
         private void NewCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
             Customer.NewCustomer newCustomer = new Customer.NewCustomer();
             newCustomer.ShowDialog();
         }
@@ -91,12 +84,11 @@ namespace GAZE
 
         private void searchToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            //messageHandler.ReturnInfoBox("This option has been removed in Version 1.0.0.0\n\nPlease use the new form", InfoBox.InformationBoxButtons.OK, InfoBox.InformationBoxIcon.Asterisk);
             CustomerSearch customerSearch = new CustomerSearch();
             customerSearch.ShowDialog();
         }
 
-        #endregion
+
 
         private void createNewUserToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -107,13 +99,12 @@ namespace GAZE
 
         private void exitApplicationToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-           
-                     
+
+
             string message = "Are you sure you wish to exit? Any open work will not be saved!";
             string caption = "Are you sure?";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
-            
+
             result = KryptonMessageBox.Show(message, caption, MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, KryptonMessageBoxDefaultButton.Button3);
             if (result == DialogResult.Yes)
             {
@@ -130,11 +121,11 @@ namespace GAZE
 
         private void sQLServerToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            
+
             string message = ConfigurationManager.AppSettings["SQLConnection"] + Environment.NewLine + Environment.NewLine + "Database: Gaze_DB: True";
             KryptonMessageBox.Show(message, "Whoops!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
-            
-            
+
+
 
         }
 
@@ -184,7 +175,6 @@ namespace GAZE
 
         private void HomePage_KeyPress(object sender, KeyPressEventArgs e)
         {
-
         }
 
         private void HomePage_KeyDown(object sender, KeyEventArgs e)
@@ -205,5 +195,8 @@ namespace GAZE
         {
 
         }
+
+
+        #endregion
     }
 }

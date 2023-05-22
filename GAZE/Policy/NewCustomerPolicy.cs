@@ -25,7 +25,6 @@ namespace GAZE.Policy
         SQLManagement PolicySQLManagement = new SQLManagement();
         HomePage HomePage = new HomePage();
         SQLBilling SQLBilling = new SQLBilling();
-        CustCallBack CustCallBack = new CustCallBack();
         ControlManagement ControlManagement = new ControlManagement();
         ProductDetails ProductDetails = new ProductDetails();
         #endregion

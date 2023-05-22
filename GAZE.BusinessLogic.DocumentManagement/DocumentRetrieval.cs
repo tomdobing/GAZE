@@ -267,7 +267,7 @@ namespace GAZE.BusinessLogic.DocumentManagement
                         " or contact your System Administrator", "Document Upload Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
                     return true;
 
-
+                    
                 }
                 else
                 {

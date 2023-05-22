@@ -32,12 +32,6 @@ namespace Gaze.BusinessLogic.Startup
             catch (SqlException ex)
             {
                 exceptionThrown.ThrowNewStackException(ex, "SQL Server Offline");
-                //string message = "Unable to connect to the selected SQL Server!" +
-                //" Please check the SQL Server Connection and try again" + Environment.NewLine + Environment.NewLine + ex.Message;
-                //string caption = "SQL Server Offline";
-                //MessageBoxButtons buttons = MessageBoxButtons.OK;
-                //MessageBox.Show(message, caption, buttons,
-                //MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 ErrorMessage.Text = "SQL Server Offline!";
                 ErrorMessage.ForeColor = System.Drawing.Color.Red;
 
@@ -48,11 +42,6 @@ namespace Gaze.BusinessLogic.Startup
             catch (Exception ex)
             {
                 exceptionThrown.ThrowNewStackException(ex, "SQL Server Offline");
-                //string message = "An unknown error has occurred. Please try again later" + Environment.NewLine + Environment.NewLine + ex.Message;
-                //string caption = "Unknown Error Occurred";
-                //MessageBoxButtons buttons = MessageBoxButtons.OK;
-                //MessageBox.Show(message, caption, buttons,
-                //MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 ErrorMessage.Text = "SQL Server Offline!";
                 ErrorMessage.ForeColor = System.Drawing.Color.Red;
                 ErrorMessage.Show();

@@ -20,7 +20,6 @@ namespace GAZE.Customer.Documents
         SQLManagement PolicySQLManagement = new SQLManagement();
         HomePage HomePage = new HomePage();
         SQLBilling SQLBilling = new SQLBilling();
-        CustCallBack CustCallBack = new CustCallBack();
         ControlManagement ControlManagement = new ControlManagement();
         NoteManagement NoteManagement = new NoteManagement();
         DocumentRetrieval DocumentRetrieval = new DocumentRetrieval();
@@ -66,6 +65,7 @@ namespace GAZE.Customer.Documents
 
         private void kryptonButton3_Click(object sender, EventArgs e)
         {
+            
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = "C:\\";
             openFileDialog.Filter = "All Files (*.*)|*.*";
@@ -80,7 +80,7 @@ namespace GAZE.Customer.Documents
             string newfilepath = @"C:\Temp\GAZE\Documents\" + Path.GetFileName(filepath);
             DocumentRetrieval.UploadCustomerDocument(GetFileType(Path.GetExtension(filepath)),
             Path.GetFileName(filepath), newfilepath, ConvertBytesToMB(filesize).ToString("0.00") + "MB", filepath);
-            
+           
 
         }
         public string GetFileType(string filePath)

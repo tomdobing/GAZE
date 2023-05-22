@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
@@ -115,34 +115,28 @@
             this.CustID_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PolMenStr = new System.Windows.Forms.MenuStrip();
-            this.adminActionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changePolicyRenewalDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.securityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewFootPrintsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lockCustomerPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.billingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editBillingDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelBillingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.callbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.requestNewCallbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateCallbackDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelCallbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateCustomerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateOverviewNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.notesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.policyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updatePolicyStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewFullPolicyDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kryptonCommand1 = new Krypton.Toolkit.KryptonCommand();
+            this.notesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.billingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editBillingDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelBillingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminActionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePolicyRenewalDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.securityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewFootPrintsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lockCustomerPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acceptedFileTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kryptonCommand1 = new Krypton.Toolkit.KryptonCommand();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -163,10 +157,11 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage5);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Regular;
-            this.metroTabControl1.Location = new System.Drawing.Point(0, 382);
+            this.metroTabControl1.Location = new System.Drawing.Point(0, 519);
+            this.metroTabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(1213, 345);
+            this.metroTabControl1.Size = new System.Drawing.Size(1820, 531);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
@@ -190,80 +185,90 @@
             this.metroTabPage1.Controls.Add(this.metroLabel1);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 10;
+            this.metroTabPage1.HorizontalScrollbarSize = 15;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(1205, 303);
+            this.metroTabPage1.Size = new System.Drawing.Size(1812, 489);
             this.metroTabPage1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Customer Details";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
+            this.metroTabPage1.VerticalScrollbarSize = 15;
             // 
             // kryptonTextBox1
             // 
-            this.kryptonTextBox1.Location = new System.Drawing.Point(580, 13);
+            this.kryptonTextBox1.Location = new System.Drawing.Point(870, 20);
+            this.kryptonTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kryptonTextBox1.Multiline = true;
             this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(617, 146);
+            this.kryptonTextBox1.Size = new System.Drawing.Size(926, 225);
             this.kryptonTextBox1.TabIndex = 23;
             // 
             // EmailAddress_txt
             // 
-            this.EmailAddress_txt.Location = new System.Drawing.Point(143, 268);
+            this.EmailAddress_txt.Location = new System.Drawing.Point(214, 412);
+            this.EmailAddress_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EmailAddress_txt.Name = "EmailAddress_txt";
-            this.EmailAddress_txt.Size = new System.Drawing.Size(1054, 23);
+            this.EmailAddress_txt.Size = new System.Drawing.Size(1581, 31);
             this.EmailAddress_txt.TabIndex = 22;
             // 
             // AltCont_txt
             // 
-            this.AltCont_txt.Location = new System.Drawing.Point(143, 228);
+            this.AltCont_txt.Location = new System.Drawing.Point(214, 351);
+            this.AltCont_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AltCont_txt.Name = "AltCont_txt";
-            this.AltCont_txt.Size = new System.Drawing.Size(1054, 23);
+            this.AltCont_txt.Size = new System.Drawing.Size(1581, 31);
             this.AltCont_txt.TabIndex = 21;
             // 
             // ContactNum_txt
             // 
-            this.ContactNum_txt.Location = new System.Drawing.Point(143, 179);
+            this.ContactNum_txt.Location = new System.Drawing.Point(214, 275);
+            this.ContactNum_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ContactNum_txt.Name = "ContactNum_txt";
-            this.ContactNum_txt.Size = new System.Drawing.Size(1054, 23);
+            this.ContactNum_txt.Size = new System.Drawing.Size(1581, 31);
             this.ContactNum_txt.TabIndex = 20;
             // 
             // CSurname_txt
             // 
-            this.CSurname_txt.Location = new System.Drawing.Point(143, 94);
+            this.CSurname_txt.Location = new System.Drawing.Point(214, 145);
+            this.CSurname_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CSurname_txt.Name = "CSurname_txt";
-            this.CSurname_txt.Size = new System.Drawing.Size(381, 23);
+            this.CSurname_txt.Size = new System.Drawing.Size(572, 31);
             this.CSurname_txt.TabIndex = 19;
             // 
             // FName_txt
             // 
-            this.FName_txt.Location = new System.Drawing.Point(143, 53);
+            this.FName_txt.Location = new System.Drawing.Point(214, 82);
+            this.FName_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FName_txt.Name = "FName_txt";
-            this.FName_txt.Size = new System.Drawing.Size(381, 23);
+            this.FName_txt.Size = new System.Drawing.Size(572, 31);
             this.FName_txt.TabIndex = 18;
             // 
             // CustTitle_txt
             // 
-            this.CustTitle_txt.Location = new System.Drawing.Point(143, 13);
+            this.CustTitle_txt.Location = new System.Drawing.Point(214, 20);
+            this.CustTitle_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CustTitle_txt.Name = "CustTitle_txt";
-            this.CustTitle_txt.Size = new System.Drawing.Size(241, 23);
+            this.CustTitle_txt.Size = new System.Drawing.Size(362, 31);
             this.CustTitle_txt.TabIndex = 17;
             // 
             // CDOB_txt
             // 
-            this.CDOB_txt.Location = new System.Drawing.Point(143, 140);
+            this.CDOB_txt.Location = new System.Drawing.Point(214, 215);
+            this.CDOB_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CDOB_txt.Mask = "00/00/0000";
             this.CDOB_txt.Name = "CDOB_txt";
-            this.CDOB_txt.Size = new System.Drawing.Size(241, 23);
+            this.CDOB_txt.Size = new System.Drawing.Size(362, 32);
             this.CDOB_txt.TabIndex = 16;
             this.CDOB_txt.Text = "  /  /";
             // 
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(4, 272);
+            this.metroLabel7.Location = new System.Drawing.Point(6, 418);
+            this.metroLabel7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(92, 19);
             this.metroLabel7.TabIndex = 15;
@@ -272,7 +277,8 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(4, 228);
+            this.metroLabel6.Location = new System.Drawing.Point(6, 351);
+            this.metroLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(127, 19);
             this.metroLabel6.TabIndex = 13;
@@ -281,7 +287,8 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(4, 183);
+            this.metroLabel5.Location = new System.Drawing.Point(6, 282);
+            this.metroLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(107, 19);
             this.metroLabel5.TabIndex = 11;
@@ -290,7 +297,8 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(4, 140);
+            this.metroLabel4.Location = new System.Drawing.Point(6, 215);
+            this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(87, 19);
             this.metroLabel4.TabIndex = 9;
@@ -299,7 +307,8 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(4, 98);
+            this.metroLabel3.Location = new System.Drawing.Point(6, 151);
+            this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(61, 19);
             this.metroLabel3.TabIndex = 8;
@@ -308,7 +317,8 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(4, 57);
+            this.metroLabel2.Location = new System.Drawing.Point(6, 88);
+            this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(66, 19);
             this.metroLabel2.TabIndex = 7;
@@ -317,7 +327,8 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(4, 13);
+            this.metroLabel1.Location = new System.Drawing.Point(6, 20);
+            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(33, 19);
             this.metroLabel1.TabIndex = 6;
@@ -337,55 +348,62 @@
             this.metroTabPage2.Controls.Add(this.metroLabel8);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 10;
+            this.metroTabPage2.HorizontalScrollbarSize = 15;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(1205, 303);
+            this.metroTabPage2.Size = new System.Drawing.Size(1812, 489);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Address Details";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 10;
+            this.metroTabPage2.VerticalScrollbarSize = 15;
             // 
             // country_txt
             // 
-            this.country_txt.Location = new System.Drawing.Point(143, 202);
+            this.country_txt.Location = new System.Drawing.Point(214, 311);
+            this.country_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.country_txt.Name = "country_txt";
-            this.country_txt.Size = new System.Drawing.Size(297, 23);
+            this.country_txt.Size = new System.Drawing.Size(446, 31);
             this.country_txt.TabIndex = 24;
             // 
             // postalcode_txt
             // 
-            this.postalcode_txt.Location = new System.Drawing.Point(143, 156);
+            this.postalcode_txt.Location = new System.Drawing.Point(214, 240);
+            this.postalcode_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.postalcode_txt.Name = "postalcode_txt";
-            this.postalcode_txt.Size = new System.Drawing.Size(297, 23);
+            this.postalcode_txt.Size = new System.Drawing.Size(446, 31);
             this.postalcode_txt.TabIndex = 23;
             // 
             // Town_txt
             // 
-            this.Town_txt.Location = new System.Drawing.Point(143, 106);
+            this.Town_txt.Location = new System.Drawing.Point(214, 163);
+            this.Town_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Town_txt.Name = "Town_txt";
-            this.Town_txt.Size = new System.Drawing.Size(527, 23);
+            this.Town_txt.Size = new System.Drawing.Size(790, 31);
             this.Town_txt.TabIndex = 22;
             // 
             // AddrL2_txt
             // 
-            this.AddrL2_txt.Location = new System.Drawing.Point(143, 63);
+            this.AddrL2_txt.Location = new System.Drawing.Point(214, 97);
+            this.AddrL2_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AddrL2_txt.Name = "AddrL2_txt";
-            this.AddrL2_txt.Size = new System.Drawing.Size(1054, 23);
+            this.AddrL2_txt.Size = new System.Drawing.Size(1581, 31);
             this.AddrL2_txt.TabIndex = 21;
             // 
             // addrL1_txt
             // 
-            this.addrL1_txt.Location = new System.Drawing.Point(143, 14);
+            this.addrL1_txt.Location = new System.Drawing.Point(214, 22);
+            this.addrL1_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addrL1_txt.Name = "addrL1_txt";
-            this.addrL1_txt.Size = new System.Drawing.Size(1054, 23);
+            this.addrL1_txt.Size = new System.Drawing.Size(1581, 31);
             this.addrL1_txt.TabIndex = 20;
             // 
             // metroLabel12
             // 
             this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(4, 202);
+            this.metroLabel12.Location = new System.Drawing.Point(6, 311);
+            this.metroLabel12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel12.Name = "metroLabel12";
             this.metroLabel12.Size = new System.Drawing.Size(59, 19);
             this.metroLabel12.TabIndex = 17;
@@ -394,7 +412,8 @@
             // metroLabel11
             // 
             this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(4, 156);
+            this.metroLabel11.Location = new System.Drawing.Point(6, 240);
+            this.metroLabel11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(82, 19);
             this.metroLabel11.TabIndex = 15;
@@ -403,7 +422,8 @@
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(4, 110);
+            this.metroLabel10.Location = new System.Drawing.Point(6, 169);
+            this.metroLabel10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(41, 19);
             this.metroLabel10.TabIndex = 13;
@@ -412,7 +432,8 @@
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(4, 63);
+            this.metroLabel9.Location = new System.Drawing.Point(6, 97);
+            this.metroLabel9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(97, 19);
             this.metroLabel9.TabIndex = 11;
@@ -421,7 +442,8 @@
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(4, 14);
+            this.metroLabel8.Location = new System.Drawing.Point(6, 22);
+            this.metroLabel8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(95, 19);
             this.metroLabel8.TabIndex = 9;
@@ -443,20 +465,22 @@
             this.metroTabPage3.Controls.Add(this.metroLabel18);
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
             this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.HorizontalScrollbarSize = 10;
+            this.metroTabPage3.HorizontalScrollbarSize = 15;
             this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(1205, 303);
+            this.metroTabPage3.Size = new System.Drawing.Size(1812, 489);
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "Policy Details";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 10;
+            this.metroTabPage3.VerticalScrollbarSize = 15;
             // 
             // metroLabel34
             // 
             this.metroLabel34.AutoSize = true;
-            this.metroLabel34.Location = new System.Drawing.Point(12, 248);
+            this.metroLabel34.Location = new System.Drawing.Point(18, 382);
+            this.metroLabel34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel34.Name = "metroLabel34";
             this.metroLabel34.Size = new System.Drawing.Size(58, 19);
             this.metroLabel34.TabIndex = 18;
@@ -464,54 +488,61 @@
             // 
             // discount_txt
             // 
-            this.discount_txt.Location = new System.Drawing.Point(169, 248);
+            this.discount_txt.Location = new System.Drawing.Point(254, 382);
+            this.discount_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.discount_txt.Name = "discount_txt";
-            this.discount_txt.Size = new System.Drawing.Size(369, 23);
+            this.discount_txt.Size = new System.Drawing.Size(554, 31);
             this.discount_txt.TabIndex = 17;
             // 
             // PolEndDate_txt
             // 
-            this.PolEndDate_txt.Location = new System.Drawing.Point(169, 201);
+            this.PolEndDate_txt.Location = new System.Drawing.Point(254, 309);
+            this.PolEndDate_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PolEndDate_txt.Mask = "00/00/0000";
             this.PolEndDate_txt.Name = "PolEndDate_txt";
-            this.PolEndDate_txt.Size = new System.Drawing.Size(369, 23);
+            this.PolEndDate_txt.Size = new System.Drawing.Size(554, 32);
             this.PolEndDate_txt.TabIndex = 16;
             this.PolEndDate_txt.Text = "  /  /";
             // 
             // PolEffStart_txt
             // 
-            this.PolEffStart_txt.Location = new System.Drawing.Point(169, 155);
+            this.PolEffStart_txt.Location = new System.Drawing.Point(254, 238);
+            this.PolEffStart_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PolEffStart_txt.Mask = "00/00/0000";
             this.PolEffStart_txt.Name = "PolEffStart_txt";
-            this.PolEffStart_txt.Size = new System.Drawing.Size(369, 23);
+            this.PolEffStart_txt.Size = new System.Drawing.Size(554, 32);
             this.PolEffStart_txt.TabIndex = 15;
             this.PolEffStart_txt.Text = "  /  /";
             // 
             // DeactReas_txt
             // 
-            this.DeactReas_txt.Location = new System.Drawing.Point(169, 102);
+            this.DeactReas_txt.Location = new System.Drawing.Point(254, 157);
+            this.DeactReas_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DeactReas_txt.Name = "DeactReas_txt";
-            this.DeactReas_txt.Size = new System.Drawing.Size(369, 23);
+            this.DeactReas_txt.Size = new System.Drawing.Size(554, 31);
             this.DeactReas_txt.TabIndex = 14;
             // 
             // StatID_txt
             // 
-            this.StatID_txt.Location = new System.Drawing.Point(169, 60);
+            this.StatID_txt.Location = new System.Drawing.Point(254, 92);
+            this.StatID_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.StatID_txt.Name = "StatID_txt";
-            this.StatID_txt.Size = new System.Drawing.Size(369, 23);
+            this.StatID_txt.Size = new System.Drawing.Size(554, 31);
             this.StatID_txt.TabIndex = 13;
             // 
             // PolID_Txt
             // 
-            this.PolID_Txt.Location = new System.Drawing.Point(169, 18);
+            this.PolID_Txt.Location = new System.Drawing.Point(254, 28);
+            this.PolID_Txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PolID_Txt.Name = "PolID_Txt";
-            this.PolID_Txt.Size = new System.Drawing.Size(369, 23);
+            this.PolID_Txt.Size = new System.Drawing.Size(554, 31);
             this.PolID_Txt.TabIndex = 12;
             // 
             // metroLabel22
             // 
             this.metroLabel22.AutoSize = true;
-            this.metroLabel22.Location = new System.Drawing.Point(9, 201);
+            this.metroLabel22.Location = new System.Drawing.Point(14, 309);
+            this.metroLabel22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel22.Name = "metroLabel22";
             this.metroLabel22.Size = new System.Drawing.Size(99, 19);
             this.metroLabel22.TabIndex = 6;
@@ -520,7 +551,8 @@
             // metroLabel21
             // 
             this.metroLabel21.AutoSize = true;
-            this.metroLabel21.Location = new System.Drawing.Point(9, 157);
+            this.metroLabel21.Location = new System.Drawing.Point(14, 242);
+            this.metroLabel21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel21.Name = "metroLabel21";
             this.metroLabel21.Size = new System.Drawing.Size(105, 19);
             this.metroLabel21.TabIndex = 5;
@@ -529,7 +561,8 @@
             // metroLabel20
             // 
             this.metroLabel20.AutoSize = true;
-            this.metroLabel20.Location = new System.Drawing.Point(9, 64);
+            this.metroLabel20.Location = new System.Drawing.Point(14, 98);
+            this.metroLabel20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel20.Name = "metroLabel20";
             this.metroLabel20.Size = new System.Drawing.Size(43, 19);
             this.metroLabel20.TabIndex = 4;
@@ -538,7 +571,8 @@
             // metroLabel19
             // 
             this.metroLabel19.AutoSize = true;
-            this.metroLabel19.Location = new System.Drawing.Point(9, 106);
+            this.metroLabel19.Location = new System.Drawing.Point(14, 163);
+            this.metroLabel19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel19.Name = "metroLabel19";
             this.metroLabel19.Size = new System.Drawing.Size(126, 19);
             this.metroLabel19.TabIndex = 3;
@@ -547,7 +581,8 @@
             // metroLabel18
             // 
             this.metroLabel18.AutoSize = true;
-            this.metroLabel18.Location = new System.Drawing.Point(9, 22);
+            this.metroLabel18.Location = new System.Drawing.Point(14, 34);
+            this.metroLabel18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel18.Name = "metroLabel18";
             this.metroLabel18.Size = new System.Drawing.Size(54, 19);
             this.metroLabel18.TabIndex = 2;
@@ -567,59 +602,66 @@
             this.metroTabPage4.Controls.Add(this.metroLabel13);
             this.metroTabPage4.HorizontalScrollbarBarColor = true;
             this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.HorizontalScrollbarSize = 10;
+            this.metroTabPage4.HorizontalScrollbarSize = 15;
             this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(1205, 303);
+            this.metroTabPage4.Size = new System.Drawing.Size(1812, 489);
             this.metroTabPage4.TabIndex = 3;
             this.metroTabPage4.Text = "Product Details";
             this.metroTabPage4.VerticalScrollbarBarColor = true;
             this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.VerticalScrollbarSize = 10;
+            this.metroTabPage4.VerticalScrollbarSize = 15;
             // 
             // ProdPrice_txt
             // 
-            this.ProdPrice_txt.Location = new System.Drawing.Point(170, 121);
+            this.ProdPrice_txt.Location = new System.Drawing.Point(255, 186);
+            this.ProdPrice_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ProdPrice_txt.Name = "ProdPrice_txt";
-            this.ProdPrice_txt.Size = new System.Drawing.Size(297, 23);
+            this.ProdPrice_txt.Size = new System.Drawing.Size(446, 31);
             this.ProdPrice_txt.TabIndex = 41;
             // 
             // ProdEndDate_txt
             // 
-            this.ProdEndDate_txt.Location = new System.Drawing.Point(170, 216);
+            this.ProdEndDate_txt.Location = new System.Drawing.Point(255, 332);
+            this.ProdEndDate_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ProdEndDate_txt.Mask = "00/00/0000";
             this.ProdEndDate_txt.Name = "ProdEndDate_txt";
-            this.ProdEndDate_txt.Size = new System.Drawing.Size(297, 23);
+            this.ProdEndDate_txt.Size = new System.Drawing.Size(446, 32);
             this.ProdEndDate_txt.TabIndex = 40;
             this.ProdEndDate_txt.Text = "  /  /";
             // 
             // ProdActDate_txt
             // 
-            this.ProdActDate_txt.Location = new System.Drawing.Point(170, 170);
+            this.ProdActDate_txt.Location = new System.Drawing.Point(255, 262);
+            this.ProdActDate_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ProdActDate_txt.Mask = "00/00/0000";
             this.ProdActDate_txt.Name = "ProdActDate_txt";
-            this.ProdActDate_txt.Size = new System.Drawing.Size(297, 23);
+            this.ProdActDate_txt.Size = new System.Drawing.Size(446, 32);
             this.ProdActDate_txt.TabIndex = 39;
             this.ProdActDate_txt.Text = "  /  /";
             // 
             // ProdDesc_txt
             // 
-            this.ProdDesc_txt.Location = new System.Drawing.Point(170, 70);
+            this.ProdDesc_txt.Location = new System.Drawing.Point(255, 108);
+            this.ProdDesc_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ProdDesc_txt.Name = "ProdDesc_txt";
-            this.ProdDesc_txt.Size = new System.Drawing.Size(465, 23);
+            this.ProdDesc_txt.Size = new System.Drawing.Size(698, 31);
             this.ProdDesc_txt.TabIndex = 37;
             // 
             // ProdName_txt
             // 
-            this.ProdName_txt.Location = new System.Drawing.Point(170, 23);
+            this.ProdName_txt.Location = new System.Drawing.Point(255, 35);
+            this.ProdName_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ProdName_txt.Name = "ProdName_txt";
-            this.ProdName_txt.Size = new System.Drawing.Size(297, 23);
+            this.ProdName_txt.Size = new System.Drawing.Size(446, 31);
             this.ProdName_txt.TabIndex = 36;
             // 
             // metroLabel17
             // 
             this.metroLabel17.AutoSize = true;
-            this.metroLabel17.Location = new System.Drawing.Point(12, 216);
+            this.metroLabel17.Location = new System.Drawing.Point(18, 332);
+            this.metroLabel17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel17.Name = "metroLabel17";
             this.metroLabel17.Size = new System.Drawing.Size(115, 19);
             this.metroLabel17.TabIndex = 35;
@@ -628,7 +670,8 @@
             // metroLabel16
             // 
             this.metroLabel16.AutoSize = true;
-            this.metroLabel16.Location = new System.Drawing.Point(12, 170);
+            this.metroLabel16.Location = new System.Drawing.Point(18, 262);
+            this.metroLabel16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel16.Name = "metroLabel16";
             this.metroLabel16.Size = new System.Drawing.Size(150, 19);
             this.metroLabel16.TabIndex = 33;
@@ -637,7 +680,8 @@
             // metroLabel15
             // 
             this.metroLabel15.AutoSize = true;
-            this.metroLabel15.Location = new System.Drawing.Point(12, 123);
+            this.metroLabel15.Location = new System.Drawing.Point(18, 189);
+            this.metroLabel15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel15.Name = "metroLabel15";
             this.metroLabel15.Size = new System.Drawing.Size(91, 19);
             this.metroLabel15.TabIndex = 31;
@@ -646,7 +690,8 @@
             // metroLabel14
             // 
             this.metroLabel14.AutoSize = true;
-            this.metroLabel14.Location = new System.Drawing.Point(12, 74);
+            this.metroLabel14.Location = new System.Drawing.Point(18, 114);
+            this.metroLabel14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel14.Name = "metroLabel14";
             this.metroLabel14.Size = new System.Drawing.Size(127, 19);
             this.metroLabel14.TabIndex = 29;
@@ -655,7 +700,8 @@
             // metroLabel13
             // 
             this.metroLabel13.AutoSize = true;
-            this.metroLabel13.Location = new System.Drawing.Point(12, 23);
+            this.metroLabel13.Location = new System.Drawing.Point(18, 35);
+            this.metroLabel13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel13.Name = "metroLabel13";
             this.metroLabel13.Size = new System.Drawing.Size(98, 19);
             this.metroLabel13.TabIndex = 27;
@@ -685,20 +731,22 @@
             this.metroTabPage5.Controls.Add(this.BillingID_txt);
             this.metroTabPage5.HorizontalScrollbarBarColor = true;
             this.metroTabPage5.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage5.HorizontalScrollbarSize = 10;
+            this.metroTabPage5.HorizontalScrollbarSize = 15;
             this.metroTabPage5.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.metroTabPage5.Name = "metroTabPage5";
-            this.metroTabPage5.Size = new System.Drawing.Size(1205, 303);
+            this.metroTabPage5.Size = new System.Drawing.Size(1812, 489);
             this.metroTabPage5.TabIndex = 4;
             this.metroTabPage5.Text = "Billing";
             this.metroTabPage5.VerticalScrollbarBarColor = true;
             this.metroTabPage5.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage5.VerticalScrollbarSize = 10;
+            this.metroTabPage5.VerticalScrollbarSize = 15;
             // 
             // metroLabel31
             // 
             this.metroLabel31.AutoSize = true;
-            this.metroLabel31.Location = new System.Drawing.Point(585, 21);
+            this.metroLabel31.Location = new System.Drawing.Point(878, 32);
+            this.metroLabel31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel31.Name = "metroLabel31";
             this.metroLabel31.Size = new System.Drawing.Size(85, 19);
             this.metroLabel31.TabIndex = 34;
@@ -706,15 +754,17 @@
             // 
             // billingstatus_txt
             // 
-            this.billingstatus_txt.Location = new System.Drawing.Point(717, 21);
+            this.billingstatus_txt.Location = new System.Drawing.Point(1076, 32);
+            this.billingstatus_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.billingstatus_txt.Name = "billingstatus_txt";
-            this.billingstatus_txt.Size = new System.Drawing.Size(359, 23);
+            this.billingstatus_txt.Size = new System.Drawing.Size(538, 31);
             this.billingstatus_txt.TabIndex = 33;
             // 
             // metroLabel32
             // 
             this.metroLabel32.AutoSize = true;
-            this.metroLabel32.Location = new System.Drawing.Point(585, 156);
+            this.metroLabel32.Location = new System.Drawing.Point(878, 240);
+            this.metroLabel32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel32.Name = "metroLabel32";
             this.metroLabel32.Size = new System.Drawing.Size(109, 19);
             this.metroLabel32.TabIndex = 32;
@@ -723,7 +773,8 @@
             // metroLabel30
             // 
             this.metroLabel30.AutoSize = true;
-            this.metroLabel30.Location = new System.Drawing.Point(585, 109);
+            this.metroLabel30.Location = new System.Drawing.Point(878, 168);
+            this.metroLabel30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel30.Name = "metroLabel30";
             this.metroLabel30.Size = new System.Drawing.Size(73, 19);
             this.metroLabel30.TabIndex = 30;
@@ -732,7 +783,8 @@
             // metroLabel29
             // 
             this.metroLabel29.AutoSize = true;
-            this.metroLabel29.Location = new System.Drawing.Point(585, 67);
+            this.metroLabel29.Location = new System.Drawing.Point(878, 103);
+            this.metroLabel29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel29.Name = "metroLabel29";
             this.metroLabel29.Size = new System.Drawing.Size(113, 19);
             this.metroLabel29.TabIndex = 29;
@@ -741,7 +793,8 @@
             // metroLabel28
             // 
             this.metroLabel28.AutoSize = true;
-            this.metroLabel28.Location = new System.Drawing.Point(12, 241);
+            this.metroLabel28.Location = new System.Drawing.Point(18, 371);
+            this.metroLabel28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel28.Name = "metroLabel28";
             this.metroLabel28.Size = new System.Drawing.Size(90, 19);
             this.metroLabel28.TabIndex = 28;
@@ -750,7 +803,8 @@
             // metroLabel27
             // 
             this.metroLabel27.AutoSize = true;
-            this.metroLabel27.Location = new System.Drawing.Point(12, 197);
+            this.metroLabel27.Location = new System.Drawing.Point(18, 303);
+            this.metroLabel27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel27.Name = "metroLabel27";
             this.metroLabel27.Size = new System.Drawing.Size(77, 19);
             this.metroLabel27.TabIndex = 27;
@@ -759,7 +813,8 @@
             // metroLabel26
             // 
             this.metroLabel26.AutoSize = true;
-            this.metroLabel26.Location = new System.Drawing.Point(12, 156);
+            this.metroLabel26.Location = new System.Drawing.Point(18, 240);
+            this.metroLabel26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel26.Name = "metroLabel26";
             this.metroLabel26.Size = new System.Drawing.Size(111, 19);
             this.metroLabel26.TabIndex = 26;
@@ -768,7 +823,8 @@
             // metroLabel25
             // 
             this.metroLabel25.AutoSize = true;
-            this.metroLabel25.Location = new System.Drawing.Point(12, 110);
+            this.metroLabel25.Location = new System.Drawing.Point(18, 169);
+            this.metroLabel25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel25.Name = "metroLabel25";
             this.metroLabel25.Size = new System.Drawing.Size(78, 19);
             this.metroLabel25.TabIndex = 25;
@@ -777,7 +833,8 @@
             // metroLabel24
             // 
             this.metroLabel24.AutoSize = true;
-            this.metroLabel24.Location = new System.Drawing.Point(12, 63);
+            this.metroLabel24.Location = new System.Drawing.Point(18, 97);
+            this.metroLabel24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel24.Name = "metroLabel24";
             this.metroLabel24.Size = new System.Drawing.Size(109, 19);
             this.metroLabel24.TabIndex = 24;
@@ -786,7 +843,8 @@
             // metroLabel23
             // 
             this.metroLabel23.AutoSize = true;
-            this.metroLabel23.Location = new System.Drawing.Point(12, 21);
+            this.metroLabel23.Location = new System.Drawing.Point(18, 32);
+            this.metroLabel23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel23.Name = "metroLabel23";
             this.metroLabel23.Size = new System.Drawing.Size(59, 19);
             this.metroLabel23.TabIndex = 23;
@@ -794,66 +852,75 @@
             // 
             // NextBillDay_txt
             // 
-            this.NextBillDay_txt.Location = new System.Drawing.Point(717, 156);
+            this.NextBillDay_txt.Location = new System.Drawing.Point(1076, 240);
+            this.NextBillDay_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NextBillDay_txt.Name = "NextBillDay_txt";
-            this.NextBillDay_txt.Size = new System.Drawing.Size(243, 23);
+            this.NextBillDay_txt.Size = new System.Drawing.Size(364, 31);
             this.NextBillDay_txt.TabIndex = 21;
             // 
             // sortcode_txt
             // 
-            this.sortcode_txt.Location = new System.Drawing.Point(717, 109);
+            this.sortcode_txt.Location = new System.Drawing.Point(1076, 168);
+            this.sortcode_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sortcode_txt.Name = "sortcode_txt";
-            this.sortcode_txt.Size = new System.Drawing.Size(359, 23);
+            this.sortcode_txt.Size = new System.Drawing.Size(538, 31);
             this.sortcode_txt.TabIndex = 19;
             // 
             // accountNum_txt
             // 
-            this.accountNum_txt.Location = new System.Drawing.Point(717, 67);
+            this.accountNum_txt.Location = new System.Drawing.Point(1076, 103);
+            this.accountNum_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.accountNum_txt.Name = "accountNum_txt";
-            this.accountNum_txt.Size = new System.Drawing.Size(359, 23);
+            this.accountNum_txt.Size = new System.Drawing.Size(538, 31);
             this.accountNum_txt.TabIndex = 18;
             // 
             // MTotal_txt
             // 
-            this.MTotal_txt.Location = new System.Drawing.Point(127, 241);
+            this.MTotal_txt.Location = new System.Drawing.Point(190, 371);
+            this.MTotal_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MTotal_txt.Name = "MTotal_txt";
-            this.MTotal_txt.Size = new System.Drawing.Size(270, 23);
+            this.MTotal_txt.Size = new System.Drawing.Size(405, 31);
             this.MTotal_txt.TabIndex = 13;
             // 
             // Yearly_txt
             // 
-            this.Yearly_txt.Location = new System.Drawing.Point(127, 197);
+            this.Yearly_txt.Location = new System.Drawing.Point(190, 303);
+            this.Yearly_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Yearly_txt.Name = "Yearly_txt";
-            this.Yearly_txt.Size = new System.Drawing.Size(270, 23);
+            this.Yearly_txt.Size = new System.Drawing.Size(405, 31);
             this.Yearly_txt.TabIndex = 11;
             // 
             // BillingFreq_txt
             // 
-            this.BillingFreq_txt.Location = new System.Drawing.Point(127, 156);
+            this.BillingFreq_txt.Location = new System.Drawing.Point(190, 240);
+            this.BillingFreq_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BillingFreq_txt.Name = "BillingFreq_txt";
-            this.BillingFreq_txt.Size = new System.Drawing.Size(270, 23);
+            this.BillingFreq_txt.Size = new System.Drawing.Size(405, 31);
             this.BillingFreq_txt.TabIndex = 9;
             // 
             // BillingType_txt
             // 
-            this.BillingType_txt.Location = new System.Drawing.Point(127, 110);
+            this.BillingType_txt.Location = new System.Drawing.Point(190, 169);
+            this.BillingType_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BillingType_txt.Name = "BillingType_txt";
-            this.BillingType_txt.Size = new System.Drawing.Size(116, 23);
+            this.BillingType_txt.Size = new System.Drawing.Size(174, 31);
             this.BillingType_txt.TabIndex = 8;
             // 
             // bilRef_txt
             // 
-            this.bilRef_txt.Location = new System.Drawing.Point(127, 63);
+            this.bilRef_txt.Location = new System.Drawing.Point(190, 97);
+            this.bilRef_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bilRef_txt.Name = "bilRef_txt";
-            this.bilRef_txt.Size = new System.Drawing.Size(343, 23);
+            this.bilRef_txt.Size = new System.Drawing.Size(514, 31);
             this.bilRef_txt.TabIndex = 7;
             // 
             // BillingID_txt
             // 
-            this.BillingID_txt.Location = new System.Drawing.Point(127, 22);
+            this.BillingID_txt.Location = new System.Drawing.Point(190, 34);
+            this.BillingID_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BillingID_txt.Name = "BillingID_txt";
             this.BillingID_txt.ReadOnly = true;
-            this.BillingID_txt.Size = new System.Drawing.Size(188, 23);
+            this.BillingID_txt.Size = new System.Drawing.Size(282, 31);
             this.BillingID_txt.TabIndex = 6;
             // 
             // metroGrid1
@@ -863,44 +930,43 @@
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
             this.metroGrid1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(0, 136);
-            this.metroGrid1.Margin = new System.Windows.Forms.Padding(2);
+            this.metroGrid1.Location = new System.Drawing.Point(0, 141);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid1.RowHeadersWidth = 62;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.RowTemplate.Height = 28;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(1213, 246);
+            this.metroGrid1.Size = new System.Drawing.Size(1820, 378);
             this.metroGrid1.TabIndex = 1;
             this.metroGrid1.SelectionChanged += new System.EventHandler(this.metroGrid1_SelectionChanged);
             // 
@@ -915,9 +981,11 @@
             this.groupBox1.Controls.Add(this.CustID_txt);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(6, 27);
+            this.groupBox1.Location = new System.Drawing.Point(9, 42);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1195, 98);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(1792, 151);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Details";
@@ -925,26 +993,29 @@
             // PolStatus_lbl
             // 
             this.PolStatus_lbl.AutoSize = true;
-            this.PolStatus_lbl.Location = new System.Drawing.Point(333, 56);
+            this.PolStatus_lbl.Location = new System.Drawing.Point(500, 86);
+            this.PolStatus_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PolStatus_lbl.Name = "PolStatus_lbl";
-            this.PolStatus_lbl.Size = new System.Drawing.Size(0, 17);
+            this.PolStatus_lbl.Size = new System.Drawing.Size(0, 25);
             this.PolStatus_lbl.TabIndex = 7;
             // 
             // CustName_txt
             // 
             this.CustName_txt.Enabled = false;
-            this.CustName_txt.Location = new System.Drawing.Point(333, 18);
+            this.CustName_txt.Location = new System.Drawing.Point(500, 28);
+            this.CustName_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CustName_txt.Name = "CustName_txt";
-            this.CustName_txt.Size = new System.Drawing.Size(673, 23);
+            this.CustName_txt.Size = new System.Drawing.Size(1008, 30);
             this.CustName_txt.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(242, 52);
+            this.label4.Location = new System.Drawing.Point(363, 80);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 13);
+            this.label4.Size = new System.Drawing.Size(112, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Policy Status:";
             // 
@@ -952,167 +1023,72 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(242, 23);
+            this.label3.Location = new System.Drawing.Point(363, 35);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.Size = new System.Drawing.Size(136, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Customer Name:";
             // 
             // PolicyID_txt
             // 
             this.PolicyID_txt.Enabled = false;
-            this.PolicyID_txt.Location = new System.Drawing.Point(81, 47);
+            this.PolicyID_txt.Location = new System.Drawing.Point(122, 72);
+            this.PolicyID_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PolicyID_txt.Name = "PolicyID_txt";
-            this.PolicyID_txt.Size = new System.Drawing.Size(144, 23);
+            this.PolicyID_txt.Size = new System.Drawing.Size(214, 30);
             this.PolicyID_txt.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 52);
+            this.label2.Location = new System.Drawing.Point(10, 80);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(81, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Policy ID:";
             // 
             // CustID_txt
             // 
             this.CustID_txt.Enabled = false;
-            this.CustID_txt.Location = new System.Drawing.Point(81, 18);
+            this.CustID_txt.Location = new System.Drawing.Point(122, 28);
+            this.CustID_txt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CustID_txt.Name = "CustID_txt";
-            this.CustID_txt.Size = new System.Drawing.Size(144, 23);
+            this.CustID_txt.Size = new System.Drawing.Size(214, 30);
             this.CustID_txt.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 23);
+            this.label1.Location = new System.Drawing.Point(10, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.Size = new System.Drawing.Size(109, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer ID:";
             // 
             // PolMenStr
             // 
             this.PolMenStr.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.PolMenStr.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.PolMenStr.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.PolMenStr.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.customerToolStripMenuItem,
             this.policyToolStripMenuItem,
             this.notesToolStripMenuItem,
             this.billingToolStripMenuItem,
             this.documentsToolStripMenuItem,
-            this.callbackToolStripMenuItem,
             this.historyToolStripMenuItem,
             this.adminActionsToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.PolMenStr.Location = new System.Drawing.Point(0, 0);
             this.PolMenStr.Name = "PolMenStr";
-            this.PolMenStr.Size = new System.Drawing.Size(1213, 24);
+            this.PolMenStr.Size = new System.Drawing.Size(1820, 35);
             this.PolMenStr.TabIndex = 3;
             this.PolMenStr.Text = "menuStrip1";
-            // 
-            // adminActionsToolStripMenuItem
-            // 
-            this.adminActionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changePolicyRenewalDateToolStripMenuItem,
-            this.redressToolStripMenuItem,
-            this.securityToolStripMenuItem});
-            this.adminActionsToolStripMenuItem.Name = "adminActionsToolStripMenuItem";
-            this.adminActionsToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
-            this.adminActionsToolStripMenuItem.Tag = "Restricted";
-            this.adminActionsToolStripMenuItem.Text = "Admin Actions";
-            // 
-            // changePolicyRenewalDateToolStripMenuItem
-            // 
-            this.changePolicyRenewalDateToolStripMenuItem.Name = "changePolicyRenewalDateToolStripMenuItem";
-            this.changePolicyRenewalDateToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.changePolicyRenewalDateToolStripMenuItem.Tag = "Restricted";
-            this.changePolicyRenewalDateToolStripMenuItem.Text = "Change Policy Renewal Date";
-            // 
-            // redressToolStripMenuItem
-            // 
-            this.redressToolStripMenuItem.Name = "redressToolStripMenuItem";
-            this.redressToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.redressToolStripMenuItem.Text = "Redress";
-            // 
-            // securityToolStripMenuItem
-            // 
-            this.securityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewFootPrintsToolStripMenuItem,
-            this.lockCustomerPolicyToolStripMenuItem});
-            this.securityToolStripMenuItem.Name = "securityToolStripMenuItem";
-            this.securityToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.securityToolStripMenuItem.Text = "Security";
-            // 
-            // viewFootPrintsToolStripMenuItem
-            // 
-            this.viewFootPrintsToolStripMenuItem.Name = "viewFootPrintsToolStripMenuItem";
-            this.viewFootPrintsToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.viewFootPrintsToolStripMenuItem.Text = "View FootPrints";
-            // 
-            // lockCustomerPolicyToolStripMenuItem
-            // 
-            this.lockCustomerPolicyToolStripMenuItem.Name = "lockCustomerPolicyToolStripMenuItem";
-            this.lockCustomerPolicyToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.lockCustomerPolicyToolStripMenuItem.Text = "Restrict Customer Policy";
-            this.lockCustomerPolicyToolStripMenuItem.Click += new System.EventHandler(this.lockCustomerPolicyToolStripMenuItem_Click);
-            // 
-            // billingToolStripMenuItem
-            // 
-            this.billingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editBillingDetailsToolStripMenuItem,
-            this.cancelBillingToolStripMenuItem});
-            this.billingToolStripMenuItem.Name = "billingToolStripMenuItem";
-            this.billingToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.billingToolStripMenuItem.Text = "Billing";
-            // 
-            // editBillingDetailsToolStripMenuItem
-            // 
-            this.editBillingDetailsToolStripMenuItem.Name = "editBillingDetailsToolStripMenuItem";
-            this.editBillingDetailsToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.editBillingDetailsToolStripMenuItem.Text = "Update Banking Details";
-            this.editBillingDetailsToolStripMenuItem.Click += new System.EventHandler(this.editBillingDetailsToolStripMenuItem_Click);
-            // 
-            // cancelBillingToolStripMenuItem
-            // 
-            this.cancelBillingToolStripMenuItem.Name = "cancelBillingToolStripMenuItem";
-            this.cancelBillingToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.cancelBillingToolStripMenuItem.Tag = "Restricted";
-            this.cancelBillingToolStripMenuItem.Text = "Cancel Billing ";
-            this.cancelBillingToolStripMenuItem.Click += new System.EventHandler(this.cancelBillingToolStripMenuItem_Click);
-            // 
-            // callbackToolStripMenuItem
-            // 
-            this.callbackToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.requestNewCallbackToolStripMenuItem,
-            this.updateCallbackDateToolStripMenuItem,
-            this.cancelCallbackToolStripMenuItem});
-            this.callbackToolStripMenuItem.Name = "callbackToolStripMenuItem";
-            this.callbackToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.callbackToolStripMenuItem.Text = "Callback";
-            // 
-            // requestNewCallbackToolStripMenuItem
-            // 
-            this.requestNewCallbackToolStripMenuItem.Name = "requestNewCallbackToolStripMenuItem";
-            this.requestNewCallbackToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.requestNewCallbackToolStripMenuItem.Text = "Request New Callback";
-            this.requestNewCallbackToolStripMenuItem.Click += new System.EventHandler(this.requestNewCallbackToolStripMenuItem_Click);
-            // 
-            // updateCallbackDateToolStripMenuItem
-            // 
-            this.updateCallbackDateToolStripMenuItem.Name = "updateCallbackDateToolStripMenuItem";
-            this.updateCallbackDateToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.updateCallbackDateToolStripMenuItem.Text = "Update Callback Date";
-            this.updateCallbackDateToolStripMenuItem.Click += new System.EventHandler(this.updateCallbackDateToolStripMenuItem_Click);
-            // 
-            // cancelCallbackToolStripMenuItem
-            // 
-            this.cancelCallbackToolStripMenuItem.Name = "cancelCallbackToolStripMenuItem";
-            this.cancelCallbackToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.cancelCallbackToolStripMenuItem.Text = "Cancel Callback";
-            this.cancelCallbackToolStripMenuItem.Click += new System.EventHandler(this.cancelCallbackToolStripMenuItem_Click);
             // 
             // customerToolStripMenuItem
             // 
@@ -1120,13 +1096,13 @@
             this.updateCustomerDetailsToolStripMenuItem,
             this.updateOverviewNoteToolStripMenuItem});
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(105, 29);
             this.customerToolStripMenuItem.Text = "Customer";
             // 
             // updateCustomerDetailsToolStripMenuItem
             // 
             this.updateCustomerDetailsToolStripMenuItem.Name = "updateCustomerDetailsToolStripMenuItem";
-            this.updateCustomerDetailsToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.updateCustomerDetailsToolStripMenuItem.Size = new System.Drawing.Size(312, 34);
             this.updateCustomerDetailsToolStripMenuItem.Text = "Update Customer Details";
             // 
             // updateOverviewNoteToolStripMenuItem
@@ -1135,102 +1111,159 @@
             this.updateNoteToolStripMenuItem,
             this.deleteNoteToolStripMenuItem});
             this.updateOverviewNoteToolStripMenuItem.Name = "updateOverviewNoteToolStripMenuItem";
-            this.updateOverviewNoteToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.updateOverviewNoteToolStripMenuItem.Size = new System.Drawing.Size(312, 34);
             this.updateOverviewNoteToolStripMenuItem.Text = "Overview Note";
             // 
             // updateNoteToolStripMenuItem
             // 
             this.updateNoteToolStripMenuItem.Name = "updateNoteToolStripMenuItem";
-            this.updateNoteToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.updateNoteToolStripMenuItem.Size = new System.Drawing.Size(216, 34);
             this.updateNoteToolStripMenuItem.Text = "Update Note";
             // 
             // deleteNoteToolStripMenuItem
             // 
             this.deleteNoteToolStripMenuItem.Name = "deleteNoteToolStripMenuItem";
-            this.deleteNoteToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.deleteNoteToolStripMenuItem.Size = new System.Drawing.Size(216, 34);
             this.deleteNoteToolStripMenuItem.Text = "Delete Note";
             this.deleteNoteToolStripMenuItem.Click += new System.EventHandler(this.deleteNoteToolStripMenuItem_Click);
-            // 
-            // documentsToolStripMenuItem
-            // 
-            this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
-            this.documentsToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
-            this.documentsToolStripMenuItem.Text = "Documents";
-            this.documentsToolStripMenuItem.Click += new System.EventHandler(this.documentsToolStripMenuItem_Click);
-            // 
-            // historyToolStripMenuItem
-            // 
-            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.historyToolStripMenuItem.Text = "History";
-            this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
-            // 
-            // notesToolStripMenuItem
-            // 
-            this.notesToolStripMenuItem.Name = "notesToolStripMenuItem";
-            this.notesToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.notesToolStripMenuItem.Text = "Notes";
-            this.notesToolStripMenuItem.Click += new System.EventHandler(this.notesToolStripMenuItem_Click);
             // 
             // policyToolStripMenuItem
             // 
             this.policyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewPolicyToolStripMenuItem,
-            this.updatePolicyStatusToolStripMenuItem,
-            this.viewFullPolicyDetailsToolStripMenuItem});
+            this.updatePolicyStatusToolStripMenuItem});
             this.policyToolStripMenuItem.Name = "policyToolStripMenuItem";
-            this.policyToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.policyToolStripMenuItem.Size = new System.Drawing.Size(73, 29);
             this.policyToolStripMenuItem.Text = "Policy";
             // 
             // addNewPolicyToolStripMenuItem
             // 
             this.addNewPolicyToolStripMenuItem.Name = "addNewPolicyToolStripMenuItem";
-            this.addNewPolicyToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.addNewPolicyToolStripMenuItem.Size = new System.Drawing.Size(275, 34);
             this.addNewPolicyToolStripMenuItem.Text = "Add New Policy";
             this.addNewPolicyToolStripMenuItem.Click += new System.EventHandler(this.addNewPolicyToolStripMenuItem_Click);
             // 
             // updatePolicyStatusToolStripMenuItem
             // 
             this.updatePolicyStatusToolStripMenuItem.Name = "updatePolicyStatusToolStripMenuItem";
-            this.updatePolicyStatusToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.updatePolicyStatusToolStripMenuItem.Size = new System.Drawing.Size(275, 34);
             this.updatePolicyStatusToolStripMenuItem.Text = "Update Policy Status";
             this.updatePolicyStatusToolStripMenuItem.Click += new System.EventHandler(this.updatePolicyStatusToolStripMenuItem_Click);
             // 
-            // viewFullPolicyDetailsToolStripMenuItem
+            // notesToolStripMenuItem
             // 
-            this.viewFullPolicyDetailsToolStripMenuItem.Name = "viewFullPolicyDetailsToolStripMenuItem";
-            this.viewFullPolicyDetailsToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.viewFullPolicyDetailsToolStripMenuItem.Text = "View Full Policy Details";
+            this.notesToolStripMenuItem.Name = "notesToolStripMenuItem";
+            this.notesToolStripMenuItem.Size = new System.Drawing.Size(75, 29);
+            this.notesToolStripMenuItem.Text = "Notes";
+            this.notesToolStripMenuItem.Click += new System.EventHandler(this.notesToolStripMenuItem_Click);
             // 
-            // kryptonCommand1
+            // billingToolStripMenuItem
             // 
-            this.kryptonCommand1.Text = "kryptonCommand1";
+            this.billingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editBillingDetailsToolStripMenuItem,
+            this.cancelBillingToolStripMenuItem});
+            this.billingToolStripMenuItem.Name = "billingToolStripMenuItem";
+            this.billingToolStripMenuItem.Size = new System.Drawing.Size(75, 29);
+            this.billingToolStripMenuItem.Text = "Billing";
+            // 
+            // editBillingDetailsToolStripMenuItem
+            // 
+            this.editBillingDetailsToolStripMenuItem.Name = "editBillingDetailsToolStripMenuItem";
+            this.editBillingDetailsToolStripMenuItem.Size = new System.Drawing.Size(298, 34);
+            this.editBillingDetailsToolStripMenuItem.Text = "Update Banking Details";
+            this.editBillingDetailsToolStripMenuItem.Click += new System.EventHandler(this.editBillingDetailsToolStripMenuItem_Click);
+            // 
+            // cancelBillingToolStripMenuItem
+            // 
+            this.cancelBillingToolStripMenuItem.Name = "cancelBillingToolStripMenuItem";
+            this.cancelBillingToolStripMenuItem.Size = new System.Drawing.Size(298, 34);
+            this.cancelBillingToolStripMenuItem.Tag = "Restricted";
+            this.cancelBillingToolStripMenuItem.Text = "Cancel Billing ";
+            this.cancelBillingToolStripMenuItem.Click += new System.EventHandler(this.cancelBillingToolStripMenuItem_Click);
+            // 
+            // documentsToolStripMenuItem
+            // 
+            this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
+            this.documentsToolStripMenuItem.Size = new System.Drawing.Size(119, 29);
+            this.documentsToolStripMenuItem.Text = "Documents";
+            this.documentsToolStripMenuItem.Click += new System.EventHandler(this.documentsToolStripMenuItem_Click);
+            // 
+            // historyToolStripMenuItem
+            // 
+            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
+            this.historyToolStripMenuItem.Text = "History";
+            this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
+            // 
+            // adminActionsToolStripMenuItem
+            // 
+            this.adminActionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changePolicyRenewalDateToolStripMenuItem,
+            this.securityToolStripMenuItem});
+            this.adminActionsToolStripMenuItem.Name = "adminActionsToolStripMenuItem";
+            this.adminActionsToolStripMenuItem.Size = new System.Drawing.Size(145, 29);
+            this.adminActionsToolStripMenuItem.Tag = "Restricted";
+            this.adminActionsToolStripMenuItem.Text = "Admin Actions";
+            // 
+            // changePolicyRenewalDateToolStripMenuItem
+            // 
+            this.changePolicyRenewalDateToolStripMenuItem.Name = "changePolicyRenewalDateToolStripMenuItem";
+            this.changePolicyRenewalDateToolStripMenuItem.Size = new System.Drawing.Size(335, 34);
+            this.changePolicyRenewalDateToolStripMenuItem.Tag = "Restricted";
+            this.changePolicyRenewalDateToolStripMenuItem.Text = "Change Policy Renewal Date";
+            // 
+            // securityToolStripMenuItem
+            // 
+            this.securityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewFootPrintsToolStripMenuItem,
+            this.lockCustomerPolicyToolStripMenuItem});
+            this.securityToolStripMenuItem.Name = "securityToolStripMenuItem";
+            this.securityToolStripMenuItem.Size = new System.Drawing.Size(335, 34);
+            this.securityToolStripMenuItem.Text = "Security";
+            // 
+            // viewFootPrintsToolStripMenuItem
+            // 
+            this.viewFootPrintsToolStripMenuItem.Name = "viewFootPrintsToolStripMenuItem";
+            this.viewFootPrintsToolStripMenuItem.Size = new System.Drawing.Size(303, 34);
+            this.viewFootPrintsToolStripMenuItem.Text = "View FootPrints";
+            // 
+            // lockCustomerPolicyToolStripMenuItem
+            // 
+            this.lockCustomerPolicyToolStripMenuItem.Name = "lockCustomerPolicyToolStripMenuItem";
+            this.lockCustomerPolicyToolStripMenuItem.Size = new System.Drawing.Size(303, 34);
+            this.lockCustomerPolicyToolStripMenuItem.Text = "Restrict Customer Policy";
+            this.lockCustomerPolicyToolStripMenuItem.Click += new System.EventHandler(this.lockCustomerPolicyToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.acceptedFileTypesToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // acceptedFileTypesToolStripMenuItem
             // 
             this.acceptedFileTypesToolStripMenuItem.Name = "acceptedFileTypesToolStripMenuItem";
-            this.acceptedFileTypesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.acceptedFileTypesToolStripMenuItem.Size = new System.Drawing.Size(269, 34);
             this.acceptedFileTypesToolStripMenuItem.Text = "Accepted File Types";
             this.acceptedFileTypesToolStripMenuItem.Click += new System.EventHandler(this.acceptedFileTypesToolStripMenuItem_Click);
             // 
+            // kryptonCommand1
+            // 
+            this.kryptonCommand1.Text = "kryptonCommand1";
+            // 
             // CustomerOverViewV1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 727);
+            this.ClientSize = new System.Drawing.Size(1820, 1050);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.metroGrid1);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.PolMenStr);
             this.MainMenuStrip = this.PolMenStr;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CustomerOverViewV1";
             this.Text = "CustomerOverViewV1";
             this.Load += new System.EventHandler(this.CustomerOverViewV1_Load);
@@ -1323,12 +1356,10 @@
         private Krypton.Toolkit.KryptonMaskedTextBox ProdEndDate_txt;
         private System.Windows.Forms.ToolStripMenuItem updateCustomerDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updatePolicyStatusToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewFullPolicyDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewPolicyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editBillingDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancelBillingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePolicyRenewalDateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem redressToolStripMenuItem;
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private System.Windows.Forms.ToolStripMenuItem updateOverviewNoteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateNoteToolStripMenuItem;
@@ -1357,10 +1388,6 @@
         private Krypton.Toolkit.KryptonTextBox discount_txt;
         private Krypton.Toolkit.KryptonTextBox ProdPrice_txt;
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem callbackToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem requestNewCallbackToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateCallbackDateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cancelCallbackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem notesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem securityToolStripMenuItem;
