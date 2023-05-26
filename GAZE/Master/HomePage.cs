@@ -4,6 +4,7 @@ using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using GAZE.Customer;
+using GAZE.Customer.Tasks;
 using Krypton.Toolkit;
 using System;
 using System.Configuration;
@@ -198,5 +199,6 @@ namespace GAZE
 
 
         #endregion
+
     }
 }

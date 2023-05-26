@@ -4,46 +4,30 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5913FB33-67E9-46B3-86D9-5B185C9DD309}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>GAZE</RootNamespace>
-    <AssemblyName>GAZE</AssemblyName>
+    <ProjectGuid>{AEB56AAE-3E66-4589-9C9B-A3F26D8C924A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gaze.BusinessLogic.TaskManagement</RootNamespace>
+    <AssemblyName>Gaze.BusinessLogic.TaskManagement</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <ShouldCreateLogs>False</ShouldCreateLogs>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
     <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
     <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
     <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
     <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
-    <AssemblyVersionSettings>None.None.None.IncrementOnDemand</AssemblyVersionSettings>
+    <AssemblyFileVersionSettings>None.None.None.IncrementOnDemand</AssemblyFileVersionSettings>
     <UpdatePackageVersion>False</UpdatePackageVersion>
     <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
     <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
-    <AssemblyFileVersionSettings>None.None.None.IncrementOnDemand</AssemblyFileVersionSettings>
     <AssemblyInfoVersionSettings>
     </AssemblyInfoVersionSettings>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <AssemblyInfoVersionSemVerSettings>
+    </AssemblyInfoVersionSemVerSettings>
+    <AssemblyVersionSettings>None.None.None.IncrementOnDemand</AssemblyVersionSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -53,20 +37,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cyotek.Windows.Forms.ColorPicker, Version=1.8.1.0, Culture=neutral, PublicKeyToken=58daa28b0b2de221, processorArchitecture=MSIL">
@@ -91,7 +67,7 @@
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Ribbon.dll</HintPath>
     </Reference>
     <Reference Include="Krypton.Toolkit, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.dll</HintPath>
+      <HintPath>..\packages\Krypton.Toolkit.70.22.11.312\lib\net48\Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Krypton.Toolkit.Suite.Extended.Buttons, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Buttons.dll</HintPath>
@@ -198,6 +174,9 @@
     <Reference Include="Krypton.Toolkit.Suite.Extended.Settings, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Settings.dll</HintPath>
     </Reference>
+    <Reference Include="Krypton.Toolkit.Suite.Extended.Software.Updater, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Software.Updater.dll</HintPath>
+    </Reference>
     <Reference Include="Krypton.Toolkit.Suite.Extended.Specialised.Dialogs, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Specialised.Dialogs.dll</HintPath>
     </Reference>
@@ -234,15 +213,6 @@
     <Reference Include="Krypton.Workspace, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Workspace.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.WindowsAPICodePack.Core, Version=7.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Microsoft.WindowsAPICodePack.Core.dll</HintPath>
     </Reference>
@@ -259,7 +229,7 @@
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="ScintillaNET, Version=3.6.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\ScintillaNET.dll</HintPath>
@@ -271,51 +241,14 @@
     <Reference Include="System.CodeDom, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\System.CodeDom.dll</HintPath>
     </Reference>
-    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
-    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.IO.FileSystem.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\System.IO.FileSystem.AccessControl.dll</HintPath>
     </Reference>
-    <Reference Include="System.Messaging" />
-    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\System.Security.AccessControl.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Security.Permissions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\System.Security.Permissions.dll</HintPath>
@@ -326,350 +259,37 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\System.ValueTuple.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="WinFormAnimation, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\WinFormAnimation.dll</HintPath>
     </Reference>
     <Reference Include="ZipStorer, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ZipStorer.3.8.0\lib\net452\ZipStorer.dll</HintPath>
+      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\ZipStorer.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\AdminConfig.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\AdminConfig.Designer.cs">
-      <DependentUpon>AdminConfig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\CreateUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\CreateUser.Designer.cs">
-      <DependentUpon>CreateUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\LoginForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\ResetUserPassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\ResetUserPassword.Designer.cs">
-      <DependentUpon>ResetUserPassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\TestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\UserMgr.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\UserMgr.Designer.cs">
-      <DependentUpon>UserMgr.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Config\ControlAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Config\ControlAdmin.Designer.cs">
-      <DependentUpon>ControlAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\Documents\CustomerDocuments.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\Documents\CustomerDocuments.Designer.cs">
-      <DependentUpon>CustomerDocuments.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\Notes\CustNotes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\Notes\CustNotes.Designer.cs">
-      <DependentUpon>CustNotes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\Secure\ViewFootPrints.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\Secure\ViewFootPrints.Designer.cs">
-      <DependentUpon>ViewFootPrints.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\Billing\BillingAgreement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\Billing\BillingAgreement.Designer.cs">
-      <DependentUpon>BillingAgreement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\Billing\UpdateBankingDetails.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\Billing\UpdateBankingDetails.Designer.cs">
-      <DependentUpon>UpdateBankingDetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\CustHistory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\CustHistory.Designer.cs">
-      <DependentUpon>CustHistory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\CustomerNotes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\CustomerNotes.Designer.cs">
-      <DependentUpon>CustomerNotes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\CustomerOverViewV1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\CustomerOverViewV1.Designer.cs">
-      <DependentUpon>CustomerOverViewV1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\CustomerSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\CustomerSearch.Designer.cs">
-      <DependentUpon>CustomerSearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\CustomerUpdateStatus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\CustomerUpdateStatus.Designer.cs">
-      <DependentUpon>CustomerUpdateStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\NewCustomer\NewCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\NewCustomer\NewCustomer.Designer.cs">
-      <DependentUpon>NewCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\Notes\NewNote.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\Notes\NewNote.Designer.cs">
-      <DependentUpon>NewNote.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\Policy\PolicyStatus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\Policy\PolicyStatus.Designer.cs">
-      <DependentUpon>PolicyStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\Tasks\TaskOverview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\Tasks\TaskOverview.Designer.cs">
-      <DependentUpon>TaskOverview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\UpdateCustomerDetails.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\UpdateCustomerDetails.Designer.cs">
-      <DependentUpon>UpdateCustomerDetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Help\AboutUs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Help\AboutUs.Designer.cs">
-      <DependentUpon>AboutUs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Help\AcceptedFileTypes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Help\AcceptedFileTypes.Designer.cs">
-      <DependentUpon>AcceptedFileTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Master\HomePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Master\HomePage.Designer.cs">
-      <DependentUpon>HomePage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Policy\NewCustomerPolicy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Policy\NewCustomerPolicy.Designer.cs">
-      <DependentUpon>NewCustomerPolicy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="DataLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Admin\AdminConfig.resx">
-      <DependentUpon>AdminConfig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\CreateUser.resx">
-      <DependentUpon>CreateUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\ResetUserPassword.resx">
-      <DependentUpon>ResetUserPassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\TestForm.resx">
-      <DependentUpon>TestForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\UserMgr.resx">
-      <DependentUpon>UserMgr.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Config\ControlAdmin.resx">
-      <DependentUpon>ControlAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\Documents\CustomerDocuments.resx">
-      <DependentUpon>CustomerDocuments.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\Notes\CustNotes.resx">
-      <DependentUpon>CustNotes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\Secure\ViewFootPrints.resx">
-      <DependentUpon>ViewFootPrints.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\Billing\BillingAgreement.resx">
-      <DependentUpon>BillingAgreement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\Billing\UpdateBankingDetails.resx">
-      <DependentUpon>UpdateBankingDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\CustHistory.resx">
-      <DependentUpon>CustHistory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\CustomerNotes.resx">
-      <DependentUpon>CustomerNotes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\CustomerOverViewV1.resx">
-      <DependentUpon>CustomerOverViewV1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\CustomerSearch.resx">
-      <DependentUpon>CustomerSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\CustomerUpdateStatus.resx">
-      <DependentUpon>CustomerUpdateStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\NewCustomer\NewCustomer.resx">
-      <DependentUpon>NewCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\Notes\NewNote.resx">
-      <DependentUpon>NewNote.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\Policy\PolicyStatus.resx">
-      <DependentUpon>PolicyStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\Tasks\TaskOverview.resx">
-      <DependentUpon>TaskOverview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\UpdateCustomerDetails.resx">
-      <DependentUpon>UpdateCustomerDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Help\AboutUs.resx">
-      <DependentUpon>AboutUs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Help\AcceptedFileTypes.resx">
-      <DependentUpon>AcceptedFileTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Master\HomePage.resx">
-      <DependentUpon>HomePage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Policy\NewCustomerPolicy.resx">
-      <DependentUpon>NewCustomerPolicy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
+    <Compile Include="TaskControlAdmin.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Gaze.BusinessLogic.BillingManagement\Gaze.BusinessLogic.BillingManagement.csproj">
-      <Project>{aa3d02b7-93da-40c6-971c-0b646afed045}</Project>
-      <Name>Gaze.BusinessLogic.BillingManagement</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gaze.BusinessLogic.Config\Gaze.BusinessLogic.Config.csproj">
-      <Project>{0b58bd9c-fcc3-4ea4-9453-334839379d93}</Project>
-      <Name>Gaze.BusinessLogic.Config</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gaze.BusinessLogic.CustomerManagement\Gaze.BusinessLogic.CustomerManagement.csproj">
-      <Project>{268061cc-df54-405b-8107-c6fef2c854b2}</Project>
-      <Name>Gaze.BusinessLogic.CustomerManagement</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GAZE.BusinessLogic.DocumentManagement\Gaze.BusinessLogic.DocumentManagement.csproj">
-      <Project>{922cb168-7789-46fd-b400-a9dadb89e4a8}</Project>
-      <Name>Gaze.BusinessLogic.DocumentManagement</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Gaze.BusinessLogic.Exceptions\Gaze.BusinessLogic.Exceptions.csproj">
-      <Project>{c19908c8-7cb6-4888-9fb7-354076bb9acb}</Project>
+      <Project>{C19908C8-7CB6-4888-9FB7-354076BB9ACB}</Project>
       <Name>Gaze.BusinessLogic.Exceptions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Gaze.BusinessLogic.PolicyManagement\Gaze.BusinessLogic.PolicyManagement.csproj">
-      <Project>{d5bbf744-d3f1-4705-9ade-261d35fb37d6}</Project>
-      <Name>Gaze.BusinessLogic.PolicyManagement</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gaze.BusinessLogic.Security\Gaze.BusinessLogic.Security.csproj">
-      <Project>{73c7db54-40d2-4e7e-b198-0b33fe341152}</Project>
-      <Name>Gaze.BusinessLogic.Security</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Gaze.BusinessLogic.SQLManagement\Gaze.BusinessLogic.SQLManagement.csproj">
-      <Project>{652c3e19-e25a-4b29-85e6-185bdf63fb1a}</Project>
+      <Project>{652C3E19-E25A-4B29-85E6-185BDF63FB1A}</Project>
       <Name>Gaze.BusinessLogic.SQLManagement</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Gaze.BusinessLogic.Startup\Gaze.BusinessLogic.Startup.csproj">
-      <Project>{554c89c5-535d-4a93-97b4-cdbd6cf37c10}</Project>
-      <Name>Gaze.BusinessLogic.Startup</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gaze.BusinessLogic.TaskManagement\Gaze.BusinessLogic.TaskManagement.csproj">
-      <Project>{aeb56aae-3e66-4589-9c9b-a3f26d8c924a}</Project>
-      <Name>Gaze.BusinessLogic.TaskManagement</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\LoginSmall.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="MetroFramework.txt" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\ILRepack.Lib.MSBuild.Task.2.0.18.2\build\ILRepack.Lib.MSBuild.Task.targets" Condition="Exists('..\packages\ILRepack.Lib.MSBuild.Task.2.0.18.2\build\ILRepack.Lib.MSBuild.Task.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\ILRepack.Lib.MSBuild.Task.2.0.18.2\build\ILRepack.Lib.MSBuild.Task.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ILRepack.Lib.MSBuild.Task.2.0.18.2\build\ILRepack.Lib.MSBuild.Task.targets'))" />
-  </Target>
 </Project>
