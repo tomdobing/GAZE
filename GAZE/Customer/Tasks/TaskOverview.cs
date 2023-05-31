@@ -31,12 +31,23 @@ namespace GAZE.Customer.Tasks
             this.Palette = HomePage.kryptonManager1.GlobalPalette;
             DataLayer.PopulateActiveTasksForCustomer(TaskActiveDGV);
             DataLayer.PopulateClosedTasksForCustomer(TaskClosedDGV);
+            DataLayer.PopulateCancelledTasksForCustomer(TaskCancDGV);
 
         }
 
         private void TaskOverview_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateTsk_btn_Click(object sender, EventArgs e)
+        {
+ 
         }
     }
 }

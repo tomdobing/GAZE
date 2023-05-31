@@ -463,6 +463,12 @@
     <Compile Include="Customer\Policy\PolicyStatus.Designer.cs">
       <DependentUpon>PolicyStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\Tasks\CreateNewTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Tasks\CreateNewTask.Designer.cs">
+      <DependentUpon>CreateNewTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\Tasks\TaskOverview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -560,6 +566,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Policy\PolicyStatus.resx">
       <DependentUpon>PolicyStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Tasks\CreateNewTask.resx">
+      <DependentUpon>CreateNewTask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Tasks\TaskOverview.resx">
       <DependentUpon>TaskOverview.cs</DependentUpon>

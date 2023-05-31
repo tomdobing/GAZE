@@ -6,6 +6,7 @@ using Gaze.BusinessLogic.SQLManagement;
 using GAZE.Customer;
 using GAZE.Customer.Tasks;
 using Krypton.Toolkit;
+using Krypton.Toolkit.Suite.Extended.Messagebox;
 using System;
 using System.Configuration;
 using System.Windows.Forms;
@@ -200,5 +201,13 @@ namespace GAZE
 
         #endregion
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            
+            Customer.Tasks._currentWindow createNewTask = new Customer.Tasks._currentWindow();
+            createNewTask.Show();
+
+        }
     }
 }
