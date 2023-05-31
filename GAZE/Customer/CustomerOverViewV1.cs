@@ -219,10 +219,19 @@ namespace GAZE.Customer
             CustomerDocuments customerDocuments = new CustomerDocuments();
             customerDocuments.ShowDialog();
         }
+        
+        
+        private void acceptedFileTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AcceptedFileTypes acceptedFileTypes = new AcceptedFileTypes();
+            acceptedFileTypes.ShowDialog();
+        }
 
-
-
-
+        private void tasksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Customer.Tasks.TaskOverview taskOverview = new Customer.Tasks.TaskOverview();
+            taskOverview.ShowDialog();
+        }
 
 
 
@@ -230,10 +239,5 @@ namespace GAZE.Customer
 
         #endregion
 
-        private void acceptedFileTypesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AcceptedFileTypes acceptedFileTypes = new AcceptedFileTypes();
-            acceptedFileTypes.ShowDialog();
-        }
     }
 }
