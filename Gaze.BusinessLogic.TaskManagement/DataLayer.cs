@@ -16,7 +16,7 @@ namespace Gaze.BusinessLogic.TaskManagement
         private readonly static string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         private readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
         private readonly MessageHandler messageHandler = new MessageHandler();
-        InfoSec InfoSec = new InfoSec();
+        private readonly InfoSec InfoSec = new InfoSec();
         private readonly SqlConnection SQLConnection = new SqlConnection(SQLConnectionString);
         private readonly TaskControlAdmin taskControlAdmin = new TaskControlAdmin();
         #endregion
@@ -169,7 +169,15 @@ namespace Gaze.BusinessLogic.TaskManagement
             }
 
         }
-
+        /// <summary>
+        /// Method used to create a new CustomerTask
+        /// </summary>
+        /// <param name="TaskType"></param>
+        /// <param name="TaskPriority"></param>
+        /// <param name="TaskDescription"></param>
+        /// <param name="TaskDetails"></param>
+        /// <param name="TaskDueDate"></param>
+        /// <exception cref="SqlException"></exception>
         public void CreateNewCustomerTask(KryptonComboBox TaskType, KryptonComboBox TaskPriority, KryptonTextBox TaskDescription,
             KryptonRichTextBoxExtended TaskDetails, KryptonDateTimePicker TaskDueDate)
         {
@@ -207,10 +215,13 @@ namespace Gaze.BusinessLogic.TaskManagement
                 KryptonMessageBox.Show(Message, Title, MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
                 taskControlAdmin.ResetCreateCustomerTaskForm(TaskType, TaskPriority, TaskDescription, TaskDetails, TaskDueDate);
             }
-            catch (Exception)
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show(SQLException.Message, "SQL Exception Caught", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+            }
+            catch(Exception Ex)
             {
 
-                throw;
             }
 
         }
