@@ -469,6 +469,12 @@
     <Compile Include="Customer\Tasks\CreateNewTask.Designer.cs">
       <DependentUpon>CreateNewTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\Tasks\OpenTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Tasks\OpenTask.Designer.cs">
+      <DependentUpon>OpenTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\Tasks\TaskOverview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -569,6 +575,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Tasks\CreateNewTask.resx">
       <DependentUpon>CreateNewTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Tasks\OpenTask.resx">
+      <DependentUpon>OpenTask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Tasks\TaskOverview.resx">
       <DependentUpon>TaskOverview.cs</DependentUpon>

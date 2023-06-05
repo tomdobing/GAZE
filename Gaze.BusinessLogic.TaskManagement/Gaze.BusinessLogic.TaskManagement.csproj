@@ -276,6 +276,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLayer.cs" />
+    <Compile Include="NoteDataLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskControlAdmin.cs" />
   </ItemGroup>

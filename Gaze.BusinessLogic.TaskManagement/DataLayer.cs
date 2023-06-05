@@ -6,6 +6,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Gaze.BusinessLogic.TaskManagement
@@ -34,7 +35,7 @@ namespace Gaze.BusinessLogic.TaskManagement
             try
             {
                 SQLConnection.Open();
-                using (SqlCommand SQLCommand = new SqlCommand("dbo.SELECT_ACTIVE_TASK_FOR_CUSTOMER_SP", SQLConnection))
+                using (SqlCommand SQLCommand = new SqlCommand("dbo.SELECT_TASKS_ACTIVE_TASK_FOR_CUSTOMER_SP", SQLConnection))
                 {
                     SQLCommand.CommandType = CommandType.StoredProcedure;
                     SQLCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
@@ -83,7 +84,7 @@ namespace Gaze.BusinessLogic.TaskManagement
             try
             {
                 ///SQLConnection.Open();
-                using (SqlCommand SQLCommand = new SqlCommand("dbo.SELECT_CLOSED_TASK_FOR_CUSTOMER_SP", SQLConnection))
+                using (SqlCommand SQLCommand = new SqlCommand("dbo.SELECT_TASKS_CLOSED_TASK_FOR_CUSTOMER_SP", SQLConnection))
                 {
                     SQLCommand.CommandType = CommandType.StoredProcedure;
                     SQLCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
@@ -132,7 +133,7 @@ namespace Gaze.BusinessLogic.TaskManagement
             try
             {
                 SQLConnection.Open();
-                using (SqlCommand SQLCommand = new SqlCommand("dbo.SELECT_CANCELLED_TASK_FOR_CUSTOMER_SP", SQLConnection))
+                using (SqlCommand SQLCommand = new SqlCommand("dbo.SELECT_TASKS_CANCELLED_TASK_FOR_CUSTOMER_SP", SQLConnection))
                 {
                     SQLCommand.CommandType = CommandType.StoredProcedure;
                     SQLCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
@@ -179,7 +180,7 @@ namespace Gaze.BusinessLogic.TaskManagement
         /// <param name="TaskDueDate"></param>
         /// <exception cref="SqlException"></exception>
         public void CreateNewCustomerTask(KryptonComboBox TaskType, KryptonComboBox TaskPriority, KryptonTextBox TaskDescription,
-            KryptonRichTextBoxExtended TaskDetails, KryptonDateTimePicker TaskDueDate)
+            KryptonRichTextBoxExtended TaskDetails, KryptonDateTimePicker TaskDueDate, [Optional] KryptonForm FormtoClose)
         {
             if (string.IsNullOrEmpty(TaskType.SelectedIndex.ToString()) ||
                 string.IsNullOrEmpty(TaskPriority.SelectedIndex.ToString()) ||
@@ -194,11 +195,20 @@ namespace Gaze.BusinessLogic.TaskManagement
                     0, 0, false, false, false, false, null);
                 return;
             }
+            if (TaskDueDate.Value <= DateTime.Now)
+            {
+                KryptonMessageBox.Show("You cannot create a task with a due date in the past. Please check and try again",
+                    "Validation Failure",
+                    MessageBoxButtons.OK,
+                    KryptonMessageBoxIcon.Error,
+                    0, 0, false, false, false, false, null);
+                return;
+            }
             try
             {
                 SQLConnection.Open();
 
-                SqlCommand sqlCommand = new SqlCommand("dbo.INSERT_NEW_CUSTOM_CUSTOMER_TASK_SP", SQLConnection)
+                SqlCommand sqlCommand = new SqlCommand("dbo.INSERT_TASK_NEW_CUSTOM_CUSTOMER_TASK_SP", SQLConnection)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
@@ -214,16 +224,104 @@ namespace Gaze.BusinessLogic.TaskManagement
                 string Title = "Task Created";
                 KryptonMessageBox.Show(Message, Title, MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
                 taskControlAdmin.ResetCreateCustomerTaskForm(TaskType, TaskPriority, TaskDescription, TaskDetails, TaskDueDate);
+                if (FormtoClose == null)
+                {
+
+                }
+                else
+                {
+                    FormtoClose.Close();
+                }
+
             }
             catch (SqlException SQLException)
             {
                 KryptonMessageBox.Show(SQLException.Message, "SQL Exception Caught", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
             }
-            catch(Exception Ex)
+            catch (Exception Ex)
+            {
+                KryptonMessageBox.Show(Ex.Message, "Exception Caught", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            finally
+            {
+                SQLConnection.Close();
+
+            }
+        }
+        /// <summary>
+        /// Method used to get a count of selected customers Open Tasks
+        /// </summary>
+        /// <param name="CountTextBox">Control to display the Count</param>
+        public void GetCustomerOpenTaskCount(KryptonTextBox CountTextBox)
+        {
+            try
+            {
+                SQLConnection.Open();
+
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_TASKS_COUNT_OF_OPEN_CUSTOMER_TASKS_SP", SQLConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    int valie = sqlDataReader.GetInt32(0);
+                    CountTextBox.Text = valie.ToString();
+
+                }
+            }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show(SQLException.Message, "SQL Exception Caught", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            catch (Exception Ex)
+            {
+                KryptonMessageBox.Show(Ex.Message + "\n\nFailed to get customer Task Count", "Exception Caught", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            finally
+            {
+                SQLConnection.Close();
+
+            }
+        }
+        /// <summary>
+        /// Method to retrieve the CustomerID and Task Descrption for the task Overview
+        /// </summary>
+        /// <param name="CustomerID"></param>
+        /// <param name="TaskDescription"></param>
+        public void GetCustomerIDAndTaskDescriptionForOverview(KryptonTextBox CustomerID, KryptonTextBox TaskDescription)
+        {
+            try
+            {
+                SQLConnection.Open();
+                SqlCommand sqlcommand = new SqlCommand("dbo.SELECT_TASKS_CUSTOMER_ID_TASK_DESC_SP", SQLConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlcommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlcommand.Parameters.AddWithValue("@TaskID", InfoSec.GlobalTaskID);
+                SqlDataReader sqlDataReader = sqlcommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    int value = sqlDataReader.GetInt32(0);
+                    CustomerID.Text = value.ToString();
+                    TaskDescription.Text = sqlDataReader[1].ToString();
+                }
+            }
+            catch (Exception)
             {
 
+                throw;
             }
-
+            finally
+            {
+                SQLConnection.Close();
+            }
         }
         #endregion
     }

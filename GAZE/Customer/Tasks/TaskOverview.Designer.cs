@@ -38,7 +38,7 @@
             this.TaskClosedDGV = new Krypton.Toolkit.KryptonDataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.TaskCancDGV = new Krypton.Toolkit.KryptonDataGridView();
-            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TaskActiveDGV)).BeginInit();
@@ -103,6 +103,7 @@
             this.kryptonTabControl1.Size = new System.Drawing.Size(1243, 554);
             this.kryptonTabControl1.TabIndex = 6;
             this.kryptonTabControl1.UseExtendedLayout = false;
+            this.kryptonTabControl1.SelectedIndexChanged += new System.EventHandler(this.kryptonTabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -123,6 +124,8 @@
             this.TaskActiveDGV.Name = "TaskActiveDGV";
             this.TaskActiveDGV.Size = new System.Drawing.Size(1235, 525);
             this.TaskActiveDGV.TabIndex = 0;
+            ///this.TaskActiveDGV.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TaskActiveDGV_CellContentDoubleClick);
+            this.TaskActiveDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TaskActiveDGV_CellDoubleClick);
             // 
             // tabPage2
             // 
@@ -163,23 +166,20 @@
             this.TaskCancDGV.Size = new System.Drawing.Size(1235, 525);
             this.TaskCancDGV.TabIndex = 0;
             // 
-            // kryptonButton1
+            // kryptonLabel1
             // 
-            this.kryptonButton1.CornerRoundingRadius = -1F;
-            this.kryptonButton1.Location = new System.Drawing.Point(128, 559);
-            this.kryptonButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.Size = new System.Drawing.Size(120, 25);
-            this.kryptonButton1.TabIndex = 7;
-            this.kryptonButton1.Values.Text = "&Update Task";
-            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
+            this.kryptonLabel1.Location = new System.Drawing.Point(129, 564);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(88, 20);
+            this.kryptonLabel1.TabIndex = 8;
+            this.kryptonLabel1.Values.Text = "kryptonLabel1";
             // 
             // TaskOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1243, 592);
-            this.Controls.Add(this.kryptonButton1);
+            this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.kryptonTabControl1);
             this.Controls.Add(this.CreateTsk_btn);
             this.Controls.Add(this.Ok_btn);
@@ -196,6 +196,7 @@
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TaskCancDGV)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -210,6 +211,6 @@
         private Krypton.Toolkit.KryptonDataGridView TaskActiveDGV;
         private Krypton.Toolkit.KryptonDataGridView TaskClosedDGV;
         private Krypton.Toolkit.KryptonDataGridView TaskCancDGV;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
     }
 }

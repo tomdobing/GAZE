@@ -108,7 +108,7 @@ namespace GAZE.Customer
             }
             catch (Exception ex)
             {
-                KryptonMessageBox.Show(this, ex.Message, "Login Failed", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, KryptonMessageBoxDefaultButton.Button3, 0, false, false);
+                KryptonMessageBox.Show(this, ex.Message, "Failed to open Customer Account", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, KryptonMessageBoxDefaultButton.Button3, 0, false, false);
                 return;
             }
         }
