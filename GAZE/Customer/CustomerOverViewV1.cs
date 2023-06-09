@@ -147,13 +147,13 @@ namespace GAZE.Customer
         private void editBillingDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Billing.UpdateBankingDetails updateBankingDetails = new Billing.UpdateBankingDetails();
-            updateBankingDetails.ShowDialog();
+            updateBankingDetails.Show();
         }
 
         private void historyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CustHistory custHistory = new CustHistory();
-            custHistory.ShowDialog();
+            custHistory.Show();
         }
 
         private void requestNewCallbackToolStripMenuItem_Click(object sender, EventArgs e)
@@ -176,25 +176,25 @@ namespace GAZE.Customer
         private void addNewPolicyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewCustomerPolicy newCustomerPolicy = new NewCustomerPolicy();
-            newCustomerPolicy.ShowDialog();
+            newCustomerPolicy.Show();
         }
 
         private void updatePolicyStatusToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PolicyStatus policyStatus = new PolicyStatus();
-            policyStatus.ShowDialog();
+            policyStatus.Show();
         }
 
         private void createNewNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewNote newNote = new NewNote();
-            newNote.ShowDialog();
+            newNote.Show();
         }
 
         private void notesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CustNotes custNotes = new CustNotes();
-            custNotes.ShowDialog();
+            custNotes.Show();
         }
 
         private void lockCustomerPolicyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -217,20 +217,20 @@ namespace GAZE.Customer
         private void documentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CustomerDocuments customerDocuments = new CustomerDocuments();
-            customerDocuments.ShowDialog();
+            customerDocuments.Show();
         }
         
         
         private void acceptedFileTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AcceptedFileTypes acceptedFileTypes = new AcceptedFileTypes();
-            acceptedFileTypes.ShowDialog();
+            acceptedFileTypes.Show();
         }
 
         private void tasksToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Customer.Tasks.TaskOverview taskOverview = new Customer.Tasks.TaskOverview();
-            taskOverview.ShowDialog();
+            taskOverview.Show();
         }
 
 

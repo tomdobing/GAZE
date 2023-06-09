@@ -121,10 +121,6 @@
             this.updateNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createNewTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewCustomerTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewAllTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.policyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updatePolicyStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -884,7 +880,7 @@
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGrid1.Location = new System.Drawing.Point(0, 111);
-            this.metroGrid1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroGrid1.Margin = new System.Windows.Forms.Padding(2);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1053,39 +1049,10 @@
             // 
             // tasksToolStripMenuItem
             // 
-            this.tasksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createNewTaskToolStripMenuItem,
-            this.viewCustomerTasksToolStripMenuItem,
-            this.removeTaskToolStripMenuItem,
-            this.viewAllTasksToolStripMenuItem});
             this.tasksToolStripMenuItem.Name = "tasksToolStripMenuItem";
             this.tasksToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.tasksToolStripMenuItem.Text = "&Tasks";
             this.tasksToolStripMenuItem.Click += new System.EventHandler(this.tasksToolStripMenuItem_Click);
-            // 
-            // createNewTaskToolStripMenuItem
-            // 
-            this.createNewTaskToolStripMenuItem.Name = "createNewTaskToolStripMenuItem";
-            this.createNewTaskToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.createNewTaskToolStripMenuItem.Text = "Create New Task";
-            // 
-            // viewCustomerTasksToolStripMenuItem
-            // 
-            this.viewCustomerTasksToolStripMenuItem.Name = "viewCustomerTasksToolStripMenuItem";
-            this.viewCustomerTasksToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.viewCustomerTasksToolStripMenuItem.Text = "View Customer Tasks";
-            // 
-            // removeTaskToolStripMenuItem
-            // 
-            this.removeTaskToolStripMenuItem.Name = "removeTaskToolStripMenuItem";
-            this.removeTaskToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.removeTaskToolStripMenuItem.Text = "&Remove Task";
-            // 
-            // viewAllTasksToolStripMenuItem
-            // 
-            this.viewAllTasksToolStripMenuItem.Name = "viewAllTasksToolStripMenuItem";
-            this.viewAllTasksToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.viewAllTasksToolStripMenuItem.Text = "&View All Tasks";
             // 
             // policyToolStripMenuItem
             // 
@@ -1356,9 +1323,5 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acceptedFileTypesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tasksToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createNewTaskToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewCustomerTasksToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeTaskToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewAllTasksToolStripMenuItem;
     }
 }

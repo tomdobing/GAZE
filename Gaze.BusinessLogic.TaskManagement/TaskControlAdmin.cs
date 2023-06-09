@@ -137,6 +137,48 @@ namespace Gaze.BusinessLogic.TaskManagement
             }
         }
         /// <summary>
+        /// Method used to populate the Task Status Combobox
+        /// </summary>
+        /// <param name="TaskPriority"></param>
+        /// <exception cref="SqlException"></exception>
+        /// <exception cref="Exception"></exception>
+        public void PopulateTaskStatusCombobox(KryptonComboBox TaskPriority)
+        {
+
+            SqlConnection SQLConnection = new SqlConnection(SQLConnectionString);
+            try
+            {
+
+                SQLConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CONTROL_VALUES_TASK_STATUS_SP", SQLConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                TaskPriority.Items.Add("");
+                while (sqlDataReader.Read())
+                {
+                    TaskPriority.Items.Add(sqlDataReader[0].ToString());
+                }
+
+            }
+            catch (SqlException SQLException)
+            {
+
+                KryptonMessageBox.Show(SQLException.Message, "SQL Exception Caught", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message + "\n\nFailed to populate TaskTypeCombobox", "Exception Caught", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+            }
+            finally
+            {
+                SQLConnection.Close();
+            }
+        }
+        /// <summary>
         /// Used to reset the form after successfully creating a task
         /// </summary>
         /// <param name="TaskType"></param>

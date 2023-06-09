@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Gaze.BusinessLogic.TaskManagement
 {
@@ -323,6 +324,166 @@ namespace Gaze.BusinessLogic.TaskManagement
                 SQLConnection.Close();
             }
         }
-        #endregion
+
+        public void GetOpenedTaskDetailsForOverview(KryptonTextBox TaskDescription, KryptonComboBox TaskType, KryptonRichTextBoxExtended TaskDetails,
+                                                    KryptonComboBox TaskPriority, KryptonDateTimePicker TaskDueDate, KryptonTextBox TaskAttempts,
+                                                    KryptonComboBox TaskStatusName, KryptonCheckBox ActiveFlag, KryptonTextBox AssignedTo)
+        {
+
+            try
+            {
+                SQLConnection.Open();
+                SqlCommand sqlcommand = new SqlCommand("dbo.SELECT_TASK_DETAILS_OVERVIEW_SP", SQLConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlcommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlcommand.Parameters.AddWithValue("@TaskID", InfoSec.GlobalTaskID);
+                SqlDataReader sqlDataReader = sqlcommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    TaskDescription.Text = sqlDataReader[0].ToString();
+                    TaskType.SelectedItem = sqlDataReader[1].ToString();
+                    TaskDetails.Text = sqlDataReader[2].ToString();
+                    TaskPriority.Text = sqlDataReader[3].ToString();
+                    DateTime date = DateTime.Parse(sqlDataReader[4].ToString());
+                    TaskDueDate.Value = date;
+
+                    TaskAttempts.Text = sqlDataReader[5].ToString();
+                    TaskStatusName.SelectedItem = sqlDataReader[6].ToString();
+                    if (sqlDataReader[7].ToString() == "1")
+                    {
+                        ActiveFlag.CheckState = CheckState.Checked;
+                    }
+                    else
+                    {
+                        ActiveFlag.CheckState = CheckState.Unchecked;
+                    }
+                    AssignedTo.Text = sqlDataReader[8].ToString();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                SQLConnection.Close();
+            }
+        }
+        /// <summary>
+        /// Method used to record a task attempt
+        /// </summary>
+        /// <exception cref="SqlException"></exception>
+        /// <exception cref="Exception"></exception>
+        public void UpdateTaskAttempts()
+        {
+            try
+            {
+                SQLConnection.Open();
+
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_TASKS_UPDATE_TASK_ATTEMPT_COUNT_SP", SQLConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@TaskID", InfoSec.GlobalTaskID);
+                sqlCommand.Parameters.AddWithValue("@Agent", InfoSec.GlobalUsername);
+                sqlCommand.ExecuteReader();
+                string Message = "Task Attempt has been recorded";
+                string Title = "Task Attempted";
+                KryptonMessageBox.Show(Message, Title, MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
+
+            }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show("SQL Exception Caught \n\n" + SQLException.Message, "SQL Exception", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            catch(Exception ex)
+            {
+                KryptonMessageBox.Show("Exception Thrown \n\n" + ex.Message, "Exception Caught", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            finally
+            {
+                SQLConnection.Close();
+            }
+        }
+
+        public void UpdateTaskStatusToCompleted([Optional] KryptonForm FormName)
+        {
+            try
+            {
+                SQLConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_TASKS_SET_TASK_STATUS_COMPLETED_SP", SQLConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@TaskID", InfoSec.GlobalTaskID);
+                sqlCommand.Parameters.AddWithValue("@Agent", InfoSec.GlobalUsername);
+                sqlCommand.ExecuteReader();
+                string Message = "Task marked as completed. This Window Will Now Close!";
+                string Title = "Task Updated";
+                KryptonMessageBox.Show(Message, Title, MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
+                FormName.Close();
+            }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show("SQL Exception Caught \n\n" + SQLException.Message, "SQL Exception", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show("Exception Thrown \n\n" + ex.Message, "Exception Caught", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            finally
+            {
+                SQLConnection.Close();
+            }
+
+        }
+
+        public void UpdateTaskStatusToPending([Optional] KryptonForm FormName, KryptonRichTextBoxExtended ReasonForPending)
+        {
+            try
+            {
+                SQLConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_TASKS_SET_TASK_STATUS_PENDING_SP", SQLConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@TaskID", InfoSec.GlobalTaskID);
+                sqlCommand.Parameters.AddWithValue("@Agent", InfoSec.GlobalUsername);
+                sqlCommand.Parameters.AddWithValue("@ReasonForPending",ReasonForPending.Text);
+                sqlCommand.ExecuteReader();
+                string Message = "Task marked as completed. This Window Will Now Close!";
+                string Title = "Task Updated";
+                KryptonMessageBox.Show(Message, Title, MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
+                FormName.Close();
+            }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show("SQL Exception Caught \n\n" + SQLException.Message, "SQL Exception", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show("Exception Thrown \n\n" + ex.Message, "Exception Caught", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            finally
+            {
+                SQLConnection.Close();
+            }
+
+        }
+
     }
+    #endregion
 }
+

@@ -48,7 +48,6 @@ namespace Gaze.BusinessLogic.TaskManagement
                         adapter.Fill(customers);
                         NoteDataGrid.DataSource = customers;
                     }
-                    SQLConnection.Close();
                     NoteDataGrid.ReadOnly = true;
                     NoteDataGrid.AllowUserToAddRows = false;
                     foreach (DataGridViewColumn column in NoteDataGrid.Columns)
@@ -94,10 +93,10 @@ namespace Gaze.BusinessLogic.TaskManagement
                     //string ConfigValue = sqlDataReader["ConfigValue"].ToString();
                     //int ConvertedValue = Convert.ToInt32(ConfigValue);
 
-                    NoteDescription.Text = sqlDataReader[1].ToString();
-                    NoteDetails.Text = sqlDataReader[2].ToString();
-                    CreatedBy.Text = sqlDataReader[3].ToString();
-                    CreatedDate.Text = sqlDataReader[4].ToString();
+                    NoteDescription.Text = sqlDataReader[2].ToString();
+                    NoteDetails.Text = sqlDataReader[3].ToString();
+                    CreatedBy.Text = sqlDataReader[4].ToString();
+                    CreatedDate.Text = sqlDataReader[5].ToString();
 
 
                 }
