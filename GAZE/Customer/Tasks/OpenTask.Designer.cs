@@ -124,7 +124,7 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Overview";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            //this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // OpnTskCnt_txt
             // 
@@ -252,7 +252,7 @@
             this.noteDesc_txt.ReadOnly = true;
             this.noteDesc_txt.Size = new System.Drawing.Size(542, 23);
             this.noteDesc_txt.TabIndex = 11;
-            this.noteDesc_txt.TextChanged += new System.EventHandler(this.kryptonTextBox1_TextChanged);
+            //this.noteDesc_txt.TextChanged += new System.EventHandler(this.kryptonTextBox1_TextChanged);
             // 
             // kryptonLabel5
             // 
@@ -292,7 +292,7 @@
             this.taskDetails_grp.Size = new System.Drawing.Size(801, 399);
             this.taskDetails_grp.TabIndex = 9;
             this.taskDetails_grp.Values.Heading = "Task Details";
-            this.taskDetails_grp.Paint += new System.Windows.Forms.PaintEventHandler(this.taskDetails_grp_Paint);
+            //this.taskDetails_grp.Paint += new System.Windows.Forms.PaintEventHandler(this.//taskDetails_grp_Paint);
             // 
             // assignedTo_txt
             // 
@@ -349,7 +349,7 @@
             this.taskActive_chk.Size = new System.Drawing.Size(19, 13);
             this.taskActive_chk.TabIndex = 29;
             this.taskActive_chk.Values.Text = "";
-            this.taskActive_chk.CheckedChanged += new System.EventHandler(this.kryptonCheckBox1_CheckedChanged);
+            //this.taskActive_chk.CheckedChanged += new System.EventHandler(this.kryptonCheckBox1_CheckedChanged);
             // 
             // kryptonLabel11
             // 
