@@ -2,6 +2,7 @@
 using Gaze.BusinessLogic.SQLManagement;
 using Krypton.Toolkit;
 using Krypton.Toolkit.Suite.Extended.Controls;
+using Krypton.Toolkit.Suite.Extended.Messagebox;
 using System;
 using System.Configuration;
 using System.Data;
@@ -327,7 +328,7 @@ namespace Gaze.BusinessLogic.TaskManagement
 
         public void GetOpenedTaskDetailsForOverview(KryptonTextBox TaskDescription, KryptonComboBox TaskType, KryptonRichTextBoxExtended TaskDetails,
                                                     KryptonComboBox TaskPriority, KryptonDateTimePicker TaskDueDate, KryptonTextBox TaskAttempts,
-                                                    KryptonComboBox TaskStatusName, KryptonCheckBox ActiveFlag, KryptonTextBox AssignedTo)
+                                                    KryptonComboBox TaskStatusName, KryptonCheckBox ActiveFlag, KryptonComboBox AssignedTo)
         {
 
             try
@@ -359,7 +360,7 @@ namespace Gaze.BusinessLogic.TaskManagement
                     {
                         ActiveFlag.CheckState = CheckState.Unchecked;
                     }
-                    AssignedTo.Text = sqlDataReader[8].ToString();
+                    AssignedTo.SelectedItem = sqlDataReader[8].ToString();
                 }
             }
             catch (Exception)
@@ -481,6 +482,43 @@ namespace Gaze.BusinessLogic.TaskManagement
                 SQLConnection.Close();
             }
 
+        }
+
+        public void UpdateTaskDetails(KryptonComboBox Agent, KryptonTextBox TaskDescription, KryptonRichTextBoxExtended TaskDetails, 
+                                      KryptonDateTimePicker DueDate, KryptonComboBox Priority, [Optional] KryptonForm FormToClose)
+        {
+            try
+            {
+                SQLConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_TASKS_UPDATE_TASK_DETAILS_SP", SQLConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@TaskID", InfoSec.GlobalTaskID);
+                sqlCommand.Parameters.AddWithValue("@Agent", Agent.SelectedItem);
+                sqlCommand.Parameters.AddWithValue("@TaskDescription", TaskDescription.Text);
+                sqlCommand.Parameters.AddWithValue("@TaskDetails", TaskDetails.Text);
+                sqlCommand.Parameters.AddWithValue("@DueDate", DueDate.Value);
+                sqlCommand.Parameters.AddWithValue("@Priority", Priority.SelectedItem);
+                sqlCommand.ExecuteReader();
+                KryptonMessageBox.Show("Task has been updated!", "Success",MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
+                FormToClose.Close();
+            }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show("Task Failed To Update\n\n" + SQLException.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            catch (Exception e)
+            {
+                KryptonMessageBox.Show("Task Failed To Update\n\n" + e.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            finally
+            {
+                SQLConnection.Close();
+            }
         }
 
     }

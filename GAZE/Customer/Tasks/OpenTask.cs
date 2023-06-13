@@ -33,11 +33,12 @@ namespace GAZE.Customer.Tasks
             InitializeComponent();
             FormSettings.ChangeableFormSettings(this, "Task Overview - TaskID:" + InfoSec.GlobalTaskID);
             FormSettings.SetFormSettings(this);
-            this.Palette = HomePage.kryptonManager1.GlobalPalette;
+            Palette = HomePage.kryptonManager1.GlobalPalette;
             DataLayer.GetCustomerOpenTaskCount(OpnTskCnt_txt);
             DataLayer.GetCustomerIDAndTaskDescriptionForOverview(custid_txt, tskdesc_txt);
             noteDataLayer.PopulateTaskOpenTaskNoteDataGrid(kryptonDataGridView1);
             taskControlAdmin.PopulateTaskTypeCombobox(taskType_cmb);
+            taskControlAdmin.PopulateUsernamesForAssignedTo(agent_cmb);
             taskControlAdmin.PopulatePriorities(taskPriority_cmb);
             taskDueDate_dtp.Format = DateTimePickerFormat.Custom;
             taskDueDate_dtp.CustomFormat = "dd/MM/yyyy HH:mm";
@@ -48,7 +49,8 @@ namespace GAZE.Customer.Tasks
             WarnLabel4.Hide();
             taskControlAdmin.PopulateTaskStatusCombobox(taskStatus_cmb);
             DataLayer.GetOpenedTaskDetailsForOverview(taskDescription_txt, taskType_cmb, taskDetails_rtxt, taskPriority_cmb, taskDueDate_dtp,
-                                                        taskAttempts_txt, taskStatus_cmb, taskActive_chk, assignedTo_txt);
+                                                        taskAttempts_txt, taskStatus_cmb, taskActive_chk, agent_cmb);
+            
         }
 
         private void OpenTask_Load(object sender, EventArgs e)
@@ -67,7 +69,7 @@ namespace GAZE.Customer.Tasks
             {
                 ShowWarnLabel2(WarnLabel2);
             }
-            if (String.IsNullOrEmpty(assignedTo_txt.Text))
+            if (agent_cmb.SelectedIndex != 1)
             {
                 ShowWarnLabel3(WarnLabel3);
             }
@@ -87,6 +89,7 @@ namespace GAZE.Customer.Tasks
                 //Thread.Sleep(2000);
                 //
             }
+            
         }
 
         private void kryptonButton2_Click(object sender, EventArgs e)

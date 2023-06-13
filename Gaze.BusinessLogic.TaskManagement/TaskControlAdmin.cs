@@ -205,6 +205,38 @@ namespace Gaze.BusinessLogic.TaskManagement
             }
         
         }
+
+        public void PopulateUsernamesForAssignedTo(KryptonComboBox AssignedToCombobox)
+        {
+            SqlConnection SQLConnection = new SqlConnection(SQLConnectionString);
+            try
+            {
+                SQLConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_USERNAME_FROM_USERS_SP", SQLConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                AssignedToCombobox.Items.Add("");
+                while (sqlDataReader.Read())
+                {
+                    AssignedToCombobox.Items.Add(sqlDataReader[0].ToString());
+                }
+            }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show("Failed To Populate Agent Names\n\n" + SQLException.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            catch(Exception ex)
+            {
+                KryptonMessageBox.Show("Failed To Populate Agent Names\n\n" + ex.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+        
+        
+        }
         #endregion
     }
 }

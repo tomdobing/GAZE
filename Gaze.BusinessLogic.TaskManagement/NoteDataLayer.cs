@@ -1,6 +1,7 @@
 ﻿using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
 using Krypton.Toolkit;
+using Krypton.Toolkit.Suite.Extended.Controls;
 using System;
 using System.Configuration;
 using System.Data;
@@ -101,10 +102,15 @@ namespace Gaze.BusinessLogic.TaskManagement
 
                 }
             }
-            catch (Exception)
+            catch (SqlException SQLException)
             {
-
-                throw;
+                KryptonMessageBox.Show("Failed to Populate Controls\n\n" + SQLException.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            catch(Exception ex)
+            {
+                KryptonMessageBox.Show("Failed to Populate Controls\n\n" + ex.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
             }
             finally
             {
@@ -114,7 +120,42 @@ namespace Gaze.BusinessLogic.TaskManagement
 
         }
 
+        public void InsertNewTaskNote(KryptonTextBox NoteDescription, KryptonRichTextBoxExtended NoteDetails, KryptonForm FormToClose)
+        {
+            SqlConnection SQLConnection = new SqlConnection(SQLConnectionString);
+            try
+            {
+                SQLConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.INSERT_TASK_NEW_NOTE_SP", SQLConnection)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.Clear();
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@TaskID", InfoSec.GlobalTaskID);
+                sqlCommand.Parameters.AddWithValue("@NoteDescription", NoteDescription.Text);
+                sqlCommand.Parameters.AddWithValue("@NoteDetails", NoteDetails.Text);
+                sqlCommand.Parameters.AddWithValue("@CreatedBy", InfoSec.GlobalUsername);
+                sqlCommand.ExecuteReader();
+                KryptonMessageBox.Show("Note Created!", "Created", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
+                FormToClose.Close();
+            }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show("Failed to insert note\n\n" + SQLException.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show("Failed to insert note\n\n" + ex.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            finally
+            {
+                SQLConnection.Close();
+            }
 
+        }
     }
 
 

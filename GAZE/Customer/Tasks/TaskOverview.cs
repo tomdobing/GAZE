@@ -51,7 +51,8 @@ namespace GAZE.Customer.Tasks
 
         private void CreateTsk_btn_Click(object sender, EventArgs e)
         {
-
+            _currentWindow _CurrentWindow = new _currentWindow();
+            _CurrentWindow.ShowDialog();
         }
 
         private void kryptonTabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,6 +90,16 @@ namespace GAZE.Customer.Tasks
             }
 
         
+        }
+
+        private void Ok_btn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void cancel_btn_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -5,6 +5,7 @@ using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.BusinessLogic.TaskManagement;
 using Krypton.Toolkit;
+using Krypton.Toolkit.Suite.Extended.Data.Visualisation.ScottPlot;
 using System;
 
 namespace GAZE.Customer.Tasks
@@ -65,11 +66,19 @@ namespace GAZE.Customer.Tasks
             if (string.IsNullOrEmpty(noteDes_txt.Text))
             {
                 KryptonMessageBox.Show("You must enter a value for the short description", "Validation Failure", System.Windows.Forms.MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
             }
             if (string.IsNullOrEmpty(noteDetails_rtb.Text))
             {
                 KryptonMessageBox.Show("You must enter a value for the note details", "Validation Failure", System.Windows.Forms.MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
             }
+            noteDataLayer.InsertNewTaskNote(noteDes_txt, noteDetails_rtb, this);
+        }
+
+        private void kryptonButton1_Click_1(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

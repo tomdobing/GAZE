@@ -57,6 +57,7 @@
             this.cancel_btn.Size = new System.Drawing.Size(120, 25);
             this.cancel_btn.TabIndex = 2;
             this.cancel_btn.Values.Text = "&Cancel";
+            this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
             // 
             // Ok_btn
             // 
@@ -67,6 +68,7 @@
             this.Ok_btn.Size = new System.Drawing.Size(120, 25);
             this.Ok_btn.TabIndex = 3;
             this.Ok_btn.Values.Text = "&Ok";
+            this.Ok_btn.Click += new System.EventHandler(this.Ok_btn_Click);
             // 
             // CreateTsk_btn
             // 
@@ -124,7 +126,6 @@
             this.TaskActiveDGV.Name = "TaskActiveDGV";
             this.TaskActiveDGV.Size = new System.Drawing.Size(1235, 525);
             this.TaskActiveDGV.TabIndex = 0;
-            ///this.TaskActiveDGV.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TaskActiveDGV_CellContentDoubleClick);
             this.TaskActiveDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TaskActiveDGV_CellDoubleClick);
             // 
             // tabPage2

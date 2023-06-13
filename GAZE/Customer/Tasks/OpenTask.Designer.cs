@@ -45,6 +45,7 @@
             this.noteDesc_txt = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel5 = new Krypton.Toolkit.KryptonLabel();
             this.taskDetails_grp = new Krypton.Toolkit.KryptonGroupBox();
+            this.agent_cmb = new Krypton.Toolkit.KryptonComboBox();
             this.assignedTo_txt = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel14 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel13 = new Krypton.Toolkit.KryptonLabel();
@@ -64,13 +65,13 @@
             this.taskDescription_txt = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel6 = new Krypton.Toolkit.KryptonLabel();
             this.control_grp = new Krypton.Toolkit.KryptonGroupBox();
+            this.WarnLabel4 = new System.Windows.Forms.Label();
+            this.WarnLabel3 = new System.Windows.Forms.Label();
+            this.WarnLabel2 = new System.Windows.Forms.Label();
+            this.WarnLabel1 = new System.Windows.Forms.Label();
             this.kryptonButton3 = new Krypton.Toolkit.KryptonButton();
             this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
             this.updateStatus_btn = new Krypton.Toolkit.KryptonButton();
-            this.WarnLabel1 = new System.Windows.Forms.Label();
-            this.WarnLabel2 = new System.Windows.Forms.Label();
-            this.WarnLabel3 = new System.Windows.Forms.Label();
-            this.WarnLabel4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.taskNotes_grp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskNotes_grp.Panel)).BeginInit();
@@ -81,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.taskDetails_grp.Panel)).BeginInit();
             this.taskDetails_grp.Panel.SuspendLayout();
             this.taskDetails_grp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.agent_cmb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskPriority_cmb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskStatus_cmb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskType_cmb)).BeginInit();
@@ -124,7 +126,6 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Overview";
-            //this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // OpnTskCnt_txt
             // 
@@ -188,10 +189,14 @@
             // 
             // kryptonButton1
             // 
-            this.kryptonButton1.CornerRoundingRadius = -1F;
+            this.kryptonButton1.CornerRoundingRadius = 10F;
             this.kryptonButton1.Location = new System.Drawing.Point(5, 481);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.Size = new System.Drawing.Size(136, 25);
+            this.kryptonButton1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton1.StateCommon.Border.Rounding = 10F;
             this.kryptonButton1.TabIndex = 16;
             this.kryptonButton1.Values.Text = "&New Note";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
@@ -252,7 +257,6 @@
             this.noteDesc_txt.ReadOnly = true;
             this.noteDesc_txt.Size = new System.Drawing.Size(542, 23);
             this.noteDesc_txt.TabIndex = 11;
-            //this.noteDesc_txt.TextChanged += new System.EventHandler(this.kryptonTextBox1_TextChanged);
             // 
             // kryptonLabel5
             // 
@@ -271,6 +275,7 @@
             // 
             // taskDetails_grp.Panel
             // 
+            this.taskDetails_grp.Panel.Controls.Add(this.agent_cmb);
             this.taskDetails_grp.Panel.Controls.Add(this.assignedTo_txt);
             this.taskDetails_grp.Panel.Controls.Add(this.kryptonLabel14);
             this.taskDetails_grp.Panel.Controls.Add(this.kryptonLabel13);
@@ -292,11 +297,26 @@
             this.taskDetails_grp.Size = new System.Drawing.Size(801, 399);
             this.taskDetails_grp.TabIndex = 9;
             this.taskDetails_grp.Values.Heading = "Task Details";
-            //this.taskDetails_grp.Paint += new System.Windows.Forms.PaintEventHandler(this.//taskDetails_grp_Paint);
+            // 
+            // agent_cmb
+            // 
+            this.agent_cmb.CornerRoundingRadius = 10F;
+            this.agent_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.agent_cmb.DropDownWidth = 115;
+            this.agent_cmb.IntegralHeight = false;
+            this.agent_cmb.Location = new System.Drawing.Point(597, 328);
+            this.agent_cmb.Name = "agent_cmb";
+            this.agent_cmb.Size = new System.Drawing.Size(159, 27);
+            this.agent_cmb.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.agent_cmb.StateCommon.ComboBox.Border.Rounding = 10F;
+            this.agent_cmb.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.agent_cmb.TabIndex = 35;
             // 
             // assignedTo_txt
             // 
-            this.assignedTo_txt.Location = new System.Drawing.Point(628, 334);
+            this.assignedTo_txt.Location = new System.Drawing.Point(630, 285);
             this.assignedTo_txt.Name = "assignedTo_txt";
             this.assignedTo_txt.ReadOnly = true;
             this.assignedTo_txt.Size = new System.Drawing.Size(111, 23);
@@ -305,7 +325,7 @@
             // kryptonLabel14
             // 
             this.kryptonLabel14.LabelStyle = Krypton.Toolkit.LabelStyle.BoldPanel;
-            this.kryptonLabel14.Location = new System.Drawing.Point(515, 334);
+            this.kryptonLabel14.Location = new System.Drawing.Point(506, 334);
             this.kryptonLabel14.Name = "kryptonLabel14";
             this.kryptonLabel14.Size = new System.Drawing.Size(85, 20);
             this.kryptonLabel14.TabIndex = 33;
@@ -322,13 +342,17 @@
             // 
             // taskPriority_cmb
             // 
-            this.taskPriority_cmb.CornerRoundingRadius = -1F;
+            this.taskPriority_cmb.CornerRoundingRadius = 10F;
             this.taskPriority_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.taskPriority_cmb.DropDownWidth = 177;
             this.taskPriority_cmb.IntegralHeight = false;
             this.taskPriority_cmb.Location = new System.Drawing.Point(323, 334);
             this.taskPriority_cmb.Name = "taskPriority_cmb";
-            this.taskPriority_cmb.Size = new System.Drawing.Size(177, 21);
+            this.taskPriority_cmb.Size = new System.Drawing.Size(177, 27);
+            this.taskPriority_cmb.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.taskPriority_cmb.StateCommon.ComboBox.Border.Rounding = 10F;
             this.taskPriority_cmb.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.taskPriority_cmb.TabIndex = 31;
             // 
@@ -349,7 +373,6 @@
             this.taskActive_chk.Size = new System.Drawing.Size(19, 13);
             this.taskActive_chk.TabIndex = 29;
             this.taskActive_chk.Values.Text = "";
-            //this.taskActive_chk.CheckedChanged += new System.EventHandler(this.kryptonCheckBox1_CheckedChanged);
             // 
             // kryptonLabel11
             // 
@@ -362,13 +385,17 @@
             // 
             // taskStatus_cmb
             // 
-            this.taskStatus_cmb.CornerRoundingRadius = -1F;
+            this.taskStatus_cmb.CornerRoundingRadius = 10F;
             this.taskStatus_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.taskStatus_cmb.DropDownWidth = 296;
             this.taskStatus_cmb.IntegralHeight = false;
             this.taskStatus_cmb.Location = new System.Drawing.Point(323, 284);
             this.taskStatus_cmb.Name = "taskStatus_cmb";
-            this.taskStatus_cmb.Size = new System.Drawing.Size(177, 21);
+            this.taskStatus_cmb.Size = new System.Drawing.Size(177, 27);
+            this.taskStatus_cmb.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.taskStatus_cmb.StateCommon.ComboBox.Border.Rounding = 10F;
             this.taskStatus_cmb.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.taskStatus_cmb.TabIndex = 27;
             // 
@@ -439,13 +466,17 @@
             // 
             // taskType_cmb
             // 
-            this.taskType_cmb.CornerRoundingRadius = -1F;
+            this.taskType_cmb.CornerRoundingRadius = 10F;
             this.taskType_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.taskType_cmb.DropDownWidth = 296;
             this.taskType_cmb.IntegralHeight = false;
             this.taskType_cmb.Location = new System.Drawing.Point(119, 61);
             this.taskType_cmb.Name = "taskType_cmb";
-            this.taskType_cmb.Size = new System.Drawing.Size(296, 21);
+            this.taskType_cmb.Size = new System.Drawing.Size(296, 27);
+            this.taskType_cmb.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.taskType_cmb.StateCommon.ComboBox.Border.Rounding = 10F;
             this.taskType_cmb.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.taskType_cmb.TabIndex = 19;
             // 
@@ -486,57 +517,16 @@
             this.control_grp.TabIndex = 10;
             this.control_grp.Values.Heading = "Controls && Warnings";
             // 
-            // kryptonButton3
+            // WarnLabel4
             // 
-            this.kryptonButton3.CornerRoundingRadius = -1F;
-            this.kryptonButton3.Location = new System.Drawing.Point(66, 47);
-            this.kryptonButton3.Name = "kryptonButton3";
-            this.kryptonButton3.Size = new System.Drawing.Size(116, 25);
-            this.kryptonButton3.TabIndex = 2;
-            this.kryptonButton3.Values.Text = "&Update Task";
-            this.kryptonButton3.Click += new System.EventHandler(this.kryptonButton3_Click);
-            // 
-            // kryptonButton2
-            // 
-            this.kryptonButton2.CornerRoundingRadius = -1F;
-            this.kryptonButton2.Location = new System.Drawing.Point(140, 16);
-            this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(116, 25);
-            this.kryptonButton2.TabIndex = 1;
-            this.kryptonButton2.Values.Text = "&Task Attempted";
-            this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click);
-            // 
-            // updateStatus_btn
-            // 
-            this.updateStatus_btn.CornerRoundingRadius = -1F;
-            this.updateStatus_btn.Location = new System.Drawing.Point(16, 16);
-            this.updateStatus_btn.Name = "updateStatus_btn";
-            this.updateStatus_btn.Size = new System.Drawing.Size(116, 25);
-            this.updateStatus_btn.TabIndex = 0;
-            this.updateStatus_btn.Values.Text = "&Update Status";
-            this.updateStatus_btn.Click += new System.EventHandler(this.updateStatus_btn_Click);
-            // 
-            // WarnLabel1
-            // 
-            this.WarnLabel1.AutoSize = true;
-            this.WarnLabel1.BackColor = System.Drawing.SystemColors.Window;
-            this.WarnLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WarnLabel1.Location = new System.Drawing.Point(293, 16);
-            this.WarnLabel1.Name = "WarnLabel1";
-            this.WarnLabel1.Size = new System.Drawing.Size(125, 17);
-            this.WarnLabel1.TabIndex = 7;
-            this.WarnLabel1.Text = "WARNINGLABEL1";
-            // 
-            // WarnLabel2
-            // 
-            this.WarnLabel2.AutoSize = true;
-            this.WarnLabel2.BackColor = System.Drawing.SystemColors.Window;
-            this.WarnLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WarnLabel2.Location = new System.Drawing.Point(293, 45);
-            this.WarnLabel2.Name = "WarnLabel2";
-            this.WarnLabel2.Size = new System.Drawing.Size(125, 17);
-            this.WarnLabel2.TabIndex = 8;
-            this.WarnLabel2.Text = "WARNINGLABEL2";
+            this.WarnLabel4.AutoSize = true;
+            this.WarnLabel4.BackColor = System.Drawing.SystemColors.Window;
+            this.WarnLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WarnLabel4.Location = new System.Drawing.Point(293, 109);
+            this.WarnLabel4.Name = "WarnLabel4";
+            this.WarnLabel4.Size = new System.Drawing.Size(125, 17);
+            this.WarnLabel4.TabIndex = 10;
+            this.WarnLabel4.Text = "WARNINGLABEL4";
             // 
             // WarnLabel3
             // 
@@ -549,16 +539,69 @@
             this.WarnLabel3.TabIndex = 9;
             this.WarnLabel3.Text = "WARNINGLABEL3";
             // 
-            // WarnLabel4
+            // WarnLabel2
             // 
-            this.WarnLabel4.AutoSize = true;
-            this.WarnLabel4.BackColor = System.Drawing.SystemColors.Window;
-            this.WarnLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WarnLabel4.Location = new System.Drawing.Point(293, 109);
-            this.WarnLabel4.Name = "WarnLabel4";
-            this.WarnLabel4.Size = new System.Drawing.Size(125, 17);
-            this.WarnLabel4.TabIndex = 10;
-            this.WarnLabel4.Text = "WARNINGLABEL4";
+            this.WarnLabel2.AutoSize = true;
+            this.WarnLabel2.BackColor = System.Drawing.SystemColors.Window;
+            this.WarnLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WarnLabel2.Location = new System.Drawing.Point(293, 45);
+            this.WarnLabel2.Name = "WarnLabel2";
+            this.WarnLabel2.Size = new System.Drawing.Size(125, 17);
+            this.WarnLabel2.TabIndex = 8;
+            this.WarnLabel2.Text = "WARNINGLABEL2";
+            // 
+            // WarnLabel1
+            // 
+            this.WarnLabel1.AutoSize = true;
+            this.WarnLabel1.BackColor = System.Drawing.SystemColors.Window;
+            this.WarnLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WarnLabel1.Location = new System.Drawing.Point(293, 16);
+            this.WarnLabel1.Name = "WarnLabel1";
+            this.WarnLabel1.Size = new System.Drawing.Size(125, 17);
+            this.WarnLabel1.TabIndex = 7;
+            this.WarnLabel1.Text = "WARNINGLABEL1";
+            // 
+            // kryptonButton3
+            // 
+            this.kryptonButton3.CornerRoundingRadius = 10F;
+            this.kryptonButton3.Location = new System.Drawing.Point(66, 47);
+            this.kryptonButton3.Name = "kryptonButton3";
+            this.kryptonButton3.Size = new System.Drawing.Size(127, 25);
+            this.kryptonButton3.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton3.StateCommon.Border.Rounding = 10F;
+            this.kryptonButton3.TabIndex = 2;
+            this.kryptonButton3.Values.Text = "&Update Task Details";
+            this.kryptonButton3.Click += new System.EventHandler(this.kryptonButton3_Click);
+            // 
+            // kryptonButton2
+            // 
+            this.kryptonButton2.CornerRoundingRadius = 10F;
+            this.kryptonButton2.Location = new System.Drawing.Point(140, 16);
+            this.kryptonButton2.Name = "kryptonButton2";
+            this.kryptonButton2.Size = new System.Drawing.Size(116, 25);
+            this.kryptonButton2.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton2.StateCommon.Border.Rounding = 10F;
+            this.kryptonButton2.TabIndex = 1;
+            this.kryptonButton2.Values.Text = "&Task Attempted";
+            this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click);
+            // 
+            // updateStatus_btn
+            // 
+            this.updateStatus_btn.CornerRoundingRadius = 10F;
+            this.updateStatus_btn.Location = new System.Drawing.Point(16, 16);
+            this.updateStatus_btn.Name = "updateStatus_btn";
+            this.updateStatus_btn.Size = new System.Drawing.Size(116, 25);
+            this.updateStatus_btn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.updateStatus_btn.StateCommon.Border.Rounding = 10F;
+            this.updateStatus_btn.TabIndex = 0;
+            this.updateStatus_btn.Values.Text = "&Update Status";
+            this.updateStatus_btn.Click += new System.EventHandler(this.updateStatus_btn_Click);
             // 
             // OpenTask
             // 
@@ -585,6 +628,7 @@
             this.taskDetails_grp.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.taskDetails_grp)).EndInit();
             this.taskDetails_grp.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.agent_cmb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskPriority_cmb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskStatus_cmb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskType_cmb)).EndInit();
@@ -642,5 +686,6 @@
         private System.Windows.Forms.Label WarnLabel4;
         private System.Windows.Forms.Label WarnLabel3;
         private System.Windows.Forms.Label WarnLabel2;
+        private Krypton.Toolkit.KryptonComboBox agent_cmb;
     }
 }
