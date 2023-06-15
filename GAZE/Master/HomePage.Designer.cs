@@ -164,14 +164,14 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click_1);
             // 
             // exitApplicationToolStripMenuItem
             // 
             this.exitApplicationToolStripMenuItem.Name = "exitApplicationToolStripMenuItem";
-            this.exitApplicationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitApplicationToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.exitApplicationToolStripMenuItem.Text = "Exit Application";
             this.exitApplicationToolStripMenuItem.Click += new System.EventHandler(this.exitApplicationToolStripMenuItem_Click_1);
             // 
@@ -213,19 +213,19 @@
             // allOpenTasksToolStripMenuItem
             // 
             this.allOpenTasksToolStripMenuItem.Name = "allOpenTasksToolStripMenuItem";
-            this.allOpenTasksToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.allOpenTasksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.allOpenTasksToolStripMenuItem.Text = "All Open Tasks";
             // 
             // viewMyTasksToolStripMenuItem
             // 
             this.viewMyTasksToolStripMenuItem.Name = "viewMyTasksToolStripMenuItem";
-            this.viewMyTasksToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.viewMyTasksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewMyTasksToolStripMenuItem.Text = "View My Tasks";
             // 
             // unassignedTasksToolStripMenuItem
             // 
             this.unassignedTasksToolStripMenuItem.Name = "unassignedTasksToolStripMenuItem";
-            this.unassignedTasksToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.unassignedTasksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.unassignedTasksToolStripMenuItem.Text = "Unassigned Tasks";
             // 
             // stockManagementToolStripMenuItem

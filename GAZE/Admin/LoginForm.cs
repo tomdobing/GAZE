@@ -70,6 +70,11 @@ namespace GAZE.Admin
             }
 
         }
+
+        private void username_txt_Enter(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
 

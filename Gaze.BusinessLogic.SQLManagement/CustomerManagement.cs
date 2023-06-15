@@ -9,6 +9,7 @@ using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
+using System.Xml;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Gaze.BusinessLogic.SQLManagement
@@ -812,10 +813,15 @@ namespace Gaze.BusinessLogic.SQLManagement
 
                 }
             }
-            catch (Exception)
+            catch (SqlException SQLException)
             {
-                ///ERROR HANDLING REQUIRED HERE
-                throw;
+                KryptonMessageBox.Show(SQLException.Message, "Critical Search Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            catch(Exception e)
+            {
+                KryptonMessageBox.Show(e.Message, "Critical Search Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
             }
         }
 

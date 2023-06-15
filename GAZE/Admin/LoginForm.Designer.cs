@@ -116,6 +116,7 @@
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.username_txt.StateCommon.Border.Rounding = 10F;
             this.username_txt.TabIndex = 10;
+            this.username_txt.Enter += new System.EventHandler(this.username_txt_Enter);
             // 
             // Pass_txt
             // 

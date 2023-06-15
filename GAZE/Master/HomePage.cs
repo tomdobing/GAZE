@@ -37,6 +37,7 @@ namespace GAZE
 
         private void HomePage_Load(object sender, EventArgs e)
         {
+            
             toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(configAdmin.GetConfigValue("Time Format"));
             StartTimer();
             toolStripLabel2.Text = "Build:" + Application.ProductVersion.ToString();

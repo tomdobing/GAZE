@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.searchPolID_txt = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
-            this.searchPolID_txt = new Krypton.Toolkit.KryptonTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -50,12 +50,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Criteria";
             // 
+            // searchPolID_txt
+            // 
+            this.searchPolID_txt.CueHint.Color1 = System.Drawing.Color.Black;
+            this.searchPolID_txt.CueHint.CueHintText = "Search By PolicyID";
+            this.searchPolID_txt.CueHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchPolID_txt.CueHint.Padding = new System.Windows.Forms.Padding(0);
+            this.searchPolID_txt.Location = new System.Drawing.Point(64, 19);
+            this.searchPolID_txt.Name = "searchPolID_txt";
+            this.searchPolID_txt.Size = new System.Drawing.Size(504, 20);
+            this.searchPolID_txt.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchPolID_txt.TabIndex = 5;
+            this.searchPolID_txt.TextChanged += new System.EventHandler(this.searchPolID_txt_TextChanged);
+            this.searchPolID_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchPolID_txt_KeyPress);
+            // 
             // kryptonButton1
             // 
             this.kryptonButton1.CornerRoundingRadius = -1F;
             this.kryptonButton1.Location = new System.Drawing.Point(588, 63);
             this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.PaletteMode = Krypton.Toolkit.PaletteMode.SparklePurpleDarkMode;
             this.kryptonButton1.Size = new System.Drawing.Size(130, 25);
             this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.kryptonButton1.TabIndex = 4;
@@ -88,22 +101,9 @@
             this.kryptonDataGridView1.Location = new System.Drawing.Point(0, 170);
             this.kryptonDataGridView1.MultiSelect = false;
             this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.PaletteMode = Krypton.Toolkit.PaletteMode.Office365DarkGray;
             this.kryptonDataGridView1.Size = new System.Drawing.Size(748, 231);
             this.kryptonDataGridView1.TabIndex = 3;
             this.kryptonDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kryptonDataGridView1_CellDoubleClick);
-            // 
-            // searchPolID_txt
-            // 
-            this.searchPolID_txt.CueHint.Color1 = System.Drawing.Color.Black;
-            this.searchPolID_txt.CueHint.CueHintText = "Search By PolicyID";
-            this.searchPolID_txt.CueHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchPolID_txt.CueHint.Padding = new System.Windows.Forms.Padding(0);
-            this.searchPolID_txt.Location = new System.Drawing.Point(64, 19);
-            this.searchPolID_txt.Name = "searchPolID_txt";
-            this.searchPolID_txt.PaletteMode = Krypton.Toolkit.PaletteMode.SparklePurpleDarkMode;
-            this.searchPolID_txt.Size = new System.Drawing.Size(504, 23);
-            this.searchPolID_txt.TabIndex = 5;
             // 
             // CustomerSearch
             // 
