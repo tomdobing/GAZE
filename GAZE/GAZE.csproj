@@ -699,6 +699,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\Silk_arrow_down.png" />
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\dialog-close.ico" />
     <None Include="Resources\download.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

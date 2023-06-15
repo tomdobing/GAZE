@@ -18,6 +18,7 @@ namespace GAZE.Admin
         #endregion
 
         #region Methods
+        [Obsolete]
         public LoginForm()
         {
             InitializeComponent();

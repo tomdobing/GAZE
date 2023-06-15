@@ -164,14 +164,14 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click_1);
             // 
             // exitApplicationToolStripMenuItem
             // 
             this.exitApplicationToolStripMenuItem.Name = "exitApplicationToolStripMenuItem";
-            this.exitApplicationToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.exitApplicationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitApplicationToolStripMenuItem.Text = "Exit Application";
             this.exitApplicationToolStripMenuItem.Click += new System.EventHandler(this.exitApplicationToolStripMenuItem_Click_1);
             // 
@@ -188,7 +188,7 @@
             // newCustomerToolStripMenuItem
             // 
             this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
-            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newCustomerToolStripMenuItem.Text = "New Customer";
             this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.newCustomerToolStripMenuItem_Click_1);
             // 
@@ -196,7 +196,7 @@
             // 
             this.searchToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.searchToolStripMenuItem.Text = "F3 Search";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click_1);
             // 
@@ -207,7 +207,7 @@
             this.viewMyTasksToolStripMenuItem,
             this.unassignedTasksToolStripMenuItem});
             this.customerTasksToolStripMenuItem.Name = "customerTasksToolStripMenuItem";
-            this.customerTasksToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.customerTasksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.customerTasksToolStripMenuItem.Text = "Customer Tasks";
             // 
             // allOpenTasksToolStripMenuItem
@@ -342,6 +342,9 @@
             // kryptonPalette1
             // 
             this.kryptonPalette1.BasePaletteMode = Krypton.Toolkit.PaletteMode.Office365Silver;
+            this.kryptonPalette1.ButtonSpecs.FormClose.Image = global::GAZE.Properties.Resources.dialog_close;
+            this.kryptonPalette1.ButtonSpecs.FormMax.Image = global::GAZE.Properties.Resources.Add;
+            this.kryptonPalette1.ButtonSpecs.FormMin.Image = global::GAZE.Properties.Resources.Silk_arrow_down;
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
