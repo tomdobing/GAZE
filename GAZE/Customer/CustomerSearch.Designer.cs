@@ -56,7 +56,7 @@
             this.searchPolID_txt.CueHint.CueHintText = "Search By PolicyID";
             this.searchPolID_txt.CueHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchPolID_txt.CueHint.Padding = new System.Windows.Forms.Padding(0);
-            this.searchPolID_txt.Location = new System.Drawing.Point(64, 19);
+            this.searchPolID_txt.Location = new System.Drawing.Point(64, 21);
             this.searchPolID_txt.Name = "searchPolID_txt";
             this.searchPolID_txt.Size = new System.Drawing.Size(504, 20);
             this.searchPolID_txt.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
