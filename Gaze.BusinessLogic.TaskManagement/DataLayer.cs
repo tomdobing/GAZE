@@ -214,7 +214,7 @@ namespace Gaze.BusinessLogic.TaskManagement
                 {
                     CommandType = CommandType.StoredProcedure
                 };
-                sqlCommand.Parameters.AddWithValue("@CustomerID", 1);
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
                 sqlCommand.Parameters.AddWithValue("@TaskType", TaskType.SelectedItem);
                 sqlCommand.Parameters.AddWithValue("@TaskPriority", TaskPriority.SelectedItem);
                 sqlCommand.Parameters.AddWithValue("@TaskDescription", TaskDescription.Text);

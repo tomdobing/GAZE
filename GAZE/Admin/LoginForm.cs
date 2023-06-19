@@ -32,6 +32,7 @@ namespace GAZE.Admin
             SQLError_lbl.Text = "";
             Pass_txt.UseSystemPasswordChar = true;
             metroLabel2.Text = Application.ProductVersion;
+
         }
 
 
@@ -48,6 +49,12 @@ namespace GAZE.Admin
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
+            if (!PreLoginChecks.IsNetworkAvailable())
+            {
+                KryptonMessageBox.Show(this, "G.A.Z.E Detected that you do not have an active Network Connection. \n\nPlease check your network status or contact your System Administrator",
+                                            "No Network Detected", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, KryptonMessageBoxDefaultButton.Button3, 0, false, false);
+                return;
+            }
             if (PreLoginChecks.CheckSQLServerIsOnline(SQLError_lbl) == true)
             {
                 if (infoSec.UserLogin(username_txt, encryption.EncryptTextBoxValue(Pass_txt, Pass_txt.Text)) == true)
