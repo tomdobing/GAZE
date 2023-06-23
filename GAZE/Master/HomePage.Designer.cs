@@ -45,6 +45,10 @@
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allOpenTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewMyTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.unassignedTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newStockInputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,16 +64,16 @@
             this.sQLServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kryptonManager1 = new Krypton.Toolkit.KryptonManager(this.components);
-            this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
+            this.kryptonPalette1 = new Krypton.Toolkit.KryptonPalette(this.components);
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripSeparator1,
@@ -81,6 +85,7 @@
             this.toolStripSeparator4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 394);
             this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.toolStrip1.Size = new System.Drawing.Size(954, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
@@ -132,6 +137,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.customerToolStripMenuItem,
@@ -141,6 +147,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
             this.menuStrip1.Size = new System.Drawing.Size(954, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
@@ -151,7 +158,7 @@
             this.logoutToolStripMenuItem,
             this.exitApplicationToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 22);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // logoutToolStripMenuItem
@@ -172,15 +179,16 @@
             // 
             this.customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newCustomerToolStripMenuItem,
-            this.searchToolStripMenuItem});
+            this.searchToolStripMenuItem,
+            this.customerTasksToolStripMenuItem});
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(71, 22);
             this.customerToolStripMenuItem.Text = "Customer";
             // 
             // newCustomerToolStripMenuItem
             // 
             this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
-            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newCustomerToolStripMenuItem.Text = "New Customer";
             this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.newCustomerToolStripMenuItem_Click_1);
             // 
@@ -188,16 +196,44 @@
             // 
             this.searchToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.searchToolStripMenuItem.Text = "F3 Search";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click_1);
+            // 
+            // customerTasksToolStripMenuItem
+            // 
+            this.customerTasksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allOpenTasksToolStripMenuItem,
+            this.viewMyTasksToolStripMenuItem,
+            this.unassignedTasksToolStripMenuItem});
+            this.customerTasksToolStripMenuItem.Name = "customerTasksToolStripMenuItem";
+            this.customerTasksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customerTasksToolStripMenuItem.Text = "Customer Tasks";
+            // 
+            // allOpenTasksToolStripMenuItem
+            // 
+            this.allOpenTasksToolStripMenuItem.Name = "allOpenTasksToolStripMenuItem";
+            this.allOpenTasksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.allOpenTasksToolStripMenuItem.Text = "All Open Tasks";
+            // 
+            // viewMyTasksToolStripMenuItem
+            // 
+            this.viewMyTasksToolStripMenuItem.Name = "viewMyTasksToolStripMenuItem";
+            this.viewMyTasksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewMyTasksToolStripMenuItem.Text = "View My Tasks";
+            // 
+            // unassignedTasksToolStripMenuItem
+            // 
+            this.unassignedTasksToolStripMenuItem.Name = "unassignedTasksToolStripMenuItem";
+            this.unassignedTasksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.unassignedTasksToolStripMenuItem.Text = "Unassigned Tasks";
             // 
             // stockManagementToolStripMenuItem
             // 
             this.stockManagementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newStockInputToolStripMenuItem});
             this.stockManagementToolStripMenuItem.Name = "stockManagementToolStripMenuItem";
-            this.stockManagementToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
+            this.stockManagementToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.stockManagementToolStripMenuItem.Text = "Policy Management";
             // 
             // newStockInputToolStripMenuItem
@@ -215,7 +251,7 @@
             this.configSettingsToolStripMenuItem,
             this.controlManagementToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 22);
             this.adminToolStripMenuItem.Text = "Admin";
             // 
             // createNewUserToolStripMenuItem
@@ -257,7 +293,7 @@
             this.windowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hideTimeDateToolStripMenuItem});
             this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
-            this.windowToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.windowToolStripMenuItem.Size = new System.Drawing.Size(63, 22);
             this.windowToolStripMenuItem.Text = "Window";
             // 
             // hideTimeDateToolStripMenuItem
@@ -274,7 +310,7 @@
             this.sQLServerToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // checkForUpdatesToolStripMenuItem
@@ -300,16 +336,24 @@
             // 
             // kryptonManager1
             // 
-            this.kryptonManager1.GlobalPaletteMode = Krypton.Toolkit.PaletteModeManager.SparklePurpleLightMode;
+            this.kryptonManager1.GlobalPalette = this.kryptonPalette1;
+            this.kryptonManager1.GlobalPaletteMode = Krypton.Toolkit.PaletteModeManager.Custom;
             // 
-            // kryptonDataGridView1
+            // kryptonPalette1
             // 
-            this.kryptonDataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonDataGridView1.Location = new System.Drawing.Point(0, 24);
-            this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(954, 259);
-            this.kryptonDataGridView1.TabIndex = 2;
-            this.kryptonDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kryptonDataGridView1_CellContentClick);
+            this.kryptonPalette1.BasePaletteMode = Krypton.Toolkit.PaletteMode.Office365Silver;
+            this.kryptonPalette1.ButtonSpecs.FormClose.Image = global::GAZE.Properties.Resources.dialog_close;
+            this.kryptonPalette1.ButtonSpecs.FormMax.Image = global::GAZE.Properties.Resources.Add;
+            this.kryptonPalette1.ButtonSpecs.FormMin.Image = global::GAZE.Properties.Resources.Silk_arrow_down;
+            this.kryptonPalette1.FormStyles.FormMain.StateActive.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonPalette1.FormStyles.FormMain.StateActive.Border.Rounding = 15F;
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Rounding = 15F;
+            this.kryptonPalette1.LabelStyles.LabelBoldPanel.StateCommon.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // HomePage
             // 
@@ -317,7 +361,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(954, 419);
-            this.Controls.Add(this.kryptonDataGridView1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.FormTitleAlign = Krypton.Toolkit.PaletteRelativeAlign.Center;
@@ -331,7 +374,6 @@
             this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,7 +412,11 @@
         private System.Windows.Forms.ToolStripMenuItem controlManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         public Krypton.Toolkit.KryptonManager kryptonManager1;
-        private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem customerTasksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allOpenTasksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewMyTasksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem unassignedTasksToolStripMenuItem;
+        private Krypton.Toolkit.KryptonPalette kryptonPalette1;
     }
 }
 

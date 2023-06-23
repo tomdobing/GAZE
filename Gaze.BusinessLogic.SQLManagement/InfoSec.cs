@@ -1,10 +1,8 @@
 ﻿using Krypton.Toolkit;
-using MetroFramework.Controls;
 using System;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Gaze.BusinessLogic.SQLManagement
 {
@@ -14,11 +12,25 @@ namespace Gaze.BusinessLogic.SQLManagement
         #region Declarations
         private string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
 
-        public static string GlobalUsername { get; set; }
+        public static string GlobalUsername
+        {
+            get; set;
+        }
 
-        public static string GlobalCustomerID { get; set; }
-        
-        public static string GlobalSelectedPolicyID{ get; set; }
+        public static string GlobalCustomerID
+        {
+            get; set;
+        }
+
+        public static string GlobalSelectedPolicyID
+        {
+            get; set;
+        }
+
+        public static string GlobalTaskID
+        {
+            get; set;
+        }
 
         #endregion
 

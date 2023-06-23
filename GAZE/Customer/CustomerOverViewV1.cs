@@ -4,7 +4,6 @@ using Gaze.BusinessLogic.CustomerManagement;
 using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
-using GAZE.Customer.Callback;
 using GAZE.Customer.Documents;
 using GAZE.Customer.Notes;
 using GAZE.Customer.Policy;
@@ -28,7 +27,6 @@ namespace GAZE.Customer
         SQLManagement PolicySQLManagement = new SQLManagement();
         HomePage HomePage = new HomePage();
         SQLBilling SQLBilling = new SQLBilling();
-        CustCallBack CustCallBack = new CustCallBack();
         CustomerLogic CustomerLogic = new CustomerLogic();
         #endregion
 
@@ -53,16 +51,6 @@ namespace GAZE.Customer
                     item.PaletteMode = PaletteMode.SparklePurpleDarkMode;
                     item.ReadOnly = true;
                 }
-            }
-            if (CustCallBack.CheckCustomerActiveCallBacks() == false)
-            {
-                updateCallbackDateToolStripMenuItem.Enabled = false;
-                cancelCallbackToolStripMenuItem.Enabled = false;
-            }
-            else
-            {
-                updateCallbackDateToolStripMenuItem.Enabled = true;
-                cancelCallbackToolStripMenuItem.Enabled = true;
             }
             if (string.IsNullOrEmpty(kryptonTextBox1.Text))
             {
@@ -159,71 +147,54 @@ namespace GAZE.Customer
         private void editBillingDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Billing.UpdateBankingDetails updateBankingDetails = new Billing.UpdateBankingDetails();
-            updateBankingDetails.ShowDialog();
+            updateBankingDetails.Show();
         }
 
         private void historyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CustHistory custHistory = new CustHistory();
-            custHistory.ShowDialog();
+            custHistory.Show();
         }
 
         private void requestNewCallbackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (CustCallBack.CheckCustomerActiveCallBacks() == true)
-            {
-                KryptonMessageBox.Show("This customer already has an active callback.\n\nOnly one active call back is allowed per customer",
-                    "Access Restricted", MessageBoxButtons.OK, KryptonMessageBoxIcon.Warning, 0, 0, false, false, false, false, null);
-                return;
-            }
-            Callback.RequestCallback requestCallback = new Callback.RequestCallback();
-            requestCallback.ShowDialog();
+            
         }
 
         private void updateCallbackDateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UpdateCallBack updateCallBack = new UpdateCallBack();
-            updateCallBack.ShowDialog();
+
         }
      
 
         private void cancelCallbackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "Are you sure you wish to cancel this customer's callback request? You will need to request a new call back!";
-            string caption = "Are you sure?";
-            DialogResult result;
 
-            result = KryptonMessageBox.Show(message, caption, MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, KryptonMessageBoxDefaultButton.Button3);
-            if (result == DialogResult.Yes)
-            {
-
-                CustCallBack.CancelCustomerCallBack();
-            }
         }
 
 
         private void addNewPolicyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewCustomerPolicy newCustomerPolicy = new NewCustomerPolicy();
-            newCustomerPolicy.ShowDialog();
+            newCustomerPolicy.Show();
         }
 
         private void updatePolicyStatusToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PolicyStatus policyStatus = new PolicyStatus();
-            policyStatus.ShowDialog();
+            policyStatus.Show();
         }
 
         private void createNewNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewNote newNote = new NewNote();
-            newNote.ShowDialog();
+            newNote.Show();
         }
 
         private void notesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CustNotes custNotes = new CustNotes();
-            custNotes.ShowDialog();
+            custNotes.Show();
         }
 
         private void lockCustomerPolicyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -246,12 +217,21 @@ namespace GAZE.Customer
         private void documentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CustomerDocuments customerDocuments = new CustomerDocuments();
-            customerDocuments.ShowDialog();
+            customerDocuments.Show();
+        }
+        
+        
+        private void acceptedFileTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AcceptedFileTypes acceptedFileTypes = new AcceptedFileTypes();
+            acceptedFileTypes.Show();
         }
 
-
-
-
+        private void tasksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Customer.Tasks.TaskOverview taskOverview = new Customer.Tasks.TaskOverview();
+            taskOverview.Show();
+        }
 
 
 
@@ -259,10 +239,5 @@ namespace GAZE.Customer
 
         #endregion
 
-        private void acceptedFileTypesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AcceptedFileTypes acceptedFileTypes = new AcceptedFileTypes();
-            acceptedFileTypes.ShowDialog();
-        }
     }
 }

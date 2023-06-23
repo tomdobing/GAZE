@@ -29,16 +29,15 @@
         [System.Obsolete]
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.usernamelbl = new MetroFramework.Controls.MetroLabel();
             this.passwordlbl = new MetroFramework.Controls.MetroLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.SQLError_lbl = new System.Windows.Forms.Label();
             this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.username_txt = new Krypton.Toolkit.KryptonTextBox();
             this.Pass_txt = new Krypton.Toolkit.KryptonTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,15 +58,6 @@
             this.passwordlbl.Size = new System.Drawing.Size(63, 19);
             this.passwordlbl.TabIndex = 3;
             this.passwordlbl.Text = "Password";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GAZE.Properties.Resources.LoginSmall;
-            this.pictureBox1.Location = new System.Drawing.Point(23, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(138, 136);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // metroLabel1
             // 
@@ -92,7 +82,7 @@
             // 
             this.SQLError_lbl.AutoSize = true;
             this.SQLError_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SQLError_lbl.Location = new System.Drawing.Point(222, 155);
+            this.SQLError_lbl.Location = new System.Drawing.Point(222, 160);
             this.SQLError_lbl.Name = "SQLError_lbl";
             this.SQLError_lbl.Size = new System.Drawing.Size(373, 25);
             this.SQLError_lbl.TabIndex = 8;
@@ -100,17 +90,19 @@
             // 
             // kryptonButton1
             // 
-            this.kryptonButton1.CornerRoundingRadius = -1F;
-            this.kryptonButton1.Location = new System.Drawing.Point(281, 126);
+            this.kryptonButton1.CornerRoundingRadius = 10F;
+            this.kryptonButton1.Location = new System.Drawing.Point(281, 131);
             this.kryptonButton1.Name = "kryptonButton1";
-            this.kryptonButton1.PaletteMode = Krypton.Toolkit.PaletteMode.Office365BlueDarkMode;
+            this.kryptonButton1.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.kryptonButton1.Size = new System.Drawing.Size(309, 25);
+            this.kryptonButton1.StateCommon.Back.Color1 = System.Drawing.Color.DodgerBlue;
+            this.kryptonButton1.StateCommon.Back.Color2 = System.Drawing.Color.Cyan;
             this.kryptonButton1.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonButton1.StateCommon.Border.Rounding = 10F;
+            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonButton1.TabIndex = 9;
-            this.kryptonButton1.UseAsUACElevationButton = true;
-            this.kryptonButton1.Values.Image = ((System.Drawing.Image)(resources.GetObject("kryptonButton1.Values.Image")));
             this.kryptonButton1.Values.Text = "Login";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
@@ -118,22 +110,40 @@
             // 
             this.username_txt.Location = new System.Drawing.Point(281, 48);
             this.username_txt.Name = "username_txt";
-            this.username_txt.Size = new System.Drawing.Size(309, 23);
+            this.username_txt.Size = new System.Drawing.Size(309, 29);
+            this.username_txt.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.username_txt.StateCommon.Border.Rounding = 10F;
             this.username_txt.TabIndex = 10;
+            this.username_txt.Enter += new System.EventHandler(this.username_txt_Enter);
             // 
             // Pass_txt
             // 
             this.Pass_txt.Location = new System.Drawing.Point(281, 96);
             this.Pass_txt.Name = "Pass_txt";
-            this.Pass_txt.Size = new System.Drawing.Size(309, 23);
+            this.Pass_txt.Size = new System.Drawing.Size(309, 29);
+            this.Pass_txt.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.Pass_txt.StateCommon.Border.Rounding = 10F;
             this.Pass_txt.TabIndex = 11;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GAZE.Properties.Resources.LoginSmall;
+            this.pictureBox1.Location = new System.Drawing.Point(23, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(138, 136);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 
             this.AcceptButton = this.kryptonButton1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 179);
+            this.ClientSize = new System.Drawing.Size(613, 188);
             this.Controls.Add(this.Pass_txt);
             this.Controls.Add(this.username_txt);
             this.Controls.Add(this.kryptonButton1);

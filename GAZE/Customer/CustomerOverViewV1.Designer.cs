@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
@@ -115,34 +115,29 @@
             this.CustID_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PolMenStr = new System.Windows.Forms.MenuStrip();
-            this.adminActionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changePolicyRenewalDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.securityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewFootPrintsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lockCustomerPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.billingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editBillingDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelBillingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.callbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.requestNewCallbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateCallbackDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelCallbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateCustomerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateOverviewNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.notesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.policyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updatePolicyStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewFullPolicyDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kryptonCommand1 = new Krypton.Toolkit.KryptonCommand();
+            this.notesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.billingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editBillingDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelBillingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminActionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePolicyRenewalDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.securityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewFootPrintsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lockCustomerPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acceptedFileTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kryptonCommand1 = new Krypton.Toolkit.KryptonCommand();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -163,7 +158,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage5);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Regular;
-            this.metroTabControl1.Location = new System.Drawing.Point(0, 382);
+            this.metroTabControl1.Location = new System.Drawing.Point(0, 337);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1213, 345);
@@ -863,44 +858,44 @@
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
             this.metroGrid1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(0, 136);
+            this.metroGrid1.Location = new System.Drawing.Point(0, 111);
             this.metroGrid1.Margin = new System.Windows.Forms.Padding(2);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid1.RowHeadersWidth = 62;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.RowTemplate.Height = 28;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(1213, 246);
+            this.metroGrid1.Size = new System.Drawing.Size(1213, 226);
             this.metroGrid1.TabIndex = 1;
             this.metroGrid1.SelectionChanged += new System.EventHandler(this.metroGrid1_SelectionChanged);
             // 
@@ -917,7 +912,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1195, 98);
+            this.groupBox1.Size = new System.Drawing.Size(1195, 79);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Details";
@@ -997,130 +992,31 @@
             // PolMenStr
             // 
             this.PolMenStr.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.PolMenStr.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.PolMenStr.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.customerToolStripMenuItem,
             this.policyToolStripMenuItem,
             this.notesToolStripMenuItem,
             this.billingToolStripMenuItem,
             this.documentsToolStripMenuItem,
-            this.callbackToolStripMenuItem,
             this.historyToolStripMenuItem,
             this.adminActionsToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.PolMenStr.Location = new System.Drawing.Point(0, 0);
             this.PolMenStr.Name = "PolMenStr";
+            this.PolMenStr.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
             this.PolMenStr.Size = new System.Drawing.Size(1213, 24);
             this.PolMenStr.TabIndex = 3;
             this.PolMenStr.Text = "menuStrip1";
-            // 
-            // adminActionsToolStripMenuItem
-            // 
-            this.adminActionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changePolicyRenewalDateToolStripMenuItem,
-            this.redressToolStripMenuItem,
-            this.securityToolStripMenuItem});
-            this.adminActionsToolStripMenuItem.Name = "adminActionsToolStripMenuItem";
-            this.adminActionsToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
-            this.adminActionsToolStripMenuItem.Tag = "Restricted";
-            this.adminActionsToolStripMenuItem.Text = "Admin Actions";
-            // 
-            // changePolicyRenewalDateToolStripMenuItem
-            // 
-            this.changePolicyRenewalDateToolStripMenuItem.Name = "changePolicyRenewalDateToolStripMenuItem";
-            this.changePolicyRenewalDateToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.changePolicyRenewalDateToolStripMenuItem.Tag = "Restricted";
-            this.changePolicyRenewalDateToolStripMenuItem.Text = "Change Policy Renewal Date";
-            // 
-            // redressToolStripMenuItem
-            // 
-            this.redressToolStripMenuItem.Name = "redressToolStripMenuItem";
-            this.redressToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.redressToolStripMenuItem.Text = "Redress";
-            // 
-            // securityToolStripMenuItem
-            // 
-            this.securityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewFootPrintsToolStripMenuItem,
-            this.lockCustomerPolicyToolStripMenuItem});
-            this.securityToolStripMenuItem.Name = "securityToolStripMenuItem";
-            this.securityToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.securityToolStripMenuItem.Text = "Security";
-            // 
-            // viewFootPrintsToolStripMenuItem
-            // 
-            this.viewFootPrintsToolStripMenuItem.Name = "viewFootPrintsToolStripMenuItem";
-            this.viewFootPrintsToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.viewFootPrintsToolStripMenuItem.Text = "View FootPrints";
-            // 
-            // lockCustomerPolicyToolStripMenuItem
-            // 
-            this.lockCustomerPolicyToolStripMenuItem.Name = "lockCustomerPolicyToolStripMenuItem";
-            this.lockCustomerPolicyToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.lockCustomerPolicyToolStripMenuItem.Text = "Restrict Customer Policy";
-            this.lockCustomerPolicyToolStripMenuItem.Click += new System.EventHandler(this.lockCustomerPolicyToolStripMenuItem_Click);
-            // 
-            // billingToolStripMenuItem
-            // 
-            this.billingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editBillingDetailsToolStripMenuItem,
-            this.cancelBillingToolStripMenuItem});
-            this.billingToolStripMenuItem.Name = "billingToolStripMenuItem";
-            this.billingToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.billingToolStripMenuItem.Text = "Billing";
-            // 
-            // editBillingDetailsToolStripMenuItem
-            // 
-            this.editBillingDetailsToolStripMenuItem.Name = "editBillingDetailsToolStripMenuItem";
-            this.editBillingDetailsToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.editBillingDetailsToolStripMenuItem.Text = "Update Banking Details";
-            this.editBillingDetailsToolStripMenuItem.Click += new System.EventHandler(this.editBillingDetailsToolStripMenuItem_Click);
-            // 
-            // cancelBillingToolStripMenuItem
-            // 
-            this.cancelBillingToolStripMenuItem.Name = "cancelBillingToolStripMenuItem";
-            this.cancelBillingToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.cancelBillingToolStripMenuItem.Tag = "Restricted";
-            this.cancelBillingToolStripMenuItem.Text = "Cancel Billing ";
-            this.cancelBillingToolStripMenuItem.Click += new System.EventHandler(this.cancelBillingToolStripMenuItem_Click);
-            // 
-            // callbackToolStripMenuItem
-            // 
-            this.callbackToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.requestNewCallbackToolStripMenuItem,
-            this.updateCallbackDateToolStripMenuItem,
-            this.cancelCallbackToolStripMenuItem});
-            this.callbackToolStripMenuItem.Name = "callbackToolStripMenuItem";
-            this.callbackToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.callbackToolStripMenuItem.Text = "Callback";
-            // 
-            // requestNewCallbackToolStripMenuItem
-            // 
-            this.requestNewCallbackToolStripMenuItem.Name = "requestNewCallbackToolStripMenuItem";
-            this.requestNewCallbackToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.requestNewCallbackToolStripMenuItem.Text = "Request New Callback";
-            this.requestNewCallbackToolStripMenuItem.Click += new System.EventHandler(this.requestNewCallbackToolStripMenuItem_Click);
-            // 
-            // updateCallbackDateToolStripMenuItem
-            // 
-            this.updateCallbackDateToolStripMenuItem.Name = "updateCallbackDateToolStripMenuItem";
-            this.updateCallbackDateToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.updateCallbackDateToolStripMenuItem.Text = "Update Callback Date";
-            this.updateCallbackDateToolStripMenuItem.Click += new System.EventHandler(this.updateCallbackDateToolStripMenuItem_Click);
-            // 
-            // cancelCallbackToolStripMenuItem
-            // 
-            this.cancelCallbackToolStripMenuItem.Name = "cancelCallbackToolStripMenuItem";
-            this.cancelCallbackToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.cancelCallbackToolStripMenuItem.Text = "Cancel Callback";
-            this.cancelCallbackToolStripMenuItem.Click += new System.EventHandler(this.cancelCallbackToolStripMenuItem_Click);
             // 
             // customerToolStripMenuItem
             // 
             this.customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.updateCustomerDetailsToolStripMenuItem,
-            this.updateOverviewNoteToolStripMenuItem});
+            this.updateOverviewNoteToolStripMenuItem,
+            this.tasksToolStripMenuItem});
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(71, 22);
             this.customerToolStripMenuItem.Text = "Customer";
             // 
             // updateCustomerDetailsToolStripMenuItem
@@ -1151,81 +1047,144 @@
             this.deleteNoteToolStripMenuItem.Text = "Delete Note";
             this.deleteNoteToolStripMenuItem.Click += new System.EventHandler(this.deleteNoteToolStripMenuItem_Click);
             // 
-            // documentsToolStripMenuItem
+            // tasksToolStripMenuItem
             // 
-            this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
-            this.documentsToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
-            this.documentsToolStripMenuItem.Text = "Documents";
-            this.documentsToolStripMenuItem.Click += new System.EventHandler(this.documentsToolStripMenuItem_Click);
-            // 
-            // historyToolStripMenuItem
-            // 
-            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.historyToolStripMenuItem.Text = "History";
-            this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
-            // 
-            // notesToolStripMenuItem
-            // 
-            this.notesToolStripMenuItem.Name = "notesToolStripMenuItem";
-            this.notesToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.notesToolStripMenuItem.Text = "Notes";
-            this.notesToolStripMenuItem.Click += new System.EventHandler(this.notesToolStripMenuItem_Click);
+            this.tasksToolStripMenuItem.Name = "tasksToolStripMenuItem";
+            this.tasksToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.tasksToolStripMenuItem.Text = "&Tasks";
+            this.tasksToolStripMenuItem.Click += new System.EventHandler(this.tasksToolStripMenuItem_Click);
             // 
             // policyToolStripMenuItem
             // 
             this.policyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewPolicyToolStripMenuItem,
-            this.updatePolicyStatusToolStripMenuItem,
-            this.viewFullPolicyDetailsToolStripMenuItem});
+            this.updatePolicyStatusToolStripMenuItem});
             this.policyToolStripMenuItem.Name = "policyToolStripMenuItem";
-            this.policyToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.policyToolStripMenuItem.Size = new System.Drawing.Size(51, 22);
             this.policyToolStripMenuItem.Text = "Policy";
             // 
             // addNewPolicyToolStripMenuItem
             // 
             this.addNewPolicyToolStripMenuItem.Name = "addNewPolicyToolStripMenuItem";
-            this.addNewPolicyToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.addNewPolicyToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.addNewPolicyToolStripMenuItem.Text = "Add New Policy";
             this.addNewPolicyToolStripMenuItem.Click += new System.EventHandler(this.addNewPolicyToolStripMenuItem_Click);
             // 
             // updatePolicyStatusToolStripMenuItem
             // 
             this.updatePolicyStatusToolStripMenuItem.Name = "updatePolicyStatusToolStripMenuItem";
-            this.updatePolicyStatusToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.updatePolicyStatusToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.updatePolicyStatusToolStripMenuItem.Text = "Update Policy Status";
             this.updatePolicyStatusToolStripMenuItem.Click += new System.EventHandler(this.updatePolicyStatusToolStripMenuItem_Click);
             // 
-            // viewFullPolicyDetailsToolStripMenuItem
+            // notesToolStripMenuItem
             // 
-            this.viewFullPolicyDetailsToolStripMenuItem.Name = "viewFullPolicyDetailsToolStripMenuItem";
-            this.viewFullPolicyDetailsToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.viewFullPolicyDetailsToolStripMenuItem.Text = "View Full Policy Details";
+            this.notesToolStripMenuItem.Name = "notesToolStripMenuItem";
+            this.notesToolStripMenuItem.Size = new System.Drawing.Size(50, 22);
+            this.notesToolStripMenuItem.Text = "Notes";
+            this.notesToolStripMenuItem.Click += new System.EventHandler(this.notesToolStripMenuItem_Click);
             // 
-            // kryptonCommand1
+            // billingToolStripMenuItem
             // 
-            this.kryptonCommand1.Text = "kryptonCommand1";
+            this.billingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editBillingDetailsToolStripMenuItem,
+            this.cancelBillingToolStripMenuItem});
+            this.billingToolStripMenuItem.Name = "billingToolStripMenuItem";
+            this.billingToolStripMenuItem.Size = new System.Drawing.Size(52, 22);
+            this.billingToolStripMenuItem.Text = "Billing";
+            // 
+            // editBillingDetailsToolStripMenuItem
+            // 
+            this.editBillingDetailsToolStripMenuItem.Name = "editBillingDetailsToolStripMenuItem";
+            this.editBillingDetailsToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.editBillingDetailsToolStripMenuItem.Text = "Update Banking Details";
+            this.editBillingDetailsToolStripMenuItem.Click += new System.EventHandler(this.editBillingDetailsToolStripMenuItem_Click);
+            // 
+            // cancelBillingToolStripMenuItem
+            // 
+            this.cancelBillingToolStripMenuItem.Name = "cancelBillingToolStripMenuItem";
+            this.cancelBillingToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.cancelBillingToolStripMenuItem.Tag = "Restricted";
+            this.cancelBillingToolStripMenuItem.Text = "Cancel Billing ";
+            this.cancelBillingToolStripMenuItem.Click += new System.EventHandler(this.cancelBillingToolStripMenuItem_Click);
+            // 
+            // documentsToolStripMenuItem
+            // 
+            this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
+            this.documentsToolStripMenuItem.Size = new System.Drawing.Size(80, 22);
+            this.documentsToolStripMenuItem.Text = "Documents";
+            this.documentsToolStripMenuItem.Click += new System.EventHandler(this.documentsToolStripMenuItem_Click);
+            // 
+            // historyToolStripMenuItem
+            // 
+            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 22);
+            this.historyToolStripMenuItem.Text = "History";
+            this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
+            // 
+            // adminActionsToolStripMenuItem
+            // 
+            this.adminActionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changePolicyRenewalDateToolStripMenuItem,
+            this.securityToolStripMenuItem});
+            this.adminActionsToolStripMenuItem.Name = "adminActionsToolStripMenuItem";
+            this.adminActionsToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.adminActionsToolStripMenuItem.Tag = "Restricted";
+            this.adminActionsToolStripMenuItem.Text = "Admin Actions";
+            // 
+            // changePolicyRenewalDateToolStripMenuItem
+            // 
+            this.changePolicyRenewalDateToolStripMenuItem.Name = "changePolicyRenewalDateToolStripMenuItem";
+            this.changePolicyRenewalDateToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.changePolicyRenewalDateToolStripMenuItem.Tag = "Restricted";
+            this.changePolicyRenewalDateToolStripMenuItem.Text = "Change Policy Renewal Date";
+            // 
+            // securityToolStripMenuItem
+            // 
+            this.securityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewFootPrintsToolStripMenuItem,
+            this.lockCustomerPolicyToolStripMenuItem});
+            this.securityToolStripMenuItem.Name = "securityToolStripMenuItem";
+            this.securityToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.securityToolStripMenuItem.Text = "Security";
+            // 
+            // viewFootPrintsToolStripMenuItem
+            // 
+            this.viewFootPrintsToolStripMenuItem.Name = "viewFootPrintsToolStripMenuItem";
+            this.viewFootPrintsToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.viewFootPrintsToolStripMenuItem.Text = "View FootPrints";
+            // 
+            // lockCustomerPolicyToolStripMenuItem
+            // 
+            this.lockCustomerPolicyToolStripMenuItem.Name = "lockCustomerPolicyToolStripMenuItem";
+            this.lockCustomerPolicyToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.lockCustomerPolicyToolStripMenuItem.Text = "Restrict Customer Policy";
+            this.lockCustomerPolicyToolStripMenuItem.Click += new System.EventHandler(this.lockCustomerPolicyToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.acceptedFileTypesToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // acceptedFileTypesToolStripMenuItem
             // 
             this.acceptedFileTypesToolStripMenuItem.Name = "acceptedFileTypesToolStripMenuItem";
-            this.acceptedFileTypesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.acceptedFileTypesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.acceptedFileTypesToolStripMenuItem.Text = "Accepted File Types";
             this.acceptedFileTypesToolStripMenuItem.Click += new System.EventHandler(this.acceptedFileTypesToolStripMenuItem_Click);
+            // 
+            // kryptonCommand1
+            // 
+            this.kryptonCommand1.Text = "kryptonCommand1";
             // 
             // CustomerOverViewV1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 727);
+            this.ClientSize = new System.Drawing.Size(1213, 682);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.metroGrid1);
             this.Controls.Add(this.metroTabControl1);
@@ -1323,12 +1282,10 @@
         private Krypton.Toolkit.KryptonMaskedTextBox ProdEndDate_txt;
         private System.Windows.Forms.ToolStripMenuItem updateCustomerDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updatePolicyStatusToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewFullPolicyDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewPolicyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editBillingDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancelBillingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePolicyRenewalDateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem redressToolStripMenuItem;
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
         private System.Windows.Forms.ToolStripMenuItem updateOverviewNoteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateNoteToolStripMenuItem;
@@ -1357,10 +1314,6 @@
         private Krypton.Toolkit.KryptonTextBox discount_txt;
         private Krypton.Toolkit.KryptonTextBox ProdPrice_txt;
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem callbackToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem requestNewCallbackToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateCallbackDateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cancelCallbackToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem notesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem securityToolStripMenuItem;
@@ -1369,5 +1322,6 @@
         private Krypton.Toolkit.KryptonCommand kryptonCommand1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acceptedFileTypesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tasksToolStripMenuItem;
     }
 }

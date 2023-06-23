@@ -23,8 +23,8 @@ namespace GAZE.Customer
             InitializeComponent();
             FormSettings.SetFormSettings(this);
             FormSettings.ChangeableFormSettings(this, Name);
-            
-            
+            Palette = HomePage.kryptonManager1.GlobalPalette;
+
         }
 
 
@@ -108,8 +108,21 @@ namespace GAZE.Customer
             }
             catch (Exception ex)
             {
-                KryptonMessageBox.Show(this, ex.Message, "Login Failed", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, KryptonMessageBoxDefaultButton.Button3, 0, false, false);
+                KryptonMessageBox.Show(this, ex.Message, "Failed to open Customer Account", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, KryptonMessageBoxDefaultButton.Button3, 0, false, false);
                 return;
+            }
+        }
+
+        private void searchPolID_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchPolID_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }
