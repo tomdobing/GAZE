@@ -3,6 +3,8 @@ using Gaze.BusinessLogic.Config;
 using Gaze.BusinessLogic.CustomerManagement;
 using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.SQLManagement;
+using Gaze.BusinessLogic.TaskManagement;
+using Gaze.Security.Management;
 using GAZE.BusinessLogic.DocumentManagement;
 using Krypton.Toolkit;
 using System;
@@ -24,6 +26,8 @@ namespace GAZE.Customer.Documents
         NoteManagement NoteManagement = new NoteManagement();
         DocumentRetrieval DocumentRetrieval = new DocumentRetrieval();
         DocumentConfiguration DocumentConfiguration = new DocumentConfiguration();
+        readonly TaskControlAdmin taskControlAdmin = new TaskControlAdmin();
+        ControlAccessHelper ControlAccessHelper = new ControlAccessHelper();
         #endregion
 
         public CustomerDocuments()
@@ -34,6 +38,7 @@ namespace GAZE.Customer.Documents
             this.Palette = HomePage.kryptonManager1.GlobalPalette;
             kryptonHeader1.Values.Description = "CustomerID: " + InfoSec.GlobalCustomerID;
             DocumentRetrieval.PopulateAcceptedFileTypes();
+            ControlAccessHelper.disableOtherControls(this);
 
 
         }

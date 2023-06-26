@@ -680,6 +680,10 @@
       <Project>{aeb56aae-3e66-4589-9c9b-a3f26d8c924a}</Project>
       <Name>Gaze.BusinessLogic.TaskManagement</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Gaze.Security.Management\Gaze.Security.Management.csproj">
+      <Project>{1eb5a5b8-5110-4433-98ba-b45fbac2fd5e}</Project>
+      <Name>Gaze.Security.Management</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -699,6 +703,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\software-developer %281%29.png" />
+    <None Include="Resources\reset-password %281%29.png" />
+    <None Include="Resources\reset-password.png" />
+    <None Include="Resources\man %281%29.png" />
     <None Include="Resources\Silk_arrow_down.png" />
     <None Include="Resources\Add.png" />
     <None Include="Resources\dialog-close.ico" />

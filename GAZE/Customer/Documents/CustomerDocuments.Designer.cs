@@ -32,7 +32,7 @@
             this.kryptonDataGridView1 = new Krypton.Toolkit.KryptonDataGridView();
             this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
-            this.kryptonButton3 = new Krypton.Toolkit.KryptonButton();
+            this.addNewDoc_btn = new Krypton.Toolkit.KryptonButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonDataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -78,15 +78,15 @@
             this.kryptonButton2.Values.Text = "OK";
             this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click);
             // 
-            // kryptonButton3
+            // addNewDoc_btn
             // 
-            this.kryptonButton3.CornerRoundingRadius = -1F;
-            this.kryptonButton3.Location = new System.Drawing.Point(12, 423);
-            this.kryptonButton3.Name = "kryptonButton3";
-            this.kryptonButton3.Size = new System.Drawing.Size(130, 25);
-            this.kryptonButton3.TabIndex = 6;
-            this.kryptonButton3.Values.Text = "Add New Document";
-            this.kryptonButton3.Click += new System.EventHandler(this.kryptonButton3_Click);
+            this.addNewDoc_btn.CornerRoundingRadius = -1F;
+            this.addNewDoc_btn.Location = new System.Drawing.Point(12, 423);
+            this.addNewDoc_btn.Name = "addNewDoc_btn";
+            this.addNewDoc_btn.Size = new System.Drawing.Size(130, 25);
+            this.addNewDoc_btn.TabIndex = 6;
+            this.addNewDoc_btn.Values.Text = "Add New Document";
+            this.addNewDoc_btn.Click += new System.EventHandler(this.kryptonButton3_Click);
             // 
             // openFileDialog1
             // 
@@ -97,7 +97,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 450);
-            this.Controls.Add(this.kryptonButton3);
+            this.Controls.Add(this.addNewDoc_btn);
             this.Controls.Add(this.kryptonButton2);
             this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.kryptonDataGridView1);
@@ -117,7 +117,7 @@
         private Krypton.Toolkit.KryptonDataGridView kryptonDataGridView1;
         private Krypton.Toolkit.KryptonButton kryptonButton1;
         private Krypton.Toolkit.KryptonButton kryptonButton2;
-        private Krypton.Toolkit.KryptonButton kryptonButton3;
+        private Krypton.Toolkit.KryptonButton addNewDoc_btn;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

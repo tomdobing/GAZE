@@ -10,6 +10,9 @@ using Krypton.Toolkit.Suite.Extended.Messagebox;
 using System;
 using System.Configuration;
 using System.Windows.Forms;
+using Gaze.Security.Management;
+using System.Linq;
+using System.Diagnostics;
 
 namespace GAZE
 {
@@ -23,7 +26,7 @@ namespace GAZE
         ExceptionThrown ExceptionThrown = new ExceptionThrown();
         readonly MessageHandler messageHandler = new MessageHandler();
         readonly RoleManagement roleManagement = new RoleManagement();
-        
+        SQLDataAdmin SQLDataAdmin = new SQLDataAdmin();
         #endregion
 
         #region Methods
@@ -32,7 +35,12 @@ namespace GAZE
             InitializeComponent();
             GetFormSettings.SetFormSettings(this);
             GetFormSettings.ChangeableFormSettings(this, this.Name);
+            KryptonForm form = this;
             
+
+            ControlAccessHelper controlAccessHelper = new ControlAccessHelper();
+            controlAccessHelper.ExecuteControlManagement(this, menuStrip1);
+            /// controlAccessHelper.DisableItemsMenuItems(menuStrip1);
         }
 
         private void HomePage_Load(object sender, EventArgs e)
@@ -208,6 +216,11 @@ namespace GAZE
             
             Customer.Tasks._currentWindow createNewTask = new Customer.Tasks._currentWindow();
             createNewTask.Show();
+
+        }
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }

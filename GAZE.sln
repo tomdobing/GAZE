@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaze.BusinessLogic.Document
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaze.BusinessLogic.TaskManagement", "Gaze.BusinessLogic.TaskManagement\Gaze.BusinessLogic.TaskManagement.csproj", "{AEB56AAE-3E66-4589-9C9B-A3F26D8C924A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaze.Security.Management", "Gaze.Security.Management\Gaze.Security.Management.csproj", "{1EB5A5B8-5110-4433-98BA-B45FBAC2FD5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,21 +77,15 @@ Global
 		{AEB56AAE-3E66-4589-9C9B-A3F26D8C924A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEB56AAE-3E66-4589-9C9B-A3F26D8C924A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEB56AAE-3E66-4589-9C9B-A3F26D8C924A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EB5A5B8-5110-4433-98BA-B45FBAC2FD5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EB5A5B8-5110-4433-98BA-B45FBAC2FD5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EB5A5B8-5110-4433-98BA-B45FBAC2FD5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EB5A5B8-5110-4433-98BA-B45FBAC2FD5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F589100D-5717-4D84-9246-C7852F894A14}
-	EndGlobalSection
-	GlobalSection(AutomaticVersions) = postSolution
-		UpdateAssemblyVersion = True
-		UpdateAssemblyFileVersion = True
-		UpdateAssemblyInfoVersion = False
-		AssemblyVersionSettings = None.None.None.IncrementOnDemand
-		AssemblyFileVersionSettings = None.None.None.IncrementOnDemand
-		UpdatePackageVersion = False
-		AssemblyInfoVersionType = SettingsVersion
-		InheritWinAppVersionFrom = None
 	EndGlobalSection
 EndGlobal

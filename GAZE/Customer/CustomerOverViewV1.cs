@@ -4,6 +4,7 @@ using Gaze.BusinessLogic.CustomerManagement;
 using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
+using Gaze.Security.Management;
 using GAZE.Customer.Documents;
 using GAZE.Customer.Notes;
 using GAZE.Customer.Policy;
@@ -28,6 +29,8 @@ namespace GAZE.Customer
         HomePage HomePage = new HomePage();
         SQLBilling SQLBilling = new SQLBilling();
         CustomerLogic CustomerLogic = new CustomerLogic();
+        SQLDataAdmin SQLDataAdmin = new SQLDataAdmin();
+        ControlAccessHelper ControlAccessHelper = new ControlAccessHelper();
         #endregion
 
         #region Methods
@@ -38,17 +41,18 @@ namespace GAZE.Customer
             FormSettings.SetFormSettings(this);
             FormSettings.ChangeableFormSettings(this, "INDEV - Customer Overview - CustomerID:" + InfoSec.GlobalCustomerID);
             this.Palette = HomePage.kryptonManager1.GlobalPalette;
-            
+            ControlAccessHelper.DisableItemsMenuItems(PolMenStr);
+           
             foreach (MetroTabPage tab in metroTabControl1.TabPages)
             {
                 foreach (KryptonTextBox control1 in tab.Controls.OfType<KryptonTextBox>())
                 {
-                    control1.PaletteMode = PaletteMode.SparklePurpleDarkMode;
+                    control1.PaletteMode = PaletteMode.Global;
                     control1.ReadOnly = true;
                 }
                 foreach (KryptonMaskedTextBox item in tab.Controls.OfType<KryptonMaskedTextBox>())
                 {
-                    item.PaletteMode = PaletteMode.SparklePurpleDarkMode;
+                    item.PaletteMode = PaletteMode.Global;
                     item.ReadOnly = true;
                 }
             }
