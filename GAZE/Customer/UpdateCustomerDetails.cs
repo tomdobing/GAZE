@@ -33,7 +33,7 @@ namespace GAZE.Customer {
                 item.FontWeight = MetroFramework.MetroLabelWeight.Bold;
                 item.AutoSize = true;
             }
-            ControlManagement.PopulateTitle(CustTitle_cmb);
+            //ControlManagement.PopulateTitle(CustTitle_cmb);
         }
 
         private void UpdateCustomerDetails_Load(object sender, EventArgs e) {

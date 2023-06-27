@@ -24,7 +24,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         /// Used to populate the Title ComboBox on the New Customer form
         /// </summary>
         /// <param name="Combobox">The control holding the title data</param>
-        public void PopulateCountried(MetroComboBox Combobox)
+        public void PopulateCountried(KryptonComboBox Combobox)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try
@@ -82,7 +82,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         /// Used to populate the Title ComboBox on the New Customer form
         /// </summary>
         /// <param name="Combobox">The control holding the title data</param>
-        public void PopulateTitle(MetroComboBox Combobox)
+        public void PopulateTitle(KryptonComboBox Combobox)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try

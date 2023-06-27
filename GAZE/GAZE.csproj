@@ -109,7 +109,7 @@
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.ComboBox.dll</HintPath>
     </Reference>
     <Reference Include="Krypton.Toolkit.Suite.Extended.Common, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Common.dll</HintPath>
+      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Common.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Common.dll</HintPath>
     </Reference>
     <Reference Include="Krypton.Toolkit.Suite.Extended.Compression, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Compression.dll</HintPath>
@@ -127,7 +127,7 @@
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.DataGridView.dll</HintPath>
     </Reference>
     <Reference Include="Krypton.Toolkit.Suite.Extended.Developer.Utilities, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Developer.Utilities.dll</HintPath>
+      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Developer.Utilities.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Developer.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="Krypton.Toolkit.Suite.Extended.Dialogs, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Dialogs.dll</HintPath>
@@ -139,7 +139,7 @@
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Drawing.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="Krypton.Toolkit.Suite.Extended.Effects, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Effects.dll</HintPath>
+      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Effects.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Effects.dll</HintPath>
     </Reference>
     <Reference Include="Krypton.Toolkit.Suite.Extended.Error.Reporting, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Error.Reporting.dll</HintPath>
@@ -157,7 +157,7 @@
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Krypton.Toolkit.Suite.Extended.Global.Utilities, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Global.Utilities.dll</HintPath>
+      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Global.Utilities.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Global.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="Krypton.Toolkit.Suite.Extended.InputBox, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.InputBox.dll</HintPath>
@@ -196,7 +196,7 @@
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Ribbon.dll</HintPath>
     </Reference>
     <Reference Include="Krypton.Toolkit.Suite.Extended.Settings, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Settings.dll</HintPath>
+      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Settings.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Krypton.Toolkit.Suite.Extended.Specialised.Dialogs, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Specialised.Dialogs.dll</HintPath>
@@ -217,7 +217,7 @@
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Tool.Strip.Items.dll</HintPath>
     </Reference>
     <Reference Include="Krypton.Toolkit.Suite.Extended.Tools, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Tools.dll</HintPath>
+      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Tools.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.Tools.dll</HintPath>
     </Reference>
     <Reference Include="Krypton.Toolkit.Suite.Extended.TreeGridView, Version=70.23.1.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Krypton.Toolkit.Suite.Extended.TreeGridView.dll</HintPath>
@@ -243,20 +243,20 @@
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack.Core, Version=7.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Microsoft.WindowsAPICodePack.Core.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAPICodePack.Core, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.7.0.1\lib\net48\Microsoft.WindowsAPICodePack.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.WindowsAPICodePack.ExtendedLinguisticServices, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll</HintPath>
+      <HintPath>..\packages\WindowsAPICodePack.7.0.1\lib\net48\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.WindowsAPICodePack.Sensors, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Microsoft.WindowsAPICodePack.Sensors.dll</HintPath>
+      <HintPath>..\packages\WindowsAPICodePack.7.0.1\lib\net48\Microsoft.WindowsAPICodePack.Sensors.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=7.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack.7.0.1\lib\net48\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=7.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Krypton.Toolkit.Suite.Extended.Ultimate.70.23.1.5\lib\net48\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+      <HintPath>..\packages\WindowsAPICodePack.7.0.1\lib\net48\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -391,6 +391,12 @@
     <Compile Include="Customer\Documents\CustomerDocuments.Designer.cs">
       <DependentUpon>CustomerDocuments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\NewCustomer\NewCustomerImproved.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\NewCustomer\NewCustomerImproved.Designer.cs">
+      <DependentUpon>NewCustomerImproved.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\Notes\CustNotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -444,12 +450,6 @@
     </Compile>
     <Compile Include="Customer\CustomerUpdateStatus.Designer.cs">
       <DependentUpon>CustomerUpdateStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\NewCustomer\NewCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer\NewCustomer\NewCustomer.Designer.cs">
-      <DependentUpon>NewCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\Notes\NewNote.cs">
       <SubType>Form</SubType>
@@ -549,6 +549,9 @@
     <EmbeddedResource Include="Customer\Documents\CustomerDocuments.resx">
       <DependentUpon>CustomerDocuments.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\NewCustomer\NewCustomerImproved.resx">
+      <DependentUpon>NewCustomerImproved.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\Notes\CustNotes.resx">
       <DependentUpon>CustNotes.cs</DependentUpon>
     </EmbeddedResource>
@@ -575,9 +578,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\CustomerUpdateStatus.resx">
       <DependentUpon>CustomerUpdateStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Customer\NewCustomer\NewCustomer.resx">
-      <DependentUpon>NewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Notes\NewNote.resx">
       <DependentUpon>NewNote.cs</DependentUpon>
@@ -680,6 +680,10 @@
       <Project>{aeb56aae-3e66-4589-9c9b-a3f26d8c924a}</Project>
       <Name>Gaze.BusinessLogic.TaskManagement</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Gaze.Security.Management\Gaze.Security.Management.csproj">
+      <Project>{1eb5a5b8-5110-4433-98ba-b45fbac2fd5e}</Project>
+      <Name>Gaze.Security.Management</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -699,6 +703,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\24511.ico" />
+    <None Include="Resources\2451.ico" />
+    <None Include="Resources\software-developer %281%29.png" />
+    <None Include="Resources\reset-password %281%29.png" />
+    <None Include="Resources\reset-password.png" />
+    <None Include="Resources\man %281%29.png" />
     <None Include="Resources\Silk_arrow_down.png" />
     <None Include="Resources\Add.png" />
     <None Include="Resources\dialog-close.ico" />

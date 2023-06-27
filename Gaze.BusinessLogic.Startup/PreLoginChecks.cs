@@ -3,7 +3,6 @@ using System;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Net.NetworkInformation;
-using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace Gaze.BusinessLogic.Startup
@@ -54,7 +53,7 @@ namespace Gaze.BusinessLogic.Startup
                 scon.Close();
             }
 
-            
+
 
         }
 
@@ -66,11 +65,11 @@ namespace Gaze.BusinessLogic.Startup
                 using (var ping = new Ping())
                 {
                     const string target = "www.google.com";
-                   var reply = ping.Send(target);
+                    var reply = ping.Send(target);
                     return (reply != null && reply.Status == IPStatus.Success);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 return false;
