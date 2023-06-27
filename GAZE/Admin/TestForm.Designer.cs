@@ -28,61 +28,85 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.kryptonRibbon1 = new Krypton.Ribbon.KryptonRibbon();
-            this.Tasks = new Krypton.Ribbon.KryptonRibbonTab();
-            this.Customer = new Krypton.Ribbon.KryptonRibbonTab();
-            this.Policy = new Krypton.Ribbon.KryptonRibbonTab();
-            this.kryptonRibbonGroup1 = new Krypton.Ribbon.KryptonRibbonGroup();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).BeginInit();
+            this.kryptonInputBoxExtendedManager1 = new Krypton.Toolkit.Suite.Extended.InputBox.KryptonInputBoxExtendedManager();
+            this.kryptonInputBoxExtendedManager2 = new Krypton.Toolkit.Suite.Extended.InputBox.KryptonInputBoxExtendedManager();
             this.SuspendLayout();
             // 
-            // kryptonRibbon1
+            // kryptonInputBoxExtendedManager1
             // 
-            this.kryptonRibbon1.InDesignHelperMode = true;
-            this.kryptonRibbon1.Name = "kryptonRibbon1";
-            this.kryptonRibbon1.RibbonTabs.AddRange(new Krypton.Ribbon.KryptonRibbonTab[] {
-            this.Customer,
-            this.Tasks,
-            this.Policy});
-            this.kryptonRibbon1.SelectedContext = null;
-            this.kryptonRibbon1.SelectedTab = this.Customer;
-            this.kryptonRibbon1.Size = new System.Drawing.Size(1135, 143);
-            this.kryptonRibbon1.TabIndex = 0;
+            this.kryptonInputBoxExtendedManager1.ButtonFocus = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxButtonFocus.BUTTONONE;
+            this.kryptonInputBoxExtendedManager1.ButtonFourResult = System.Windows.Forms.DialogResult.None;
+            this.kryptonInputBoxExtendedManager1.ButtonOneResult = System.Windows.Forms.DialogResult.None;
+            this.kryptonInputBoxExtendedManager1.ButtonThreeResult = System.Windows.Forms.DialogResult.None;
+            this.kryptonInputBoxExtendedManager1.ButtonTwoResult = System.Windows.Forms.DialogResult.None;
+            this.kryptonInputBoxExtendedManager1.CancelText = null;
+            this.kryptonInputBoxExtendedManager1.ControlTypeface = null;
+            this.kryptonInputBoxExtendedManager1.HintText = null;
+            this.kryptonInputBoxExtendedManager1.IconInputType = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxInputType.COMBOBOX;
+            this.kryptonInputBoxExtendedManager1.IconLocation = new System.Drawing.Point(0, 0);
+            this.kryptonInputBoxExtendedManager1.IconType = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxIconType.NONE;
+            this.kryptonInputBoxExtendedManager1.Image = null;
+            this.kryptonInputBoxExtendedManager1.InputBoxButtons = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxButtons.OK;
+            this.kryptonInputBoxExtendedManager1.InputBoxLanguage = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxLanguage.CZECH;
+            this.kryptonInputBoxExtendedManager1.ListItems = null;
+            this.kryptonInputBoxExtendedManager1.Message = null;
+            this.kryptonInputBoxExtendedManager1.MessageDisplayType = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxMessageDisplayType.LABEL;
+            this.kryptonInputBoxExtendedManager1.MessageTypeface = null;
+            this.kryptonInputBoxExtendedManager1.NormalMessageTextAlignment = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxNormalMessageTextAlignment.INHERIT;
+            this.kryptonInputBoxExtendedManager1.NoText = null;
+            this.kryptonInputBoxExtendedManager1.OkText = null;
+            this.kryptonInputBoxExtendedManager1.ShowInTaskBar = false;
+            this.kryptonInputBoxExtendedManager1.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.kryptonInputBoxExtendedManager1.TextAlignment = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxTextAlignment.LEFT;
+            this.kryptonInputBoxExtendedManager1.Title = null;
+            this.kryptonInputBoxExtendedManager1.WrappedMessageTextAlignment = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxWrappedMessageTextAlignment.TOPLEFT;
+            this.kryptonInputBoxExtendedManager1.YesText = null;
             // 
-            // Tasks
+            // kryptonInputBoxExtendedManager2
             // 
-            this.Tasks.Text = "Tasks";
-            // 
-            // Customer
-            // 
-            this.Customer.Groups.AddRange(new Krypton.Ribbon.KryptonRibbonGroup[] {
-            this.kryptonRibbonGroup1});
-            this.Customer.Text = "Customer";
-            // 
-            // Policy
-            // 
-            this.Policy.Text = "Policy";
+            this.kryptonInputBoxExtendedManager2.ButtonFocus = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxButtonFocus.BUTTONONE;
+            this.kryptonInputBoxExtendedManager2.ButtonFourResult = System.Windows.Forms.DialogResult.None;
+            this.kryptonInputBoxExtendedManager2.ButtonOneResult = System.Windows.Forms.DialogResult.None;
+            this.kryptonInputBoxExtendedManager2.ButtonThreeResult = System.Windows.Forms.DialogResult.None;
+            this.kryptonInputBoxExtendedManager2.ButtonTwoResult = System.Windows.Forms.DialogResult.None;
+            this.kryptonInputBoxExtendedManager2.CancelText = null;
+            this.kryptonInputBoxExtendedManager2.ControlTypeface = null;
+            this.kryptonInputBoxExtendedManager2.HintText = null;
+            this.kryptonInputBoxExtendedManager2.IconInputType = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxInputType.TEXTBOX;
+            this.kryptonInputBoxExtendedManager2.IconLocation = new System.Drawing.Point(0, 0);
+            this.kryptonInputBoxExtendedManager2.IconType = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxIconType.NONE;
+            this.kryptonInputBoxExtendedManager2.Image = null;
+            this.kryptonInputBoxExtendedManager2.InputBoxButtons = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxButtons.OK;
+            this.kryptonInputBoxExtendedManager2.InputBoxLanguage = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxLanguage.ENGLISH;
+            this.kryptonInputBoxExtendedManager2.ListItems = null;
+            this.kryptonInputBoxExtendedManager2.Message = "TEST TEST TEST";
+            this.kryptonInputBoxExtendedManager2.MessageDisplayType = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxMessageDisplayType.LABEL;
+            this.kryptonInputBoxExtendedManager2.MessageTypeface = null;
+            this.kryptonInputBoxExtendedManager2.NormalMessageTextAlignment = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxNormalMessageTextAlignment.INHERIT;
+            this.kryptonInputBoxExtendedManager2.NoText = null;
+            this.kryptonInputBoxExtendedManager2.OkText = null;
+            this.kryptonInputBoxExtendedManager2.ShowInTaskBar = false;
+            this.kryptonInputBoxExtendedManager2.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.kryptonInputBoxExtendedManager2.TextAlignment = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxTextAlignment.LEFT;
+            this.kryptonInputBoxExtendedManager2.Title = "Test";
+            this.kryptonInputBoxExtendedManager2.WrappedMessageTextAlignment = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxWrappedMessageTextAlignment.TOPLEFT;
+            this.kryptonInputBoxExtendedManager2.YesText = null;
             // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 496);
-            this.Controls.Add(this.kryptonRibbon1);
             this.Name = "TestForm";
             this.Text = "TestForm";
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonRibbon1)).EndInit();
+            this.Load += new System.EventHandler(this.TestForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Krypton.Ribbon.KryptonRibbon kryptonRibbon1;
-        private Krypton.Ribbon.KryptonRibbonTab Tasks;
-        private Krypton.Ribbon.KryptonRibbonTab Customer;
-        private Krypton.Ribbon.KryptonRibbonTab Policy;
-        private Krypton.Ribbon.KryptonRibbonGroup kryptonRibbonGroup1;
+        private Krypton.Toolkit.Suite.Extended.InputBox.KryptonInputBoxExtendedManager kryptonInputBoxExtendedManager1;
+        private Krypton.Toolkit.Suite.Extended.InputBox.KryptonInputBoxExtendedManager kryptonInputBoxExtendedManager2;
     }
 }

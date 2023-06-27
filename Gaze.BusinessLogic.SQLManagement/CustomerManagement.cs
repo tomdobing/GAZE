@@ -5,6 +5,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
@@ -42,28 +43,67 @@ namespace Gaze.BusinessLogic.SQLManagement
         /// <param name="Email"></param>
         /// <param name="Address"></param>
         /// <param name="Vuln"></param>
-        public void CreateNewCustomer(MetroComboBox Title, MetroTextBox Firstname, MetroTextBox surname, MetroDateTime DOB, MetroTextBox Contact, MetroTextBox Email, MetroTextBox AddressLine1, MetroTextBox AddressLine2, MetroTextBox Town, MetroTextBox PostalCode, MetroComboBox Country, [Optional] MetroCheckBox Vuln)
+        public void CreateNewCustomer(KryptonComboBox Title, KryptonTextBox Firstname, KryptonTextBox surname, 
+            KryptonDateTimePicker DOB, KryptonTextBox Contact,KryptonTextBox AltContact ,KryptonTextBox Email, KryptonTextBox AddressLine1,
+            KryptonTextBox AddressLine2, KryptonTextBox Town, KryptonTextBox PostalCode, KryptonComboBox Country, KryptonTextBox BankAccountNumber,
+            KryptonTextBox SortCode,[Optional] MetroCheckBox Vuln)
         {
             if (string.IsNullOrEmpty(Title.SelectedIndex.ToString()) ||
                 string.IsNullOrEmpty(Firstname.Text) ||
                 string.IsNullOrEmpty(surname.Text) ||
                 string.IsNullOrEmpty(DOB.Value.ToShortDateString()) ||
                 string.IsNullOrEmpty(Contact.Text) ||
+                string.IsNullOrWhiteSpace(AltContact.Text) ||
                 string.IsNullOrEmpty(Email.Text) ||
                 string.IsNullOrEmpty(AddressLine1.Text) ||
                 string.IsNullOrEmpty(AddressLine2.Text) ||
                 string.IsNullOrEmpty(Town.Text) ||
                 string.IsNullOrEmpty(PostalCode.Text) ||
-                string.IsNullOrEmpty(Country.SelectedValue.ToString()))
+                string.IsNullOrEmpty(Country.SelectedIndex.ToString()))
             {
                 KryptonMessageBox.Show("Data Validation Failure! \n\nYou have not completed all required fields. Please check and try again!", "Failure!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
-                
-
+                return;
             }
-            else
+            SqlConnection SQLConnection = new SqlConnection(SQLConnectionString);
+            try
             {
-                exceptionThrown.ThrowNewException("This is a message", "this is a stack trace", "Text");
+                SQLConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.INSERT_NEW_CREATED_CUSTOMER_SP", SQLConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@Title", Title.SelectedItem);
+                sqlCommand.Parameters.AddWithValue("@FirstName", Firstname.Text);
+                sqlCommand.Parameters.AddWithValue("@Surname", surname.Text);
+                sqlCommand.Parameters.AddWithValue("@DOB", DOB.Value);
+                sqlCommand.Parameters.AddWithValue("@ContactNumber", Contact.Text);
+                sqlCommand.Parameters.AddWithValue("@AltContact", AltContact.Text);
+                sqlCommand.Parameters.AddWithValue("@EmailAddress", Email.Text);
+                sqlCommand.Parameters.AddWithValue("@AddressLine1", AddressLine1.Text);
+                sqlCommand.Parameters.AddWithValue("@AddressLine2", AddressLine2.Text);
+                sqlCommand.Parameters.AddWithValue("@Town", Town.Text);
+                sqlCommand.Parameters.AddWithValue("@PostalCode", PostalCode.Text);
+                sqlCommand.Parameters.AddWithValue("@Country", Country.SelectedItem);
+                sqlCommand.Parameters.AddWithValue("@Agent", InfoSec.GlobalUsername);
+                sqlCommand.Parameters.AddWithValue("@BankAccountNumber", BankAccountNumber.Text);
+                sqlCommand.Parameters.AddWithValue("@SortCode", SortCode.Text);
+                sqlCommand.ExecuteReader();
+                KryptonMessageBox.Show("Customer successfully Created.", "Welcome - " + Firstname.Text + " " + surname.Text, MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
             }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show("Failed to Create Customer:- \n\n" + SQLException.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show("Failed to Create Customer:- \n\n" + ex.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+            }
+            finally
+            {
+                SQLConnection.Close();
+            }
+            
         }
 
 

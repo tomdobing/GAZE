@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using Gaze.Security.Management;
 using System.Linq;
 using System.Diagnostics;
+using GAZE.Customer.NewCustomer;
+using GAZE.Admin;
 
 namespace GAZE
 {
@@ -82,15 +84,17 @@ namespace GAZE
         private void NewCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            Customer.NewCustomer newCustomer = new Customer.NewCustomer();
-            newCustomer.ShowDialog();
+            //Customer.NewCustomer newCustomer = new Customer.NewCustomer();
+            // newCustomer.ShowDialog();
+            Customer.NewCustomer.NewCustomerImproved NewCust = new Customer.NewCustomer.NewCustomerImproved();
+            NewCust.ShowDialog();
         }
 
 
         private void newCustomerToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Customer.NewCustomer customer = new Customer.NewCustomer();
-            customer.ShowDialog();
+            Customer.NewCustomer.NewCustomerImproved NewCust = new Customer.NewCustomer.NewCustomerImproved();
+            NewCust.ShowDialog();
         }
 
         private void searchToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -222,6 +226,18 @@ namespace GAZE
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void kryptonRibbonGroupButton1_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            TestForm testForm = new TestForm();
+            testForm.Show();
         }
     }
 }

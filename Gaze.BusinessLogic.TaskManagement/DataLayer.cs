@@ -378,7 +378,7 @@ namespace Gaze.BusinessLogic.TaskManagement
         /// </summary>
         /// <exception cref="SqlException"></exception>
         /// <exception cref="Exception"></exception>
-        public void UpdateTaskAttempts()
+        public void UpdateTaskAttempts(string ExtraDetails)
         {
             try
             {
@@ -391,6 +391,7 @@ namespace Gaze.BusinessLogic.TaskManagement
                 sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
                 sqlCommand.Parameters.AddWithValue("@TaskID", InfoSec.GlobalTaskID);
                 sqlCommand.Parameters.AddWithValue("@Agent", InfoSec.GlobalUsername);
+                sqlCommand.Parameters.AddWithValue("@NoteDetailsExtra", ExtraDetails);
                 sqlCommand.ExecuteReader();
                 string Message = "Task Attempt has been recorded";
                 string Title = "Task Attempted";
