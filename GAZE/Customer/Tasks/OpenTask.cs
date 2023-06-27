@@ -100,7 +100,7 @@ namespace GAZE.Customer.Tasks
             string NoteDetails = KryptonInputBox.Show("Please enter a brief reason for the task attempt", "Reason for Attempt?", default, "Brief Details", default, default, default);
             if (dialogResult == DialogResult.Yes)
             {
-                DataLayer.UpdateTaskAttempts("Task Attempted: " + NoteDetails);
+                DataLayer.UpdateTaskAttempts("Task Attempted : " + NoteDetails);
                 
             } 
             else
