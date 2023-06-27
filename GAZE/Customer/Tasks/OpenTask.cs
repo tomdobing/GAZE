@@ -102,7 +102,7 @@ namespace GAZE.Customer.Tasks
             {
                 DataLayer.UpdateTaskAttempts("Task Attempted: " + NoteDetails);
                 
-            }
+            } 
             else
             {
                 return;
