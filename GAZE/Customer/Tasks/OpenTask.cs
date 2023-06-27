@@ -97,10 +97,11 @@ namespace GAZE.Customer.Tasks
             DialogResult dialogResult = KryptonMessageBox.Show("Are you sure you wish to update the Attempted Tasks", "Contiue?",
                                         MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, 0, 0,
                                         false, false, false, false, null);
+            string NoteDetails = KryptonInputBox.Show("Please enter a brief reason for the task attempt", "Reason for Attempt?", default, "Brief Details", default, default, default);
             if (dialogResult == DialogResult.Yes)
             {
-                DataLayer.UpdateTaskAttempts();
-
+                DataLayer.UpdateTaskAttempts("Task Attempted: " + NoteDetails);
+                
             }
             else
             {

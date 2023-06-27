@@ -66,6 +66,9 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kryptonManager1 = new Krypton.Toolkit.KryptonManager(this.components);
             this.kryptonPalette1 = new Krypton.Toolkit.KryptonPalette(this.components);
+            this.kryptonTabPage1 = new Krypton.Toolkit.Suite.Extended.Navigator.KryptonTabPage();
+            this.kryptonTabPage2 = new Krypton.Toolkit.Suite.Extended.Navigator.KryptonTabPage();
+            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -165,14 +168,14 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click_1);
             // 
             // exitApplicationToolStripMenuItem
             // 
             this.exitApplicationToolStripMenuItem.Name = "exitApplicationToolStripMenuItem";
-            this.exitApplicationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitApplicationToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.exitApplicationToolStripMenuItem.Text = "Exit Applicatioan";
             this.exitApplicationToolStripMenuItem.Click += new System.EventHandler(this.exitApplicationToolStripMenuItem_Click_1);
             // 
@@ -189,7 +192,7 @@
             // newCustomerToolStripMenuItem
             // 
             this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
-            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.newCustomerToolStripMenuItem.Text = "New Customer";
             this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.newCustomerToolStripMenuItem_Click_1);
             // 
@@ -197,7 +200,7 @@
             // 
             this.searchToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.searchToolStripMenuItem.Text = "F3 Search";
             this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click_1);
             // 
@@ -208,7 +211,7 @@
             this.viewMyTasksToolStripMenuItem,
             this.unassignedTasksToolStripMenuItem});
             this.customerTasksToolStripMenuItem.Name = "customerTasksToolStripMenuItem";
-            this.customerTasksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customerTasksToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.customerTasksToolStripMenuItem.Text = "Customer Tasks";
             // 
             // allOpenTasksToolStripMenuItem
@@ -347,6 +350,12 @@
             this.kryptonPalette1.ButtonSpecs.FormClose.Image = global::GAZE.Properties.Resources.dialog_close;
             this.kryptonPalette1.ButtonSpecs.FormMax.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.kryptonPalette1.ButtonSpecs.FormMin.Image = global::GAZE.Properties.Resources.Silk_arrow_down;
+            this.kryptonPalette1.ButtonStyles.ButtonStandalone.StateCommon.Back.Color1 = System.Drawing.Color.Gray;
+            this.kryptonPalette1.ButtonStyles.ButtonStandalone.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.kryptonPalette1.ButtonStyles.ButtonStandalone.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonPalette1.ButtonStyles.ButtonStandalone.StateCommon.Border.Rounding = 5F;
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -357,12 +366,39 @@
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Rounding = 15F;
             this.kryptonPalette1.LabelStyles.LabelBoldPanel.StateCommon.LongText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // kryptonTabPage1
+            // 
+            this.kryptonTabPage1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonTabPage1.Name = "kryptonTabPage1";
+            this.kryptonTabPage1.Size = new System.Drawing.Size(200, 100);
+            this.kryptonTabPage1.TabIndex = 0;
+            this.kryptonTabPage1.Text = "kryptonTabPage1";
+            // 
+            // kryptonTabPage2
+            // 
+            this.kryptonTabPage2.Location = new System.Drawing.Point(0, 0);
+            this.kryptonTabPage2.Name = "kryptonTabPage2";
+            this.kryptonTabPage2.Size = new System.Drawing.Size(200, 100);
+            this.kryptonTabPage2.TabIndex = 0;
+            this.kryptonTabPage2.Text = "kryptonTabPage2";
+            // 
+            // kryptonButton1
+            // 
+            this.kryptonButton1.CornerRoundingRadius = -1F;
+            this.kryptonButton1.Location = new System.Drawing.Point(253, 303);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.Size = new System.Drawing.Size(90, 25);
+            this.kryptonButton1.TabIndex = 2;
+            this.kryptonButton1.Values.Text = "kryptonButton1";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(954, 419);
+            this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.FormTitleAlign = Krypton.Toolkit.PaletteRelativeAlign.Center;
@@ -419,6 +455,9 @@
         private System.Windows.Forms.ToolStripMenuItem viewMyTasksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unassignedTasksToolStripMenuItem;
         private Krypton.Toolkit.KryptonPalette kryptonPalette1;
+        private Krypton.Toolkit.Suite.Extended.Navigator.KryptonTabPage kryptonTabPage1;
+        private Krypton.Toolkit.Suite.Extended.Navigator.KryptonTabPage kryptonTabPage2;
+        private Krypton.Toolkit.KryptonButton kryptonButton1;
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Krypton.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace GAZE.Admin
         public TestForm()
         {
             InitializeComponent();
+        }
+
+        private void TestForm_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show(KryptonInputBox.Show("Test", "TEST CAPTION", "asdasd", "Help", default, default, default));
+            
+
         }
     }
 }

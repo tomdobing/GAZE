@@ -14,6 +14,7 @@ using Gaze.Security.Management;
 using System.Linq;
 using System.Diagnostics;
 using GAZE.Customer.NewCustomer;
+using GAZE.Admin;
 
 namespace GAZE
 {
@@ -225,6 +226,18 @@ namespace GAZE
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void kryptonRibbonGroupButton1_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            TestForm testForm = new TestForm();
+            testForm.Show();
         }
     }
 }

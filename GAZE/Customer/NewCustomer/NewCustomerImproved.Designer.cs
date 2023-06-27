@@ -70,7 +70,7 @@
             // 
             // kryptonHeader1
             // 
-            this.kryptonHeader1.Location = new System.Drawing.Point(0, 12);
+            this.kryptonHeader1.Location = new System.Drawing.Point(-3, 12);
             this.kryptonHeader1.Name = "kryptonHeader1";
             this.kryptonHeader1.Size = new System.Drawing.Size(433, 31);
             this.kryptonHeader1.TabIndex = 0;
@@ -93,7 +93,7 @@
             this.ctTitle_cmbIm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ctTitle_cmbIm.DropDownWidth = 141;
             this.ctTitle_cmbIm.IntegralHeight = false;
-            this.ctTitle_cmbIm.Location = new System.Drawing.Point(120, 68);
+            this.ctTitle_cmbIm.Location = new System.Drawing.Point(120, 70);
             this.ctTitle_cmbIm.Name = "ctTitle_cmbIm";
             this.ctTitle_cmbIm.Size = new System.Drawing.Size(147, 24);
             this.ctTitle_cmbIm.StateCommon.ComboBox.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -124,7 +124,7 @@
             // 
             this.ctFirstName_txtIM.CueHint.CueHintText = "Firstname";
             this.ctFirstName_txtIM.CueHint.Padding = new System.Windows.Forms.Padding(0);
-            this.ctFirstName_txtIM.Location = new System.Drawing.Point(273, 64);
+            this.ctFirstName_txtIM.Location = new System.Drawing.Point(273, 66);
             this.ctFirstName_txtIM.Name = "ctFirstName_txtIM";
             this.ctFirstName_txtIM.Size = new System.Drawing.Size(345, 28);
             this.ctFirstName_txtIM.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -138,7 +138,7 @@
             // 
             this.ctSurName_txtIM.CueHint.CueHintText = "Surname";
             this.ctSurName_txtIM.CueHint.Padding = new System.Windows.Forms.Padding(0);
-            this.ctSurName_txtIM.Location = new System.Drawing.Point(634, 63);
+            this.ctSurName_txtIM.Location = new System.Drawing.Point(634, 66);
             this.ctSurName_txtIM.Name = "ctSurName_txtIM";
             this.ctSurName_txtIM.Size = new System.Drawing.Size(299, 28);
             this.ctSurName_txtIM.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -172,7 +172,7 @@
             // 
             // kryptonHeader2
             // 
-            this.kryptonHeader2.Location = new System.Drawing.Point(0, 176);
+            this.kryptonHeader2.Location = new System.Drawing.Point(-3, 176);
             this.kryptonHeader2.Name = "kryptonHeader2";
             this.kryptonHeader2.Size = new System.Drawing.Size(349, 31);
             this.kryptonHeader2.TabIndex = 10;
@@ -379,10 +379,14 @@
             // 
             // reset_btn
             // 
-            this.reset_btn.CornerRoundingRadius = -1F;
+            this.reset_btn.CornerRoundingRadius = 5F;
             this.reset_btn.Location = new System.Drawing.Point(141, 504);
             this.reset_btn.Name = "reset_btn";
             this.reset_btn.Size = new System.Drawing.Size(106, 25);
+            this.reset_btn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.reset_btn.StateCommon.Border.Rounding = 5F;
             this.reset_btn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reset_btn.TabIndex = 28;
             this.reset_btn.Values.Text = "Reset Form";
@@ -390,10 +394,16 @@
             // 
             // submit_btn
             // 
-            this.submit_btn.CornerRoundingRadius = -1F;
+            this.submit_btn.CornerRoundingRadius = 5F;
             this.submit_btn.Location = new System.Drawing.Point(10, 504);
             this.submit_btn.Name = "submit_btn";
             this.submit_btn.Size = new System.Drawing.Size(106, 25);
+            this.submit_btn.StateCommon.Back.Color1 = System.Drawing.Color.Gray;
+            this.submit_btn.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.submit_btn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.submit_btn.StateCommon.Border.Rounding = 5F;
             this.submit_btn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submit_btn.TabIndex = 29;
             this.submit_btn.Values.Text = "Create Customer";
@@ -401,10 +411,14 @@
             // 
             // cancel_btn
             // 
-            this.cancel_btn.CornerRoundingRadius = -1F;
-            this.cancel_btn.Location = new System.Drawing.Point(273, 504);
+            this.cancel_btn.CornerRoundingRadius = 5F;
+            this.cancel_btn.Location = new System.Drawing.Point(272, 504);
             this.cancel_btn.Name = "cancel_btn";
             this.cancel_btn.Size = new System.Drawing.Size(106, 25);
+            this.cancel_btn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.cancel_btn.StateCommon.Border.Rounding = 5F;
             this.cancel_btn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancel_btn.TabIndex = 30;
             this.cancel_btn.Values.Text = "Cancel && Close";
@@ -424,7 +438,7 @@
             // 
             this.sortCode_txt.CueHint.CueHintText = "Sort Code";
             this.sortCode_txt.CueHint.Padding = new System.Windows.Forms.Padding(0);
-            this.sortCode_txt.Location = new System.Drawing.Point(163, 439);
+            this.sortCode_txt.Location = new System.Drawing.Point(160, 439);
             this.sortCode_txt.Name = "sortCode_txt";
             this.sortCode_txt.Size = new System.Drawing.Size(270, 28);
             this.sortCode_txt.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -433,6 +447,8 @@
             this.sortCode_txt.StateCommon.Border.Rounding = 10F;
             this.sortCode_txt.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sortCode_txt.TabIndex = 33;
+            this.sortCode_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sortCode_txt_KeyPress);
+            this.sortCode_txt.Leave += new System.EventHandler(this.sortCode_txt_Leave);
             // 
             // kryptonLabel11
             // 
@@ -445,7 +461,7 @@
             // 
             // kryptonLabel12
             // 
-            this.kryptonLabel12.Location = new System.Drawing.Point(0, 439);
+            this.kryptonLabel12.Location = new System.Drawing.Point(-3, 439);
             this.kryptonLabel12.Name = "kryptonLabel12";
             this.kryptonLabel12.Size = new System.Drawing.Size(81, 19);
             this.kryptonLabel12.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -454,7 +470,7 @@
             // 
             // bankNumber_txt
             // 
-            this.bankNumber_txt.CueHint.CueHintText = "Sort Code";
+            this.bankNumber_txt.CueHint.CueHintText = "Bank Account Number";
             this.bankNumber_txt.CueHint.Padding = new System.Windows.Forms.Padding(0);
             this.bankNumber_txt.Location = new System.Drawing.Point(160, 392);
             this.bankNumber_txt.Name = "bankNumber_txt";
@@ -465,6 +481,7 @@
             this.bankNumber_txt.StateCommon.Border.Rounding = 10F;
             this.bankNumber_txt.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bankNumber_txt.TabIndex = 32;
+            this.bankNumber_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bankNumber_txt_KeyPress);
             // 
             // NewCustomerImproved
             // 
