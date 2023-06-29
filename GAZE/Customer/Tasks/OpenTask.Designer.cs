@@ -107,7 +107,7 @@
             this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
-            this.kryptonLabel1.Size = new System.Drawing.Size(77, 18);
+            this.kryptonLabel1.Size = new System.Drawing.Size(109, 25);
             this.kryptonLabel1.TabIndex = 5;
             this.kryptonLabel1.Values.Text = "Customer ID:";
             // 
@@ -142,7 +142,7 @@
             this.kryptonLabel2.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonLabel2.Name = "kryptonLabel2";
             this.kryptonLabel2.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
-            this.kryptonLabel2.Size = new System.Drawing.Size(102, 18);
+            this.kryptonLabel2.Size = new System.Drawing.Size(145, 25);
             this.kryptonLabel2.TabIndex = 10;
             this.kryptonLabel2.Values.Text = "&Open Task Count:";
             // 
@@ -163,7 +163,7 @@
             this.kryptonLabel3.Margin = new System.Windows.Forms.Padding(2);
             this.kryptonLabel3.Name = "kryptonLabel3";
             this.kryptonLabel3.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalOffice2003;
-            this.kryptonLabel3.Size = new System.Drawing.Size(98, 18);
+            this.kryptonLabel3.Size = new System.Drawing.Size(139, 25);
             this.kryptonLabel3.TabIndex = 8;
             this.kryptonLabel3.Values.Text = "Task Description:";
             // 
