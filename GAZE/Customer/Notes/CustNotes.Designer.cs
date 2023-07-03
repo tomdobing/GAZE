@@ -44,7 +44,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(818, 419);
+            this.groupBox1.Size = new System.Drawing.Size(1441, 636);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer / Policy Notes";
@@ -54,13 +54,13 @@
             this.kryptonDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonDataGridView1.Location = new System.Drawing.Point(3, 16);
             this.kryptonDataGridView1.Name = "kryptonDataGridView1";
-            this.kryptonDataGridView1.Size = new System.Drawing.Size(812, 400);
+            this.kryptonDataGridView1.Size = new System.Drawing.Size(1435, 617);
             this.kryptonDataGridView1.TabIndex = 0;
             // 
             // kryptonButton3
             // 
             this.kryptonButton3.CornerRoundingRadius = -1F;
-            this.kryptonButton3.Location = new System.Drawing.Point(570, 422);
+            this.kryptonButton3.Location = new System.Drawing.Point(1184, 642);
             this.kryptonButton3.Name = "kryptonButton3";
             this.kryptonButton3.Size = new System.Drawing.Size(120, 25);
             this.kryptonButton3.TabIndex = 6;
@@ -71,7 +71,7 @@
             // 
             this.kryptonButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.kryptonButton2.CornerRoundingRadius = -1F;
-            this.kryptonButton2.Location = new System.Drawing.Point(696, 422);
+            this.kryptonButton2.Location = new System.Drawing.Point(1319, 642);
             this.kryptonButton2.Name = "kryptonButton2";
             this.kryptonButton2.Size = new System.Drawing.Size(120, 25);
             this.kryptonButton2.TabIndex = 5;
@@ -81,7 +81,7 @@
             // kryptonButton1
             // 
             this.kryptonButton1.CornerRoundingRadius = -1F;
-            this.kryptonButton1.Location = new System.Drawing.Point(1, 422);
+            this.kryptonButton1.Location = new System.Drawing.Point(0, 642);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.Size = new System.Drawing.Size(130, 25);
             this.kryptonButton1.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 450);
+            this.ClientSize = new System.Drawing.Size(1441, 670);
             this.Controls.Add(this.kryptonButton3);
             this.Controls.Add(this.kryptonButton2);
             this.Controls.Add(this.kryptonButton1);

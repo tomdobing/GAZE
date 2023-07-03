@@ -22,6 +22,7 @@ namespace Gaze.BusinessLogic.TaskManagement
         private readonly InfoSec InfoSec = new InfoSec();
         private readonly SqlConnection SQLConnection = new SqlConnection(SQLConnectionString);
         private readonly TaskControlAdmin taskControlAdmin = new TaskControlAdmin();
+        private readonly NoteDataLayer noteDataLayer = new NoteDataLayer();
         #endregion
 
 
@@ -463,7 +464,47 @@ namespace Gaze.BusinessLogic.TaskManagement
                 sqlCommand.Parameters.AddWithValue("@Agent", InfoSec.GlobalUsername);
                 sqlCommand.Parameters.AddWithValue("@ReasonForPending",ReasonForPending.Text);
                 sqlCommand.ExecuteReader();
-                string Message = "Task marked as completed. This Window Will Now Close!";
+                string Message = "Task marked as pending. This Window Will Now Close!";
+                string Title = "Task Updated";
+                KryptonMessageBox.Show(Message, Title, MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
+                FormName.Close();
+            }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show("SQL Exception Caught \n\n" + SQLException.Message, "SQL Exception", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show("Exception Thrown \n\n" + ex.Message, "Exception Caught", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            finally
+            {
+                SQLConnection.Close();
+            }
+
+        }
+
+        public void UpdateTaskStatusToCancelled([Optional] KryptonForm FormName)
+        {
+
+            try
+            {
+                SQLConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_TASKS_SET_TASK_STATUS_CANCELLED_SP", SQLConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@TaskID", InfoSec.GlobalTaskID);
+                sqlCommand.Parameters.AddWithValue("@Agent", InfoSec.GlobalUsername);
+                sqlCommand.ExecuteReader();
+                
+                string NoteDetails = KryptonInputBox.Show("Please enter a brief reason for cancelling this task", "Reason for cancelling?", default, "Brief Details", default, default, default);
+                noteDataLayer.InsertNewTaskNote("TSKUPDATE", NoteDetails);
+
+                string Message = "Task marked as cancelled. This Window Will Now Close!";
                 string Title = "Task Updated";
                 KryptonMessageBox.Show(Message, Title, MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
                 FormName.Close();

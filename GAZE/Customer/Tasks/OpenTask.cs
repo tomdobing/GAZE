@@ -5,7 +5,6 @@ using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.BusinessLogic.TaskManagement;
 using Krypton.Toolkit;
-using Krypton.Toolkit.Suite.Extended.Memory.Box;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -31,26 +30,7 @@ namespace GAZE.Customer.Tasks
         public OpenTask()
         {
             InitializeComponent();
-            FormSettings.ChangeableFormSettings(this, "Task Overview - TaskID:" + InfoSec.GlobalTaskID);
-            FormSettings.SetFormSettings(this);
-            Palette = HomePage.kryptonManager1.GlobalPalette;
-            DataLayer.GetCustomerOpenTaskCount(OpnTskCnt_txt);
-            DataLayer.GetCustomerIDAndTaskDescriptionForOverview(custid_txt, tskdesc_txt);
-            noteDataLayer.PopulateTaskOpenTaskNoteDataGrid(kryptonDataGridView1);
-            taskControlAdmin.PopulateTaskTypeCombobox(taskType_cmb);
-            taskControlAdmin.PopulateUsernamesForAssignedTo(agent_cmb);
-            taskControlAdmin.PopulatePriorities(taskPriority_cmb);
-            taskDueDate_dtp.Format = DateTimePickerFormat.Custom;
-            taskDueDate_dtp.CustomFormat = "dd/MM/yyyy HH:mm";
-            taskDueDate_dtp.AutoShift = true;
-            WarnLabel1.Hide();
-            WarnLabel2.Hide();
-            WarnLabel3.Hide();
-            WarnLabel4.Hide();
-            taskControlAdmin.PopulateTaskStatusCombobox(taskStatus_cmb);
-            DataLayer.GetOpenedTaskDetailsForOverview(taskDescription_txt, taskType_cmb, taskDetails_rtxt, taskPriority_cmb, taskDueDate_dtp,
-                                                        taskAttempts_txt, taskStatus_cmb, taskActive_chk, agent_cmb);
-            
+            ExecuteFormLoadSettings();
         }
 
         private void OpenTask_Load(object sender, EventArgs e)
@@ -61,7 +41,7 @@ namespace GAZE.Customer.Tasks
                 taskNotes_grp.Enabled = false;
                 kryptonButton2.Enabled = false;
             }
-            if (taskAttempts_txt.Text == "3" && taskActive_chk.CheckState == CheckState.Checked )
+            if (taskAttempts_txt.Text == "3" && taskActive_chk.CheckState == CheckState.Checked)
             {
                 ShowWarnLabel1(WarnLabel1);
             }
@@ -89,7 +69,7 @@ namespace GAZE.Customer.Tasks
                 //Thread.Sleep(2000);
                 //
             }
-            
+
         }
 
         private void kryptonButton2_Click(object sender, EventArgs e)
@@ -97,13 +77,13 @@ namespace GAZE.Customer.Tasks
             DialogResult dialogResult = KryptonMessageBox.Show("Are you sure you wish to update the Attempted Tasks", "Contiue?",
                                         MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, 0, 0,
                                         false, false, false, false, null);
-            
+
             if (dialogResult == DialogResult.Yes)
             {
                 string NoteDetails = KryptonInputBox.Show("Please enter a brief reason for the task attempt", "Reason for Attempt?", default, "Brief Details", default, default, default);
                 DataLayer.UpdateTaskAttempts("Task Attempted : " + NoteDetails);
-                
-            } 
+
+            }
             else
             {
                 return;
@@ -119,7 +99,7 @@ namespace GAZE.Customer.Tasks
             }
             if (taskStatus_cmb.SelectedItem.ToString() == "Cancelled")
             {
-                
+                DataLayer.UpdateTaskStatusToCancelled(this);
             }
             if (taskStatus_cmb.SelectedItem.ToString() == "Pending")
             {
@@ -140,14 +120,14 @@ namespace GAZE.Customer.Tasks
 
         private void kryptonButton3_Click(object sender, EventArgs e)
         {
-            
+
         }
         private void ShowWarnLabel1(Label Wanrlabel1)
         {
-                Wanrlabel1.Show();
-                Wanrlabel1.Text = "WARNING CALL - Task Attempted 3 Times";
-                Wanrlabel1.ForeColor = Color.Orange;
-               // Wanrlabel1.Font = new Font(Wanrlabel1.Font, FontStyle.Bold);
+            Wanrlabel1.Show();
+            Wanrlabel1.Text = "WARNING CALL - Task Attempted 3 Times";
+            Wanrlabel1.ForeColor = Color.Orange;
+            // Wanrlabel1.Font = new Font(Wanrlabel1.Font, FontStyle.Bold);
         }
         private void ShowWarnLabel2(Label Wanrlabel2)
         {
@@ -161,8 +141,33 @@ namespace GAZE.Customer.Tasks
             Wanrlabel3.Show();
             Wanrlabel3.Text = "WARNING CALL - Task Unassigned";
             Wanrlabel3.ForeColor = Color.Orange;
-           // Wanrlabel3.Font = new Font(Wanrlabel3.Font, FontStyle.Bold);
-           
+            // Wanrlabel3.Font = new Font(Wanrlabel3.Font, FontStyle.Bold);
+
+        }
+
+        private void ExecuteFormLoadSettings()
+        {
+            FormSettings.ChangeableFormSettings(this, "Task Overview - TaskID:" + InfoSec.GlobalTaskID);
+            FormSettings.SetFormSettings(this);
+            Palette = HomePage.kryptonManager1.GlobalPalette;
+            DataLayer.GetCustomerOpenTaskCount(OpnTskCnt_txt);
+            DataLayer.GetCustomerIDAndTaskDescriptionForOverview(custid_txt, tskdesc_txt);
+            noteDataLayer.PopulateTaskOpenTaskNoteDataGrid(kryptonDataGridView1);
+            taskControlAdmin.PopulateTaskTypeCombobox(taskType_cmb);
+            taskControlAdmin.PopulateUsernamesForAssignedTo(agent_cmb);
+            taskControlAdmin.PopulatePriorities(taskPriority_cmb);
+            taskDueDate_dtp.Format = DateTimePickerFormat.Custom;
+            taskDueDate_dtp.CustomFormat = "dd/MM/yyyy HH:mm";
+            taskDueDate_dtp.AutoShift = true;
+            WarnLabel1.Hide();
+            WarnLabel2.Hide();
+            WarnLabel3.Hide();
+            WarnLabel4.Hide();
+            taskControlAdmin.PopulateTaskStatusCombobox(taskStatus_cmb);
+            DataLayer.GetOpenedTaskDetailsForOverview(taskDescription_txt, taskType_cmb, taskDetails_rtxt, taskPriority_cmb, taskDueDate_dtp,
+                                                        taskAttempts_txt, taskStatus_cmb, taskActive_chk, agent_cmb);
+
+
         }
 
     }

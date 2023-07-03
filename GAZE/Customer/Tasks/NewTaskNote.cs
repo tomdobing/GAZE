@@ -73,7 +73,7 @@ namespace GAZE.Customer.Tasks
                 KryptonMessageBox.Show("You must enter a value for the note details", "Validation Failure", System.Windows.Forms.MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
                 return;
             }
-            noteDataLayer.InsertNewTaskNote(noteDes_txt, noteDetails_rtb, this);
+            noteDataLayer.InsertNewTaskNote(noteDes_txt.Text, noteDetails_rtb.Text, this);
         }
 
         private void kryptonButton1_Click_1(object sender, EventArgs e)
