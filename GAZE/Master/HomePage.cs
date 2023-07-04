@@ -239,5 +239,11 @@ namespace GAZE
             TestForm testForm = new TestForm();
             testForm.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            TestForm testForm1 = new TestForm();
+            testForm1.Show();
+        }
     }
 }
