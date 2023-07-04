@@ -87,8 +87,12 @@ namespace Gaze.BusinessLogic.SQLManagement
                 sqlCommand.Parameters.AddWithValue("@Agent", InfoSec.GlobalUsername);
                 sqlCommand.Parameters.AddWithValue("@BankAccountNumber", BankAccountNumber.Text);
                 sqlCommand.Parameters.AddWithValue("@SortCode", SortCode.Text);
+                SqlParameter sqlParameter = new SqlParameter("@PolicyID", SqlDbType.Int);
+                sqlParameter.Direction = ParameterDirection.Output;
+                sqlCommand.Parameters.Add(sqlParameter);
                 sqlCommand.ExecuteReader();
-                KryptonMessageBox.Show("Customer successfully Created.", "Welcome - " + Firstname.Text + " " + surname.Text, MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
+                int newrecordid = (int)sqlParameter.Value;
+                KryptonMessageBox.Show("Customer successfully Created With Policy ID " + newrecordid.ToString(), "Welcome - " + Firstname.Text + " " + surname.Text, MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
             }
             catch (SqlException SQLException)
             {

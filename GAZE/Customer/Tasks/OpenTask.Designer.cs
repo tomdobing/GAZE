@@ -46,7 +46,6 @@
             this.kryptonLabel5 = new Krypton.Toolkit.KryptonLabel();
             this.taskDetails_grp = new Krypton.Toolkit.KryptonGroupBox();
             this.agent_cmb = new Krypton.Toolkit.KryptonComboBox();
-            this.assignedTo_txt = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel14 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel13 = new Krypton.Toolkit.KryptonLabel();
             this.taskPriority_cmb = new Krypton.Toolkit.KryptonComboBox();
@@ -276,7 +275,6 @@
             // taskDetails_grp.Panel
             // 
             this.taskDetails_grp.Panel.Controls.Add(this.agent_cmb);
-            this.taskDetails_grp.Panel.Controls.Add(this.assignedTo_txt);
             this.taskDetails_grp.Panel.Controls.Add(this.kryptonLabel14);
             this.taskDetails_grp.Panel.Controls.Add(this.kryptonLabel13);
             this.taskDetails_grp.Panel.Controls.Add(this.taskPriority_cmb);
@@ -313,14 +311,6 @@
             this.agent_cmb.StateCommon.ComboBox.Border.Rounding = 10F;
             this.agent_cmb.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             this.agent_cmb.TabIndex = 35;
-            // 
-            // assignedTo_txt
-            // 
-            this.assignedTo_txt.Location = new System.Drawing.Point(630, 285);
-            this.assignedTo_txt.Name = "assignedTo_txt";
-            this.assignedTo_txt.ReadOnly = true;
-            this.assignedTo_txt.Size = new System.Drawing.Size(111, 23);
-            this.assignedTo_txt.TabIndex = 34;
             // 
             // kryptonLabel14
             // 
@@ -678,7 +668,6 @@
         private Krypton.Toolkit.KryptonButton updateStatus_btn;
         private Krypton.Toolkit.KryptonLabel kryptonLabel13;
         private Krypton.Toolkit.KryptonComboBox taskPriority_cmb;
-        private Krypton.Toolkit.KryptonTextBox assignedTo_txt;
         private Krypton.Toolkit.KryptonLabel kryptonLabel14;
         private Krypton.Toolkit.KryptonButton kryptonButton2;
         private Krypton.Toolkit.KryptonButton kryptonButton3;

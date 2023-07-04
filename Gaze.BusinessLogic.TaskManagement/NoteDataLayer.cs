@@ -6,6 +6,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Gaze.BusinessLogic.TaskManagement
@@ -120,7 +121,7 @@ namespace Gaze.BusinessLogic.TaskManagement
 
         }
 
-        public void InsertNewTaskNote(KryptonTextBox NoteDescription, KryptonRichTextBoxExtended NoteDetails, KryptonForm FormToClose)
+        public void InsertNewTaskNote(string NoteDescription, string NoteDetails, [Optional] KryptonForm FormToClose)
         {
             SqlConnection SQLConnection = new SqlConnection(SQLConnectionString);
             try
@@ -133,12 +134,21 @@ namespace Gaze.BusinessLogic.TaskManagement
                 sqlCommand.Parameters.Clear();
                 sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
                 sqlCommand.Parameters.AddWithValue("@TaskID", InfoSec.GlobalTaskID);
-                sqlCommand.Parameters.AddWithValue("@NoteDescription", NoteDescription.Text);
-                sqlCommand.Parameters.AddWithValue("@NoteDetails", NoteDetails.Text);
+                sqlCommand.Parameters.AddWithValue("@NoteDescription", NoteDescription);
+                sqlCommand.Parameters.AddWithValue("@NoteDetails", NoteDetails);
                 sqlCommand.Parameters.AddWithValue("@CreatedBy", InfoSec.GlobalUsername);
                 sqlCommand.ExecuteReader();
                 KryptonMessageBox.Show("Note Created!", "Created", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
-                FormToClose.Close();
+
+                if (FormToClose == null)
+                {
+
+                }
+                else 
+                {
+                    FormToClose.Close();
+                }
+                
             }
             catch (SqlException SQLException)
             {

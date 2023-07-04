@@ -6,7 +6,6 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Xml;
 
 namespace Gaze.BusinessLogic.CustomerManagement
 {
@@ -124,7 +123,7 @@ namespace Gaze.BusinessLogic.CustomerManagement
                 sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalSelectedPolicyID);
 
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                KryptonMessageBox.Show("Account with CustomerID:" + InfoSec.GlobalCustomerID + " has now been restricted!","Account Restricted", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
+                KryptonMessageBox.Show("Account with CustomerID:" + InfoSec.GlobalCustomerID + " has now been restricted!", "Account Restricted", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
                 FormtoClose.Close();
             }
             catch (SqlException SQLException)
@@ -138,10 +137,10 @@ namespace Gaze.BusinessLogic.CustomerManagement
 
 
             }
-            finally 
-            { 
-                scon.Close(); 
-            
+            finally
+            {
+                scon.Close();
+
             }
 
 

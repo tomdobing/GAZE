@@ -30,6 +30,7 @@
         {
             this.kryptonInputBoxExtendedManager1 = new Krypton.Toolkit.Suite.Extended.InputBox.KryptonInputBoxExtendedManager();
             this.kryptonInputBoxExtendedManager2 = new Krypton.Toolkit.Suite.Extended.InputBox.KryptonInputBoxExtendedManager();
+            this.kryptonValidationBox1 = new Krypton.Toolkit.Suite.Extended.Controls.KryptonValidationBox();
             this.SuspendLayout();
             // 
             // kryptonInputBoxExtendedManager1
@@ -92,15 +93,30 @@
             this.kryptonInputBoxExtendedManager2.WrappedMessageTextAlignment = Krypton.Toolkit.Suite.Extended.InputBox.InputBoxWrappedMessageTextAlignment.TOPLEFT;
             this.kryptonInputBoxExtendedManager2.YesText = null;
             // 
+            // kryptonValidationBox1
+            // 
+            this.kryptonValidationBox1.IntermediateColour = System.Drawing.Color.Empty;
+            this.kryptonValidationBox1.Location = new System.Drawing.Point(260, 159);
+            this.kryptonValidationBox1.ModifyBackgroundColour = false;
+            this.kryptonValidationBox1.Name = "kryptonValidationBox1";
+            this.kryptonValidationBox1.Size = new System.Drawing.Size(222, 23);
+            this.kryptonValidationBox1.TabIndex = 0;
+            this.kryptonValidationBox1.Text = "kryptonValidationBox1";
+            this.kryptonValidationBox1.UseAccessibilityColours = false;
+            this.kryptonValidationBox1.UseIntermediateColour = true;
+            this.kryptonValidationBox1.ValidateEntry = false;
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 496);
+            this.Controls.Add(this.kryptonValidationBox1);
             this.Name = "TestForm";
             this.Text = "TestForm";
             this.Load += new System.EventHandler(this.TestForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -108,5 +124,6 @@
 
         private Krypton.Toolkit.Suite.Extended.InputBox.KryptonInputBoxExtendedManager kryptonInputBoxExtendedManager1;
         private Krypton.Toolkit.Suite.Extended.InputBox.KryptonInputBoxExtendedManager kryptonInputBoxExtendedManager2;
+        private Krypton.Toolkit.Suite.Extended.Controls.KryptonValidationBox kryptonValidationBox1;
     }
 }
