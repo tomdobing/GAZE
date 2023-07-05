@@ -52,6 +52,26 @@
             this.unassignedTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newStockInputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerReportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAllCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAllActiveCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAllNonActiveCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customCustomerReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.policyReportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAllPoliciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAllCancelledPoliciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAllNonActivePoliciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerPolicyReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.taskReportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAllOpenTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAllNonActiveTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewTasksByAgentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customTaskReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.documentReportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewAllCustomerDocumentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editDeleteUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,26 +90,6 @@
             this.kryptonPalette1 = new Krypton.Toolkit.KryptonPalette(this.components);
             this.kryptonTabPage1 = new Krypton.Toolkit.Suite.Extended.Navigator.KryptonTabPage();
             this.kryptonTabPage2 = new Krypton.Toolkit.Suite.Extended.Navigator.KryptonTabPage();
-            this.reporingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerReportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.policyReportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.taskReportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.documentReportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewAllCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewAllActiveCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewAllNonActiveCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customCustomerReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewAllPoliciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewAllCancelledPoliciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewAllNonActivePoliciesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerPolicyReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewAllOpenTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewAllNonActiveTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewTasksByAgentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customTaskReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewAllCustomerDocumentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -268,6 +268,150 @@
             this.newStockInputToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.newStockInputToolStripMenuItem.Text = "View Policies";
             // 
+            // reporingToolStripMenuItem
+            // 
+            this.reporingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customerReportingToolStripMenuItem,
+            this.policyReportingToolStripMenuItem,
+            this.taskReportingToolStripMenuItem,
+            this.documentReportingToolStripMenuItem});
+            this.reporingToolStripMenuItem.Name = "reporingToolStripMenuItem";
+            this.reporingToolStripMenuItem.Size = new System.Drawing.Size(67, 22);
+            this.reporingToolStripMenuItem.Text = "Reporing";
+            // 
+            // customerReportingToolStripMenuItem
+            // 
+            this.customerReportingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewAllCustomersToolStripMenuItem,
+            this.viewAllActiveCustomersToolStripMenuItem,
+            this.viewAllNonActiveCustomersToolStripMenuItem,
+            this.customCustomerReportToolStripMenuItem});
+            this.customerReportingToolStripMenuItem.Name = "customerReportingToolStripMenuItem";
+            this.customerReportingToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.customerReportingToolStripMenuItem.Text = "Customer Reporting";
+            // 
+            // viewAllCustomersToolStripMenuItem
+            // 
+            this.viewAllCustomersToolStripMenuItem.Name = "viewAllCustomersToolStripMenuItem";
+            this.viewAllCustomersToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.viewAllCustomersToolStripMenuItem.Text = "View All Customers";
+            // 
+            // viewAllActiveCustomersToolStripMenuItem
+            // 
+            this.viewAllActiveCustomersToolStripMenuItem.Name = "viewAllActiveCustomersToolStripMenuItem";
+            this.viewAllActiveCustomersToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.viewAllActiveCustomersToolStripMenuItem.Text = "View All Active Customers";
+            // 
+            // viewAllNonActiveCustomersToolStripMenuItem
+            // 
+            this.viewAllNonActiveCustomersToolStripMenuItem.Name = "viewAllNonActiveCustomersToolStripMenuItem";
+            this.viewAllNonActiveCustomersToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.viewAllNonActiveCustomersToolStripMenuItem.Text = "View All NonActive Customers";
+            // 
+            // customCustomerReportToolStripMenuItem
+            // 
+            this.customCustomerReportToolStripMenuItem.Name = "customCustomerReportToolStripMenuItem";
+            this.customCustomerReportToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.customCustomerReportToolStripMenuItem.Text = "&Custom Customer Report";
+            // 
+            // policyReportingToolStripMenuItem
+            // 
+            this.policyReportingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewAllPoliciesToolStripMenuItem,
+            this.viToolStripMenuItem,
+            this.viewAllCancelledPoliciesToolStripMenuItem,
+            this.viewAllNonActivePoliciesToolStripMenuItem,
+            this.customerPolicyReportToolStripMenuItem});
+            this.policyReportingToolStripMenuItem.Name = "policyReportingToolStripMenuItem";
+            this.policyReportingToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.policyReportingToolStripMenuItem.Text = "Policy Reporting";
+            // 
+            // viewAllPoliciesToolStripMenuItem
+            // 
+            this.viewAllPoliciesToolStripMenuItem.Name = "viewAllPoliciesToolStripMenuItem";
+            this.viewAllPoliciesToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.viewAllPoliciesToolStripMenuItem.Text = "View All Policies";
+            // 
+            // viToolStripMenuItem
+            // 
+            this.viToolStripMenuItem.Name = "viToolStripMenuItem";
+            this.viToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.viToolStripMenuItem.Text = "View All Active Policies";
+            // 
+            // viewAllCancelledPoliciesToolStripMenuItem
+            // 
+            this.viewAllCancelledPoliciesToolStripMenuItem.Name = "viewAllCancelledPoliciesToolStripMenuItem";
+            this.viewAllCancelledPoliciesToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.viewAllCancelledPoliciesToolStripMenuItem.Text = "View All Cancelled Policies";
+            // 
+            // viewAllNonActivePoliciesToolStripMenuItem
+            // 
+            this.viewAllNonActivePoliciesToolStripMenuItem.Name = "viewAllNonActivePoliciesToolStripMenuItem";
+            this.viewAllNonActivePoliciesToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.viewAllNonActivePoliciesToolStripMenuItem.Text = "View All NonActive Policies";
+            // 
+            // customerPolicyReportToolStripMenuItem
+            // 
+            this.customerPolicyReportToolStripMenuItem.Name = "customerPolicyReportToolStripMenuItem";
+            this.customerPolicyReportToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.customerPolicyReportToolStripMenuItem.Text = "&Customer Policy Report";
+            // 
+            // taskReportingToolStripMenuItem
+            // 
+            this.taskReportingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewAllOpenTasksToolStripMenuItem,
+            this.viewAllToolStripMenuItem,
+            this.viewAllNonActiveTasksToolStripMenuItem,
+            this.viewTasksByAgentToolStripMenuItem,
+            this.customTaskReportToolStripMenuItem});
+            this.taskReportingToolStripMenuItem.Name = "taskReportingToolStripMenuItem";
+            this.taskReportingToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.taskReportingToolStripMenuItem.Text = "Task Reporting";
+            // 
+            // viewAllOpenTasksToolStripMenuItem
+            // 
+            this.viewAllOpenTasksToolStripMenuItem.Name = "viewAllOpenTasksToolStripMenuItem";
+            this.viewAllOpenTasksToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.viewAllOpenTasksToolStripMenuItem.Text = "View All Tasks";
+            // 
+            // viewAllToolStripMenuItem
+            // 
+            this.viewAllToolStripMenuItem.Name = "viewAllToolStripMenuItem";
+            this.viewAllToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.viewAllToolStripMenuItem.Text = "View All Open Tasks";
+            // 
+            // viewAllNonActiveTasksToolStripMenuItem
+            // 
+            this.viewAllNonActiveTasksToolStripMenuItem.Name = "viewAllNonActiveTasksToolStripMenuItem";
+            this.viewAllNonActiveTasksToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.viewAllNonActiveTasksToolStripMenuItem.Text = "View All NonActive Tasks";
+            // 
+            // viewTasksByAgentToolStripMenuItem
+            // 
+            this.viewTasksByAgentToolStripMenuItem.Name = "viewTasksByAgentToolStripMenuItem";
+            this.viewTasksByAgentToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.viewTasksByAgentToolStripMenuItem.Text = "View Tasks By Agent";
+            // 
+            // customTaskReportToolStripMenuItem
+            // 
+            this.customTaskReportToolStripMenuItem.Name = "customTaskReportToolStripMenuItem";
+            this.customTaskReportToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.customTaskReportToolStripMenuItem.Text = "&Custom Task Report";
+            // 
+            // documentReportingToolStripMenuItem
+            // 
+            this.documentReportingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewAllCustomerDocumentsToolStripMenuItem});
+            this.documentReportingToolStripMenuItem.Name = "documentReportingToolStripMenuItem";
+            this.documentReportingToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.documentReportingToolStripMenuItem.Text = "Document Reporting";
+            // 
+            // viewAllCustomerDocumentsToolStripMenuItem
+            // 
+            this.viewAllCustomerDocumentsToolStripMenuItem.Name = "viewAllCustomerDocumentsToolStripMenuItem";
+            this.viewAllCustomerDocumentsToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.viewAllCustomerDocumentsToolStripMenuItem.Text = "View All Customer Documents";
+            // 
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -418,150 +562,6 @@
             this.kryptonTabPage2.Size = new System.Drawing.Size(200, 100);
             this.kryptonTabPage2.TabIndex = 0;
             this.kryptonTabPage2.Text = "kryptonTabPage2";
-            // 
-            // reporingToolStripMenuItem
-            // 
-            this.reporingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customerReportingToolStripMenuItem,
-            this.policyReportingToolStripMenuItem,
-            this.taskReportingToolStripMenuItem,
-            this.documentReportingToolStripMenuItem});
-            this.reporingToolStripMenuItem.Name = "reporingToolStripMenuItem";
-            this.reporingToolStripMenuItem.Size = new System.Drawing.Size(67, 22);
-            this.reporingToolStripMenuItem.Text = "Reporing";
-            // 
-            // customerReportingToolStripMenuItem
-            // 
-            this.customerReportingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewAllCustomersToolStripMenuItem,
-            this.viewAllActiveCustomersToolStripMenuItem,
-            this.viewAllNonActiveCustomersToolStripMenuItem,
-            this.customCustomerReportToolStripMenuItem});
-            this.customerReportingToolStripMenuItem.Name = "customerReportingToolStripMenuItem";
-            this.customerReportingToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.customerReportingToolStripMenuItem.Text = "Customer Reporting";
-            // 
-            // policyReportingToolStripMenuItem
-            // 
-            this.policyReportingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewAllPoliciesToolStripMenuItem,
-            this.viToolStripMenuItem,
-            this.viewAllCancelledPoliciesToolStripMenuItem,
-            this.viewAllNonActivePoliciesToolStripMenuItem,
-            this.customerPolicyReportToolStripMenuItem});
-            this.policyReportingToolStripMenuItem.Name = "policyReportingToolStripMenuItem";
-            this.policyReportingToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.policyReportingToolStripMenuItem.Text = "Policy Reporting";
-            // 
-            // taskReportingToolStripMenuItem
-            // 
-            this.taskReportingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewAllOpenTasksToolStripMenuItem,
-            this.viewAllToolStripMenuItem,
-            this.viewAllNonActiveTasksToolStripMenuItem,
-            this.viewTasksByAgentToolStripMenuItem,
-            this.customTaskReportToolStripMenuItem});
-            this.taskReportingToolStripMenuItem.Name = "taskReportingToolStripMenuItem";
-            this.taskReportingToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.taskReportingToolStripMenuItem.Text = "Task Reporting";
-            // 
-            // documentReportingToolStripMenuItem
-            // 
-            this.documentReportingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewAllCustomerDocumentsToolStripMenuItem});
-            this.documentReportingToolStripMenuItem.Name = "documentReportingToolStripMenuItem";
-            this.documentReportingToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.documentReportingToolStripMenuItem.Text = "Document Reporting";
-            // 
-            // viewAllCustomersToolStripMenuItem
-            // 
-            this.viewAllCustomersToolStripMenuItem.Name = "viewAllCustomersToolStripMenuItem";
-            this.viewAllCustomersToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.viewAllCustomersToolStripMenuItem.Text = "View All Customers";
-            // 
-            // viewAllActiveCustomersToolStripMenuItem
-            // 
-            this.viewAllActiveCustomersToolStripMenuItem.Name = "viewAllActiveCustomersToolStripMenuItem";
-            this.viewAllActiveCustomersToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.viewAllActiveCustomersToolStripMenuItem.Text = "View All Active Customers";
-            // 
-            // viewAllNonActiveCustomersToolStripMenuItem
-            // 
-            this.viewAllNonActiveCustomersToolStripMenuItem.Name = "viewAllNonActiveCustomersToolStripMenuItem";
-            this.viewAllNonActiveCustomersToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.viewAllNonActiveCustomersToolStripMenuItem.Text = "View All NonActive Customers";
-            // 
-            // customCustomerReportToolStripMenuItem
-            // 
-            this.customCustomerReportToolStripMenuItem.Name = "customCustomerReportToolStripMenuItem";
-            this.customCustomerReportToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.customCustomerReportToolStripMenuItem.Text = "&Custom Customer Report";
-            // 
-            // viewAllPoliciesToolStripMenuItem
-            // 
-            this.viewAllPoliciesToolStripMenuItem.Name = "viewAllPoliciesToolStripMenuItem";
-            this.viewAllPoliciesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.viewAllPoliciesToolStripMenuItem.Text = "View All Policies";
-            // 
-            // viToolStripMenuItem
-            // 
-            this.viToolStripMenuItem.Name = "viToolStripMenuItem";
-            this.viToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.viToolStripMenuItem.Text = "View All Active Policies";
-            // 
-            // viewAllCancelledPoliciesToolStripMenuItem
-            // 
-            this.viewAllCancelledPoliciesToolStripMenuItem.Name = "viewAllCancelledPoliciesToolStripMenuItem";
-            this.viewAllCancelledPoliciesToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.viewAllCancelledPoliciesToolStripMenuItem.Text = "View All Cancelled Policies";
-            // 
-            // viewAllNonActivePoliciesToolStripMenuItem
-            // 
-            this.viewAllNonActivePoliciesToolStripMenuItem.Name = "viewAllNonActivePoliciesToolStripMenuItem";
-            this.viewAllNonActivePoliciesToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.viewAllNonActivePoliciesToolStripMenuItem.Text = "View All NonActive Policies";
-            // 
-            // customerPolicyReportToolStripMenuItem
-            // 
-            this.customerPolicyReportToolStripMenuItem.Name = "customerPolicyReportToolStripMenuItem";
-            this.customerPolicyReportToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.customerPolicyReportToolStripMenuItem.Text = "&Customer Policy Report";
-            // 
-            // viewAllOpenTasksToolStripMenuItem
-            // 
-            this.viewAllOpenTasksToolStripMenuItem.Name = "viewAllOpenTasksToolStripMenuItem";
-            this.viewAllOpenTasksToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.viewAllOpenTasksToolStripMenuItem.Text = "View All Tasks";
-            // 
-            // viewAllToolStripMenuItem
-            // 
-            this.viewAllToolStripMenuItem.Name = "viewAllToolStripMenuItem";
-            this.viewAllToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.viewAllToolStripMenuItem.Text = "View All Open Tasks";
-            // 
-            // viewAllNonActiveTasksToolStripMenuItem
-            // 
-            this.viewAllNonActiveTasksToolStripMenuItem.Name = "viewAllNonActiveTasksToolStripMenuItem";
-            this.viewAllNonActiveTasksToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.viewAllNonActiveTasksToolStripMenuItem.Text = "View All NonActive Tasks";
-            // 
-            // viewTasksByAgentToolStripMenuItem
-            // 
-            this.viewTasksByAgentToolStripMenuItem.Name = "viewTasksByAgentToolStripMenuItem";
-            this.viewTasksByAgentToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.viewTasksByAgentToolStripMenuItem.Text = "View Tasks By Agent";
-            // 
-            // customTaskReportToolStripMenuItem
-            // 
-            this.customTaskReportToolStripMenuItem.Name = "customTaskReportToolStripMenuItem";
-            this.customTaskReportToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.customTaskReportToolStripMenuItem.Text = "&Custom Task Report";
-            // 
-            // viewAllCustomerDocumentsToolStripMenuItem
-            // 
-            this.viewAllCustomerDocumentsToolStripMenuItem.Name = "viewAllCustomerDocumentsToolStripMenuItem";
-            this.viewAllCustomerDocumentsToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
-            this.viewAllCustomerDocumentsToolStripMenuItem.Text = "View All Customer Documents";
             // 
             // HomePage
             // 

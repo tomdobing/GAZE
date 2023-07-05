@@ -280,6 +280,7 @@
             this.taskDetails_grp.Panel.Controls.Add(this.taskPriority_cmb);
             this.taskDetails_grp.Panel.Controls.Add(this.kryptonLabel12);
             this.taskDetails_grp.Panel.Controls.Add(this.taskActive_chk);
+            this.taskDetails_grp.Panel.Controls.Add(this.updateStatus_btn);
             this.taskDetails_grp.Panel.Controls.Add(this.kryptonLabel11);
             this.taskDetails_grp.Panel.Controls.Add(this.taskStatus_cmb);
             this.taskDetails_grp.Panel.Controls.Add(this.taskAttempts_txt);
@@ -442,7 +443,7 @@
             this.taskDetails_rtxt.Multiline = true;
             this.taskDetails_rtxt.Name = "taskDetails_rtxt";
             this.taskDetails_rtxt.Size = new System.Drawing.Size(657, 160);
-            this.taskDetails_rtxt.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taskDetails_rtxt.StateCommon.Content.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.taskDetails_rtxt.TabIndex = 21;
             // 
             // kryptonLabel7
@@ -502,7 +503,6 @@
             this.control_grp.Panel.Controls.Add(this.WarnLabel1);
             this.control_grp.Panel.Controls.Add(this.kryptonButton3);
             this.control_grp.Panel.Controls.Add(this.kryptonButton2);
-            this.control_grp.Panel.Controls.Add(this.updateStatus_btn);
             this.control_grp.Size = new System.Drawing.Size(801, 151);
             this.control_grp.TabIndex = 10;
             this.control_grp.Values.Heading = "Controls && Warnings";
@@ -554,7 +554,7 @@
             // kryptonButton3
             // 
             this.kryptonButton3.CornerRoundingRadius = 10F;
-            this.kryptonButton3.Location = new System.Drawing.Point(66, 47);
+            this.kryptonButton3.Location = new System.Drawing.Point(16, 58);
             this.kryptonButton3.Name = "kryptonButton3";
             this.kryptonButton3.Size = new System.Drawing.Size(127, 25);
             this.kryptonButton3.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -568,9 +568,9 @@
             // kryptonButton2
             // 
             this.kryptonButton2.CornerRoundingRadius = 10F;
-            this.kryptonButton2.Location = new System.Drawing.Point(140, 16);
+            this.kryptonButton2.Location = new System.Drawing.Point(16, 16);
             this.kryptonButton2.Name = "kryptonButton2";
-            this.kryptonButton2.Size = new System.Drawing.Size(116, 25);
+            this.kryptonButton2.Size = new System.Drawing.Size(127, 25);
             this.kryptonButton2.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -582,7 +582,7 @@
             // updateStatus_btn
             // 
             this.updateStatus_btn.CornerRoundingRadius = 10F;
-            this.updateStatus_btn.Location = new System.Drawing.Point(16, 16);
+            this.updateStatus_btn.Location = new System.Drawing.Point(506, 286);
             this.updateStatus_btn.Name = "updateStatus_btn";
             this.updateStatus_btn.Size = new System.Drawing.Size(116, 25);
             this.updateStatus_btn.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 

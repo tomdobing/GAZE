@@ -31,6 +31,9 @@ namespace GAZE.Customer.Tasks
         {
             InitializeComponent();
             ExecuteFormLoadSettings();
+            taskPriority_cmb.Enabled = false;
+            taskDescription_txt.Enabled = false;
+            taskType_cmb.Enabled = false;
         }
 
         private void OpenTask_Load(object sender, EventArgs e)
@@ -120,7 +123,7 @@ namespace GAZE.Customer.Tasks
 
         private void kryptonButton3_Click(object sender, EventArgs e)
         {
-
+            DataLayer.UpdateTaskDetails(agent_cmb, taskDetails_rtxt, taskDueDate_dtp, this);
         }
         private void ShowWarnLabel1(Label Wanrlabel1)
         {
