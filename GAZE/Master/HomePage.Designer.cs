@@ -473,6 +473,7 @@
             this.addNewNoteCategoryToolStripMenuItem.Name = "addNewNoteCategoryToolStripMenuItem";
             this.addNewNoteCategoryToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.addNewNoteCategoryToolStripMenuItem.Text = "Add New Note Category";
+            this.addNewNoteCategoryToolStripMenuItem.Click += new System.EventHandler(this.addNewNoteCategoryToolStripMenuItem_Click);
             // 
             // windowToolStripMenuItem
             // 
@@ -485,7 +486,7 @@
             // hideTimeDateToolStripMenuItem
             // 
             this.hideTimeDateToolStripMenuItem.Name = "hideTimeDateToolStripMenuItem";
-            this.hideTimeDateToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.hideTimeDateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hideTimeDateToolStripMenuItem.Text = "Hide Toolstrip";
             this.hideTimeDateToolStripMenuItem.Click += new System.EventHandler(this.hideTimeDateToolStripMenuItem_Click_1);
             // 

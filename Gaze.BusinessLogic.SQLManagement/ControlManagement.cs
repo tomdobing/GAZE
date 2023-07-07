@@ -193,6 +193,42 @@ namespace Gaze.BusinessLogic.SQLManagement
                 throw;
             }
         }
+
+
+        public void SetNoteCategoryToDisabled(string NoteCategoryName)
+        {
+            SqlConnection SQLConnection = new SqlConnection(SQLConnectionString);
+            try
+            {
+                SQLConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_CONTROL_DISABLE_NOTE_CATEGORY_SP", SQLConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@Agent", InfoSec.GlobalUsername);
+                sqlCommand.Parameters.AddWithValue("@NoteCategoryName", NoteCategoryName);
+                sqlCommand.ExecuteReader();
+                KryptonMessageBox.Show("Control Value Disabled", "Disabled", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, KryptonMessageBoxDefaultButton.Button3);
+            }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show("Failed to Create Customer:- \n\n" + SQLException.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show("Failed to Create Customer:- \n\n" + ex.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            finally
+            {
+                SQLConnection.Close();
+            }
+
+        }
+        
+        
+        
         #endregion
     }
 }
