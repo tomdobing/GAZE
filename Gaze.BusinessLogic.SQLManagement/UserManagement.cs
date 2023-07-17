@@ -3,6 +3,7 @@ using Krypton.Toolkit;
 using MetroFramework.Controls;
 using System;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -28,7 +29,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         /// <param name="Password">Password to be created</param>
         /// <param name="IsAdmin">Bool check box is admin</param>
         /// <param name="form">Current form</param>
-        public void CreateNewUser(MetroTextBox Firstname, MetroTextBox Surname, MetroTextBox Username, string Password, MetroCheckBox IsAdmin, Form form)
+        public void CreateNewUser(KryptonTextBox Firstname, KryptonTextBox Surname, KryptonTextBox Username, string Password, KryptonComboBox Role, Form form)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             if (Firstname.Text == "" | Surname.Text == "" | Username.Text == "" | Password == "")
@@ -48,16 +49,16 @@ namespace Gaze.BusinessLogic.SQLManagement
                     sqlCommand.Parameters.AddWithValue("Surname", Surname.Text);
                     sqlCommand.Parameters.AddWithValue("username", Username.Text);
                     sqlCommand.Parameters.AddWithValue("password", Password);
-                    if (IsAdmin.CheckState == CheckState.Checked)
+                    if (Role.SelectedItem != "admin")
                     {
-                        sqlCommand.Parameters.AddWithValue("ISAdmin", 1);
-
+                        sqlCommand.Parameters.AddWithValue("ISAdmin", 0);
                     }
                     else
                     {
-                        sqlCommand.Parameters.AddWithValue("ISAdmin", null);
+                        sqlCommand.Parameters.AddWithValue("ISAdmin", 1);
                     }
                     sqlCommand.Parameters.AddWithValue("@createdBY", InfoSec.GlobalUsername);
+                    sqlCommand.Parameters.AddWithValue("@Role", Role.SelectedItem.ToString());
                     sqlCommand.ExecuteReader();
 
                     string message = "User:" + Username.Text + " has been created.";
@@ -69,8 +70,8 @@ namespace Gaze.BusinessLogic.SQLManagement
                 }
                 catch (Exception)
                 {
-
-                    string message = "An unknown error occured when creating user: " + Username.Text;
+                    
+                    string message = "An unknown error occurred when creating user: " + Username.Text;
                     string caption = "Something went wrong";
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
                     MessageBox.Show(message, caption, buttons,
@@ -314,6 +315,41 @@ namespace Gaze.BusinessLogic.SQLManagement
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(message, caption, buttons,
                 MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+        }
+
+        public void PopulateRolesForNewUserCreation(KryptonComboBox Role)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_ALL_USER_ROLES_SP", scon)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    Role.Items.Add(sqlDataReader[0].ToString());
+                }
+
+
+            }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show("We Encountered an Error While Creating your new Category:- \n\n" + SQLException.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Failure to Populate " + Role.Name, MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                throw;
             }
             finally
             {
