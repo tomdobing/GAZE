@@ -6,6 +6,7 @@ using Gaze.Security.Management;
 using Krypton.Toolkit;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GAZE.Admin
@@ -27,14 +28,13 @@ namespace GAZE.Admin
             Palette = HomePage.kryptonManager1.GlobalPalette;
             catNoteName_txt.Enabled = false;
             catNoteDesc_txt.Enabled = false;
-            kryptonCheckBox1.Enabled = false;
+            disablecat_chk.Enabled = false;
             catType_cmb.Enabled = false;
         }
 
         private void ControlAdminNotes_Load(object sender, EventArgs e)
         {
-            ControlManagement.PopulateNoteCategory(currNoteValue_cmb);
-            currNoteValue_cmb.Items.Add("Add New Value");
+            ExecuteLoad();
         }
 
         private void kryptonComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,21 +48,23 @@ namespace GAZE.Admin
             {
                 catNoteName_txt.Enabled = true;
                 catNoteDesc_txt.Enabled = true;
-                kryptonCheckBox1.Enabled = false;
+                disablecat_chk.Enabled = false;
                 catType_cmb.Enabled = true;
+                createCat_btn.Enabled = true;
             }
             else
             {
                 catNoteName_txt.Enabled = false;
                 catNoteDesc_txt.Enabled = false;
-                kryptonCheckBox1.Enabled = true;
+                disablecat_chk.Enabled = true;
                 catType_cmb.Enabled = false;
+                createCat_btn.Enabled = false;
             }
         }
 
         private void kryptonCheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (kryptonCheckBox1.CheckState == System.Windows.Forms.CheckState.Checked)
+            if (disablecat_chk.CheckState == System.Windows.Forms.CheckState.Checked)
             {
                 string message = "You are about to disable " + currNoteValue_cmb.SelectedItem.ToString() + ". \n This will remove it for everyone.\n\n Are you sure you wish to continue?";
                 string caption = "Are you sure?";
@@ -72,12 +74,12 @@ namespace GAZE.Admin
                 {
 
                    ControlManagement.SetNoteCategoryToDisabled(currNoteValue_cmb.SelectedItem.ToString());
-                   kryptonCheckBox1.CheckState = CheckState.Unchecked;
+                   disablecat_chk.CheckState = CheckState.Unchecked;
                 }
                 if (result == DialogResult.No) 
                 {
                     KryptonMessageBox.Show("User Cancelled. \n\n No Changes Made!", "Cancelled", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, KryptonMessageBoxDefaultButton.Button3);
-                    kryptonCheckBox1.CheckState = CheckState.Unchecked;
+                    disablecat_chk.CheckState = CheckState.Unchecked;
                     return;
                 }
             }
@@ -90,11 +92,30 @@ namespace GAZE.Admin
                 KryptonMessageBox.Show("You have not selected an option ", "Error", MessageBoxButtons.OK, KryptonMessageBoxIcon.Warning, KryptonMessageBoxDefaultButton.Button3);
                 return;
             }
+            if (catType_cmb.SelectedIndex == -1)
+            {
+                KryptonMessageBox.Show("You have not selected an option for Category Type ", "Error", MessageBoxButtons.OK, KryptonMessageBoxIcon.Warning, KryptonMessageBoxDefaultButton.Button3);
+                return;
+            }
+            if (currNoteValue_cmb.Text == "Add New Value")
+            {
+                if (string.IsNullOrEmpty(catNoteName_txt.Text))
+                {
+                    KryptonMessageBox.Show("You must enter a Name for the new Note Category.", "Error", MessageBoxButtons.OK, KryptonMessageBoxIcon.Warning, KryptonMessageBoxDefaultButton.Button3);
+                    return;
+                }
+                if (string.IsNullOrEmpty(catNoteDesc_txt.Text))
+                {
+                    KryptonMessageBox.Show("You must enter a Description for the new Note Category Description.", "Error", MessageBoxButtons.OK, KryptonMessageBoxIcon.Warning, KryptonMessageBoxDefaultButton.Button3);
+                    return;
+                }
+                ControlManagement.CreateNewNoteCategory(catNoteName_txt.Text, catNoteDesc_txt.Text, catType_cmb.SelectedItem.ToString());
+            }
         }
 
         private void currNoteValue_cmb_DrawItem(object sender, DrawItemEventArgs e)
         {
-            KryptonComboBox kryptonComboBox = (KryptonComboBox)sender;
+            //KryptonComboBox kryptonComboBox = (KryptonComboBox)sender;
             string ItemText = currNoteValue_cmb.GetItemText(currNoteValue_cmb.Items[e.Index]);
 
             bool shouldDrawBold = ItemText == "Add New Value";
@@ -107,7 +128,14 @@ namespace GAZE.Admin
 
         private void kryptonButton2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
+        }
+
+        private void ExecuteLoad()
+        {
+            ControlManagement.PopulateNoteCategory(currNoteValue_cmb);
+            currNoteValue_cmb.Items.Add("Add New Value");
+            ControlManagement.PopulateNoteCategoryType(catType_cmb);
         }
     }
 }

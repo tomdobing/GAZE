@@ -5,6 +5,9 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
+using System.Reflection;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Gaze.BusinessLogic.SQLManagement
@@ -227,8 +230,78 @@ namespace Gaze.BusinessLogic.SQLManagement
 
         }
         
-        
-        
+        public void CreateNewNoteCategory(string NewCategoryName, string newCategoryDescription, string categoryType)
+        {
+            SqlConnection SQLConnection = new SqlConnection(SQLConnectionString);
+            try
+            {
+                SQLConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.INSERT_NEW_NOTE_CATEGORY_SP", SQLConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@NewCategoryName", NewCategoryName);
+                sqlCommand.Parameters.AddWithValue("@NewCategoryDescription", newCategoryDescription);
+                sqlCommand.Parameters.AddWithValue("@CategoryType", categoryType);
+                sqlCommand.Parameters.AddWithValue("@Agent", InfoSec.GlobalUsername);
+                sqlCommand.ExecuteReader();
+                Thread.Sleep(1000);
+                KryptonMessageBox.Show("Category Created! Details are as follows: \n\n" + 
+                    "Category Name: " + NewCategoryName + "\nCategory Description: " + newCategoryDescription + "\n" +
+                    "Category Type: " + categoryType, "Disabled", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, KryptonMessageBoxDefaultButton.Button3);
+            }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show("We Encountered an Error While Creating your new Category:- \n\n" + SQLException.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show("We Encountered an Error While Creating your new Category:- \n\n" + ex.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            finally
+            {
+                SQLConnection.Close();
+            }
+
+        }
+
+        public void PopulateNoteCategoryType(KryptonComboBox CategoryComboBox)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CONTROL_VALUE_NOTE_CATEGORY_TYPE", scon)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    CategoryComboBox.Items.Add(sqlDataReader[0].ToString());
+                }
+
+
+            }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show("We Encountered an Error While Creating your new Category:- \n\n" + SQLException.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Failure to Populate " + CategoryComboBox.Name, MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                throw;
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+        }
+
         #endregion
     }
 }
