@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -542,8 +543,11 @@ namespace Gaze.BusinessLogic.TaskManagement
                 sqlCommand.Parameters.AddWithValue("@TaskDetails", TaskDetails.Text);
                 sqlCommand.Parameters.AddWithValue("@DueDate", DueDate.Value);
                 sqlCommand.ExecuteReader();
-                KryptonMessageBox.Show("Great - This task has now been updated. \n\n Form will now close", "Success!",MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
+                KryptonMessageBox.Show("Great - This task has now been updated. \n\n Form will now close", "Success!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
+                Thread.Sleep(725);
                 FormToClose.Close();
+
+
             }
             catch (SqlException SQLException)
             {

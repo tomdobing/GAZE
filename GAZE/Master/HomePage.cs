@@ -245,5 +245,11 @@ namespace GAZE
             TestForm testForm1 = new TestForm();
             testForm1.Show();
         }
+
+        private void addNewNoteCategoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControlAdminNotes controlAdminNotes = new ControlAdminNotes();
+            controlAdminNotes.ShowDialog();
+        }
     }
 }
