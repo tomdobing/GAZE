@@ -354,6 +354,12 @@
     <Compile Include="Admin\AdminConfig.Designer.cs">
       <DependentUpon>AdminConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AdminUser\UserCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminUser\UserCreation.Designer.cs">
+      <DependentUpon>UserCreation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ControlAdminNotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -538,6 +544,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Admin\AdminConfig.resx">
       <DependentUpon>AdminConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminUser\UserCreation.resx">
+      <DependentUpon>UserCreation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\ControlAdminNotes.resx">
       <DependentUpon>ControlAdminNotes.cs</DependentUpon>

@@ -35,7 +35,7 @@ namespace GAZE.Admin
         {
             string pass = encryption.EncryptTextBoxValue(password_txt, password_txt.Text);
             
-            userNamanegement.CreateNewUser(FName_txt, sName_txt, username_txt, pass, admin_chk, this);
+            //userNamanegement.CreateNewUser(FName_txt, sName_txt, username_txt, pass, admin_chk, this);
             
             
 

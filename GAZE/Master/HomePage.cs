@@ -107,8 +107,8 @@ namespace GAZE
 
         private void createNewUserToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Admin.CreateUser createUser = new Admin.CreateUser();
-            createUser.ShowDialog();
+            Admin.AdminUser.UserCreation userCreation = new Admin.AdminUser.UserCreation();
+            userCreation.ShowDialog();
 
         }
 
