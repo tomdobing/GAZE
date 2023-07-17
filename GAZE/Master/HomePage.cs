@@ -107,8 +107,8 @@ namespace GAZE
 
         private void createNewUserToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Admin.CreateUser createUser = new Admin.CreateUser();
-            createUser.ShowDialog();
+            Admin.AdminUser.UserCreation userCreation = new Admin.AdminUser.UserCreation();
+            userCreation.ShowDialog();
 
         }
 
@@ -238,6 +238,18 @@ namespace GAZE
         {
             TestForm testForm = new TestForm();
             testForm.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            TestForm testForm1 = new TestForm();
+            testForm1.Show();
+        }
+
+        private void addNewNoteCategoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControlAdminNotes controlAdminNotes = new ControlAdminNotes();
+            controlAdminNotes.ShowDialog();
         }
     }
 }

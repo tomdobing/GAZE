@@ -31,6 +31,7 @@ namespace GAZE.Customer.Tasks
         {
             InitializeComponent();
             ExecuteFormLoadSettings();
+
         }
 
         private void OpenTask_Load(object sender, EventArgs e)
@@ -120,7 +121,7 @@ namespace GAZE.Customer.Tasks
 
         private void kryptonButton3_Click(object sender, EventArgs e)
         {
-
+            DataLayer.UpdateTaskDetails(agent_cmb, taskDetails_rtxt, taskDueDate_dtp, this);
         }
         private void ShowWarnLabel1(Label Wanrlabel1)
         {
@@ -141,7 +142,7 @@ namespace GAZE.Customer.Tasks
             Wanrlabel3.Show();
             Wanrlabel3.Text = "WARNING CALL - Task Unassigned";
             Wanrlabel3.ForeColor = Color.Orange;
-            // Wanrlabel3.Font = new Font(Wanrlabel3.Font, FontStyle.Bold);
+            //Wanrlabel3.Font = new Font(Wanrlabel3.Font, FontStyle.Bold);
 
         }
 
@@ -166,7 +167,9 @@ namespace GAZE.Customer.Tasks
             taskControlAdmin.PopulateTaskStatusCombobox(taskStatus_cmb);
             DataLayer.GetOpenedTaskDetailsForOverview(taskDescription_txt, taskType_cmb, taskDetails_rtxt, taskPriority_cmb, taskDueDate_dtp,
                                                         taskAttempts_txt, taskStatus_cmb, taskActive_chk, agent_cmb);
-
+            taskPriority_cmb.Enabled = false;
+            taskDescription_txt.Enabled = false;
+            taskType_cmb.Enabled = false;
 
         }
 

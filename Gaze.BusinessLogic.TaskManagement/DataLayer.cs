@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -526,8 +527,8 @@ namespace Gaze.BusinessLogic.TaskManagement
 
         }
 
-        public void UpdateTaskDetails(KryptonComboBox Agent, KryptonTextBox TaskDescription, KryptonRichTextBoxExtended TaskDetails, 
-                                      KryptonDateTimePicker DueDate, KryptonComboBox Priority, [Optional] KryptonForm FormToClose)
+        public void UpdateTaskDetails(KryptonComboBox Agent, KryptonRichTextBoxExtended TaskDetails, 
+                                      KryptonDateTimePicker DueDate, [Optional] KryptonForm FormToClose)
         {
             try
             {
@@ -539,13 +540,14 @@ namespace Gaze.BusinessLogic.TaskManagement
                 sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
                 sqlCommand.Parameters.AddWithValue("@TaskID", InfoSec.GlobalTaskID);
                 sqlCommand.Parameters.AddWithValue("@Agent", Agent.SelectedItem);
-                sqlCommand.Parameters.AddWithValue("@TaskDescription", TaskDescription.Text);
                 sqlCommand.Parameters.AddWithValue("@TaskDetails", TaskDetails.Text);
                 sqlCommand.Parameters.AddWithValue("@DueDate", DueDate.Value);
-                sqlCommand.Parameters.AddWithValue("@Priority", Priority.SelectedItem);
                 sqlCommand.ExecuteReader();
-                KryptonMessageBox.Show("Task has been updated!", "Success",MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
+                KryptonMessageBox.Show("Great - This task has now been updated. \n\n Form will now close", "Success!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
+                Thread.Sleep(725);
                 FormToClose.Close();
+
+
             }
             catch (SqlException SQLException)
             {

@@ -1,6 +1,7 @@
 ﻿using Gaze.BusinessLogic.SQLManagement;
 using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -55,6 +56,43 @@ namespace Gaze.BusinessLogic.Config
                 errorProvider1.SetError(ctr, "");
                 e.Cancel = false;
             }
+        }
+
+        public bool IsPasswordValid(string password)
+        {
+            // Check if the password meets the minimum length requirement
+            if (password.Length < 12)
+            {
+                return false;
+            }
+
+            // Check if the password contains at least one number
+            if (!password.Any(char.IsDigit))
+            {
+                return false;
+            }
+
+            // Check if the password contains at least one capital letter
+            if (!password.Any(char.IsUpper))
+            {
+                return false;
+            }
+
+            // Check if the password contains at least one special character
+            if (!Regex.IsMatch(password, @"[!@#$%^&*()_+=\[{\]};:<>|./?,-]"))
+            {
+                return false;
+            }
+
+            // Check if the password contains common words
+            string[] commonWords = { "password", "123456", "qwerty" }; // Add more common words as needed
+            if (commonWords.Any(word => password.IndexOf(word, StringComparison.OrdinalIgnoreCase) >= 0))
+            {
+                return false;
+            }
+
+            // All complexity requirements are met
+            return true;
         }
 
     }
