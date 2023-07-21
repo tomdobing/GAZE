@@ -265,7 +265,7 @@
             // newStockInputToolStripMenuItem
             // 
             this.newStockInputToolStripMenuItem.Name = "newStockInputToolStripMenuItem";
-            this.newStockInputToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.newStockInputToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newStockInputToolStripMenuItem.Text = "View Policies";
             // 
             // reporingToolStripMenuItem
@@ -486,7 +486,7 @@
             // hideTimeDateToolStripMenuItem
             // 
             this.hideTimeDateToolStripMenuItem.Name = "hideTimeDateToolStripMenuItem";
-            this.hideTimeDateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hideTimeDateToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.hideTimeDateToolStripMenuItem.Text = "Hide Toolstrip";
             this.hideTimeDateToolStripMenuItem.Click += new System.EventHandler(this.hideTimeDateToolStripMenuItem_Click_1);
             // 
@@ -503,21 +503,21 @@
             // checkForUpdatesToolStripMenuItem
             // 
             this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkForUpdatesToolStripMenuItem.Text = "Check for updates";
             this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click_1);
             // 
             // sQLServerToolStripMenuItem
             // 
             this.sQLServerToolStripMenuItem.Name = "sQLServerToolStripMenuItem";
-            this.sQLServerToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.sQLServerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sQLServerToolStripMenuItem.Text = "SQL Server";
             this.sQLServerToolStripMenuItem.Click += new System.EventHandler(this.sQLServerToolStripMenuItem_Click_1);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
             // 

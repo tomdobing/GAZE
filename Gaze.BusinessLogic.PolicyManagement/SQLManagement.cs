@@ -356,6 +356,7 @@ namespace Gaze.BusinessLogic.PolicyManagement
                 sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
                 sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalSelectedPolicyID);
                 sqlCommand.Parameters.AddWithValue("@PolicyStatus", CustomerPolicyStatus.SelectedItem);
+                sqlCommand.Parameters.AddWithValue("@Agent", InfoSec.GlobalUsername);
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 KryptonMessageBox.Show("Policy Status has been updated to " + CustomerPolicyStatus.SelectedItem, "Policy Status Updated", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
                 form.Close();

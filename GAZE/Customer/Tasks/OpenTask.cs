@@ -15,13 +15,7 @@ namespace GAZE.Customer.Tasks
     {
         #region Declarations
         readonly FormSettings FormSettings = new FormSettings();
-        readonly InfoSec InfoSec = new InfoSec();
-        readonly CustomerManagement CustomerManagement = new CustomerManagement();
-        readonly SQLManagement PolicySQLManagement = new SQLManagement();
         readonly HomePage HomePage = new HomePage();
-        readonly SQLBilling SQLBilling = new SQLBilling();
-        readonly ControlManagement ControlManagement = new ControlManagement();
-        readonly NoteManagement NoteManagement = new NoteManagement();
         readonly DataLayer DataLayer = new DataLayer();
         readonly NoteDataLayer noteDataLayer = new NoteDataLayer();
         readonly TaskControlAdmin taskControlAdmin = new TaskControlAdmin();
@@ -50,7 +44,7 @@ namespace GAZE.Customer.Tasks
             {
                 ShowWarnLabel2(WarnLabel2);
             }
-            if (agent_cmb.SelectedIndex != 1)
+            if (agent_cmb.SelectedIndex == -1 || string.IsNullOrEmpty(agent_cmb.SelectedItem.ToString()))
             {
                 ShowWarnLabel3(WarnLabel3);
             }
@@ -109,7 +103,7 @@ namespace GAZE.Customer.Tasks
             }
             if (taskStatus_cmb.SelectedItem.ToString() == "Active")
             {
-
+                DataLayer.UpdateTaskStatusToActive(this);
             }
         }
 
