@@ -527,6 +527,46 @@ namespace Gaze.BusinessLogic.TaskManagement
 
         }
 
+        public void UpdateTaskStatusToActive([Optional] KryptonForm FormName)
+        {
+
+            try
+            {
+                SQLConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_TASKS_SET_TASK_STATUS_ACTIVE_SP", SQLConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@TaskID", InfoSec.GlobalTaskID);
+                sqlCommand.Parameters.AddWithValue("@Agent", InfoSec.GlobalUsername);
+                sqlCommand.ExecuteReader();
+
+                string NoteDetails = "Task Status Changed: Status Active";
+                noteDataLayer.InsertNewTaskNote("TSKUPDATE", NoteDetails);
+
+                string Message = "Task marked as Active. This Window Will Now Close!";
+                string Title = "Task Updated";
+                KryptonMessageBox.Show(Message, Title, MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
+                FormName.Close();
+            }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show("SQL Exception Caught \n\n" + SQLException.Message, "SQL Exception", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show("Exception Thrown \n\n" + ex.Message, "Exception Caught", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            finally
+            {
+                SQLConnection.Close();
+            }
+
+        }
+
         public void UpdateTaskDetails(KryptonComboBox Agent, KryptonRichTextBoxExtended TaskDetails, 
                                       KryptonDateTimePicker DueDate, [Optional] KryptonForm FormToClose)
         {

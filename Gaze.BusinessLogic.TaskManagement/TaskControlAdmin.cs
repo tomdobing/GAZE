@@ -218,7 +218,7 @@ namespace Gaze.BusinessLogic.TaskManagement
                 };
 
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                AssignedToCombobox.Items.Add("");
+                AssignedToCombobox.Items.Add(string.Empty);
                 while (sqlDataReader.Read())
                 {
                     AssignedToCombobox.Items.Add(sqlDataReader[0].ToString());
