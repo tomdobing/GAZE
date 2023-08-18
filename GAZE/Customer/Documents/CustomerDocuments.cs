@@ -70,22 +70,27 @@ namespace GAZE.Customer.Documents
 
         private void kryptonButton3_Click(object sender, EventArgs e)
         {
-            
+
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = "C:\\";
             openFileDialog.Filter = "All Files (*.*)|*.*";
             if (openFileDialog.ShowDialog() != DialogResult.OK)
             {
-               MessageBox.Show("Error");
+                MessageBox.Show("Error");
                 return;
             }
-           
+
             string filepath = openFileDialog.FileName;
             long filesize = new FileInfo(openFileDialog.FileName).Length;
             string newfilepath = @"C:\Temp\GAZE\Documents\" + Path.GetFileName(filepath);
-            DocumentRetrieval.UploadCustomerDocument(GetFileType(Path.GetExtension(filepath)),
-            Path.GetFileName(filepath), newfilepath, ConvertBytesToMB(filesize).ToString("0.00") + "MB", filepath);
-           
+            if (filesize > 2000000)
+            {
+                KryptonMessageBox.Show("Document Size exceeds 2MB. Upload Not Allowed", "Document Upload Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, KryptonMessageBoxDefaultButton.Button3, 0, false, false);
+                return;
+            }
+            DocumentRetrieval.UploadCustomerDocument(GetFileType(Path.GetExtension(filepath)), Path.GetFileName(filepath), newfilepath,
+                                                     ConvertBytesToMB(filesize).ToString("0.00") + "MB", filepath);
+
 
         }
         public string GetFileType(string filePath)

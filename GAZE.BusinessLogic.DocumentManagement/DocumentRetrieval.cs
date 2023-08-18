@@ -8,7 +8,6 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GAZE.BusinessLogic.DocumentManagement
 {
@@ -18,7 +17,7 @@ namespace GAZE.BusinessLogic.DocumentManagement
         #region Declarations
         private readonly static string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         public static string FilePathToOpen;
-        DocumentConfiguration DocumentConfiguration = new DocumentConfiguration();
+        private readonly DocumentConfiguration DocumentConfiguration = new DocumentConfiguration();
         public List<string> AcceptedFileTypes = new List<string>();
         #endregion
 
@@ -207,6 +206,34 @@ namespace GAZE.BusinessLogic.DocumentManagement
 
         }
 
+        //THIS NEEDS TO BE FIXED
+        private bool CheckDocumentSize(string filesize)
+        {
+            try
+            {
+                long maxFileSize = 2 * 1024 * 1024;
+
+                FileInfo fileInfo = new FileInfo(filesize);
+                long fileSizeInBytes = fileInfo.Length;
+                long filesizeupdated = fileSizeInBytes * 1024 * 1024;
+                if (filesizeupdated > maxFileSize)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show("Document Size Check Exception: " + Environment.NewLine + ex.Message, "Document Upload Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, KryptonMessageBoxDefaultButton.Button3, 0, false, false);
+                return false;
+
+            }
+
+        }
+
         public void UploadCustomerDocument(string DocumentType, string DocumentName, string DocumentLocation, string DocumentSize, string OldFilePath)
         {
             SqlConnection SQLConnection = new SqlConnection(SQLConnectionString);
@@ -267,7 +294,7 @@ namespace GAZE.BusinessLogic.DocumentManagement
                         " or contact your System Administrator", "Document Upload Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
                     return true;
 
-                    
+
                 }
                 else
                 {
@@ -303,7 +330,7 @@ namespace GAZE.BusinessLogic.DocumentManagement
                         HelpDataGrid.DataSource = customers;
                     }
                     HelpDataGrid.ReadOnly = true;
-                    HelpDataGrid .AllowUserToAddRows = false;
+                    HelpDataGrid.AllowUserToAddRows = false;
                     foreach (DataGridViewColumn column in HelpDataGrid.Columns)
                     {
                         column.SortMode = DataGridViewColumnSortMode.NotSortable;
