@@ -85,7 +85,7 @@ namespace GAZE.Customer
 
         private void kryptonDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            Cursor = Cursors.WaitCursor;
             try
             {
                 int selectedRowIndex = e.RowIndex;

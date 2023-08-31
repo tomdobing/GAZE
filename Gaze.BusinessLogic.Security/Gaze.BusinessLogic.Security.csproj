@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banking.cs" />
+    <Compile Include="DataProtection.cs" />
     <Compile Include="Encryption.cs" />
     <Compile Include="LoginFormSettings.cs" />
     <Compile Include="LoginSecurity.cs" />
