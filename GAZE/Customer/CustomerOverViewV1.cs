@@ -73,8 +73,7 @@ namespace GAZE.Customer
             InfoSec.InsertFootPrint();
             if (string.IsNullOrEmpty(dpaPass_txt.Text))
             {
-                //DPAPassWarn_lbl.Text = "WARNING - NO DPA PASSWORD SET";
-                //DPAPassWarn_lbl.ForeColor = System.Drawing.Color.Orange;
+
                 KryptonMessageBox.Show("Warning - This customer has no DPA Password set \n\nPlease discuss with the customer regarding setting a DPA Password",
                                         "Security Warning",
                                         MessageBoxButtons.OK,
