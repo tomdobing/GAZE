@@ -15,6 +15,7 @@ using System.Linq;
 using System.Diagnostics;
 using GAZE.Customer.NewCustomer;
 using GAZE.Admin;
+using System.Data.SqlClient;
 
 namespace GAZE
 {
@@ -250,6 +251,22 @@ namespace GAZE
         {
             ControlAdminNotes controlAdminNotes = new ControlAdminNotes();
             controlAdminNotes.ShowDialog();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            TestingSQL testingSQL = new TestingSQL();
+            SqlParameter[] sqlParameters = new SqlParameter[] {new SqlParameter("@AAA", DateTime.Now), new SqlParameter("@asd", DateTime.Now)};
+
+
+            testingSQL.ExecuteReader(System.Data.CommandType.StoredProcedure, "dbo.TEST_SP", sqlParameters);
+            
+
+        }
+
+        private void viewControlRestrictionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
