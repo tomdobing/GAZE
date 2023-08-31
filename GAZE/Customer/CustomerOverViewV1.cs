@@ -13,6 +13,7 @@ using GAZE.Policy;
 using Krypton.Toolkit;
 using MetroFramework.Controls;
 using System;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -31,6 +32,7 @@ namespace GAZE.Customer
         CustomerLogic CustomerLogic = new CustomerLogic();
         SQLDataAdmin SQLDataAdmin = new SQLDataAdmin();
         ControlAccessHelper ControlAccessHelper = new ControlAccessHelper();
+        DataProtection DataProtection = new DataProtection();
         #endregion
 
         #region Methods
@@ -69,24 +71,43 @@ namespace GAZE.Customer
 
             ExecuteCustomerLoad();
             InfoSec.InsertFootPrint();
+            if (string.IsNullOrEmpty(dpaPass_txt.Text))
+            {
+                //DPAPassWarn_lbl.Text = "WARNING - NO DPA PASSWORD SET";
+                //DPAPassWarn_lbl.ForeColor = System.Drawing.Color.Orange;
+                KryptonMessageBox.Show("Warning - This customer has no DPA Password set \n\nPlease discuss with the customer regarding setting a DPA Password",
+                                        "Security Warning",
+                                        MessageBoxButtons.OK,
+                                        KryptonMessageBoxIcon.Warning);
+            }
         }
 
         public void ExecuteCustomerLoad()
         {
+            ///Load all customer policies
             CustomerManagement.GetCustomerPoliciesForOverview(metroGrid1);
 
+            ///Wait for 1 second while Database finishes
             Thread.Sleep(1000);
 
+            ///Get All Customer Details
             CustomerManagement.GetCustomerOverViewV1(CustName_txt, CustTitle_txt, FName_txt, CSurname_txt, CDOB_txt, ContactNum_txt, AltCont_txt, EmailAddress_txt,
                 addrL1_txt, AddrL2_txt, Town_txt, postalcode_txt, country_txt, PolicyID_txt, PolStatus_lbl, DeactReas_txt, PolEffStart_txt, PolEndDate_txt, discount_txt, ProdName_txt, ProdDesc_txt
                 , ProdActDate_txt, CustID_txt, ProdEndDate_txt, PolID_Txt, StatID_txt);
-
+            
+            ///Get Customers OverviewNote
             CustomerManagement.GetCustomerOverviewNote(kryptonTextBox1);
 
+            ///Get the customers billing overview
             SQLBilling.GetOverviewBillingDetails(BillingID_txt, bilRef_txt, BillingType_txt, BillingFreq_txt, Yearly_txt,
                                                 MTotal_txt, billingstatus_txt, accountNum_txt,
                                                 sortcode_txt, NextBillDay_txt);
 
+            ///Get the customers password if present !!!TODO!!!
+            DataProtection.GetCustomersPassword(dpaPass_txt);
+
+
+            ///select tab 1
             metroTabControl1.SelectedTab = metroTabPage1;
 
         }
