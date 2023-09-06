@@ -5,12 +5,8 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Net.Mail;
 using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
-using System.Xml;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Gaze.BusinessLogic.SQLManagement
@@ -28,9 +24,6 @@ namespace Gaze.BusinessLogic.SQLManagement
         #endregion
 
         #region Methods
-
-
-
 
         /// <summary>
         /// Function to create a new customer. Also contains Data Validation Methods.
@@ -159,7 +152,7 @@ namespace Gaze.BusinessLogic.SQLManagement
                 using (SqlCommand scmd = new SqlCommand("SELECT_NOTE_BY_CUSTOMER_ID", scon))
                 {
                     scmd.CommandType = CommandType.StoredProcedure;
-                    scmd.Parameters.AddWithValue("@CUstomerID", InfoSec.GlobalCustomerID);
+                    scmd.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
                     using (SqlDataAdapter adapter = new SqlDataAdapter(scmd))
                     {
                         DataTable customers = new DataTable();
@@ -280,20 +273,17 @@ namespace Gaze.BusinessLogic.SQLManagement
 
                             if (reader.HasRows)
                             {
-
                                 return true;
                             }
                             else
                             {
                                 return false;
                             }
-
                         }
                     }
                 }
                 catch (Exception)
                 {
-
                     return false;
                 }
 
@@ -439,20 +429,13 @@ namespace Gaze.BusinessLogic.SQLManagement
                 {
                     sqlCommand.Parameters.AddWithValue("@NoteCategory", NoteCategory);
                 }
-
-
-
                 sqlCommand.Parameters.AddWithValue("@CreatedBy", InfoSec.GlobalUsername);
                 sqlCommand.ExecuteReader();
                 if (ShowNoteConfirmation == true)
                 {
                     KryptonMessageBox.Show("Note has been created", "Note Saved!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
-                    
-
                 }
                 else { };
-
-
 
             }
             catch (Exception ex)
@@ -576,20 +559,15 @@ namespace Gaze.BusinessLogic.SQLManagement
                     ContactNumber.Text = sqlDataReader[4].ToString();
                     AlterContact.Text = sqlDataReader[5].ToString();
                     EmailAddress.Text = sqlDataReader[6].ToString();
-
                 }
             }
             catch (Exception ex)
             {
-
                 KryptonMessageBox.Show("Failed update customer details \n\n" + ex.Message, "Whoops!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
-
             }
             finally
             {
-
                 scon.Close();
-
             }
 
         }
@@ -768,19 +746,11 @@ namespace Gaze.BusinessLogic.SQLManagement
                     date = sqlDataReader.GetDateTime(17);
                     PEffEnd.Text = date.ToShortDateString();
                     
-                   
-
                     ProductName.Text = sqlDataReader[18].ToString();
                     ProductDesc.Text = sqlDataReader[19].ToString();
-                    
-
                     date = sqlDataReader.GetDateTime(20);
                     EffStart.Text = date.ToShortDateString();
-
                     CustomerID.Text = sqlDataReader[21].ToString();
-
-
-
                 }
             }
             catch (Exception)

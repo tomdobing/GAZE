@@ -70,6 +70,7 @@ namespace GAZE.Customer
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
             CustomerManagement.GetCustomerPoliciesByPolicyID(searchPolID_txt.Text, kryptonDataGridView1);
             if (SQLManagement.CheckIfPolicyIDExists(searchPolID_txt.Text) == false)
             {
@@ -77,9 +78,11 @@ namespace GAZE.Customer
                                              "Not Found", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error,
                                               KryptonMessageBoxDefaultButton.Button3, 0, false, false);
 
-
+                Cursor = Cursors.Default;
                 return;
+                
             }
+            Cursor = Cursors.Default;
 
         }
 
@@ -102,6 +105,7 @@ namespace GAZE.Customer
                     searchPolID_txt.Focus();
                     return;
                 }
+                Cursor = Cursors.Default;
                 CustomerOverViewV1 customerOverViewV1 = new CustomerOverViewV1();
                 customerOverViewV1.ShowDialog();
 

@@ -78,6 +78,15 @@ namespace GAZE.Customer
                                         "Security Warning",
                                         MessageBoxButtons.OK,
                                         KryptonMessageBoxIcon.Warning);
+                createPasswordToolStripMenuItem.Enabled = true;
+                updatePasswordToolStripMenuItem.Enabled = false;
+                removePasswordToolStripMenuItem.Enabled = false;
+            }
+            else
+            {
+                createPasswordToolStripMenuItem.Enabled = false;
+                updatePasswordToolStripMenuItem.Enabled = true;
+                removePasswordToolStripMenuItem.Enabled = true;
             }
         }
 
