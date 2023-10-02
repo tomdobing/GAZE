@@ -69,7 +69,7 @@ namespace GAZE.Customer.Tasks
 
         private void kryptonButton2_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = KryptonMessageBox.Show("Are you sure you wish to update the Attempted Tasks", "Contiue?",
+            DialogResult dialogResult = KryptonMessageBox.Show("Are you sure you wish to update the Attempted Tasks", "Continue?",
                                         MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, 0, 0,
                                         false, false, false, false, null);
 

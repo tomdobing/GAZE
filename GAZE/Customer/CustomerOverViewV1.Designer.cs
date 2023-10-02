@@ -33,6 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.dpaPass_txt = new Krypton.Toolkit.KryptonTextBox();
+            this.metroLabel33 = new MetroFramework.Controls.MetroLabel();
             this.kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
             this.EmailAddress_txt = new Krypton.Toolkit.KryptonTextBox();
             this.AltCont_txt = new Krypton.Toolkit.KryptonTextBox();
@@ -106,6 +108,7 @@
             this.BillingID_txt = new Krypton.Toolkit.KryptonTextBox();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DPAPassWarn_lbl = new Krypton.Toolkit.KryptonLabel();
             this.PolStatus_lbl = new System.Windows.Forms.Label();
             this.CustName_txt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -121,6 +124,10 @@
             this.updateNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.passwordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updatePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.policyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updatePolicyStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -138,13 +145,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acceptedFileTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kryptonCommand1 = new Krypton.Toolkit.KryptonCommand();
-            this.passwordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updatePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.metroLabel33 = new MetroFramework.Controls.MetroLabel();
-            this.dpaPass_txt = new Krypton.Toolkit.KryptonTextBox();
-            this.DPAPassWarn_lbl = new Krypton.Toolkit.KryptonLabel();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -204,6 +204,22 @@
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // dpaPass_txt
+            // 
+            this.dpaPass_txt.Location = new System.Drawing.Point(580, 136);
+            this.dpaPass_txt.Name = "dpaPass_txt";
+            this.dpaPass_txt.Size = new System.Drawing.Size(391, 23);
+            this.dpaPass_txt.TabIndex = 25;
+            // 
+            // metroLabel33
+            // 
+            this.metroLabel33.AutoSize = true;
+            this.metroLabel33.Location = new System.Drawing.Point(458, 136);
+            this.metroLabel33.Name = "metroLabel33";
+            this.metroLabel33.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel33.TabIndex = 24;
+            this.metroLabel33.Text = "Password:";
             // 
             // kryptonTextBox1
             // 
@@ -927,6 +943,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Details";
             // 
+            // DPAPassWarn_lbl
+            // 
+            this.DPAPassWarn_lbl.Location = new System.Drawing.Point(553, 48);
+            this.DPAPassWarn_lbl.Name = "DPAPassWarn_lbl";
+            this.DPAPassWarn_lbl.Size = new System.Drawing.Size(6, 2);
+            this.DPAPassWarn_lbl.TabIndex = 8;
+            this.DPAPassWarn_lbl.Values.Text = "";
+            // 
             // PolStatus_lbl
             // 
             this.PolStatus_lbl.AutoSize = true;
@@ -1048,13 +1072,13 @@
             // updateNoteToolStripMenuItem
             // 
             this.updateNoteToolStripMenuItem.Name = "updateNoteToolStripMenuItem";
-            this.updateNoteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateNoteToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.updateNoteToolStripMenuItem.Text = "Update Note";
             // 
             // deleteNoteToolStripMenuItem
             // 
             this.deleteNoteToolStripMenuItem.Name = "deleteNoteToolStripMenuItem";
-            this.deleteNoteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteNoteToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.deleteNoteToolStripMenuItem.Text = "Delete Note";
             this.deleteNoteToolStripMenuItem.Click += new System.EventHandler(this.deleteNoteToolStripMenuItem_Click);
             // 
@@ -1064,6 +1088,35 @@
             this.tasksToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.tasksToolStripMenuItem.Text = "&Tasks";
             this.tasksToolStripMenuItem.Click += new System.EventHandler(this.tasksToolStripMenuItem_Click);
+            // 
+            // passwordToolStripMenuItem
+            // 
+            this.passwordToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createPasswordToolStripMenuItem,
+            this.updatePasswordToolStripMenuItem,
+            this.removePasswordToolStripMenuItem});
+            this.passwordToolStripMenuItem.Name = "passwordToolStripMenuItem";
+            this.passwordToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.passwordToolStripMenuItem.Text = "Password";
+            // 
+            // createPasswordToolStripMenuItem
+            // 
+            this.createPasswordToolStripMenuItem.Name = "createPasswordToolStripMenuItem";
+            this.createPasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createPasswordToolStripMenuItem.Text = "Create Password";
+            this.createPasswordToolStripMenuItem.Click += new System.EventHandler(this.createPasswordToolStripMenuItem_Click);
+            // 
+            // updatePasswordToolStripMenuItem
+            // 
+            this.updatePasswordToolStripMenuItem.Name = "updatePasswordToolStripMenuItem";
+            this.updatePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updatePasswordToolStripMenuItem.Text = "Update Password";
+            // 
+            // removePasswordToolStripMenuItem
+            // 
+            this.removePasswordToolStripMenuItem.Name = "removePasswordToolStripMenuItem";
+            this.removePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removePasswordToolStripMenuItem.Text = "Remove Password";
             // 
             // policyToolStripMenuItem
             // 
@@ -1190,58 +1243,6 @@
             // kryptonCommand1
             // 
             this.kryptonCommand1.Text = "kryptonCommand1";
-            // 
-            // passwordToolStripMenuItem
-            // 
-            this.passwordToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createPasswordToolStripMenuItem,
-            this.updatePasswordToolStripMenuItem,
-            this.removePasswordToolStripMenuItem});
-            this.passwordToolStripMenuItem.Name = "passwordToolStripMenuItem";
-            this.passwordToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.passwordToolStripMenuItem.Text = "Password";
-            // 
-            // createPasswordToolStripMenuItem
-            // 
-            this.createPasswordToolStripMenuItem.Name = "createPasswordToolStripMenuItem";
-            this.createPasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.createPasswordToolStripMenuItem.Text = "Create Password";
-            // 
-            // updatePasswordToolStripMenuItem
-            // 
-            this.updatePasswordToolStripMenuItem.Name = "updatePasswordToolStripMenuItem";
-            this.updatePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.updatePasswordToolStripMenuItem.Text = "Update Password";
-            // 
-            // removePasswordToolStripMenuItem
-            // 
-            this.removePasswordToolStripMenuItem.Name = "removePasswordToolStripMenuItem";
-            this.removePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.removePasswordToolStripMenuItem.Text = "Remove Password";
-            // 
-            // metroLabel33
-            // 
-            this.metroLabel33.AutoSize = true;
-            this.metroLabel33.Location = new System.Drawing.Point(458, 136);
-            this.metroLabel33.Name = "metroLabel33";
-            this.metroLabel33.Size = new System.Drawing.Size(66, 19);
-            this.metroLabel33.TabIndex = 24;
-            this.metroLabel33.Text = "Password:";
-            // 
-            // dpaPass_txt
-            // 
-            this.dpaPass_txt.Location = new System.Drawing.Point(580, 136);
-            this.dpaPass_txt.Name = "dpaPass_txt";
-            this.dpaPass_txt.Size = new System.Drawing.Size(391, 23);
-            this.dpaPass_txt.TabIndex = 25;
-            // 
-            // DPAPassWarn_lbl
-            // 
-            this.DPAPassWarn_lbl.Location = new System.Drawing.Point(553, 48);
-            this.DPAPassWarn_lbl.Name = "DPAPassWarn_lbl";
-            this.DPAPassWarn_lbl.Size = new System.Drawing.Size(6, 2);
-            this.DPAPassWarn_lbl.TabIndex = 8;
-            this.DPAPassWarn_lbl.Values.Text = "";
             // 
             // CustomerOverViewV1
             // 

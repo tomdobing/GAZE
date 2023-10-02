@@ -272,5 +272,21 @@ namespace GAZE.Customer
 
         #endregion
 
+        private void createPasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = KryptonMessageBox.Show("You are about to set a DPA Password for this customer - Would you like to Continue?", "Continue?",
+                                        MessageBoxButtons.YesNo, KryptonMessageBoxIcon.Question, 0, 0,
+                                        false, false, false, false, null);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string Password = KryptonInputBox.Show("Please enter the customer password exactly as told over the phone", "New Customer Password", default, "Password.........", default, default, default);
+                DataProtection.CreateNewCustomerDPAPassword(Password);
+            }
+            else
+            {
+                return;
+            }
+                
+        }
     }
 }

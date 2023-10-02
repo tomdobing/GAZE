@@ -1,23 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.ApplicationBlocks.Data;
-using System.Configuration;
+﻿using Gaze.BusinessLogic.SQLManagement;
 using Krypton.Toolkit;
+using Microsoft.ApplicationBlocks.Data;
+using System;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
-using Gaze.BusinessLogic.SQLManagement;
-using System.Drawing;
 
 namespace Gaze.BusinessLogic.Security
 {
+    /// <summary>
+    /// Data Protection Class used for DPA relating to customer security
+    /// </summary>
+
     public class DataProtection
     {
 
-        private string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
+        private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
 
         public SqlDataReader ExecuteReader(string SPNAME, params SqlParameter[] commandParameters)
         {
@@ -32,14 +31,14 @@ namespace Gaze.BusinessLogic.Security
             catch (SqlException sqlException)
             {
 
-                    KryptonMessageBox.Show(sqlException.Message, "Failure!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
-            return reader;
+                KryptonMessageBox.Show(sqlException.Message, "Failure!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return reader;
             }
             finally
             {
                 sqlConnection.Close();
             }
-            
+
         }
 
         public void GetCustomersPassword(KryptonTextBox PasswordField)
@@ -50,7 +49,7 @@ namespace Gaze.BusinessLogic.Security
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMERS_DPA_PASSWORD_SP", sqlConnection)
                 {
-                    CommandType = System.Data.CommandType.StoredProcedure
+                    CommandType = CommandType.StoredProcedure
                 };
                 sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
 
@@ -67,9 +66,41 @@ namespace Gaze.BusinessLogic.Security
 
                 throw;
             }
-          
+
+        }
+
+        public void CreateNewCustomerDPAPassword(string Password)
+        {
+            if (string.IsNullOrEmpty(Password))
+            {
+                KryptonMessageBox.Show("Password: NULL is not a valid password \n\nDPA Password must not be blank. Please enter a valid password", "Password Error", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            SqlConnection sqlConnection = new SqlConnection(SQLConnectionString);
+            try
+            {
+
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.INSERT_NEW_DPA_CUSTOMER_PASSWORD_SP", sqlConnection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@Password", Password);
+                sqlCommand.ExecuteReader();
+                KryptonMessageBox.Show("New Password created", "Success!", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show("Failed to set new password: \n\n" + ex.Message, "Exception Caught", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                return;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
         }
 
     }
-    }
+}
 
