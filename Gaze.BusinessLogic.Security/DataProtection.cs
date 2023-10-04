@@ -47,7 +47,7 @@ namespace Gaze.BusinessLogic.Security
             try
             {
                 sqlConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMERS_DPA_PASSWORD_SP", sqlConnection)
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_CUSTOMER_DPA_PASSWORD_SP", sqlConnection)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
