@@ -90,6 +90,7 @@
             this.kryptonPalette1 = new Krypton.Toolkit.KryptonPalette(this.components);
             this.kryptonTabPage1 = new Krypton.Toolkit.Suite.Extended.Navigator.KryptonTabPage();
             this.kryptonTabPage2 = new Krypton.Toolkit.Suite.Extended.Navigator.KryptonTabPage();
+            this.testFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -265,7 +266,7 @@
             // newStockInputToolStripMenuItem
             // 
             this.newStockInputToolStripMenuItem.Name = "newStockInputToolStripMenuItem";
-            this.newStockInputToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newStockInputToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.newStockInputToolStripMenuItem.Text = "View Policies";
             // 
             // reporingToolStripMenuItem
@@ -419,7 +420,8 @@
             this.editDeleteUsersToolStripMenuItem,
             this.resetUserPasswordToolStripMenuItem,
             this.configSettingsToolStripMenuItem,
-            this.controlManagementToolStripMenuItem});
+            this.controlManagementToolStripMenuItem,
+            this.testFormToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(61, 22);
             this.adminToolStripMenuItem.Text = "Security";
@@ -467,6 +469,7 @@
             this.viewControlRestrictionsToolStripMenuItem.Name = "viewControlRestrictionsToolStripMenuItem";
             this.viewControlRestrictionsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.viewControlRestrictionsToolStripMenuItem.Text = "View Control Restrictions";
+            this.viewControlRestrictionsToolStripMenuItem.Click += new System.EventHandler(this.viewControlRestrictionsToolStripMenuItem_Click);
             // 
             // addNewNoteCategoryToolStripMenuItem
             // 
@@ -503,21 +506,21 @@
             // checkForUpdatesToolStripMenuItem
             // 
             this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.checkForUpdatesToolStripMenuItem.Text = "Check for updates";
             this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click_1);
             // 
             // sQLServerToolStripMenuItem
             // 
             this.sQLServerToolStripMenuItem.Name = "sQLServerToolStripMenuItem";
-            this.sQLServerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sQLServerToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.sQLServerToolStripMenuItem.Text = "SQL Server";
             this.sQLServerToolStripMenuItem.Click += new System.EventHandler(this.sQLServerToolStripMenuItem_Click_1);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
             // 
@@ -563,6 +566,13 @@
             this.kryptonTabPage2.Size = new System.Drawing.Size(200, 100);
             this.kryptonTabPage2.TabIndex = 0;
             this.kryptonTabPage2.Text = "kryptonTabPage2";
+            // 
+            // testFormToolStripMenuItem
+            // 
+            this.testFormToolStripMenuItem.Name = "testFormToolStripMenuItem";
+            this.testFormToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.testFormToolStripMenuItem.Text = "TestForm";
+            this.testFormToolStripMenuItem.Click += new System.EventHandler(this.testFormToolStripMenuItem_Click);
             // 
             // HomePage
             // 
@@ -650,6 +660,7 @@
         private System.Windows.Forms.ToolStripMenuItem viewTasksByAgentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customTaskReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewAllCustomerDocumentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testFormToolStripMenuItem;
     }
 }
 

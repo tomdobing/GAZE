@@ -54,11 +54,11 @@ namespace Gaze.BusinessLogic.CustomerManagement
             }
             catch (SqlException SQLException)
             {
-                KryptonMessageBox.Show(SQLException.Message + "\n\n" + SQLException.InnerException, "A SQL Exception Occurred", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                KryptonMessageBox.Show(SQLException.Message + "\n\n" + SQLException.InnerException, "A SQL Exception Occurred", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                KryptonMessageBox.Show(ex.Message, "Failure to retrieve Customer Details", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                KryptonMessageBox.Show(ex.Message, "Failure to retrieve Customer Details", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
                 return;
 
             }
@@ -94,7 +94,7 @@ namespace Gaze.BusinessLogic.CustomerManagement
             }
             catch (Exception ex)
             {
-                KryptonMessageBox.Show(ex.Message, "Failure to check for restrictions", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                KryptonMessageBox.Show(ex.Message, "Failure to check for restrictions", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
                 return true;
 
             }
@@ -123,17 +123,17 @@ namespace Gaze.BusinessLogic.CustomerManagement
                 sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalSelectedPolicyID);
 
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                KryptonMessageBox.Show("Account with CustomerID:" + InfoSec.GlobalCustomerID + " has now been restricted!", "Account Restricted", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information, 0, 0, false, false, false, false, null);
+                KryptonMessageBox.Show("Account with CustomerID:" + InfoSec.GlobalCustomerID + " has now been restricted!", "Account Restricted", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
                 FormtoClose.Close();
             }
             catch (SqlException SQLException)
             {
-                KryptonMessageBox.Show(SQLException.Message, "Failure to Set Restrictions", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                KryptonMessageBox.Show(SQLException.Message, "Failure to Set Restrictions", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
                 return;
             }
             catch (Exception ex)
             {
-                KryptonMessageBox.Show(ex.Message, "Failure to Set restrictions", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                KryptonMessageBox.Show(ex.Message, "Failure to Set restrictions", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
 
 
             }
