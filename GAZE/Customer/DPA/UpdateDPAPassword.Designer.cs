@@ -48,7 +48,7 @@
             // 
             // currPass_txt
             // 
-            this.currPass_txt.Location = new System.Drawing.Point(118, 71);
+            this.currPass_txt.Location = new System.Drawing.Point(116, 46);
             this.currPass_txt.Name = "currPass_txt";
             this.currPass_txt.Size = new System.Drawing.Size(328, 20);
             this.currPass_txt.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -56,7 +56,7 @@
             // 
             // currPass_lbl
             // 
-            this.currPass_lbl.Location = new System.Drawing.Point(6, 74);
+            this.currPass_lbl.Location = new System.Drawing.Point(4, 49);
             this.currPass_lbl.Name = "currPass_lbl";
             this.currPass_lbl.Size = new System.Drawing.Size(107, 16);
             this.currPass_lbl.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -65,7 +65,7 @@
             // 
             // newPass_lbl
             // 
-            this.newPass_lbl.Location = new System.Drawing.Point(6, 130);
+            this.newPass_lbl.Location = new System.Drawing.Point(4, 105);
             this.newPass_lbl.Name = "newPass_lbl";
             this.newPass_lbl.Size = new System.Drawing.Size(91, 16);
             this.newPass_lbl.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -74,7 +74,7 @@
             // 
             // newPass_txt
             // 
-            this.newPass_txt.Location = new System.Drawing.Point(118, 127);
+            this.newPass_txt.Location = new System.Drawing.Point(116, 102);
             this.newPass_txt.Name = "newPass_txt";
             this.newPass_txt.Size = new System.Drawing.Size(328, 20);
             this.newPass_txt.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,7 +83,7 @@
             // kryptonButton1
             // 
             this.kryptonButton1.CornerRoundingRadius = -1F;
-            this.kryptonButton1.Location = new System.Drawing.Point(118, 184);
+            this.kryptonButton1.Location = new System.Drawing.Point(143, 128);
             this.kryptonButton1.Name = "kryptonButton1";
             this.kryptonButton1.Size = new System.Drawing.Size(118, 25);
             this.kryptonButton1.TabIndex = 5;
@@ -95,7 +95,7 @@
             // kryptonButton2
             // 
             this.kryptonButton2.CornerRoundingRadius = -1F;
-            this.kryptonButton2.Location = new System.Drawing.Point(242, 184);
+            this.kryptonButton2.Location = new System.Drawing.Point(267, 128);
             this.kryptonButton2.Name = "kryptonButton2";
             this.kryptonButton2.Size = new System.Drawing.Size(118, 25);
             this.kryptonButton2.TabIndex = 6;
@@ -106,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 221);
+            this.ClientSize = new System.Drawing.Size(482, 177);
             this.Controls.Add(this.kryptonButton2);
             this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.newPass_lbl);

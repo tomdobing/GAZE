@@ -65,7 +65,7 @@ namespace GAZE.Customer.DPA
         private void buildFormandSettings()
         {
             FormSettings.SetFormSettings(this);
-            FormSettings.ChangeableFormSettings(this, "INDEV - Customer Overview - CustomerID:" + InfoSec.GlobalCustomerID);
+            FormSettings.ChangeableFormSettings(this, "Update Customer Password");
             this.Palette = HomePage.kryptonManager1.GlobalPalette;
             DataProtection.GetCustomersPassword(currPass_txt);
             currPass_txt.ReadOnly = true;
