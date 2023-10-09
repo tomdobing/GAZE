@@ -268,5 +268,11 @@ namespace GAZE
         {
 
         }
+
+        private void testFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TestForm testForm = new TestForm();
+            testForm.ShowDialog();
+        }
     }
 }

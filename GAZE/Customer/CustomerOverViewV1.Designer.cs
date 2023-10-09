@@ -1097,7 +1097,7 @@
             this.removePasswordToolStripMenuItem});
             this.passwordToolStripMenuItem.Name = "passwordToolStripMenuItem";
             this.passwordToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.passwordToolStripMenuItem.Text = "Password";
+            this.passwordToolStripMenuItem.Text = "DPA Password";
             // 
             // createPasswordToolStripMenuItem
             // 
@@ -1111,6 +1111,7 @@
             this.updatePasswordToolStripMenuItem.Name = "updatePasswordToolStripMenuItem";
             this.updatePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updatePasswordToolStripMenuItem.Text = "Update Password";
+            this.updatePasswordToolStripMenuItem.Click += new System.EventHandler(this.updatePasswordToolStripMenuItem_Click);
             // 
             // removePasswordToolStripMenuItem
             // 

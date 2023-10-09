@@ -28,7 +28,7 @@ namespace GAZE.Admin
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {kryptonInputBoxExtendedManager1.DisplayInputBox();
         }
     }
 }

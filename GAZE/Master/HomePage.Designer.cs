@@ -90,6 +90,7 @@
             this.kryptonPalette1 = new Krypton.Toolkit.KryptonPalette(this.components);
             this.kryptonTabPage1 = new Krypton.Toolkit.Suite.Extended.Navigator.KryptonTabPage();
             this.kryptonTabPage2 = new Krypton.Toolkit.Suite.Extended.Navigator.KryptonTabPage();
+            this.testFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -419,7 +420,8 @@
             this.editDeleteUsersToolStripMenuItem,
             this.resetUserPasswordToolStripMenuItem,
             this.configSettingsToolStripMenuItem,
-            this.controlManagementToolStripMenuItem});
+            this.controlManagementToolStripMenuItem,
+            this.testFormToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(61, 22);
             this.adminToolStripMenuItem.Text = "Security";
@@ -565,6 +567,13 @@
             this.kryptonTabPage2.TabIndex = 0;
             this.kryptonTabPage2.Text = "kryptonTabPage2";
             // 
+            // testFormToolStripMenuItem
+            // 
+            this.testFormToolStripMenuItem.Name = "testFormToolStripMenuItem";
+            this.testFormToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.testFormToolStripMenuItem.Text = "TestForm";
+            this.testFormToolStripMenuItem.Click += new System.EventHandler(this.testFormToolStripMenuItem_Click);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -651,6 +660,7 @@
         private System.Windows.Forms.ToolStripMenuItem viewTasksByAgentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customTaskReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewAllCustomerDocumentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testFormToolStripMenuItem;
     }
 }
 

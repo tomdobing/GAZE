@@ -6,6 +6,7 @@ using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.Security.Management;
 using GAZE.Customer.Documents;
+using GAZE.Customer.DPA;
 using GAZE.Customer.Notes;
 using GAZE.Customer.Policy;
 using GAZE.Help;
@@ -287,6 +288,13 @@ namespace GAZE.Customer
                 return;
             }
                 
+        }
+
+        private void updatePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            UpdateDPAPassword updateDPAPassword = new UpdateDPAPassword();
+            updateDPAPassword.ShowDialog();
         }
     }
 }
