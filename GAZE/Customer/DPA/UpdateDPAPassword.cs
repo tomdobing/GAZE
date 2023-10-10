@@ -46,12 +46,6 @@ namespace GAZE.Customer.DPA
 
         }
 
-
-
-
-
-        #endregion
-
         private void kryptonButton2_Click(object sender, EventArgs e)
         {
             Close();
@@ -69,8 +63,8 @@ namespace GAZE.Customer.DPA
             this.Palette = HomePage.kryptonManager1.GlobalPalette;
             DataProtection.GetCustomersPassword(currPass_txt);
             currPass_txt.ReadOnly = true;
-
-
         }
+
+        #endregion
     }
 }

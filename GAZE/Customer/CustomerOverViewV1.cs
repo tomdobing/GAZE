@@ -190,23 +190,6 @@ namespace GAZE.Customer
             custHistory.Show();
         }
 
-        private void requestNewCallbackToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void updateCallbackDateToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-     
-
-        private void cancelCallbackToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void addNewPolicyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewCustomerPolicy newCustomerPolicy = new NewCustomerPolicy();
