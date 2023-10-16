@@ -141,7 +141,7 @@ namespace Gaze.BusinessLogic.PolicyManagement
 
         }
 
-        public bool CheckIfPolicyIDExists(string PolicyID)
+        public bool CheckIfPolicyIDExists(string PolicyID, string CustomerID)
         {
             using (SqlConnection connection = new SqlConnection(SQLConnectionString))
             {
@@ -152,7 +152,10 @@ namespace Gaze.BusinessLogic.PolicyManagement
                     using (SqlCommand command = new SqlCommand("SELECT_CUSTOMER_EXISTS_SP", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
+                        
                         command.Parameters.AddWithValue("@PolicyID", PolicyID);
+                        command.Parameters.AddWithValue("@CustomerID", CustomerID);
+
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
 

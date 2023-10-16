@@ -839,6 +839,47 @@ namespace Gaze.BusinessLogic.SQLManagement
             }
         }
 
+        public void GetCustomerPoliciesByCustomerID(string CustomerID, DataGridView DGV)
+        {
+
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                using (SqlCommand scmd = new SqlCommand("dbo.SELECT_CUSTOMER_POLICIES_VIA_CUSTOMERID_SP", scon))
+                {
+                    scmd.CommandType = CommandType.StoredProcedure;
+                    scmd.Parameters.AddWithValue("@CustomerID", CustomerID);
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(scmd))
+                    {
+                        DataTable customers = new DataTable();
+                        adapter.Fill(customers);
+                        DGV.DataSource = customers;
+                    }
+                    DGV.ReadOnly = true;
+                    DGV.AllowUserToAddRows = false;
+                    foreach (DataGridViewColumn column in DGV.Columns)
+                    {
+                        column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    }
+                    DGV.AllowUserToOrderColumns = false;
+                    DGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+                }
+            }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show(SQLException.Message, "Critical Search Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            catch (Exception e)
+            {
+                KryptonMessageBox.Show(e.Message, "Critical Search Failure", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+
+        }
+
         public void GetCustomerOverviewNote(KryptonTextBox NoteOverviwe)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
