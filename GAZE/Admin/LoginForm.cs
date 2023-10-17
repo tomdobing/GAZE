@@ -23,7 +23,7 @@ namespace GAZE.Admin
         {
             InitializeComponent();
             formSettings.SetFormValue(this);
-
+            username_txt.Focus();
 
         }
 
@@ -32,6 +32,7 @@ namespace GAZE.Admin
             SQLError_lbl.Text = "";
             Pass_txt.UseSystemPasswordChar = true;
             metroLabel2.Text = Application.ProductVersion;
+            username_txt.Focus();
 
         }
 
