@@ -23,7 +23,7 @@ namespace GAZE.Admin
         {
             InitializeComponent();
             formSettings.SetFormValue(this);
-            username_txt.Focus();
+            
 
         }
 
@@ -33,6 +33,7 @@ namespace GAZE.Admin
             Pass_txt.UseSystemPasswordChar = true;
             metroLabel2.Text = Application.ProductVersion;
             username_txt.Focus();
+            ActiveControl = username_txt;
 
         }
 
@@ -69,7 +70,8 @@ namespace GAZE.Admin
                     KryptonMessageBox.Show(this, "Incorrect username/Password entered\n\nPlease check and try again",
                                             "Login Failed", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, KryptonMessageBoxDefaultButton.Button3, 0, false, false);
 
-
+                    Pass_txt.Focus();
+                    Pass_txt.SelectAll();
                 }
             }
             else if (PreLoginChecks.CheckSQLServerIsOnline(SQLError_lbl) == false)

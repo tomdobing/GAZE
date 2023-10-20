@@ -18,7 +18,7 @@ namespace Gaze.BusinessLogic.CustomerManagement
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         private readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
         private readonly MessageHandler messageHandler = new MessageHandler();
-        private DateTime date = new DateTime();
+        private readonly DateTime date = new DateTime();
         #endregion
 
         #region Methods
@@ -45,11 +45,9 @@ namespace Gaze.BusinessLogic.CustomerManagement
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 while (sqlDataReader.Read())
                 {
-
                     CustomerName.Text = sqlDataReader[0].ToString();
                     CustomerID.Text = sqlDataReader[1].ToString();
                     PolicyCount.Text = sqlDataReader[2].ToString();
-
                 }
             }
             catch (SqlException SQLException)
@@ -60,7 +58,6 @@ namespace Gaze.BusinessLogic.CustomerManagement
             {
                 KryptonMessageBox.Show(ex.Message, "Failure to retrieve Customer Details", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
                 return;
-
             }
             finally
             {

@@ -45,25 +45,15 @@ namespace GAZE.Customer
             CustomerHistory.GetCustomerContactHistory(contactHis_dgv);
             CustomerHistory.GetCustomerBillingHistory(billingH_dgv);
             CustomerLogic.GetCustomerHistoryDetails(CustName_txt, CustID_txt, PolCount_txt);
+            metroTabControl1.SelectedTab = metroTabPage1;
         }
 
-        private void kryptonGroupBox1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void kryptonLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void kryptonGroupBox2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
+            
+
+
             this.Close();
         }
     }
