@@ -5,6 +5,7 @@ using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.Security.Management;
+using GAZE.Customer.Details;
 using GAZE.Customer.Documents;
 using GAZE.Customer.DPA;
 using GAZE.Customer.Notes;
@@ -278,6 +279,12 @@ namespace GAZE.Customer
 
             UpdateDPAPassword updateDPAPassword = new UpdateDPAPassword();
             updateDPAPassword.ShowDialog();
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            UpdateAddressDetails updateAddressDetails = new UpdateAddressDetails();
+            updateAddressDetails.ShowDialog();
         }
     }
 }

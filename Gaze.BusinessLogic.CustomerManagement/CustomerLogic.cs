@@ -143,7 +143,81 @@ namespace Gaze.BusinessLogic.CustomerManagement
 
         }
 
+        public void GetCustomerNameForUpdateAddress(KryptonLabel CustomerName)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
 
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("[dbo].[SELECT_CUSTOMER_NAME_FOR_ADDRESS_UPDATES_SP]", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+               
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    
+                    CustomerName.Text = "Address update for " + sqlDataReader[0].ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Failure to retrieve Customer Name variable", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+
+        }
+
+        public void GetCustomerAddressForUpdateAddress(KryptonTextBox AddressLine1, KryptonTextBox AddressLine2, KryptonTextBox Town,
+                                                        KryptonTextBox postalCode, KryptonComboBox Country)
+        {
+
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("[dbo].[SELECT_CUSTOMER_ADDRESS_SP]", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+
+                    AddressLine1.Text = sqlDataReader[0].ToString();
+                    AddressLine2.Text = sqlDataReader[1].ToString();
+                    Town.Text = sqlDataReader[2].ToString();
+                    postalCode.Text = sqlDataReader[3].ToString();
+                    Country.SelectedText = sqlDataReader[4].ToString();
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+
+
+        }
 
         #endregion
 
