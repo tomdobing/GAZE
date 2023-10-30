@@ -34,12 +34,14 @@
             this.postalcode_lbl = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonGroupBox1 = new Krypton.Toolkit.KryptonGroupBox();
-            this.addrl1_txt = new Krypton.Toolkit.KryptonTextBox();
-            this.addrl2 = new Krypton.Toolkit.KryptonTextBox();
-            this.town_txt = new Krypton.Toolkit.KryptonTextBox();
-            this.county_cmb = new Krypton.Toolkit.KryptonComboBox();
             this.postalcode_txt = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel2 = new Krypton.Toolkit.KryptonLabel();
+            this.county_cmb = new Krypton.Toolkit.KryptonComboBox();
+            this.town_txt = new Krypton.Toolkit.KryptonTextBox();
+            this.addrl2 = new Krypton.Toolkit.KryptonTextBox();
+            this.addrl1_txt = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            this.kryptonButton2 = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
             this.kryptonGroupBox1.Panel.SuspendLayout();
@@ -116,44 +118,12 @@
             this.kryptonGroupBox1.Values.Description = "Enter Customers updated address Details";
             this.kryptonGroupBox1.Values.Heading = "New Address Details";
             // 
-            // addrl1_txt
-            // 
-            this.addrl1_txt.Location = new System.Drawing.Point(119, 18);
-            this.addrl1_txt.Name = "addrl1_txt";
-            this.addrl1_txt.Size = new System.Drawing.Size(465, 23);
-            this.addrl1_txt.TabIndex = 4;
-            // 
-            // addrl2
-            // 
-            this.addrl2.Location = new System.Drawing.Point(119, 60);
-            this.addrl2.Name = "addrl2";
-            this.addrl2.Size = new System.Drawing.Size(465, 23);
-            this.addrl2.TabIndex = 5;
-            // 
-            // town_txt
-            // 
-            this.town_txt.Location = new System.Drawing.Point(119, 97);
-            this.town_txt.Name = "town_txt";
-            this.town_txt.Size = new System.Drawing.Size(307, 23);
-            this.town_txt.TabIndex = 6;
-            // 
-            // county_cmb
-            // 
-            this.county_cmb.CornerRoundingRadius = -1F;
-            this.county_cmb.DropDownWidth = 307;
-            this.county_cmb.IntegralHeight = false;
-            this.county_cmb.Location = new System.Drawing.Point(119, 177);
-            this.county_cmb.Name = "county_cmb";
-            this.county_cmb.Size = new System.Drawing.Size(307, 21);
-            this.county_cmb.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            this.county_cmb.TabIndex = 7;
-            // 
             // postalcode_txt
             // 
             this.postalcode_txt.Location = new System.Drawing.Point(119, 138);
             this.postalcode_txt.Name = "postalcode_txt";
             this.postalcode_txt.Size = new System.Drawing.Size(138, 23);
-            this.postalcode_txt.TabIndex = 9;
+            this.postalcode_txt.TabIndex = 4;
             // 
             // kryptonLabel2
             // 
@@ -164,11 +134,67 @@
             this.kryptonLabel2.TabIndex = 8;
             this.kryptonLabel2.Values.Text = "Postalcode:";
             // 
+            // county_cmb
+            // 
+            this.county_cmb.CornerRoundingRadius = -1F;
+            this.county_cmb.DropDownWidth = 307;
+            this.county_cmb.IntegralHeight = false;
+            this.county_cmb.Location = new System.Drawing.Point(119, 177);
+            this.county_cmb.Name = "county_cmb";
+            this.county_cmb.Size = new System.Drawing.Size(307, 21);
+            this.county_cmb.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.county_cmb.TabIndex = 5;
+            // 
+            // town_txt
+            // 
+            this.town_txt.Location = new System.Drawing.Point(119, 97);
+            this.town_txt.Name = "town_txt";
+            this.town_txt.Size = new System.Drawing.Size(307, 23);
+            this.town_txt.TabIndex = 3;
+            // 
+            // addrl2
+            // 
+            this.addrl2.Location = new System.Drawing.Point(119, 60);
+            this.addrl2.Name = "addrl2";
+            this.addrl2.Size = new System.Drawing.Size(465, 23);
+            this.addrl2.TabIndex = 2;
+            // 
+            // addrl1_txt
+            // 
+            this.addrl1_txt.Location = new System.Drawing.Point(119, 18);
+            this.addrl1_txt.Name = "addrl1_txt";
+            this.addrl1_txt.Size = new System.Drawing.Size(465, 23);
+            this.addrl1_txt.TabIndex = 1;
+            // 
+            // kryptonButton1
+            // 
+            this.kryptonButton1.CornerRoundingRadius = -1F;
+            this.kryptonButton1.Location = new System.Drawing.Point(488, 297);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.Size = new System.Drawing.Size(110, 25);
+            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonButton1.TabIndex = 6;
+            this.kryptonButton1.Values.Text = "Update";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
+            // 
+            // kryptonButton2
+            // 
+            this.kryptonButton2.CornerRoundingRadius = -1F;
+            this.kryptonButton2.Location = new System.Drawing.Point(372, 297);
+            this.kryptonButton2.Name = "kryptonButton2";
+            this.kryptonButton2.Size = new System.Drawing.Size(110, 25);
+            this.kryptonButton2.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonButton2.TabIndex = 7;
+            this.kryptonButton2.Values.Text = "Cancel";
+            this.kryptonButton2.Click += new System.EventHandler(this.kryptonButton2_Click);
+            // 
             // UpdateAddressDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 303);
+            this.ClientSize = new System.Drawing.Size(615, 330);
+            this.Controls.Add(this.kryptonButton2);
+            this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.kryptonGroupBox1);
             this.Controls.Add(this.kryptonLabel1);
             this.Name = "UpdateAddressDetails";
@@ -199,5 +225,7 @@
         private Krypton.Toolkit.KryptonTextBox town_txt;
         private Krypton.Toolkit.KryptonTextBox postalcode_txt;
         private Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Krypton.Toolkit.KryptonButton kryptonButton2;
     }
 }

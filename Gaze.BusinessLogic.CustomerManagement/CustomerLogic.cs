@@ -61,7 +61,10 @@ namespace Gaze.BusinessLogic.CustomerManagement
             }
             finally
             {
-                scon.Close();
+                if (scon != null)
+                {
+                    scon.Close();
+                }
             }
         }
         /// <summary>
@@ -97,8 +100,10 @@ namespace Gaze.BusinessLogic.CustomerManagement
             }
             finally
             {
-
-                scon.Close();
+                if (scon != null)
+                {
+                    scon.Close();
+                }
 
             }
             return false;
@@ -136,7 +141,10 @@ namespace Gaze.BusinessLogic.CustomerManagement
             }
             finally
             {
-                scon.Close();
+                if (scon != null)
+                {
+                    scon.Close();
+                }
 
             }
 
@@ -155,12 +163,12 @@ namespace Gaze.BusinessLogic.CustomerManagement
                     CommandType = System.Data.CommandType.StoredProcedure
                 };
                 sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
-               
+
 
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 while (sqlDataReader.Read())
                 {
-                    
+
                     CustomerName.Text = "Address update for " + sqlDataReader[0].ToString();
 
                 }
@@ -172,7 +180,10 @@ namespace Gaze.BusinessLogic.CustomerManagement
             }
             finally
             {
-                scon.Close();
+                if (scon != null)
+                {
+                    scon.Close();
+                }
             }
 
 
@@ -181,7 +192,10 @@ namespace Gaze.BusinessLogic.CustomerManagement
         public void GetCustomerAddressForUpdateAddress(KryptonTextBox AddressLine1, KryptonTextBox AddressLine2, KryptonTextBox Town,
                                                         KryptonTextBox postalCode, KryptonComboBox Country)
         {
-
+            if (InfoSec.GlobalCustomerID == null)
+            {
+                return;
+            }
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try
             {
@@ -205,18 +219,59 @@ namespace Gaze.BusinessLogic.CustomerManagement
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                KryptonMessageBox.Show(ex.Message, "Failure to retrieve customers address details", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
             }
             finally
             {
-                scon.Close();
+                if (scon != null)
+                {
+                    scon.Close();
+                }
             }
 
 
 
+        }
+
+        public void UpdateCustomerAddressDetails(string AddressLine1, string AddressLine2, string Town,
+                                                 string PostalCode, string Country)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_CUSTOMER_ADDRESS_DETAILS_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@AddressLine1", AddressLine1);
+                sqlCommand.Parameters.AddWithValue("@AddressLine2", AddressLine2);
+                sqlCommand.Parameters.AddWithValue("@Town", Town);
+                sqlCommand.Parameters.AddWithValue("@PostalCode", PostalCode);
+                sqlCommand.Parameters.AddWithValue("@Country", Country);
+                sqlCommand.Parameters.AddWithValue("@UpdatedBy", InfoSec.GlobalUsername);
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                KryptonMessageBox.Show("Address Updated", "Address Updated", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Failed to update customer address details", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            finally 
+            { 
+                if (scon != null)
+                {
+                    scon.Close();
+                }
+            
+            }
         }
 
         #endregion

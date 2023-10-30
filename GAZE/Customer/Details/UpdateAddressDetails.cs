@@ -23,14 +23,8 @@ namespace GAZE.Customer.Details
         #region Declarations
         FormSettings FormSettings = new FormSettings();
         InfoSec InfoSec = new InfoSec();
-        CustomerManagement CustomerManagement = new CustomerManagement();
-        SQLManagement PolicySQLManagement = new SQLManagement();
         HomePage HomePage = new HomePage();
-        SQLBilling SQLBilling = new SQLBilling();
         CustomerLogic CustomerLogic = new CustomerLogic();
-        SQLDataAdmin SQLDataAdmin = new SQLDataAdmin();
-        ControlAccessHelper ControlAccessHelper = new ControlAccessHelper();
-        DataProtection DataProtection = new DataProtection();
         ControlManagement ControlManagement = new ControlManagement();
         #endregion
 
@@ -40,7 +34,7 @@ namespace GAZE.Customer.Details
             InitializeComponent();
             FormSettings.SetFormSettings(this);
             FormSettings.ChangeableFormSettings(this, "Update Address Details - CustomerID:" + InfoSec.GlobalCustomerID);
-            this.Palette = HomePage.kryptonManager1.GlobalPalette;
+            Palette = HomePage.kryptonManager1.GlobalPalette;
         }
 
         private void UpdateAddressDetails_Load(object sender, EventArgs e)
@@ -48,6 +42,17 @@ namespace GAZE.Customer.Details
            ControlManagement.PopulateCountries(county_cmb);
            CustomerLogic.GetCustomerNameForUpdateAddress(kryptonLabel1);
            CustomerLogic.GetCustomerAddressForUpdateAddress(addrl1_txt, addrl2, town_txt, postalcode_txt, county_cmb);
+        }
+
+        private void kryptonButton2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            CustomerLogic.UpdateCustomerAddressDetails(addrl1_txt.Text, addrl2.Text, town_txt.Text, 
+                                                       postalcode_txt.Text, county_cmb.SelectedText);
         }
     }
 }
