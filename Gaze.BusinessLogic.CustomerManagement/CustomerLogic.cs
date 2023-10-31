@@ -1,4 +1,5 @@
-﻿using Gaze.BusinessLogic.Exceptions;
+﻿using Gaze.BusinessLogic.Config;
+using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
 using Krypton.Toolkit;
 using System;
@@ -19,6 +20,7 @@ namespace Gaze.BusinessLogic.CustomerManagement
         private readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
         private readonly MessageHandler messageHandler = new MessageHandler();
         private readonly DateTime date = new DateTime();
+        private readonly FormSettings formSettings = new FormSettings();
         #endregion
 
         #region Methods
@@ -237,7 +239,7 @@ namespace Gaze.BusinessLogic.CustomerManagement
         }
 
         public void UpdateCustomerAddressDetails(string AddressLine1, string AddressLine2, string Town,
-                                                 string PostalCode, string Country)
+                                                 string PostalCode, KryptonComboBox Country)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try
@@ -252,12 +254,13 @@ namespace Gaze.BusinessLogic.CustomerManagement
                 sqlCommand.Parameters.AddWithValue("@AddressLine2", AddressLine2);
                 sqlCommand.Parameters.AddWithValue("@Town", Town);
                 sqlCommand.Parameters.AddWithValue("@PostalCode", PostalCode);
-                sqlCommand.Parameters.AddWithValue("@Country", Country);
+                sqlCommand.Parameters.AddWithValue("@Country", Country.SelectedItem);
                 sqlCommand.Parameters.AddWithValue("@UpdatedBy", InfoSec.GlobalUsername);
 
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
                 KryptonMessageBox.Show("Address Updated", "Address Updated", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
+                formSettings.CloseOpenForms("UpdateAddressDetails");
             }
             catch (Exception ex)
             {

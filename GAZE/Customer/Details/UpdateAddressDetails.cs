@@ -52,7 +52,7 @@ namespace GAZE.Customer.Details
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
             CustomerLogic.UpdateCustomerAddressDetails(addrl1_txt.Text, addrl2.Text, town_txt.Text, 
-                                                       postalcode_txt.Text, county_cmb.SelectedText);
+                                                       postalcode_txt.Text, county_cmb);
         }
     }
 }
