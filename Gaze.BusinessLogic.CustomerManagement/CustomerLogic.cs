@@ -267,6 +267,7 @@ namespace Gaze.BusinessLogic.CustomerManagement
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try
             {
+
                 scon.Open();
                 SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_CUSTOMER_ADDRESS_DETAILS_SP", scon)
                 {
