@@ -14,8 +14,6 @@ namespace Gaze.BusinessLogic.SQLManagement
 {
     public class ControlManagement
     {
-
-
         #region Declarations
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
         private readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
@@ -27,7 +25,7 @@ namespace Gaze.BusinessLogic.SQLManagement
         /// Used to populate the Title ComboBox on the New Customer form
         /// </summary>
         /// <param name="Combobox">The control holding the title data</param>
-        public void PopulateCountried(KryptonComboBox Combobox)
+        public void PopulateCountries(KryptonComboBox Combobox)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
             try

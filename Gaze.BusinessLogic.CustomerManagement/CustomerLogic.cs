@@ -1,4 +1,5 @@
-﻿using Gaze.BusinessLogic.Exceptions;
+﻿using Gaze.BusinessLogic.Config;
+using Gaze.BusinessLogic.Exceptions;
 using Gaze.BusinessLogic.SQLManagement;
 using Krypton.Toolkit;
 using System;
@@ -19,6 +20,7 @@ namespace Gaze.BusinessLogic.CustomerManagement
         private readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
         private readonly MessageHandler messageHandler = new MessageHandler();
         private readonly DateTime date = new DateTime();
+        private readonly FormSettings formSettings = new FormSettings();
         #endregion
 
         #region Methods
@@ -61,7 +63,10 @@ namespace Gaze.BusinessLogic.CustomerManagement
             }
             finally
             {
-                scon.Close();
+                if (scon != null)
+                {
+                    scon.Close();
+                }
             }
         }
         /// <summary>
@@ -97,14 +102,20 @@ namespace Gaze.BusinessLogic.CustomerManagement
             }
             finally
             {
-
-                scon.Close();
+                if (scon != null)
+                {
+                    scon.Close();
+                }
 
             }
             return false;
 
         }
 
+        /// <summary>
+        /// Method to restrict customers account
+        /// </summary>
+        /// <param name="FormtoClose">Form to close after account restriction</param>
         public void RestrictCustomerAccount(KryptonForm FormtoClose)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -136,14 +147,158 @@ namespace Gaze.BusinessLogic.CustomerManagement
             }
             finally
             {
-                scon.Close();
+                if (scon != null)
+                {
+                    scon.Close();
+                }
 
             }
 
 
         }
 
+        /// <summary>
+        /// Method called to retrieve Customer Name .
+        /// </summary>
+        /// <param name="CustomerName">Label of where to display the customers name</param>
+        public void GetCustomerNameForUpdateAddress(KryptonLabel CustomerName)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
 
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("[dbo].[SELECT_CUSTOMER_NAME_FOR_ADDRESS_UPDATES_SP]", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+
+                    CustomerName.Text = "Address update for " + sqlDataReader[0].ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Failure to retrieve Customer Name variable", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            finally
+            {
+                if (scon != null)
+                {
+                    scon.Close();
+                }
+            }
+
+
+        }
+
+        /// <summary>
+        /// Method used to Get Customer address history 
+        /// </summary>
+        /// <param name="AddressLine1"></param>
+        /// <param name="AddressLine2"></param>
+        /// <param name="Town"></param>
+        /// <param name="postalCode"></param>
+        /// <param name="Country"></param>
+        public void GetCustomerAddressForUpdateAddress(KryptonTextBox AddressLine1, KryptonTextBox AddressLine2, KryptonTextBox Town,
+                                                        KryptonTextBox postalCode, KryptonComboBox Country)
+        {
+            if (InfoSec.GlobalCustomerID == null)
+            {
+                return;
+            }
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("[dbo].[SELECT_CUSTOMER_ADDRESS_SP]", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+
+                    AddressLine1.Text = sqlDataReader[0].ToString();
+                    AddressLine2.Text = sqlDataReader[1].ToString();
+                    Town.Text = sqlDataReader[2].ToString();
+                    postalCode.Text = sqlDataReader[3].ToString();
+                    Country.SelectedText = sqlDataReader[4].ToString();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Failure to retrieve customers address details", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            finally
+            {
+                if (scon != null)
+                {
+                    scon.Close();
+                }
+            }
+
+
+
+        }
+
+        /// <summary>
+        /// Method used to update customers address, Form will close upon submit                                                                                          
+        /// </summary>
+        /// <param name="AddressLine1"></param>
+        /// <param name="AddressLine2"></param>
+        /// <param name="Town"></param>
+        /// <param name="PostalCode"></param>
+        /// <param name="Country"></param>
+        public void UpdateCustomerAddressDetails(string AddressLine1, string AddressLine2, string Town,
+                                                 string PostalCode, KryptonComboBox Country)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.UPDATE_CUSTOMER_ADDRESS_DETAILS_SP", scon)
+                {
+                    CommandType = System.Data.CommandType.StoredProcedure
+                };
+                sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
+                sqlCommand.Parameters.AddWithValue("@AddressLine1", AddressLine1);
+                sqlCommand.Parameters.AddWithValue("@AddressLine2", AddressLine2);
+                sqlCommand.Parameters.AddWithValue("@Town", Town);
+                sqlCommand.Parameters.AddWithValue("@PostalCode", PostalCode);
+                sqlCommand.Parameters.AddWithValue("@Country", Country.SelectedItem);
+                sqlCommand.Parameters.AddWithValue("@UpdatedBy", InfoSec.GlobalUsername);
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                KryptonMessageBox.Show("Address Updated \n\nCustomer Account Will Now Close!", "Address Updated", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
+                formSettings.CloseOpenForms("UpdateAddressDetails");
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show(ex.Message, "Failed to update customer address details", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            finally
+            { 
+                if (scon != null)
+                {
+                    scon.Close();
+                }
+            
+            }
+        }
 
         #endregion
 
