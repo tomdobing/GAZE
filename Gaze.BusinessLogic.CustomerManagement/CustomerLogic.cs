@@ -112,6 +112,10 @@ namespace Gaze.BusinessLogic.CustomerManagement
 
         }
 
+        /// <summary>
+        /// Method to restrict customers account
+        /// </summary>
+        /// <param name="FormtoClose">Form to close after account restriction</param>
         public void RestrictCustomerAccount(KryptonForm FormtoClose)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -153,6 +157,10 @@ namespace Gaze.BusinessLogic.CustomerManagement
 
         }
 
+        /// <summary>
+        /// Method called to retrieve Customer Name .
+        /// </summary>
+        /// <param name="CustomerName">Label of where to display the customers name</param>
         public void GetCustomerNameForUpdateAddress(KryptonLabel CustomerName)
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -165,7 +173,6 @@ namespace Gaze.BusinessLogic.CustomerManagement
                     CommandType = System.Data.CommandType.StoredProcedure
                 };
                 sqlCommand.Parameters.AddWithValue("@CustomerID", InfoSec.GlobalCustomerID);
-
 
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 while (sqlDataReader.Read())
@@ -191,6 +198,14 @@ namespace Gaze.BusinessLogic.CustomerManagement
 
         }
 
+        /// <summary>
+        /// Method used to Get Customer address history 
+        /// </summary>
+        /// <param name="AddressLine1"></param>
+        /// <param name="AddressLine2"></param>
+        /// <param name="Town"></param>
+        /// <param name="postalCode"></param>
+        /// <param name="Country"></param>
         public void GetCustomerAddressForUpdateAddress(KryptonTextBox AddressLine1, KryptonTextBox AddressLine2, KryptonTextBox Town,
                                                         KryptonTextBox postalCode, KryptonComboBox Country)
         {
@@ -238,6 +253,14 @@ namespace Gaze.BusinessLogic.CustomerManagement
 
         }
 
+        /// <summary>
+        /// Method used to update customers address, Form will close upon submit                                                                                          
+        /// </summary>
+        /// <param name="AddressLine1"></param>
+        /// <param name="AddressLine2"></param>
+        /// <param name="Town"></param>
+        /// <param name="PostalCode"></param>
+        /// <param name="Country"></param>
         public void UpdateCustomerAddressDetails(string AddressLine1, string AddressLine2, string Town,
                                                  string PostalCode, KryptonComboBox Country)
         {
@@ -259,7 +282,7 @@ namespace Gaze.BusinessLogic.CustomerManagement
 
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
-                KryptonMessageBox.Show("Address Updated", "Address Updated", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
+                KryptonMessageBox.Show("Address Updated \n\nCustomer Account Will Now Close!", "Address Updated", MessageBoxButtons.OK, KryptonMessageBoxIcon.Information);
                 formSettings.CloseOpenForms("UpdateAddressDetails");
             }
             catch (Exception ex)
@@ -267,7 +290,7 @@ namespace Gaze.BusinessLogic.CustomerManagement
                 KryptonMessageBox.Show(ex.Message, "Failed to update customer address details", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
                 return;
             }
-            finally 
+            finally
             { 
                 if (scon != null)
                 {
