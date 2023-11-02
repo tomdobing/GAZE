@@ -37,7 +37,7 @@ namespace GAZE.Customer.NewCustomer
             formSettings.SetFormSettings(this);
             formSettings.ChangeableFormSettings(this, "New Customer Improved");
             controlManagement.PopulateTitle(ctTitle_cmbIm);
-            controlManagement.PopulateCountried(country_cmbIM);
+            controlManagement.PopulateCountries(country_cmbIM);
             dobDtpIM.Format = DateTimePickerFormat.Custom;
             dobDtpIM.CustomFormat = ConfigAdmin.GetConfigValue("DateFormat");
             cntNumber_txtIm.MaxLength = 14;

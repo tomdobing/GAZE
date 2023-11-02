@@ -90,5 +90,22 @@ namespace Gaze.BusinessLogic.Config
 
         }
 
+        public void CloseOpenForms(string AdditionalFormName)
+        {
+            if (Application.OpenForms == null)
+            {
+                return;
+            }
+            foreach (KryptonForm FormNames in Application.OpenForms)
+            {
+                if (FormNames.Name == AdditionalFormName || FormNames.Name == "CustomerOverViewV1")
+                {
+                    FormNames.Close();
+                }
+            }
+        
+        
+        }
+
     }
 }

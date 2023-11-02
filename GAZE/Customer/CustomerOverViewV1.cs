@@ -5,6 +5,7 @@ using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.Security;
 using Gaze.BusinessLogic.SQLManagement;
 using Gaze.Security.Management;
+using GAZE.Customer.Details;
 using GAZE.Customer.Documents;
 using GAZE.Customer.DPA;
 using GAZE.Customer.Notes;
@@ -34,6 +35,7 @@ namespace GAZE.Customer
         SQLDataAdmin SQLDataAdmin = new SQLDataAdmin();
         ControlAccessHelper ControlAccessHelper = new ControlAccessHelper();
         DataProtection DataProtection = new DataProtection();
+        PolicySecurity PolicySecurity = new PolicySecurity();
         #endregion
 
         #region Methods
@@ -120,10 +122,11 @@ namespace GAZE.Customer
             metroTabControl1.SelectedTab = metroTabPage1;
 
         }
-
+         
         private void metroGrid1_SelectionChanged(object sender, EventArgs e)
         {
-
+            string strMessage;
+            //string Department = PolicySecurity.GetPolicyRedirectDepartment().ToString();
             if (metroGrid1.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = metroGrid1.SelectedRows[0];
@@ -132,7 +135,22 @@ namespace GAZE.Customer
                 PolicySQLManagement.GetPolicyDataViaPolicyID(CustName_txt, CustTitle_txt, FName_txt, CSurname_txt, CDOB_txt, ContactNum_txt, AltCont_txt, EmailAddress_txt,
                 addrL1_txt, AddrL2_txt, Town_txt, postalcode_txt, country_txt, PolicyID_txt, PolStatus_lbl, DeactReas_txt, PolEffStart_txt, PolEndDate_txt, ProdName_txt, ProdDesc_txt
                 , ProdPrice_txt, ProdActDate_txt, CustID_txt, ProdEndDate_txt, PolID_Txt, StatID_txt);
+                if (PolicySecurity.ReDirectExists() == true)
+                {
+                    strMessage = "Please direct all queries and amendments on this policy ";
+                    strMessage = strMessage + "through to the " + PolicySecurity.GetPolicyRedirectDepartment();
+                    strMessage = strMessage + " Department. Thank you.";
+                    strMessage = strMessage + "\n\n" + "Additional Information: \n";
+                    strMessage = strMessage + PolicySecurity.GetPolicyReDirectMessage();
+                    KryptonMessageBox.Show(strMessage,
+                                           "Policy ReDirect Alert",
+                                           MessageBoxButtons.OK,
+                                           KryptonMessageBoxIcon.Exclamation);
+
+
+                }
             }
+            
 
         }
 
@@ -189,23 +207,6 @@ namespace GAZE.Customer
             CustHistory custHistory = new CustHistory();
             custHistory.Show();
         }
-
-        private void requestNewCallbackToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void updateCallbackDateToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-     
-
-        private void cancelCallbackToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void addNewPolicyToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -295,6 +296,18 @@ namespace GAZE.Customer
 
             UpdateDPAPassword updateDPAPassword = new UpdateDPAPassword();
             updateDPAPassword.ShowDialog();
+        }
+
+        private void kryptonButton1_Click(object sender, EventArgs e)
+        {
+            UpdateAddressDetails updateAddressDetails = new UpdateAddressDetails();
+            updateAddressDetails.ShowDialog();
+        }
+
+        private void redirectPolicyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PolicyRedirect policyRedirect = new PolicyRedirect();
+            policyRedirect.ShowDialog();
         }
     }
 }

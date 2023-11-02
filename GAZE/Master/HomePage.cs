@@ -79,7 +79,7 @@ namespace GAZE
         {
 
             toolStripLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString(ConfigurationManager.AppSettings["DateFormat"]);
-
+            
         }
 
         private void NewCustomerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -198,6 +198,10 @@ namespace GAZE
             if (e.KeyCode == Keys.F3)
             {
                 searchToolStripMenuItem.PerformClick();
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                logoutToolStripMenuItem.PerformClick();
             }
         }
 

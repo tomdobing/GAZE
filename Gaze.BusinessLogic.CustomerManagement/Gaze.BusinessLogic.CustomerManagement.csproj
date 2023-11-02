@@ -64,6 +64,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gaze.BusinessLogic.Config\Gaze.BusinessLogic.Config.csproj">
+      <Project>{0B58BD9C-FCC3-4EA4-9453-334839379D93}</Project>
+      <Name>Gaze.BusinessLogic.Config</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gaze.BusinessLogic.Exceptions\Gaze.BusinessLogic.Exceptions.csproj">
       <Project>{C19908C8-7CB6-4888-9FB7-354076BB9ACB}</Project>
       <Name>Gaze.BusinessLogic.Exceptions</Name>

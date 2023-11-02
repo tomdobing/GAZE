@@ -84,7 +84,7 @@
             this.kryptonGroupBox1.Size = new System.Drawing.Size(1220, 94);
             this.kryptonGroupBox1.TabIndex = 0;
             this.kryptonGroupBox1.Values.Heading = "Customer Details";
-            this.kryptonGroupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroupBox1_Paint);
+            //this.kryptonGroupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroupBox1_Paint);
             // 
             // kryptonLabel3
             // 
@@ -133,7 +133,7 @@
             this.kryptonGroupBox2.Size = new System.Drawing.Size(1220, 520);
             this.kryptonGroupBox2.TabIndex = 1;
             this.kryptonGroupBox2.Values.Heading = "Customer History";
-            this.kryptonGroupBox2.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroupBox2_Paint);
+            //this.kryptonGroupBox2.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonGroupBox2_Paint);
             // 
             // metroTabControl1
             // 

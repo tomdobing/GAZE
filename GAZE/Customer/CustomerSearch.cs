@@ -5,26 +5,26 @@ using Gaze.BusinessLogic.PolicyManagement;
 using Gaze.BusinessLogic.SQLManagement;
 using Krypton.Toolkit;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GAZE.Customer
 {
     public partial class CustomerSearch : KryptonForm
     {
-        readonly InfoSec infoSec = new InfoSec();
-        readonly FormSettings FormSettings = new FormSettings();
-        readonly CustomerManagement CustomerManagement = new CustomerManagement();
-        readonly MessageHandler messageHandler = new MessageHandler();
-        SQLManagement SQLManagement = new SQLManagement();
-        readonly CustomerLogic customerLogic = new CustomerLogic();
-        HomePage HomePage = new HomePage();
+        private readonly InfoSec infoSec = new InfoSec();
+        private readonly FormSettings FormSettings = new FormSettings();
+        private readonly CustomerManagement CustomerManagement = new CustomerManagement();
+        private readonly MessageHandler messageHandler = new MessageHandler();
+        private readonly SQLManagement SQLManagement = new SQLManagement();
+        private readonly CustomerLogic customerLogic = new CustomerLogic();
+        private readonly HomePage HomePage = new HomePage();
         public CustomerSearch()
         {
             InitializeComponent();
-            FormSettings.SetFormSettings(this);
-            FormSettings.ChangeableFormSettings(this, Name);
-            Palette = HomePage.kryptonManager1.GlobalPalette;
-
+            polID_chkbx.CheckedChanged += HandleCheckboxCheck;
+            custID_chk.CheckedChanged += HandleCheckboxCheck;
+            ExecuteFormLoad();
         }
 
 
@@ -42,52 +42,63 @@ namespace GAZE.Customer
 
         private void CustomerSearch_Load_1(object sender, EventArgs e)
         {
-            this.ActiveControl = searchPolID_txt;
+            ActiveControl = searchPolID_txt;
 
-            //SearchNum_txt.Enabled = false;
+
         }
 
-        private void metroButton2_Click(object sender, EventArgs e)
+        private void HandleCheckboxCheck(object sender, EventArgs e)
         {
-            if (SQLManagement.CheckIfPolicyIDExists(searchPolID_txt.Text) == false)
+            KryptonCheckBox currcheckbox = (KryptonCheckBox)sender;
+            if (currcheckbox.Checked)
             {
-                KryptonMessageBox.Show("Policy Not Found!!\n\n\nPlease check and try again.", "Not Found", MessageBoxButtons.OK, KryptonMessageBoxIcon.Exclamation, 0, 0, false, false, false, false, null);
-                return;
+                if (currcheckbox == polID_chkbx)
+                {
+                    custID_chk.Checked = false;
+                }
+                else if (currcheckbox == custID_chk)
+                {
+                    polID_chkbx.Checked = false;
+                }
             }
 
-            CustomerManagement.GetCustomerPoliciesByPolicyID(searchPolID_txt.Text, kryptonDataGridView1);
-
-        }
-
-
-        private void CustomerSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            //if (e.KeyCode == Keys.Enter)
-            //{
-            //    metroButton2.PerformClick();
-            //}
         }
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.WaitCursor;
-            CustomerManagement.GetCustomerPoliciesByPolicyID(searchPolID_txt.Text, kryptonDataGridView1);
-            if (SQLManagement.CheckIfPolicyIDExists(searchPolID_txt.Text) == false)
+            if (SQLManagement.CheckIfPolicyIDExists(searchPolID_txt.Text, custIDSrch_txt.Text) == true)
             {
-                KryptonMessageBox.Show(this, "Policy Not Found!!\n\n\nPlease check and try again.",
-                                             "Not Found", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error,
-                                              KryptonMessageBoxDefaultButton.Button3, 0, false, false);
+                if (polID_chkbx.CheckState == CheckState.Checked)
+                {
+
+                    CustomerManagement.GetCustomerPoliciesByPolicyID(searchPolID_txt.Text, kryptonDataGridView1);
+                }
+                else if (custID_chk.CheckState == CheckState.Checked)
+                {
+                    CustomerManagement.GetCustomerPoliciesByCustomerID(custIDSrch_txt.Text, kryptonDataGridView1);
+
+                }
+                else
+                {
+                    KryptonMessageBox.Show(this, "Search Error: \n\nNo Search criteria has been specified. Please check and try again",
+                                                 "Not Found", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                }
 
                 Cursor = Cursors.Default;
-                return;
-                
-            }
-            Cursor = Cursors.Default;
 
+            }
+            else
+            {
+                KryptonMessageBox.Show(this, "Search Error: \n\nPolicy Not Found. Please check the policy number and search again.",
+                                          "Search Error", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                Cursor = Cursors.Default;
+            }
         }
 
         private void kryptonDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
             Cursor = Cursors.WaitCursor;
             try
             {
@@ -128,6 +139,68 @@ namespace GAZE.Customer
             {
                 e.Handled = true;
             }
+        }
+
+        private void ExecuteFormLoad()
+        {
+            foreach (KryptonCheckBox CheckBoxes in groupBox1.Controls.OfType<KryptonCheckBox>())
+            {
+                CheckBoxes.CheckState = CheckState.Unchecked;
+
+            }
+            foreach (KryptonTextBox TextBoxes in groupBox1.Controls.OfType<KryptonTextBox>())
+            {
+                TextBoxes.Enabled = false;
+            }
+            FormSettings.SetFormSettings(this);
+            FormSettings.ChangeableFormSettings(this, "G.A.Z.E - Customer Search");
+            Palette = HomePage.kryptonManager1.GlobalPalette;
+
+
+        }
+
+        private void polID_chkbx_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (polID_chkbx.CheckState == CheckState.Checked)
+            {
+                searchPolID_txt.Enabled = true;
+            }
+            else
+            {
+                searchPolID_txt.Enabled = false;
+                searchPolID_txt.Clear();
+            }
+        }
+
+        private void custID_chk_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void custID_chk_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (custID_chk.CheckState == CheckState.Checked)
+            {
+                custIDSrch_txt.Enabled = true;
+            }
+            else
+            {
+                custIDSrch_txt.Enabled = false;
+                custIDSrch_txt.Clear();
+            }
+        }
+
+        private void custIDSrch_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void polID_chkbx_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

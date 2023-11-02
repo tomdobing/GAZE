@@ -51,6 +51,7 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             this.country_txt = new Krypton.Toolkit.KryptonTextBox();
             this.postalcode_txt = new Krypton.Toolkit.KryptonTextBox();
             this.Town_txt = new Krypton.Toolkit.KryptonTextBox();
@@ -120,6 +121,7 @@
             this.PolMenStr = new System.Windows.Forms.MenuStrip();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateCustomerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateContactDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateOverviewNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -131,6 +133,8 @@
             this.policyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updatePolicyStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.securityToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.redirectPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editBillingDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -167,7 +171,7 @@
             this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Regular;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 337);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1213, 345);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroTabControl1.TabIndex = 0;
@@ -345,6 +349,7 @@
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.kryptonButton1);
             this.metroTabPage2.Controls.Add(this.country_txt);
             this.metroTabPage2.Controls.Add(this.postalcode_txt);
             this.metroTabPage2.Controls.Add(this.Town_txt);
@@ -366,6 +371,16 @@
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
+            // 
+            // kryptonButton1
+            // 
+            this.kryptonButton1.CornerRoundingRadius = -1F;
+            this.kryptonButton1.Location = new System.Drawing.Point(676, 106);
+            this.kryptonButton1.Name = "kryptonButton1";
+            this.kryptonButton1.Size = new System.Drawing.Size(141, 25);
+            this.kryptonButton1.TabIndex = 25;
+            this.kryptonButton1.Values.Text = "Update Address";
+            this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
             // country_txt
             // 
@@ -1056,9 +1071,17 @@
             // 
             // updateCustomerDetailsToolStripMenuItem
             // 
+            this.updateCustomerDetailsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateContactDetailsToolStripMenuItem});
             this.updateCustomerDetailsToolStripMenuItem.Name = "updateCustomerDetailsToolStripMenuItem";
             this.updateCustomerDetailsToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.updateCustomerDetailsToolStripMenuItem.Text = "Update Customer Details";
+            // 
+            // updateContactDetailsToolStripMenuItem
+            // 
+            this.updateContactDetailsToolStripMenuItem.Name = "updateContactDetailsToolStripMenuItem";
+            this.updateContactDetailsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.updateContactDetailsToolStripMenuItem.Text = "Update Contact Details";
             // 
             // updateOverviewNoteToolStripMenuItem
             // 
@@ -1102,28 +1125,29 @@
             // createPasswordToolStripMenuItem
             // 
             this.createPasswordToolStripMenuItem.Name = "createPasswordToolStripMenuItem";
-            this.createPasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createPasswordToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.createPasswordToolStripMenuItem.Text = "Create Password";
             this.createPasswordToolStripMenuItem.Click += new System.EventHandler(this.createPasswordToolStripMenuItem_Click);
             // 
             // updatePasswordToolStripMenuItem
             // 
             this.updatePasswordToolStripMenuItem.Name = "updatePasswordToolStripMenuItem";
-            this.updatePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updatePasswordToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.updatePasswordToolStripMenuItem.Text = "Update Password";
             this.updatePasswordToolStripMenuItem.Click += new System.EventHandler(this.updatePasswordToolStripMenuItem_Click);
             // 
             // removePasswordToolStripMenuItem
             // 
             this.removePasswordToolStripMenuItem.Name = "removePasswordToolStripMenuItem";
-            this.removePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removePasswordToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.removePasswordToolStripMenuItem.Text = "Remove Password";
             // 
             // policyToolStripMenuItem
             // 
             this.policyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewPolicyToolStripMenuItem,
-            this.updatePolicyStatusToolStripMenuItem});
+            this.updatePolicyStatusToolStripMenuItem,
+            this.securityToolStripMenuItem1});
             this.policyToolStripMenuItem.Name = "policyToolStripMenuItem";
             this.policyToolStripMenuItem.Size = new System.Drawing.Size(51, 22);
             this.policyToolStripMenuItem.Text = "Policy";
@@ -1141,6 +1165,21 @@
             this.updatePolicyStatusToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.updatePolicyStatusToolStripMenuItem.Text = "Update Policy Status";
             this.updatePolicyStatusToolStripMenuItem.Click += new System.EventHandler(this.updatePolicyStatusToolStripMenuItem_Click);
+            // 
+            // securityToolStripMenuItem1
+            // 
+            this.securityToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.redirectPolicyToolStripMenuItem});
+            this.securityToolStripMenuItem1.Name = "securityToolStripMenuItem1";
+            this.securityToolStripMenuItem1.Size = new System.Drawing.Size(182, 22);
+            this.securityToolStripMenuItem1.Text = "Security";
+            // 
+            // redirectPolicyToolStripMenuItem
+            // 
+            this.redirectPolicyToolStripMenuItem.Name = "redirectPolicyToolStripMenuItem";
+            this.redirectPolicyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.redirectPolicyToolStripMenuItem.Text = "Redirect Policy";
+            this.redirectPolicyToolStripMenuItem.Click += new System.EventHandler(this.redirectPolicyToolStripMenuItem_Click);
             // 
             // notesToolStripMenuItem
             // 
@@ -1395,5 +1434,9 @@
         private System.Windows.Forms.ToolStripMenuItem updatePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removePasswordToolStripMenuItem;
         private Krypton.Toolkit.KryptonLabel DPAPassWarn_lbl;
+        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private System.Windows.Forms.ToolStripMenuItem updateContactDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem securityToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem redirectPolicyToolStripMenuItem;
     }
 }
