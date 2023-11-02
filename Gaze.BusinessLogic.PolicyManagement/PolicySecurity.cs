@@ -246,10 +246,10 @@ namespace Gaze.BusinessLogic.PolicyManagement
                 }
                 return dept;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 
-                throw;
 
             }
 
