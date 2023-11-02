@@ -122,7 +122,7 @@ namespace GAZE.Customer
             metroTabControl1.SelectedTab = metroTabPage1;
 
         }
-
+         
         private void metroGrid1_SelectionChanged(object sender, EventArgs e)
         {
             string strMessage;
