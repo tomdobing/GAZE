@@ -432,6 +432,12 @@
     <Compile Include="Customer\Notes\CustNotes.Designer.cs">
       <DependentUpon>CustNotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\Policy\PolicyRedirect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Policy\PolicyRedirect.Designer.cs">
+      <DependentUpon>PolicyRedirect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\Secure\ViewFootPrints.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -595,6 +601,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Notes\CustNotes.resx">
       <DependentUpon>CustNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Policy\PolicyRedirect.resx">
+      <DependentUpon>PolicyRedirect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Secure\ViewFootPrints.resx">
       <DependentUpon>ViewFootPrints.cs</DependentUpon>

@@ -133,6 +133,8 @@
             this.policyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updatePolicyStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.securityToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.redirectPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editBillingDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1144,7 +1146,8 @@
             // 
             this.policyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewPolicyToolStripMenuItem,
-            this.updatePolicyStatusToolStripMenuItem});
+            this.updatePolicyStatusToolStripMenuItem,
+            this.securityToolStripMenuItem1});
             this.policyToolStripMenuItem.Name = "policyToolStripMenuItem";
             this.policyToolStripMenuItem.Size = new System.Drawing.Size(51, 22);
             this.policyToolStripMenuItem.Text = "Policy";
@@ -1162,6 +1165,21 @@
             this.updatePolicyStatusToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.updatePolicyStatusToolStripMenuItem.Text = "Update Policy Status";
             this.updatePolicyStatusToolStripMenuItem.Click += new System.EventHandler(this.updatePolicyStatusToolStripMenuItem_Click);
+            // 
+            // securityToolStripMenuItem1
+            // 
+            this.securityToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.redirectPolicyToolStripMenuItem});
+            this.securityToolStripMenuItem1.Name = "securityToolStripMenuItem1";
+            this.securityToolStripMenuItem1.Size = new System.Drawing.Size(182, 22);
+            this.securityToolStripMenuItem1.Text = "Security";
+            // 
+            // redirectPolicyToolStripMenuItem
+            // 
+            this.redirectPolicyToolStripMenuItem.Name = "redirectPolicyToolStripMenuItem";
+            this.redirectPolicyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.redirectPolicyToolStripMenuItem.Text = "Redirect Policy";
+            this.redirectPolicyToolStripMenuItem.Click += new System.EventHandler(this.redirectPolicyToolStripMenuItem_Click);
             // 
             // notesToolStripMenuItem
             // 
@@ -1418,5 +1436,7 @@
         private Krypton.Toolkit.KryptonLabel DPAPassWarn_lbl;
         private Krypton.Toolkit.KryptonButton kryptonButton1;
         private System.Windows.Forms.ToolStripMenuItem updateContactDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem securityToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem redirectPolicyToolStripMenuItem;
     }
 }

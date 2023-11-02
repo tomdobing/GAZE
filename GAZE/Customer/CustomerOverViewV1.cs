@@ -35,6 +35,7 @@ namespace GAZE.Customer
         SQLDataAdmin SQLDataAdmin = new SQLDataAdmin();
         ControlAccessHelper ControlAccessHelper = new ControlAccessHelper();
         DataProtection DataProtection = new DataProtection();
+        PolicySecurity PolicySecurity = new PolicySecurity();
         #endregion
 
         #region Methods
@@ -124,7 +125,8 @@ namespace GAZE.Customer
 
         private void metroGrid1_SelectionChanged(object sender, EventArgs e)
         {
-
+            string strMessage;
+            //string Department = PolicySecurity.GetPolicyRedirectDepartment().ToString();
             if (metroGrid1.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = metroGrid1.SelectedRows[0];
@@ -133,7 +135,22 @@ namespace GAZE.Customer
                 PolicySQLManagement.GetPolicyDataViaPolicyID(CustName_txt, CustTitle_txt, FName_txt, CSurname_txt, CDOB_txt, ContactNum_txt, AltCont_txt, EmailAddress_txt,
                 addrL1_txt, AddrL2_txt, Town_txt, postalcode_txt, country_txt, PolicyID_txt, PolStatus_lbl, DeactReas_txt, PolEffStart_txt, PolEndDate_txt, ProdName_txt, ProdDesc_txt
                 , ProdPrice_txt, ProdActDate_txt, CustID_txt, ProdEndDate_txt, PolID_Txt, StatID_txt);
+                if (PolicySecurity.ReDirectExists() == true)
+                {
+                    strMessage = "Please direct all queries and amendments on this policy ";
+                    strMessage = strMessage + "through to the " + PolicySecurity.GetPolicyRedirectDepartment();
+                    strMessage = strMessage + " Department. Thank you.";
+                    strMessage = strMessage + "\n\n" + "Additional Information: \n";
+                    strMessage = strMessage + PolicySecurity.GetPolicyReDirectMessage();
+                    KryptonMessageBox.Show(strMessage,
+                                           "Policy ReDirect Alert",
+                                           MessageBoxButtons.OK,
+                                           KryptonMessageBoxIcon.Exclamation);
+
+
+                }
             }
+            
 
         }
 
@@ -285,6 +302,12 @@ namespace GAZE.Customer
         {
             UpdateAddressDetails updateAddressDetails = new UpdateAddressDetails();
             updateAddressDetails.ShowDialog();
+        }
+
+        private void redirectPolicyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PolicyRedirect policyRedirect = new PolicyRedirect();
+            policyRedirect.ShowDialog();
         }
     }
 }
