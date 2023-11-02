@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PolicySecurity.cs" />
     <Compile Include="ProductDetails.cs" />
     <Compile Include="SQLManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

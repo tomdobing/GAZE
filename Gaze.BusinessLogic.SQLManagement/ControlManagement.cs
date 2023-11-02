@@ -300,6 +300,44 @@ namespace Gaze.BusinessLogic.SQLManagement
 
         }
 
+        public void PopulateDepartment(KryptonComboBox DepartmentComboBox)
+        {
+            SqlConnection scon = new SqlConnection(SQLConnectionString);
+
+            try
+            {
+                scon.Open();
+                SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_DEPARTMENTS_SP", scon)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    DepartmentComboBox.Items.Add(sqlDataReader[0].ToString());
+                }
+
+
+            }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show("An exception was thrown while populating Departments:- \n\n CODE: SQL Exception: " + SQLException.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show("An exception was thrown while populating Departments: - \n\n CODE: SQL Exception: " + ex.Message, "Whoops", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
+            finally
+            {
+                scon.Close();
+            }
+
+
+
+        }
+
         #endregion
     }
 }
