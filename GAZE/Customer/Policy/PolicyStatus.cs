@@ -43,22 +43,17 @@ namespace GAZE.Customer.Policy
         {
             CurrPolStatus_txt.ReadOnly = true;
             PolicySQLManagement.GetCurrentPolicyStatus(CurrPolStatus_txt);
+            policyIDtxt.Text = InfoSec.GlobalSelectedPolicyID;
+            newPolStat_cmb.Focus();
         }
 
 
 
 
 
-        #endregion
-
-        private void kryptonGroupBox1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+      
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
-
             this.Close();
             CustomerOverViewV1 customerOverViewV1 = new CustomerOverViewV1();
             customerOverViewV1.ExecuteCustomerLoad();
@@ -77,19 +72,34 @@ namespace GAZE.Customer.Policy
 
         private void kryptonButton2_Click(object sender, EventArgs e)
         {
-            if (CurrPolStatus_txt.Text == newPolStat_cmb.SelectedText)
+            if (CurrPolStatus_txt.Text == newPolStat_cmb.SelectedItem.ToString())
             {
                 KryptonMessageBox.Show("This customers Policy Status is already " + CurrPolStatus_txt.Text + "\n\nPlease try again",
-                   "Unable to set Status", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                   "Unable to set Status", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
                 return;
             }
             if (newPolStat_cmb.SelectedIndex == -1)
             {
                 KryptonMessageBox.Show("You have not selected a status to update.\n\nPlease check and try again",
-                 "Unable to set Status", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error, 0, 0, false, false, false, false, null);
+                 "Unable to set Status", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
                 return;
             }
             PolicySQLManagement.UpdateCustomerPolicyStatus(newPolStat_cmb, this);
+        }
+
+
+
+
+        #endregion
+
+        private void newPolStat_cmb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CurrPolStatus_txt.Text == newPolStat_cmb.SelectedItem.ToString())
+            {
+                KryptonMessageBox.Show("Policy Status can't be changed to current status.",
+                   "Unable to set Status", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }
