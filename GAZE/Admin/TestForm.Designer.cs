@@ -31,6 +31,10 @@
             this.kryptonInputBoxExtendedManager1 = new Krypton.Toolkit.Suite.Extended.InputBox.KryptonInputBoxExtendedManager();
             this.kryptonInputBoxExtendedManager2 = new Krypton.Toolkit.Suite.Extended.InputBox.KryptonInputBoxExtendedManager();
             this.button1 = new System.Windows.Forms.Button();
+            this.kryptonTabControl1 = new Krypton.Toolkit.Suite.Extended.Navigator.KryptonTabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.kryptonTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonInputBoxExtendedManager1
@@ -103,15 +107,62 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // kryptonTabControl1
+            // 
+            this.kryptonTabControl1.AllowCloseButton = false;
+            this.kryptonTabControl1.AllowContextButton = true;
+            this.kryptonTabControl1.AllowNavigatorButtons = false;
+            this.kryptonTabControl1.AllowSelectedTabHigh = false;
+            this.kryptonTabControl1.BorderWidth = 1;
+            this.kryptonTabControl1.Controls.Add(this.tabPage1);
+            this.kryptonTabControl1.Controls.Add(this.tabPage2);
+            this.kryptonTabControl1.CornerRoundRadiusWidth = 25;
+            this.kryptonTabControl1.CornerSymmetry = Krypton.Toolkit.Suite.Extended.Navigator.KryptonTabControl.CornSymmetry.Both;
+            this.kryptonTabControl1.CornerType = Krypton.Toolkit.Suite.Extended.Drawing.DrawingMethods.CornerType.Rounded;
+            this.kryptonTabControl1.CornerWidth = Krypton.Toolkit.Suite.Extended.Navigator.KryptonTabControl.CornWidth.Thick;
+            this.kryptonTabControl1.HotTrack = true;
+            this.kryptonTabControl1.Location = new System.Drawing.Point(80, 232);
+            this.kryptonTabControl1.Name = "kryptonTabControl1";
+            this.kryptonTabControl1.PreserveTabColour = false;
+            this.kryptonTabControl1.SelectedIndex = 0;
+            this.kryptonTabControl1.Size = new System.Drawing.Size(797, 215);
+            this.kryptonTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.kryptonTabControl1.TabIndex = 1;
+            this.kryptonTabControl1.UseExtendedLayout = false;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(0);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(789, 186);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Tag = false;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(0);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(789, 186);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Tag = false;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 496);
+            this.Controls.Add(this.kryptonTabControl1);
             this.Controls.Add(this.button1);
             this.Name = "TestForm";
             this.Text = "TestForm";
             this.Load += new System.EventHandler(this.TestForm_Load);
+            this.kryptonTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -121,5 +172,8 @@
         private Krypton.Toolkit.Suite.Extended.InputBox.KryptonInputBoxExtendedManager kryptonInputBoxExtendedManager1;
         private Krypton.Toolkit.Suite.Extended.InputBox.KryptonInputBoxExtendedManager kryptonInputBoxExtendedManager2;
         private System.Windows.Forms.Button button1;
+        private Krypton.Toolkit.Suite.Extended.Navigator.KryptonTabControl kryptonTabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }

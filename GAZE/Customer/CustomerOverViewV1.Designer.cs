@@ -171,7 +171,7 @@
             this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Regular;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 337);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1213, 345);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Red;
             this.metroTabControl1.TabIndex = 0;
@@ -969,7 +969,7 @@
             // PolStatus_lbl
             // 
             this.PolStatus_lbl.AutoSize = true;
-            this.PolStatus_lbl.Location = new System.Drawing.Point(333, 56);
+            this.PolStatus_lbl.Location = new System.Drawing.Point(337, 50);
             this.PolStatus_lbl.Name = "PolStatus_lbl";
             this.PolStatus_lbl.Size = new System.Drawing.Size(0, 17);
             this.PolStatus_lbl.TabIndex = 7;
@@ -1177,7 +1177,7 @@
             // redirectPolicyToolStripMenuItem
             // 
             this.redirectPolicyToolStripMenuItem.Name = "redirectPolicyToolStripMenuItem";
-            this.redirectPolicyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.redirectPolicyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.redirectPolicyToolStripMenuItem.Text = "Redirect Policy";
             this.redirectPolicyToolStripMenuItem.Click += new System.EventHandler(this.redirectPolicyToolStripMenuItem_Click);
             // 
