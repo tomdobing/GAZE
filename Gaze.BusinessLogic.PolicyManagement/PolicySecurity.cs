@@ -5,7 +5,6 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 
@@ -18,10 +17,6 @@ namespace Gaze.BusinessLogic.PolicyManagement
     {
         #region Declarations
         private readonly string SQLConnectionString = ConfigurationManager.AppSettings["SQLConnection"];
-        private readonly ExceptionThrown exceptionThrown = new ExceptionThrown();
-        private readonly MessageHandler messageHandler = new MessageHandler();
-        private readonly InfoSec InfoSec = new InfoSec();
-
         #endregion
 
         #region Methods
@@ -105,8 +100,14 @@ namespace Gaze.BusinessLogic.PolicyManagement
                         }
                     }
                 }
-                catch (Exception)
+                catch (SqlException SQLException)
                 {
+                    KryptonMessageBox.Show("An Error Occurred while checking for a Policy ReDirect.\n\nSQL Exception: " + SQLException.Message, "Policy ReDirect Exception", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    KryptonMessageBox.Show("An Error Occurred while checking for a Policy ReDirect.\n\nException: " + ex.Message, "Policy ReDirect Exception", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
                     return false;
                 }
                 finally
@@ -171,7 +172,7 @@ namespace Gaze.BusinessLogic.PolicyManagement
                     scon.Open();
                     SqlCommand sqlCommand = new SqlCommand("dbo.SELECT_POLICY_REDIRECT_DETAILS_SP", scon)
                     {
-                        CommandType = System.Data.CommandType.StoredProcedure
+                        CommandType = CommandType.StoredProcedure
                     };
                     sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalSelectedPolicyID);
                     SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
@@ -183,21 +184,28 @@ namespace Gaze.BusinessLogic.PolicyManagement
                         {
                             YesBox.CheckState = CheckState.Checked;
                         }
-
-
                     }
                 }
-                catch (Exception)
+                catch (SqlException SQLException)
                 {
-
-                    throw;
+                    KryptonMessageBox.Show("An Error Occurred while retrieving policy ReDirect Data.\n\nSQL Exception: " + SQLException.Message, "Policy ReDirect Exception", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    KryptonMessageBox.Show("An Error Occurred while retrieving policy ReDirect Data.\n\nException: " + ex.Message, "Policy ReDirect Exception", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                    return;
+                }
+                finally 
+                {
+                    scon.Close(); 
                 }
 
             }
 
 
         }
-        public string messagedetails;
+        public string MessageDetails;
         public string GetPolicyReDirectMessage()
         {
             SqlConnection scon = new SqlConnection(SQLConnectionString);
@@ -206,21 +214,29 @@ namespace Gaze.BusinessLogic.PolicyManagement
                 scon.Open();
                 SqlCommand sqlCommand = new SqlCommand("[dbo].[SELECT_POLICY_REDIRECT_MESSAGE_SP]", scon)
                 {
-                    CommandType = System.Data.CommandType.StoredProcedure
+                    CommandType = CommandType.StoredProcedure
                 };
                 sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalSelectedPolicyID);
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 while (sqlDataReader.Read())
                 {
-                    messagedetails = sqlDataReader[0].ToString();
-                    
+                    MessageDetails = sqlDataReader[0].ToString();
                 }
-                return messagedetails;
+                return MessageDetails;
             }
-            catch (Exception)
+            catch (SqlException SQLException)
             {
-
-                throw;
+                KryptonMessageBox.Show("An Error Occurred while retrieving policy ReDirect ExtraText.\n\nSQL Exception: " + SQLException.Message, "Policy ReDirect Exception", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                KryptonMessageBox.Show("An Error Occurred while retrieving policy ReDirect ExtraText.\n\nException: " + ex.Message, "Policy ReDirect Exception", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                scon.Close();
             }
         }
 
@@ -235,7 +251,7 @@ namespace Gaze.BusinessLogic.PolicyManagement
                 scon.Open();
                 SqlCommand sqlCommand = new SqlCommand("[dbo].[SELECT_POLICY_REDIRECT_DEPARTMENT_SP]", scon)
                 {
-                    CommandType = System.Data.CommandType.StoredProcedure
+                    CommandType = CommandType.StoredProcedure
                 };
                 sqlCommand.Parameters.AddWithValue("@PolicyID", InfoSec.GlobalSelectedPolicyID);
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
@@ -246,13 +262,20 @@ namespace Gaze.BusinessLogic.PolicyManagement
                 }
                 return dept;
             }
+            catch (SqlException SQLException)
+            {
+                KryptonMessageBox.Show("An Error Occurred while retrieving policy ReDirect Department.\n\nSQL Exception: " + SQLException.Message, "Policy ReDirect Exception", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return null;
+            }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                
-
+                KryptonMessageBox.Show("An Error Occurred while retrieving policy ReDirect Department.\n\nException: " + ex.Message, "Policy ReDirect Exception", MessageBoxButtons.OK, KryptonMessageBoxIcon.Error);
+                return null;
             }
-
+            finally
+            {
+                scon.Close();
+            }
 
 
         }
