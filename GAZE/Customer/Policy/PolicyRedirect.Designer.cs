@@ -119,6 +119,7 @@
             // department_cmb
             // 
             this.department_cmb.CornerRoundingRadius = -1F;
+            this.department_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.department_cmb.DropDownWidth = 252;
             this.department_cmb.IntegralHeight = false;
             this.department_cmb.Location = new System.Drawing.Point(140, 59);

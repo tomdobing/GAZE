@@ -178,7 +178,7 @@ namespace Gaze.BusinessLogic.PolicyManagement
                     SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                     while (sqlDataReader.Read())
                     {
-                        Department.SelectedText = sqlDataReader[0].ToString();
+                        Department.SelectedItem = sqlDataReader[0].ToString();
                         MessageDetails.Text = sqlDataReader[1].ToString();
                         if (sqlDataReader[2].ToString() == "1")
                         {
